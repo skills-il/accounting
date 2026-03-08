@@ -1,0 +1,60 @@
+name: Security Scan
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - '**/SKILL.md'
+      - '**/scripts/**'
+  push:
+    branches: [master]
+    paths:
+      - '**/SKILL.md'
+      - '**/scripts/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+  security-events: write
+
+jobs:
+  mcp-scan:
+    name: Snyk Agent Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install mcp-scan
+        run: pip install mcp-scan
+      - name: Run mcp-scan on SKILL.md files
+        run: |
+          find . -name 'SKILL.md' -exec mcp-scan {} \;
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      - name: Post scan results
+        if: always() && github.event_name == 'pull_request'
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "## Security Scan Complete
+
+          Snyk mcp-scan has finished. Check workflow logs for details."
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  cisco-scan:
+    name: Cisco Skill Scanner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install Cisco Skill Scanner
+        run: pip install cisco-ai-skill-scanner
+      - name: Scan all skills
+        run: |
+          skill-scanner scan-all . --fail-on-severity high --format sarif --output results.sarif || true
+      - name: Upload SARIF results
+        if: always()
+        uses: github/codeql-action/upload-sarif@v4
+        with:
+          sarif_file: results.sarif
+        continue-on-error: true
