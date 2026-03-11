@@ -1,51 +1,64 @@
 ---
 name: israeli-financial-reports
 description: >-
-  Generate Israeli-standard financial reports including profit and loss (Doch Ruvach VeHefsed),
-  balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow statements. Supports
-  bilingual Hebrew/English output with NIS formatting, VAT summary reports for bi-monthly and
-  monthly filing, year-end annual report preparation, and comparison periods. Works with Osek
-  Patur, Osek Murshe, and Chevra (company) business types. Compliant with Israeli accounting
-  standards based on IFRS adaptations. Use when you need to produce financial statements,
-  tax-related summaries, or periodic reports for Israeli businesses. Exports to PDF, Excel,
-  and CSV formats. Do NOT use for tax filing submissions, payroll processing, or bank
-  reconciliation workflows.
+  Generate Israeli-standard financial reports including profit and loss (Doch Ruvach
+  VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow
+  statements. Supports bilingual Hebrew/English output with NIS formatting, VAT summary
+  reports for bi-monthly and monthly filing, year-end annual report preparation, and
+  comparison periods. Works with Osek Patur, Osek Murshe, and Chevra (company) business
+  types. Compliant with Israeli accounting standards based on IFRS adaptations. Use
+  when you need to produce financial statements, tax-related summaries, or periodic
+  reports for Israeli businesses. Exports to PDF, Excel, and CSV formats. Do NOT use
+  for tax filing submissions, payroll processing, or bank reconciliation workflows.
 license: MIT
-allowed-tools: "Bash(python:*) Edit Read Write"
-compatibility: "Requires Claude Code"
+allowed-tools: Bash(python:*) Edit Read Write
+compatibility: Requires Claude Code
 metadata:
   author: skills-il
   version: 1.0.0
   category: accounting
   tags:
     he:
-      - דוחות-כספיים
-      - רווח-והפסד
-      - מאזן
-      - תקנים-ישראליים
-      - דיווח
-      - חשבונאות
+    - דוחות-כספיים
+    - רווח-והפסד
+    - מאזן
+    - תקנים-ישראליים
+    - דיווח
+    - חשבונאות
     en:
-      - financial-reports
-      - profit-loss
-      - balance-sheet
-      - israeli-standards
-      - reporting
-      - accounting
+    - financial-reports
+    - profit-loss
+    - balance-sheet
+    - israeli-standards
+    - reporting
+    - accounting
   display_name:
-    he: "דוחות כספיים ישראליים"
-    en: "Israeli Financial Reports"
+    he: דוחות כספיים ישראליים
+    en: Israeli Financial Reports
   display_description:
-    he: "הפקת דוחות כספיים בתקנים ישראליים: רווח והפסד, מאזן, מאזן בוחן, תזרים מזומנים ודוחות מע\"מ"
-    en: "Generate Israeli-standard financial reports: profit and loss, balance sheet, trial balance, cash flow, and VAT summaries"
+    he: >-
+      הפקת דוחות כספיים בתקנים ישראליים: רווח והפסד, מאזן, מאזן בוחן, תזרים מזומנים
+      ודוחות מע"מ
+    en: >-
+      Generate Israeli-standard financial reports including profit and loss (Doch
+      Ruvach VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and
+      cash flow statements. Supports bilingual Hebrew/English output with NIS formatting,
+      VAT summary reports for bi-monthly and monthly filing, year-end annual report
+      preparation, and comparison periods. Works with Osek Patur, Osek Murshe, and
+      Chevra (company) business types. Compliant with Israeli accounting standards
+      based on IFRS adaptations. Use when you need to produce financial statements,
+      tax-related summaries, or periodic reports for Israeli businesses. Exports to
+      PDF, Excel, and CSV formats. Do NOT use for tax filing submissions, payroll
+      processing, or bank reconciliation workflows.
   supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+  - claude-code
+  - cursor
+  - github-copilot
+  - windsurf
+  - opencode
+  - codex
 ---
+
 
 # Israeli Financial Reports
 
