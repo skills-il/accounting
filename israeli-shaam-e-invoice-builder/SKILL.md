@@ -1,47 +1,58 @@
 ---
 name: israeli-shaam-e-invoice-builder
 description: >-
-  Build SHAAM-compliant electronic invoices with allocation numbers (mispar haktsa'a) per Israeli Tax Authority (ITA) requirements.
-  Use when generating tax invoices, credit notes, or receipts that require ITA allocation numbers for VAT deduction eligibility.
-  Handles OAuth2 authentication, JSON payload construction per ITA technical specs v2.0, buyer VAT validation,
-  and batch submission. Supports the phased threshold rollout (20K NIS Jan 2025, 10K NIS Jan 2026, 5K NIS June 2026).
-  Do NOT use for bookkeeping, expense categorization, bank reconciliation, or non-Israeli tax jurisdictions.
+  Build SHAAM-compliant electronic invoices with allocation numbers (mispar haktsa'a)
+  per Israeli Tax Authority (ITA) requirements. Use when generating tax invoices,
+  credit notes, or receipts that require ITA allocation numbers for VAT deduction
+  eligibility. Handles OAuth2 authentication, JSON payload construction per ITA technical
+  specs v2.0, buyer VAT validation, and batch submission. Supports the phased threshold
+  rollout (20K NIS Jan 2025, 10K NIS Jan 2026, 5K NIS June 2026). Do NOT use for bookkeeping,
+  expense categorization, bank reconciliation, or non-Israeli tax jurisdictions.
 license: MIT
-allowed-tools: "Bash(node:*,npx:*,curl:*) WebFetch Edit Read"
-compatibility: "Requires network access for SHAAM API calls and OAuth2 token exchange"
+allowed-tools: Bash(node:*,npx:*,curl:*) WebFetch Edit Read
+compatibility: Requires network access for SHAAM API calls and OAuth2 token exchange
 metadata:
   author: skills-il
   version: 1.0.0
   category: accounting
   tags:
     he:
-      - חשבונית-דיגיטלית
-      - שע"ם
-      - רשות-המסים
-      - ציות
-      - מע"מ
-      - חשבונאות
+    - חשבונית-דיגיטלית
+    - שע"ם
+    - רשות-המסים
+    - ציות
+    - מע"מ
+    - חשבונאות
     en:
-      - e-invoice
-      - shaam
-      - tax-authority
-      - compliance
-      - vat
-      - accounting
+    - e-invoice
+    - shaam
+    - tax-authority
+    - compliance
+    - vat
+    - accounting
   display_name:
-    he: "בונה חשבוניות דיגיטליות - שע\"ם"
-    en: "Israeli SHAAM E-Invoice Builder"
+    he: בונה חשבוניות דיגיטליות - שע"ם
+    en: Israeli SHAAM E-Invoice Builder
   display_description:
-    he: "בניית חשבוניות אלקטרוניות תואמות שע\"ם עם מספרי הקצאה לפי דרישות רשות המסים"
-    en: "Build SHAAM-compliant electronic invoices with allocation numbers per Israeli Tax Authority requirements"
+    he: בניית חשבוניות אלקטרוניות תואמות שע"ם עם מספרי הקצאה לפי דרישות רשות המסים
+    en: >-
+      Build SHAAM-compliant electronic invoices with allocation numbers (mispar haktsa'a)
+      per Israeli Tax Authority (ITA) requirements. Use when generating tax invoices,
+      credit notes, or receipts that require ITA allocation numbers for VAT deduction
+      eligibility. Handles OAuth2 authentication, JSON payload construction per ITA
+      technical specs v2.0, buyer VAT validation, and batch submission. Supports the
+      phased threshold rollout (20K NIS Jan 2025, 10K NIS Jan 2026, 5K NIS June 2026).
+      Do NOT use for bookkeeping, expense categorization, bank reconciliation, or
+      non-Israeli tax jurisdictions.
   supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+  - claude-code
+  - cursor
+  - github-copilot
+  - windsurf
+  - opencode
+  - codex
 ---
+
 
 # Israeli SHAAM E-Invoice Builder
 
