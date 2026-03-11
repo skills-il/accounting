@@ -1,49 +1,62 @@
 ---
 name: hashavshevet-data-tools
 description: >-
-  Import and export data between Hashavshevet accounting software and modern formats (JSON, CSV, Excel).
-  Use when you need to extract journal entries, chart of accounts, trial balances, or customer/supplier
-  lists from Hashavshevet, import bank transactions and invoices into Hashavshevet format, migrate data
-  from Hashavshevet to cloud-based solutions (iCount, Rivhit, Invoice4U), or handle Hebrew encoding
-  conversions (Windows-1255 to UTF-8). Supports Hashavshevet Gold, Hashavshevet 2000+, and newer
-  versions. Validates data integrity during import/export operations. Do NOT use for real-time
-  Hashavshevet API integrations, direct database modifications, or live bookkeeping within Hashavshevet.
+  Import and export data between Hashavshevet accounting software and modern formats
+  (JSON, CSV, Excel). Use when you need to extract journal entries, chart of accounts,
+  trial balances, or customer/supplier lists from Hashavshevet, import bank transactions
+  and invoices into Hashavshevet format, migrate data from Hashavshevet to cloud-based
+  solutions (iCount, Rivhit, Invoice4U), or handle Hebrew encoding conversions (Windows-1255
+  to UTF-8). Supports Hashavshevet Gold, Hashavshevet 2000+, and newer versions. Validates
+  data integrity during import/export operations. Do NOT use for real-time Hashavshevet
+  API integrations, direct database modifications, or live bookkeeping within Hashavshevet.
 license: MIT
-allowed-tools: "Bash(python:*) Read Edit Write"
-compatibility: "Requires Python 3.9+ with openpyxl and chardet libraries"
+allowed-tools: Bash(python:*) Read Edit Write
+compatibility: Requires Python 3.9+ with openpyxl and chardet libraries
 metadata:
   author: skills-il
   version: 1.0.0
   category: accounting
   tags:
     he:
-      - חשבשבת
-      - העברת-נתונים
-      - ייבוא-ייצוא
-      - תוכנת-הנהלת-חשבונות
-      - אינטגרציה
-      - חשבונאות
+    - חשבשבת
+    - העברת-נתונים
+    - ייבוא-ייצוא
+    - תוכנת-הנהלת-חשבונות
+    - אינטגרציה
+    - חשבונאות
     en:
-      - hashavshevet
-      - data-migration
-      - import-export
-      - accounting-software
-      - integration
-      - accounting
+    - hashavshevet
+    - data-migration
+    - import-export
+    - accounting-software
+    - integration
+    - accounting
   display_name:
-    he: "כלי נתונים לחשבשבת"
-    en: "Hashavshevet Data Tools"
+    he: כלי נתונים לחשבשבת
+    en: Hashavshevet Data Tools
   display_description:
-    he: "ייבוא וייצוא נתונים בין תוכנת חשבשבת לפורמטים מודרניים כמו JSON, CSV ו-Excel, כולל המרת קידוד עברית והעברת נתונים למערכות ענן"
-    en: "Import and export data between Hashavshevet accounting software and modern formats like JSON, CSV, and Excel, including Hebrew encoding conversion and cloud migration"
+    he: >-
+      ייבוא וייצוא נתונים בין תוכנת חשבשבת לפורמטים מודרניים כמו JSON, CSV ו-Excel,
+      כולל המרת קידוד עברית והעברת נתונים למערכות ענן
+    en: >-
+      Import and export data between Hashavshevet accounting software and modern formats
+      (JSON, CSV, Excel). Use when you need to extract journal entries, chart of accounts,
+      trial balances, or customer/supplier lists from Hashavshevet, import bank transactions
+      and invoices into Hashavshevet format, migrate data from Hashavshevet to cloud-based
+      solutions (iCount, Rivhit, Invoice4U), or handle Hebrew encoding conversions
+      (Windows-1255 to UTF-8). Supports Hashavshevet Gold, Hashavshevet 2000+, and
+      newer versions. Validates data integrity during import/export operations. Do
+      NOT use for real-time Hashavshevet API integrations, direct database modifications,
+      or live bookkeeping within Hashavshevet.
   supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+  - claude-code
+  - cursor
+  - github-copilot
+  - windsurf
+  - opencode
+  - codex
 ---
+
 
 # Hashavshevet Data Tools
 
