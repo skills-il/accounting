@@ -2,50 +2,60 @@
 name: israeli-receipt-scanner
 description: >-
   OCR and parse Israeli receipts and invoices with Hebrew and English text extraction.
-  Extracts merchant name, date, total amount in NIS, VAT amount, receipt or invoice number,
-  payment method, and VAT registration number (osek murshe). Handles common Israeli retail
-  formats including supermarkets, gas stations, restaurants, and online purchases.
-  Auto-categorizes expenses into standard Israeli accounting categories and outputs
-  structured JSON or CSV ready for import into accounting software.
-  Use when you need to digitize, extract data from, or categorize Israeli receipts and
+  Extracts merchant name, date, total amount in NIS, VAT amount, receipt or invoice
+  number, payment method, and VAT registration number (osek murshe). Handles common
+  Israeli retail formats including supermarkets, gas stations, restaurants, and online
+  purchases. Auto-categorizes expenses into standard Israeli accounting categories
+  and outputs structured JSON or CSV ready for import into accounting software. Use
+  when you need to digitize, extract data from, or categorize Israeli receipts and
   tax invoices. Do NOT use for non-Israeli receipt formats, handwritten notes without
   printed text, or bank statement reconciliation.
 license: MIT
-allowed-tools: "Bash(python:*) Read Edit Write WebFetch"
-compatibility: "Requires Claude Code with vision capabilities for image-based OCR"
+allowed-tools: Bash(python:*) Read Edit Write WebFetch
+compatibility: Requires Claude Code with vision capabilities for image-based OCR
 metadata:
   author: skills-il
   version: 1.0.0
   category: accounting
   tags:
     he:
-      - סורק-קבלות
-      - זיהוי-תווים
-      - עברית-אופטי
-      - מעקב-הוצאות
-      - חשבוניות
-      - חשבונאות
+    - סורק-קבלות
+    - זיהוי-תווים
+    - עברית-אופטי
+    - מעקב-הוצאות
+    - חשבוניות
+    - חשבונאות
     en:
-      - receipt-scanner
-      - ocr
-      - hebrew-ocr
-      - expense-tracking
-      - invoices
-      - accounting
+    - receipt-scanner
+    - ocr
+    - hebrew-ocr
+    - expense-tracking
+    - invoices
+    - accounting
   display_name:
-    he: "סורק קבלות ישראלי"
-    en: "Israeli Receipt Scanner"
+    he: סורק קבלות ישראלי
+    en: Israeli Receipt Scanner
   display_description:
-    he: "סריקה וניתוח קבלות וחשבוניות ישראליות עם חילוץ טקסט בעברית ואנגלית"
-    en: "OCR and parse Israeli receipts and invoices with Hebrew and English text extraction"
+    he: סריקה וניתוח קבלות וחשבוניות ישראליות עם חילוץ טקסט בעברית ואנגלית
+    en: >-
+      OCR and parse Israeli receipts and invoices with Hebrew and English text extraction.
+      Extracts merchant name, date, total amount in NIS, VAT amount, receipt or invoice
+      number, payment method, and VAT registration number (osek murshe). Handles common
+      Israeli retail formats including supermarkets, gas stations, restaurants, and
+      online purchases. Auto-categorizes expenses into standard Israeli accounting
+      categories and outputs structured JSON or CSV ready for import into accounting
+      software. Use when you need to digitize, extract data from, or categorize Israeli
+      receipts and tax invoices. Do NOT use for non-Israeli receipt formats, handwritten
+      notes without printed text, or bank statement reconciliation.
   supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+  - claude-code
+  - cursor
+  - github-copilot
+  - windsurf
+  - opencode
+  - codex
 ---
+
 
 # Israeli Receipt Scanner
 
