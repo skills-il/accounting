@@ -6,44 +6,53 @@ description: >-
   (car 75%, phone/internet 80%, home office proportional), maps to standard Israeli
   chart of accounts, and handles Osek Patur vs Osek Murshe differences for VAT eligibility.
   Use when you need to classify business expenses for Israeli tax reporting, prepare
-  expense reports for your accountant, or verify deduction eligibility. Do NOT use for
-  final tax filing, legal tax advice, or payroll-related expense processing.
+  expense reports for your accountant, or verify deduction eligibility. Do NOT use
+  for final tax filing, legal tax advice, or payroll-related expense processing.
 license: MIT
-allowed-tools: "Bash(python:*) Read Edit Write"
-compatibility: "Requires Claude Code or compatible agent with file access"
+allowed-tools: Bash(python:*) Read Edit Write
+compatibility: Requires Claude Code or compatible agent with file access
 metadata:
   author: skills-il
   version: 1.0.0
   category: accounting
   tags:
     he:
-      - מיון-הוצאות
-      - ניכויי-מס
-      - הנהלת-חשבונות
-      - מס-ישראלי
-      - הוצאות-עסקיות
-      - חשבונאות
+    - מיון-הוצאות
+    - ניכויי-מס
+    - הנהלת-חשבונות
+    - מס-ישראלי
+    - הוצאות-עסקיות
+    - חשבונאות
     en:
-      - expense-categorizer
-      - tax-deductions
-      - bookkeeping
-      - israeli-tax
-      - business-expenses
-      - accounting
+    - expense-categorizer
+    - tax-deductions
+    - bookkeeping
+    - israeli-tax
+    - business-expenses
+    - accounting
   display_name:
-    he: "מיון הוצאות עסקיות ישראליות"
-    en: "Israeli Expense Categorizer"
+    he: מיון הוצאות עסקיות ישראליות
+    en: Israeli Expense Categorizer
   display_description:
-    he: "מיון אוטומטי של הוצאות עסקיות לקטגוריות מס ישראליות עם אחוזי ניכוי מדויקים"
-    en: "Automatic categorization of business expenses into Israeli tax categories with accurate deduction percentages"
+    he: מיון אוטומטי של הוצאות עסקיות לקטגוריות מס ישראליות עם אחוזי ניכוי מדויקים
+    en: >-
+      AI-powered categorization of business expenses into Israeli tax-deductible categories
+      based on current Israeli Tax Ordinance rules. Applies correct deduction percentages
+      (car 75%, phone/internet 80%, home office proportional), maps to standard Israeli
+      chart of accounts, and handles Osek Patur vs Osek Murshe differences for VAT
+      eligibility. Use when you need to classify business expenses for Israeli tax
+      reporting, prepare expense reports for your accountant, or verify deduction
+      eligibility. Do NOT use for final tax filing, legal tax advice, or payroll-related
+      expense processing.
   supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
+  - claude-code
+  - cursor
+  - github-copilot
+  - windsurf
+  - opencode
+  - codex
 ---
+
 
 # Israeli Expense Categorizer
 
