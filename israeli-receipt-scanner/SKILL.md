@@ -15,7 +15,7 @@ allowed-tools: Bash(python:*) Read Edit Write WebFetch
 compatibility: Requires Claude Code with vision capabilities for image-based OCR
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -266,6 +266,14 @@ Result: Complete JSON with tax-relevant notes for the accountant.
 ### References
 - `references/israeli-vat-rates.md` -- Historical Israeli VAT rates and thresholds. Consult when validating VAT calculations on older receipts.
 - `references/receipt-field-glossary.md` -- Hebrew-English glossary of common receipt fields and terms. Consult when encountering unfamiliar Hebrew terms on receipts.
+
+## Gotchas
+
+- Israeli receipts contain a mix of Hebrew (RTL) and English/numbers (LTR) text on the same line. OCR engines may reverse the reading order or scramble bidirectional text. Always verify that amounts appear next to the correct line items.
+- The Hebrew date format on receipts is DD/MM/YYYY, but some thermal printers use abbreviated formats like DD/MM/YY. Agents may misparse 01/03/26 as January 3 instead of March 1 (or 2026).
+- Israeli receipts from osek patur (exempt dealers) do not contain VAT breakdowns. Agents may attempt to extract VAT from these receipts and produce incorrect calculations.
+- Thermal receipt paper degrades quickly in Israeli summer heat. OCR quality on faded receipts drops significantly, especially for Hebrew characters that are smaller and denser than Latin text.
+- Israeli business numbers (mispar osek) on receipts are 9 digits with a check digit. Agents may extract partial numbers or not validate the check digit, leading to incorrect business identification.
 
 ## Troubleshooting
 

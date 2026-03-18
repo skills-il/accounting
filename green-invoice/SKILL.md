@@ -18,7 +18,7 @@ compatibility: >-
   with Claude Code, Claude.ai, Cursor.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -458,6 +458,14 @@ Result: All new documents automatically downloaded and organized by type and mon
 ### References
 - `references/api-reference.md` -- Complete Green Invoice API endpoint reference with request/response schemas, all enum codes, and payload examples. Consult when building API integrations or debugging request formats.
 - `references/document-workflows.md` -- Common Israeli business document workflows: freelancer billing, retainer invoicing, refund flows, multi-currency billing, and e-commerce integration patterns. Consult when designing invoicing automation or choosing the correct document type sequence.
+
+## Gotchas
+
+- Green Invoice was rebranded to "Morning" but the API domain remains `api.greeninvoice.co.il`. Agents may search for a "Morning API" that does not exist under that name.
+- The most common document type for Israeli clients paying immediately is type 320 (Tax Invoice-Receipt), not type 305 (Tax Invoice). Agents may default to 305 because it sounds like the standard invoice type.
+- Osek Patur (exempt dealer) businesses cannot issue Tax Invoices (type 305). Agents may not check the business type before selecting a document type, causing API errors.
+- VAT rate in Israel is 18% as of 2025, not 17%. The rate changed and agents trained on older data may use the outdated 17% figure in calculations.
+- Payment type code 10 covers Israeli payment apps (Bit, Pepper Pay, PayBox), which are extremely common in Israel. Agents may not know these apps exist and default to bank transfer or credit card only.
 
 ## Troubleshooting
 

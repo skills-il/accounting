@@ -17,7 +17,7 @@ compatibility: >-
   and other compatible agents.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -286,6 +286,14 @@ Result: Found 34 expense transactions totaling 18,200 ILS without matching invoi
 ### References
 - `israeli-bank-scrapers` library documentation: https://github.com/eshaham/israeli-bank-scrapers - Consult when adding support for new bank types or troubleshooting scraper configuration.
 - Caspion automated budget tracking: https://github.com/brafdlog/caspion - Consult when users want to combine reconciliation with ongoing budget tracking and categorization.
+
+## Gotchas
+
+- Israeli banks (Leumi, Hapoalim, Discount, Mizrahi-Tefahot, FIBI) each have different transaction export formats and date conventions. Agents may assume a uniform CSV structure across all banks.
+- Israeli bank transaction dates use DD/MM/YYYY format. Agents may parse dates as MM/DD/YYYY, silently swapping day and month for dates like 05/03/2026.
+- Check (hamchaa) clearing in Israel can take 1-3 business days, creating timing mismatches between bank statement dates and recorded dates. Agents may not account for float periods.
+- Israeli banks use the Sunday-Thursday business week. Transactions on Friday or Saturday are processed on Sunday. Agents may apply Monday-Friday processing assumptions.
+- Credit card settlements in Israel arrive as lump-sum charges from card companies (Isracard, Cal, Max), not individual transactions. Agents may try to match individual purchases against bank statements instead of matching the settlement total.
 
 ## Troubleshooting
 

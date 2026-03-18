@@ -13,7 +13,7 @@ compatibility: >-
   API.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -147,6 +147,14 @@ Result: VAT report with zero-rated export handling
 - `references/vat-regulations.md` — Summary of Israeli VAT law including current and historical VAT rates, registration types (Osek Morsheh, Osek Patur), and filing obligations. Consult when verifying VAT rate or registration rules.
 - `references/reporting-calendar.md` — Filing deadlines for monthly and bi-monthly VAT reporters, including the 15th-of-following-month rule. Consult when determining reporting period and deadline for a specific month.
 - `references/special-cases.md` — Rules for zero-rated transactions (exports, tourism, Eilat zone), exempt transactions (financial services, residential rent), and the distinction between zero-rated and exempt for input VAT recovery. Consult when handling exports or unusual transaction types.
+
+## Gotchas
+
+- Israeli VAT reporting is bi-monthly (every 2 months), not quarterly as in most countries. The 6 periods are: Jan-Feb, Mar-Apr, May-Jun, Jul-Aug, Sep-Oct, Nov-Dec. Agents may default to quarterly reporting.
+- VAT rate in Israel is 18% as of 2025, not 17%. This rate changed and agents using older training data will produce incorrect calculations across all invoices.
+- Osek patur (exempt dealers) do not charge or report VAT, but must still file an annual declaration. Agents may instruct an osek patur to file bi-monthly VAT reports, which is incorrect.
+- VAT report filing deadline is the 15th of the month following the reporting period. Agents may cite different deadlines based on other countries' rules.
+- Zero-rated transactions (exports, certain financial services) are different from VAT-exempt transactions in Israel. Zero-rated businesses can still reclaim input VAT; exempt businesses cannot. Agents may conflate these two categories.
 
 ## Troubleshooting
 

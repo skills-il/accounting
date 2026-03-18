@@ -13,7 +13,7 @@ allowed-tools: 'Bash(python:*)'
 compatibility: 'Works with Claude Code, Claude.ai, Cursor. No network access required.'
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -144,6 +144,14 @@ Result: Side-by-side comparison accounting for car tax benefit (shovi rechev)
 - `references/tax-brackets.md` — 2025 Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
 - `references/bituach-leumi-rates.md` — 2025 Bituach Leumi (National Insurance) and health tax rates for employees and employers, covering both the reduced bracket (up to 7,122 NIS) and full bracket (up to 49,030 NIS). Consult when calculating NI and health deductions in Step 3.
 - `references/credit-points.md` — Israeli tax credit points (nekudot zikui) value and full eligibility table covering base credits, gender, new immigrants, children, single parents, and disability. Consult when determining a taxpayer's total credit points beyond the defaults in Step 1.
+
+## Gotchas
+
+- Israeli income tax brackets, Bituach Leumi rates, and health tax rates are updated annually by the Knesset. Agents may use brackets from a previous year, causing significant calculation errors. Always verify the tax year.
+- Keren Hishtalmut contributions (2.5% employee + 7.5% employer) are tax-exempt up to a ceiling that changes yearly. Agents may omit this benefit or apply an incorrect ceiling.
+- Israeli payroll has a mandatory pension contribution (6% employee + 6.5% employer minimum since 2017). Agents may calculate payroll without pension deductions or use pre-2017 lower rates.
+- The Bituach Leumi (National Insurance) maximum insurable income ceiling changes annually. Contributions above the ceiling are at a reduced rate. Agents may apply the full rate to the entire salary.
+- Israeli employees receive "nekudat zikui" (tax credit points) that reduce tax liability. A single resident gets 2.25 points; women get an additional 0.5. Agents may omit credit points entirely or apply incorrect values.
 
 ## Troubleshooting
 

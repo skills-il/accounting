@@ -11,7 +11,7 @@ compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCod
   Codex.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -118,6 +118,14 @@ Result: Side-by-side comparison of two Israeli banks' financial performance
 
 ### References
 - `references/hebrew-financial-terms.md` -- Complete Hebrew-English financial terminology reference with tables for financial statements, income statement items, MAYA filing types, and Israeli accounting standards (IFRS-IL). Consult when translating financial terms or navigating Hebrew financial documents.
+
+## Gotchas
+
+- Israeli public companies adopted IFRS in 2008. Reports before that date use Israeli GAAP, which has significant differences. Agents may apply IFRS assumptions to pre-2008 data.
+- MAYA filings use Hebrew company names that may differ substantially from English trading names. Searching MAYA by securities number (mispar niyar) is more reliable than by name.
+- Israeli banks follow Bank of Israel adaptations to IFRS, not standard IFRS. Agents may apply general IFRS interpretations to bank financial statements, producing incorrect analysis.
+- The Hebrew term "maazan" refers to the balance sheet, not "balance" in the general sense. Agents may mistranslate Hebrew financial terms, confusing "revach naki" (net profit) with "revach golmi" (gross profit).
+- Annual report filing deadline is 3 months after fiscal year-end, and quarterly is 2 months. Agents may apply US SEC deadlines (60 days for accelerated filers) which do not match Israeli requirements.
 
 ## Troubleshooting
 

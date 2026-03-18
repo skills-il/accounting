@@ -14,7 +14,7 @@ allowed-tools: Bash(python:*) Read Edit Write
 compatibility: Requires Python 3.9+ with openpyxl and chardet libraries
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -358,6 +358,14 @@ Result: A Rivhit-compatible Excel import file with 234 accounts, a mapping refer
 ### References
 - `references/hashavshevet-file-formats.md` -- Detailed column layouts for all Hashavshevet .dat file types. Consult when encountering an unfamiliar file type or when column positions seem incorrect.
 - `references/cloud-migration-mappings.md` -- Account type and field mappings for iCount, Rivhit, and Invoice4U migrations. Consult when planning a migration to a cloud-based solution.
+
+## Gotchas
+
+- Hashavshevet files use Windows-1255 encoding, not UTF-8. Agents will almost always attempt to read these files as UTF-8, causing UnicodeDecodeError on the first Hebrew character encountered.
+- Hashavshevet date format is DD/MM/YYYY (Israeli standard). Bank exports may use YYYY-MM-DD (ISO) or MM/DD/YYYY (US). Agents may not detect the format mismatch, causing dates like 03/04/2025 to be interpreted incorrectly.
+- Fixed-width column positions vary between Hashavshevet versions (Gold vs. 2000+ vs. newer). Agents may apply column layouts from one version to data from another, producing garbled output.
+- Hashavshevet internal currency codes differ from ISO codes: ILS=1, USD=2, EUR=3. Agents may use ISO 4217 currency codes, which Hashavshevet will not recognize during import.
+- When exporting to CSV for Excel, files must use UTF-8 with BOM (utf-8-sig) encoding. Without the BOM, Excel will not display Hebrew characters correctly, showing gibberish instead.
 
 ## Troubleshooting
 

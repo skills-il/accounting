@@ -15,7 +15,7 @@ compatibility: >-
   GitHub Copilot, Windsurf, OpenCode, and Codex.
 metadata:
   author: choroshin
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -305,6 +305,14 @@ Result: Three new rows appended to the tracking sheet with proper categorization
 ### References
 - `references/israeli-tax-categories.md` -- Complete list of Israeli tax-deductible expense categories with deduction rates. Consult when categorizing a business expense.
 - `references/gws-sheets-recipes.md` -- Common gws CLI recipes for Google Sheets operations. Consult when performing sheet operations beyond basic read/append.
+
+## Gotchas
+
+- Israeli VAT reporting periods are bi-monthly (every 2 months), not quarterly as in many other countries. Agents may structure summaries on a quarterly basis, which does not match Israeli tax authority requirements.
+- Israeli date format is DD/MM/YYYY, not MM/DD/YYYY. Agents may use the American format, which causes confusion and errors when dates like 03/04/2026 could mean either March 4 or April 3.
+- Meal and entertainment expenses are only 80% deductible in Israel. Agents may categorize these as 100% deductible, overstating tax deductions.
+- Car expenses have complex deduction rules in Israel (45% or a fixed monthly amount, whichever is lower). Agents may apply 100% deduction, which would be incorrect for most businesses.
+- Israeli VAT is 18% (as of 2025). Agents trained on older data may use 17%, which was the previous rate, leading to incorrect calculations throughout the spreadsheet.
 
 ## Troubleshooting
 

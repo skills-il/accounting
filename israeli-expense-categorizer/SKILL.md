@@ -13,7 +13,7 @@ allowed-tools: Bash(python:*) Read Edit Write
 compatibility: Requires Claude Code or compatible agent with file access
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -232,6 +232,14 @@ Actions:
 5. Output categorized CSV with added columns: category, deduction_pct, deductible_amount, account_code, flags
 
 Result: Enriched CSV file ready for accountant import, with flagged items requiring manual classification.
+
+## Gotchas
+
+- Israeli expense deduction rates are specific and non-negotiable: car expenses at 45% (or fixed amount), meals/entertainment at 80%, phone/internet at a proportional business-use rate. Agents may apply 100% deduction to all business expenses.
+- Home office expenses in Israel are deductible based on the proportional area used for business, not a flat deduction. Agents may apply US-style simplified home office deduction rules.
+- Israeli receipt numbers (mispar kabala) are legally required for expense documentation. A bank statement alone is not sufficient proof for tax deduction. Agents may accept bank records as complete documentation.
+- Expense categories must match the Israeli Tax Ordinance (pkudat mas hachnasa) classifications. Agents may use generic US-style categories like "Office Supplies" that do not map directly to Israeli tax categories.
+- Mixed personal/business expenses (like a phone used for both) require proportional allocation. Agents may categorize the entire expense as business without applying the required split.
 
 ## Troubleshooting
 

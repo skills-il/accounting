@@ -15,7 +15,7 @@ allowed-tools: Bash(python:*)
 compatibility: Works with all major AI coding agents
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -289,6 +289,14 @@ Credit (zchut):
 ```
 
 Result: Output VAT liability cleared against input VAT credit. Net VAT payable of 13,000 ILS to be remitted to the tax authority (rashut hamisim).
+
+## Gotchas
+
+- Israeli bookkeeping uses a specific chart of accounts convention that differs from US GAAP chart numbering. Account numbers in the 1xxx range typically represent assets in Israeli systems, not revenue. Agents may apply US-style account numbering.
+- Payroll journal entries in Israel must include separate lines for pension (6%+6.5%), keren hishtalmut (2.5%+7.5%), Bituach Leumi (employer+employee), and health tax. Agents may produce simplified entries missing mandatory statutory components.
+- Israeli double-entry bookkeeping requires VAT input (maam tsmoot) and VAT output (maam atsaot) to be tracked in separate accounts for bi-monthly reporting. Agents may combine them into a single VAT account.
+- The Israeli fiscal year can differ from the calendar year for companies. Agents may assume January-December when the company uses a different fiscal year-end.
+- Withholding tax (nikui bamakkor) rules differ based on whether the payee has a tax exemption certificate (ptor nikui bamakkor). Agents may apply withholding universally without checking for exemptions.
 
 ## Troubleshooting
 

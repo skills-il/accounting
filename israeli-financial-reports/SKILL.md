@@ -15,7 +15,7 @@ allowed-tools: Bash(python:*) Edit Read Write
 compatibility: Requires Claude Code
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -301,6 +301,14 @@ Actions:
 5. Add trend indicators and summary commentary.
 
 Result: A management-oriented P&L comparison report showing quarter-over-quarter performance, including variance analysis and margin trends, formatted in NIS with bilingual headers.
+
+## Gotchas
+
+- Israeli financial reports use NIS (New Israeli Shekel) with the symbol appearing after the number in Hebrew context (1,000 ש"ח) but before in English context. Agents may place the currency symbol incorrectly.
+- Bi-monthly VAT summary reports must align with the 6 reporting periods (Jan-Feb, Mar-Apr, etc.), not quarters. Agents may group data by quarters, which does not match Israeli tax authority requirements.
+- Israeli balance sheets list assets on the right side and liabilities on the left in Hebrew format (RTL). Agents may produce LTR-formatted balance sheets that confuse Israeli accountants.
+- The Hebrew financial term "revach golmi" (gross profit) vs. "revach tafuli" (operating profit) vs. "revach naki" (net profit) are distinct concepts. Agents may mistranslate or conflate these terms.
+- Israeli small businesses (osek patur and osek murshe) have different reporting requirements. Agents may apply corporate reporting standards to sole proprietors, generating unnecessarily complex reports.
 
 ## Troubleshooting
 

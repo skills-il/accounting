@@ -14,7 +14,7 @@ compatibility: >-
   Claude.ai, Cursor.
 metadata:
   author: skills-il
-  version: 1.0.0
+  version: 1.0.1
   category: accounting
   tags:
     he:
@@ -154,6 +154,14 @@ Result: Credit invoice referencing original, with correct VAT reversal
 - `references/shaam-api-reference.md` — SHAAM (Tax Authority) API endpoints for requesting allocation numbers, OAuth2 authentication setup, and request/response formats. Consult when integrating with the SHAAM e-invoice API. Also referenced in Step 4 above.
 - `references/invoice-types.md` — Complete listing of Israeli invoice type codes (300, 305, 310, 320, 330, 400) with required fields per type, VAT applicability, and allocation number requirements. Consult when determining which invoice type to use.
 - `references/compliance-timeline.md` — Progressive e-invoice mandate timeline per Amendment 157 to the VAT Law, showing threshold reductions from 25,000 NIS down to all invoices. Consult when checking current allocation number thresholds.
+
+## Gotchas
+
+- Israel's e-invoice system is managed by SHAAM (the Tax Authority's technology arm), which assigns allocation numbers (mispar haktzaa) for each invoice. Agents may generate invoices without SHAAM allocation, which would not be valid for tax purposes.
+- Israeli TIN (Tax Identification Number) for individuals is 9 digits with a check digit algorithm. Agents may not validate the check digit and accept invalid TINs.
+- The distinction between cheshbonit mas (tax invoice, type 305) and cheshbonit mas/kabala (tax invoice-receipt, type 320) is critical. Agents may use them interchangeably, but they have different legal implications for payment timing.
+- Israeli e-invoice XML schemas follow SHAAM-specific standards, not the European Peppol or UBL formats. Agents may attempt to use international e-invoice standards that are not accepted by the Israeli Tax Authority.
+- Credit notes (cheshbonit zikui) in Israel must reference the original invoice number. Agents may generate standalone credit notes without the required linkage.
 
 ## Troubleshooting
 
