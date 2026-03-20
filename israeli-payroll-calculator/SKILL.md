@@ -78,9 +78,9 @@ IMPORTANT: Tax credits cannot create a negative tax (no refund through payroll).
 
 ### Step 3: Calculate Bituach Leumi (National Insurance)
 For employees:
-- On first 7,122 NIS: 0.4% NI + 3.1% health = 3.5%
-- On amount 7,123 to 49,030 NIS: 7.0% NI + 5.0% health = 12.0%
-- Maximum insurable salary: 49,030 NIS/month
+- On first 7,522 NIS: 0.4% NI + 3.1% health = 3.5%
+- On amount 7,523 to 50,695 NIS: 7.0% NI + 5.0% health = 12.0%
+- Maximum insurable salary: 50,695 NIS/month
 
 ### Step 4: Calculate Pension Deductions
 If pension applies (mandatory for most employees):
@@ -142,7 +142,7 @@ Result: Side-by-side comparison accounting for car tax benefit (shovi rechev)
 
 ### References
 - `references/tax-brackets.md` — 2025 Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
-- `references/bituach-leumi-rates.md` — 2025 Bituach Leumi (National Insurance) and health tax rates for employees and employers, covering both the reduced bracket (up to 7,122 NIS) and full bracket (up to 49,030 NIS). Consult when calculating NI and health deductions in Step 3.
+- `references/bituach-leumi-rates.md` — 2025 Bituach Leumi (National Insurance) and health tax rates for employees and employers, covering both the reduced bracket (up to 7,522 NIS) and full bracket (up to 50,695 NIS). Consult when calculating NI and health deductions in Step 3.
 - `references/credit-points.md` — Israeli tax credit points (nekudot zikui) value and full eligibility table covering base credits, gender, new immigrants, children, single parents, and disability. Consult when determining a taxpayer's total credit points beyond the defaults in Step 1.
 
 ## Gotchas

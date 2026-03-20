@@ -2,14 +2,14 @@
 
 ## Employee Rates
 
-### Reduced Bracket (up to 7,122 NIS/month)
+### Reduced Bracket (up to 7,522 NIS/month)
 | Component | Employee | Employer |
 |-----------|----------|----------|
 | National Insurance | 0.40% | 3.80% |
 | Health Tax | 3.10% | 3.40% |
 | **Total** | **3.50%** | **7.20%** |
 
-### Full Bracket (7,123 - 49,030 NIS/month)
+### Full Bracket (7,523 - 50,695 NIS/month)
 | Component | Employee | Employer |
 |-----------|----------|----------|
 | National Insurance | 7.00% | 7.60% |
@@ -17,7 +17,7 @@
 | **Total** | **12.00%** | **11.05%** |
 
 ### Maximum Insurable Salary
-- 49,030 NIS/month (2025)
+- 50,695 NIS/month (2025)
 - Salary above this amount: no additional NI/health deductions
 
 ## Self-Employed Rates

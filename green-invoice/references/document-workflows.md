@@ -12,9 +12,9 @@ A freelancer (osek murshe or osek patur) billing clients monthly.
 3. Include payment record matching how the client paid
 
 **Osek Murshe (Licensed Dealer):**
-- Use type 320 with `vatType: 0` (VAT automatically added at 17%)
+- Use type 320 with `vatType: 0` (VAT automatically added at 18%)
 - Total = subtotal + VAT
-- Example: NIS 10,000 service = NIS 11,700 total
+- Example: NIS 10,000 service = NIS 11,800 total
 
 **Osek Patur (Exempt Dealer):**
 - Use type 320 with `vatType: 0` (no VAT added automatically)

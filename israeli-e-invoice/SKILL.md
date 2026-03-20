@@ -87,9 +87,9 @@ For all invoice types, gather:
 Determine if an allocation number is needed:
 - **Required if:** Invoice amount >= current threshold AND invoice type is 300, 305, or 310
 - **Current thresholds:**
-  - Until June 2025: transactions over 10,000 NIS
-  - July 2025 - December 2025: transactions over 5,000 NIS
-  - January 2026+: Verify current threshold (mandate expanding)
+  - Until December 2025: transactions over 25,000 NIS (excluding VAT)
+  - January 2026: transactions over 10,000 NIS (excluding VAT)
+  - June 2026: transactions over 5,000 NIS (excluding VAT)
 - **Not required for:** Receipts (320), proforma (330), invoices below threshold
 
 If allocation number IS required:

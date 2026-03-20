@@ -121,7 +121,7 @@ For salary journal entries, calculate all components:
 - Keren hishtalmut employee (KH oved): 2.5% of salary (optional, common)
 
 **Employer costs (avlaot ma'asik):**
-- Bituach leumi employer (BL ma'asik): 3.55% up to threshold, 7.6% above
+- Bituach leumi employer (BL ma'asik): 3.80% up to threshold, 7.6% above
 - Pension employer contribution (pension ma'asik): 6.5% of pensionable salary
 - Severance provision (pitsuyim): 8.33% (1/12 of annual salary)
 - Keren hishtalmut employer (KH ma'asik): 7.5% of salary
@@ -170,11 +170,11 @@ Employee deductions:
 - Net salary (sachar neto): 11,235 ILS
 
 Employer costs:
-- Bituach leumi employer: 532 ILS (3.55%)
+- Bituach leumi employer: 570 ILS (3.80%)
 - Pension employer: 975 ILS (6.5%)
 - Severance provision: 1,250 ILS (8.33%)
 - Keren hishtalmut employer: 1,125 ILS (7.5%)
-- Total employer cost on top of gross: 3,882 ILS
+- Total employer cost on top of gross: 3,920 ILS
 
 **Journal entry (pkudat yoman):**
 
@@ -185,21 +185,21 @@ Description: January 2025 salary - Employee Name
 
 Debit (hova):
   600  Salary expense (hotsa'ot sachar)              15,000.00
-  601  BL employer expense (BL ma'asik)                 532.00
+  601  BL employer expense (BL ma'asik)                 570.00
   602  Pension employer expense (pension ma'asik)        975.00
   603  Severance expense (pitsuyim)                   1,250.00
   604  KH employer expense (KH ma'asik)               1,125.00
-                                          Total:     18,882.00
+                                          Total:     18,920.00
 
 Credit (zchut):
   210  Bank (bank) - net payment                     11,235.00
   710  Income tax payable (mas hachnasa)              1,500.00
-  720  BL payable (employee + employer)               1,057.00
+  720  BL payable (employee + employer)               1,095.00
   730  Health insurance payable (mas briut)              465.00
   740  Pension payable (employee + employer)           1,875.00
   750  KH payable (employee + employer)               1,500.00
   760  Severance fund payable (pitsuyim)              1,250.00
-                                          Total:     18,882.00
+                                          Total:     18,920.00
 ```
 
 Result: Balanced double-entry journal entry with all Israeli payroll components properly allocated. The entry separates employee deductions from employer costs and creates proper liabilities for statutory payments.
@@ -322,4 +322,4 @@ Solution: Always reference the Israeli Tax Authority (rashut hamisim) depreciati
 
 Cause: Recording only the employee's bituach leumi deduction without the separate employer contribution. The employer portion is an additional cost above gross salary.
 
-Solution: Always record both portions. The employee portion (3.5%/12%) is deducted from gross salary and reduces net pay. The employer portion (3.55%/7.6%) is an additional expense above gross salary. Both are credited to the same BL payable account (720) for remittance to Bituach Leumi.
+Solution: Always record both portions. The employee portion (3.5%/12%) is deducted from gross salary and reduces net pay. The employer portion (3.80%/7.6%) is an additional expense above gross salary. Both are credited to the same BL payable account (720) for remittance to Bituach Leumi.

@@ -237,13 +237,13 @@ VAT Registration: 515-123456
 
 Output VAT (Maam Etzumot):
   Taxable Sales                    185,400.00
-  VAT at 17%                       31,518.00
+  VAT at 18%                       33,372.00
 
 Input VAT (Maam Tsfumot):
   Purchases and Expenses            98,200.00
-  VAT Claimed                      16,694.00
+  VAT Claimed                      17,676.00
 
-VAT Payable (Maam Leshalem):        14,824.00
+VAT Payable (Maam Leshalem):        15,696.00
 Due Date: January 15, 2026
 ```
 
@@ -265,12 +265,12 @@ User says: "Generate my VAT report for the Jan-Feb 2025 bi-monthly period. I am 
 
 Actions:
 1. Confirm business type as Osek Murshe (bi-monthly VAT filing).
-2. Calculate Output VAT: 120,000 x 17% = 20,400 NIS.
-3. Calculate Input VAT: 45,000 x 17% = 7,650 NIS.
-4. Calculate net VAT payable: 20,400 - 7,650 = 12,750 NIS.
+2. Calculate Output VAT: 120,000 x 18% = 21,600 NIS.
+3. Calculate Input VAT: 45,000 x 18% = 8,100 NIS.
+4. Calculate net VAT payable: 21,600 - 8,100 = 13,500 NIS.
 5. Generate formatted bilingual VAT summary report with due date (March 15, 2025).
 
-Result: A formatted VAT summary report showing 12,750 NIS payable to the Tax Authority (Rashut HaMisim), with bilingual headers and proper NIS formatting.
+Result: A formatted VAT summary report showing 13,500 NIS payable to the Tax Authority (Rashut HaMisim), with bilingual headers and proper NIS formatting.
 
 ### Example 2: Annual Financial Statements for a Chevra
 
@@ -325,13 +325,13 @@ Solution:
 
 ### Error: "VAT rate mismatch"
 
-Cause: The VAT calculation uses an incorrect rate. Israel's standard VAT rate is 17% (as of 2025). Some transactions may be zero-rated (exports) or exempt (financial services, certain food items, fruits and vegetables at reduced rate).
+Cause: The VAT calculation uses an incorrect rate. Israel's standard VAT rate is 18% (as of 2025). Some transactions may be zero-rated (exports) or exempt (financial services, certain food items, fruits and vegetables at reduced rate).
 
 Solution:
 1. Verify the current VAT rate from the Tax Authority (Rashut HaMisim) website.
 2. Check if any transactions are zero-rated exports (VAT = 0% but still reportable).
 3. Check for VAT-exempt items that should not have VAT applied.
-4. Separate transactions by VAT category: standard (17%), zero-rated (0%), exempt.
+4. Separate transactions by VAT category: standard (18%), zero-rated (0%), exempt.
 5. Recalculate the VAT summary with correct rates per category.
 
 ### Error: "Currency formatting inconsistency"

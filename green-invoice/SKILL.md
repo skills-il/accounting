@@ -328,7 +328,7 @@ Green Invoice handles VAT automatically based on business type:
 
 | Code | Hebrew | English | VAT Behavior |
 |------|--------|---------|-------------|
-| 1 | עוסק מורשה | Licensed Dealer (Osek Murshe) | VAT added (17% as of 2025) |
+| 1 | עוסק מורשה | Licensed Dealer (Osek Murshe) | VAT added (18% as of 2025) |
 | 2 | חברה בע"מ | Ltd. Company | VAT added |
 | 3 | עוסק פטור | Exempt Dealer (Osek Patur) | No VAT |
 | 4 | עמותה | Non-Profit (Amuta) | No VAT |
