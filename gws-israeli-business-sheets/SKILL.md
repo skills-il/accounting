@@ -10,7 +10,7 @@ description: >-
 license: MIT
 allowed-tools: Bash(gws:*) Bash(npx:*) Bash(node:*) Bash(python:*) Read Write Edit
 compatibility: >-
-  Requires Node.js 18+ and the Google Workspace CLI (npm install -g @google/gws).
+  Requires Node.js 18+ and the Google Workspace CLI (npm install -g @googleworkspace/cli).
   Requires Google OAuth setup via gws auth login. Works with Claude Code, Cursor,
   GitHub Copilot, Windsurf, OpenCode, and Codex.
 metadata:
@@ -70,7 +70,7 @@ Before performing any Google Sheets operations, confirm the Google Workspace CLI
 gws --version
 
 # If not installed, install globally
-npm install -g @google/gws
+npm install -g @googleworkspace/cli
 
 # Authenticate with Google OAuth
 gws auth login
@@ -318,7 +318,7 @@ Result: Three new rows appended to the tracking sheet with proper categorization
 
 ### Error: "gws: command not found"
 Cause: The Google Workspace CLI is not installed or not in PATH.
-Solution: Install with `npm install -g @google/gws`. If using npx, prefix commands with `npx @google/gws`.
+Solution: Install with `npm install -g @googleworkspace/cli`. If using npx, prefix commands with `npx @googleworkspace/cli`.
 
 ### Error: "Authentication required" or "Token expired"
 Cause: The user has not authenticated or the OAuth token has expired.

@@ -26,7 +26,7 @@ metadata:
 gws --version
 
 # אם לא מותקן, התקנה גלובלית
-npm install -g @google/gws
+npm install -g @googleworkspace/cli
 
 # אימות עם Google OAuth
 gws auth login
@@ -274,7 +274,7 @@ gws sheets append --spreadsheet-id SPREADSHEET_ID --range "Sheet1!A:J" \
 
 ### שגיאה: "gws: command not found"
 סיבה: Google Workspace CLI לא מותקן או לא נמצא ב-PATH.
-פתרון: התקנה עם `npm install -g @google/gws`. בשימוש עם npx, יש להוסיף תחילית `npx @google/gws` לפקודות.
+פתרון: התקנה עם `npm install -g @googleworkspace/cli`. בשימוש עם npx, יש להוסיף תחילית `npx @googleworkspace/cli` לפקודות.
 
 ### שגיאה: "Authentication required" או "Token expired"
 סיבה: המשתמש לא ביצע אימות או שטוקן ה-OAuth פג תוקף.

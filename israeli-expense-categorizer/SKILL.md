@@ -3,7 +3,7 @@ name: israeli-expense-categorizer
 description: >-
   AI-powered categorization of business expenses into Israeli tax-deductible categories
   based on current Israeli Tax Ordinance rules. Applies correct deduction percentages
-  (car 75%, phone/internet 80%, home office proportional), maps to standard Israeli
+  (car 45%, phone/internet 80%, home office proportional), maps to standard Israeli
   chart of accounts, and handles Osek Patur vs Osek Murshe differences for VAT eligibility.
   Use when you need to classify business expenses for Israeli tax reporting, prepare
   expense reports for your accountant, or verify deduction eligibility. Do NOT use
@@ -38,7 +38,7 @@ metadata:
     en: >-
       AI-powered categorization of business expenses into Israeli tax-deductible categories
       based on current Israeli Tax Ordinance rules. Applies correct deduction percentages
-      (car 75%, phone/internet 80%, home office proportional), maps to standard Israeli
+      (car 45%, phone/internet 80%, home office proportional), maps to standard Israeli
       chart of accounts, and handles Osek Patur vs Osek Murshe differences for VAT
       eligibility. Use when you need to classify business expenses for Israeli tax
       reporting, prepare expense reports for your accountant, or verify deduction
@@ -96,7 +96,7 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - Employee salaries and related social costs
 
 **Partially deductible expenses**:
-- **Vehicle expenses (75%)**: Fuel, maintenance, insurance, parking, tolls. Applies to a single vehicle used for business. Second vehicle: 0% unless proven business-essential.
+- **Vehicle expenses (45%)**: Fuel, maintenance, insurance, parking, tolls. Applies to a single vehicle used for business. Second vehicle: 0% unless proven business-essential.
 - **Phone and internet (80%)**: Mobile phone bills, landline, internet service. The 20% disallowed portion reflects assumed personal use.
 - **Home office (proportional)**: Deduct the percentage of home used exclusively for business. Calculate: (office area / total home area) x 100. Apply this percentage to rent, arnona, electricity, internet, and maintenance.
 - **Meals and entertainment (80%)**: Business meals with clients or partners. Must document: who attended, business purpose, and relationship. Meals during regular workday for self: not deductible.
@@ -160,7 +160,7 @@ Output as a formatted table or CSV file, depending on user preference.
 ### Example 1: Monthly expense categorization for a freelance developer
 
 User says: "I'm an Osek Murshe freelance developer. Categorize these January expenses:
-- Linode hosting: 150 ILS
+- Akamai Cloud (formerly Linode): 150 ILS
 - Coffee meeting with client at Aroma: 85 ILS
 - Cellcom phone bill: 180 ILS
 - Fuel for car: 450 ILS
@@ -172,10 +172,10 @@ User says: "I'm an Osek Murshe freelance developer. Categorize these January exp
 Actions:
 1. Identify entity type: Osek Murshe (VAT deductible)
 2. Categorize each expense:
-   - Linode hosting: 100% deductible, Account 65 (Office/General), 150 ILS
+   - Akamai Cloud (formerly Linode): 100% deductible, Account 65 (Office/General), 150 ILS
    - Client coffee: 80% deductible, Account 66 (Marketing/Sales), 68 ILS deductible. Flag: document attendee name and business purpose
    - Cellcom phone: 80% deductible, Account 65 (Office/General), 144 ILS deductible
-   - Fuel: 75% deductible, Account 64 (Vehicle), 337.50 ILS deductible
+   - Fuel: 45% deductible, Account 64 (Vehicle), 202.50 ILS deductible
    - Keyboard: 100% deductible (under 1,200 ILS threshold), Account 65 (Office/General), 350 ILS
    - Accountant fee: 100% deductible, Account 67 (Professional Services), 800 ILS
    - WeWork: 100% deductible, Account 63 (Rent), 1,200 ILS
@@ -224,7 +224,7 @@ Actions:
 1. Read the CSV file and parse columns (date, description, amount, vendor)
 2. Ask for entity type if not specified
 3. Auto-categorize based on vendor names and descriptions using pattern matching:
-   - Gas station names (Paz, Sonol, Delek) -> Vehicle expenses, 75%
+   - Gas station names (Paz, Sonol, Delek) -> Vehicle expenses, 45%
    - Bezeq/Cellcom/Partner/HOT -> Phone/Internet, 80%
    - Supermarket chains -> Flag as likely personal, 0%
    - Software vendors -> Office/General, 100%
