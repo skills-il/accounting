@@ -1,0 +1,39 @@
+{
+  "author": "choroshin",
+  "version": "1.0.1",
+  "category": "accounting",
+  "tags": {
+    "he": [
+      "גוגל-וורקספייס",
+      "גוגל-שיטס",
+      "מעקב-הוצאות",
+      "מע\"מ",
+      "פרילנסר",
+      "הנהלת-חשבונות"
+    ],
+    "en": [
+      "google-workspace",
+      "google-sheets",
+      "expense-tracking",
+      "vat",
+      "freelancer",
+      "accounting"
+    ]
+  },
+  "display_name": {
+    "he": "גיליונות עסקיים ישראליים עם GWS",
+    "en": "GWS Israeli Business Sheets"
+  },
+  "display_description": {
+    "he": "אוטומציית תהליכי גיליונות אלקטרוניים פיננסיים לעסקים ישראליים באמצעות Google Workspace CLI -- מעקב הוצאות, חישובי מע\"מ, סיכומי תקופות מס וייצוא CSV לרואה חשבון.",
+    "en": "Google Sheets financial tracking and automation for Israeli freelancers and small businesses using the Google Workspace CLI (gws). Use when user asks to create income/expense sheets with Shekel formatting, track VAT (18%) calculations, generate tax-period summaries for accountants, backup spreadsheets as CSV, or auto-log payments. Do NOT use for direct bank API integrations, payroll processing, or filing taxes with the Israel Tax Authority."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex"
+  ]
+}

@@ -1,61 +1,9 @@
 ---
 name: israeli-bank-reconciliation
-description: >-
-  Automates bank reconciliation for Israeli banks (Leumi, Hapoalim, Discount, Mizrahi
-  Tefahot) using the israeli-bank-scrapers library. Matches scraped or imported transactions
-  to invoices and receipts, detects discrepancies, and generates reconciliation reports
-  with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew
-  merchant names, and Israeli date formats. Use when you need to reconcile bank statements
-  against your accounting records, identify missing invoices, or prepare monthly closing
-  reports for Israeli business accounts. Do NOT use for international bank accounts,
-  cryptocurrency wallets, or investment portfolio reconciliation.
+description: Automates bank reconciliation for Israeli banks (Leumi, Hapoalim, Discount, Mizrahi Tefahot) using the israeli-bank-scrapers library. Matches scraped or imported transactions to invoices and receipts, detects discrepancies, and generates reconciliation reports with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you need to reconcile bank statements against your accounting records, identify missing invoices, or prepare monthly closing reports for Israeli business accounts. Do NOT use for international bank accounts, cryptocurrency wallets, or investment portfolio reconciliation.
 license: MIT
-allowed-tools: Bash(node:*) Bash(npm:*) Bash(npx:*) Bash(python:*) Read Edit Write
-  WebFetch
-compatibility: >-
-  Requires Node.js 18+ for israeli-bank-scrapers. Works with Claude Code, Cursor,
-  and other compatible agents.
-metadata:
-  author: skills-il
-  version: 1.0.1
-  category: accounting
-  tags:
-    he:
-    - התאמת-בנק
-    - הנהלת-חשבונות
-    - בנקים-ישראליים
-    - אוטומציה
-    - עסקאות
-    - חשבונאות
-    en:
-    - bank-reconciliation
-    - bookkeeping
-    - israeli-banks
-    - automation
-    - transactions
-    - accounting
-  display_name:
-    he: התאמת בנק ישראלי
-    en: Israeli Bank Reconciliation
-  display_description:
-    he: אוטומציה של התאמת בנק לבנקים ישראליים, כולל זיהוי פערים והפקת דוחות התאמה
-    en: >-
-      Automates bank reconciliation for Israeli banks (Leumi, Hapoalim, Discount,
-      Mizrahi Tefahot) using the israeli-bank-scrapers library. Matches scraped or
-      imported transactions to invoices and receipts, detects discrepancies, and generates
-      reconciliation reports with matched, unmatched, and suspicious entries. Handles
-      shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you
-      need to reconcile bank statements against your accounting records, identify
-      missing invoices, or prepare monthly closing reports for Israeli business accounts.
-      Do NOT use for international bank accounts, cryptocurrency wallets, or investment
-      portfolio reconciliation.
-  supported_agents:
-  - claude-code
-  - cursor
-  - github-copilot
-  - windsurf
-  - opencode
-  - codex
+allowed-tools: Bash(node:*) Bash(npm:*) Bash(npx:*) Bash(python:*) Read Edit Write WebFetch
+compatibility: Requires Node.js 18+ for israeli-bank-scrapers. Works with Claude Code, Cursor, and other compatible agents.
 ---
 
 
