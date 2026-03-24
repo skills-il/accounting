@@ -1,0 +1,39 @@
+{
+  "author": "Tura2",
+  "version": "1.0.0",
+  "category": "accounting",
+  "tags": {
+    "he": [
+      "איקאונט",
+      "חשבוניות",
+      "הנהלת-חשבונות",
+      "מע״מ",
+      "ישראל",
+      "חשבונאות"
+    ],
+    "en": [
+      "icount",
+      "invoicing",
+      "accounting",
+      "vat",
+      "israel",
+      "finance"
+    ]
+  },
+  "display_name": {
+    "he": "iCount",
+    "en": "iCount"
+  },
+  "display_description": {
+    "he": "מומחה לאינטגרציה עם iCount API — יצירת חשבוניות, ניהול לקוחות, תיעוד הוצאות ואוטומציה פיננסית לעסקים ישראליים",
+    "en": "iCount accounting API expert for Israeli businesses — create invoices, manage clients, record expenses, and automate financial workflows"
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex"
+  ]
+}
