@@ -3,7 +3,7 @@ name: israeli-bank-reconciliation
 description: Automates bank reconciliation for Israeli banks (Leumi, Hapoalim, Discount, Mizrahi Tefahot) using the israeli-bank-scrapers library. Matches scraped or imported transactions to invoices and receipts, detects discrepancies, and generates reconciliation reports with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you need to reconcile bank statements against your accounting records, identify missing invoices, or prepare monthly closing reports for Israeli business accounts. Do NOT use for international bank accounts, cryptocurrency wallets, or investment portfolio reconciliation.
 license: MIT
 allowed-tools: Bash(node:*) Bash(npm:*) Bash(npx:*) Bash(python:*) Read Edit Write WebFetch
-compatibility: Requires Node.js 18+ for israeli-bank-scrapers. Works with Claude Code, Cursor, and other compatible agents.
+compatibility: Requires Node.js 22.12.0+ for israeli-bank-scrapers. Works with Claude Code, Cursor, and other compatible agents.
 ---
 
 
@@ -259,4 +259,4 @@ Solution: Convert the file to UTF-8 before parsing: `iconv -f WINDOWS-1255 -t UT
 
 ### Error: "Amount mismatch: bank shows -X but accounting shows -Y"
 Cause: Rounding differences in currency conversion, VAT calculations, or installment splitting can cause small discrepancies between bank amounts and accounting entries.
-Solution: Configure the matching tolerance threshold. For shekel amounts, a tolerance of 1.00 ILS handles most rounding cases. For transactions involving foreign currency conversion, increase tolerance to 5.00 ILS. If discrepancies are systematic, check whether VAT (17% in Israel) is included in bank amounts but excluded in accounting entries.
+Solution: Configure the matching tolerance threshold. For shekel amounts, a tolerance of 1.00 ILS handles most rounding cases. For transactions involving foreign currency conversion, increase tolerance to 5.00 ILS. If discrepancies are systematic, check whether VAT (18% in Israel) is included in bank amounts but excluded in accounting entries.
