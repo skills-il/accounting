@@ -270,7 +270,7 @@ Green Invoice handles VAT automatically based on business type:
 
 | Code | Hebrew | English | VAT Behavior |
 |------|--------|---------|-------------|
-| 1 | עוסק מורשה | Licensed Dealer (Osek Murshe) | VAT added (18% as of 2025) |
+| 1 | עוסק מורשה | Licensed Dealer (Osek Murshe) | VAT added (18% as of 2026) |
 | 2 | חברה בע"מ | Ltd. Company | VAT added |
 | 3 | עוסק פטור | Exempt Dealer (Osek Patur) | No VAT |
 | 4 | עמותה | Non-Profit (Amuta) | No VAT |
@@ -401,13 +401,30 @@ Result: All new documents automatically downloaded and organized by type and mon
 - `references/api-reference.md` -- Complete Green Invoice API endpoint reference with request/response schemas, all enum codes, and payload examples. Consult when building API integrations or debugging request formats.
 - `references/document-workflows.md` -- Common Israeli business document workflows: freelancer billing, retainer invoicing, refund flows, multi-currency billing, and e-commerce integration patterns. Consult when designing invoicing automation or choosing the correct document type sequence.
 
+## Recommended MCP Servers
+
+| MCP | What It Adds |
+|-----|-------------|
+| [BOI Exchange Rates](https://agentskills.co.il/he/mcps/boi-exchange) | Official Bank of Israel exchange rates for multi-currency invoice calculations. Green Invoice uses BOI rates by default when `currencyRate` is not specified. |
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Green Invoice API Docs (Apiary) | https://greeninvoice.docs.apiary.io/ | Endpoint schemas, request/response formats |
+| Green Invoice In-App API | https://app.greeninvoice.co.il/api | Interactive API explorer |
+| Israel Tax Authority (VAT rates) | https://www.gov.il/he/departments/israel_tax_authority | Current VAT rate, business type rules |
+| SHAAM E-Invoice System | https://www.gov.il/he/service/invoice-allocation-number | Allocation number requirements for B2B invoices over NIS 5,000 |
+| Bank of Israel Exchange Rates | https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/ | Daily representative rates used by Green Invoice for multi-currency documents |
+
 ## Gotchas
 
 - Green Invoice was rebranded to "Morning" but the API domain remains `api.greeninvoice.co.il`. Agents may search for a "Morning API" that does not exist under that name.
 - The most common document type for Israeli clients paying immediately is type 320 (Tax Invoice-Receipt), not type 305 (Tax Invoice). Agents may default to 305 because it sounds like the standard invoice type.
 - Osek Patur (exempt dealer) businesses cannot issue Tax Invoices (type 305). Agents may not check the business type before selecting a document type, causing API errors.
-- VAT rate in Israel is 18% as of 2025, not 17%. The rate changed and agents trained on older data may use the outdated 17% figure in calculations.
+- VAT rate in Israel is 18% as of 2026, not 17%. The rate changed in January 2025 and agents trained on older data may use the outdated 17% figure in calculations.
 - Payment type code 10 covers Israeli payment apps (Bit, Pepper Pay, PayBox), which are extremely common in Israel. Agents may not know these apps exist and default to bank transfer or credit card only.
+- Starting June 2026, B2B tax invoices exceeding NIS 5,000 require a SHAAM allocation number (mispar haktzaa) from the Tax Authority. Green Invoice handles SHAAM integration internally for supported document types, but agents should warn users about this requirement when creating large B2B invoices. This skill does not cover SHAAM compliance directly (use israeli-e-invoice for that).
 
 ## Troubleshooting
 

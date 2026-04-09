@@ -81,7 +81,7 @@ Use in all subsequent requests: `Authorization: Bearer <token>`
       "price": 100.00,
       "currency": "ILS",
       "currencyRate": 1.0,
-      "vatRate": 0.17,
+      "vatRate": 0.18,
       "vatType": 0,
       "itemId": "string (optional, reference to catalog)"
     }
