@@ -27,7 +27,7 @@ Determine which type of bookkeeping entry is needed:
 Check whether the business is:
 
 - **Osek Murshe (authorized dealer)**: Uses double-entry bookkeeping (hanhala kfula). Must charge and report VAT. Uses the full Israeli chart of accounts.
-- **Osek Patur (exempt dealer)**: Uses single-entry bookkeeping (hanhala pshuta). Does not charge VAT. Revenue under the annual threshold (currently ~120,000 ILS for services).
+- **Osek Patur (exempt dealer)**: Uses single-entry bookkeeping (hanhala pshuta). Does not charge VAT. Revenue under the annual threshold (122,833 ILS for 2026).
 
 ### Step 3: Apply the Israeli Chart of Accounts (Matkonet Heshbonot)
 
@@ -59,19 +59,24 @@ Always verify the entry balances (hova = zchut).
 
 ### Step 5: Handle Payroll Entries (Pkudat Sachar)
 
-For salary journal entries, calculate all components:
+For salary journal entries, calculate all components using tiered rates. The threshold between reduced and full rates is 60% of average wage.
 
-**Employee deductions (nikuyim me'oved):**
-- Income tax (mas hachnasa): Based on tax brackets, typically 10-50%
-- Bituach leumi employee (BL oved): 3.5% up to threshold, 12% above (2024 rates)
-- Health insurance (mas briut): 3.1% up to threshold, 5% above
+**2026 rates (threshold: 7,703 ILS/month, max insurable income: 51,910 ILS/month):**
+
+| Component | Reduced (up to 7,703) | Full (7,703 to 51,910) |
+|-----------|----------------------|------------------------|
+| Bituach leumi employee (BL oved) | 1.04% | 7.00% |
+| Health insurance employee (mas briut) | 3.23% | 5.17% |
+| **Total employee deduction** | **4.27%** | **12.17%** |
+| Bituach leumi employer (BL ma'asik) | 4.51% | 7.60% |
+
+Rates are tiered: the reduced rate applies to the portion of salary up to the threshold, and the full rate applies to the portion above. Do NOT apply a flat rate to the entire salary.
+
+**Additional payroll components (not tiered):**
 - Pension employee contribution (pension oved): 6% of pensionable salary
-- Keren hishtalmut employee (KH oved): 2.5% of salary (optional, common)
-
-**Employer costs (avlaot ma'asik):**
-- Bituach leumi employer (BL ma'asik): 3.80% up to threshold, 7.6% above
 - Pension employer contribution (pension ma'asik): 6.5% of pensionable salary
 - Severance provision (pitsuyim): 8.33% (1/12 of annual salary)
+- Keren hishtalmut employee (KH oved): 2.5% of salary (optional, common)
 - Keren hishtalmut employer (KH ma'asik): 7.5% of salary
 
 ### Step 6: Handle VAT Entries
@@ -82,7 +87,7 @@ For Osek Murshe businesses:
 - **Purchase invoice**: Debit Expense + Debit Input VAT (240), Credit Accounts Payable (340)
 - **VAT clearing (monthly/bi-monthly)**: Debit Output VAT (810), Credit Input VAT (240), Credit/Debit VAT Payable (820)
 
-Current VAT rate: 18% (as of 2025).
+Current VAT rate: 18% (since January 2025).
 
 ### Step 7: Handle Asset Depreciation (Phat)
 
@@ -102,55 +107,55 @@ Depreciation is calculated on a straight-line basis (shitat hakav hayashar). Mon
 
 ### Example 1: Monthly Payroll Entry
 
-User says: "Create a journal entry for January 2025 salary payment for an employee earning 15,000 ILS gross"
+User says: "Create a journal entry for January 2026 salary payment for an employee earning 15,000 ILS gross"
 
-**Calculation breakdown:**
+**Calculation breakdown (2026 rates, threshold 7,703 ILS):**
 
 Employee gross salary: 15,000 ILS
 
 Employee deductions:
 - Income tax (mas hachnasa): 1,500 ILS (estimated, depends on credits)
-- Bituach leumi employee: 525 ILS (3.5%)
-- Health insurance (mas briut): 465 ILS (3.1%)
+- Bituach leumi employee: 7,703 x 1.04% + 7,297 x 7.00% = 80 + 511 = 591 ILS
+- Health insurance (mas briut): 7,703 x 3.23% + 7,297 x 5.17% = 249 + 377 = 626 ILS
 - Pension employee: 900 ILS (6%)
 - Keren hishtalmut employee: 375 ILS (2.5%)
-- Total deductions: 3,765 ILS
-- Net salary (sachar neto): 11,235 ILS
+- Total deductions: 3,992 ILS
+- Net salary (sachar neto): 11,008 ILS
 
 Employer costs:
-- Bituach leumi employer: 570 ILS (3.80%)
+- Bituach leumi employer: 7,703 x 4.51% + 7,297 x 7.60% = 347 + 555 = 902 ILS
 - Pension employer: 975 ILS (6.5%)
 - Severance provision: 1,250 ILS (8.33%)
 - Keren hishtalmut employer: 1,125 ILS (7.5%)
-- Total employer cost on top of gross: 3,920 ILS
+- Total employer cost on top of gross: 4,252 ILS
 
 **Journal entry (pkudat yoman):**
 
 ```
-Date: 31/01/2025
-Reference: PAYROLL-2025-01
-Description: January 2025 salary - Employee Name
+Date: 31/01/2026
+Reference: PAYROLL-2026-01
+Description: January 2026 salary - Employee Name
 
 Debit (hova):
   600  Salary expense (hotsa'ot sachar)              15,000.00
-  601  BL employer expense (BL ma'asik)                 570.00
+  601  BL employer expense (BL ma'asik)                 902.00
   602  Pension employer expense (pension ma'asik)        975.00
   603  Severance expense (pitsuyim)                   1,250.00
   604  KH employer expense (KH ma'asik)               1,125.00
-                                          Total:     18,920.00
+                                          Total:     19,252.00
 
 Credit (zchut):
-  210  Bank (bank) - net payment                     11,235.00
+  210  Bank (bank) - net payment                     11,008.00
   710  Income tax payable (mas hachnasa)              1,500.00
-  720  BL payable (employee + employer)               1,095.00
-  730  Health insurance payable (mas briut)              465.00
+  720  BL payable (employee + employer)               1,493.00
+  730  Health insurance payable (mas briut)              626.00
   740  Pension payable (employee + employer)           1,875.00
   750  KH payable (employee + employer)               1,500.00
   760  Severance fund payable (pitsuyim)              1,250.00
-                                          Total:     18,920.00
+                                          Total:     19,252.00
 ```
 
-Result: Balanced double-entry journal entry with all Israeli payroll components properly allocated. The entry separates employee deductions from employer costs and creates proper liabilities for statutory payments.
+Result: Balanced double-entry journal entry with all Israeli payroll components properly allocated. BL and health are calculated using tiered rates (reduced up to 7,703 ILS, full above). The entry separates employee deductions from employer costs and creates proper liabilities for statutory payments.
 
 ### Example 2: Sales Invoice with VAT
 
@@ -164,8 +169,8 @@ User says: "Record a sales invoice for consulting services, 10,000 ILS plus VAT"
 **Journal entry:**
 
 ```
-Date: 15/01/2025
-Reference: INV-2025-0042
+Date: 15/01/2026
+Reference: INV-2026-0042
 Description: Consulting services invoice - Client Name
 
 Debit (hova):
@@ -186,8 +191,8 @@ User says: "We bought a computer server for 24,000 ILS plus VAT. Show the purcha
 **Purchase entry:**
 
 ```
-Date: 05/01/2025
-Reference: PO-2025-008
+Date: 05/01/2026
+Reference: PO-2026-008
 Description: Server purchase - Vendor Name
 
 Debit (hova):
@@ -202,8 +207,8 @@ Credit (zchut):
 **Monthly depreciation entry (33% annual rate):**
 
 ```
-Date: 31/01/2025
-Reference: DEP-2025-01
+Date: 31/01/2026
+Reference: DEP-2026-01
 Description: Monthly depreciation - Server
 
 Debit (hova):
@@ -223,9 +228,9 @@ Result: Asset recorded at cost (excluding VAT which is recoverable). Depreciatio
 User says: "Prepare the bi-monthly VAT clearing entry. Output VAT collected: 45,000 ILS. Input VAT paid: 32,000 ILS."
 
 ```
-Date: 15/03/2025
-Reference: VAT-2025-0102
-Description: VAT clearing for January-February 2025
+Date: 15/03/2026
+Reference: VAT-2026-0102
+Description: VAT clearing for January-February 2026
 
 Debit (hova):
   810  Output VAT (maam etsot)                       45,000.00
@@ -242,9 +247,21 @@ Result: Output VAT liability cleared against input VAT credit. Net VAT payable o
 
 - Israeli bookkeeping uses a specific chart of accounts convention that differs from US GAAP chart numbering. Account numbers in the 1xxx range typically represent assets in Israeli systems, not revenue. Agents may apply US-style account numbering.
 - Payroll journal entries in Israel must include separate lines for pension (6%+6.5%), keren hishtalmut (2.5%+7.5%), Bituach Leumi (employer+employee), and health tax. Agents may produce simplified entries missing mandatory statutory components.
-- Israeli double-entry bookkeeping requires VAT input (maam tsmoot) and VAT output (maam atsaot) to be tracked in separate accounts for bi-monthly reporting. Agents may combine them into a single VAT account.
+- BL and health rates are tiered, not flat. The reduced rate applies only to the portion of salary up to the threshold (7,703 ILS for 2026), with the full rate on income above that. Agents may apply a flat rate to the entire salary, producing incorrect amounts.
+- Israeli double-entry bookkeeping requires VAT input (maam tsurot) and VAT output (maam etsot) to be tracked in separate accounts for bi-monthly reporting. Agents may combine them into a single VAT account.
 - The Israeli fiscal year can differ from the calendar year for companies. Agents may assume January-December when the company uses a different fiscal year-end.
-- Withholding tax (nikui bamakkor) rules differ based on whether the payee has a tax exemption certificate (ptor nikui bamakkor). Agents may apply withholding universally without checking for exemptions.
+- Withholding tax (nikui bamakhor) rules differ based on whether the payee has a tax exemption certificate (ptor nikui bamakhor). Agents may apply withholding universally without checking for exemptions.
+- BL/health rates and thresholds change annually (tied to average wage). Always verify current year figures before generating entries. Using prior-year rates produces incorrect deduction amounts.
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Bituach Leumi employer circular | btl.gov.il (Igeret LeMa'asik annual circular) | BL and health rates, thresholds, max insurable income |
+| Kolzchut - BL for salaried workers | kolzchut.org.il/he/דמי_ביטוח_לאומי_לעובד_שכיר | Employee/employer rate breakdown, threshold amounts |
+| Israeli Tax Authority - depreciation | mas.gov.il | Approved depreciation rates by asset type |
+| Kolzchut - Osek Patur | kolzchut.org.il/he/עוסק_פטור | Annual revenue threshold, VAT exemption rules |
+| Pensuni - tax ceilings | pensuni.com | Pension ceilings, keren hishtalmut limits, tax brackets |
 
 ## Troubleshooting
 
@@ -270,4 +287,4 @@ Solution: Always reference the Israeli Tax Authority (rashut hamisim) depreciati
 
 Cause: Recording only the employee's bituach leumi deduction without the separate employer contribution. The employer portion is an additional cost above gross salary.
 
-Solution: Always record both portions. The employee portion (3.5%/12%) is deducted from gross salary and reduces net pay. The employer portion (3.80%/7.6%) is an additional expense above gross salary. Both are credited to the same BL payable account (720) for remittance to Bituach Leumi.
+Solution: Always record both portions. The employee BL (1.04%/7.00%) is deducted from gross salary and reduces net pay. The employer BL (4.51%/7.60%) is an additional expense above gross salary. Both are credited to the same BL payable account (720) for remittance to Bituach Leumi.
