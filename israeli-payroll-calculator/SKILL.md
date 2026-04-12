@@ -93,8 +93,8 @@ Result: Side-by-side comparison accounting for car tax benefit (shovi rechev)
 - `scripts/calculate_payroll.py` — Calculates Israeli gross-to-net salary with progressive income tax brackets, Bituach Leumi, health tax, and pension contributions. Supports employee and employer cost views. Run: `python scripts/calculate_payroll.py --help`
 
 ### References
-- `references/tax-brackets.md` — 2025 Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
-- `references/bituach-leumi-rates.md` — 2025 Bituach Leumi (National Insurance) and health tax rates for employees and employers, covering both the reduced bracket (up to 7,522 NIS) and full bracket (up to 50,695 NIS). Consult when calculating NI and health deductions in Step 3.
+- `references/tax-brackets.md` — Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. The 2025-2027 brackets are frozen per Knesset legislation. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
+- `references/bituach-leumi-rates.md` — Bituach Leumi (National Insurance) and health tax rates for employees and employers, covering the reduced and full brackets and the monthly insurable salary ceiling. These figures update periodically; verify the current-year values against btl.gov.il before relying on exact amounts.
 - `references/credit-points.md` — Israeli tax credit points (nekudot zikui) value and full eligibility table covering base credits, gender, new immigrants, children, single parents, and disability. Consult when determining a taxpayer's total credit points beyond the defaults in Step 1.
 
 ## Gotchas
@@ -108,8 +108,8 @@ Result: Side-by-side comparison accounting for car tax benefit (shovi rechev)
 ## Troubleshooting
 
 ### Error: "Tax brackets may be outdated"
-Cause: Tax brackets update annually (usually January 1)
-Solution: Verify current brackets at Tax Authority website. Skill uses 2025 brackets -- check references/tax-brackets.md for updates.
+Cause: Tax brackets update annually (usually January 1). Israeli income tax brackets were frozen by legislation for 2025-2027.
+Solution: Verify current brackets at the Tax Authority website (mas.gov.il). Bituach Leumi tiers update annually and should be cross-checked against btl.gov.il -- see references/bituach-leumi-rates.md for the values used in this skill.
 
 ### Error: "Credit points don't match"
 Cause: Various life circumstances affect credit points
