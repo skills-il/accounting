@@ -3,38 +3,6 @@ name: icount
 description: iCount accounting API expert for Israeli businesses. Use this skill whenever working with iCount — creating invoices, managing clients, recording expenses, looking up payments, syncing financial data, or integrating iCount with other systems. Trigger on any mention of iCount, Israeli invoices, חשבוניות, icount API, financial sync, or creating any document (invoice/receipt/quote). Also trigger when the user mentions "create an invoice", "add a client", "record a payment", or any financial automation task for an Israeli business.
 license: MIT
 compatibility: Requires network access for iCount API calls (api.icount.co.il). API key obtained from iCount dashboard under Settings → API. Works with Claude Code, Claude.ai, Cursor.
-metadata:
-  author: Tura2
-  version: 1.0.0
-  category: accounting
-  tags:
-    he:
-      - איקאונט
-      - חשבוניות
-      - הנהלת-חשבונות
-      - מע״מ
-      - ישראל
-      - חשבונאות
-    en:
-      - icount
-      - invoicing
-      - accounting
-      - vat
-      - israel
-      - finance
-  display_name:
-    he: iCount
-    en: iCount
-  display_description:
-    he: מומחה לאינטגרציה עם iCount API — יצירת חשבוניות, ניהול לקוחות, תיעוד הוצאות ואוטומציה פיננסית לעסקים ישראליים
-    en: iCount accounting API expert for Israeli businesses — create invoices, manage clients, record expenses, and automate financial workflows
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
 ---
 
 # iCount API Skill

@@ -1,4 +1,5 @@
 {
+  "name": "icount",
   "author": "Tura2",
   "version": "1.0.0",
   "category": "accounting",
@@ -34,6 +35,8 @@
     "github-copilot",
     "windsurf",
     "opencode",
-    "codex"
+    "codex",
+    "antigravity",
+    "gemini-cli"
   ]
 }

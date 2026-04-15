@@ -40,7 +40,7 @@ def icount_post(endpoint, data=None):
     return resp.json()
 
 print("Testing iCount API connection...")
-print(f"Key: {API_KEY[:8]}...")
+print(f"Key: {API_KEY[:4]}...")
 
 # Test 1: list clients (lightweight call)
 result = icount_post("client/get_list")

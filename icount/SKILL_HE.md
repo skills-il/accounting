@@ -3,38 +3,6 @@ name: icount
 description: מומחה ל-iCount API לעסקים ישראליים. השתמש בסקיל זה בכל פעם שעובדים עם iCount — יצירת חשבוניות, ניהול לקוחות, תיעוד הוצאות, חיפוש תשלומים, סנכרון נתונים פיננסיים, או אינטגרציה של iCount עם מערכות אחרות. הפעל בכל אזכור של iCount, חשבוניות ישראליות, icount API, סנכרון פיננסי, או יצירת מסמך כלשהו (חשבונית/קבלה/הצעת מחיר). הפעל גם כשהמשתמש מזכיר "צור חשבונית", "הוסף לקוח", "תעד תשלום", או כל אוטומציה פיננסית לעסק ישראלי.
 license: MIT
 compatibility: דורש גישת רשת ל-iCount API. מפתח API מתקבל מלוח הבקרה של iCount תחת הגדרות ← API. עובד עם Claude Code, Claude.ai, Cursor.
-metadata:
-  author: Tura2
-  version: 1.0.0
-  category: accounting
-  tags:
-    he:
-      - איקאונט
-      - חשבוניות
-      - הנהלת-חשבונות
-      - מע״מ
-      - ישראל
-      - חשבונאות
-    en:
-      - icount
-      - invoicing
-      - accounting
-      - vat
-      - israel
-      - finance
-  display_name:
-    he: iCount
-    en: iCount
-  display_description:
-    he: מומחה לאינטגרציה עם iCount API — יצירת חשבוניות, ניהול לקוחות, תיעוד הוצאות ואוטומציה פיננסית לעסקים ישראליים
-    en: iCount accounting API expert for Israeli businesses — create invoices, manage clients, record expenses, and automate financial workflows
-  supported_agents:
-    - claude-code
-    - cursor
-    - github-copilot
-    - windsurf
-    - opencode
-    - codex
 ---
 
 # סקיל iCount API
