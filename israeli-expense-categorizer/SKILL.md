@@ -194,6 +194,17 @@ Result: Enriched CSV file ready for accountant import, with flagged items requir
 - Expense categories must match the Israeli Tax Ordinance (pkudat mas hachnasa) classifications. Agents may use generic US-style categories like "Office Supplies" that do not map directly to Israeli tax categories.
 - Mixed personal/business expenses (like a phone used for both) require proportional allocation. Agents may categorize the entire expense as business without applying the required split.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | Recognized expense categories, VAT deduction rules, bookkeeping directive |
+| Income Tax Regulations (Knesset) | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx | Income Tax Ordinance, allowed deductions, depreciation rates |
+| Hashavshevet chart of accounts | https://www.h-erp.co.il | Standard Israeli chart of accounts, account codes, tax codes |
+| Kol Zchut - self-employed taxes | https://www.kolzchut.org.il/he/עובדים_עצמאים | Allowed expenses for self-employed, home office, vehicle expenses |
+| pandas I/O reference | https://pandas.pydata.org/docs/reference/io.html | CSV/Excel import for bank/credit statements, encoding handling |
+
 ## Troubleshooting
 
 ### Error: "Cannot determine deduction percentage for this expense"

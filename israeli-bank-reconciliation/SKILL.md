@@ -243,6 +243,17 @@ Result: Found 34 expense transactions totaling 18,200 ILS without matching invoi
 - Israeli banks use the Sunday-Thursday business week. Transactions on Friday or Saturday are processed on Sunday. Agents may apply Monday-Friday processing assumptions.
 - Credit card settlements in Israel arrive as lump-sum charges from card companies (Isracard, Cal, Max), not individual transactions. Agents may try to match individual purchases against bank statements instead of matching the settlement total.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Bank of Israel | https://www.boi.org.il/en/economic-roles/supervision-and-regulation/ | Proper Conduct Directives, payment standards, bank statement formats |
+| Israel Tax Authority - bookkeeping | https://www.gov.il/he/departments/israel_tax_authority | Bookkeeping directive, VAT reconciliation rules, required journal fields |
+| Association of Banks in Israel | https://www.ibank.org.il/en/ | Member banks list, standard bank codes, payment file formats |
+| pandas I/O reference | https://pandas.pydata.org/docs/reference/io.html | CSV/Excel import for bank statements, date parsing, encoding |
+| openpyxl documentation | https://openpyxl.readthedocs.io/en/stable/ | Writing reconciliation reports in XLSX with styled output |
+
 ## Troubleshooting
 
 ### Error: "Scrape failed: INVALID_PASSWORD"

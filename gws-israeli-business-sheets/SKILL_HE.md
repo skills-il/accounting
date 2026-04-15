@@ -270,6 +270,17 @@ gws sheets append --spreadsheet-id SPREADSHEET_ID --range "Sheet1!A:J" \
 - להוצאות רכב כללי ניכוי מורכבים בישראל (45% או סכום חודשי קבוע, הנמוך מביניהם). סוכנים עלולים להחיל ניכוי של 100%, שיהיה שגוי לרוב העסקים.
 - המע"מ בישראל הוא 18% (נכון ל-2025). סוכנים שאומנו על מידע ישן עלולים להשתמש ב-17%, שהיה השיעור הקודם, ולגרום לחישובים שגויים בכל הגיליון.
 
+
+## קישורי עזר
+
+| מקור | כתובת | מה לבדוק |
+|------|-------|----------|
+| Google Sheets API | https://developers.google.com/sheets/api | Sheets REST API, batchUpdate, פריסות RTL, עיצוב תאים בעברית |
+| Google Apps Script | https://developers.google.com/apps-script | SpreadsheetApp API, פונקציות מותאמות, טריגרים |
+| רשות המסים - שיעורי מע״מ | https://www.gov.il/he/departments/israel_tax_authority | שיעור מע״מ נוכחי, קטגוריות פטורות, לוחות דיווח |
+| בנק ישראל - שערי חליפין | https://www.boi.org.il/roles/markets/exchangerates/ | שערים יציגים יומיים, נתונים היסטוריים לדוחות |
+| gspread (Python) | https://docs.gspread.org | לקוח Python ל-Google Sheets, אימות, פעולות מאצ׳ |
+
 ## פתרון בעיות
 
 ### שגיאה: "gws: command not found"

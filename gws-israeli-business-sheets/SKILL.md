@@ -264,6 +264,17 @@ Result: Three new rows appended to the tracking sheet with proper categorization
 - Car expenses have complex deduction rules in Israel (45% or a fixed monthly amount, whichever is lower). Agents may apply 100% deduction, which would be incorrect for most businesses.
 - Israeli VAT is 18% (as of 2025). Agents trained on older data may use 17%, which was the previous rate, leading to incorrect calculations throughout the spreadsheet.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Google Sheets API | https://developers.google.com/sheets/api | Sheets REST API, batchUpdate, RTL layouts, Hebrew cell formatting |
+| Google Apps Script | https://developers.google.com/apps-script | SpreadsheetApp API, custom functions, triggers |
+| Israel Tax Authority - VAT rates | https://www.gov.il/he/departments/israel_tax_authority | Current VAT rate (17%), exempt categories, reporting schedules |
+| Bank of Israel - exchange rates | https://www.boi.org.il/roles/markets/exchangerates/ | Daily representative exchange rates, historical data for reports |
+| gspread (Python) | https://docs.gspread.org | Python Google Sheets client, authentication, batch operations |
+
 ## Troubleshooting
 
 ### Error: "gws: command not found"
