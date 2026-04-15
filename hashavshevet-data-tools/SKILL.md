@@ -316,6 +316,17 @@ Result: A Rivhit-compatible Excel import file with 234 accounts, a mapping refer
 - Hashavshevet internal currency codes differ from ISO codes: ILS=1, USD=2, EUR=3. Agents may use ISO 4217 currency codes, which Hashavshevet will not recognize during import.
 - When exporting to CSV for Excel, files must use UTF-8 with BOM (utf-8-sig) encoding. Without the BOM, Excel will not display Hebrew characters correctly, showing gibberish instead.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Hashavshevet H-ERP official | https://www.h-erp.co.il | Hashavshevet product versions, file format guides |
+| Israel Tax Authority | https://www.gov.il/en/departments/israel_tax_authority | Digital bookkeeping directive, required journal fields |
+| openpyxl documentation | https://openpyxl.readthedocs.io/en/stable/ | Writing XLSX files from Python, styled export |
+| pandas I/O reference | https://pandas.pydata.org/docs/reference/io.html | CSV/Excel import and export, encoding handling |
+| CP1255 encoding table (unicode.org) | https://unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1255.TXT | Windows-1255 to UTF-8 Hebrew character mapping |
+
 ## Troubleshooting
 
 ### Error: "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9"

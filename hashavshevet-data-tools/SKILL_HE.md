@@ -354,6 +354,17 @@ def validate_account_references(entries: list[dict], accounts: list[dict]) -> li
 - קודי מטבע פנימיים בחשבשבת שונים מקודי ISO: ILS=1, USD=2, EUR=3. סוכנים עלולים להשתמש בקודי ISO 4217, שחשבשבת לא תזהה בייבוא.
 - בייצוא ל-CSV עבור Excel, קבצים חייבים להיות בקידוד UTF-8 עם BOM (utf-8-sig). בלי BOM, Excel לא יציג תווים עבריים כראוי ויראה ג'יבריש.
 
+
+## קישורי עזר
+
+| מקור | כתובת | מה לבדוק |
+|------|-------|----------|
+| חשבשבת H-ERP אתר רשמי | https://www.h-erp.co.il | גרסאות חשבשבת, מדריכי פורמט קבצים |
+| רשות המסים | https://www.gov.il/he/departments/israel_tax_authority | הוראות ניהול ספרים ממוחשב, שדות חובה ביומן |
+| תיעוד openpyxl | https://openpyxl.readthedocs.io/en/stable/ | כתיבת XLSX מפייתון, ייצוא עם עיצוב |
+| pandas I/O reference | https://pandas.pydata.org/docs/reference/io.html | ייבוא וייצוא CSV/Excel, טיפול בקידוד |
+| טבלת קידוד CP1255 (unicode.org) | https://unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1255.TXT | מיפוי תווי עברית Windows-1255 ל-UTF-8 |
+
 ## פתרון בעיות
 
 ### שגיאה: "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9"

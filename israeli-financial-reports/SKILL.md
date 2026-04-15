@@ -257,6 +257,17 @@ Result: A management-oriented P&L comparison report showing quarter-over-quarter
 - The Hebrew financial term "revach golmi" (gross profit) vs. "revach tafuli" (operating profit) vs. "revach naki" (net profit) are distinct concepts. Agents may mistranslate or conflate these terms.
 - Israeli small businesses (osek patur and osek murshe) have different reporting requirements. Agents may apply corporate reporting standards to sole proprietors, generating unnecessarily complex reports.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| IFRS Foundation | https://www.ifrs.org | IFRS standards (Israeli accounting uses IFRS) |
+| Israel Accounting Standards Board | https://www.iasb.org.il | Israeli accounting standards, disclosures |
+| Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | VAT reporting, corporate tax filings |
+| Companies Registrar | https://www.gov.il/he/departments/corporations_authority | Annual financial report obligations |
+| openpyxl documentation | https://openpyxl.readthedocs.io/en/stable/ | Writing styled XLSX reports from Python |
+
 ## Troubleshooting
 
 ### Error: "Trial balance does not balance"

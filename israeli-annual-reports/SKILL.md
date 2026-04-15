@@ -79,6 +79,17 @@ Result: Side-by-side comparison of two Israeli banks' financial performance
 - The Hebrew term "maazan" refers to the balance sheet, not "balance" in the general sense. Agents may mistranslate Hebrew financial terms, confusing "revach naki" (net profit) with "revach golmi" (gross profit).
 - Annual report filing deadline is 3 months after fiscal year-end, and quarterly is 2 months. Agents may apply US SEC deadlines (60 days for accelerated filers) which do not match Israeli requirements.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Israel Securities Authority (ISA) | https://www.isa.gov.il | Disclosure rules, periodic reporting obligations |
+| MAYA disclosure system | https://maya.tase.co.il | Live filings index, search by company |
+| Tel Aviv Stock Exchange | https://www.tase.co.il | Listed companies, indices, filing types |
+| IFRS Foundation | https://www.ifrs.org | IFRS standards (Israel applies full IFRS) |
+| Companies Registrar | https://www.gov.il/he/departments/corporations_authority | Company filings, annual report obligations |
+
 ## Troubleshooting
 
 ### Error: "Cannot find report on MAYA system"

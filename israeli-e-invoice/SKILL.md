@@ -113,6 +113,17 @@ Result: Credit invoice referencing original, with correct VAT reversal
 - Israeli e-invoice XML schemas follow SHAAM-specific standards, not the European Peppol or UBL formats. Agents may attempt to use international e-invoice standards that are not accepted by the Israeli Tax Authority.
 - Credit notes (cheshbonit zikui) in Israel must reference the original invoice number. Agents may generate standalone credit notes without the required linkage.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Israel Tax Authority – e-invoice | https://www.gov.il/he/departments/israel_tax_authority | Allocation number rules, invoice format, rollout schedule |
+| SHAAM technical portal | https://www.misim.gov.il | Allocation number API, technical specs |
+| Knesset – VAT Law | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx | Value Added Tax Law, invoice obligations |
+| ITA invoicing guidance | https://www.gov.il/he/departments/publications/reports/invoices_israel | Types of invoices (300/305/310/320/330), required fields |
+| Kol Zchut – invoice rules | https://www.kolzchut.org.il/he | Plain-language duties for small businesses |
+
 ## Troubleshooting
 
 ### Error: "Invalid TIN format"

@@ -225,6 +225,17 @@ Result: Complete JSON with tax-relevant notes for the accountant.
 - Thermal receipt paper degrades quickly in Israeli summer heat. OCR quality on faded receipts drops significantly, especially for Hebrew characters that are smaller and denser than Latin text.
 - Israeli business numbers (mispar osek) on receipts are 9 digits with a check digit. Agents may extract partial numbers or not validate the check digit, leading to incorrect business identification.
 
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Tesseract OCR | https://github.com/tesseract-ocr/tesseract | Hebrew language data, OCR quality tuning |
+| EasyOCR | https://github.com/JaidedAI/EasyOCR | Multi-language OCR, Hebrew support |
+| Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | Tax invoice fields, osek murshe validation, VAT rules |
+| Kol Zchut | https://www.kolzchut.org.il/he | Required receipt fields, small business obligations |
+| Pillow (PIL) | https://pillow.readthedocs.io/en/stable/ | Image preprocessing for OCR (rotation, deskew) |
+
 ## Troubleshooting
 
 ### Error: "Unable to read Hebrew text from image"
