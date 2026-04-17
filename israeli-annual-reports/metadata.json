@@ -25,7 +25,7 @@
     "en": "Israeli Annual Reports"
   },
   "display_description": {
-    "he": "ניתוח דוחות שנתיים, דיווחים כספיים ודרישות רגולטוריות של חברות ישראליות. שימוש כשצריך לקרוא דוח תקופתי, להבין מונחים פיננסיים בעברית, לנתח דיווחי מאיה, או להבין את דרישות חוק החברות.",
+    "he": "ניתוח דוחות שנתיים, דיווחים כספיים ודרישות רגולטוריות של חברות ישראליות. תשתמשו כשצריך לקרוא דוח תקופתי, להבין מונחים פיננסיים בעברית, לנתח דיווחי מאיה, או להכיר את דרישות חוק החברות.",
     "en": "Navigate and analyze Israeli corporate annual reports (dochot titkuftiim), financial filings, and regulatory disclosures. Use when user asks about Israeli annual reports, MAYA filings, IFRS financial statements, doch titkufti, dochot kaspiyim, or Companies Law reporting requirements. Covers TASE filing types, Israeli GAAP to IFRS transition, Hebrew financial terminology, and key financial statement analysis."
   },
   "supported_agents": [

@@ -25,7 +25,7 @@
     "en": "Hashavshevet Data Tools"
   },
   "display_description": {
-    "he": "ייבוא וייצוא נתונים בין תוכנת חשבשבת לפורמטים מודרניים כמו JSON, CSV ו-Excel, כולל המרת קידוד עברית והעברת נתונים למערכות ענן",
+    "he": "ייבוא וייצוא נתונים בין תוכנת חשבשבת לפורמטים מודרניים כמו JSON, CSV ו-Excel, כולל המרת קידוד עברית והעברת נתונים למערכות ענן.",
     "en": "Import and export data between Hashavshevet accounting software and modern formats (JSON, CSV, Excel). Use when you need to extract journal entries, chart of accounts, trial balances, or customer/supplier lists from Hashavshevet, import bank transactions and invoices into Hashavshevet format, migrate data from Hashavshevet to cloud-based solutions (iCount, Rivhit, Invoice4U), or handle Hebrew encoding conversions (Windows-1255 to UTF-8). Supports Hashavshevet Gold, Hashavshevet 2000+, and newer versions. Validates data integrity during import/export operations. Do NOT use for real-time Hashavshevet API integrations, direct database modifications, or live bookkeeping within Hashavshevet."
   },
   "supported_agents": [
