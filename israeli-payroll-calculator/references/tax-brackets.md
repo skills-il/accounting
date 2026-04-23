@@ -1,4 +1,7 @@
-# Israeli Income Tax Brackets (2025)
+# Israeli Income Tax Brackets (2026)
+
+Note: Brackets are frozen 2025-2027 by Knesset legislation. Values below apply unchanged for 2026.
+
 
 ## Annual Brackets
 | Bracket | Annual Income (NIS) | Tax Rate |
@@ -28,7 +31,7 @@
 - Effectively creates a 50% + 3% = 53% marginal rate for very high earners
 
 ## Tax Credit Points (Nekudot Zikui)
-Value per point (2025): **2,904 NIS/year** (~242 NIS/month)
+Value per point (2026): **2,904 NIS/year** (~242 NIS/month)
 
 | Circumstance | Points |
 |-------------|--------|

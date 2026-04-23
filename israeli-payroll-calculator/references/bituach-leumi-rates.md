@@ -1,24 +1,27 @@
-# Bituach Leumi (National Insurance) Rates — 2025
+# Bituach Leumi (National Insurance) Rates — 2026
 
 ## Employee Rates
 
 ### Reduced Bracket (up to 7,522 NIS/month)
 | Component | Employee | Employer |
 |-----------|----------|----------|
-| National Insurance | 0.40% | 3.80% |
-| Health Tax | 3.10% | 3.40% |
-| **Total** | **3.50%** | **7.20%** |
+| National Insurance | 0.40% | 3.45% |
+| Health Tax | 3.10% | 0.00% |
+| **Total** | **3.50%** | **3.45%** |
 
-### Full Bracket (7,523 - 50,695 NIS/month)
+### Full Bracket (7,523 - 51,910 NIS/month)
 | Component | Employee | Employer |
 |-----------|----------|----------|
 | National Insurance | 7.00% | 7.60% |
-| Health Tax | 5.00% | 3.45% |
-| **Total** | **12.00%** | **11.05%** |
+| Health Tax | 5.00% | 0.00% |
+| **Total** | **12.00%** | **7.60%** |
+
+Note: Health tax is an employee-only deduction in Israel. Employers do not contribute to health tax (mas briut).
 
 ### Maximum Insurable Salary
-- 50,695 NIS/month (2025)
+- 51,910 NIS/month (2026, up from 50,695 in 2025)
 - Salary above this amount: no additional NI/health deductions
+- The reduced-tier threshold (7,522) and the max ceiling (51,910) are both updated on January 1 each year by Bituach Leumi.
 
 ## Self-Employed Rates
 
@@ -36,7 +39,15 @@
 - New immigrants: 12-month exemption from NI (not health)
 - Income below minimum: Minimum payment still required
 
+## Shovi Rechev (Company Car Use Value)
+- Shovi rechev is subject to NI and health tax on the employee side (employee pays NI and health on the taxable gross = cash + shovi rechev).
+- Employer NI also applies to shovi rechev.
+- Shovi rechev is NOT part of the pension-insurable salary.
+
 ## Payment
 - Employee: Deducted from salary by employer
 - Self-employed: Quarterly advance payments, annual reconciliation
 - Late payment: Interest and linkage differentials apply
+
+## Source
+- https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx (authoritative)

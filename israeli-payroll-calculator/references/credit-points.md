@@ -1,4 +1,4 @@
-# Israeli Tax Credit Points (Nekudot Zikui) — 2025
+# Israeli Tax Credit Points (Nekudot Zikui) — 2026
 
 ## Value
 Each credit point = **2,904 NIS/year** (approximately 242 NIS/month)

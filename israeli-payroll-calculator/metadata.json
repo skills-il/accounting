@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "category": "accounting",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Israeli Payroll Calculator"
   },
   "display_description": {
-    "he": "חישוב משכורת כולל מס הכנסה, ביטוח לאומי, פנסיה והפרשות",
-    "en": "Calculate Israeli payroll including income tax, Bituach Leumi (National Insurance), health tax, pension contributions, and net salary. Use when user asks to calculate salary, \"tlush maskoret\", payroll deductions, \"bruto to neto\", employer cost, tax credits (nekudot zikui), or needs help understanding Israeli payslip items. Covers employees, freelancers (atzmai), and employer cost calculations. Do NOT use for US, UK, or other countries' payroll calculations."
+    "he": "חישוב משכורת ישראלית מברוטו לנטו: מס הכנסה, ביטוח לאומי, מס בריאות, פנסיה ושווי רכב. מטפל נכון בשווי רכב כהכנסה זקופה חייבת (לא כהטבה) כדי לא לעוות את הנטו באלפי שקלים. השתמשו כשצריך תלוש, ברוטו-לנטו, עלות מעסיק, נקודות זיכוי או חישוב עם רכב צמוד. לא לשימוש לחישובי שכר של ארה\"ב, בריטניה או מדינות אחרות.",
+    "en": "Calculate Israeli payroll including income tax, Bituach Leumi (National Insurance), health tax, pension contributions, shovi rechev (company-car use value), and net salary. Use when user asks to calculate salary, \"tlush maskoret\", payroll deductions, \"bruto to neto\", employer cost, tax credits (nekudot zikui), company car impact on salary, or needs help understanding Israeli payslip items. Covers employees, freelancers (atzmai), and employer cost calculations. Do NOT use for US, UK, or other countries' payroll calculations."
   },
   "supported_agents": [
     "claude-code",
