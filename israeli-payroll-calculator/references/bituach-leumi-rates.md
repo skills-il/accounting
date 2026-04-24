@@ -1,37 +1,60 @@
-# Bituach Leumi (National Insurance) Rates — 2026
+# Bituach Leumi (National Insurance) Rates (2026)
+
+Amendment 252 to the National Insurance Law (effective 1.1.2026) raised the reduced-tier employee rate from 0.4% to 1.04% and the reduced-tier employer rate from 3.55% to 4.51%, and it updated the reduced-tier threshold to 7,703 NIS/month (60% of the 2026 average wage of 13,769 NIS/month). Full-bracket rates also edged up via health-tax re-basing.
 
 ## Employee Rates
 
-### Reduced Bracket (up to 7,522 NIS/month)
+### Reduced Bracket (up to 7,703 NIS/month)
 | Component | Employee | Employer |
 |-----------|----------|----------|
-| National Insurance | 0.40% | 3.45% |
-| Health Tax | 3.10% | 0.00% |
-| **Total** | **3.50%** | **3.45%** |
+| National Insurance | 1.04% | 4.51% |
+| Health Tax | 3.23% | 0.00% |
+| **Total** | **4.27%** | **4.51%** |
 
-### Full Bracket (7,523 - 51,910 NIS/month)
+### Full Bracket (7,704 - 51,910 NIS/month)
 | Component | Employee | Employer |
 |-----------|----------|----------|
 | National Insurance | 7.00% | 7.60% |
-| Health Tax | 5.00% | 0.00% |
-| **Total** | **12.00%** | **7.60%** |
+| Health Tax | 5.17% | 0.00% |
+| **Total** | **12.17%** | **7.60%** |
 
 Note: Health tax is an employee-only deduction in Israel. Employers do not contribute to health tax (mas briut).
 
-### Maximum Insurable Salary
-- 51,910 NIS/month (2026, up from 50,695 in 2025)
-- Salary above this amount: no additional NI/health deductions
-- The reduced-tier threshold (7,522) and the max ceiling (51,910) are both updated on January 1 each year by Bituach Leumi.
+### Maximum Insurable Salary (2026)
+- **51,910 NIS/month** (unchanged from 2025)
+- Salary above this amount: no additional NI or health deductions.
+- The reduced-tier threshold (7,703) is 60% of the average wage and updates each January 1 by CPI through 2028, then by average-wage growth from 2029.
 
-## Self-Employed Rates
+### What Changed vs. 2025
+| Parameter | 2025 | 2026 |
+|-----------|------|------|
+| Reduced-tier threshold | 7,522 | 7,703 |
+| Employee NI (reduced) | 0.40% | 1.04% |
+| Employer NI (reduced) | 3.55% | 4.51% |
+| Employee health (reduced) | 3.10% | 3.23% |
+| Employee health (full) | 5.00% | 5.17% |
+| Employee NI (full) | 7.00% | 7.00% (unchanged) |
+| Employer NI (full) | 7.60% | 7.60% (unchanged) |
+| Max insurable | 50,695 | 51,910 |
 
-### Reduced Bracket (up to ~60% of average wage)
-- National Insurance: 2.87%
-- Health Tax: 3.10%
+### Worked Example (2026)
+Employee, monthly gross 12,000 NIS, no shovi rechev:
+- Reduced portion: 7,703 x 4.27% = 329 NIS
+- Full portion: (12,000 - 7,703) x 12.17% = 4,297 x 12.17% = 523 NIS
+- Total employee NI + health: ~852 NIS/month
 
-### Full Bracket (above ~60% of average wage)
-- National Insurance: 12.83%
-- Health Tax: 5.00%
+(2025 equivalent: 7,522 x 3.5% + 4,478 x 12.0% = 263 + 537 = 800 NIS/month. The shift of 52 NIS/month roughly matches the Calcalist "576 NIS/year extra for employees" figure.)
+
+## Self-Employed Rates (2026)
+Self-employed got a larger hit under Amendment 252 (reduced-tier rates rose sharply). Consult btl.gov.il for exact current rates before computing atzmai payroll.
+
+### Reduced Bracket (up to 7,703 NIS/month)
+- National Insurance: ~5.97% (was 2.87% in 2025)
+- Health Tax: ~3.23%
+
+### Full Bracket (7,704 - 51,910 NIS/month)
+- National Insurance: ~17.83% (was 12.83% in 2025)
+- Health Tax: ~5.17%
 
 ## Exemptions
 - Under age 18: Reduced rates

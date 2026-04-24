@@ -18,12 +18,14 @@ import argparse
 from dataclasses import dataclass
 
 
-# 2026 Israeli Income Tax Brackets (monthly). Frozen 2025-2027 by legislation.
+# 2026 Israeli Income Tax Brackets (monthly).
+# Updated per Amendment 288 (published 31.3.2026, retroactive to 1.1.2026).
+# Brackets 3-5 widened: 20% now up to 19,000; 31% now 19,001-25,100; 35% from 25,101.
 TAX_BRACKETS = [
     (7010, 0.10),
     (10060, 0.14),
-    (16150, 0.20),
-    (22440, 0.31),
+    (19000, 0.20),
+    (25100, 0.31),
     (46690, 0.35),
     (60130, 0.47),
     (float("inf"), 0.50),
@@ -32,17 +34,24 @@ TAX_BRACKETS = [
 # Tax credit point value (monthly, 2026)
 CREDIT_POINT_VALUE = 242  # NIS per month
 
+# Pension tax credit (Zikui Gemel, Section 45a) — 2026
+PENSION_CREDIT_RATE = 0.35              # 35% credit on eligible pension contribution
+PENSION_CREDIT_SALARY_CEILING = 9700    # NIS/month insured-salary ceiling
+PENSION_CREDIT_CONTRIBUTION_RATE = 0.07  # up to 7% of insured salary qualifies
+
 # Bituach Leumi (National Insurance) rates for employees (2026)
-NI_REDUCED_CEILING = 7522       # NIS/month (reduced tier threshold)
+# Per Amendment 252 (effective 1.1.2026): reduced-tier rates raised,
+# reduced-tier threshold now 7,703 (60% of 2026 average wage 13,769).
+NI_REDUCED_CEILING = 7703       # NIS/month (reduced tier threshold, 2026)
 NI_FULL_CEILING = 51910         # NIS/month (max insurable salary, 2026)
-NI_REDUCED_RATE = 0.004         # 0.4% employee NI
-NI_FULL_RATE = 0.07             # 7.0% employee NI
-HEALTH_REDUCED_RATE = 0.031     # 3.1% employee health
-HEALTH_FULL_RATE = 0.05         # 5.0% employee health
+NI_REDUCED_RATE = 0.0104        # 1.04% employee NI (was 0.4% in 2025)
+NI_FULL_RATE = 0.07             # 7.0% employee NI (unchanged)
+HEALTH_REDUCED_RATE = 0.0323    # 3.23% employee health (was 3.1% in 2025)
+HEALTH_FULL_RATE = 0.0517       # 5.17% employee health (was 5.0% in 2025)
 
 # Employer rates (2026)
-EMPLOYER_NI_REDUCED = 0.0345    # 3.45% employer NI (reduced bracket)
-EMPLOYER_NI_FULL = 0.076        # 7.6% employer NI (full bracket)
+EMPLOYER_NI_REDUCED = 0.0451    # 4.51% employer NI reduced bracket (was 3.55%)
+EMPLOYER_NI_FULL = 0.076        # 7.6% employer NI full bracket (unchanged)
 
 # Pension rates (mandatory since 2017)
 PENSION_EMPLOYEE = 0.06         # 6% employee
@@ -57,6 +66,7 @@ class PayrollResult:
     shovi_rechev: float
     taxable_gross: float  # gross + shovi_rechev (base for income tax and NI)
     income_tax: float
+    pension_credit: float  # Section 45a pension tax credit (already netted in income_tax)
     bituach_leumi: float
     health_tax: float
     pension_employee: float
@@ -68,12 +78,39 @@ class PayrollResult:
     total_employer_cost: float = 0.0
 
 
-def calculate_income_tax(taxable_monthly: float, credit_points: float = 2.25) -> float:
+def calculate_pension_credit(
+    insured_salary: float, employee_contribution: float
+) -> float:
+    """Calculate the Section 45a pension tax credit (zikui gemel).
+
+    The employee gets a 35% tax credit on their pension contribution, up to
+    a contribution ceiling of 7% of the insured salary, where the insured
+    salary itself is capped at 9,700 NIS/month (2026).
+
+    Args:
+        insured_salary: The pension-insurable salary (cash gross, excludes shovi rechev).
+        employee_contribution: The employee's actual monthly pension contribution.
+
+    Returns:
+        The tax credit amount in NIS/month. Max ~237.65 NIS/month in 2026.
+    """
+    capped_salary = min(insured_salary, PENSION_CREDIT_SALARY_CEILING)
+    max_qualifying = capped_salary * PENSION_CREDIT_CONTRIBUTION_RATE
+    eligible = min(employee_contribution, max_qualifying)
+    return round(eligible * PENSION_CREDIT_RATE, 2)
+
+
+def calculate_income_tax(
+    taxable_monthly: float,
+    credit_points: float = 2.25,
+    pension_credit: float = 0.0,
+) -> float:
     """Calculate monthly income tax using progressive brackets.
 
     Args:
         taxable_monthly: Monthly taxable income (gross salary + shovi_rechev + other imputed income).
         credit_points: Number of tax credit points (nekudot zikui).
+        pension_credit: Section 45a pension tax credit in NIS/month (see calculate_pension_credit).
 
     Returns:
         Monthly income tax amount in NIS.
@@ -88,9 +125,9 @@ def calculate_income_tax(taxable_monthly: float, credit_points: float = 2.25) ->
         tax += taxable * rate
         prev_ceiling = ceiling
 
-    # Apply credit points (cannot produce negative tax)
+    # Subtract credit points value and pension credit. Tax cannot go negative.
     credit_value = credit_points * CREDIT_POINT_VALUE
-    tax = max(0, tax - credit_value)
+    tax = max(0, tax - credit_value - pension_credit)
 
     return round(tax, 2)
 
@@ -170,12 +207,17 @@ def calculate_payroll(
     """
     taxable_gross = gross_salary + shovi_rechev
 
-    income_tax = calculate_income_tax(taxable_gross, credit_points)
-    ni, health = calculate_bituach_leumi(taxable_gross)
-
     # Pension contributions apply to the pension-insurable salary, which does
     # NOT include shovi_rechev. We use gross_salary as the base here.
     pension_employee = round(gross_salary * PENSION_EMPLOYEE, 2) if has_pension else 0.0
+
+    # Section 45a pension tax credit (zikui gemel): 35% of eligible contribution.
+    pension_credit = (
+        calculate_pension_credit(gross_salary, pension_employee) if has_pension else 0.0
+    )
+
+    income_tax = calculate_income_tax(taxable_gross, credit_points, pension_credit)
+    ni, health = calculate_bituach_leumi(taxable_gross)
 
     # Net cash = gross cash salary minus all deductions. The employee never
     # receives shovi_rechev as cash, so it doesn't appear as an addend here.
@@ -188,6 +230,7 @@ def calculate_payroll(
         shovi_rechev=shovi_rechev,
         taxable_gross=taxable_gross,
         income_tax=income_tax,
+        pension_credit=pension_credit,
         bituach_leumi=ni,
         health_tax=health,
         pension_employee=pension_employee,
@@ -223,8 +266,12 @@ def format_payslip(result: PayrollResult, show_employer: bool = False) -> str:
             f"  Taxable Gross:             {result.taxable_gross:>10,.2f} NIS",
         ])
 
+    lines.append(f"  Income Tax (Mas Hachnasa): -{result.income_tax:>10,.2f} NIS")
+    if result.pension_credit > 0:
+        lines.append(
+            f"    (incl. -{result.pension_credit:.2f} pension credit, sec. 45a)"
+        )
     lines.extend([
-        f"  Income Tax (Mas Hachnasa): -{result.income_tax:>10,.2f} NIS",
         f"  Bituach Leumi (NI):        -{result.bituach_leumi:>10,.2f} NIS",
         f"  Health Tax (Mas Briut):    -{result.health_tax:>10,.2f} NIS",
         f"  Pension (Employee 6%):     -{result.pension_employee:>10,.2f} NIS",
