@@ -36,10 +36,21 @@ Israeli public companies adopted IFRS in 2008. Prior reports use Israeli GAAP. B
 - Tzad Kashur = Related Party
 
 ## Companies Law Requirements
-- Sec. 171: Annual financial statements obligation
-- Sec. 172: Board approval required
-- Sec. 267-269: Audit committee requirements
-- Sec. 270-275: Related party transaction approvals
+- Sec. 171(a) of the **Companies Law 1999**: the board of directors (דירקטוריון) approves annual financial statements.
+- Disclosure of approved statements to shareholders is governed by the **Securities Law 1968** + the **Securities Regulations (Periodic and Immediate Reports) 1970**, NOT by Sec. 172 of the Companies Law (Sec. 172 deals with the audit-committee review). Earlier versions of this skill mis-attributed approval to Sec. 172.
+- Sec. 267-269: Audit-committee requirements
+- Sec. 270-275: Related-party transaction approvals (cross-reference IAS 24 disclosure)
+
+## Filing Systems and Spec Compliance
+- **Magna** (`magna.isa.gov.il`) is the filer-side system used by issuers to submit periodic and immediate reports to the ISA. **MAYA** (`maya.tase.co.il`) is the public-facing viewer of those filings. Don't conflate the two: agents asking "where do I file?" need Magna; agents asking "where do I read?" need MAYA.
+- **ESEF / iXBRL**: ISA mandates structured XBRL filing of periodic reports under a phased rollout (large issuers first). 2026+ filings increasingly arrive as inline-XBRL packages alongside the human-readable PDF.
+- **Reg. 53A (dual-listed)**: Companies dual-listed on a US exchange (Teva, Check Point, NICE, CyberArk, etc.) may file under the **US disclosure regime** instead of the full Israeli regime. Major operational gotcha when comparing dual-listed issuers against Israeli-only issuers — the disclosure scope and timing differ. Note: the Teva example below IS dual-listed.
+
+## Recommended MCP Servers
+
+| MCP | What It Adds |
+|-----|--------------|
+| [`tase-mcp`](https://agentskills.co.il/he/mcps/finance/tase-mcp) | TASE OpenAPI access for securities, indices, EOD prices, MAYA announcements, and management-positions data. Pair this skill with the MCP to fetch live filings instead of scraping MAYA. |
 
 ## Examples
 

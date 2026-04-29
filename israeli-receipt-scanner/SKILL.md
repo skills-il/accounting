@@ -125,7 +125,7 @@ Generate the extracted data in a structured format. Default to JSON:
   ],
   "subtotal": 245.50,
   "vat_rate": 0.18,
-  "vat_amount": 37.44,
+  "vat_amount": 44.19,
   "total": 289.69,
   "currency": "ILS",
   "payment": {
@@ -167,7 +167,7 @@ The user provides an image of a Shufersal receipt. The agent:
 4. Extracts VAT registration: "520044078"
 5. Parses 12 line items including produce, dairy, and packaged goods
 6. Identifies club discount line: "הנחת מועדון: -15.40"
-7. Extracts totals: subtotal 312.80, VAT 47.66, total 369.10
+7. Extracts totals: subtotal 312.80, VAT 56.30, total 369.10
 8. Payment: credit card ending 4532, 1 installment
 9. Auto-categorizes as "groceries" (מזון ומכולת)
 10. Outputs structured JSON with all fields populated
@@ -209,13 +209,21 @@ Result: Complete JSON with tax-relevant notes for the accountant.
 
 ## Bundled Resources
 
-### Scripts
-- `scripts/receipt_parser.py` -- Python utility for batch processing receipt images. Run: `python scripts/receipt_parser.py --help`
-- `scripts/export_csv.py` -- Convert JSON receipt data to CSV format for accounting software import. Run: `python scripts/export_csv.py --input receipts.json --output expenses.csv`
+> **Pending.** Earlier versions of this skill listed `scripts/receipt_parser.py`, `scripts/export_csv.py`, `references/israeli-vat-rates.md`, and `references/receipt-field-glossary.md`, but those files were never shipped. They are noted here for traceability and pending real implementations. For batch OCR today, use vision-LLM (Claude Sonnet vision, GPT-4o, Gemini 2.x) over Tesseract/EasyOCR, with your own shell or Python wrapper.
 
-### References
-- `references/israeli-vat-rates.md` -- Historical Israeli VAT rates and thresholds. Consult when validating VAT calculations on older receipts.
-- `references/receipt-field-glossary.md` -- Hebrew-English glossary of common receipt fields and terms. Consult when encountering unfamiliar Hebrew terms on receipts.
+## Allocation Number Field
+
+For B2B tax invoices at or above the current SHAAM threshold, the printed invoice must include an **allocation number (mispar haktza'a)** alongside the standard tax-invoice fields. Threshold timeline:
+
+- Jan 2025 - Dec 2025: required when net amount > NIS 20,000
+- **Jan 2026 (current): required when net amount > NIS 10,000**
+- Jun 2026 onwards: required when net amount > NIS 5,000
+
+When scanning a B2B tax invoice, extract `allocation_number: string|null` and flag missing values on invoices that exceed the threshold — without an allocation number, the buyer loses input-VAT deduction. Receipts (type 320) and proforma documents do not require allocation numbers.
+
+## Foreign-Vendor Receipts
+
+App Store / Google Play / AWS / Azure / GCP / Stripe / OpenAI / Anthropic and similar foreign-issued receipts are NOT Israeli tax invoices and **cannot be used for VAT input deduction in Israel** without a separate reverse-charge VAT (`mas asakot` self-reporting) workflow. The skill should auto-tag these as foreign-vendor and surface the reverse-charge requirement, not categorize them as standard SaaS expenses.
 
 ## Gotchas
 

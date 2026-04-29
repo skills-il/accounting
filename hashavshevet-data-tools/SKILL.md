@@ -11,13 +11,24 @@ compatibility: Requires Python 3.9+ with openpyxl and chardet libraries
 
 ## Instructions
 
+> **Important — use the official OPENFORMAT/BKMV export, not direct binary parsing.**
+>
+> Hashavshevet does NOT publish public per-byte offsets for its internal `.dat` / `.hsh` / `.mdb` files. The publicly documented and ITA-mandated export from any Israeli bookkeeping software is **OPENFORMAT (קובץ אחיד / BKMV)**, which produces two ASCII files: `INI.TXT` (header / index) and `BKMVDATA.TXT` (data, record types A100, B100, B110, C100, D110, D120, M100, Z900). Spec: <https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf>. Hashavshevet's BKMV export guide: <https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf>. Validate output against the ITA simulator: <https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx>.
+>
+> The fixed-width column maps below (HESHIN_COLUMNS / PKUDOT_COLUMNS) are **best-guess heuristics for legacy Windows installations**, not authoritative specifications. Use them only as a fallback when no OPENFORMAT export is available; never claim them as the canonical Hashavshevet format. For any ITA filing, CPA handoff, or PCN874 / Form 6111 generation, export via OPENFORMAT instead.
+
+> **Hashavshevet בענן (H-WEB / Wizcloud) public REST API.** The cloud version of Hashavshevet exposes a public REST API for documents, accounts, and transactions: <https://home.wizcloud.co.il/help/apidocument/>. Use this for ongoing two-way sync with Green Invoice / Rivhit / iCount instead of one-shot file dumps where possible.
+
+> **2026 SHAAM allocation-number context.** Sales-invoice journal entries created/imported through Hashavshevet for B2B amounts at or above the current threshold must carry an allocation number (mispar haktza'a). Threshold: NIS 10,000 from Jan 2026; drops to NIS 5,000 from Jun 2026. Hashavshevet בענן has built-in real-time SHAAM integration; the Windows version may need a separate workflow.
+
 ### Step 1: Identify the Hashavshevet version and file format
 
 Determine which version of Hashavshevet the user is working with and identify the relevant file formats:
 
-- **Hashavshevet Gold**: Uses `.hsh` proprietary binary format and fixed-width text exports (`.dat`, `.txt`)
-- **Hashavshevet 2000+**: Uses `.mdb` (Access) or `.accdb` databases, with CSV/fixed-width export capability
-- **Newer versions**: Support direct CSV and XML exports via built-in export wizards
+- **Legacy Hashavshevet (Windows, on-prem)**: Uses proprietary databases (Btrieve/Pervasive in older Windows installs, encrypted SQL in newer). Direct binary parsing is unsupported and brittle; use the built-in OPENFORMAT export instead.
+- **Hashavshevet H-ERP (current Windows ERP)**: Standard product line as of 2026. Exports OPENFORMAT/BKMV for ITA + CPA workflows; legacy `.dat` / `.hsh` files may still appear in archives.
+- **Hashavshevet בענן (H-WEB / Wizcloud, SaaS)**: Cloud-native, exports OPENFORMAT directly, plus a public REST API for live integration.
+- "Gold" / "2000+" naming is from 1990s/2000s legacy product lines; H-ERP / H-WEB are the current names.
 
 Common Hashavshevet data files:
 

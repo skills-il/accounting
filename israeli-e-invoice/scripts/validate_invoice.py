@@ -41,7 +41,7 @@ ALLOCATION_THRESHOLDS = [
 # Invoice types that require allocation numbers
 ALLOCATION_REQUIRED_TYPES = {300, 305, 310}
 
-VAT_RATE = 0.17  # 17% as of 2025
+VAT_RATE = 0.18  # 18% effective 2025-01-01 (raised from 17%); held in 2026 budget
 
 
 def validate_tin(tin: str) -> bool:
@@ -139,7 +139,7 @@ def validate_invoice(invoice: dict) -> list:
         if abs(expected_vat - actual_vat) > 0.01:
             errors.append(
                 f"VAT mismatch: expected {expected_vat} NIS "
-                f"(17% of {invoice['net_amount']}), got {actual_vat} NIS"
+                f"(18% of {invoice['net_amount']}), got {actual_vat} NIS"
             )
 
     # Check allocation number requirement

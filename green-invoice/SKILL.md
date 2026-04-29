@@ -414,7 +414,7 @@ Result: All new documents automatically downloaded and organized by type and mon
 | Green Invoice API Docs (Apiary) | https://greeninvoice.docs.apiary.io/ | Endpoint schemas, request/response formats |
 | Green Invoice In-App API | https://app.greeninvoice.co.il/api | Interactive API explorer |
 | Israel Tax Authority (VAT rates) | https://www.gov.il/he/departments/israel_tax_authority | Current VAT rate, business type rules |
-| SHAAM E-Invoice System | https://www.gov.il/he/service/invoice-allocation-number | Allocation number requirements for B2B invoices over NIS 5,000 |
+| SHAAM E-Invoice System | https://www.gov.il/he/service/invoice-allocation-number | Allocation number requirements for B2B invoices. Current threshold (Jan 2026): NIS 10,000 net. Drops to NIS 5,000 in Jun 2026. |
 | Bank of Israel Exchange Rates | https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/ | Daily representative rates used by Green Invoice for multi-currency documents |
 
 ## Gotchas
@@ -424,7 +424,9 @@ Result: All new documents automatically downloaded and organized by type and mon
 - Osek Patur (exempt dealer) businesses cannot issue Tax Invoices (type 305). Agents may not check the business type before selecting a document type, causing API errors.
 - VAT rate in Israel is 18% as of 2026, not 17%. The rate changed in January 2025 and agents trained on older data may use the outdated 17% figure in calculations.
 - Payment type code 10 covers Israeli payment apps (Bit, Pepper Pay, PayBox), which are extremely common in Israel. Agents may not know these apps exist and default to bank transfer or credit card only.
-- Starting June 2026, B2B tax invoices exceeding NIS 5,000 require a SHAAM allocation number (mispar haktzaa) from the Tax Authority. Green Invoice handles SHAAM integration internally for supported document types, but agents should warn users about this requirement when creating large B2B invoices. This skill does not cover SHAAM compliance directly (use israeli-e-invoice for that).
+- **SHAAM allocation number (mispar haktza'a) is already mandatory in 2026.** The current threshold (since Jan 1, 2026) is **B2B tax invoices over NIS 10,000 net** (excluding VAT). The threshold drops to **NIS 5,000 net on Jun 1, 2026**. Without an allocation number on a qualifying B2B invoice, the buyer cannot deduct input VAT. Green Invoice / Morning handles SHAAM integration internally for supported document types — agents should warn users about the requirement when creating large B2B invoices and verify that Green Invoice attached the allocation number on the rendered document. This skill does not cover SHAAM compliance directly (use israeli-e-invoice for that).
+- **Webhook signature verification.** Green Invoice posts an `X-Data-Signature` header on outbound webhooks (HMAC-SHA256 of the raw body). Verify this header server-side before trusting any webhook payload — fall back to a server-to-server lookup of the document by ID if you cannot verify. Without verification, anyone with your webhook URL can spoof success/failure events.
+- **Rate limits.** The API allows roughly 3 requests per second per token before returning HTTP 429. For batch operations, add a queue with backoff; for retry, treat 429 as a soft error and back off exponentially.
 
 ## Troubleshooting
 

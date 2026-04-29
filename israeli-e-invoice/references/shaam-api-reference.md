@@ -1,10 +1,13 @@
 # SHAAM API Reference (Israeli Tax Authority)
 
+> **Verify against official sources before using.** The Israel Tax Authority's OpenAPI portal is the authoritative source. Sandbox: <https://openapi-portal.taxes.gov.il/sandbox/>. Production allocation endpoint base: `https://openapi.taxes.gov.il/shaam/`. Endpoint paths and authentication shape have changed across rollout phases — always confirm against the current ITA OpenAPI v2.0 spec before integrating. The values below are illustrative and may be stale.
+
 ## Authentication
-- **Method:** OAuth2 Client Credentials
-- **Token endpoint:** `POST https://tax.gov.il/oauth/token`
-- **Required:** `client_id`, `client_secret` (obtained from SHAAM developer portal)
-- **Token lifetime:** 60 minutes
+- **Method:** Digital certificate + Client ID / Client Secret issued via the gov.il national-identification certification flow. NOT bare OAuth2 client_credentials — the ITA requires a digital certificate as part of the auth bundle.
+- **Sandbox developer portal:** <https://openapi-portal.taxes.gov.il/sandbox/>
+- **Production base:** <https://openapi.taxes.gov.il/shaam/>
+- **Allocation request endpoint pattern (sandbox example):** `POST {base}/Invoices/v1/Approval`
+- Token lifetime, refresh, and certificate-renewal cadence: verify in the current spec PDF.
 
 ## Endpoints
 
@@ -75,6 +78,6 @@ Response:
 | 500 | SHAAM server error |
 
 ## Developer Portal
-- Registration: https://www.misim.gov.il/developers
+- Registration: https://openapi-portal.taxes.gov.il/sandbox/ (sandbox + developer registration)
 - Sandbox environment available for testing
 - Documentation primarily in Hebrew

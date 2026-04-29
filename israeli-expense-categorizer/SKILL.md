@@ -26,7 +26,7 @@ If a file path is provided, read the file. If expenses are described in text, pa
 
 Ask the user for their business registration type if not already known:
 
-- **Osek Patur** (exempt dealer): Annual revenue under the threshold (currently ~120,000 ILS). Cannot charge or deduct VAT. Income tax deductions still apply.
+- **Osek Patur** (exempt dealer): Annual revenue under the threshold (NIS 122,833 for 2026 (frozen 2024-2026)). Cannot charge or deduct VAT. Income tax deductions still apply.
 - **Osek Murshe** (licensed dealer): Can charge and deduct VAT. Full income tax deductions apply.
 - **Company (Chevra Ba'am)**: Corporate tax rules apply. Full VAT deduction on business expenses.
 
@@ -52,8 +52,13 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - **Vehicle expenses (45%)**: Fuel, maintenance, insurance, parking, tolls. Applies to a single vehicle used for business. Second vehicle: 0% unless proven business-essential.
 - **Phone and internet (80%)**: Mobile phone bills, landline, internet service. The 20% disallowed portion reflects assumed personal use.
 - **Home office (proportional)**: Deduct the percentage of home used exclusively for business. Calculate: (office area / total home area) x 100. Apply this percentage to rent, arnona, electricity, internet, and maintenance.
-- **Meals and entertainment (80%)**: Business meals with clients or partners. Must document: who attended, business purpose, and relationship. Meals during regular workday for self: not deductible.
-- **Gifts to clients**: Up to 220 ILS per recipient per year.
+- **Meals and entertainment** (correct rule, often misapplied):
+  - **Hospitality / business meals with Israeli clients (אירוח בארץ): 0% deductible.** Per תקנות ניכוי הוצאות מסויימות 1972 reg. 2(1), hosting Israeli clients/partners is disallowed regardless of receipts. Coffee with a client at Aroma is **not** an 80% expense.
+  - **Hospitality with foreign guests visiting Israel (אירוח אורחי חוץ)**: deductible up to a "reasonable" amount with proper documentation of the foreign guest.
+  - **Light refreshments at the workplace (כיבוד קל)**: up to 80% deductible per ITA practice (coffee/tea/snacks for staff and visitors at the office).
+  - **Foreign-business-trip meals (אש"ל לחו"ל)**: 50% of documented meal cost, capped per ITA per-diem schedule.
+  - Meals during a regular workday for the self-employed person alone: not deductible.
+- **Gifts to clients**: Up to 240 NIS per recipient per year (2026 indexed value per תקנות ניכוי הוצאות מסויימות 1972, reg. 2(4)).
 
 **Non-deductible expenses (0%)**:
 - Personal clothing (unless uniforms or protective gear)
@@ -126,7 +131,7 @@ Actions:
 1. Identify entity type: Osek Murshe (VAT deductible)
 2. Categorize each expense:
    - Akamai Cloud (formerly Linode): 100% deductible, Account 65 (Office/General), 150 ILS
-   - Client coffee: 80% deductible, Account 66 (Marketing/Sales), 68 ILS deductible. Flag: document attendee name and business purpose
+   - Client coffee at Aroma (Israeli client, hospitality in Israel / אירוח בארץ): **0% deductible per reg. 2(1)** of תקנות ניכוי הוצאות מסויימות 1972. The 85 NIS is fully disallowed. The "client meals are 80%" misconception is one of the most common Israeli categorization mistakes.
    - Cellcom phone: 80% deductible, Account 65 (Office/General), 144 ILS deductible
    - Fuel: 45% deductible, Account 64 (Vehicle), 202.50 ILS deductible
    - Keyboard: 100% deductible (under 1,200 ILS threshold), Account 65 (Office/General), 350 ILS

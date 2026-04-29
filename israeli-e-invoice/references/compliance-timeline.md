@@ -17,7 +17,7 @@ NOTE: Dates and thresholds should be verified against current Tax Authority
 announcements. The June 2026 full mandate date may be adjusted.
 
 ## What "Above Threshold" Means
-- The threshold applies to the TOTAL invoice amount (including VAT)
+- The threshold applies to the **net invoice amount, excluding VAT** (before adding the 18% VAT line)
 - For credit invoices (310), the absolute value is compared
 - Multiple items on one invoice: total is what matters
 - Split invoices to avoid threshold: PROHIBITED (anti-avoidance rule)

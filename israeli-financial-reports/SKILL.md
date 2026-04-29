@@ -1,6 +1,6 @@
 ---
 name: israeli-financial-reports
-description: Generate Israeli-standard financial reports including profit and loss (Doch Ruvach VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow statements. Supports bilingual Hebrew/English output with NIS formatting, VAT summary reports for bi-monthly and monthly filing, year-end annual report preparation, and comparison periods. Works with Osek Patur, Osek Murshe, and Chevra (company) business types. Compliant with Israeli accounting standards based on IFRS adaptations. Use when you need to produce financial statements, tax-related summaries, or periodic reports for Israeli businesses. Exports to PDF, Excel, and CSV formats. Do NOT use for tax filing submissions, payroll processing, or bank reconciliation workflows.
+description: Generate Israeli-standard financial reports including profit and loss (Doch Revach VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow statements. Supports bilingual Hebrew/English output with NIS formatting, VAT summary reports for bi-monthly and monthly filing, year-end annual report preparation, and comparison periods. Works with Osek Patur, Osek Murshe, and Chevra (company) business types. Compliant with Israeli accounting standards based on IFRS adaptations. Use when you need to produce financial statements, tax-related summaries, or periodic reports for Israeli businesses. Exports to PDF, Excel, and CSV formats. Do NOT use for tax filing submissions, payroll processing, or bank reconciliation workflows.
 license: MIT
 allowed-tools: Bash(python:*) Edit Read Write
 compatibility: Requires Claude Code
@@ -17,7 +17,7 @@ Determine the business entity type before generating any report. Each type has d
 
 - **Osek Patur** (Exempt Dealer): Simplified reporting, no VAT collection, annual revenue under the exempt threshold. Reports focus on income summary and annual declaration.
 - **Osek Murshe** (Licensed Dealer): Full VAT reporting required bi-monthly (or monthly if revenue exceeds threshold). Must produce profit and loss, and submit VAT returns.
-- **Chevra (Company)**: Full financial statements required including balance sheet, profit and loss, cash flow statement, and notes to financial statements. Subject to Israeli Companies Ordinance and Securities Authority requirements if public.
+- **Chevra (Company)**: Full financial statements required including balance sheet, profit and loss, cash flow statement, and notes to financial statements. Subject to Companies Law 1999 and Securities Authority requirements if public.
 
 Confirm the reporting period: monthly, bi-monthly (for VAT), quarterly, or annual.
 
@@ -34,11 +34,11 @@ Collect the following data sources:
    - 6xxx: Operating Expenses (Hotzaot Tifuliyot)
    - 7xxx: Financial Income/Expenses (Hachnasot/Hotzaot Mimun)
    - 8xxx: Other Income/Expenses (Hachnasot/Hotzaot Acherot)
-   - 9xxx: Tax and Adjustments (Mas VeHitakmuyot)
+   - 9xxx: Tax and Adjustments (Mas VeHitamot)
 
 2. **Transaction Journal (Yoman Peulot)**: All posted transactions for the period.
 3. **Opening Balances (Yitrot Pticha)**: Carried forward from previous period close.
-4. **VAT Records**: Input VAT (Maam Tsfumot) and Output VAT (Maam Etzumot) for the period.
+4. **VAT Records**: Input VAT (Maam Tsumot) and Output VAT (Maam Iskaot) for the period.
 
 ### Step 3: Generate the Trial Balance (Maazan Bochein)
 
@@ -69,12 +69,12 @@ Account  | Account Name           | Debit (NIS)  | Credit (NIS)
 
 Verify that total debits equal total credits. Any imbalance indicates posting errors that must be resolved before proceeding.
 
-### Step 4: Generate the Profit and Loss Statement (Doch Ruvach VeHefsed)
+### Step 4: Generate the Profit and Loss Statement (Doch Revach VeHefsed)
 
 Structure the P&L according to Israeli format:
 
 ```
-Doch Ruvach VeHefsed / Profit and Loss Statement
+Doch Revach VeHefsed / Profit and Loss Statement
 For the Year Ended December 31, 2025
 (Amounts in NIS)
 
@@ -128,7 +128,7 @@ Current Assets (Rechush Shotef):
   Cash and Cash Equivalents                 45,230.00       38,500.00
   Bank Accounts                            328,750.50      275,100.00
   Accounts Receivable (Chayavim)           125,400.00      110,200.00
-  Prepaid Expenses (Hotzaot Mera'sh)        12,000.00       10,000.00
+  Prepaid Expenses (Hotza'ot Merosh)        12,000.00       10,000.00
                                           -----------     ------------
 Total Current Assets                       511,380.50      433,800.00
 
@@ -151,7 +151,7 @@ Current Liabilities (Hitchayvuyot Shotfot):
 Total Current Liabilities                  163,474.00      139,465.00
 
 Non-Current Liabilities:
-  Long-term Loan (Halvaat Tzvei Aroch)     145,530.50      144,335.00
+  Long-term Loan (Halva'a LeZman Arokh)     145,530.50      144,335.00
                                           -----------     ------------
 Total Liabilities                          309,004.50      283,800.00
 
@@ -182,11 +182,11 @@ Period: November - December 2025
 Business: Example Ltd. (Osek Murshe)
 VAT Registration: 515-123456
 
-Output VAT (Maam Etzumot):
+Output VAT (Maam Iskaot):
   Taxable Sales                    185,400.00
   VAT at 18%                       33,372.00
 
-Input VAT (Maam Tsfumot):
+Input VAT (Maam Tsumot):
   Purchases and Expenses            98,200.00
   VAT Claimed                      17,676.00
 
