@@ -405,7 +405,7 @@ Result: All new documents automatically downloaded and organized by type and mon
 
 | MCP | What It Adds |
 |-----|-------------|
-| [BOI Exchange Rates](https://agentskills.co.il/he/mcps/boi-exchange) | Official Bank of Israel exchange rates for multi-currency invoice calculations. Green Invoice uses BOI rates by default when `currencyRate` is not specified. |
+| [BOI Exchange Rates](https://agentskills.co.il/he/mcp/boi-exchange) | Official Bank of Israel exchange rates for multi-currency invoice calculations. Green Invoice uses BOI rates by default when `currencyRate` is not specified. |
 
 ## Reference Links
 

@@ -50,7 +50,7 @@ Israeli public companies adopted IFRS in 2008. Prior reports use Israeli GAAP. B
 
 | MCP | What It Adds |
 |-----|--------------|
-| [`tase-mcp`](https://agentskills.co.il/he/mcps/finance/tase-mcp) | TASE OpenAPI access for securities, indices, EOD prices, MAYA announcements, and management-positions data. Pair this skill with the MCP to fetch live filings instead of scraping MAYA. |
+| [`tase-mcp`](https://agentskills.co.il/he/mcp/tase-mcp) | TASE OpenAPI access for securities, indices, EOD prices, MAYA announcements, and management-positions data. Pair this skill with the MCP to fetch live filings instead of scraping MAYA. |
 
 ## Examples
 
