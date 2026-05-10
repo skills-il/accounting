@@ -1,9 +1,9 @@
 # SHAAM API Reference (Israeli Tax Authority)
 
-> **Verify against official sources before using.** The Israel Tax Authority's OpenAPI portal is the authoritative source. Sandbox: <https://openapi-portal.taxes.gov.il/sandbox/>. Production allocation endpoint base: `https://openapi.taxes.gov.il/shaam/`. Endpoint paths and authentication shape have changed across rollout phases — always confirm against the current ITA OpenAPI v2.0 spec before integrating. The values below are illustrative and may be stale.
+> **Verify against official sources before using.** The Israel Tax Authority's OpenAPI portal is the authoritative source. Sandbox: <https://openapi-portal.taxes.gov.il/sandbox/>. Production allocation endpoint base: `https://openapi.taxes.gov.il/shaam/`. Endpoint paths and authentication shape have changed across rollout phases -- always confirm against the current ITA OpenAPI v2.0 spec before integrating. The values below are illustrative and may be stale.
 
 ## Authentication
-- **Method:** Digital certificate + Client ID / Client Secret issued via the gov.il national-identification certification flow. NOT bare OAuth2 client_credentials — the ITA requires a digital certificate as part of the auth bundle.
+- **Method:** Digital certificate + Client ID / Client Secret issued via the gov.il national-identification certification flow. NOT bare OAuth2 client_credentials -- the ITA requires a digital certificate as part of the auth bundle.
 - **Sandbox developer portal:** <https://openapi-portal.taxes.gov.il/sandbox/>
 - **Production base:** <https://openapi.taxes.gov.il/shaam/>
 - **Allocation request endpoint pattern (sandbox example):** `POST {base}/Invoices/v1/Approval`

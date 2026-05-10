@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "category": "accounting",
   "tags": {
     "he": [
@@ -25,7 +25,7 @@
     "en": "Israeli E Invoice"
   },
   "display_description": {
-    "he": "יצירה ואימות של חשבוניות אלקטרוניות בתקן רשות המסים הישראלית",
+    "he": "יצירה, אימות וניהול של חשבוניות אלקטרוניות ישראליות (חשבונית אלקטרונית) לפי תקני רשות המסים (שע\"מ). השתמשו כשמבקשים להפיק חשבוניות מס, לקבל מספר הקצאה, לאמת תאימות, או כשעולים המונחים \"חשבונית\", \"חשבונית אלקטרונית\", \"שע\"מ\", \"מספר הקצאה\", או דרישות חשבוניות בישראל. תומך בחשבונית מס (300), חשבונית מס/קבלה (305), חשבונית זיכוי (310), קבלה (320), וחשבונית פרופורמה (330). אל תשתמשו לחשבונאות כללית, הנהלת חשבונות, או פורמטי חשבונית לא ישראליים.",
     "en": "Generate, validate, and manage Israeli e-invoices (hashbonit electronit) per Tax Authority (SHAAM) standards. Use when user asks to create Israeli invoices, request allocation numbers, validate invoice compliance, or asks about \"hashbonit\", \"e-invoice\", \"SHAAM\", \"allocation number\", or Israeli invoicing requirements. Supports tax invoice (300), tax invoice/receipt (305), credit invoice (310), receipt (320), and proforma (330) types. Do NOT use for general accounting, bookkeeping, or non-Israeli invoice formats."
   },
   "supported_agents": [

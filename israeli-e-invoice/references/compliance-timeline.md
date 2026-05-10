@@ -1,7 +1,9 @@
 # Israeli E-Invoice Mandate Timeline
 
 ## Legal Basis
-Amendment 157 to the VAT Law (Chok Maam), enacted 2024.
+Amendment 157 to the VAT Law (Chok Maam), enacted 2024. The June 2026
+acceleration was confirmed by the Tax Authority in 2025; original schedule
+called for 5,000 NIS only in 2028.
 
 ## Progressive Threshold Reduction
 
@@ -10,11 +12,11 @@ Amendment 157 to the VAT Law (Chok Maam), enacted 2024.
 | May 1, 2024 | > 25,000 NIS | Type 300, 305, 310 invoices |
 | January 1, 2025 | > 20,000 NIS | Type 300, 305, 310 invoices |
 | January 1, 2026 | > 10,000 NIS | Type 300, 305, 310 invoices |
-| June 1, 2026 | > 5,000 NIS | Type 300, 305, 310 invoices |
+| June 1, 2026 | > 5,000 NIS | Type 300, 305, 310 invoices (confirmed) |
 | TBD (planned) | ALL invoices | All tax invoice types |
 
 NOTE: Dates and thresholds should be verified against current Tax Authority
-announcements. The June 2026 full mandate date may be adjusted.
+announcements. Source: rashut-hamisim.gov.il and themarker.com (March 2025).
 
 ## What "Above Threshold" Means
 - The threshold applies to the **net invoice amount, excluding VAT** (before adding the 18% VAT line)
