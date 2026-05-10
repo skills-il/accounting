@@ -245,10 +245,12 @@ Result: Output VAT liability cleared against input VAT credit. Net VAT payable o
 
 ## SHAAM allocation number on B2B sales-invoice journal entries
 
-When you record a B2B sales-invoice pkudat yoman in 2026, the source invoice must carry a SHAAM allocation number (mispar haktza'a) once it crosses the current threshold:
+When you record a B2B sales-invoice pkudat yoman in 2026, the source invoice must carry a SHAAM allocation number (mispar haktza'a) once it crosses the threshold in force on the invoice issue date:
 - Jan 2025 - Dec 2025: net amount > NIS 20,000
-- **Jan 2026 (current): net amount > NIS 10,000**
-- Jun 2026 onwards: net amount > NIS 5,000
+- Jan 2026 - May 2026: net amount > NIS 10,000
+- **Jun 1, 2026 onwards (imminent): net amount > NIS 5,000**
+
+The June 2026 step-down was confirmed by the Tax Authority and accelerated from the originally scheduled 2028 date. Use the invoice issue date, not the bookkeeping-entry date, when picking the threshold.
 
 The allocation number itself does not change the journal-entry shape, but the source invoice must include it (typically captured as a custom field on the AR journal line). Without it on the buyer's side, the input-VAT entry is not deductible at year-end. Surface this to the user when posting any large B2B invoice entry.
 
