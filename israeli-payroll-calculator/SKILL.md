@@ -148,7 +148,7 @@ CAVEAT: Always note "This is an estimate. Actual amounts may vary based on speci
 
 ### Example 1: Standard Employee, No Company Car
 User says: "Calculate net salary for 20,000 NIS gross, male, no special credits"
-Result: Detailed breakdown showing approximately 14,500-15,000 NIS net using 2026 rates.
+Result: Detailed breakdown showing 14,530.69 NIS net using 2026 rates (20,000 gross, 2.25 credit points, 6% pension).
 
 ### Example 2: Employer Cost
 User says: "How much does it cost an employer to pay 15,000 NIS gross?"
@@ -172,7 +172,7 @@ Wrong answer to avoid: adding the 3,500 shovi rechev to net. The employee never 
 - `scripts/calculate_payroll.py` — Calculates Israeli gross-to-net salary with progressive income tax brackets, Bituach Leumi, health tax, pension contributions, and shovi rechev (company-car use value) as taxable imputed income. Supports employee and employer cost views. Run: `python scripts/calculate_payroll.py --help`. Use `--shovi-rechev <NIS>` to model a company car.
 
 ### References
-- `references/tax-brackets.md` — Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. The 2025-2027 brackets are frozen per Knesset legislation. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
+- `references/tax-brackets.md` — Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) unfroze and widened brackets 3, 4, 5 for 2026. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
 - `references/bituach-leumi-rates.md` — Bituach Leumi (National Insurance) and health tax rates for employees and employers for 2026, covering the reduced and full brackets and the monthly insurable salary ceiling. Always verify the current-year values against btl.gov.il before relying on exact amounts.
 - `references/credit-points.md` — Israeli tax credit points (nekudot zikui) value and full eligibility table covering base credits, gender, new immigrants, children, single parents, and disability. Also documents the Section 45a pension tax credit (zikui gemel, 35% of pension contribution up to 679 NIS/month in 2026). Consult when determining total credits beyond the defaults in Step 1.
 
