@@ -21,7 +21,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-VAT_RATE = 0.17
+VAT_RATE = 0.18
 MEAL_DEDUCTION_RATE = 0.80
 CAR_DEDUCTION_RATE = 0.45
 
@@ -120,7 +120,7 @@ def compute_summary(transactions: list[dict]) -> dict:
     for txn in transactions:
         txn_type = txn.get("Type", txn.get("type", "")).strip().lower()
         amount = parse_amount(txn.get("Amount (excl. VAT)", txn.get("amount", "0")))
-        vat = parse_amount(txn.get("VAT (17%)", txn.get("vat", "0")))
+        vat = parse_amount(txn.get("VAT (18%)", txn.get("vat", "0")))
         category = txn.get("Category", txn.get("category", "Uncategorized"))
 
         if txn_type == "income":

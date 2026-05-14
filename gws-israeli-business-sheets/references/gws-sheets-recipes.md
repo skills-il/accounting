@@ -1,24 +1,23 @@
 # GWS CLI Sheets Recipes
 
-Common recipes for Google Sheets operations using the Google Workspace CLI (gws).
+Common recipes for Google Sheets operations using the Google Workspace CLI (`gws`, package `@googleworkspace/cli`).
+
+The `gws` command surface is generated dynamically from Google's Discovery API. There is no `gws sheets create` or `gws sheets read` command. Every Sheets operation is either a raw API method (`gws sheets spreadsheets <method> --params '<JSON>' [--json '<body>']`) or one of the two helper shortcuts (`gws sheets +read`, `gws sheets +append`). When in doubt, run `gws sheets --help`, `gws sheets spreadsheets --help`, or `gws schema sheets.spreadsheets.values.get`.
 
 ## Installation and Setup
 
 ```bash
 # Install globally
-npm install -g @google/gws
+npm install -g @googleworkspace/cli
 
 # Or use via npx (no install needed)
-npx @google/gws sheets read --help
+npx @googleworkspace/cli sheets --help
 
 # Authenticate
 gws auth login
 
 # Check auth status
 gws auth status
-
-# Set up Google Cloud project (first time)
-gws auth setup
 ```
 
 ## Core Commands
@@ -26,42 +25,61 @@ gws auth setup
 ### Create a New Spreadsheet
 
 ```bash
-# Create with title
-gws sheets create --title "My Spreadsheet"
-
-# Output includes the new spreadsheet ID
+# Create with a title (the response JSON includes "spreadsheetId")
+gws sheets spreadsheets create --json '{"properties":{"title":"My Spreadsheet"}}'
 ```
 
 ### Read Data
 
 ```bash
-# Read a range (default table output)
-gws sheets read --spreadsheet-id SHEET_ID --range "Sheet1!A1:D10"
+# Helper: read a range (returns the raw values array)
+gws sheets +read --spreadsheet SHEET_ID --range "Sheet1!A1:D10"
 
-# Read as JSON
-gws sheets read --spreadsheet-id SHEET_ID --range "Sheet1!A:J" --output json
+# Helper: read an entire sheet tab
+gws sheets +read --spreadsheet SHEET_ID --range "Sheet1"
 
-# Read as CSV
-gws sheets read --spreadsheet-id SHEET_ID --range "Sheet1!A:J" --output csv
+# Raw API: read a range (response is a ValueRange with a "values" array)
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:J"}'
 
-# Read entire sheet
-gws sheets read --spreadsheet-id SHEET_ID --range "Sheet1"
+# Read as CSV (use the --format flag, not a fabricated --output flag)
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:J"}' --format csv
 ```
 
 ### Append Data
 
 ```bash
-# Append a single row
-gws sheets append --spreadsheet-id SHEET_ID --range "Sheet1!A:D" \
-  --values '[["value1","value2","value3","value4"]]'
+# Helper: append a single simple row
+gws sheets +append --spreadsheet SHEET_ID --values 'value1,value2,value3,value4'
 
-# Append multiple rows
-gws sheets append --spreadsheet-id SHEET_ID --range "Sheet1!A:D" \
-  --values '[["row1col1","row1col2","row1col3","row1col4"],["row2col1","row2col2","row2col3","row2col4"]]'
+# Helper: append multiple rows
+gws sheets +append --spreadsheet SHEET_ID --json-values '[["r1c1","r1c2"],["r2c1","r2c2"]]'
+
+# Raw API: append rows (valueInputOption is required)
+gws sheets spreadsheets values append \
+  --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:D","valueInputOption":"USER_ENTERED"}' \
+  --json '{"values":[["value1","value2","value3","value4"]]}'
 
 # Dry run (preview without writing)
-gws sheets append --spreadsheet-id SHEET_ID --range "Sheet1!A:D" \
-  --values '[["test","data"]]' --dry-run
+gws sheets spreadsheets values append \
+  --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:D","valueInputOption":"USER_ENTERED"}' \
+  --json '{"values":[["test","data"]]}' --dry-run
+```
+
+### Write to a Specific Range
+
+```bash
+# Overwrite a range (e.g. write a header row)
+gws sheets spreadsheets values update \
+  --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A1:D1","valueInputOption":"RAW"}' \
+  --json '{"values":[["Date","Description","Amount","Notes"]]}'
+```
+
+### Add a New Sheet Tab
+
+```bash
+gws sheets spreadsheets batchUpdate \
+  --params '{"spreadsheetId":"SHEET_ID"}' \
+  --json '{"requests":[{"addSheet":{"properties":{"title":"Summary"}}}]}'
 ```
 
 ## Recipes
@@ -69,48 +87,53 @@ gws sheets append --spreadsheet-id SHEET_ID --range "Sheet1!A:D" \
 ### Recipe: Backup All Tabs as CSV
 
 ```bash
-# List all sheet tabs, then export each
+# Export each named tab to its own CSV file
 for tab in "Sheet1" "Sheet2" "Summary"; do
-  gws sheets read --spreadsheet-id SHEET_ID --range "$tab" --output csv > "${tab}.csv"
+  gws sheets spreadsheets values get \
+    --params "{\"spreadsheetId\":\"SHEET_ID\",\"range\":\"$tab\"}" --format csv > "${tab}.csv"
 done
 ```
 
-### Recipe: Copy Monthly Sheet
-
-Create a template for next month by reading current month structure:
+### Recipe: Copy a Header Row to a New Month Tab
 
 ```bash
-# Read headers from current month
-HEADERS=$(gws sheets read --spreadsheet-id SHEET_ID --range "Jan-2026!A1:J1" --output json)
+# Read headers from the current month (the response has a "values" array)
+HEADERS=$(gws sheets spreadsheets values get \
+  --params '{"spreadsheetId":"SHEET_ID","range":"Jan-2026!A1:J1"}' | jq -c '.values')
 
-# Write headers to new month tab
-gws sheets append --spreadsheet-id SHEET_ID --range "Feb-2026!A1:J1" \
-  --values "$HEADERS"
+# Write those headers into the new month tab
+gws sheets spreadsheets values update \
+  --params '{"spreadsheetId":"SHEET_ID","range":"Feb-2026!A1:J1","valueInputOption":"RAW"}' \
+  --json "{\"values\":$HEADERS}"
 ```
 
 ### Recipe: Compare Two Sheet Tabs
 
 ```bash
 # Export both tabs as CSV and diff
-gws sheets read --spreadsheet-id SHEET_ID --range "Sheet1!A:J" --output csv > tab1.csv
-gws sheets read --spreadsheet-id SHEET_ID --range "Sheet2!A:J" --output csv > tab2.csv
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:J"}' --format csv > tab1.csv
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet2!A:J"}' --format csv > tab2.csv
 diff tab1.csv tab2.csv
 ```
 
-### Recipe: Search for Entries
+### Recipe: Filter Rows by Category
+
+The `values get` response is a ValueRange: `{"range":"...","majorDimension":"ROWS","values":[[...],[...]]}`. The `values` field is an array of rows, each row an array of cell strings. Use `jq` against `.values` to filter. With the column order from the SKILL.md sheet structure, column C (index 2) is Category:
 
 ```bash
-# Read all data as JSON, then filter with jq
-gws sheets read --spreadsheet-id SHEET_ID --range "Sheet1!A:J" --output json \
-  | jq '.[] | select(.Category == "Professional Services")'
+# Read all data, then keep only rows where the Category column equals "Professional Services"
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:J"}' \
+  | jq -c '.values[] | select(.[2] == "Professional Services")'
 ```
 
 ### Recipe: Count Rows by Type
 
+Column G (index 6) is the Type column (Income/Expense):
+
 ```bash
-# Read data and count income vs expense entries
-gws sheets read --spreadsheet-id SHEET_ID --range "Sheet1!G:G" --output json \
-  | jq 'group_by(.[0]) | map({type: .[0][0], count: length})'
+# Read the Type column and count income vs expense rows
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!G:G"}' \
+  | jq '.values[1:] | group_by(.[0]) | map({type: .[0][0], count: length})'
 ```
 
 ## Common Range Notations
@@ -125,8 +148,8 @@ gws sheets read --spreadsheet-id SHEET_ID --range "Sheet1!G:G" --output json \
 
 ## Tips
 
-- Always use `--dry-run` before appending to production sheets
-- Use `--output json` when you need to process data programmatically
-- Use `--output csv` when exporting for accountants or external tools
-- Spreadsheet ID is the long string in the Google Sheets URL between `/d/` and `/edit`
-- All output from gws is structured JSON by default, making it easy to parse
+- Always use `--dry-run` before appending to production sheets.
+- The default output format is `json`. Use `--format csv` when exporting for accountants or external tools, or `--format table` for a quick human-readable view.
+- Spreadsheet ID is the long string in the Google Sheets URL between `/d/` and `/edit`.
+- A `values get` / `+read` response is the raw Sheets API `ValueRange` object. The cell data lives under the `values` key as an array of arrays. Parse with `jq '.values'`, not by assuming named columns.
+- `valueInputOption` is required on `values append` and `values update`. Use `USER_ENTERED` to let Sheets interpret dates and numbers, or `RAW` to store strings verbatim.
