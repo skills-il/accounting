@@ -27,6 +27,33 @@ Returns JWT token in `X-Authorization-Bearer` header and in response body `token
 
 Use in all subsequent requests: `Authorization: Bearer <token>`
 
+**Plan tier:** API access requires the Best plan or higher. The token endpoint exists and accepts the call on lower-tier accounts, but issued tokens will fail authorization on most endpoints. Verify the plan in the Morning dashboard before debugging 401/403 cascades.
+
+---
+
+## Tax Authority (SHAAM) Authorization
+
+Required for B2B tax invoices over the SHAAM allocation-number threshold. The API does NOT currently expose endpoints to manage this authorization - it is a human-in-the-loop dashboard action.
+
+**Setup (one-time, must be performed in the dashboard):**
+1. Sign in to https://app.greeninvoice.co.il/
+2. Navigate to: `אזור אישי > רשות המיסים > הוספת הרשאה` (Personal Area > Tax Authority > Add Authorization)
+3. The dashboard redirects to the gov.il Tax Authority portal for verification
+4. After successful verification, the browser returns to Morning automatically and the connection becomes active
+
+**Expiration:** the authorization is valid for 3 months. Morning sends an email reminder 10 days before expiry and shows a banner in the dashboard. Renewal requires repeating steps 1-4.
+
+**Threshold schedule (net amounts, before VAT):**
+
+| Effective from | Threshold |
+|----------------|-----------|
+| Jan 1, 2026 | NIS 10,000 |
+| Jun 1, 2026 onward (final step) | NIS 5,000 |
+
+**API field for the allocation number:** the exact response-body field carrying the allocation number is not documented in the public help center. To learn it for your account, create a real authorized B2B invoice above the threshold and inspect the `GET /v1/documents/{id}` response, or use the in-app API explorer at `https://app.greeninvoice.co.il/api`. If the field is absent on a qualifying invoice, the user's authorization has lapsed or was never set up.
+
+Reference: https://www.greeninvoice.co.il/magazine/israel-invoice/ and https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/
+
 ---
 
 ## Documents API
@@ -301,11 +328,11 @@ Returns the authenticated user profile.
 
 ### Payment App Types
 
-| Code | Name |
-|------|------|
-| 1 | Bit |
-| 2 | Pepper Pay |
-| 3 | PayBox |
+| Code | Name | Status |
+|------|------|--------|
+| 1 | Bit | Active (Bank Hapoalim) |
+| 2 | Pepper Pay | Discontinued April 10, 2022 - legacy enum value, do not use for new payments |
+| 3 | PayBox | Active (Discount Bank) |
 
 ### Credit Card Types
 
@@ -486,5 +513,9 @@ Full webhook payload structure on document creation:
 ## Official Documentation
 
 - API Docs (Hebrew): https://www.greeninvoice.co.il/api-docs/
-- Apiary Reference: https://greeninvoice.docs.apiary.io/
-- In-app API: https://app.greeninvoice.co.il/api
+- In-app API Explorer (requires sign-in, authoritative for current field names): https://app.greeninvoice.co.il/api
+- Tax Authority connection guide (required for SHAAM allocation numbers): https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/
+- API key generation + plan-tier requirements: https://www.greeninvoice.co.il/help-center/generating-api-key/
+- Webhooks overview (Extra plan required): https://www.greeninvoice.co.il/magazine/webhooks/
+
+Note: the historical `greeninvoice.docs.apiary.io` Apiary mirror was retired in 2026 and returns HTTP 502. Do not link to it.
