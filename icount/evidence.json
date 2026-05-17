@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "skill": "icount",
+  "verified_date": "2026-03",
+  "claims": [
+    {
+      "id": "claim-001",
+      "claim": "iCount REST API base URL is https://api.icount.co.il/api/v3.php",
+      "source_url": "https://www.icount.co.il/api/",
+      "source_title": "iCount API Documentation",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-002",
+      "claim": "API authentication uses Bearer token in the Authorization header",
+      "source_url": "https://www.icount.co.il/api/",
+      "source_title": "iCount API Documentation",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-003",
+      "claim": "API rate limit is 30 requests per minute",
+      "source_url": "https://www.icount.co.il/api/",
+      "source_title": "iCount API Documentation",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-004",
+      "claim": "Standard Israeli VAT rate is 18% (as of January 2025)",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "source_title": "Israel Tax Authority",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-005",
+      "claim": "iCount date format for API requests is YYYYMMDD (e.g., 20260322), not YYYY-MM-DD",
+      "source_url": "https://www.icount.co.il/api/",
+      "source_title": "iCount API Documentation",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-006",
+      "claim": "Request body must be form-encoded (application/x-www-form-urlencoded), not JSON",
+      "source_url": "https://www.icount.co.il/api/",
+      "source_title": "iCount API Documentation",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-007",
+      "claim": "Supported document types include: invrec (חשבונית מס קבלה), invoice (חשבונית מס), receipt (קבלה), refund (זיכוי), offer (הצעת מחיר), order (הזמנה), delcert (תעודת משלוח), deal (עסקה), po (הזמנת רכש)",
+      "source_url": "https://www.icount.co.il/api/",
+      "source_title": "iCount API - doc/types endpoint (live verified)",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-008",
+      "claim": "Default country code for new clients is IL (Israel)",
+      "source_url": "https://www.icount.co.il/api/",
+      "source_title": "iCount API Documentation - client/create",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-009",
+      "claim": "Default currency for documents is NIS (New Israeli Shekel, ILS)",
+      "source_url": "https://www.icount.co.il/api/",
+      "source_title": "iCount API Documentation - doc/create",
+      "verified": "2026-03"
+    },
+    {
+      "id": "claim-010",
+      "claim": "iCount API is included with all iCount subscription plans",
+      "source_url": "https://www.icount.co.il/",
+      "source_title": "iCount Official Website",
+      "verified": "2026-03"
+    }
+  ]
+}
