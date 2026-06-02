@@ -4,12 +4,12 @@
 
 | Code | Hebrew | English | VAT | Allocation |
 |------|--------|---------|-----|------------|
-| 300 | hashbonit mas | Tax Invoice | Yes (17%) | Required above threshold |
-| 305 | hashbonit mas / kabala | Tax Invoice + Receipt | Yes (17%) | Required above threshold |
+| 300 | hashbonit mas | Tax Invoice | Yes (18%) | Required above threshold |
+| 305 | hashbonit mas / kabala | Tax Invoice + Receipt | Yes (18%) | Required above threshold |
 | 310 | hashbonit zikui | Credit Invoice | Yes (reversal) | Required above threshold |
 | 320 | kabala | Receipt | No | Not required |
 | 330 | hashbonit proforma | Proforma Invoice | No | Not required |
-| 400 | hashbonit mas atzmi | Self-billing Tax Invoice | Yes (17%) | Required above threshold |
+| 400 | hashbonit mas atzmi | Self-billing Tax Invoice | Yes (18%) | Required above threshold |
 
 ## Required Fields by Type
 

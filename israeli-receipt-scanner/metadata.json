@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "category": "accounting",
   "tags": {
     "he": [
@@ -34,6 +34,7 @@
     "github-copilot",
     "windsurf",
     "opencode",
-    "codex"
+    "codex",
+    "gemini-cli"
   ]
 }

@@ -20,7 +20,7 @@ A freelancer (osek murshe or osek patur) billing clients monthly.
 - Use type 320 with `vatType: 0` (no VAT added automatically)
 - Total = subtotal (no VAT)
 - Cannot issue standalone Tax Invoice (type 305)
-- Annual revenue limit: NIS 120,000 (as of 2025, verify current threshold)
+- Annual revenue limit: NIS 120,000 (as of 2026)
 
 **Best Practice:** Use labels on clients (e.g., "monthly", "retainer") to easily search and batch-process recurring invoices.
 

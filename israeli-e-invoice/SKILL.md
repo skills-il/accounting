@@ -35,12 +35,16 @@ For all invoice types, gather:
 
 ### Step 4: Check Allocation Number Requirement
 Determine if an allocation number is needed:
-- **Required if:** Invoice amount >= current threshold AND invoice type is 300, 305, or 310
-- **Current thresholds:**
-  - Until December 2025: transactions over 25,000 NIS (excluding VAT)
-  - January 2026: transactions over 10,000 NIS (excluding VAT)
-  - June 2026: transactions over 5,000 NIS (excluding VAT)
-- **Not required for:** Receipts (320), proforma (330), invoices below threshold
+- **Required if:** Invoice amount > current threshold AND invoice type is 300, 305, or 310
+- **Threshold timeline** (Israel Tax Authority Reform, Amendment 157):
+  - May 2024 - Dec 2024: > 25,000 NIS (excluding VAT)
+  - Jan 2025 - Dec 2025: > 20,000 NIS (excluding VAT)
+  - Jan 2026 - May 2026: > 10,000 NIS (excluding VAT)
+  - **June 1, 2026 onwards (imminent): > 5,000 NIS (excluding VAT)**
+  - Final stage (date TBD): full B2B coverage
+- **Not required for:** Receipts (320), proforma (330), invoices at or below threshold
+
+**June 2026 transition warning:** The threshold drops from 10,000 NIS to 5,000 NIS on June 1, 2026 (accelerated from the originally scheduled 2028 date). Any tax invoice (300/305/310) issued on or after June 1, 2026 with a net amount above 5,000 NIS MUST carry an allocation number, otherwise the buyer cannot deduct input VAT. Verify the invoice issue date when checking the threshold, not the transaction date.
 
 If allocation number IS required:
 1. Inform user they must request from SHAAM before issuing
@@ -98,12 +102,12 @@ Result: Credit invoice referencing original, with correct VAT reversal
 ## Bundled Resources
 
 ### Scripts
-- `scripts/validate_invoice.py` — Validates Israeli e-invoice JSON against SHAAM requirements: checks required fields, TIN (mispar osek) format and check digit, invoice type codes, VAT calculation accuracy, and allocation number thresholds. Also referenced in Troubleshooting below. Run: `python scripts/validate_invoice.py --help`
+- `scripts/validate_invoice.py` -- Validates Israeli e-invoice JSON against SHAAM requirements: checks required fields, TIN (mispar osek) format and check digit, invoice type codes, VAT calculation accuracy, and allocation number thresholds. Also referenced in Troubleshooting below. Run: `python scripts/validate_invoice.py --help`
 
 ### References
-- `references/shaam-api-reference.md` — SHAAM (Tax Authority) API endpoints for requesting allocation numbers, OAuth2 authentication setup, and request/response formats. Consult when integrating with the SHAAM e-invoice API. Also referenced in Step 4 above.
-- `references/invoice-types.md` — Complete listing of Israeli invoice type codes (300, 305, 310, 320, 330, 400) with required fields per type, VAT applicability, and allocation number requirements. Consult when determining which invoice type to use.
-- `references/compliance-timeline.md` — Progressive e-invoice mandate timeline per Amendment 157 to the VAT Law, showing threshold reductions from 25,000 NIS down to all invoices. Consult when checking current allocation number thresholds.
+- `references/shaam-api-reference.md` -- SHAAM (Tax Authority) API endpoints for requesting allocation numbers, OAuth2 authentication setup, and request/response formats. Consult when integrating with the SHAAM e-invoice API. Also referenced in Step 4 above.
+- `references/invoice-types.md` -- Complete listing of Israeli invoice type codes (300, 305, 310, 320, 330, 400) with required fields per type, VAT applicability, and allocation number requirements. Consult when determining which invoice type to use.
+- `references/compliance-timeline.md` -- Progressive e-invoice mandate timeline per Amendment 157 to the VAT Law, showing threshold reductions from 25,000 NIS down to all invoices. Consult when checking current allocation number thresholds.
 
 ## Gotchas
 
@@ -112,6 +116,17 @@ Result: Credit invoice referencing original, with correct VAT reversal
 - The distinction between cheshbonit mas (tax invoice, type 305) and cheshbonit mas/kabala (tax invoice-receipt, type 320) is critical. Agents may use them interchangeably, but they have different legal implications for payment timing.
 - Israeli e-invoice XML schemas follow SHAAM-specific standards, not the European Peppol or UBL formats. Agents may attempt to use international e-invoice standards that are not accepted by the Israeli Tax Authority.
 - Credit notes (cheshbonit zikui) in Israel must reference the original invoice number. Agents may generate standalone credit notes without the required linkage.
+
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Israel Tax Authority – e-invoice | https://www.gov.il/he/departments/israel_tax_authority | Allocation number rules, invoice format, rollout schedule |
+| SHAAM technical portal | https://www.misim.gov.il | Allocation number API, technical specs |
+| Knesset – VAT Law | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx | Value Added Tax Law, invoice obligations |
+| ITA invoicing guidance | https://www.gov.il/he/departments/publications/reports/invoices_israel | Types of invoices (300/305/310/320/330), required fields |
+| Kol Zchut – invoice rules | https://www.kolzchut.org.il/he | Plain-language duties for small businesses |
 
 ## Troubleshooting
 

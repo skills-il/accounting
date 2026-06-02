@@ -2,7 +2,7 @@
 name: green-invoice
 description: Integrate Green Invoice (Morning) API for Israeli invoicing, receipts, client management, and payment processing. Use when user asks to create invoices via Green Invoice, generate hashbonit mas through Morning API, manage clients in Green Invoice, set up webhook automation for document creation, query documents or expenses, or mentions "Green Invoice", "Morning", "hashbonit yeruka", "greeninvoice API", Israeli cloud invoicing, or needs to create tax invoice-receipt (cheshbonit mas/kabala). Covers all 13 document types, 8 payment types, client CRUD, item catalog, and webhook integration. Do NOT use for SHAAM allocation numbers or Tax Authority e-invoice compliance (use israeli-e-invoice), Cardcom payment processing (use cardcom-payment-gateway), or Tranzila integration (use tranzila-payment-gateway).
 license: MIT
-compatibility: Requires network access for Green Invoice API calls (api.greeninvoice.co.il). API credentials obtained from Green Invoice dashboard (Settings, Developer Tools). Works with Claude Code, Claude.ai, Cursor.
+compatibility: Requires network access for Green Invoice API calls (api.greeninvoice.co.il). API access requires a Best plan or higher; webhooks require Extra plan. API credentials obtained from the dashboard (Personal Area, Developer Tools, API Keys). Works with Claude Code, Claude.ai, Cursor.
 ---
 
 
@@ -10,9 +10,17 @@ compatibility: Requires network access for Green Invoice API calls (api.greeninv
 
 ## Instructions
 
-### Step 1: Authentication
+### Step 1: Authentication and Plan Requirements
 
-Green Invoice uses JWT Bearer token authentication. Obtain API credentials from the Green Invoice dashboard: Settings > Developer Tools > API Keys.
+Green Invoice uses JWT Bearer token authentication. Obtain API credentials from the Green Invoice dashboard: Personal Area (אזור אישי) > Developer Tools (כלים למפתחים) > API Keys (מפתחות API).
+
+**Plan gating (verified May 2026):**
+- API access (any endpoint): requires the **Best** plan or higher (`זמין למנויי Best ומעלה`).
+- Webhooks (Step 11): require the **Extra** plan or higher (`זמין למנויים במסלול Extra`).
+
+Lower-tier accounts will not see the "API Keys" or "Webhooks" menu items at all. If a user reports a missing menu item, check their plan first.
+
+**Rebrand note.** The product was rebranded from "חשבונית ירוקה" to "Morning של חשבונית ירוקה" but the API host (`api.greeninvoice.co.il`), dashboard host (`app.greeninvoice.co.il`), and account credentials are unchanged. There is no separate `api.morning.co.il` host - DNS does not resolve there. If an agent finds documentation pointing to a Morning-only host, it is wrong.
 
 **Base URLs:**
 
@@ -43,7 +51,39 @@ curl -s https://api.greeninvoice.co.il/api/v1/users/me \
   -H "Authorization: Bearer <token>" | python3 -m json.tool
 ```
 
-### Step 2: Understand Document Types
+### Step 2: Tax Authority Authorization (Required for B2B Invoices Over the Threshold)
+
+**This step is mandatory for any user issuing B2B `חשבונית מס` (Tax Invoice, type 305) or `חשבונית מס/קבלה` (Tax Invoice-Receipt, type 320) over the SHAAM allocation-number threshold. Skipping it silently breaks VAT deduction for the buyer.**
+
+The threshold schedule (amounts are NET, before VAT):
+
+| Effective from | Threshold |
+|----------------|-----------|
+| Jan 1, 2026 | NIS 10,000 |
+| Jun 1, 2026 onward (final step) | NIS 5,000 |
+
+Above the threshold, every B2B tax invoice must carry a `מספר הקצאה` (allocation number) issued by שע"מ (the Tax Authority). Without it, the recipient business cannot deduct input VAT - meaning your customer cannot legally reclaim the VAT they paid you.
+
+**Morning attaches the allocation number automatically, BUT ONLY AFTER a one-time authorization grant in the user's Morning account.** This is NOT automatic on signup. The user must:
+
+1. In the Morning dashboard, navigate to: `אזור אישי > רשות המיסים > הוספת הרשאה` (Personal Area > Tax Authority > Add Authorization)
+2. The dashboard redirects to the Tax Authority gov.il portal for identity verification
+3. After authorization, the browser returns automatically to Morning, and the connection becomes active
+
+Vendor quote on what happens once active:
+> "מספר ההקצאה מתנהל אוטומטית" - the allocation number is managed automatically.
+> "מספר הקצאה לחשבונית מס יוצמד לחשבונית באמצעות המערכת שלנו, מבלי שצריך יהיה להיכנס לעוד פלטפורמות" - the allocation number is attached to the tax invoice via our system, without needing to enter another platform.
+
+**Critical: the authorization expires every 3 months and must be renewed manually.** Morning sends a reminder email 10 days before expiry and displays a banner in the dashboard. If the authorization lapses, qualifying invoices created via the API still succeed at HTTP level, but ship WITHOUT an allocation number - your customer's accountant will reject them.
+
+**What to do in code:**
+1. Surface this requirement to the human user before they create their first large B2B invoice - the API does not currently expose a `tax_authority_connection_active` flag in public docs.
+2. After creating a qualifying B2B invoice, fetch the resulting document with `GET /v1/documents/{id}` and check the PDF / response for an allocation number. If missing, the user's authorization is lapsed or was never set up.
+3. The exact response-body field name carrying the allocation number is not documented publicly. Inspect a real authorized invoice via the in-app API explorer (`https://app.greeninvoice.co.il/api`) to learn the field for your account.
+
+This skill does not cover SHAAM compliance end-to-end (allocation-number lifecycle, IRS-Israel filing). For that, use the `israeli-e-invoice` skill alongside this one.
+
+### Step 3: Understand Document Types
 
 Green Invoice supports 13 document types. Each has a numeric code used in API calls.
 
@@ -65,7 +105,7 @@ Green Invoice supports 13 document types. Each has a numeric code used in API ca
 
 **Key rule:** For Israeli clients who pay immediately, use type `320` (Tax Invoice-Receipt). For invoices where payment comes later, use type `300` (Transaction Invoice). For international clients, use type `400` (Receipt).
 
-### Step 3: Create Documents
+### Step 4: Create Documents
 
 **POST** `/v1/documents`
 
@@ -123,7 +163,7 @@ Required fields: `type`, `client` (with `name` and `emails`), `income` (line ite
 | 1 | VAT included in price |
 | 2 | Exempt for this line item |
 
-### Step 4: Payment Types
+### Step 5: Payment Types
 
 When adding payment records to a document, use these type codes:
 
@@ -136,7 +176,7 @@ When adding payment records to a document, use these type codes:
 | 3 | כרטיס אשראי | Credit Card |
 | 4 | העברה בנקאית | Bank Transfer |
 | 5 | פייפאל | PayPal |
-| 10 | אפליקציית תשלום | Payment App (Bit, Pepper Pay, PayBox) |
+| 10 | אפליקציית תשלום | Payment App (Bit, PayBox) |
 | 11 | אחר | Other |
 
 **Credit card types** (when payment type is 3):
@@ -158,7 +198,7 @@ When adding payment records to a document, use these type codes:
 | 3 | Credit |
 | 4 | Deferred (chiyuv nidche) |
 
-### Step 5: Manage Clients
+### Step 6: Manage Clients
 
 **Create client:** `POST /v1/clients`
 
@@ -205,7 +245,7 @@ When adding payment records to a document, use these type codes:
 }
 ```
 
-### Step 6: Search and Query Documents
+### Step 7: Search and Query Documents
 
 **POST** `/v1/documents/search`
 
@@ -237,7 +277,7 @@ When adding payment records to a document, use these type codes:
 
 **Download document PDF:** `GET /v1/documents/{id}/download/links` returns URLs in Hebrew, English, and original language.
 
-### Step 7: Link Documents
+### Step 8: Link Documents
 
 Documents can be linked to create workflows. Use `linkedDocumentIds` when creating a new document.
 
@@ -251,7 +291,7 @@ Common linking patterns:
 
 When a receipt is linked to an invoice with full payment, the invoice automatically closes.
 
-### Step 8: Item Catalog
+### Step 9: Item Catalog
 
 Manage reusable product/service items:
 
@@ -264,13 +304,13 @@ Manage reusable product/service items:
 
 Use `itemId` in income line items to reference catalog items instead of manually specifying description and price each time.
 
-### Step 9: Business Types and VAT Rules
+### Step 10: Business Types and VAT Rules
 
 Green Invoice handles VAT automatically based on business type:
 
 | Code | Hebrew | English | VAT Behavior |
 |------|--------|---------|-------------|
-| 1 | עוסק מורשה | Licensed Dealer (Osek Murshe) | VAT added (18% as of 2025) |
+| 1 | עוסק מורשה | Licensed Dealer (Osek Murshe) | VAT added (18% as of 2026) |
 | 2 | חברה בע"מ | Ltd. Company | VAT added |
 | 3 | עוסק פטור | Exempt Dealer (Osek Patur) | No VAT |
 | 4 | עמותה | Non-Profit (Amuta) | No VAT |
@@ -279,9 +319,11 @@ Green Invoice handles VAT automatically based on business type:
 
 Set `vatType: 0` on documents and the system applies the correct VAT based on your business type. Override with `vatType: 1` for exempt transactions or `vatType: 2` for mixed documents.
 
-### Step 10: Webhooks
+### Step 11: Webhooks
 
-Configure webhooks in: Settings > Developer Tools > Create Webhook.
+**Tier requirement:** webhook configuration requires the **Extra** plan or higher. Lower-tier accounts will not see the menu item.
+
+Configure webhooks in the dashboard at: Personal Area (אזור אישי) > Developer Tools (כלים למפתחים) > Webhooks. The earlier "Settings > Developer Tools" path is no longer correct after the 2025 dashboard restructure.
 
 Webhooks fire on document creation. The payload includes the full document object:
 
@@ -322,7 +364,7 @@ Common webhook automations:
 
 Consult `references/api-reference.md` for the complete webhook payload schema.
 
-### Step 11: Currencies and Exchange Rates
+### Step 12: Currencies and Exchange Rates
 
 Green Invoice supports 28 currencies. If `currencyRate` is not specified, the system uses Bank of Israel (BOI) exchange rates for the document date.
 
@@ -330,7 +372,7 @@ Common currencies: ILS, USD, EUR, GBP, JPY, CHF, CAD, AUD.
 
 For multi-currency invoices, each income line item can specify its own `currency` and `currencyRate`. The totals are always calculated in the document's base currency.
 
-### Step 12: Sandbox Testing
+### Step 13: Sandbox Testing
 
 Always test in the sandbox environment before going to production:
 
@@ -401,19 +443,43 @@ Result: All new documents automatically downloaded and organized by type and mon
 - `references/api-reference.md` -- Complete Green Invoice API endpoint reference with request/response schemas, all enum codes, and payload examples. Consult when building API integrations or debugging request formats.
 - `references/document-workflows.md` -- Common Israeli business document workflows: freelancer billing, retainer invoicing, refund flows, multi-currency billing, and e-commerce integration patterns. Consult when designing invoicing automation or choosing the correct document type sequence.
 
+## Recommended MCP Servers
+
+| MCP | What It Adds |
+|-----|-------------|
+| [BOI Exchange Rates](https://agentskills.co.il/he/mcp/boi-exchange) | Official Bank of Israel exchange rates for multi-currency invoice calculations. Green Invoice uses BOI rates by default when `currencyRate` is not specified. |
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Green Invoice Developer Docs | https://www.greeninvoice.co.il/api-docs/ | Endpoint schemas, request/response formats. The older Apiary mirror (greeninvoice.docs.apiary.io) was retired in 2026. |
+| Green Invoice In-App API Explorer | https://app.greeninvoice.co.il/api | Interactive API explorer (requires sign-in). Authoritative for current request/response field names. |
+| Tax Authority Connection Guide | https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/ | How to enable the gov.il authorization required for SHAAM allocation numbers (see Step 2) |
+| Generating API Key Guide | https://www.greeninvoice.co.il/help-center/generating-api-key/ | Current dashboard menu path and plan-tier requirements for API access |
+| Webhooks Overview | https://www.greeninvoice.co.il/magazine/webhooks/ | Plan-tier requirement (Extra) and configuration walkthrough |
+| Israel Tax Authority (VAT rates) | https://www.gov.il/he/departments/israel_tax_authority | Current VAT rate, business type rules |
+| SHAAM E-Invoice System (Tax Authority) | https://www.gov.il/he/service/invoice-allocation-number | Allocation number requirements for B2B invoices. Current threshold: NIS 10,000 net (since Jan 1, 2026), drops to NIS 5,000 net on Jun 1, 2026 (final step). |
+| Bank of Israel Exchange Rates | https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/ | Daily representative rates used by Green Invoice for multi-currency documents |
+
 ## Gotchas
 
 - Green Invoice was rebranded to "Morning" but the API domain remains `api.greeninvoice.co.il`. Agents may search for a "Morning API" that does not exist under that name.
 - The most common document type for Israeli clients paying immediately is type 320 (Tax Invoice-Receipt), not type 305 (Tax Invoice). Agents may default to 305 because it sounds like the standard invoice type.
 - Osek Patur (exempt dealer) businesses cannot issue Tax Invoices (type 305). Agents may not check the business type before selecting a document type, causing API errors.
-- VAT rate in Israel is 18% as of 2025, not 17%. The rate changed and agents trained on older data may use the outdated 17% figure in calculations.
-- Payment type code 10 covers Israeli payment apps (Bit, Pepper Pay, PayBox), which are extremely common in Israel. Agents may not know these apps exist and default to bank transfer or credit card only.
+- VAT rate in Israel is 18% as of 2026, not 17%. The rate changed in January 2025 and agents trained on older data may use the outdated 17% figure in calculations.
+- Payment type code 10 covers Israeli payment apps (Bit, PayBox), which are extremely common in Israel. Agents may not know these apps exist and default to bank transfer or credit card only. Note: Pepper Pay shut down on Apr 10, 2022; do not present it as a payment option. The historical enum value `subAppType: 2` may still exist for legacy rows but should not be used for new payments.
+- **SHAAM allocation number requires a one-time gov.il authorization in the user's Morning account.** This is the most common reason API integrations "look correct" but produce invoices the customer's accountant rejects. The integration is NOT automatic on signup. See Step 2 for the full setup, the 3-month expiry, and the renewal workflow. The threshold is currently NIS 10,000 net (since Jan 1, 2026) and drops to NIS 5,000 net on Jun 1, 2026 (final step in the rollout). Pair with the `israeli-e-invoice` skill for end-to-end SHAAM compliance.
+- **Plan tiers gate features in the dashboard.** API access requires the Best plan; webhooks require the Extra plan. A user on a lower tier will not see "API Keys" or "Webhooks" in the dashboard menu - this is not a bug, it is the gate. Check the plan before debugging missing menu items.
+- **Webhook signature verification.** Treat any unverified webhook payload as suspect. The current signature header name and hashing algorithm are NOT documented in the public help-center articles as of May 2026 - inspect the headers on a real test webhook delivery to your endpoint (sandbox or production), or sign in to the in-app API explorer to learn the current scheme. As a safety net, on receipt of a webhook always do a server-to-server `GET /v1/documents/{id}` lookup with your authenticated API token before trusting any field on the payload.
+- **Apiary docs URL is retired.** The historical `greeninvoice.docs.apiary.io` mirror was sunset in 2026 and now returns HTTP 502. Use `https://www.greeninvoice.co.il/api-docs/` (public) or `https://app.greeninvoice.co.il/api` (signed-in) instead. Agents trained before 2026 may still link to the dead Apiary URL.
+- **Rate limits.** The API allows roughly 3 requests per second per token before returning HTTP 429. The exact ceiling is not published; treat 429 as a soft error and back off exponentially. For batch operations, add a queue.
 
 ## Troubleshooting
 
 ### Error: "401 Unauthorized" on API calls
 Cause: JWT token expired or invalid credentials
-Solution: Tokens expire periodically. Re-authenticate by calling POST `/v1/account/token` with your API key ID and secret. Verify credentials in Green Invoice dashboard under Settings > Developer Tools.
+Solution: Tokens expire periodically. Re-authenticate by calling POST `/v1/account/token` with your API key ID and secret. Verify credentials in the Green Invoice dashboard under Personal Area (אזור אישי) > Developer Tools (כלים למפתחים) > API Keys. If the menu item is missing, the account is on a lower-tier plan; API access requires Best or higher.
 
 ### Error: "Document type not supported for your business type"
 Cause: Osek Patur (exempt dealer) cannot issue Tax Invoices (type 305)
@@ -426,3 +492,11 @@ Solution: Set `vatType: 0` at document level to use defaults. Only override at t
 ### Error: "Client email required"
 Cause: Creating a document without providing client email
 Solution: The `client.emails` array must contain at least one valid email when `attachment: true`. For documents that should not be emailed, set `attachment: false`.
+
+### Issue: B2B invoice over NIS 10,000 missing allocation number / customer's accountant rejected it
+Cause: The Tax Authority authorization in the Morning dashboard was never set up, or it expired (3-month TTL). The API call succeeded (HTTP 200) but the resulting invoice has no `מספר הקצאה`. The recipient business cannot deduct input VAT without it.
+Solution: Direct the user to: `אזור אישי > רשות המיסים > הוספת הרשאה` in the Morning dashboard, complete the gov.il redirect, then re-issue or re-send the invoice. If the connection had been active and just expired, Morning sent a reminder email 10 days before expiry. Add this authorization-status check to your runbook before any qualifying B2B invoice creation. Threshold: NIS 10,000 net through May 31, 2026; NIS 5,000 net from Jun 1, 2026 onward. See Step 2 for full setup.
+
+### Issue: "API Keys" or "Webhooks" menu items missing in dashboard
+Cause: The user's plan does not include this feature. API access requires Best+; webhooks require Extra+.
+Solution: Check the plan in Personal Area > Account/Subscription. Upgrade is required to proceed - there is no workaround at the API level.

@@ -30,18 +30,21 @@ VALID_INVOICE_TYPES = {
     400: "Self-billing Tax Invoice",
 }
 
-# Allocation number thresholds (NIS) by date range
+# Allocation number thresholds (NIS) by date range.
+# Israel Tax Authority reform (Amendment 157). Threshold applies to net amount,
+# excluding VAT. Required only when invoice amount is strictly greater than the
+# threshold and invoice type is 300, 305, or 310.
 ALLOCATION_THRESHOLDS = [
     ("2024-05-01", "2024-12-31", 25000),
-    ("2025-01-01", "2025-06-30", 10000),
-    ("2025-07-01", "2025-12-31", 5000),
-    ("2026-01-01", None, 5000),  # Verify - mandate expanding
+    ("2025-01-01", "2025-12-31", 20000),
+    ("2026-01-01", "2026-05-31", 10000),
+    ("2026-06-01", None, 5000),  # accelerated from originally scheduled 2028
 ]
 
 # Invoice types that require allocation numbers
 ALLOCATION_REQUIRED_TYPES = {300, 305, 310}
 
-VAT_RATE = 0.17  # 17% as of 2025
+VAT_RATE = 0.18  # 18% effective 2025-01-01 (raised from 17%); held in 2026 budget
 
 
 def validate_tin(tin: str) -> bool:
@@ -139,24 +142,26 @@ def validate_invoice(invoice: dict) -> list:
         if abs(expected_vat - actual_vat) > 0.01:
             errors.append(
                 f"VAT mismatch: expected {expected_vat} NIS "
-                f"(17% of {invoice['net_amount']}), got {actual_vat} NIS"
+                f"(18% of {invoice['net_amount']}), got {actual_vat} NIS"
             )
 
-    # Check allocation number requirement
+    # Check allocation number requirement.
+    # Threshold applies to net amount (excl. VAT) and trigger is strictly > .
     if (
         "invoice_type" in invoice
         and "date" in invoice
-        and "total_amount" in invoice
+        and ("net_amount" in invoice or "total_amount" in invoice)
     ):
         inv_type = invoice["invoice_type"]
         if inv_type in ALLOCATION_REQUIRED_TYPES:
+            net = invoice.get("net_amount", invoice.get("total_amount"))
             try:
                 threshold = get_allocation_threshold(invoice["date"])
-                if threshold and invoice["total_amount"] >= threshold:
+                if threshold and net is not None and net > threshold:
                     if not invoice.get("allocation_number"):
                         errors.append(
-                            f"Allocation number required: invoice amount "
-                            f"{invoice['total_amount']} NIS >= threshold "
+                            f"Allocation number required: net amount "
+                            f"{net} NIS > threshold "
                             f"{threshold} NIS for date {invoice['date']}"
                         )
             except (ValueError, TypeError):
@@ -170,14 +175,14 @@ def generate_example_invoice() -> dict:
     return {
         "seller_tin": "123456782",
         "seller_name": "Example Business Ltd",
-        "buyer_tin": "987654328",
+        "buyer_tin": "987654324",
         "buyer_name": "Client Company Ltd",
         "invoice_type": 300,
         "invoice_number": "INV-2026-0001",
         "date": "2026-01-15",
         "net_amount": 15000,
-        "vat_amount": 2550,
-        "total_amount": 17550,
+        "vat_amount": 2700,
+        "total_amount": 17700,
         "currency": "ILS",
         "allocation_number": "SHAAM-2026-123456",
         "items": [

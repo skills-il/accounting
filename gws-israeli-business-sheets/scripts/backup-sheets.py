@@ -9,7 +9,10 @@ Usage:
   python scripts/backup-sheets.py --spreadsheet-id SHEET_ID --output-dir ./backups --tabs "Sheet1,VAT-Period-1"
   python scripts/backup-sheets.py --help
 
-Requires: gws CLI (npm install -g @google/gws) with valid authentication.
+Requires: gws CLI (npm install -g @googleworkspace/cli) with valid authentication.
+
+The gws command surface is generated from Google's Discovery API. This script
+uses the raw `gws sheets spreadsheets values get` method with `--format csv`.
 """
 
 import argparse
@@ -36,7 +39,7 @@ def run_gws(args: list[str]) -> str:
             sys.exit(1)
         return result.stdout
     except FileNotFoundError:
-        print("Error: gws CLI not found. Install with: npm install -g @google/gws", file=sys.stderr)
+        print("Error: gws CLI not found. Install with: npm install -g @googleworkspace/cli", file=sys.stderr)
         sys.exit(1)
     except subprocess.TimeoutExpired:
         print("Error: gws command timed out after 60 seconds.", file=sys.stderr)
@@ -50,11 +53,11 @@ def export_tab(spreadsheet_id: str, tab_name: str, output_dir: Path) -> str:
     filename = f"{safe_name}_{timestamp}.csv"
     output_path = output_dir / filename
 
+    params = json.dumps({"spreadsheetId": spreadsheet_id, "range": tab_name})
     csv_data = run_gws([
-        "sheets", "read",
-        "--spreadsheet-id", spreadsheet_id,
-        "--range", f"'{tab_name}'",
-        "--output", "csv",
+        "sheets", "spreadsheets", "values", "get",
+        "--params", params,
+        "--format", "csv",
     ])
 
     output_path.write_text(csv_data, encoding="utf-8")

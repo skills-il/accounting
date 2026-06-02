@@ -26,7 +26,7 @@ If a file path is provided, read the file. If expenses are described in text, pa
 
 Ask the user for their business registration type if not already known:
 
-- **Osek Patur** (exempt dealer): Annual revenue under the threshold (currently ~120,000 ILS). Cannot charge or deduct VAT. Income tax deductions still apply.
+- **Osek Patur** (exempt dealer): Annual revenue under the threshold (NIS 122,833 for 2026 (frozen 2024-2026)). Cannot charge or deduct VAT. Income tax deductions still apply.
 - **Osek Murshe** (licensed dealer): Can charge and deduct VAT. Full income tax deductions apply.
 - **Company (Chevra Ba'am)**: Corporate tax rules apply. Full VAT deduction on business expenses.
 
@@ -52,8 +52,13 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - **Vehicle expenses (45%)**: Fuel, maintenance, insurance, parking, tolls. Applies to a single vehicle used for business. Second vehicle: 0% unless proven business-essential.
 - **Phone and internet (80%)**: Mobile phone bills, landline, internet service. The 20% disallowed portion reflects assumed personal use.
 - **Home office (proportional)**: Deduct the percentage of home used exclusively for business. Calculate: (office area / total home area) x 100. Apply this percentage to rent, arnona, electricity, internet, and maintenance.
-- **Meals and entertainment (80%)**: Business meals with clients or partners. Must document: who attended, business purpose, and relationship. Meals during regular workday for self: not deductible.
-- **Gifts to clients**: Up to 220 ILS per recipient per year.
+- **Meals and entertainment** (correct rule, often misapplied):
+  - **Hospitality / business meals with Israeli clients (אירוח בארץ): 0% deductible.** Per תקנות ניכוי הוצאות מסויימות 1972 reg. 2(1), hosting Israeli clients/partners is disallowed regardless of receipts. Coffee with a client at Aroma is **not** an 80% expense.
+  - **Hospitality with foreign guests visiting Israel (אירוח אורחי חוץ)**: deductible up to a "reasonable" amount with proper documentation of the foreign guest.
+  - **Light refreshments at the workplace (כיבוד קל)**: up to 80% deductible per ITA practice (coffee/tea/snacks for staff and visitors at the office).
+  - **Foreign-business-trip meals (אש"ל לחו"ל)**: 50% of documented meal cost, capped per ITA per-diem schedule.
+  - Meals during a regular workday for the self-employed person alone: not deductible.
+- **Gifts to clients**: Up to 240 NIS per recipient per year (2026 indexed value per תקנות ניכוי הוצאות מסויימות 1972, reg. 2(4)).
 
 **Non-deductible expenses (0%)**:
 - Personal clothing (unless uniforms or protective gear)
@@ -126,7 +131,7 @@ Actions:
 1. Identify entity type: Osek Murshe (VAT deductible)
 2. Categorize each expense:
    - Akamai Cloud (formerly Linode): 100% deductible, Account 65 (Office/General), 150 ILS
-   - Client coffee: 80% deductible, Account 66 (Marketing/Sales), 68 ILS deductible. Flag: document attendee name and business purpose
+   - Client coffee at Aroma (Israeli client, hospitality in Israel / אירוח בארץ): **0% deductible per reg. 2(1)** of תקנות ניכוי הוצאות מסויימות 1972. The 85 NIS is fully disallowed. The "client meals are 80%" misconception is one of the most common Israeli categorization mistakes.
    - Cellcom phone: 80% deductible, Account 65 (Office/General), 144 ILS deductible
    - Fuel: 45% deductible, Account 64 (Vehicle), 202.50 ILS deductible
    - Keyboard: 100% deductible (under 1,200 ILS threshold), Account 65 (Office/General), 350 ILS
@@ -193,6 +198,17 @@ Result: Enriched CSV file ready for accountant import, with flagged items requir
 - Israeli receipt numbers (mispar kabala) are legally required for expense documentation. A bank statement alone is not sufficient proof for tax deduction. Agents may accept bank records as complete documentation.
 - Expense categories must match the Israeli Tax Ordinance (pkudat mas hachnasa) classifications. Agents may use generic US-style categories like "Office Supplies" that do not map directly to Israeli tax categories.
 - Mixed personal/business expenses (like a phone used for both) require proportional allocation. Agents may categorize the entire expense as business without applying the required split.
+
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | Recognized expense categories, VAT deduction rules, bookkeeping directive |
+| Income Tax Regulations (Knesset) | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx | Income Tax Ordinance, allowed deductions, depreciation rates |
+| Hashavshevet chart of accounts | https://www.h-erp.co.il | Standard Israeli chart of accounts, account codes, tax codes |
+| Kol Zchut - self-employed taxes | https://www.kolzchut.org.il/he/עובדים_עצמאים | Allowed expenses for self-employed, home office, vehicle expenses |
+| pandas I/O reference | https://pandas.pydata.org/docs/reference/io.html | CSV/Excel import for bank/credit statements, encoding handling |
 
 ## Troubleshooting
 
