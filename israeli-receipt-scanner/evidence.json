@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-receipt-scanner",
+  "generated_at": "2026-06-03T20:49:36Z",
+  "claims": [
+    {
+      "claim_id": "vat-rate-18",
+      "claim": "Israel's standard VAT rate is 18%, in effect since 1 January 2025.",
+      "source_url": "https://sovos.com/regulatory-updates/vat/israel-vat-rate-increase-to-18-from-january-1-2025/",
+      "raw_snippet": "The standard VAT rate in Israel is increasing from 17% to 18% from January 1, 2025.",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "allocation-threshold-2025-20k",
+      "claim": "In 2025 an allocation number was required for tax invoices over NIS 20,000 (before VAT). Hebrew: נדרש מעל 20,000 ש\"ח.",
+      "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
+      "raw_snippet": "In 2025, allocation numbers are required for invoices over NIS 20,000 (before VAT).",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "allocation-threshold-jan2026-10k",
+      "claim": "From 1 January 2026 the allocation-number threshold dropped to NIS 10,000 (before VAT). Hebrew: נדרש מעל 10,000 ש\"ח.",
+      "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
+      "raw_snippet": "In 2026, the threshold will be reduced to NIS 10,000 (before VAT) from January 1.",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "allocation-threshold-jun2026-5k",
+      "claim": "From 1 June 2026 the allocation-number threshold dropped further to NIS 5,000 (before VAT). Hebrew: נדרש מעל 5,000 ש\"ח.",
+      "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
+      "raw_snippet": "From June 1, 2026, the threshold will be further reduced to NIS 5,000 (before VAT).",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "allocation-blocks-input-vat",
+      "claim": "On an above-threshold tax invoice, the buyer's input-VAT deduction is conditional on the invoice carrying an Israel Tax Authority allocation number; without one the input VAT cannot be deducted.",
+      "source_url": "https://herzoglaw.co.il/en/news-and-insights/overview-of-vat-and-customs-updates-effective-in-2026/",
+      "raw_snippet": "the deduction of input VAT is conditional upon the tax invoice being assigned an allocation number by the Israel Tax Authority",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "easyocr-no-hebrew",
+      "claim": "EasyOCR has no Hebrew model; Hebrew is not in its supported-language list, so it is not usable for Hebrew receipts.",
+      "source_url": "https://www.jaided.ai/easyocr/",
+      "raw_snippet": "EasyOCR supports 80+ languages including: Abaza, Adyghe, Afrikaans, Albanian, Angika, Arabic, Assamese, Avar, Azerbaijani, Belarusian, Bengali, ... Persian (Farsi), Polish, Portuguese, Romanian, Russian, Serbian (cyrillic and latin), Slovak, Slovenian, Spanish, Swahili, Swedish, Tabassaran, Tagalog, Tajik, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uyghur, Uzbek, Vietnamese, and Welsh. [Hebrew does not appear in the supported languages list.]",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "tesseract-heb-exists",
+      "claim": "Tesseract ships a Hebrew model (heb.traineddata) in the tesseract-ocr/tessdata repo.",
+      "source_url": "https://github.com/tesseract-ocr/tessdata",
+      "raw_snippet": "[heb.traineddata](/tesseract-ocr/tessdata/blob/main/heb.traineddata \"heb.traineddata\"). The Tesseract engine and Hebrew language data are documented at https://github.com/tesseract-ocr/tesseract .",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "reference-links",
+      "claim": "Reference links cited in the skill's tables for OCR tooling and Israeli tax authority guidance.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "OCR engines: https://github.com/JaidedAI/EasyOCR (EasyOCR) and https://github.com/tesseract-ocr/tesseract (Tesseract). Image preprocessing: https://pillow.readthedocs.io/en/stable/ (Pillow). Tax invoice fields, osek murshe validation, and VAT rules: https://www.gov.il/he/departments/israel_tax_authority (Israel Tax Authority) and https://www.kolzchut.org.il/he (Kol Zchut).",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "illustrative-example-values",
+      "claim": "Skill-defined heuristics and illustrative example values, not external facts: a VAT rounding tolerance of 0.05 NIS (0.05 ש\"ח) per receipt and up to 0.10 NIS (0.10 ש\"ח) for many-line receipts; worked-example receipt amounts in Example 2 (fuel at NIS 7.45/L, 262.24 NIS / 262.24 ש\"ח, a water bottle at 8.90 NIS / 8.90 ש\"ח); and an illustrative 12% restaurant service charge in Example 3. These are authored teaching values, not claims about Israeli law or external data.",
+      "source_url": "https://github.com/skills-il/accounting/tree/master/israeli-receipt-scanner",
+      "raw_snippet": "Authored illustrative values: rounding tolerance 0.05 NIS (0.05 ש\"ח) and 0.10 NIS (0.10 ש\"ח); example amounts NIS 7.45 per liter, 262.24 NIS (262.24 ש\"ח), 8.90 NIS (8.90 ש\"ח); example service charge 12%. Not external facts.",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "osek-hp-9-digits",
+      "claim": "Israeli company / VAT numbers (H.P. / osek murshe) are 9 numeric digits; Israeli ID-type numbers use Luhn mod-10 check-digit validation.",
+      "source_url": "https://lookuptax.com/docs/tax-identification-number/israel-tax-id-guide",
+      "raw_snippet": "Israeli companies registered with the Israeli Corporations Authority (Rashut HaTaagidim) receive a 9-digit company registration number. Format: 9 numeric digits with no internal separators or embedded meaning.",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "business-meal-vat-nondeductible",
+      "claim": "Input VAT on business meals, hosting (אירוח) and entertainment is generally not deductible in Israel (narrow exceptions aside).",
+      "source_url": "https://www.raf-cpa.com/24376",
+      "raw_snippet": "מס תשומות בגין כיבוד, ארוחות או בידור באירוע המיועד לעובדים אינו ניתן לניכוי",
+      "fetched_at": "2026-06-03T20:49:36Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "allocation-threshold-date-aware-bands",
+      "claim": "The allocation-number threshold band is selected by the invoice's own date: for invoices dated in 2025, NIS 20,000; for January through May 2026, NIS 10,000; and from 1 June 2026, NIS 5,000.",
+      "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
+      "raw_snippet": "Threshold by invoice date: for 2025, NIS 20,000 (before VAT); for January through May 2026, NIS 10,000 (before VAT); from 1 June 2026, NIS 5,000 (before VAT). Source statements: \"In 2025, allocation numbers are required for invoices over NIS 20,000 (before VAT).\" \"In 2026, the threshold will be reduced to NIS 10,000 (before VAT) from January 1.\" \"From June 1, 2026, the threshold will be further reduced to NIS 5,000 (before VAT).\"",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "buyer-name-required-for-input-VAT",
+      "claim": "Israeli input VAT is deductible only on an original tax invoice issued in the buyer's (operator's) name; the tax invoice must include the buyer's registration number, and only for small-sum invoices may the director permit omitting it. The exact buyer-registration-number-mandatory cutoff is set by ITA regulations and is stated qualitatively in the skill (no specific figure). The ITA rates page lists related small-sum thresholds that govern OTHER rules: NIS 358 (sec. 47a, the buyer's duty to demand a tax invoice) and NIS 309 (reg. 9a, a cash-register slip serving as a tax invoice). A generic retail slip with no buyer does not entitle that customer to deduct input VAT.",
+      "source_url": "https://www.gov.il/he/pages/vat-rate-amount-new",
+      "raw_snippet": "סעיף 47א לחוק חובתו של חייב במס לדרוש חשבונית מהמוכר החל מסכום של 1.1.2026 358 ... תקנה 9א ניהול פנקס חשבונות- קופה רושמת 1.1.2026 309 ... 47א. קונה שהוא חייב במס ... (א) עלה ערך הנכסים או השירותים על 358 שקלים חדשים אך לא הגיע ל- 28,778 שקלים חדשים, ידרוש ממוכר שהוא עוסק מורשה חשבונית מס ... תלוש מכירה של קופה רושמת שהוציא עוסק, יחשב כחשבונית מס לענין שרות שמחירו אינו עולה על 309 ש\"ח. VAT Law sec. 47(b)(1): \"חשבונית מס תכלול פרטים שקבע המנהל, ובלבד שיפורטו בה המס בנפרד וכן מספר הרישום של הקונה\"; the director may, for small-sum invoices, permit \"ציון המלים 'כולל מס' במקום פירוט המס בנפרד ואי-ציון מספר הרישום של הקונה\". Kol Zchut מס תשומות: \"ניתן לקזז מס תשומות אך ורק עבור רכישות שבוצעו לצורכי העסק, ובלבד שברשות העוסק חשבוניות מקוריות שהוצאו על שמו כדין\".",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vehicle-fuel-input-vat-restricted",
+      "claim": "Input VAT on a mixed business/private input (such as a passenger vehicle and its running costs, including fuel) is only partially deductible: up to two-thirds (2/3) when use is mainly for the business, and as little as one-quarter (1/4) when use is mainly private. Such documents should be flagged for the bookkeeper rather than claimed as fully deductible.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A7%D7%99%D7%96%D7%95%D7%96_%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%9E%D7%A2%22%D7%9E_%D7%A9%D7%9C_%D7%A2%D7%95%D7%A1%D7%A7_%D7%9E%D7%95%D7%A8%D7%A9%D7%94_(%D7%9E%D7%A1_%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA)",
+      "raw_snippet": "אם עיקר השימוש לצורכי העסק - ניתן לנכות עד 2/3 ממס התשומות ... אם עיקר השימוש לא לצורכי העסק, אלא לצרכים פרטיים - אפשר לנכות עד 1/4 ממס התשומות",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "six-month-deduction-window",
+      "claim": "Input VAT must be claimed within 6 months of the invoice issue date; invoices older than 6 months may be past the deduction window.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A7%D7%99%D7%96%D7%95%D7%96_%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%9E%D7%A2%22%D7%9E_%D7%A9%D7%9C_%D7%A2%D7%95%D7%A1%D7%A7_%D7%9E%D7%95%D7%A8%D7%A9%D7%94_(%D7%9E%D7%A1_%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA)",
+      "raw_snippet": "ניתן לנכות את מס התשומות גם במועד מאוחר יותר, ולכל המאוחר בתוך 6 חודשים מיום הוצאת חשבונית המס",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "domain-checklist-sources",
+      "claim": "Research domain-checklist (references/domain-checklist.md, a planning artifact) cites the following sources for input-VAT deductibility rules: document-type classification, supplier osek validation, osek-patur carrying no VAT, allocation-number threshold and input-VAT disallowance, invoice-in-buyer's-name requirement, the two-thirds partial-deduction rule (flag for bookkeeper rather than claiming 100%), private-vehicle input-VAT restriction, and the 6-month deduction deadline.",
+      "source_url": "https://www.kolzchut.org.il/he/מס_תשומות",
+      "raw_snippet": "Sources cited in the domain checklist: Kol Zchut הוצאת חשבונית מס, חשבונית עסקה וקבלה (https://www.kolzchut.org.il/he/הוצאת_חשבונית_מס,_חשבונית_עסקה_וקבלה); Kol Zchut מס תשומות (https://www.kolzchut.org.il/he/מס_תשומות); Kol Zchut עוסק פטור (https://www.kolzchut.org.il/he/עוסק_פטור); Kol Zchut קיזוז תשלומי מע\"מ של עוסק מורשה (https://www.kolzchut.org.il/he/קיזוז_תשלומי_מע%22מ_של_עוסק_מורשה_(מס_תשומות)) which explains mixed-use inputs are only two-thirds deductible so the tool should flag for the bookkeeper rather than claiming 100%; ACI חובת מספר הקצאה בניכוי מס תשומות מ-2026 (https://aci.org.il/knowledge/allocation-number-input-tax-2026/); Lishkat HaMischar Tel Aviv (https://www.chamber.org.il/serviceslobby/finance/1429/162557/); Takanot Ma\"M pratim bechashbonit (https://www.nevo.co.il/law_html/law01/271_005.htm).",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["references/domain-checklist.md"]
+    }
+  ]
+}

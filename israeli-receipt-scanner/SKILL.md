@@ -32,22 +32,29 @@ Determine whether the document is:
 
 Look for the document type indicator near the top of the receipt, usually printed in bold or larger font immediately below the merchant header.
 
+The document type drives input-VAT deductibility, but the document type alone is NOT sufficient. Only a **tax invoice (חשבונית מס)** or **tax invoice / receipt (חשבונית מס / קבלה)** issued by an osek murshe with a valid 9-digit osek number can support an input-VAT deduction, AND it must be an original invoice issued **in the buyer's name** ("על שמו כדין"). Above the small-sum threshold set by ITA regulations the buyer's name and the buyer's VAT/osek number are mandatory invoice fields. A generic retail slip with no printed buyer (a typical supermarket חשבונית מס / קבלה handed to a walk-in customer) does NOT entitle that customer to deduct input VAT. A plain receipt (קבלה), a proforma invoice (חשבונית עסקה), or any document from an osek patur also cannot.
+
+A foreign document (US sales tax, EU VAT, etc.) is never an Israeli tax invoice: its tax line must NEVER populate `vat_amount` or `vat_deductible`. Israeli input VAT does not exist on such a document (reverse-charge self-reporting applies instead).
+
 ### Step 3: Extract Core Fields
 
 Parse the following fields from the receipt text:
 
 1. **Merchant Name (שם העסק)**: Usually the first line, in Hebrew. May also include an English transliteration or brand name.
 2. **VAT Registration Number (מספר עוסק מורשה / ח.פ.)**: A 9-digit number, often prefixed with "עוסק מורשה" or "ח.פ.". Located near the merchant header.
-3. **Branch/Address (כתובת)**: Street address, city. Useful for expense location tracking.
-4. **Date (תאריך)**: Israeli receipts use DD/MM/YYYY format. Look for "תאריך" label or a date near the top.
-5. **Time (שעה)**: Often adjacent to the date.
-6. **Receipt/Invoice Number (מספר חשבונית / מספר קבלה)**: A sequential number, look for "מס' חשבונית", "מספר קבלה", or "מס' אסמכתא".
-7. **Line Items**: Product name (Hebrew), quantity, unit price, and line total. Supermarket receipts list items with barcodes.
-8. **Subtotal (סכום לפני מע"מ)**: Amount before VAT.
-9. **VAT Amount (מע"מ)**: Currently 18% in Israel (as of 2026). Look for "מע"מ" label.
-10. **Total Amount (סה"כ)**: The final amount paid, in NIS. Look for "סה"כ", "סה"כ לתשלום", or "סכום כולל".
-11. **Payment Method (אמצעי תשלום)**: Credit card (last 4 digits), cash (מזומן), digital wallet, or bank transfer.
-12. **Number of Payments (תשלומים)**: If paid in installments, the number and amount per installment.
+   - **Supplier Type (`supplier_type`)**: classify the issuer as `osek_murshe` (charges and itemizes VAT), `osek_patur` (exempt dealer, no VAT breakdown), or `unknown`. An osek-patur invoice carries no deductible input VAT.
+3. **Buyer Name (שם הקונה / שם הלקוח)** and **Buyer VAT Number (`buyer_name`, `buyer_vat_number`)**: The name (and, above the small-sum threshold, the VAT/osek number) of the party the invoice was issued TO. Set both to `null` when the document carries no printed buyer (typical for walk-in retail slips). These drive deductibility: input VAT is deductible only when the invoice is in the buyer's name and that buyer matches the business claiming the deduction.
+4. **Branch/Address (כתובת)**: Street address, city. Useful for expense location tracking.
+5. **Date (תאריך)**: Israeli receipts use DD/MM/YYYY format. Look for "תאריך" label or a date near the top.
+6. **Time (שעה)**: Often adjacent to the date.
+7. **Receipt/Invoice Number (מספר חשבונית / מספר קבלה)**: A sequential number, look for "מס' חשבונית", "מספר קבלה", or "מס' אסמכתא".
+8. **Allocation Number (מספר הקצאה)**: A SHAAM-issued number printed on B2B tax invoices above the current threshold (`allocation_number: string|null`). Set to `null` if absent. See the Allocation Number section for the threshold timeline.
+9. **Line Items**: Product name (Hebrew), quantity, unit price, and line total. Supermarket receipts list items with barcodes.
+10. **Subtotal (סכום לפני מע"מ)**: Amount before VAT.
+11. **VAT Amount (מע"מ)**: Currently 18% in Israel (as of 2026). Look for "מע"מ" label.
+12. **Total Amount (סה"כ)**: The final amount paid, in NIS. Look for "סה"כ", "סה"כ לתשלום", or "סכום כולל".
+13. **Payment Method (אמצעי תשלום)**: Credit card (last 4 digits), cash (מזומן), digital wallet, or bank transfer.
+14. **Number of Payments (תשלומים)**: If paid in installments, the number and amount per installment.
 
 ### Step 4: Handle Common Israeli Retailer Formats
 
@@ -109,10 +116,14 @@ Generate the extracted data in a structured format. Default to JSON:
     "name_he": "שופרסל דיל",
     "name_en": "Shufersal Deal",
     "vat_registration": "520044078",
+    "supplier_type": "osek_murshe",
     "branch": "סניף רמת אביב",
     "address": "רחוב איינשטיין 15, תל אביב"
   },
+  "buyer_name": null,
+  "buyer_vat_number": null,
   "document_number": "12345678",
+  "allocation_number": null,
   "date": "2026-03-08",
   "time": "14:32",
   "items": [
@@ -126,6 +137,7 @@ Generate the extracted data in a structured format. Default to JSON:
   "subtotal": 245.50,
   "vat_rate": 0.18,
   "vat_amount": 44.19,
+  "vat_deductible": false,
   "total": 289.69,
   "currency": "ILS",
   "payment": {
@@ -134,12 +146,16 @@ Generate the extracted data in a structured format. Default to JSON:
     "installments": 1
   },
   "category": "groceries",
-  "category_he": "מזון ומכולת"
+  "category_he": "מזון ומכולת",
+  "needs_review": true,
+  "warnings": ["No buyer printed on the invoice; not deductible as an input-VAT invoice for any specific business without an invoice issued in the buyer's name"]
 }
 ```
 
 For CSV output, flatten the structure with these columns:
-`date, document_type, document_number, merchant_name, vat_registration, subtotal, vat_amount, total, payment_method, category`
+`date, document_type, document_number, allocation_number, merchant_name, vat_registration, supplier_type, buyer_name, buyer_vat_number, subtotal, vat_amount, vat_deductible, total, payment_method, category`
+
+Set `vat_deductible` to `true` ONLY when ALL of these hold: the document is a חשבונית מס or חשבונית מס / קבלה issued by an osek murshe with a valid 9-digit osek number; it is an original invoice issued in the buyer's name and that buyer matches the business's own osek number (which the user supplies or configures); and, when the net amount is above the SHAAM threshold for the invoice's date, an allocation number is present. Set it to `false` (and set `needs_review: true`) when no buyer is printed or the buyer does not match, for a plain קבלה, a חשבונית עסקה (proforma), an osek-patur supplier, a fuel/vehicle-category document (see Step 7), or any foreign document.
 
 ### Step 7: Validate Extracted Data
 
@@ -147,9 +163,13 @@ Perform validation checks on the extracted data:
 
 1. **VAT Calculation**: Verify that `total = subtotal + vat_amount` (tolerance of 0.05 NIS for rounding). Current Israeli VAT rate is 18%.
 2. **Date Format**: Ensure the date is valid and not in the future.
-3. **VAT Registration**: Validate that the osek murshe number is exactly 9 digits.
+3. **VAT Registration**: Validate that the osek murshe number is exactly 9 digits. The 9-digit number also carries a check digit, which should be validated with the Luhn mod-10 algorithm (the same scheme Israeli ID-type numbers use). Do NOT invent any other checksum formula.
 4. **Line Item Totals**: Verify that sum of line items equals the subtotal (within rounding tolerance).
-5. **Currency**: Confirm amounts are in NIS. Flag if foreign currency symbols are detected.
+5. **Currency**: Confirm amounts are in NIS. Flag if foreign currency symbols are detected. A foreign document's tax line (US sales tax, EU VAT, etc.) must NEVER populate `vat_amount` or `vat_deductible`; it is not Israeli input VAT (reverse-charge applies). Set `vat_deductible: false` and add a foreign-vendor warning.
+6. **Allocation Number Threshold (date-aware)**: If the document is a tax invoice (חשבונית מס or חשבונית מס / קבלה), select the threshold band from the INVOICE's own date (not today): NIS 20,000 for invoices dated in 2025, NIS 10,000 for January through May 2026, NIS 5,000 from 1 June 2026 onward. If the subtotal (net) exceeds the band for that date AND `allocation_number` is null, emit a warning that without an allocation number the input VAT is not deductible. Digitizing an older shoebox invoice must not throw a false warning under today's lower band.
+7. **Buyer Identity**: Confirm the invoice is issued in the buyer's name and that `buyer_vat_number` matches the business's own osek number (which the user supplies or configures). If no buyer is printed, or it does not match, set `vat_deductible: false` and `needs_review: true`, and add a warning that the supplier side is valid but the invoice is not in the buyer's name.
+8. **Six-Month Deduction Window**: Input VAT must be claimed within 6 months of the invoice issue date. If the invoice date is more than 6 months in the past, emit a warning that the invoice may be past the deduction window.
+9. **Deductibility Flag**: Set `vat_deductible: true` only when ALL hold: a חשבונית מס / חשבונית מס / קבלה from an osek murshe with a valid 9-digit osek number; an allocation number when above the date-aware threshold; the invoice is in the buyer's name and matches the business; and the category is not blocked. For fuel/vehicle-category documents (passenger vehicles and their running costs, including fuel) input VAT is restricted: a mixed business/private input deducts only two-thirds when use is mainly for the business (and as little as one-quarter when use is mainly private), so set `vat_deductible: false` with `needs_review: true` and flag the mixed-use split for the bookkeeper rather than claiming full deduction. Set `false` for a plain קבלה, a חשבונית עסקה (proforma), an osek-patur supplier, or a foreign document.
 
 If validation fails, include a `warnings` array in the output with specific issues found.
 
@@ -170,9 +190,10 @@ The user provides an image of a Shufersal receipt. The agent:
 7. Extracts totals: subtotal 312.80, VAT 56.30, total 369.10
 8. Payment: credit card ending 4532, 1 installment
 9. Auto-categorizes as "groceries" (מזון ומכולת)
-10. Outputs structured JSON with all fields populated
+10. No buyer is printed on this walk-in slip, so sets vat_deductible: false and needs_review: true with a "no buyer printed" warning
+11. Outputs structured JSON with all fields populated
 
-Result: Complete JSON output with all 12 items, validated totals (VAT check passed), and category assignment.
+Result: Complete JSON output with all 12 items, validated totals (VAT check passed), category assignment, and vat_deductible: false (needs_review) because the supermarket slip was not issued in the business's name.
 
 ### Example 2: Gas Station Receipt with Multiple Items
 
@@ -188,9 +209,10 @@ The user provides a Sonol receipt image. The agent:
 6. Since the receipt contains both fuel and a store item, creates two category assignments:
    - Fuel (דלק): 262.24 NIS
    - General (כללי): 8.90 NIS
-7. Outputs structured JSON with split categorization
+7. Sets `vat_deductible: false` and `needs_review: true` because input VAT on passenger-vehicle fuel is restricted (mixed business/private use deducts only two-thirds when use is mainly for the business), and flags the mixed-use split for the bookkeeper rather than claiming full deduction
+8. Outputs structured JSON with split categorization
 
-Result: JSON with split expense categories and a note that the receipt covers two expense types.
+Result: JSON with split expense categories, a vehicle/fuel deductibility flag, and a note that the receipt covers two expense types.
 
 ### Example 3: Restaurant Tax Invoice
 
@@ -202,8 +224,8 @@ The user provides a restaurant receipt. The agent:
 2. Extracts merchant: "מסעדת רפאל, תל אביב"
 3. Extracts VAT registration number for tax deduction eligibility
 4. Parses food items, drinks, and a 12% service charge
-5. Flags that for business meal deductions in Israel, only a portion of restaurant expenses is deductible for VAT purposes
-6. Outputs JSON with a `tax_notes` field: "Business meal VAT deduction is subject to Israeli tax authority limitations"
+5. Flags that input VAT on business meals and hosting (אירוח) is generally NOT deductible in Israel (narrow exceptions aside, e.g. hosting guests from abroad), so `vat_deductible` should usually be `false` for this receipt, and advises confirming with the bookkeeper
+6. Outputs JSON with a `tax_notes` field: "Input VAT on business meals/hosting is generally non-deductible in Israel; consult your bookkeeper for any exception"
 
 Result: Complete JSON with tax-relevant notes for the accountant.
 
@@ -219,7 +241,7 @@ For B2B tax invoices at or above the current SHAAM threshold, the printed invoic
 - **Jan 2026 (current): required when net amount > NIS 10,000**
 - Jun 2026 onwards: required when net amount > NIS 5,000
 
-When scanning a B2B tax invoice, extract `allocation_number: string|null` and flag missing values on invoices that exceed the threshold — without an allocation number, the buyer loses input-VAT deduction. Receipts (type 320) and proforma documents do not require allocation numbers.
+When scanning a B2B tax invoice, extract `allocation_number: string|null` and flag missing values on invoices that exceed the band that applies to the invoice's own date (not today's date). Without an allocation number, the buyer loses input-VAT deduction. Receipts (type 320) and proforma documents do not require allocation numbers.
 
 ## Foreign-Vendor Receipts
 
@@ -231,7 +253,7 @@ App Store / Google Play / AWS / Azure / GCP / Stripe / OpenAI / Anthropic and si
 - The Hebrew date format on receipts is DD/MM/YYYY, but some thermal printers use abbreviated formats like DD/MM/YY. Agents may misparse 01/03/26 as January 3 instead of March 1 (or 2026).
 - Israeli receipts from osek patur (exempt dealers) do not contain VAT breakdowns. Agents may attempt to extract VAT from these receipts and produce incorrect calculations.
 - Thermal receipt paper degrades quickly in Israeli summer heat. OCR quality on faded receipts drops significantly, especially for Hebrew characters that are smaller and denser than Latin text.
-- Israeli business numbers (mispar osek) on receipts are 9 digits with a check digit. Agents may extract partial numbers or not validate the check digit, leading to incorrect business identification.
+- Israeli business numbers (mispar osek) on receipts are 9 digits with a check digit. Agents may extract partial numbers or not validate the check digit, leading to incorrect business identification. Validate the check digit with the Luhn mod-10 algorithm (the scheme Israeli ID-type numbers use); do not invent any other formula.
 
 
 ## Reference Links
@@ -239,7 +261,7 @@ App Store / Google Play / AWS / Azure / GCP / Stripe / OpenAI / Anthropic and si
 | Source | URL | What to Check |
 |--------|-----|---------------|
 | Tesseract OCR | https://github.com/tesseract-ocr/tesseract | Hebrew language data, OCR quality tuning |
-| EasyOCR | https://github.com/JaidedAI/EasyOCR | Multi-language OCR, Hebrew support |
+| EasyOCR | https://github.com/JaidedAI/EasyOCR | No Hebrew model, not usable for Hebrew receipts; use Tesseract `heb` or a vision-LLM |
 | Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | Tax invoice fields, osek murshe validation, VAT rules |
 | Kol Zchut | https://www.kolzchut.org.il/he | Required receipt fields, small business obligations |
 | Pillow (PIL) | https://pillow.readthedocs.io/en/stable/ | Image preprocessing for OCR (rotation, deskew) |

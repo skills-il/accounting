@@ -1,0 +1,14 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-03",
+      "lessons": [
+        "Deferred: ship the actual scripts/receipt_parser.py + export_csv.py + references files, or keep the 'pending' note; next cycle decide.",
+        "If a checksum for the osek/H.P. number is ever added it must be Luhn mod-10, not invented.",
+        "Expert review caught a silent over-claim: deductibility was set true from the SUPPLIER side alone. Israeli input VAT requires the invoice be issued in the BUYER's name (matched to the business's osek), plus date-aware allocation threshold, vehicle/fuel + mixed-use restriction (2/3 or 1/4, not full), the 6-month claim window, and a foreign tax-line guard. Added buyer_name/buyer_vat_number and made vat_deductible conjunctive across all gates.",
+        "Deferred: programmatic buyer-osek matching needs the business's own osek as config/user input; the skill instructs to obtain it but ships no config mechanism (tied to the unshipped scripts/). Decide alongside the scripts next cycle."
+      ]
+    }
+  ]
+}
