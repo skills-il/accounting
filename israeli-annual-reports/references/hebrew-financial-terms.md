@@ -28,12 +28,24 @@
 | Hebrew | English | When |
 |--------|---------|------|
 | דוח מיידי | Immediate Report | Within hours of event |
-| דוח רבעוני | Quarterly Report | Within 2 months |
+| דוח רבעוני | Quarterly Report | Within 60 days (about 2 months) |
+| דוח חצי-שנתי | Half-Yearly Report | Within about 60 days; filed by small corporations without public debt in place of Q1/Q3 reports |
 | דוח תקופתי | Annual Report | Within 3 months |
 | תשקיף מדף | Shelf Prospectus | Valid up to 3 years |
 
+## Auditor's Report Terms (ICPAS standards)
+| Hebrew | English | Note |
+|--------|---------|------|
+| חוות דעת בלתי מסויגת (נקייה) | Unqualified opinion | Clean; ICPAS 700 |
+| חוות דעת מסויגת | Qualified opinion | Modified; ICPAS 705 |
+| חוות דעת שלילית | Adverse opinion | Modified; ICPAS 705 |
+| הימנעות מחוות דעת | Disclaimer of opinion | Modified; ICPAS 705 |
+| הערת עסק חי | Going-concern emphasis | Emphasis-of-matter (ICPAS 706/570); does NOT modify the opinion grade |
+| ענייני מפתח בביקורת | Key Audit Matters (KAM) | ICPAS 701; in larger issuers' reports |
+
 ## Israeli Accounting Standards
 - IFRS adopted in 2008 for public companies
-- Banks: BOI adaptations of IFRS
-- Insurance: IFRS 17 since 2023
+- Banks: Bank of Israel Supervisor of Banks "Public Reporting Directives" (Hora'ot ha-Divuach la-Tzibur), drawing on US bank-reporting rules with IFRS for some topics
+- Insurance: IFRS 17 first-time implementation in Israel postponed to 2025 (global effective date was 2023)
 - Small private companies may use Israeli GAAP
+- Small corporation (taagid katan, Reg. 5d): reliefs bundle, half-yearly reporting (no Q1/Q3), no ISOX internal-control report, 20% valuation materiality (vs 10%), market-risk disclosure relief

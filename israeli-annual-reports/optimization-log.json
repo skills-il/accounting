@@ -1,0 +1,20 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-04",
+      "lessons": [
+        "D3 deferred: did not build or modify scripts/financial_parser.py this cycle. The Hebrew-English glossary script remains as-is; no new script work was scoped.",
+        "Correctness deviation: edit list asked to cite 'IFRS 17 from 2023' but the ifrs.org Israel jurisdiction profile states first-time IFRS 17 implementation in Israel was postponed by the Insurance Commissioner to 1 January 2025 (2023 was the original global effective date). Body and references updated to 2025 to avoid shipping a verified-false claim; evidence claim ifrs17-2025-israel documents this.",
+        "Correctness deviation: edit list framed Companies Law Sec. 172 as 'audit-committee review', but the nevo Companies Law 5759-1999 text shows Sec. 172 governs financial statements of a company that is NOT a reporting corporation, while the financial-statements review committee sits under Sec. 171 + the Companies Regulations (Approving Financial Statements) 2010. Softened the existing Sec. 172 prose in both languages to match verified text rather than preserve the inaccurate gloss.",
+        "D2 resolved: tase-mcp is live at agentskills.co.il/he/mcp/tase-mcp ('שרת MCP לבורסה לני\"ע בת\"א'), so the hard link was kept.",
+        "Verified quarterly deadline is exactly 60 days ('תוך שישים ימים מסוף הרבעון', Reg. 39), consistent with the prior 'about 2 months' wording; tightened to '60 days (about 2 months)'.",
+        "Panel fix cycle (stay 1.2.0): CRITICAL auditor-opinion taxonomy corrected to four ICPAS grades (unqualified 700; qualified/adverse/disclaimer 705) and going-concern reclassified as emphasis-of-matter (706/570) that does NOT modify the opinion; added ISA 701 KAM. MAJOR small-corp relief expanded to the full Reg. 5d bundle (ISOX exemption, 20% vs 10% valuation materiality, market-risk relief, ~NIS 300M cap). MINORs: Reg. 7(a) AGM/auditor 14-day/3-day nuance, named the BOI Supervisor of Banks 'Public Reporting Directives', added statement of changes in equity to Part C.",
+        "Anti-fabrication correction during panel fix: the BOI Public Reporting Directives are NOT simply 'an adaptation of IFRS' (the pre-existing skill framing). Verified they draw primarily on US bank-reporting rules (FASB/US bank supervisors/SEC) and incorporate IFRS for certain topics. Softened the bank framing in both languages and the references file, and fixed the evidence snippet to match.",
+        "Judge item 4 (iXBRL) softened: verified ISA iXBRL filing is currently VOLUNTARY (encouraged ahead of a future legislative amendment; only a ~50-datapoint XBRL set is downloadable from MAGNA today). Replaced the prior 'ISA mandates ... phased rollout (large issuers first)' claim, which the sources did not support.",
+        "Reviewer-added references/domain-checklist.md had em dashes and placeholder/elided URLs (ifrs.org with an elided path segment); converted all em dashes to commas and replaced elided URLs with their real full URLs so the evidence gate could back them. Added host-level + Hebrew-regulation (takana 5/7/9) evidence rows for the checklist's citations.",
+        "Grounding fix cycle (stay 1.2.0): re-cited small-corp-relief-bundle from the GT ---72014 page to the sibling ---62014 page where the verbatim snippets (20% vs 10% materiality, internal-control cancellation, market-risk exemption, <300M) actually appear. Corrected the small-corp index criterion in both SKILL files and the checklist from the wrong 'TA-125' to the regulation's 'TA-100 or TA-Beyond-50' (Reg. 5d). Scoped the ixbrl-voluntary evidence snippet to what the Feb-2023 ISA PDF supports, and added a separate ixbrl-magna-50-datapoints row sourced to Yael Group for the ~50-item MAGNA download."
+      ]
+    }
+  ]
+}

@@ -9,20 +9,22 @@ compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCod
 # Israeli Annual Reports
 
 ## Reporting Framework
-Israeli public companies adopted IFRS in 2008. Prior reports use Israeli GAAP. Banks follow BOI adaptations, insurance companies follow IFRS 17 since 2023.
+Israeli public companies adopted IFRS in 2008. Prior reports use Israeli GAAP. Banks report under the Bank of Israel Supervisor of Banks "Public Reporting Directives" (Hora'ot ha-Divuach la-Tzibur), an Israel-specific template that draws on US bank-reporting rules and incorporates IFRS for some topics, not plain IFRS. For insurers, Israel postponed first-time IFRS 17 implementation to 1 January 2025 (the original global effective date was 2023).
 
 ## Report Types and Deadlines
 | Report | Deadline | Content |
 |--------|----------|--------|
-| Annual (Doch Titkufti) | 3 months after year-end | Audited financials, board report |
-| Quarterly (Doch Rivoni) | 2 months after quarter | Reviewed interim financials |
+| Annual / Periodic (Doch Titkufti) | Within 3 months after year-end (outer bound); also at least 14 days before the AGM that approves the statements, or within 3 days of the auditor's opinion date, whichever is earlier | Audited financials, board report |
+| Quarterly (Doch Rivoni) | 60 days (about 2 months) after quarter | Reviewed interim financials |
+| Half-Yearly (Doch Chatzi-Shnati) | About 60 days after H1 | Reviewed interim financials, filed by small corporations (taagid katan) without public debt in place of Q1/Q3 reports |
 | Immediate (Doch Miyadi) | Hours after event | Material events |
 | Shelf Prospectus | Valid up to 3 years | Securities offering framework |
 
 ## Annual Report Structure
 - Part A: Description of Business (operations, markets, risks)
 - Part B: Board Report (MD&A, financial review)
-- Part C: Financial Statements (balance sheet, P&L, cash flow)
+- Part C: Financial Statements (balance sheet, P&L, cash flow, statement of changes in equity (Doch al ha-Shinuyim ba-Hon), and the Notes / Biurim)
+  - In the Notes (Biurim), read: segment data, IFRS 16 lease liabilities, contingencies and provisions, related-party disclosures (IAS 24), and subsequent events. The analytic detail lives in the Notes, not on the face of the statements.
 - Part D: Additional Information (officer compensation, audit committee)
 
 ## Key Hebrew Financial Terms
@@ -36,15 +38,15 @@ Israeli public companies adopted IFRS in 2008. Prior reports use Israeli GAAP. B
 - Tzad Kashur = Related Party
 
 ## Companies Law Requirements
-- Sec. 171(a) of the **Companies Law 1999**: the board of directors (דירקטוריון) approves annual financial statements.
-- Disclosure of approved statements to shareholders is governed by the **Securities Law 1968** + the **Securities Regulations (Periodic and Immediate Reports) 1970**, NOT by Sec. 172 of the Companies Law (Sec. 172 deals with the audit-committee review). Earlier versions of this skill mis-attributed approval to Sec. 172.
+- Sec. 171(a) of the **Companies Law 1999**: a reporting corporation (תאגיד מדווח) keeps accounts and prepares financial statements per the Securities Law; the board of directors (דירקטוריון) approves them.
+- Sec. 172 covers a company that is NOT a reporting corporation (it prepares annual statements with a December 31 balance sheet). Disclosure of a reporting corporation's approved statements to shareholders is governed by the **Securities Law 1968** + the **Securities Regulations (Periodic and Immediate Reports) 1970**, not by Sec. 172. The financial-statements review committee sits under Sec. 171 plus the Companies Regulations (Conditions for the Process of Approving Financial Statements) 2010.
 - Sec. 267-269: Audit-committee requirements
 - Sec. 270-275: Related-party transaction approvals (cross-reference IAS 24 disclosure)
 
 ## Filing Systems and Spec Compliance
-- **Magna** (`magna.isa.gov.il`) is the filer-side system used by issuers to submit periodic and immediate reports to the ISA. **MAYA** (`maya.tase.co.il`) is the public-facing viewer of those filings. Don't conflate the two: agents asking "where do I file?" need Magna; agents asking "where do I read?" need MAYA.
-- **ESEF / iXBRL**: ISA mandates structured XBRL filing of periodic reports under a phased rollout (large issuers first). 2026+ filings increasingly arrive as inline-XBRL packages alongside the human-readable PDF.
-- **Reg. 53A (dual-listed)**: Companies dual-listed on a US exchange (Teva, Check Point, NICE, CyberArk, etc.) may file under the **US disclosure regime** instead of the full Israeli regime. Major operational gotcha when comparing dual-listed issuers against Israeli-only issuers — the disclosure scope and timing differ. Note: the Teva example below IS dual-listed.
+- **Magna** (`www.magna.isa.gov.il`) is the filer-side system used by issuers to submit periodic and immediate reports to the ISA. **MAYA** (`maya.tase.co.il`) is the public-facing viewer of those filings. Don't conflate the two: agents asking "where do I file?" need Magna; agents asking "where do I read?" need MAYA.
+- **iXBRL (structured filing)**: ISA runs a structured iXBRL reporting program so financial data can be machine-read. As of the latest ISA guidance, iXBRL filing is voluntary and the Authority encourages issuers to adopt it ahead of a future legislative amendment that would make it mandatory; a limited XBRL data set (about 50 financial data points from the main statements) is already downloadable from MAGNA. Expect iXBRL packages alongside the human-readable PDF as adoption grows.
+- **Chapter E3 of the Securities Law 1968 (dual-listed)**: An Israeli corporation also traded on a foreign exchange (a "foreign corporation" / תאגיד חוץ relying on the foreign law / הדין הזר) may report under the **foreign disclosure regime** instead of the full Israeli regime. This is Chapter E3 (פרק ה'3), a framework, not a single numbered regulation. Major operational gotcha when comparing dual-listed issuers against Israeli-only issuers, the disclosure scope and timing differ.
 
 ## Recommended MCP Servers
 
@@ -54,23 +56,24 @@ Israeli public companies adopted IFRS in 2008. Prior reports use Israeli GAAP. B
 
 ## Examples
 
-### Example 1: Analyze a TASE-Listed Company's Annual Report
-User says: "Help me understand Teva's latest annual report from MAYA"
+### Example 1: Analyze a TASE-Listed Industrial Company's Annual Report
+User says: "Help me understand Strauss Group's latest annual report from MAYA"
 Actions:
-1. Identify report type: Annual Report (Doch Shnati) filed on MAYA system
-2. Locate key sections: Balance Sheet (Maazanit), Income Statement (Doch Revach VeHefsed), Cash Flow
-3. Extract key metrics: revenue, operating profit, net profit in NIS
-4. Compare with previous year and sector benchmarks
-5. Note auditor opinion and any qualifications
-Result: Structured analysis of annual report with key financial highlights in context
+1. Identify report type: Annual / Periodic Report (Doch Titkufti) filed on MAYA system
+2. Locate key sections: Balance Sheet (Maazan), Income Statement (Doch Revach VeHefsed), Cash Flow, and the Notes (Biurim)
+3. Extract key metrics: revenue, operating profit, and net profit in shekels
+4. Read the Notes for segment data, lease liabilities, and related-party transactions, not just the face of the statements
+5. Check the auditor opinion grade (ICPAS standards 700/705): unqualified (Bilti Mesuyeget / Naki), qualified (Mesuyeget), adverse (Shlilit), or disclaimer (Himanut me-Chavat Daat). Separately, look for a going-concern emphasis (Hearat Esek Chai): this is an emphasis-of-matter paragraph (ICPAS 706/570) that does NOT change the opinion grade, but it is a red flag an analyst must read. For larger issuers also read the Key Audit Matters section (ISA 701) where the auditor flags the riskiest estimates
+6. Compare with previous year and sector benchmarks
+Result: Structured analysis of a plain Israeli industrial issuer's annual report with key financial highlights in context
 
-### Example 2: Compare Israeli Bank Financial Statements
+### Example 2: Compare Israeli Bank Financial Statements (an exception)
 User says: "Compare Leumi and Hapoalim annual reports"
 Actions:
 1. Pull latest annual reports from MAYA (maya.tase.co.il)
 2. Extract comparable metrics: total assets, net income, ROE, capital adequacy
 3. Normalize data to NIS millions for comparison
-4. Note regulatory differences in reporting (Bank of Israel requirements)
+4. Note regulatory differences in reporting (Bank of Israel Public Reporting Directives, drawing on US bank-reporting rules with IFRS for some topics, not plain IFRS)
 5. Create comparison table with key ratios
 Result: Side-by-side comparison of two Israeli banks' financial performance
 
@@ -86,9 +89,14 @@ Result: Side-by-side comparison of two Israeli banks' financial performance
 
 - Israeli public companies adopted IFRS in 2008. Reports before that date use Israeli GAAP, which has significant differences. Agents may apply IFRS assumptions to pre-2008 data.
 - MAYA filings use Hebrew company names that may differ substantially from English trading names. Searching MAYA by securities number (mispar niyar) is more reliable than by name.
-- Israeli banks follow Bank of Israel adaptations to IFRS, not standard IFRS. Agents may apply general IFRS interpretations to bank financial statements, producing incorrect analysis.
+- Israeli banks follow the Bank of Israel Supervisor of Banks "Public Reporting Directives" (Hora'ot ha-Divuach la-Tzibur), an Israel-specific template drawing on US bank-reporting rules with IFRS for some topics, not standard IFRS. Agents may apply general IFRS interpretations to bank financial statements, producing incorrect analysis.
 - The Hebrew term "maazan" refers to the balance sheet, not "balance" in the general sense. Agents may mistranslate Hebrew financial terms, confusing "revach naki" (net profit) with "revach golmi" (gross profit).
-- Annual report filing deadline is 3 months after fiscal year-end, and quarterly is 2 months. Agents may apply US SEC deadlines (60 days for accelerated filers) which do not match Israeli requirements.
+- The 3-month annual deadline is only the outer bound. Under Reg. 7(a) the periodic report is also due at least 14 days before the AGM that approves the statements, or within 3 days of the auditor's opinion date, whichever is earlier. Quarterly is 60 days (about 2 months). Agents may apply US SEC deadlines which do not match Israeli requirements.
+- A small corporation (taagid katan, defined in Reg. 5d: not in the TA-100 or TA-Beyond-50 index, with average share market value under NIS 300M) gets a bundle of reliefs, not just half-yearly reporting. If its debt is not publicly held it is exempt from Q1 and Q3 quarterly reports and files a half-yearly report (doch chatzi-shnati) instead. It is also exempt from the internal-control (ISOX) report, gets a raised valuation-attachment materiality threshold (20% instead of 10%), and gets market-risk-disclosure relief. Expect those disclosures to be absent by right, do not flag them as gaps. Agents may also wrongly expect four interim reports from every issuer, then flag a "missing" Q1 or Q3.
+- The analytic detail lives in the Notes (Biurim), not on the face of the statements. Agents that read only the balance sheet and P&L miss segment breakdowns, lease liabilities (IFRS 16), contingencies, and related-party transactions (IAS 24).
+- Always check the auditor opinion grade before trusting the numbers. Israeli auditing standards (ICPAS 700/705) define four grades: unqualified (bilti mesuyeget / naki), qualified (mesuyeget), adverse (shlilit), and disclaimer (himanut me-chavat daat). Agents that list only three, or treat a qualified/adverse/disclaimer report as clean, mislead the reader.
+- A going-concern emphasis (hearat esek chai) is NOT an opinion grade. It is an emphasis-of-matter paragraph (ICPAS 706, sourced from the going-concern standard ICPAS 570) that draws attention without modifying the opinion. Agents may wrongly downgrade the opinion because of it, or wrongly ignore it: it is a red flag worth surfacing even when the opinion itself is unqualified.
+- For larger TASE issuers the auditor's report includes a Key Audit Matters section (ISA 701, "inyanei mafteach be-bikoret"), flagging the riskiest estimates. This is often the most useful part of the report for an analyst, and agents that skip it miss the auditor's own risk signal.
 
 
 ## Reference Links
