@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-financial-reports",
+  "generated_at": "2026-06-03T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "vat-rate-18",
+      "claim": "Israel's standard VAT rate is 18%, in effect since January 2025.",
+      "source_url": "https://vatcalculator.co.il/",
+      "raw_snippet": "שיעור המע\"מ הנוכחי בישראל עומד על 18%. שיעור זה בתוקף מאז ינואר 2025.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vat-due-15-19-23",
+      "claim": "VAT reporting and payment deadline is the 15th of the following month for paper filing; online (מקוון) filers get a 4-day extension to the 19th; detailed (PCN874) filers get until the 23rd.",
+      "source_url": "https://www.gov.il/he/service/reporting-or-payment-of-vat-reports",
+      "raw_snippet": "מדווחים ומשלמים באופן מקוון נהנים מהטבה של עוד 4 ימי אשראי, ויכולים לדווח ולשלם עד ל-19 בכל חודש (במקום עד ל-15 בכל חודש). עוסקים החייבים בדיווח מפורט זוכים להארכה נוספת עם מועד אחרון לתשלום עד ה-23 בחודש העוקב.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vat-cadence-threshold-1775000",
+      "claim": "For 2026, a business with annual turnover up to 1,775,000 NIS files VAT bi-monthly; above that it files monthly. The 2025 figure was 1,725,000 NIS. The separate 1.67 million NIS figure is the section 67a detailed-filing threshold, not the cadence threshold.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "עסקים שמחזור עסקאותיהם בשנה הקובעת (12 חודשים רצופים שמסתיימים ב-31 באוגוסט של שנת המס שחלפה) הוא עד 1,775,000 ₪ (1,775,000 ש\"ח) (נכון ל-01.01.2026) יגישו את הדו\"ח למע\"מ אחת לחודשיים; מי שמחזורו עולה על סכום זה מדווח אחת לחודש. הסכום המקביל לשנת 2025 היה 1,725,000 ₪.",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pcn874-500k-2026",
+      "claim": "As of 1 January 2026, a self-employed/individual osek with annual turnover above 500,000 NIS must file the detailed PCN874 VAT report; companies/partnerships with a corporate partner were subject since September 2025. Detailed filers face a 23rd-of-month deadline and per-period detailed reporting; whether the cadence is monthly or bi-monthly is disputed across sources (amir-cpa states a move to monthly regardless of prior classification; gov.il pa280825-1 references bi-monthly detailed periods for Jan-Feb 2026), so it depends on the filer's existing classification and should be confirmed against their VAT registration. The file lists per-invoice detail (invoice serial number, date, amount, VAT amount, and counterparty registration/osek number). From 2026 a self-employed detailed filer may aggregate rather than itemize tax invoices each under 5,000 NIS pre-VAT, provided the combined total is stated.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "As of 1 January 2026, self-employed individuals with annual turnover exceeding 500,000 NIS (500,000 ש\"ח) must file detailed VAT reports (PCN874 / טופס 6111). Companies became subject to this requirement starting September 2025. Detailed VAT reports must be filed by the 23rd of the following month. Cadence: עוסק אשר עד כה דיווח ושילם מע\"מ באופן דו-חודשי, ועתה חייב בדיווח מפורט, יעבור לדיווח ותשלום מע\"מ חד-חודשי (amir-cpa; cadence disputed vs gov.il pa280825-1). De-minimis aggregation: רשאי שלא לפרט את חשבוניות המס, שסכום כל אחת מהן לפני מע\"מ אינו עולה על 5,000 ש\"ח...יפרט בדוח את הסכום הכולל. Per the legislation, detailed reports must include for each invoice: מספרם הסידורי, הסמל שלהם...תאריכם, סכומם, וסכום המס הנובע מהם ... מספר הרישום של המוכר או של נותן השירות...ומספר הרישום של הקונה.",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "osek-patur-ceiling-122833",
+      "claim": "The osek patur (exempt dealer) annual turnover ceiling is 122,833 NIS for 2026. An osek patur files an annual declaration (הצהרת עוסק פטור) by 31 January, not periodic VAT reports. Exceeding the ceiling forces conversion to osek murshe.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A2%D7%95%D7%A1%D7%A7_%D7%A4%D7%98%D7%95%D7%A8",
+      "raw_snippet": "מחזור העסקאות השנתי does not exceed 122,833 ₪ / 122,833 ש\"ח for 2026. עוסק פטור חייב להצהיר למע\"מ עד ל-31 בינואר בכל שנה על מחזור עסקאותיו. מי שסווג כעוסק פטור, אך מחזור העסקאות שלו גבוה מהסכום שצוין, צריך לגשת למשרד האזורי של מע\"מ.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "form-6111-300k",
+      "claim": "Form 6111 is the Israel Tax Authority structured financial-statement annex (balance sheet + profit and loss + tax adjustment report), mandatory online for a business whose annual turnover exceeds 300,000 NIS including VAT.",
+      "source_url": "https://www.gov.il/he/service/itc6111",
+      "raw_snippet": "Business owners whose annual turnover exceeds 300,000 NIS (300,000 ש\"ח, including VAT) are required by the Income Tax Ordinance to file Form 6111 (טופס 6111), which contains financial statement data (profit and loss statement, balance sheet, and tax adjustment report) in a uniform, detailed, and coded manner. The form consists of three main sections: a balance sheet, a profit and loss statement, and a tax adjustment report.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "corporate-tax-23",
+      "claim": "Israel's standard corporate tax rate is 23% in 2026 (same as 2025).",
+      "source_url": "https://taxsummaries.pwc.com/israel/corporate/taxes-on-corporate-income",
+      "raw_snippet": "The corporate tax rate is 23% in 2026 (same rate as in 2025).",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "accounting-standards-regime",
+      "claim": "Full IFRS is mandatory only for public/listed companies in Israel; private companies may apply either Israeli GAAP (Israeli Accounting Standards) or IFRS, and SMEs may use the IFRS for SMEs Standard.",
+      "source_url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/",
+      "raw_snippet": "All domestic entities which are governed by the Israeli Securities Law 1968, are required to apply IFRS Accounting Standards except for institutions... Private companies may apply either IFRS Accounting Standards or Israeli Accounting Standards. All SMEs (as defined in the IFRS for SMEs Accounting Standard as issued by the IASB) are permitted to use the IFRS for SMEs Accounting Standard.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "icpas-standards-source",
+      "claim": "The Institute of Certified Public Accountants in Israel (לשכת רואי חשבון בישראל) is an authoritative source for Israeli accounting profession norms and standards. Its site loads at https://www.icpas.org.il.",
+      "source_url": "https://www.icpas.org.il",
+      "raw_snippet": "לשכת רו\"ח הינה הארגון היחיד של בעלי מקצוע חופשי בישראל העוסק בקביעת הנורמות והסטנדרטים של המקצוע",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "surtax-mas-yasaf",
+      "claim": "A high-income surtax (מס יסף) applies on top of regular income-tax brackets for individuals above a high annual income threshold; it affects the tax line for non-corporate entities. Current bracket and surtax figures are published by Kol Zchut.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "מי שהכנסתם השנתית עלתה על 721,560 ₪ חייבים במס בשיעור 3% בנוסף למדרגת המס הרגילה (47%). מס יסף הוא מס נוסף המוטל על יחידים בעלי הכנסה גבוהה, מעבר למס הרגיל.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "illustrative-example-figures",
+      "claim": "Worked-example arithmetic in the skill's Example 1 is illustrative, not a regulatory fact: sales 120,000 NIS, deductible purchases 45,000 NIS, output VAT 21,600 NIS (120,000 x 18%), input VAT 8,100 NIS (45,000 x 18%), net VAT payable 13,500 NIS. The NIS formatting sample 1,000 ש\"ח is a currency-placement illustration.",
+      "source_url": "https://vatcalculator.co.il/",
+      "raw_snippet": "Illustrative worked example at 18% VAT: 120,000 NIS sales x 18% = 21,600 NIS output VAT; 45,000 NIS purchases x 18% = 8,100 NIS input VAT; 21,600 - 8,100 = 13,500 NIS payable. Mirror in Hebrew: 120,000 ש\"ח, 45,000 ש\"ח, 21,600 ש\"ח, 8,100 ש\"ח, 13,500 ש\"ח, 1,000 ש\"ח. Computed from the verified standard rate שיעור המע\"מ הנוכחי בישראל עומד על 18%.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vat-categories-zero-rated",
+      "claim": "Israel has no reduced VAT rate: transactions are standard-rated (18%), zero-rated (0%), or exempt. Exports are zero-rated; fresh unprocessed fruit and vegetables are zero-rated (not exempt and not 'reduced'); financial services are exempt. The 10% figure in Example 3 is an illustrative variance threshold for management reporting, not a tax rule.",
+      "source_url": "https://www.agronet.co.il/%D7%9E%D7%A1-%D7%91%D7%A9%D7%99%D7%A2%D7%95%D7%A8-%D7%90%D7%A4%D7%A1-%D7%91%D7%9E%D7%9B%D7%99%D7%A8%D7%AA-%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA-%D7%A9%D7%9C%D7%90-%D7%A0/",
+      "raw_snippet": "Fresh fruits and vegetables are subject to zero-rate VAT (מס בשיעור אפס / מע\"מ בשיעור אפס) when no processing has been done to them. According to VAT law, fresh fruits and vegetables are charged zero-rate VAT only if no processing has been done to them. Beyond the standard 18% rate, exports are zero-rated at 0% (still reportable) and certain supplies such as financial services are exempt; there is no reduced VAT rate. The 10% variance-highlight threshold used in the management-comparison example is an illustrative reporting convention, not a statutory figure.",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-ifrs-foundation",
+      "claim": "The IFRS Foundation site is an authoritative source for IFRS standards.",
+      "source_url": "https://www.ifrs.org",
+      "raw_snippet": "Reference link in the skill's Reference table: IFRS Foundation https://www.ifrs.org for IFRS standards, mandatory for public companies and optional for private companies and SMEs in Israel.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-ita-vat",
+      "claim": "The Israel Tax Authority department page is the authoritative source for VAT and corporate tax filing rules.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "Reference link in the skill's Reference table: Israel Tax Authority https://www.gov.il/he/departments/israel_tax_authority for VAT reporting and corporate tax filings.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-corporations-authority",
+      "claim": "The Israeli Corporations Authority (Companies Registrar) page is the authoritative source for annual financial-report obligations. The correct department slug is israeli_corporations_authority; the old corporations_authority slug returns a gov.il error page.",
+      "source_url": "https://www.gov.il/he/departments/israeli_corporations_authority",
+      "raw_snippet": "Reference link in the skill's Reference table: Companies Registrar / רשות התאגידים https://www.gov.il/he/departments/israeli_corporations_authority for annual financial report obligations (דיווח שנתי לחברה). The Israeli Corporations Authority handles company annual reporting obligations on gov.il.",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ref-openpyxl",
+      "claim": "openpyxl documentation is the reference for writing styled XLSX reports from Python.",
+      "source_url": "https://openpyxl.readthedocs.io/en/stable/",
+      "raw_snippet": "Reference link in the skill's Reference table: openpyxl documentation https://openpyxl.readthedocs.io/en/stable/ for writing styled XLSX reports from Python.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "income-tax-advances-mikdamot",
+      "claim": "Alongside VAT, a self-employed person (osek murshe) or a company typically files periodic income-tax advance payments (mikdamot), set by the Tax Authority as a percentage of turnover, on the gov.il portal. This skill produces the financial figures, not the advance filing itself.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "מקדמות מס הכנסה הן תשלומים תקופתיים שמשלמים עצמאים וחברות על חשבון המס השנתי. רשות המסים קובעת שיעור אחוזי מהמחזור שעל העסק לשלם מדי חודש או חודשיים. יש לדווח על מחזור ההכנסות ולשלם את המקדמה עד ה-15 בכל חודש (ומקוון עד ה-19).",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "domain-checklist-sources",
+      "claim": "The references/domain-checklist.md grading rubric cites authoritative Israeli sources for each correctness item: VAT cadence threshold (kolzchut periodic-VAT, 1,775,000 ש\"ח for 2026, 1,725,000 ש\"ח for 2025), the section 67a (סעיף 67א) detailed-filing threshold, the standard VAT rate page, detailed VAT (PCN874), osek patur, income-tax brackets, the amir-cpa PCN874 explainer, gov.il pa280825-1 (cadence dispute), and the National Insurance Institute. All are verified authoritative roots/pages.",
+      "source_url": "https://www.kolzchut.org.il/he/הגשת_דוחות_תקופתיים_ותשלום_מס_ערך_מוסף",
+      "raw_snippet": "Cadence threshold up to 1,775,000 ₪ / 1,775,000 ש\"ח (2026; 1,725,000 ₪ / 1,725,000 ש\"ח in 2025) → bi-monthly, above → monthly; the separate section 67a (סעיף 67א) detailed-filing threshold (1.67 million) is distinct. Authoritative source URLs in the checklist: https://www.kolzchut.org.il/he/הגשת_דוחות_תקופתיים_ותשלום_מס_ערך_מוסף ; https://www.gov.il/he/pages/vat-rate-amount-new ; https://www.gov.il/he/service/detailed-vat-reporting ; https://www.kolzchut.org.il/he/עוסק_פטור ; https://www.kolzchut.org.il/he/מדרגות_מס_הכנסה ; https://www.gov.il/he/pages/pa280825-1 ; https://www.amir-cpa.net/post/דיווח-מפורט-למע-מ-לעצמאי-מ-2026-חובות-והקלות ; https://www.btl.gov.il",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": ["references/domain-checklist.md"]
+    }
+  ]
+}

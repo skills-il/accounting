@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "category": "accounting",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Israeli Financial Reports"
   },
   "display_description": {
-    "he": "הפקת דוחות כספיים בתקנים ישראליים: רווח והפסד, מאזן, מאזן בוחן, תזרים מזומנים ודוחות מע\"מ",
-    "en": "Generate Israeli-standard financial reports including profit and loss (Doch Ruvach VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow statements. Supports bilingual Hebrew/English output with NIS formatting, VAT summary reports for bi-monthly and monthly filing, year-end annual report preparation, and comparison periods. Works with Osek Patur, Osek Murshe, and Chevra (company) business types. Compliant with Israeli accounting standards based on IFRS adaptations. Use when you need to produce financial statements, tax-related summaries, or periodic reports for Israeli businesses. Exports to PDF, Excel, and CSV formats. Do NOT use for tax filing submissions, payroll processing, or bank reconciliation workflows."
+    "he": "הפקת דוחות כספיים בתקנים ישראליים כולל דוח רווח והפסד (Doch Revach VeHefsed), מאזן (Maazan), מאזן בוחן (Maazan Bochein) ודוח תזרים מזומנים. תומך בפלט דו-לשוני עברית/אנגלית עם עיצוב ש\"ח, דוחות סיכום מע\"מ לדיווח דו-חודשי וחודשי, הכנת דוחות שנתיים לסוף שנה ותקופות השוואה. עובד עם עוסק פטור, עוסק מורשה וחברה. משקף את משטר התקינה החשבונאית בישראל שבו IFRS מלא מחייב רק חברות ציבוריות, בעוד חברות פרטיות רשאיות להשתמש בתקני חשבונאות ישראליים או בתקן הדיווח לישויות קטנות ובינוניות. השתמש כאשר צריך להפיק דוחות כספיים, סיכומים למס או דוחות תקופתיים לעסקים ישראליים. ייצוא ל-PDF, אקסל ו-CSV. אל תשתמש לצורך הגשת דוחות מס, עיבוד שכר או תהליכי התאמות בנקאיות.",
+    "en": "Generate Israeli-standard financial reports including profit and loss (Doch Revach VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow statements. Supports bilingual Hebrew/English output with NIS formatting, VAT summary reports for bi-monthly and monthly filing, year-end annual report preparation, and comparison periods. Works with Osek Patur, Osek Murshe, and Chevra (company) business types. Reflects the Israeli accounting-standards regime where full IFRS is mandatory only for public companies while private companies may use Israeli GAAP or IFRS for SMEs. Use when you need to produce financial statements, tax-related summaries, or periodic reports for Israeli businesses. Exports to PDF, Excel, and CSV formats. Do NOT use for tax filing submissions, payroll processing, or bank reconciliation workflows."
   },
   "supported_agents": [
     "claude-code",

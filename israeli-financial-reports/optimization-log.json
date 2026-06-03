@@ -1,0 +1,22 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-03",
+      "lessons": [
+        "Deferred: ship a real chart-of-accounts to Form 6111 field-code mapping reference file.",
+        "Re-confirm the monthly VAT threshold (1.5M vs 1.67M sources differ) next cycle."
+      ]
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-06-04",
+      "lessons": [
+        "Panel revision: cadence threshold corrected to 1,775,000 NIS for 2026 (1,725,000 in 2025) per kolzchut/gov.il; the 1.5M figure was wrong and 1.67M is the separate sec. 67a detailed-filing threshold. Do not source cadence figures from vat-calculator-type sites.",
+        "Add a real chart-of-accounts to Form 6111 field-code mapping reference file (references/ still empty; the body now points to gov.il itc6111 instead of promising a shipped map).",
+        "Add worked cash-flow + notes-to-statements templates for a chevra next cycle.",
+        "PCN874 detailed-filer cadence (monthly vs bi-monthly) is genuinely disputed across sources; kept hedged until gov.il clarifies."
+      ]
+    }
+  ]
+}

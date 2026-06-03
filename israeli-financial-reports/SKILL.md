@@ -1,6 +1,6 @@
 ---
 name: israeli-financial-reports
-description: Generate Israeli-standard financial reports including profit and loss (Doch Revach VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow statements. Supports bilingual Hebrew/English output with NIS formatting, VAT summary reports for bi-monthly and monthly filing, year-end annual report preparation, and comparison periods. Works with Osek Patur, Osek Murshe, and Chevra (company) business types. Compliant with Israeli accounting standards based on IFRS adaptations. Use when you need to produce financial statements, tax-related summaries, or periodic reports for Israeli businesses. Exports to PDF, Excel, and CSV formats. Do NOT use for tax filing submissions, payroll processing, or bank reconciliation workflows.
+description: Generate Israeli-standard financial reports including profit and loss (Doch Revach VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow statements. Supports bilingual Hebrew/English output with NIS formatting, VAT summary reports for bi-monthly and monthly filing, year-end annual report preparation, and comparison periods. Works with Osek Patur, Osek Murshe, and Chevra (company) business types. Reflects the Israeli accounting-standards regime where full IFRS is mandatory only for public companies while private companies may use Israeli GAAP or IFRS for SMEs. Use when you need to produce financial statements, tax-related summaries, or periodic reports for Israeli businesses. Exports to PDF, Excel, and CSV formats. Do NOT use for tax filing submissions, payroll processing, or bank reconciliation workflows.
 license: MIT
 allowed-tools: Bash(python:*) Edit Read Write
 compatibility: Requires Claude Code
@@ -15,17 +15,19 @@ compatibility: Requires Claude Code
 
 Determine the business entity type before generating any report. Each type has different reporting requirements under Israeli law:
 
-- **Osek Patur** (Exempt Dealer): Simplified reporting, no VAT collection, annual revenue under the exempt threshold. Reports focus on income summary and annual declaration.
-- **Osek Murshe** (Licensed Dealer): Full VAT reporting required bi-monthly (or monthly if revenue exceeds threshold). Must produce profit and loss, and submit VAT returns.
+- **Osek Patur** (Exempt Dealer): Simplified reporting, no VAT collection. Annual turnover must stay under the exempt ceiling, which is 122,833 NIS for 2026. Files an annual declaration (Hatzharat Osek Patur) by around 31 January for the prior calendar year, not periodic VAT reports. Exceeding the ceiling mid-year forces conversion to Osek Murshe at the regional VAT office. Reports focus on income summary.
+- **Osek Murshe** (Licensed Dealer): Full VAT reporting required bi-monthly when annual turnover is up to 1,775,000 NIS (the 2026 figure; it was 1,725,000 NIS in 2025), and monthly when turnover exceeds it. Must produce profit and loss, and submit VAT returns. (The separate 1.67 million NIS figure is the section 67a detailed-filing threshold, not the cadence threshold.)
 - **Chevra (Company)**: Full financial statements required including balance sheet, profit and loss, cash flow statement, and notes to financial statements. Subject to Companies Law 1999 and Securities Authority requirements if public.
 
 Confirm the reporting period: monthly, bi-monthly (for VAT), quarterly, or annual.
+
+Alongside VAT, an Osek Murshe or Chevra typically also files periodic income-tax advance payments (mikdamot, usually a percentage of turnover set by the Tax Authority) on the same gov.il portal. This skill produces the financial figures behind those reports; it does not perform the advance filing itself.
 
 ### Step 2: Gather Financial Data
 
 Collect the following data sources:
 
-1. **Chart of Accounts (Matkonit Cheshbonot)**: The account structure following Israeli standard numbering:
+1. **Chart of Accounts (Matkonit Cheshbonot)**: A common chart-of-accounts convention (Israel has no single mandated SME numbering scheme). For filing, map accounts to the official Form 6111 field structure per the ITA 6111 form and its instructions (https://www.gov.il/he/service/itc6111), confirming the year-specific field codes there:
    - 1xxx: Assets (Rechush)
    - 2xxx: Liabilities (Hitchayvuyot)
    - 3xxx: Equity (Hon Atzmi)
@@ -112,7 +114,7 @@ Income Tax (Mas Hachnasa)            (43,424.00)     (38,065.00)
 Net Profit (Revach Naki)             145,376.00      127,435.00
 ```
 
-Apply the current Israeli corporate tax rate (23% as of 2025) for Chevra entities. For Osek Murshe, use marginal personal tax brackets.
+Apply the current Israeli corporate tax rate (23% as of 2026) for Chevra entities. For an Osek Murshe or other non-corporate entity, the profit flows to the owner's personal income tax: use the current income-tax bracket table (see Kol Zchut, Madregot Mas Hachnasa) rather than a single rate, and note that the high-income surtax (Mas Yasaf) applies on top of the regular brackets for high earners. Do not hardcode a stale bracket table; pull the live figures from the source.
 
 ### Step 5: Generate the Balance Sheet (Maazan)
 
@@ -191,8 +193,12 @@ Input VAT (Maam Tsumot):
   VAT Claimed                      17,676.00
 
 VAT Payable (Maam Leshalem):        15,696.00
-Due Date: January 15, 2026
+Due Date: January 19, 2026 (online; 15th for paper)
 ```
+
+**Reporting cadence and deadlines:** the online (mekuvan) filing deadline is the 19th of the following month; paper filers must file by the 15th. Detailed (PCN874) filers get until the 23rd.
+
+**Detailed VAT reporting (PCN874):** as of 1 January 2026, a self-employed/individual Osek with annual turnover above 500,000 NIS must file the detailed PCN874 report (companies and partnerships with a corporate partner have been required since September 2025). Detailed filers face a 23rd-of-month deadline and per-period detailed reporting; whether the cadence is monthly or bi-monthly depends on the filer's existing classification (sources differ, so confirm against the filer's own VAT registration). The file lists per-invoice detail: invoice number, date, amount, VAT amount, and the counterparty's Osek (registration) number. From 2026, a self-employed detailed filer may aggregate (rather than itemize) tax invoices under 5,000 NIS pre-VAT as long as the combined total is stated.
 
 ### Step 8: Format and Export
 
@@ -206,7 +212,7 @@ Apply proper formatting for all reports:
 
 ## Examples
 
-### Example 1: Monthly VAT Report for Osek Murshe
+### Example 1: Bi-monthly VAT Report for Osek Murshe
 
 User says: "Generate my VAT report for the Jan-Feb 2025 bi-monthly period. I am an Osek Murshe. My sales were 120,000 NIS and my deductible purchases were 45,000 NIS."
 
@@ -215,7 +221,7 @@ Actions:
 2. Calculate Output VAT: 120,000 x 18% = 21,600 NIS.
 3. Calculate Input VAT: 45,000 x 18% = 8,100 NIS.
 4. Calculate net VAT payable: 21,600 - 8,100 = 13,500 NIS.
-5. Generate formatted bilingual VAT summary report with due date (March 15, 2025).
+5. Generate formatted bilingual VAT summary report with due date (March 19, 2025 (online; 15th for paper)).
 
 Result: A formatted VAT summary report showing 13,500 NIS payable to the Tax Authority (Rashut HaMisim), with bilingual headers and proper NIS formatting.
 
@@ -230,9 +236,10 @@ Actions:
 4. Generate Balance Sheet with proper asset/liability/equity classification.
 5. Generate Cash Flow Statement using indirect method.
 6. Apply 23% corporate tax rate to calculate tax provision.
-7. Add bilingual headers (Hebrew/English) to all reports.
-8. Format all amounts in NIS with proper separators and parentheses for negatives.
-9. Export to PDF and Excel.
+7. Map the statements to Form 6111, the Israel Tax Authority structured annex (balance sheet, profit and loss, and tax-adjustment report) that must be filed online when annual turnover exceeds 300,000 NIS including VAT; this is the actual submission vehicle for the figures.
+8. Add bilingual headers (Hebrew/English) to all reports.
+9. Format all amounts in NIS with proper separators and parentheses for negatives.
+10. Export to PDF and Excel.
 
 Result: Complete set of annual financial statements (P&L, Balance Sheet, Cash Flow) in bilingual format, ready for submission to the Registrar of Companies (Rasham HaChevrot) and the Tax Authority.
 
@@ -262,10 +269,10 @@ Result: A management-oriented P&L comparison report showing quarter-over-quarter
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| IFRS Foundation | https://www.ifrs.org | IFRS standards (Israeli accounting uses IFRS) |
-| Israel Accounting Standards Board | https://www.iasb.org.il | Israeli accounting standards, disclosures |
+| IFRS Foundation | https://www.ifrs.org | IFRS standards (mandatory for public companies; optional for private companies and SMEs) |
+| Institute of Certified Public Accountants in Israel | https://www.icpas.org.il | Israeli accounting profession norms and standards |
 | Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | VAT reporting, corporate tax filings |
-| Companies Registrar | https://www.gov.il/he/departments/corporations_authority | Annual financial report obligations |
+| Companies Registrar | https://www.gov.il/he/departments/israeli_corporations_authority | Annual financial report obligations |
 | openpyxl documentation | https://openpyxl.readthedocs.io/en/stable/ | Writing styled XLSX reports from Python |
 
 ## Troubleshooting
@@ -283,7 +290,7 @@ Solution:
 
 ### Error: "VAT rate mismatch"
 
-Cause: The VAT calculation uses an incorrect rate. Israel's standard VAT rate is 18% (as of 2025). Some transactions may be zero-rated (exports) or exempt (financial services, certain food items, fruits and vegetables at reduced rate).
+Cause: The VAT calculation uses an incorrect rate. Israel's standard VAT rate is 18% (in effect since January 2025). There is no reduced VAT rate in Israel: transactions are either standard-rated (18%), zero-rated (0%), or exempt. Exports are zero-rated, fresh unprocessed fruit and vegetables are zero-rated (not exempt and not "reduced"), and certain supplies such as financial services are exempt.
 
 Solution:
 1. Verify the current VAT rate from the Tax Authority (Rashut HaMisim) website.
