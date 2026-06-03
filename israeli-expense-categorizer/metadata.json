@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "category": "accounting",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Israeli Expense Categorizer"
   },
   "display_description": {
-    "he": "מיון אוטומטי של הוצאות עסקיות לקטגוריות מס ישראליות עם אחוזי ניכוי מדויקים",
-    "en": "AI-powered categorization of business expenses into Israeli tax-deductible categories based on current Israeli Tax Ordinance rules. Applies correct deduction percentages (car 45%, phone/internet 80%, home office proportional), maps to standard Israeli chart of accounts, and handles Osek Patur vs Osek Murshe differences for VAT eligibility. Use when you need to classify business expenses for Israeli tax reporting, prepare expense reports for your accountant, or verify deduction eligibility. Do NOT use for final tax filing, legal tax advice, or payroll-related expense processing."
+    "he": "מיון אוטומטי של הוצאות עסקיות לקטגוריות מס ישראליות עם מנגנוני הניכוי הנכונים: רכב לפי הגבוה מבין הוצאות אחזקה פחות שווי שימוש או 45%, טלפון נייד עם רצפת אי-הכרה של כ-50%, ומשרד ביתי ואינטרנט יחסיים. ממפה למתכונת חשבונות ישראלית מקובלת, ומבחין בין עוסק פטור לעוסק מורשה לעניין מע\"מ (אין ניכוי על רכישת רכב פרטי, ושני שלישים על הוצאות שוטפות). מתאים להכנת דוחות הוצאות לרואה החשבון ולאימות זכאות ניכוי, לא להגשת דוח מס סופי או ייעוץ משפטי.",
+    "en": "AI-powered categorization of business expenses into Israeli tax-deductible categories based on current Israeli Tax Ordinance rules. Applies the correct deduction mechanics (vehicle = the higher of running-costs-minus-use-value or 45%, mobile phone with the ~50% disallowance floor, home office and internet proportional), maps to a common Israeli chart of accounts, and handles Osek Patur vs Osek Murshe differences for VAT eligibility (private-car VAT not deductible, running-cost VAT two-thirds). Use when you need to classify business expenses for Israeli tax reporting, prepare expense reports for your accountant, or verify deduction eligibility. Do NOT use for final tax filing, legal tax advice, or payroll-related expense processing."
   },
   "supported_agents": [
     "claude-code",

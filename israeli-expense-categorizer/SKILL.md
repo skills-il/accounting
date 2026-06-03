@@ -1,6 +1,6 @@
 ---
 name: israeli-expense-categorizer
-description: AI-powered categorization of business expenses into Israeli tax-deductible categories based on current Israeli Tax Ordinance rules. Applies correct deduction percentages (car 45%, phone/internet 80%, home office proportional), maps to standard Israeli chart of accounts, and handles Osek Patur vs Osek Murshe differences for VAT eligibility. Use when you need to classify business expenses for Israeli tax reporting, prepare expense reports for your accountant, or verify deduction eligibility. Do NOT use for final tax filing, legal tax advice, or payroll-related expense processing.
+description: AI-powered categorization of business expenses into Israeli tax-deductible categories based on current Israeli Tax Ordinance rules. Applies the correct deduction mechanics (vehicle = the higher of running-costs-minus-use-value or 45%, mobile phone with the ~50% disallowance floor, home office and internet proportional), maps to a common Israeli chart of accounts, and handles Osek Patur vs Osek Murshe differences for VAT eligibility (private-car VAT not deductible, running-cost VAT two-thirds). Use when you need to classify business expenses for Israeli tax reporting, prepare expense reports for your accountant, or verify deduction eligibility. Do NOT use for final tax filing, legal tax advice, or payroll-related expense processing.
 license: MIT
 allowed-tools: Bash(python:*) Read Edit Write
 compatibility: Requires Claude Code or compatible agent with file access
@@ -26,11 +26,13 @@ If a file path is provided, read the file. If expenses are described in text, pa
 
 Ask the user for their business registration type if not already known:
 
-- **Osek Patur** (exempt dealer): Annual revenue under the threshold (NIS 122,833 for 2026 (frozen 2024-2026)). Cannot charge or deduct VAT. Income tax deductions still apply.
+- **Osek Patur** (exempt dealer): Annual turnover under the threshold (NIS 122,833 for 2026, re-indexed from NIS 120,000 that applied in 2024-2025). Cannot charge or deduct VAT. Income tax deductions still apply.
 - **Osek Murshe** (licensed dealer): Can charge and deduct VAT. Full income tax deductions apply.
-- **Company (Chevra Ba'am)**: Corporate tax rules apply. Full VAT deduction on business expenses.
+- **Company (Chevra Ba'am)**: Corporate tax rules apply. Full VAT deduction on eligible business expenses, but subject to the same תקנה 14 / תקנה 18 limits as an osek murshe (no input VAT on a private-car purchase, the 2/3 vs 1/4 split on running-cost VAT) and the same אירוח / meals VAT disallowance. A company is NOT exempt from these limits.
 
 This distinction is critical because it affects VAT deduction eligibility.
+
+**עסק זעיר (small-business) election**: Under the 2026 small-business reform (חוק ההתייעלות הכלכלית, פרק "בעל עסק זעיר"), an osek (patur or murshe) whose turnover is under the osek-patur ceiling (the same NIS 122,833 for 2026) can ELECT a flat automatic income-tax deduction of 30% of turnover instead of itemizing actual expenses. An osek patur classified as עסק זעיר receives this 30% deduction automatically. Before categorizing every receipt, compare the 30%-of-turnover flat election against the itemized total this skill produces, the user should claim whichever is higher and confirm eligibility with their accountant.
 
 ### Step 3: Apply Israeli tax deduction rules
 
@@ -44,21 +46,23 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - Business insurance premiums
 - Marketing and advertising costs
 - Professional development courses directly related to the business
-- Office supplies and equipment under 1,200 ILS (immediate expense)
+- Office supplies and low-value equipment (immediate expense rather than depreciation; ~1,200 ILS is a common working threshold for flagging low-value items, confirm the current figure with your accountant)
 - Website hosting and domain costs
 - Employee salaries and related social costs
 
 **Partially deductible expenses**:
-- **Vehicle expenses (45%)**: Fuel, maintenance, insurance, parking, tolls. Applies to a single vehicle used for business. Second vehicle: 0% unless proven business-essential.
-- **Phone and internet (80%)**: Mobile phone bills, landline, internet service. The 20% disallowed portion reflects assumed personal use.
+- **Vehicle expenses (higher-of rule)**: Fuel, licensing, compulsory + comprehensive insurance, leasing, repairs, parking, tolls, and depreciation. Per תקנות מס הכנסה (ניכוי הוצאות רכב) התשנ"ה-1995, the deductible amount is the HIGHER of [running expenses minus שווי שימוש (use-value)] OR [45% of running expenses]. The common "just take 45%" shortcut is wrong whenever the running-minus-use-value figure is larger. Note: שווי שימוש is NOT a computed or receipt-based number, it is a FIXED monthly amount the Tax Authority sets per vehicle from the official price-group (קבוצת מחיר) table, or for vehicles from 2010 onward as a percentage of the list price (currently 2.48%); look it up via the ITA שווי שימוש calculator so the higher-of branch is actually computable. Hard statutory condition: the user must record odometer (ק"מ) readings at the start and end of the tax year, or the deduction can be disqualified. Applies to a single vehicle used for business; a second vehicle is 0% unless proven business-essential.
+- **Mobile phone (טלפון נייד)**: Not a flat 80%. Per תקנות מס הכנסה (ניכוי הוצאות מסוימות) תשל"ב-1972, only the portion ABOVE the lower of 1,380 NIS per year (~115 NIS/month) or 50% of the expense is deductible, which acts as an effective ~50% disallowance floor.
+- **Landline from home (טלפון קווי מהבית)**: Deductible is the LOWER of 80% of the expense OR the amount exceeding 2,700 NIS (2025), within an annual ceiling of 26,600 NIS.
+- **Internet**: No fixed percentage. Split by actual business-use proportion (for a home connection, use the same business-use share as the home office).
 - **Home office (proportional)**: Deduct the percentage of home used exclusively for business. Calculate: (office area / total home area) x 100. Apply this percentage to rent, arnona, electricity, internet, and maintenance.
 - **Meals and entertainment** (correct rule, often misapplied):
   - **Hospitality / business meals with Israeli clients (אירוח בארץ): 0% deductible.** Per תקנות ניכוי הוצאות מסויימות 1972 reg. 2(1), hosting Israeli clients/partners is disallowed regardless of receipts. Coffee with a client at Aroma is **not** an 80% expense.
   - **Hospitality with foreign guests visiting Israel (אירוח אורחי חוץ)**: deductible up to a "reasonable" amount with proper documentation of the foreign guest.
   - **Light refreshments at the workplace (כיבוד קל)**: up to 80% deductible per ITA practice (coffee/tea/snacks for staff and visitors at the office).
-  - **Foreign-business-trip meals (אש"ל לחו"ל)**: 50% of documented meal cost, capped per ITA per-diem schedule.
+  - **Foreign-business-trip meals (אש"ל לחו"ל)**: 50% of documented meal cost. Per-diem caps (2025): roughly $97/day when lodging is claimed separately, or roughly $162/day when lodging is not claimed separately.
   - Meals during a regular workday for the self-employed person alone: not deductible.
-- **Gifts to clients**: Up to 240 NIS per recipient per year (2026 indexed value per תקנות ניכוי הוצאות מסויימות 1972, reg. 2(4)).
+- **Gifts to clients**: Up to 240 NIS per recipient per year (2025) for gifts given in Israel, and up to $15 USD per foreign recipient per year, per תקנות ניכוי הוצאות מסויימות 1972.
 
 **Non-deductible expenses (0%)**:
 - Personal clothing (unless uniforms or protective gear)
@@ -69,14 +73,19 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - Political donations
 
 **Special rules**:
-- **Equipment over 1,200 ILS**: Must be depreciated over useful life (computers: 3 years at 33%, furniture: 6 years at 15%, vehicles: 5-7 years)
-- **Depreciation of vehicles**: 15% per year, applied to max ceiling (currently ~240,000 ILS for standard vehicles)
-- **Travel abroad**: Fully deductible if business purpose is documented. Per diem rules apply: accommodation receipts required, meal allowance up to set daily limits.
+- **Higher-value equipment**: Recognized through depreciation over its useful life rather than immediately (computers: 33% per year, office furniture: 6% per year). Low-value items are taken as an immediate expense; ~1,200 ILS is a common working threshold for flagging which items to treat as low-value, confirm the current figure with your accountant.
+- **Depreciation of vehicles**: 15% per year applied to the vehicle cost; the deductible portion of that depreciation is itself folded into the 45% higher-of running-cost rule above.
+- **Travel abroad**: Fully deductible if business purpose is documented. Per diem rules apply: accommodation receipts required, meal allowance up to the daily caps noted above (~$97/$162 per day, meals 50%).
 - **Work clothing**: Deductible only if branded, protective, or required uniform. Regular business attire is not deductible.
+
+**VAT (Osek Murshe only)**:
+- **Private vehicle (רכב פרטי) purchase**: Input VAT on the purchase or import of a private vehicle is NOT deductible at all (תקנה 14).
+- **Vehicle running costs (fuel, repairs)**: Input VAT is 2/3 deductible when business is the primary use of the vehicle, and 1/4 deductible otherwise (תקנה 18).
+- Keep תקנה 14 and תקנה 18 separate: תקנה 14 blocks input VAT on the PURCHASE of a private vehicle entirely, while תקנה 18 governs the RUNNING-cost VAT (the 2/3 vs 1/4 split). They are different rules and should not be conflated.
 
 ### Step 4: Map to Israeli chart of accounts
 
-Map each categorized expense to the appropriate account code in the standard Israeli chart of accounts:
+Map each categorized expense to the appropriate account code using a common Israeli chart-of-accounts convention (the 60-70 ranges below are a widely used convention, not a legal standard; confirm against your accountant's actual scheme):
 
 | Account Range | Category | Examples |
 |---|---|---|
@@ -132,14 +141,14 @@ Actions:
 2. Categorize each expense:
    - Akamai Cloud (formerly Linode): 100% deductible, Account 65 (Office/General), 150 ILS
    - Client coffee at Aroma (Israeli client, hospitality in Israel / אירוח בארץ): **0% deductible per reg. 2(1)** of תקנות ניכוי הוצאות מסויימות 1972. The 85 NIS is fully disallowed. The "client meals are 80%" misconception is one of the most common Israeli categorization mistakes.
-   - Cellcom phone: 80% deductible, Account 65 (Office/General), 144 ILS deductible
-   - Fuel: 45% deductible, Account 64 (Vehicle), 202.50 ILS deductible
-   - Keyboard: 100% deductible (under 1,200 ILS threshold), Account 65 (Office/General), 350 ILS
+   - Cellcom mobile phone: NOT a flat 80%. Apply the floor: the non-deductible portion is the lower of 1,380 ILS/year (115 ILS/month) or 50% of the bill. For a 180 ILS monthly bill, 50% (90 ILS) is lower than 115 ILS, so 90 ILS is disallowed and 90 ILS is deductible. Account 65 (Office/General), 90 ILS deductible
+   - Fuel: part of vehicle running costs. The simplified 45% gives 202.50 ILS, but the correct figure is the HIGHER of 45% or [running costs minus use-value], computed once across the whole vehicle bundle at year-end. Account 64 (Vehicle), ~202.50 ILS deductible (recompute under the higher-of rule with full-year data)
+   - Keyboard: 100% deductible (low-value item, expensed immediately rather than depreciated), Account 65 (Office/General), 350 ILS
    - Accountant fee: 100% deductible, Account 67 (Professional Services), 800 ILS
    - WeWork: 100% deductible, Account 63 (Rent), 1,200 ILS
    - Udemy course: 100% deductible, Account 65 (Office/General), 120 ILS
-3. Generate summary: Total expenses 3,335 ILS, Total deductible 3,169.50 ILS, Non-deductible 165.50 ILS
-4. VAT note: Input VAT reclaimable on all items except the meal (partial)
+3. Generate summary: Total expenses 3,335 ILS, Total deductible 2,912.50 ILS, Non-deductible 422.50 ILS (client coffee 85 + disallowed phone portion 90 + disallowed fuel portion 247.50)
+4. VAT note: Input VAT reclaimable on most items; the client meal carries no VAT deduction, and vehicle running-cost VAT is limited to 2/3
 
 Result: Categorized expense report with deduction amounts, account codes, and a flag to document the client meeting details.
 
@@ -167,7 +176,7 @@ Actions:
    - Adobe CC: 100% deductible, Account 65, 220 ILS
    - Parking ticket: 0% deductible (fine/penalty), flag as non-deductible
    - Jeans: 0% deductible (personal clothing), flag as non-deductible
-   - Client dinner: 80% deductible, Account 66, 280 ILS deductible. Flag: document attendees
+   - Client dinner (אירוח בארץ, hosting an Israeli client): 0% deductible per תקנות ניכוי הוצאות מסויימות 1972. The full 350 ILS is disallowed. Flag as non-deductible (the "client meals are 80%" assumption is wrong)
    - Printer ink: 100% deductible, Account 65, 95 ILS
 4. Generate summary with depreciation schedule for the iMac
 5. Flag: No VAT deduction available (Osek Patur). Recommend evaluating whether switching to Osek Murshe would be beneficial given equipment purchases.
@@ -182,8 +191,9 @@ Actions:
 1. Read the CSV file and parse columns (date, description, amount, vendor)
 2. Ask for entity type if not specified
 3. Auto-categorize based on vendor names and descriptions using pattern matching:
-   - Gas station names (Paz, Sonol, Delek) -> Vehicle expenses, 45%
-   - Bezeq/Cellcom/Partner/HOT -> Phone/Internet, 80%
+   - Gas station names (Paz, Sonol, Delek) -> Vehicle running costs; tag for the year-end higher-of rule (45% or running-minus-use-value), do not hard-code 45% per line
+   - Cellcom/Partner mobile lines -> Mobile phone; apply the 1,380 ILS-or-50% floor, not a flat 80%
+   - Bezeq landline / HOT / internet -> Landline-or-internet; landline is the lower of 80% or the amount over 2,700 ILS, internet is split by business-use proportion
    - Supermarket chains -> Flag as likely personal, 0%
    - Software vendors -> Office/General, 100%
 4. Flag ambiguous items for manual review
@@ -193,7 +203,7 @@ Result: Enriched CSV file ready for accountant import, with flagged items requir
 
 ## Gotchas
 
-- Israeli expense deduction rates are specific and non-negotiable: car expenses at 45% (or fixed amount), meals/entertainment at 80%, phone/internet at a proportional business-use rate. Agents may apply 100% deduction to all business expenses.
+- Israeli expense deduction rates are specific and easy to get wrong: vehicle expenses follow the higher-of rule (running-minus-use-value or 45%), the mobile phone has a 1,380 ILS-or-50% disallowance floor (not a flat 80%), hosting Israeli clients and business meals are 0% (only כיבוד קל at the workplace is 80%), and internet is a proportional business-use split. Agents may wrongly apply a flat 80% to phones and meals or a flat 45% to cars, or apply 100% deduction to all business expenses.
 - Home office expenses in Israel are deductible based on the proportional area used for business, not a flat deduction. Agents may apply US-style simplified home office deduction rules.
 - Israeli receipt numbers (mispar kabala) are legally required for expense documentation. A bank statement alone is not sufficient proof for tax deduction. Agents may accept bank records as complete documentation.
 - Expense categories must match the Israeli Tax Ordinance (pkudat mas hachnasa) classifications. Agents may use generic US-style categories like "Office Supplies" that do not map directly to Israeli tax categories.
@@ -205,8 +215,10 @@ Result: Enriched CSV file ready for accountant import, with flagged items requir
 | Source | URL | What to Check |
 |--------|-----|---------------|
 | Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | Recognized expense categories, VAT deduction rules, bookkeeping directive |
-| Income Tax Regulations (Knesset) | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx | Income Tax Ordinance, allowed deductions, depreciation rates |
-| Hashavshevet chart of accounts | https://www.h-erp.co.il | Standard Israeli chart of accounts, account codes, tax codes |
+| Deduction of Certain Expenses Regulations 1972 (Nevo) | https://www.nevo.co.il/law_html/law01/255_418.htm | Hosting (אירוח בארץ) disallowance, כיבוד קל 80%, gifts, phone floor |
+| Vehicle Expense Deduction Regulations 1995 (Nevo) | https://www.nevo.co.il/law_html/law01/255_439.htm | Higher-of vehicle rule, odometer recording condition |
+| Vehicle input-tax (VAT) guide (gov.il) | https://www.gov.il/he/pages/instructions-for-deduction-of-input-tax-for-vehicles-and-motorcycles | Private-car VAT not deductible, running-cost VAT 2/3 vs 1/4 |
+| Hashavshevet chart of accounts | https://www.h-erp.co.il | Common Israeli chart-of-accounts convention, account codes, tax codes |
 | Kol Zchut - self-employed taxes | https://www.kolzchut.org.il/he/עובדים_עצמאים | Allowed expenses for self-employed, home office, vehicle expenses |
 | pandas I/O reference | https://pandas.pydata.org/docs/reference/io.html | CSV/Excel import for bank/credit statements, encoding handling |
 

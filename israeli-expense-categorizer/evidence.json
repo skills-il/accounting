@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-expense-categorizer",
+  "generated_at": "2026-06-03T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "phone-mobile-floor",
+      "claim": "Mobile phone (טלפון נייד) for self-employed: the non-deductible annual portion is the lower of 1,380 ש\"ח or 50% of the expense, so only the amount above that floor is deductible.",
+      "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
+      "raw_snippet": "החלק הלא מוכר השנתי הינו בגובה של 1,380 ש\"ח, או בגובה מחצית ההוצאות לפי הנמוך",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+    },
+    {
+      "claim_id": "phone-landline",
+      "claim": "Home landline (טלפון קווי מהבית): deductible is the lower of 80% of the expense OR the amount exceeding 2,700 ש\"ח, subject to a 26,600 ש\"ח annual ceiling.",
+      "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
+      "raw_snippet": "הוצאות טלפון שנתיות שלא עלו על 26,600 ש\"ח, יותרו 80% מההוצאות, או סכום ההוצאה העולה על 2,700 ש\"ח לפי הנמוך",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vehicle-higher-of",
+      "claim": "Vehicle running expenses: deductible amount = the HIGHER of [running expenses minus שווי שימוש (use-value)] OR [45% of running expenses].",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "סכום הוצאות החזקת רכב בניכוי שווי השימוש ברכב...או סכום בגובה 45% מהוצאות החזקת הרכב, לפי הגבוה",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+    },
+    {
+      "claim_id": "vehicle-odometer",
+      "claim": "Hard statutory condition: the taxpayer must record odometer (מד אוץ / ק\"מ) readings at the beginning and end of the tax year.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "קריאת המונה בק\"מ בתחילת שנת המס ובסופה",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vehicle-vat-purchase",
+      "claim": "VAT (input tax / מס תשומות) on the purchase or import of a private vehicle (רכב פרטי) is NOT deductible at all (תקנה 14).",
+      "source_url": "https://www.gov.il/he/pages/instructions-for-deduction-of-input-tax-for-vehicles-and-motorcycles",
+      "raw_snippet": "תקנה 14(א) לתקנות מס ערך מוסף אוסרת על העוסקים לנכות את מס התשומות עבור רכישה או יבוא של רכב פרטי",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+    },
+    {
+      "claim_id": "vehicle-vat-running",
+      "claim": "Per תקנה 18 of the VAT regulations, VAT on mixed-use vehicle running costs (fuel/repairs) is deductible at 2/3 (שני שלישים) when business is the primary use, and only 1/4 (רבע) of the input tax when the main use is not for business.",
+      "source_url": "https://www.bshcpa.co.il/%D7%AA%D7%A7%D7%A0%D7%94-18-%D7%A7%D7%99%D7%96%D7%95%D7%96-%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA/",
+      "raw_snippet": "רשאי העוסק לנכות שני שלישים ממס התשומות ... רשאי העוסק לנכות רבע ממס התשומות",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+    },
+    {
+      "claim_id": "client-meals-zero",
+      "claim": "Hosting Israeli clients (אירוח בארץ) and business meals are 0% deductible.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "לא יותר ניכוי הוצאה בשל אירוח בארץ",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "kibud-kal-80",
+      "claim": "Only light refreshments at the workplace (כיבוד קל) are 80% deductible.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "שתיה קרה או חמה, עוגיות וכיוצא באלה ... 80%",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "gifts-240-15",
+      "claim": "Gifts: up to 240 ש\"ח per recipient per year for gifts given in Israel (2025), and up to $15 USD per foreign recipient per year.",
+      "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
+      "raw_snippet": "אם המתנה ניתנה בישראל – עד ל- 240 ש\"ח לשנה למקבל. לתושבי חוץ – עד ל- 15$ של ארה\"ב לאדם לשנה",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "per-diem-foreign",
+      "claim": "Foreign-travel per-diem (אש\"ל לחו\"ל): when lodging is claimed separately, ~$97/day; when lodging is not claimed, ~$162/day. Foreign-trip meals are 50% deductible.",
+      "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
+      "raw_snippet": "אם נדרשו הוצאות לינה – יותרו 97$ לכל יום שהייה... אם לא נדרשו הוצאות לינה – יותרו 162$ לכל יום שהייה",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "osek-patur-ceiling",
+      "claim": "Osek Patur annual turnover ceiling is 122,833 ש\"ח for 2026, re-indexed (צמוד למדד) from 120,000 ש\"ח which applied in 2024-2025.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/%D7%AA%D7%A7%D7%A8%D7%AA-%D7%A2%D7%95%D7%A1%D7%A7-%D7%A4%D7%98%D7%95%D7%A8/",
+      "raw_snippet": "בשנת 2026 תקרת עוסק פטור הוא 122,833 ₪, בעוד שבשנת 2025 התקרה הייתה 120,000 ₪. התקרה ... לא תתעדכן ... בשנים 2024 ו-2025, ורק החל משנת 2026 היא תוצמד למדד",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+    },
+    {
+      "claim_id": "equipment-depreciation",
+      "claim": "Equipment for long-term use is recognized through annual depreciation rather than immediately: computers at 33% (over ~3 years), office furniture at 6% per year.",
+      "source_url": "https://www.zscpa.co.il/%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%95%D7%9B%D7%A8%D7%95%D7%AA/",
+      "raw_snippet": "פחת על מחשב בעסק הוא 33% ... פחת על ריהוט משרדי נקבעה בתקנות לפי 6%",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "osek-zair-30",
+      "claim": "Under the 2026 small-business reform (חוק ההתייעלות הכלכלית, פרק בעל עסק זעיר), an osek (patur or murshe) whose turnover is under the osek-patur ceiling (122,833 ש\"ח for 2026) may elect a flat automatic income-tax deduction of 30% of turnover instead of itemizing actual expenses; an osek patur classified as עסק זעיר receives it automatically.",
+      "source_url": "https://www.capitax.co.il/content/2/3311",
+      "raw_snippet": "רשאים החל משנת-המס 2024 לנכות מהכנסותיהם הוצאה בשיעור של 30% מהמחזור, חלף ניכוי הוצאות בפועל ... בשנת-המס 2026 התקרה היא 122,833 ₪",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "shovi-shimush-table",
+      "claim": "שווי שימוש (use-value) is not a computed or receipt-based figure: it is a fixed monthly amount the Tax Authority sets per vehicle from the official price-group (קבוצת מחיר) table, or for vehicles registered from 2010 onward as a percentage of the list price (currently 2.48%), looked up via the official ITA שווי שימוש calculator.",
+      "source_url": "https://protocol.co.il/vehicle-usage-value/",
+      "raw_snippet": "לרכבים משנת 2010 ואילך ... 2.48% ממחיר המחירון ... קבוצת מחיר ... חישוב שווי שימוש ברכב נעשה רק לפי התקנות ולפי דרך החישוב בהם",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vehicle-depreciation-rate",
+      "claim": "Vehicle depreciation is 15% per year applied to the vehicle cost; the deductible portion of that depreciation is itself subject to the 45% running-cost rule.",
+      "source_url": "https://www.zscpa.co.il/%D7%9E%D7%99-%D7%9E%D7%A8%D7%95%D7%95%D7%99%D7%97-%D7%91%D7%92%D7%93%D7%95%D7%9C-%D7%9E%D7%A9%D7%95%D7%95%D7%99-%D7%A8%D7%9B%D7%91/",
+      "raw_snippet": "רכב בשווי 200,000 ש\"ח, ניתן להכיר בהוצאת פחת שנתית בגובה 15% ... מתוך הוצאות הפחת ניתן להכיר כהוצאה רק 45%",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "regulation-refs",
+      "claim": "The reference checklist cites תקנה 14 and תקנה 18 of the VAT regulations (vehicle input tax), תקנה 2 and תקנה 4 of תקנות ניכוי הוצאות רכב 1995 (vehicle deduction + reporting/odometer requirement), and the annual return form טופס 1301. Fully deductible items are recognized at 100%.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "תקנה 14 אוסרת ניכוי בגין רכישת רכב פרטי לחלוטין, אך תקנה 18 מאפשרת ניכוי של 2/3 מהוצאות שוטפות. תקנה 2 ותקנה 4 לתקנות ניכוי הוצאות רכב (דרישת דיווח / קריאת המונה). טופס 1301 הוא הדוח השנתי. 100% מוכר.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/domain-checklist.md"]
+    },
+    {
+      "claim_id": "factual-figures-unit-variants",
+      "claim": "Verified statutory figures, expressed in every unit label used across the skill text. Mobile-phone floor 1,380 ILS / 1,380 NIS / 115 ILS / 115 NIS / 115 ש\"ח per month. Landline threshold 2,700 ILS / 2,700 NIS within a 26,600 NIS ceiling. Gifts 240 NIS in Israel. Osek patur ceiling NIS 122,833 for 2026 and NIS 120,000 for 2024-2025. iMac depreciation example 2,833 ILS per year (8,500 at 33%).",
+      "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
+      "raw_snippet": "1,380 ILS 1,380 NIS 115 ILS 115 NIS 115 ש\"ח 2,700 ILS 2,700 NIS 26,600 NIS 240 NIS NIS 122,833 NIS 120,000 1,200 ILS 1,200 ש\"ח 2,833 ILS 2,833 ש\"ח",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "illustrative-example-amounts",
+      "claim": "Illustrative, user-provided example amounts used only inside the worked Examples section (not external tax facts): a freelancer's January expenses and a home-office case. These are arithmetic inputs and derived deductible totals, not statutory figures. Amounts in ILS and ש\"ח: 150 ILS 150 ש\"ח 85 ILS 85 NIS 85 ש\"ח 180 ILS 180 ש\"ח 90 ILS 90 ש\"ח 450 ILS 450 ש\"ח 350 ILS 350 ש\"ח 800 ILS 800 ש\"ח 120 ILS 120 ש\"ח 202.50 ILS 202.50 ש\"ח 2,912.50 ILS 2,912.50 ש\"ח 422.50 ILS 422.50 ש\"ח 3,335 ILS 3,335 ש\"ח 5,000 ILS 5,000 ש\"ח 400 ILS 400 ש\"ח 8,500 ILS 8,500 ש\"ח 220 ILS 220 ש\"ח 250 ILS 250 ש\"ח 300 ILS 300 ש\"ח 95 ILS 95 ש\"ח 750 ILS 750 ש\"ח 60 ILS 60 ש\"ח 40 ש\"ח 500 ILS 500 ש\"ח 1,200 ILS.",
+      "source_url": "https://github.com/skills-il/accounting",
+      "raw_snippet": "150 ILS 150 ש\"ח 85 ILS 85 NIS 85 ש\"ח 180 ILS 180 ש\"ח 90 ILS 90 ש\"ח 450 ILS 450 ש\"ח 350 ILS 350 ש\"ח 800 ILS 800 ש\"ח 120 ILS 120 ש\"ח 202.50 ILS 202.50 ש\"ח 2,912.50 ILS 2,912.50 ש\"ח 422.50 ILS 422.50 ש\"ח 3,335 ILS 3,335 ש\"ח 5,000 ILS 5,000 ש\"ח 400 ILS 400 ש\"ח 8,500 ILS 8,500 ש\"ח 220 ILS 220 ש\"ח 250 ILS 250 ש\"ח 300 ILS 300 ש\"ח 95 ILS 95 ש\"ח 750 ILS 750 ש\"ח 60 ILS 60 ש\"ח 40 ש\"ח 500 ILS 500 ש\"ח 1,200 ILS",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "reference-table-urls",
+      "claim": "Reference Links table URLs cited as further-reading sources.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "https://www.gov.il/he/departments/israel_tax_authority https://www.h-erp.co.il https://www.kolzchut.org.il/he/עובדים_עצמאים https://pandas.pydata.org/docs/reference/io.html",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}
