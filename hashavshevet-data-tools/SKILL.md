@@ -11,21 +11,21 @@ compatibility: Requires Python 3.9+ with openpyxl and chardet libraries
 
 ## Instructions
 
-> **Important — use the official OPENFORMAT/BKMV export, not direct binary parsing.**
+> **Important: use the official OPENFORMAT/BKMV export, not direct binary parsing.**
 >
-> Hashavshevet does NOT publish public per-byte offsets for its internal `.dat` / `.hsh` / `.mdb` files. The publicly documented and ITA-mandated export from any Israeli bookkeeping software is **OPENFORMAT (קובץ אחיד / BKMV)**, which produces two ASCII files: `INI.TXT` (header / index) and `BKMVDATA.TXT` (data, record types A100, B100, B110, C100, D110, D120, M100, Z900). Spec: <https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf>. Hashavshevet's BKMV export guide: <https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf>. Validate output against the ITA simulator: <https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx>.
+> Hashavshevet does NOT publish public per-byte offsets for its internal `.dat` / `.hsh` / `.mdb` files. The publicly documented and ITA-mandated export from any Israeli bookkeeping software is **OPENFORMAT (קובץ אחיד / BKMV)**. The export produces a ZIP of three files: `INI.TXT` (production summary, holds the leading `A000` record plus per-record-type control-count summary records), `BKMVDATA.TXT` (the business data, with one `A100` opening record, then `C100`, `D110`, `D120`, `B100`, `B110`, `M100` records, then one `Z900` closing record), and `README.TXT` (general production details for the user). Only `INI.TXT` and `BKMVDATA.TXT` are sent to the ITA or the CPA. Spec: <https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf>. Hashavshevet's BKMV export guide: <https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf>. Validate output against the ITA simulator: <https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx>.
 >
 > The fixed-width column maps below (HESHIN_COLUMNS / PKUDOT_COLUMNS) are **best-guess heuristics for legacy Windows installations**, not authoritative specifications. Use them only as a fallback when no OPENFORMAT export is available; never claim them as the canonical Hashavshevet format. For any ITA filing, CPA handoff, or PCN874 / Form 6111 generation, export via OPENFORMAT instead.
 
 > **Hashavshevet בענן (H-WEB / Wizcloud) public REST API.** The cloud version of Hashavshevet exposes a public REST API for documents, accounts, and transactions: <https://home.wizcloud.co.il/help/apidocument/>. Use this for ongoing two-way sync with Green Invoice / Rivhit / iCount instead of one-shot file dumps where possible.
 
-> **2026 SHAAM allocation-number context.** Sales-invoice journal entries created/imported through Hashavshevet for B2B amounts at or above the current threshold must carry an allocation number (mispar haktza'a). Threshold: NIS 10,000 from Jan 2026; drops to NIS 5,000 from Jun 2026. Hashavshevet בענן has built-in real-time SHAAM integration; the Windows version may need a separate workflow.
+> **SHAAM allocation-number context (2026).** Sales-invoice journal entries created/imported through Hashavshevet for B2B amounts at or above the current threshold must carry an allocation number (mispar haktza'a). Threshold (VAT excluded): NIS 10,000 since January 2026. NIS 5,000 since 1 June 2026. An above-threshold tax invoice WITHOUT a valid allocation number cannot be used by the counterparty to deduct input VAT, so treat a missing allocation number as a hard validation error, not a soft "incomplete" warning. Hashavshevet בענן has built-in real-time SHAAM integration; the Windows version may need a separate workflow.
 
 ### Step 1: Identify the Hashavshevet version and file format
 
 Determine which version of Hashavshevet the user is working with and identify the relevant file formats:
 
-- **Legacy Hashavshevet (Windows, on-prem)**: Uses proprietary databases (Btrieve/Pervasive in older Windows installs, encrypted SQL in newer). Direct binary parsing is unsupported and brittle; use the built-in OPENFORMAT export instead.
+- **Legacy Hashavshevet (Windows, on-prem)**: Stores data in a proprietary ISAM or SQL backend. Direct binary parsing is unsupported and brittle; use the built-in OPENFORMAT export instead.
 - **Hashavshevet H-ERP (current Windows ERP)**: Standard product line as of 2026. Exports OPENFORMAT/BKMV for ITA + CPA workflows; legacy `.dat` / `.hsh` files may still appear in archives.
 - **Hashavshevet בענן (H-WEB / Wizcloud, SaaS)**: Cloud-native, exports OPENFORMAT directly, plus a public REST API for live integration.
 - "Gold" / "2000+" naming is from 1990s/2000s legacy product lines; H-ERP / H-WEB are the current names.
@@ -198,11 +198,17 @@ Import validation rules:
 - Amounts must use period as decimal separator (not comma)
 - Debit and credit accounts cannot be the same
 - Batch numbers must be sequential within a fiscal year
-- Currency codes must match Hashavshevet's internal codes (ILS=1, USD=2, EUR=3)
+- Currency codes must match Hashavshevet's internal currency table. These internal numeric codes vary by installation, so confirm them against your installation's currency table rather than assuming a fixed mapping or reusing ISO 4217 codes.
 
 ### Step 6: Data migration to cloud solutions
 
 When migrating from Hashavshevet to cloud-based accounting solutions:
+
+**Before you start (read this first):**
+- Migrating or exporting off Hashavshevet does NOT discharge the ניהול פנקסים retention duty. The accounting system and records must be retained 7 years from the end of the relevant tax year (or 6 years from the date the return was filed, whichever is later). Do NOT decommission or wipe the source Hashavshevet system after the cutover; keep it (or a complete archived copy) accessible for that full period.
+- Where the target system supports it, import the native BKMV uniform file directly (יבוא נתונים מקובץ במבנה אחיד). Rivhit and other cloud systems accept the uniform file as-is. This is preferred over hand-mapped CSV/Excel because it preserves document-number continuity and the ITA-defined field structure.
+- Preserve document-numbering continuity (מספר עוקב) across the cutover so each document type keeps an unbroken running number.
+- Reconcile the new system's opening trial balance to the old system's closing trial balance before going live; investigate any difference rather than rounding it away.
 
 **iCount migration:**
 - Export chart of accounts, then map account numbers to iCount categories
@@ -218,6 +224,17 @@ When migrating from Hashavshevet to cloud-based accounting solutions:
 - Focus on customer/supplier master data and open balances
 - Export invoice history for reference (Invoice4U does not import historical journals)
 - Use Invoice4U's API for programmatic data import
+
+**Green Invoice migration:**
+- Map customer/supplier master data and open balances, then import via Green Invoice's CSV templates or its API
+- For an ongoing two-way sync (rather than a one-shot dump), prefer the cloud REST APIs on both sides and see the companion `green-invoice` skill
+
+### Step 6.5: ITA filings (PCN874 and Form 6111)
+
+Two ITA filings are commonly produced from Hashavshevet data. Both are software-independent specs, so generate them from an OPENFORMAT export rather than from heuristic binary parsing:
+
+- **PCN874 (דוח מפורט מע"מ, detailed VAT report)**: a fixed-structure text file, NOT a flat invoice list. It starts with a header/opening record (the business osek number, the reporting period, and totals/counts), followed by detail records that are keyed by transaction-type code, sales/output transactions (עסקאות) versus input transactions (תשומות, plus special types such as import entries). For an input transaction the supplier's osek number is mandatory or the input VAT cannot be deducted. Detailed VAT reporting is obligatory only above the turnover threshold (for an individual osek, annual turnover above NIS 500,000 from 1 January 2026). A bookkeeper exports it monthly or bi-monthly and uploads it to the ITA, which cross-references input VAT against output VAT. Hashavshevet has a built-in PCN874 export. Spec lives on the ITA site (see Reference Links).
+- **Form 6111 (טופס 6111, דוח התאמה למס, tax-adjustment report)**: an annex to the annual tax return carrying profit-and-loss, balance-sheet, and tax-adjustment data, filed online. A bookkeeper or CPA exports the trial balance from Hashavshevet, maps each account to the 6111 line codes, and submits the annex. Confirm the current line codes against the ITA's year-specific 6111 spec (see Reference Links).
 
 ### Step 7: Validate data integrity
 
@@ -309,23 +326,28 @@ Actions:
 
 Result: A Rivhit-compatible Excel import file with 234 accounts, a mapping reference document, and a summary of 12 accounts that need manual review due to type classification differences.
 
-## Bundled Resources
+### Example 4: Produce an OPENFORMAT (BKMV) export for an ITA filing or CPA handoff
 
-### Scripts
-- `scripts/encoding_converter.py` -- Batch convert Hashavshevet files from Windows-1255 to UTF-8. Run: `python scripts/encoding_converter.py --help`
-- `scripts/dat_parser.py` -- Parse Hashavshevet fixed-width .dat files to JSON/CSV. Run: `python scripts/dat_parser.py --help`
+User says: "My CPA asked for a BKMV / kovetz ahid (uniform structure) export from Hashavshevet for the 2025 tax year. How do I produce it and confirm it is valid before I send it?"
 
-### References
-- `references/hashavshevet-file-formats.md` -- Detailed column layouts for all Hashavshevet .dat file types. Consult when encountering an unfamiliar file type or when column positions seem incorrect.
-- `references/cloud-migration-mappings.md` -- Account type and field mappings for iCount, Rivhit, and Invoice4U migrations. Consult when planning a migration to a cloud-based solution.
+Actions:
+1. Run Hashavshevet's built-in BKMV export (H-ERP: the uniform-structure export wizard; H-WEB / Wizcloud: the BKMV export screen) for the 2025 date range. This produces a ZIP of three files: `INI.TXT` (production summary, with the `A000` leading record and the per-record-type control-count summary records), `BKMVDATA.TXT` (the business data), and `README.TXT` (general production details). Only `INI.TXT` and `BKMVDATA.TXT` are sent onward.
+2. Read `BKMVDATA.TXT` as Windows-1255 and convert to UTF-8 before any inspection.
+3. Walk the record types in `BKMVDATA.TXT`: `A100` opening record, `C100` document headers, `D110` document line details, `D120` receipt/deposit details, `B100` accounting journal transactions, `B110` accounting accounts, `M100` inventory items, and `Z900` closing record (record-type code in the first field of each line). Note: `A000` is NOT in this file, it lives in `INI.TXT`.
+4. Sanity-check the structure: every `C100` should have matching `D110` lines, the per-record-type counts in the `A000` summary records inside `INI.TXT` should equal the `Z900` total in `BKMVDATA.TXT` and the actual counts you observe, and `B100` debit and credit movements should balance.
+5. Validate the ZIP against the ITA file-check simulator (see Reference Links) and save the simulator's feedback report.
+6. Hand the validated `INI.TXT` plus `BKMVDATA.TXT` (with the simulator report) to the CPA, or attach them to the relevant ITA submission.
+
+Result: A validated BKMV export for the 2025 tax year (`INI.TXT` + `BKMVDATA.TXT`, drawn from the three-file ZIP) that passes the ITA simulator, ready for the CPA or ITA. This is the canonical path for ITA filings and CPA handoffs, unlike the heuristic fixed-width parsing in Step 3, which is a last-resort fallback only.
 
 ## Gotchas
 
 - Hashavshevet files use Windows-1255 encoding, not UTF-8. Agents will almost always attempt to read these files as UTF-8, causing UnicodeDecodeError on the first Hebrew character encountered.
 - Hashavshevet date format is DD/MM/YYYY (Israeli standard). Bank exports may use YYYY-MM-DD (ISO) or MM/DD/YYYY (US). Agents may not detect the format mismatch, causing dates like 03/04/2025 to be interpreted incorrectly.
 - Fixed-width column positions vary between Hashavshevet versions (Gold vs. 2000+ vs. newer). Agents may apply column layouts from one version to data from another, producing garbled output.
-- Hashavshevet internal currency codes differ from ISO codes: ILS=1, USD=2, EUR=3. Agents may use ISO 4217 currency codes, which Hashavshevet will not recognize during import.
+- Hashavshevet uses internal numeric currency codes that differ from ISO 4217. The exact mapping varies by installation, so confirm it against your installation's currency table rather than assuming fixed values. Agents that blindly use ISO 4217 codes will produce values Hashavshevet rejects on import.
 - When exporting to CSV for Excel, files must use UTF-8 with BOM (utf-8-sig) encoding. Without the BOM, Excel will not display Hebrew characters correctly, showing gibberish instead.
+- In OPENFORMAT, for a foreign-currency movement the record should carry both the NIS amount and the original-currency amount (the spec provides currency fields for this), so do not drop the original-currency value when converting. Very large `BKMVDATA.TXT` files may be rejected by the simulator or downstream importer and need splitting into smaller date ranges.
 
 
 ## Reference Links
@@ -334,6 +356,10 @@ Result: A Rivhit-compatible Excel import file with 234 accounts, a mapping refer
 |--------|-----|---------------|
 | Hashavshevet H-ERP official | https://www.h-erp.co.il | Hashavshevet product versions, file format guides |
 | Israel Tax Authority | https://www.gov.il/en/departments/israel_tax_authority | Digital bookkeeping directive, required journal fields |
+| ITA OPENFORMAT / מבנה אחיד spec | https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf | BKMV record types (A000 in INI.TXT; A100, C100, D110, D120, B100, B110, M100, Z900 in BKMVDATA.TXT), field offsets |
+| Hashavshevet H-ERP BKMV guide | https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf | How to run the uniform-structure export, INI.TXT + BKMVDATA.TXT |
+| ITA file-check simulator | https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx | Validate a BKMV ZIP before CPA / ITA handoff |
+| Form 6111 (tax-adjustment report) | https://www.gov.il/he/service/itc6111 | Annual-return annex line codes (P&L, balance sheet, tax adjustment) |
 | openpyxl documentation | https://openpyxl.readthedocs.io/en/stable/ | Writing XLSX files from Python, styled export |
 | pandas I/O reference | https://pandas.pydata.org/docs/reference/io.html | CSV/Excel import and export, encoding handling |
 | CP1255 encoding table (unicode.org) | https://unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1255.TXT | Windows-1255 to UTF-8 Hebrew character mapping |
@@ -346,7 +372,7 @@ Solution: Explicitly specify `encoding='windows-1255'` when reading the file. If
 
 ### Error: "Trial balance is not balanced (difference: X.XX)"
 Cause: Rounding differences from currency conversions, partial exports (missing entries from a batch), or corrupted data in the source file. Hashavshevet sometimes stores amounts with extra decimal places internally.
-Solution: First check if the difference is a small rounding error (less than 1 ILS). If so, create an adjustment entry. For larger differences, verify the export includes all batches for the period. Re-export from Hashavshevet using the "full export" option rather than filtered export.
+Solution: First check if the difference is a small rounding error (less than one shekel). If so, create an adjustment entry. For larger differences, verify the export includes all batches for the period. Re-export from Hashavshevet using the "full export" option rather than filtered export.
 
 ### Error: "Account number not found in chart of accounts"
 Cause: Journal entries reference accounts that were deleted or renumbered in Hashavshevet, or the chart of accounts export is from a different fiscal year than the journal entries.

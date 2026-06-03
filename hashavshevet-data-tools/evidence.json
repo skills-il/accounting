@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "hashavshevet-data-tools",
+  "generated_at": "2026-06-03T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "shaam-threshold-10000-jan-2026",
+      "claim": "Allocation numbers are required for tax invoices of NIS 10,000 or more since 1 January 2026 (VAT excluded).",
+      "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
+      "raw_snippet": "In 2026, the threshold will be reduced to NIS 10,000 (before VAT) from January 1.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "shaam-threshold-5000-jun-2026",
+      "claim": "Allocation numbers are required for tax invoices of NIS 5,000 or more since 1 June 2026 (VAT excluded).",
+      "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
+      "raw_snippet": "From June 1, 2026, the threshold will be further reduced to NIS 5,000 (before VAT).",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "shaam-threshold-5000-grant-thornton",
+      "claim": "From 1 June 2026 the obligation to obtain an allocation number for a tax invoice expands to transactions exceeding NIS 5,000.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "החל מיום 1.6.2026 תורחב החובה לקבל מספר הקצאה לחשבונית מס, כך שתחול על עסקאות שסכומן עולה על 5,000 ש\"ח",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openformat-files-ini-bkmvdata",
+      "claim": "The OPENFORMAT / Uniform Structure (מבנה אחיד / BKMV) export produces INI.TXT (production summary) and BKMVDATA.TXT (the business data). The ITA spec confirms INI.TXT holds one leading record plus summary records, while BKMVDATA.TXT holds one opening record, the detail records, and one closing record.",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "הקובץ INI.TXT יכיל רשומה מובילה אחת ורשומות סיכום",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openformat-bkmvdata-opening-closing",
+      "claim": "BKMVDATA.TXT contains one A100 business-opening record (רשומת פתיחה), the detail records, and one Z900 closing record (רשומת סגירה). A100 is the opening record INSIDE BKMVDATA.TXT, not the INI.TXT header.",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "הקובץ BKMVDATA.TXT יכיל את נתוני בית העסק. בקובץ זה תהיה רשומת פתיחה אחת",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openformat-record-a100-z900",
+      "claim": "OPENFORMAT BKMVDATA.TXT record types: A100 = opening record (רשומת פתיחה), Z900 = closing record (רשומת סגירה).",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "מבנה רשומת פתיחה - A100",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openformat-a000-ini",
+      "claim": "A000 is the leading/header record in INI.TXT (NOT in BKMVDATA.TXT); INI.TXT carries the leading record plus summary records with per-record-type control counts that must equal the total in the Z900 closing record.",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "צריך להיות זהה לשדה \"סך רשומות כולל\" ברשומת סגירה",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bkmv-zip-three-files",
+      "claim": "The Hashavshevet BKMV export ZIP, under the H-ERP guide's file list (רשימת הקבצים הנוצרים), contains three files: INI.TXT (general business/production info), BKMVDATA.TXT (the data itself: business, accounting, inventory, cash), and README.TXT (general production details for the user). Only INI.TXT and BKMVDATA.TXT are sent to the ITA or the CPA.",
+      "source_url": "https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf",
+      "raw_snippet": "README.TXT .3 - פרטים כלליים: בית העסק עבורו הופקו הקבצים, טווח התאריכים, שורת סיכום עבור כל",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openformat-record-c100-d110-d120",
+      "claim": "OPENFORMAT record types: C100 = document header (כותרת מסמך / HEADER), D110 = document details/line (פרטי מסמך / DETAILS), D120 = receipt/deposit details (פרטי קבלה/הפקדה).",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "מבנה רשומת \"כותרת מסמך\" ( HEADER ) C100 -",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openformat-record-b100-b110-m100",
+      "claim": "OPENFORMAT record types: B100 = accounting journal transactions (תנועות בהנהלת חשבונות), B110 = accounting account (חשבון בהנהלת חשבונות), M100 = inventory items (פריטים במלאי).",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "מבנה רשומת \"תנועות בהנהלת חשבונות\" B100 -",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openformat-spec-horaot131",
+      "claim": "The ITA spec for producing uniform-structure files (הוראות להפקת קבצים במבנה אחיד), document horaot_131, is published on misim.gov.il.",
+      "source_url": "https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf",
+      "raw_snippet": "הוראות להפקת קבצי במבנה אחיד - רשות המסים בישראל",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ita-file-check-simulator",
+      "claim": "The ITA provides a file-check simulator for uniform-structure files at frmCheckFiles.aspx on misim.gov.il.",
+      "source_url": "https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
+      "raw_snippet": "סימולטור הפקת קבצים - רשות המסים בישראל",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ita-file-check-simulator-govil",
+      "claim": "The ITA file-review simulator has an official gov.il service page (סימולטור לבדיקת קובץ במבנה אחיד).",
+      "source_url": "https://www.gov.il/he/service/file-review-simulator",
+      "raw_snippet": "סימולטור לבדיקת קובץ במבנה אחיד לרישום תוכנה במס הכנסה",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "herp-bkmv-guide",
+      "claim": "Hashavshevet H-ERP publishes a BKMV export guide PDF; the export must send only the bkmvdata file and the ini file.",
+      "source_url": "https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf",
+      "raw_snippet": "INI.TXT .1 - נתונים כלליים על בית העסק ועל תהליך הפקת הנתונים",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "hashavshevet-wizsoft-herp",
+      "claim": "Hashavshevet is an Israeli software vendor (Wizsoft); its current products are H-ERP (Windows ERP) and the cloud version (חשבשבת בענן / Wizcloud).",
+      "source_url": "https://www.h-erp.co.il",
+      "raw_snippet": "חשבשבת H-ERP: תוכנה לניהול עסק, ניהול פיננסי, ניהול קשרי לקוחות, CRM",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "wizcloud-rest-api",
+      "claim": "Hashavshevet בענן (Wizcloud) exposes a public REST API that lets third-party software access company data (documents, accounts, transactions).",
+      "source_url": "https://home.wizcloud.co.il/help/apidocument/",
+      "raw_snippet": "מערכת API מאפשרת לגורם שלישי (תוכנה אחרת בד\"כ) גישה לנתוני החברה של הלקוח",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pcn874-detailed-vat",
+      "claim": "PCN874 is the Israeli detailed VAT report (דוח מע\"מ מפורט): a fixed-structure text file listing each tax invoice issued and received, submitted online to the ITA which cross-references input vs output VAT.",
+      "source_url": "https://home.wizcloud.co.il/help/pcn874/",
+      "raw_snippet": "דוח זה מפרט, בין היתר, את חשבוניות המס שהעסק הפיק ואת חשבוניות המס שהעסק קיבל",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "form-6111",
+      "claim": "Form 6111 (טופס 6111) is the tax-adjustment report (דוח התאמה למס): an annex to the annual tax return carrying profit-and-loss, balance-sheet, and tax-adjustment data, filed online to the ITA.",
+      "source_url": "https://www.gov.il/BlobFolder/service/reporting-and-payment-2025-annual-tax-report-for-individuals/he/Service_Pages_Income_tax_annual-report-2026_6111-2025-ACC.pdf",
+      "raw_snippet": "נספח לטופס הדוח השנתי ליחיד( 1) ולחבר בני אדם( 2) לשנת המס 2025",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "form-6111-govil-service",
+      "claim": "Form 6111 has an official gov.il service page describing it as the annex to the annual report.",
+      "source_url": "https://www.gov.il/he/service/itc6111",
+      "raw_snippet": "נספח לדו\"ח השנתי - טופס 6111",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ita-department-govil",
+      "claim": "The Israel Tax Authority publishes digital-bookkeeping directives on its gov.il department page.",
+      "source_url": "https://www.gov.il/en/departments/israel_tax_authority",
+      "raw_snippet": "Israel Tax Authority",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md"]
+    },
+    {
+      "claim_id": "ita-department-govil-he",
+      "claim": "The Israel Tax Authority gov.il department page (Hebrew) hosts the computerized-bookkeeping directives.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "רשות המסים",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL_HE.md"]
+    },
+    {
+      "claim_id": "cp1255-windows-1255",
+      "claim": "Windows-1255 (CP1255) is the Microsoft Hebrew code page; its character mapping to Unicode is published by unicode.org.",
+      "source_url": "https://unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1255.TXT",
+      "raw_snippet": "cp1255 to Unicode table",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "icount-cloud-accounting",
+      "claim": "iCount is an Israeli cloud accounting / invoicing platform and a migration target.",
+      "source_url": "https://www.icount.co.il/blog/invoice-israel/",
+      "raw_snippet": "חשבוניות ישראל - איך להוציא מספר הקצאה לחשבונית מס [מעודכן ל-2026] - iCount",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "rivhit-cloud-accounting",
+      "claim": "Rivhit (רווחית) is an Israeli business-management / accounting platform that imports uniform-structure files.",
+      "source_url": "https://www.rivhit.co.il/knowledgebase/%D7%99%D7%91%D7%95%D7%90-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9E%D7%A7%D7%95%D7%91%D7%A5-%D7%91%D7%9E%D7%91%D7%A0%D7%94-%D7%90%D7%97%D7%99%D7%93/",
+      "raw_snippet": "יבוא נתונים מקובץ במבנה אחיד - ריווחית - פתרונות לניהול עסקים",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "invoice4u-cloud-accounting",
+      "claim": "Invoice4U is an Israeli online invoicing / accounting platform and a migration target.",
+      "source_url": "https://www.invoice4u.co.il/blog/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2%D7%9E-%D7%93%D7%99%D7%95%D7%95%D7%97-874/",
+      "raw_snippet": "דיווח מפורט למע\"מ (דיווח 874) - Invoice4u חשבוניות אונליין",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "green-invoice-cloud-accounting",
+      "claim": "Green Invoice is an Israeli cloud invoicing / accounting platform and a migration / sync target.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מודל חשבוניות ישראל: מספר הקצאה (מדריך מעודכן ל-2026)",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pcn874-structure-sales-inputs",
+      "claim": "PCN874 is not a flat invoice list: it classifies transactions into sales/output (עסקאות/מכירות) versus inputs (תשומות). For an input transaction the supplier's osek number must be recorded, otherwise the input VAT cannot be deducted.",
+      "source_url": "https://www.rivhit.co.il/uploaded_files/documents/pcn874_manual_U1231.pdf",
+      "raw_snippet": "קיזוז מע\"מ תשומות : כאשר מתקבלת חשבונית מספק ובית העסק מבקש לקזז את מע\"מ התשומות, חלה חובה לרשום את מספר העוסק מורשה של הספק",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pcn874-opening-record",
+      "claim": "The PCN874 file begins with an opening record; a file missing its opening record is rejected as structurally invalid, confirming a header/opening record precedes the detail records.",
+      "source_url": "https://www.rivhit.co.il/uploaded_files/documents/pcn874_manual_U1231.pdf",
+      "raw_snippet": "לא נמצאה רשומת פתיחה בקובץ מספר",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pcn874-turnover-threshold-2026",
+      "claim": "Detailed VAT reporting (PCN874) is obligatory only above a turnover threshold: for a self-employed individual osek, annual turnover above NIS 500,000, effective from 1 January 2026.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "חובת הגשת דוח תקופתי מפורט למע\"מ על ידי עוסק שהוא יחיד, קרי עצמאי, אשר מחזור עסקאותיו עולה על 500,000 ש\"ח תחול החל מיום 1.1.2026",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "allocation-number-input-vat-blocked",
+      "claim": "If an above-threshold transaction proceeds without obtaining an allocation number for the tax invoice, the invoice recipient cannot deduct input VAT for it.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "המשך העסקה ללא קבלת מספר הקצאה לחשבונית המס. במקרה זה לא יוכל מקבל החשבונית לנכות את מס התשומות בגינה.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "records-retention-7-years",
+      "claim": "The accounting system and records must be retained 7 years from the end of the relevant tax year (or 6 years from the date the return was filed, whichever is later) under הוראות ניהול פנקסי חשבונות; exporting or migrating off the software does not discharge this duty.",
+      "source_url": "https://www.shrcpa.co.il/the-retention-period-for-the-system-of-accounts-and-other-documents",
+      "raw_snippet": "את מערכת החשבונות חובה לשמור במשך 7 שנים מתום שנת המס שאליה היא מתייחסת",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openpyxl-lib",
+      "claim": "openpyxl is a Python library to read and write Excel xlsx files, used here for styled RTL exports.",
+      "source_url": "https://openpyxl.readthedocs.io/en/stable/",
+      "raw_snippet": "openpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pandas-io",
+      "claim": "pandas provides Input/output (CSV/Excel) functions for import and export with encoding handling.",
+      "source_url": "https://pandas.pydata.org/docs/reference/io.html",
+      "raw_snippet": "Read a comma-separated values (csv) file into DataFrame",
+      "fetched_at": "2026-06-03T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}
