@@ -52,7 +52,7 @@ Apply progressive tax brackets to the **taxable gross** (cash gross + shovi rech
 1. Calculate annual equivalent: `taxable_gross * 12`
 2. Apply brackets progressively (see references/tax-brackets.md). Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) widened brackets 3, 4, 5: 20% now runs to 19,000 NIS/month, 31% to 25,100, 35% from 25,101. The earlier "frozen 2025-2027" freeze no longer applies for 2026.
 3. Subtract tax credit points value: `credit_points * 242 NIS/month`
-4. Subtract pension tax credit (zikui gemel) — see Step 2.5.
+4. Subtract pension tax credit (zikui gemel), see Step 2.5.
 5. Monthly tax = `max(0, bracketed_tax - credit_points_value - pension_credit)`
 
 IMPORTANT: Tax credits cannot create negative tax (no refund through payroll).
@@ -90,6 +90,8 @@ For employees (2026, per Amendment 252):
 - On amount 7,704 to 51,910 NIS: 7.0% NI + 5.17% health = **12.17%**
 - Maximum insurable salary: 51,910 NIS/month
 - Salary above the ceiling is not subject to NI or health tax.
+
+**The 4.27% / 12.17% is only the standard employee aged 18 to retirement.** The employee deduction is **0%** for an employee under 18 or one receiving an old-age pension, and **3.93% / 10.03%** for a working pensioner aged 67-70 not yet receiving the pension. Applying the flat rate to a minor or a pensioner over-charges them by the entire deduction. See `references/bituach-leumi-rates.md` for the full age/pension table.
 
 (2025 reference values for comparison: reduced 3.5% up to 7,522 NIS, full 12.0% up to 51,910. The reduced-tier rate nearly tripled in 2026.)
 
@@ -169,12 +171,12 @@ Wrong answer to avoid: adding the 3,500 shovi rechev to net. The employee never 
 ## Bundled Resources
 
 ### Scripts
-- `scripts/calculate_payroll.py` — Calculates Israeli gross-to-net salary with progressive income tax brackets, Bituach Leumi, health tax, pension contributions, and shovi rechev (company-car use value) as taxable imputed income. Supports employee and employer cost views. Run: `python scripts/calculate_payroll.py --help`. Use `--shovi-rechev <NIS>` to model a company car.
+- `scripts/calculate_payroll.py`, Calculates Israeli gross-to-net salary with progressive income tax brackets, Bituach Leumi, health tax, pension contributions, and shovi rechev (company-car use value) as taxable imputed income. Supports employee and employer cost views. Run: `python scripts/calculate_payroll.py --help`. Use `--shovi-rechev <NIS>` to model a company car.
 
 ### References
-- `references/tax-brackets.md` — Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) unfroze and widened brackets 3, 4, 5 for 2026. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
-- `references/bituach-leumi-rates.md` — Bituach Leumi (National Insurance) and health tax rates for employees and employers for 2026, covering the reduced and full brackets and the monthly insurable salary ceiling. Always verify the current-year values against btl.gov.il before relying on exact amounts.
-- `references/credit-points.md` — Israeli tax credit points (nekudot zikui) value and full eligibility table covering base credits, gender, new immigrants, children, single parents, and disability. Also documents the Section 45a pension tax credit (zikui gemel, 35% of pension contribution up to 679 NIS/month in 2026). Consult when determining total credits beyond the defaults in Step 1.
+- `references/tax-brackets.md`, Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) unfroze and widened brackets 3, 4, 5 for 2026. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
+- `references/bituach-leumi-rates.md`, Bituach Leumi (National Insurance) and health tax rates for employees and employers for 2026, covering the reduced and full brackets and the monthly insurable salary ceiling. Always verify the current-year values against btl.gov.il before relying on exact amounts.
+- `references/credit-points.md`, Israeli tax credit points (nekudot zikui) value and full eligibility table covering base credits, gender, new immigrants, children, single parents, and disability. Also documents the Section 45a pension tax credit (zikui gemel, 35% of pension contribution up to 679 NIS/month in 2026). Consult when determining total credits beyond the defaults in Step 1.
 
 ## Reference Links
 
@@ -204,7 +206,7 @@ Solution: Shovi rechev adds to the taxable gross (for income tax and NI), not to
 
 ### Error: "Tax brackets may be outdated"
 Cause: Brackets do update, and sometimes mid-year. Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) widened brackets 3-5 and invalidated the earlier "frozen 2025-2027" framing. Amendment 252 (Jan 2026) simultaneously raised the Bituach Leumi reduced-tier rate and threshold.
-Solution: Verify current brackets at the Tax Authority website (gov.il/he/service/income-tax-calculator). Bituach Leumi tiers and the max insurable salary update annually and should be cross-checked against btl.gov.il — see `references/bituach-leumi-rates.md` and `references/tax-brackets.md` for the values used in this skill.
+Solution: Verify current brackets at the Tax Authority website (gov.il/he/service/income-tax-calculator). Bituach Leumi tiers and the max insurable salary update annually and should be cross-checked against btl.gov.il, see `references/bituach-leumi-rates.md` and `references/tax-brackets.md` for the values used in this skill.
 
 ### Error: "Tax is higher than my payslip shows"
 Cause: Zikui gemel (pension credit, sec. 45a) was omitted from the calculation. Payroll software applies this automatically; manual calculators usually forget it.

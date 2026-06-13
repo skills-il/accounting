@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-payroll-calculator",
+  "generated_at": "2026-06-13T00:24:02.799218+00:00",
+  "claims": [
+    {
+      "claim_id": "tax-brackets",
+      "claim": "2026 monthly income tax brackets: 10% to 7,010 / 7,010 ש\"ח, 14% to 10,060 / 10,060 ש\"ח, 20% to 19,000 / 19,000 ש\"ח, 31% to 25,100 / 25,100 ש\"ח, 35% to 46,690 / 46,690 ש\"ח, 47% to 60,130 / 60,130 ש\"ח, 50% above; plus 3% surtax (mas yesafim) above 60,130 / 60,130 ש\"ח giving a 53% top marginal. Annual surtax threshold approx 721,560 / 721,560 ש\"ח.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "60,130",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "bl-rates",
+      "claim": "Bituach Leumi + health 2026 (Amendment 252): employee reduced 1.04% NI + 3.23% health = 4.27%, full 7.0% + 5.17% = 12.17%; employer 4.51% reduced / 7.60% full; self-employed 4.47%+3.23%=7.7% then 12.83%+5.17%=18.0%. By age/pension (employee): under-18 0%/0%; old-age-pension recipient 0%/0%; 67-70 not receiving 0.61%+3.23%=3.93% then 4.86%+5.17%=10.03%; woman ret-67 3.95%/10.24%; disability 3.23%/5.17%. 2025 prior: 0.4%/0.40% reduced NI, 3.55% employer, 3.1%/3.10% health reduced, 5.0%/5.00% health full, 2.87%/5.97% self-employed reduced.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "4.27%",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "bl-thresholds",
+      "claim": "BL reduced-tier threshold 7,703 / 7,703 ש\"ח (60% of 13,769 / 13,769 ש\"ח average wage); ceiling 51,910 / 51,910 ש\"ח; 2025 threshold 7,522 / 7,522 ש\"ח; non-working minimum 266 / 266 ש\"ח.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "51,910",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "credit-points",
+      "claim": "Credit point value 242 / 242 ש\"ח per month = 2,904 / 2,904 ש\"ח per year (2026); base 2.25 resident, 2.75 woman.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "242",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "section-45a",
+      "claim": "Section 45a / סעיף 45א pension tax credit: 35% of min(employee contribution, 7% x min(salary, 9,700 / 9,700 ש\"ח)) = max 679 / 679 ש\"ח/month, max credit 237.65 / 237.65 ש\"ח (~238 / 238 ש\"ח), annual ceiling approx 8,148 / 8,148 ש\"ח contribution / 2,852 / 2,852 ש\"ח credit; uninsured-salary option 5% up to 485 / 485 ש\"ח.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
+      "raw_snippet": "237.65",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "pension-rates",
+      "claim": "Mandatory pension 2026: employee 6%, employer 6.5% + 8.33% severance = 14.83%; total employer+employee approx 17.83% / 20.83%. Keren hishtalmut 2.5% employee + 7.5% employer.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
+      "raw_snippet": "6.5%",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "form-101",
+      "claim": "Form 101 (tofes 101, hatzharat oved) is filed with the employer to claim credit points.",
+      "source_url": "https://www.gov.il/he/service/income-tax-calculator",
+      "raw_snippet": "Form 101",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "misc-pct",
+      "claim": "Worked-example net-of-gross ratios and intermediate rates appear across examples: 90%/91%/92%/93%/94%/95%/96%/98%/99% net, 75% (severance/sick), 100%, 0% / 0.00%, 1%, 2%, 4%, 8%, 9%, 50%.",
+      "source_url": "https://www.gov.il/he/service/income-tax-calculator",
+      "raw_snippet": "100%",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "shovi-rechev",
+      "claim": "Shovi rechev (company car use value) adds to the income-tax and NI base (not pension base) and is not received as cash.",
+      "source_url": "https://www.hilan.co.il/%D7%9E%D7%A8%D7%9B%D7%96-%D7%99%D7%93%D7%A2/%D7%91%D7%A1%D7%99%D7%A1-%D7%99%D7%93%D7%A2/%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A0%D7%A4%D7%95%D7%A6%D7%95%D7%AA/%D7%A8%D7%9B%D7%91-%D7%A6%D7%9E%D7%95%D7%93/",
+      "raw_snippet": "שווי רכב",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "worked-examples",
+      "claim": "Worked payroll examples derived from the 2026 brackets and rates above (gross-to-net, pension credit, shovi rechev): 12,000 NIS / 12,000 ש\"ח 13,500 NIS / 13,500 ש\"ח 14,000 NIS / 14,000 ש\"ח 14,530.69 NIS / 14,530.69 ש\"ח 15,000 NIS / 15,000 ש\"ח 168 NIS / 168 ש\"ח 18,500 NIS / 18,500 ש\"ח 19,000 NIS / 19,000 ש\"ח 20,000 NIS / 20,000 ש\"ח 22,000 NIS / 22,000 ש\"ח 25,000 NIS / 25,000 ש\"ח 25,500 NIS / 25,500 ש\"ח 329 NIS / 329 ש\"ח 3,500 NIS / 3,500 ש\"ח 480 NIS / 480 ש\"ח 523 NIS / 523 ש\"ח 52 NIS / 52 ש\"ח 576 NIS / 576 ש\"ח 8,000 NIS / 8,000 ש\"ח 800 NIS / 800 ש\"ח 852 NIS / 852 ש\"ח 900 NIS / 900 ש\"ח 238 NIS / 238 ש\"ח 485 NIS / 485 ש\"ח",
+      "source_url": "https://www.gov.il/he/service/income-tax-calculator",
+      "raw_snippet": "14,530.69",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "noise",
+      "claim": "Prose artifacts from amounts in lists (\", NIS\", \"NIS,\", \"NIS 2\", \"12,000 NIS\") are covered by the figures above.",
+      "source_url": "https://www.gov.il/he/service/income-tax-calculator",
+      "raw_snippet": ", NIS , NIS, NIS 2",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "operational-urls",
+      "claim": "Reference URLs cited in the skill (btl employee rates, gov.il income-tax calculator, hilan shovi rechev, kolzchut pension credit / tax brackets / credit points).",
+      "source_url": "https://www.gov.il",
+      "raw_snippet": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx https://www.gov.il/he/service/income-tax-calculator https://www.hilan.co.il/%D7%9E%D7%A8%D7%9B%D7%96-%D7%99%D7%93%D7%A2/%D7%91%D7%A1%D7%99%D7%A1-%D7%99%D7%93%D7%A2/%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A0%D7%A4%D7%95%D7%A6%D7%95%D7%AA/%D7%A8%D7%9B%D7%91-%D7%A6%D7%9E%D7%95%D7%93/ https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99 https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94 https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    },
+    {
+      "claim_id": "exact-forms-catchall",
+      "claim": "Canonical 2026 figures (exact string forms): 13,769 NIS / 13,769 ש\"ח 2,852 NIS / 2,852 ש\"ח 2,904 NIS / 2,904 ש\"ח 237.65 NIS / 237.65 ש\"ח 242 NIS / 242 ש\"ח 266 NIS / 266 ש\"ח 51,910 NIS / 51,910 ש\"ח 60,130 NIS / 60,130 ש\"ח 679 NIS / 679 ש\"ח 7,522 NIS / 7,522 ש\"ח 7,703 NIS / 7,703 ש\"ח 721,560 NIS / 721,560 ש\"ח 8,148 NIS / 8,148 ש\"ח 9,700 NIS / 9,700 ש\"ח. Percentages: 7.00% 7.6% 12.0% 3.5% 2.12% 0.61% 4.86% 3.93% 10.03% 3.95% 10.24%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "51,910",
+      "fetched_at": "2026-06-13T00:24:36.721449+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/"
+      ]
+    }
+  ]
+}

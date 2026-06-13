@@ -56,11 +56,23 @@ Self-employed got a larger hit under Amendment 252 (reduced-tier rates rose shar
 - National Insurance: ~17.83% (was 12.83% in 2025)
 - Health Tax: ~5.17%
 
-## Exemptions
-- Under age 18: Reduced rates
-- Over retirement age (67M/62-65F): Reduced rates, no health tax
-- New immigrants: 12-month exemption from NI (not health)
-- Income below minimum: Minimum payment still required
+## Employee Rate Varies by Age and Pension Status (2026)
+
+The 4.27% / 12.17% above is ONLY the standard employee aged 18 to retirement. The amount actually deducted from an employee's salary changes with age and old-age-pension status. Applying the standard rate to a minor or a working pensioner is a material error (it over-charges them by the whole deduction). Verified against the official btl.gov.il employee rate table.
+
+| Employee category | Reduced (up to 7,703) | Full (7,703 to 51,910) |
+|---|---|---|
+| Aged 18 to retirement (standard) | 1.04% NI + 3.23% health = **4.27%** | 7.0% NI + 5.17% health = **12.17%** |
+| Under 18 | **0%** (only the employer pays its 0.61% / 2.12%) | **0%** |
+| Receiving old-age pension (kitzbat azrach vatik), any age | **0%** | **0%** |
+| Reached retirement, under 70, NOT receiving old-age pension (men 67-70) | 0.61% NI + 3.23% health = **3.93%** | 4.86% NI + 5.17% health = **10.03%** |
+| Woman between her retirement age and 67, not receiving pension | **3.95%** | **10.24%** |
+| Disability-pension recipient (75%+/100%, annual BTL confirmation) | 0% NI + 3.23% health = **3.23%** | 0% NI + 5.17% health = **5.17%** |
+
+- The employer share (4.51% / 7.60%) does NOT change with the employee's age; only the employee deduction does (and for under-18 / pensioner the employer keeps paying its reduced 0.61% / 2.12%).
+- New immigrants (oleh chadash): 12-month exemption from NI (health still applies).
+- A resident with no income still owes the minimum non-working payment (266 NIS/month in 2026), see the israeli-bituach-leumi skill for the full non-working / passive-income rules.
+- Source: btl.gov.il/Insurance/Rates employee rate table (2026 figures effective 01.01.2026).
 
 ## Shovi Rechev (Company Car Use Value)
 - Shovi rechev is subject to NI and health tax on the employee side (employee pays NI and health on the taxable gross = cash + shovi rechev).
