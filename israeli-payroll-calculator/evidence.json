@@ -5,7 +5,7 @@
   "claims": [
     {
       "claim_id": "tax-brackets",
-      "claim": "2026 monthly income tax brackets: 10% to 7,010 / 7,010 ש\"ח, 14% to 10,060 / 10,060 ש\"ח, 20% to 19,000 / 19,000 ש\"ח, 31% to 25,100 / 25,100 ש\"ח, 35% to 46,690 / 46,690 ש\"ח, 47% to 60,130 / 60,130 ש\"ח, 50% above; plus 3% surtax (mas yesafim) above 60,130 / 60,130 ש\"ח giving a 53% top marginal. Annual surtax threshold approx 721,560 / 721,560 ש\"ח.",
+      "claim": "2026 monthly income tax brackets: 10% to 7,010 / 7,010 ש\"ח, 14% to 10,060 / 10,060 ש\"ח, 20% to 19,000 / 19,000 ש\"ח, 31% to 25,100 / 25,100 ש\"ח, 35% to 46,690 / 46,690 ש\"ח, 47% to 60,130 / 60,130 ש\"ח, then 50% above 60,130 / 60,130 ש\"ח. The 50% top rate is the 47% statutory bracket plus a 3% mas yesafim surtax (47% + 3% = 50%); there is no higher combined rate. Annual surtax threshold approx 721,560 / 721,560 ש\"ח.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
       "raw_snippet": "60,130",
       "fetched_at": "2026-06-13T00:24:02.799218+00:00",

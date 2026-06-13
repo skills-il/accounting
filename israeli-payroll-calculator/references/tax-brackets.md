@@ -35,9 +35,9 @@ Amendment 288 to the Income Tax Ordinance (published 31.3.2026, retroactive to 1
 Income in the 16,151 - 19,000 band, which was taxed at 31% in 2025, is now taxed at 20%. Income in 22,441 - 25,100, which was taxed at 35% in 2025, is now taxed at 31%. Employees saw a one-time retroactive correction in their March 2026 payslip.
 
 ## Surtax (Mas Yesafim)
-- Income above 721,560 NIS/year (60,130 NIS/month): additional 3% surtax
+- Income above 721,560 NIS/year (60,130 NIS/month): an extra 3% surtax on top of the 47% statutory bracket
 - Applies to all income types (salary, capital gains, etc.)
-- Effectively creates a 50% + 3% = 53% marginal rate for very high earners
+- This 3% surtax is exactly what makes bracket 7 a 50% rate (47% statutory + 3% surtax = 50%). The 50% in the table above already includes the surtax, so 50% is the full top marginal rate on salary. Do not add the 3% a second time.
 
 ## Tax Credit Points (Nekudot Zikui)
 Value per point (2026): **2,904 NIS/year** (~242 NIS/month)
