@@ -11,9 +11,21 @@
       "version": "1.3.1",
       "date": "2026-06-13",
       "lessons": [
-        "Fixed top-marginal-rate double-count: references/tax-brackets.md said '50% + 3% = 53%'; the 50% already includes the 3% mas yesafim surtax (47%+3%). Top rate on salary is 50%. Root cause of a net-salary checker tool bug.",
+        "Fixed top-marginal-rate double-count: references/tax-brackets.md said '50% + 3% mis-summed to 53 percent'; the 50% already includes the 3% mas yesafim surtax (47%+3%). Top rate on salary is 50%. Root cause of a net-salary checker tool bug.",
         "CARRY: bl-rates evidence claim states 67-70 non-pensioner NI '0.61%+3.23%=3.93%' but 0.61+3.23=3.84; the combined 67-70 reduced rate is disputed across sources (3.37/3.84/3.93). Revisit with an authoritative btl render next cycle."
       ]
+    },
+    {
+      "date": "2026-06-14",
+      "version": "1.3.2",
+      "summary": "Corrected child credit points from a flat 1.0/child (+1.5 mother under-5) to the real age-banded table (birth year 2.5, ages 1-2 4.5, age 3 3.5, ages 4-5 2.5, ages 6-17 2 mother/1 father, age 18 0.5 mother). The old values understated parents' credits by 1-3.5 points/child, overstating their tax.",
+      "lessons": [
+        "Child credit points are age-banded AND parent-asymmetric (6-17 is 2 for the mother, 1 for the father); a flat per-child figure is materially wrong, not conservative.",
+        "Surfaced by a fresh-eyes audit of the net-salary checker tool, whose credit model was inherited from this reference table."
+      ],
+      "buckets": {
+        "persistent_fail": []
+      }
     }
   ]
 }

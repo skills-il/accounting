@@ -34,7 +34,7 @@ TAX_BRACKETS = [
 # Tax credit point value (monthly, 2026)
 CREDIT_POINT_VALUE = 242  # NIS per month
 
-# Pension tax credit (Zikui Gemel, Section 45a) — 2026
+# Pension tax credit (Zikui Gemel, Section 45a), 2026
 PENSION_CREDIT_RATE = 0.35              # 35% credit on eligible pension contribution
 PENSION_CREDIT_SALARY_CEILING = 9700    # NIS/month insured-salary ceiling
 PENSION_CREDIT_CONTRIBUTION_RATE = 0.07  # up to 7% of insured salary qualifies

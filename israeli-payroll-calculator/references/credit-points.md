@@ -1,4 +1,4 @@
-# Israeli Tax Credit Points (Nekudot Zikui) — 2026
+# Israeli Tax Credit Points (Nekudot Zikui) 2026
 
 ## Value
 Each credit point = **2,904 NIS/year** (approximately 242 NIS/month)
@@ -14,12 +14,27 @@ Tax cannot go below zero through credit points (no negative tax/refund).
 | Israeli resident | 2.25 | Base for all residents |
 | Female resident | 2.75 | Base 2.25 + 0.5 additional |
 
-### Family Status
+### Children (per child, by the child's age in the tax year)
+
+Each working parent earns credit points for each child. The points are age-banded; the
+year-of-birth and ages 1-5 values are the same for both parents, while the ages 6-17 band
+and the half-point in the 19th year differ between the mother and the father. The mother is
+the parent who receives the child allowance (kitzvat yeladim) unless the parents elected
+otherwise.
+
+| Child's age in the tax year | Mother | Father | Notes |
+|-----|--------|--------|-------|
+| Year of birth | 2.5 | 2.5 | 2.5 from 2024 (was 1.5 before) |
+| Age 1-2 | 4.5 | 4.5 | Per child, each year |
+| Age 3 | 3.5 | 3.5 | |
+| Age 4-5 | 2.5 | 2.5 | |
+| Age 6-17 | 2.0 | 1.0 | Mother 2, father 1 (since 2022) |
+| 19th year (turns 18) | 0.5 | 0 | Half-point, mother only |
+| Child with disability | 2.0 | 2.0 | Per child, on top of the age credit |
+
+### Other Family Status
 | Who | Points | Notes |
 |-----|--------|-------|
-| Child under 18 | 1.0 | Per child, either parent |
-| Child under 5 (woman) | 1.5 | Additional for mother, per child |
-| Child with disability | 2.0 | Per child, on top of age credit |
 | Single parent | 1.0 | Additional |
 | Spouse with no income | 1.0 | Below threshold |
 
@@ -57,7 +72,7 @@ Tax cannot go below zero through credit points (no negative tax/refund).
 - Update when circumstances change (birth, marriage, immigration, etc.)
 - Over-claimed credits: Will be corrected in annual tax assessment
 
-## Pension Tax Credit (Zikui Gemel) — Section 45a
+## Pension Tax Credit (Zikui Gemel), Section 45a
 Separate from credit points above. An employee who contributes to a pension fund is entitled to a tax credit of **35% of the eligible contribution**. This is distinct from credit points and applies in addition to them.
 
 ### Rule (2026)
@@ -82,14 +97,14 @@ Tax credit = 35% x eligible contribution
 - Eligible = min(900, 7% x 9,700) = min(900, 679) = 679 (capped by 9,700 ceiling)
 - Credit = 35% x 679 = 237.65 NIS/month
 
-**Salary 25,000 NIS, 6% pension contribution:** same as above — credit capped at 237.65 NIS/month; additional salary contributes nothing further to this credit.
+**Salary 25,000 NIS, 6% pension contribution:** same as above, credit capped at 237.65 NIS/month; additional salary contributes nothing further to this credit.
 
 ### Additional Uninsured-Salary Contributions
 If the employee has salary components NOT covered by the employer's pension (for example, one-off bonuses), they may make an independent contribution of up to 5% of the uninsured salary, capped at 485 NIS/month, and claim an additional 35% credit on that contribution.
 
 ### Where It Shows on the Payslip
 - Typically labeled "ניכוי בגין הפקדה לקופת גמל" or "זיכוי 45א" in the deductions column.
-- Most payroll systems compute this automatically when the pension contribution line is present. The user may not see a separate "pension credit" line — the credit is baked into the income-tax number.
+- Most payroll systems compute this automatically when the pension contribution line is present. The user may not see a separate "pension credit" line, the credit is baked into the income-tax number.
 
 ### Source
 - Income Tax Ordinance, Section 45a

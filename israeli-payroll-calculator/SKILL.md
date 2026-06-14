@@ -196,7 +196,7 @@ Wrong answer to avoid: adding the 3,500 shovi rechev to net. The employee never 
 - **Keren Hishtalmut** (2.5% employee + 7.5% employer) is tax-exempt up to a ceiling that changes yearly. Not included in this calculator's default flow. Add manually if the employer offers it.
 - **Mandatory pension since 2017:** 6% employee + 6.5% employer minimum. Agents may skip pension or use pre-2017 rates (5%+5%).
 - **Bituach Leumi ceiling caps deductions.** Salary above 51,910 NIS/month (2026) is not subject to NI or health tax. Agents may apply the full rate to the entire salary instead of capping.
-- **Credit points (nekudot zikui):** Base 2.25 for a resident; women get +0.5. New immigrants, single parents, children under 5 (for mothers), disabled status, and academic degrees add more. Agents may omit them entirely and overstate the tax burden. These are separate from and stack with the pension credit above.
+- **Credit points (nekudot zikui):** Base 2.25 for a resident; women get +0.5. Children add a lot and are age-banded per child (year of birth 2.5; ages 1-2 4.5; age 3 3.5; ages 4-5 2.5; ages 6-17 2 for the mother and 1 for the father), and new immigrants, single parents, disabled status, and academic degrees add more. Agents may omit them entirely and overstate the tax burden. These are separate from and stack with the pension credit above. See `references/credit-points.md` for the full per-age, per-parent table.
 
 ## Troubleshooting
 
@@ -214,4 +214,4 @@ Solution: Subtract the pension tax credit after bracket-based tax and credit poi
 
 ### Error: "Credit points don't match"
 Cause: Various life circumstances affect credit points.
-Solution: Review the full credit point table. Common additions: female (+0.5), new immigrant (up to +3), child under 18 (+1), child under 5 for women (+1.5), single parent (+1), disabled (+2).
+Solution: Review the full credit point table. Common additions: female (+0.5), new immigrant (up to +3), each child by age (year of birth 2.5, ages 1-2 4.5, age 3 3.5, ages 4-5 2.5, ages 6-17 2 for the mother / 1 for the father), single parent (+1), disabled child (+2). See `references/credit-points.md`.

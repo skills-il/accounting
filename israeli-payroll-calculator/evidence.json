@@ -158,6 +158,18 @@
         "SKILL_HE.md",
         "references/"
       ]
+    },
+    {
+      "claim_id": "child-credit-points",
+      "claim": "Child credit points per child by age (2026): year of birth 2.5 (both parents); ages 1-2 4.5; age 3 3.5; ages 4-5 2.5 (all both parents); ages 6-17 2 for the mother and 1 for the father; 19th year (turns 18) 0.5 for the mother only. Point value 242 NIS/month.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%9C%D7%94%D7%95%D7%A8%D7%94_%D7%9C%D7%99%D7%9C%D7%93_%D7%A2%D7%93_%D7%92%D7%99%D7%9C_18",
+      "raw_snippet": "2 החל מ-2022 (אם), 1 החל מ-2022 (אב); שנת הלידה 2.5 החל מ-2024; בשנת המס שבה ימלאו לילד שנה ושנתיים 4.5",
+      "fetched_at": "2026-06-14T00:00:00+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md"
+      ]
     }
   ]
 }
