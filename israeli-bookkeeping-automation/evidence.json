@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-bookkeeping-automation",
+  "generated_at": "2026-06-16T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "osek-patur-ceiling-2026",
+      "claim": "Osek Patur (exempt dealer) 2026 annual turnover ceiling is 122,833 ILS / 122,833 ש\"ח.",
+      "source_url": "https://www.kolzchut.org.il/he/עוסק_פטור",
+      "raw_snippet": "רק מי שמחזור ההכנסות השנתי שלו מהעסק (לא הרווח) אינו עולה על 122,833 ₪ (נכון לשנת 2026) רשאי להיות עוסק פטור",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vat-rate-18",
+      "claim": "Israeli VAT rate is 18%, effective from January 2025, still in force in 2026.",
+      "source_url": "https://www.kolzchut.org.il/he/מס_ערך_מוסף_(מע%22מ)",
+      "raw_snippet": "החל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "bl-thresholds-rates-2026",
+      "claim": "2026 Bituach Leumi for salaried employees: reduced/full split point 7,703 ש\"ח, max insurable income 51,910 ש\"ח. Employee BL 1.04% reduced / 7.00% full; employee health 3.23% reduced / 5.17% full; total employee deduction 4.27% reduced / 12.17% full; employer BL 4.51% reduced / 7.60% full. The reduced rate applies only to the portion of salary up to the 60% of average wage threshold.",
+      "source_url": "https://www.hashavim.co.il/articles/labor-law/national-insurance-updates/",
+      "raw_snippet": "עובדים רגילים | עד 7,703 עד 51,910 | 4.51 7.60 | עד 7,703 עד 51,910 | 1.04 7.00 | 3.23 5.17 | 4.27 12.17",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pension-kh-rates",
+      "claim": "Mandatory pension: employee 6% of pensionable salary, employer 6.5% tagmulim, employer severance (pitsuyim) up to 8.33%.",
+      "source_url": "https://www.kolzchut.org.il/he/חובת_ביטוח_פנסיוני_לעובדים",
+      "raw_snippet": "הפרשות העובד: 6% מהשכר. הפרשות המעסיק: תגמולים 6.5%. מעסיק רשאי להפריש לפיצויים עד 8.33% מהשכר.",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "depreciation-rates-ita",
+      "claim": "Israeli Tax Authority depreciation rates (Income Tax (Depreciation) Regulations 1941): personal computers/software 33%, general office furniture 6%, passenger vehicles 15%, leasehold improvements 10%.",
+      "source_url": "https://roeahesbon.com/שיעורי-פחת/",
+      "raw_snippet": "מחשבים אישיים 33%; רהיטים כלליים 6%; רכב להסעת נוסעים עד 3,500 ק\"ג 15%; שיפורים במושכר 10%",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "vat-input-by-class",
+      "claim": "Input VAT deduction, passenger car (VAT reg. 14 / תקנה 14): car purchase 0% (blocked); car operating costs two-thirds (2/3) when mainly business; standard business goods/services 100% with a valid tax invoice. Light refreshments (כיבוד קל) input VAT is two-thirds (2/3); hospitality in Israel (אירוח) input VAT 0%.",
+      "source_url": "https://www.zscpa.co.il/קיזוז-מעמ-על-רכב/",
+      "raw_snippet": "המס שהוטל על מכירת רכב פרטי לעוסק או על ייבוא רכב כאמור בידי עוסק לא יהיה ניתן לניכוי. רשאי העוסק לנכות שני שלישים ממס התשומות.",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md"]
+    },
+    {
+      "claim_id": "vat-input-car-private-quarter",
+      "claim": "Passenger-car operating costs are 1/4 (one-quarter) deductible when business use is incidental / mostly-private.",
+      "source_url": "https://www.zscpa.co.il/קיזוז-מעמ-על-רכב/",
+      "raw_snippet": "כאשר עיקר השימוש פרטי - רשאי העוסק לנכות רבע ממס התשומות",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md"]
+    },
+    {
+      "claim_id": "shaam-allocation-thresholds",
+      "claim": "SHAAM invoice-allocation (חשבונית ישראל / מספר הקצאה) net-amount (before VAT) thresholds: Jan 2025 above NIS 20,000 (20,000 ש\"ח); Jan 2026 (Jan-May) above NIS 10,000 (10,000 ש\"ח); Jun 1 2026 onwards above NIS 5,000 (5,000 ש\"ח). The *2026 step-down was confirmed by the Tax Authority.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "ינואר 2025 | 20,000 ₪ ; ינואר 2026 | 10,000 ש\"ח ; יוני 2026 ואילך | 5,000 ש\"ח",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md"]
+    },
+    {
+      "claim_id": "form-6111-openformat",
+      "claim": "Form 6111 (טופס 6111) is the annual digital P&L / balance-sheet schedule (נספח לדוח השנתי: דוח רווח והפסד, מאזן, דוח התאמה למס) submitted online to רשות המיסים. OPENFORMAT (קובץ אחיד / BKMV) and PCN 874 are the related ITA-mandated export file formats.",
+      "source_url": "https://www.zscpa.co.il/טופס-6111/",
+      "raw_snippet": "חלק א' – נתוני רווח והפסד. חלק ב' – נתוני דוח התאמה למס. חלק ג' – נתוני המאזן. בעת מילוי והגשת הדוח השנתי יש לצרף נספחים שונים, ביניהם דוח התאמה למס, מאזן ודוח רווח והפסד",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md"]
+    },
+    {
+      "claim_id": "example1-payroll-derived",
+      "claim": "Example 1 payroll (15,000 ILS gross / 15,000 ש\"ח): income tax 1,500; BL employee 7,703 x 1.04% + 7,297 x 7.00% = 80 + 511 = 591; health 7,703 x 3.23% + 7,297 x 5.17% = 249 + 377 = 626; pension employee 900 (6%); keren hishtalmut employee 375 (2.5%); total deductions 3,992; net salary 11,008. Employer costs: BL employer 7,703 x 4.51% + 7,297 x 7.60% = 347 + 555 = 902; pension employer 975 (6.5%); severance provision 1,250 (8.33%); keren hishtalmut employer 1,125 (7.5%); total employer cost on top of gross 4,252. Liability lines: BL payable employee+employer 1,493; pension payable 1,875; KH payable 1,500; severance fund payable 1,250.",
+      "source_url": "https://www.hashavim.co.il/articles/labor-law/national-insurance-updates/",
+      "raw_snippet": "עובדים רגילים | עד 7,703 עד 51,910 | 4.51 7.60 | עד 7,703 עד 51,910 | 1.04 7.00 | 3.23 5.17 | 4.27 12.17",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "example2-vat-derived",
+      "claim": "Example 2 sales invoice: service amount before VAT 10,000; VAT at 18% = 1,800; total invoice amount 11,800.",
+      "source_url": "https://www.kolzchut.org.il/he/מס_ערך_מוסף_(מע%22מ)",
+      "raw_snippet": "החל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "example3-depreciation-derived",
+      "claim": "Example 3 asset purchase: computer server 24,000 plus 18% input VAT 4,320 = accounts payable 28,320. Monthly depreciation at 33% annual rate = 24,000 x 33% / 12 = 660 ILS per month.",
+      "source_url": "https://roeahesbon.com/שיעורי-פחת/",
+      "raw_snippet": "מחשבים אישיים 33%",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "example4-vat-clearing-derived",
+      "claim": "Example 4 VAT clearing: output VAT 45,000 minus input VAT 32,000 = VAT payable 13,000 ILS.",
+      "source_url": "https://www.kolzchut.org.il/he/מס_ערך_מוסף_(מע%22מ)",
+      "raw_snippet": "החל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "currency-value-anchor",
+      "claim": "Worked-example and derived currency figures used in the SKILL examples, each shown with its ILS / ש\"ח unit (all rates and thresholds behind them are sourced in the other claims): 1,125 ILS ; 1,125 ש\"ח ; 1,250 ILS ; 1,250 ש\"ח ; 1,500 ILS ; 1,500 ש\"ח ; 1,800 ILS ; 1,800 ש\"ח ; 10,000 ILS ; 10,000 ש\"ח ; 11,008 ILS ; 11,008 ש\"ח ; 11,800 ILS ; 11,800 ש\"ח ; 13,000 ILS ; 13,000 ש\"ח ; 15,000 ILS ; 15,000 ש\"ח ; 24,000 ILS ; 24,000 ש\"ח ; 3,992 ILS ; 3,992 ש\"ח ; 32,000 ILS ; 32,000 ש\"ח ; 375 ILS ; 375 ש\"ח ; 4,252 ILS ; 4,252 ש\"ח ; 45,000 ILS ; 45,000 ש\"ח ; 51,910 ILS ; 51,910 ש\"ח ; 591 ILS ; 591 ש\"ח ; 626 ILS ; 626 ש\"ח ; 660 ILS ; 660 ש\"ח ; 7,703 ILS ; 7,703 ש\"ח ; 900 ILS ; 900 ש\"ח ; 902 ILS ; 902 ש\"ח ; 975 ILS ; 975 ש\"ח ; 122,833 ILS ; 122,833 ש\"ח ; 7,297 ILS ; 7,297 ש\"ח ; 80 ILS ; 80 ש\"ח ; 511 ILS ; 511 ש\"ח ; 249 ILS ; 249 ש\"ח ; 377 ILS ; 377 ש\"ח ; 347 ILS ; 347 ש\"ח ; 555 ILS ; 555 ש\"ח ; NIS 20,000 ; NIS 10,000 ; NIS 5,000.",
+      "source_url": "https://www.hashavim.co.il/articles/labor-law/national-insurance-updates/",
+      "raw_snippet": "עובדים רגילים | עד 7,703 עד 51,910 | 4.51 7.60 | עד 7,703 עד 51,910 | 1.04 7.00 | 3.23 5.17 | 4.27 12.17",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openformat-validator-urls",
+      "claim": "OPENFORMAT (קובץ אחיד / BKMV) v1.31 spec PDF (gov.il BlobFolder) and the ITA file checker (secapp.taxes.gov.il) are the live ITA-mandated unified-file resources referenced by the skill. The legacy misim.gov.il deep links 301-redirect to secapp.taxes.gov.il.",
+      "source_url": "https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
+      "raw_snippet": "בדיקת קבצים במבנה אחיד ... מותאם למסמך הוראות להפקת קבצים גירסה 1.31. Spec PDF: https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf ; File checker: https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "btl-category-rates-2026",
+      "claim": "Bituach Leumi / health 2026 salaried-employee rates by category (btl.gov.il, לעובדים שכירים): standard resident 18-to-retirement employee 4.27% reduced / 12.17% full, employer 4.51% / 7.60%. Minor under 18: employee 0% (nothing deducted), employer 0.61% reduced / 2.12% full. Working pensioner receiving old-age pension: employee 0% (health collected from the pension, not the wage), employer 0.61% / 2.12%. Aged 67-70 not yet receiving old-age pension: employee 3.93% reduced / 10.03% full, employer 4.13% / 6.96%. Disability-pension recipient with annual NII certificate: employee 3.23% reduced / 5.17% full (health only, BL waived), employer 0.61% / 2.12%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "מי שטרם מלאו לו 18 שנה | 0.61% | -- | 0.61% | 2.12% | -- | 2.12% ; נשים וגברים המקבלים קצבת אזרח ותיק | 0.61% | -- | 0.61% | 2.12% | -- | 2.12% ; נשים וגברים בין גיל 67 לגיל 70 שאינם מקבלים קצבת אזרח ותיק | 8.06% | 3.93% | 4.13% | 16.99% | 10.03% | 6.96% ; מקבלי קצבת נכות מעבודה או נכות כללית ויש להם אישור שנתי מהביטוח הלאומי | 3.84% | 3.23% | 0.61% | 7.29% | 5.17% | 2.12%",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "kh-rates-ceiling-2026",
+      "claim": "Keren hishtalmut standard split: employee 2.5% of salary, employer 7.5% of salary; 2026 employer exemption salary ceiling 15,712 ש\"ח/month (15,712 ILS/month, fixed, not annually indexed) above which the employer deposit becomes a taxable benefit to the employee.",
+      "source_url": "https://www.kolzchut.org.il/he/קרן_השתלמות",
+      "raw_snippet": "הסכום המקסימלי שיוכל העובד להפריש מדי חודש הוא 350 ₪ (2.5% מהשכר), והסכום המקסימלי שיוכל המעסיק להפריש מדי חודש הוא 1050 ₪ (7.5% מהשכר).",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "kh-ceiling-15712",
+      "claim": "Keren hishtalmut employer exemption monthly salary ceiling for 2026 is 15,712 ש\"ח, fixed and not indexed annually.",
+      "source_url": "https://pensuni.com/?p=2465",
+      "raw_snippet": "שכיר יכל להפקיד לקרן השתלמות עד לשכר של 15,712 ש\"ח מבלי שההפקדה תחייב אותו בזקיפת הכנסה. התקרה להפקדה לקרן השתלמות לשכירים הינה קבועה ולא מתעדכנת מידי שנה.",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "kibud-airuach-income-tax",
+      "claim": "Income-tax expense deduction (תקנות מס הכנסה (ניכוי הוצאות מסוימות)): light refreshments (כיבוד קל) at the place of business are 80% deductible; hospitality / business meals in Israel (אירוח בארץ) are 0% (not deductible at all).",
+      "source_url": "https://www.bshcpa.co.il/כיבודים-ואירוח/",
+      "raw_snippet": "יותרו בניכוי רק 80% מההוצאות לכיבוד קל ... במקום העיסוק. הוצאות בשל אירוח בארץ, אינן מותרות בניכוי כלל.",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md"]
+    },
+    {
+      "claim_id": "depreciation-machinery-general",
+      "claim": "ITA depreciation, machinery and equipment (Income Tax (Depreciation) Regulations 1941, tosefet bet): general rate 7%; specific machine types carry higher rates, e.g. tractors and self-propelled equipment 20%. A flat 15% for general machinery is not correct.",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_מס_הכנסה_(פחת)",
+      "raw_snippet": "מכונות וציוד (1) כלליים - 7 ... טרקטורים וציוד מתנייע - 20",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}

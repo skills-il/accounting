@@ -40,8 +40,8 @@ Use the standard Israeli account numbering system:
 | 300-399 | Equity & Liabilities (hon va-hatvot) | 310 Owner equity (hon ba'alim), 320 Retained earnings (ruvhim tsvurim), 330 Bank loans (halvaa bank), 340 Accounts payable (zka'ei sapkim) |
 | 400-499 | Revenue (hachnasot) | 400 Service revenue (hachnasot misherutim), 410 Product revenue (hachnasot mimkarim), 420 Other income (hachnasot aherot) |
 | 500-599 | Cost of Goods (olut hamkhar) | 500 Materials (homrei gelem), 510 Direct labor (avoda yeshira) |
-| 600-699 | Operating Expenses (hotsa'ot tnuha) | 600 Salaries (hotsa'ot sachar), 610 Rent (schar dira), 620 Insurance (bituah), 630 Depreciation (phat), 640 Office supplies (tsiyud misradi), 650 Professional services (sherutim miktso'iyim) |
-| 700-799 | Payroll Liabilities (hatvot sachar) | 710 Income tax payable (mas hachnasa leshalem), 720 Bituach leumi payable (BL leshalem), 730 Health insurance payable (mas briut leshalem), 740 Pension payable (pension leshalem), 750 Keren hishtalmut payable (KH leshalem) |
+| 600-699 | Operating Expenses (hotsa'ot tnuha) | 600 Salaries (hotsa'ot sachar), 601-604 Employer payroll costs (BL / pension / severance / KH ma'asik), 610 Rent (schar dira), 620 Insurance (bituah), 630 Depreciation (phat), 640 Office supplies (tsiyud misradi), 650 Professional services (sherutim miktso'iyim) |
+| 700-799 | Payroll Liabilities (hatvot sachar) | 710 Income tax payable (mas hachnasa leshalem), 720 Bituach leumi payable (BL leshalem), 730 Health insurance payable (mas briut leshalem), 740 Pension payable (pension leshalem), 750 Keren hishtalmut payable (KH leshalem), 760 Severance fund payable (kupat pitsuyim) |
 | 800-899 | Tax Accounts | 810 Output VAT (maam etsot), 820 VAT clearing (maam leshalem), 830 Corporate tax provision (hafrashat mas) |
 
 ### Step 4: Generate the Journal Entry
@@ -59,7 +59,7 @@ Always verify the entry balances (hova = zchut).
 
 ### Step 5: Handle Payroll Entries (Pkudat Sachar)
 
-For salary journal entries, calculate all components using tiered rates. The threshold between reduced and full rates is 60% of average wage.
+For salary journal entries, calculate all components using tiered rates. The split between the reduced and full rate is a fixed statutory bracket ceiling (7,703 ILS/month for 2026), set in the Bituach Leumi regulations and updated annually. It is the published bracket ceiling, not a figure you compute live from the average wage.
 
 **2026 rates (threshold: 7,703 ILS/month, max insurable income: 51,910 ILS/month):**
 
@@ -72,12 +72,27 @@ For salary journal entries, calculate all components using tiered rates. The thr
 
 Rates are tiered: the reduced rate applies to the portion of salary up to the threshold, and the full rate applies to the portion above. Do NOT apply a flat rate to the entire salary.
 
+**Rates by employee category (2026).** The table above is the standard resident employee aged 18 to retirement who is not a pensioner. Bituach leumi and health rates differ by category. A posting must use the row that matches the employee, never apply the standard row to everyone (a wrong row silently over-deducts and posts a wrong net pay and 720 liability):
+
+| Employee category | Employee (reduced, up to 7,703) | Employee (full, 7,703 to 51,910) | Employer (reduced / full) |
+|---|---|---|---|
+| Standard resident, 18 to retirement | 4.27% (BL 1.04% + health 3.23%) | 12.17% (BL 7.00% + health 5.17%) | 4.51% / 7.60% |
+| Minor under 18 | 0% (employer-borne) | 0% (employer-borne) | 0.61% / 2.12% |
+| Working pensioner receiving old-age pension | 0% (collected from the pension, not the wage) | 0% | 0.61% / 2.12% |
+| Aged 67 to 70, not yet receiving old-age pension | 3.93% | 10.03% | 4.13% / 6.96% |
+| Disability-pension recipient (with annual NII certificate) | 3.23% (health only, BL waived) | 5.17% (health only) | 0.61% / 2.12% |
+
+Source: National Insurance Institute salaried-employee rates (btl.gov.il/Insurance/Rates, 2026). For a working pensioner the health component is collected from the old-age pension, so nothing is deducted from the wage; the employer still pays the residual rate shown. The reduced/full split point (7,703) and the tiered rule apply to every category.
+
 **Additional payroll components (not tiered):**
 - Pension employee contribution (pension oved): 6% of pensionable salary
 - Pension employer contribution (pension ma'asik): 6.5% of pensionable salary
 - Severance provision (pitsuyim): 8.33% (1/12 of annual salary)
 - Keren hishtalmut employee (KH oved): 2.5% of salary (optional, common)
-- Keren hishtalmut employer (KH ma'asik): 7.5% of salary
+- Keren hishtalmut employer (KH ma'asik): 7.5% of salary, deductible up to the 15,712 ILS/month salary ceiling; employer KH on salary above that ceiling becomes a taxable benefit to the employee
+- Convalescence pay (dmei havraa): annual entitlement = daily rate (set by extension order, supply the current rate as an input) times entitled days by seniority. Post as a salary-expense line; this skill does not hard-code the daily rate.
+
+**Income tax (mas hachnasa) is an input, not computed here.** This skill does NOT calculate PAYE withholding. The withheld income tax depends on the employee's annual tax brackets and credit points (nekudot zikui), which the payroll system or the user must supply. The income-tax figure shown in the examples below is an illustrative placeholder, not a computed value. Post the supplied tax amount to the income-tax-payable account (710) and let it reduce net pay; never invent a tax figure.
 
 ### Step 6: Handle VAT Entries
 
@@ -99,9 +114,9 @@ Apply Israeli Tax Authority (rashut hamisim) depreciation rates:
 | Office furniture (rihut misradi) | 6% | 120 |
 | Vehicles (rehev) | 15% | 130 |
 | Leasehold improvements (shiputsim) | 10% | 140 |
-| Machinery (mekhonot) | 15% | 150 |
+| Machinery, general (mekhonot) | 7% | 150 |
 
-Depreciation is calculated on a straight-line basis (shitat hakav hayashar). Monthly depreciation = (Cost - Accumulated depreciation) * Annual rate / 12.
+Machinery is the general 7% rate; the depreciation regulations set higher per-type rates for specific machinery (for example tractors and self-propelled equipment 20%), so check the regulation appendix (tosefet bet) when the asset is a specialized machine. Depreciation is calculated on a straight-line basis (shitat hakav hayashar). Monthly depreciation = (Cost - Accumulated depreciation) * Annual rate / 12.
 
 ## Examples
 
@@ -114,7 +129,7 @@ User says: "Create a journal entry for January 2026 salary payment for an employ
 Employee gross salary: 15,000 ILS
 
 Employee deductions:
-- Income tax (mas hachnasa): 1,500 ILS (estimated, depends on credits)
+- Income tax (mas hachnasa): 1,500 ILS (illustrative placeholder only, not computed by this skill; supply the real withheld amount from the employee's brackets and credit points)
 - Bituach leumi employee: 7,703 x 1.04% + 7,297 x 7.00% = 80 + 511 = 591 ILS
 - Health insurance (mas briut): 7,703 x 3.23% + 7,297 x 5.17% = 249 + 377 = 626 ILS
 - Pension employee: 900 ILS (6%)
@@ -248,9 +263,9 @@ Result: Output VAT liability cleared against input VAT credit. Net VAT payable o
 When you record a B2B sales-invoice pkudat yoman in 2026, the source invoice must carry a SHAAM allocation number (mispar haktza'a) once it crosses the threshold in force on the invoice issue date:
 - Jan 2025 - Dec 2025: net amount > NIS 20,000
 - Jan 2026 - May 2026: net amount > NIS 10,000
-- **Jun 1, 2026 onwards (imminent): net amount > NIS 5,000**
+- **Jun 1, 2026 onwards (in effect): net amount > NIS 5,000**
 
-The June 2026 step-down was confirmed by the Tax Authority and accelerated from the originally scheduled 2028 date. Use the invoice issue date, not the bookkeeping-entry date, when picking the threshold.
+The June 2026 step-down took effect as scheduled, accelerated from the originally planned 2028 date. Use the invoice issue date, not the bookkeeping-entry date, when picking the threshold.
 
 The allocation number itself does not change the journal-entry shape, but the source invoice must include it (typically captured as a custom field on the AR journal line). Without it on the buyer's side, the input-VAT entry is not deductible at year-end. Surface this to the user when posting any large B2B invoice entry.
 
@@ -264,7 +279,7 @@ Not every input VAT line is fully recoverable. Common Israeli VAT rules to apply
 | Passenger-car operating costs (fuel, repairs, parking) | 2/3 | Standard "mostly-business" rule per gov.il / VAT Law reg. 14 |
 | Passenger-car operating costs, mostly-private | 1/4 | Stricter rule when business use is incidental |
 | Hospitality / business meals in Israel | 0% | Disallowed input VAT (אירוח בארץ) |
-| Light refreshments at workplace (כיבוד קל) | Up to 80% per ITA practice | |
+| Light refreshments at workplace (כיבוד קל) | 2/3 | Input VAT only. The income-tax expense deduction for כיבוד is a separate 80% cap, do not confuse the two |
 | Standard goods + services for business | 100% | Full deduction with valid tax invoice |
 
 Verify the per-expense rule before posting input-VAT in journal entries; over-deduction creates audit exposure.
@@ -272,11 +287,11 @@ Verify the per-expense rule before posting input-VAT in journal entries; over-de
 ## OPENFORMAT / PCN 874 / Form 6111
 
 Israeli bookkeeping software must be able to export:
-- **OPENFORMAT (קובץ אחיד / BKMV)** — ITA-mandated unified file (INI.TXT + BKMVDATA.TXT) for audits and CPA handoffs. Spec: <https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf>. Validator: <https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx>.
-- **PCN 874** — bi-monthly detailed VAT return file (different from OPENFORMAT but related); generated by Hashavshevet, Rivhit, iCount, etc.
-- **Form 6111** — annual digital P&L / balance-sheet schedule for incorporated businesses; required as appendix to the corporate annual return.
+- **OPENFORMAT (קובץ אחיד / BKMV)**: ITA-mandated unified file (INI.TXT + BKMVDATA.TXT) for audits and CPA handoffs. Spec (v1.31): <https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf>. File checker: <https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx>.
+- **PCN 874**: bi-monthly detailed VAT return file (different from OPENFORMAT but related), generated by Hashavshevet, Rivhit, iCount, etc.
+- **Form 6111**: annual digital P&L / balance-sheet schedule for incorporated businesses, required as appendix to the corporate annual return.
 
-When automating bookkeeping, plan the export pipeline against these formats — agents should know the file shapes exist even when not generating them directly.
+When automating bookkeeping, plan the export pipeline against these formats. Agents should know the file shapes exist even when not generating them directly.
 
 ## Gotchas
 
@@ -316,7 +331,7 @@ Solution: For Osek Patur businesses, record revenue at the gross amount without 
 
 Cause: Using a depreciation rate that does not match the Israeli Tax Authority approved rates. Common mistakes include using US GAAP rates or confusing monthly and annual rates.
 
-Solution: Always reference the Israeli Tax Authority (rashut hamisim) depreciation schedule. Key rates: computers 33%, furniture 6%, vehicles 15%, machinery 15%, leasehold improvements 10%. Calculate monthly by dividing the annual rate by 12. The method is straight-line (shitat hakav hayashar) unless specifically approved otherwise.
+Solution: Always reference the Israeli Tax Authority (rashut hamisim) depreciation schedule. Key rates: computers 33%, furniture 6%, vehicles 15%, machinery 7% (general rate, higher per-type rates exist), leasehold improvements 10%. Calculate monthly by dividing the annual rate by 12. The method is straight-line (shitat hakav hayashar) unless specifically approved otherwise.
 
 ### Error: "Missing employer bituach leumi contribution"
 

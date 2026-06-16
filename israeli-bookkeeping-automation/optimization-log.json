@@ -1,0 +1,17 @@
+{
+  "cycles": [
+    {
+      "version": "1.3.0",
+      "date": "2026-06-16",
+      "lessons": [
+        "Expert MINOR deferred (Phase 4.1 cap): convalescence pay (דמי הבראה) is documented as an input-driven payroll line in Step 5 but is not shown in the worked Example 1 journal entry. Next cycle: add a havraa line to Example 1 (source the current daily rate from the convalescence-pay extension order) for full presentation completeness.",
+        "Resolved this cycle: BL/health rates were a single working-age row + a 'check btl.gov.il' pointer; now enumerated per employee category (standard/minor/working-pensioner-on-pension/67-70-not-collecting/disability) with 2026 rates rendered from btl.gov.il/Insurance/Rates. This was the 2026-06-13 BL-incident class (single rate row for a multi-row official table).",
+        "Resolved this cycle: machinery depreciation was a flat 15% (wrong); ITA general machinery rate is 7% (tractors/self-propelled 20%). Vehicles 15% was and stays correct.",
+        "Resolved this cycle: כיבוד קל was labeled 'up to 80%' input VAT (wrong); input VAT is 2/3, the 80% is the separate income-tax expense cap.",
+        "Resolved this cycle: income tax was a hard-coded 1,500 'estimated' plug; now framed as an un-computed input (placeholder relabeled).",
+        "Resolved this cycle: SKILL_HE.md was missing 3 sections present in EN (SHAAM, VAT-input-by-class, OPENFORMAT); Hebrew parity restored (8 ## / 15 ###).",
+        "Verify note for next cycle: working-pensioner-receiving-old-age-pension employer rate 0.61%/2.12% is taken verbatim from the rendered BTL category table (not analogy); re-confirm against the 2026 BTL employer circular if it is ever relied on for a live posting."
+      ]
+    }
+  ]
+}
