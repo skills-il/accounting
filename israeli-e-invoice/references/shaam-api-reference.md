@@ -1,83 +1,74 @@
-# SHAAM API Reference (Israeli Tax Authority)
+# SHAAM Allocation API Reference (Israeli Tax Authority)
 
-> **Verify against official sources before using.** The Israel Tax Authority's OpenAPI portal is the authoritative source. Sandbox: <https://openapi-portal.taxes.gov.il/sandbox/>. Production allocation endpoint base: `https://openapi.taxes.gov.il/shaam/`. Endpoint paths and authentication shape have changed across rollout phases -- always confirm against the current ITA OpenAPI v2.0 spec before integrating. The values below are illustrative and may be stale.
+> **Always confirm against the current ITA spec before integrating.** Authoritative source: the "Israel Invoice Model API" spec (v2.0, 7/2024) and the ITA OpenAPI User Guide at <https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf>. Endpoint paths and field casing changed between v1 and v2; the values below match v2.
+
+## Hosts (note the split)
+- **Allocation calls (Approval / MultiApproval):** `https://ita-api.taxes.gov.il`
+- **OAuth token + invoice-information lookups:** `https://openapi.taxes.gov.il`
+
+This split is real: the allocation request runs on `ita-api.taxes.gov.il`, while the OAuth token exchange and the lookup endpoints run on `openapi.taxes.gov.il`.
 
 ## Authentication
-- **Method:** Digital certificate + Client ID / Client Secret issued via the gov.il national-identification certification flow. NOT bare OAuth2 client_credentials -- the ITA requires a digital certificate as part of the auth bundle.
-- **Sandbox developer portal:** <https://openapi-portal.taxes.gov.il/sandbox/>
-- **Production base:** <https://openapi.taxes.gov.il/shaam/>
-- **Allocation request endpoint pattern (sandbox example):** `POST {base}/Invoices/v1/Approval`
-- Token lifetime, refresh, and certificate-renewal cadence: verify in the current spec PDF.
+- **Method:** OAuth2 "User Restricted" (token-based). There is NO per-request TLS client certificate.
+- **Token endpoint:** `https://openapi.taxes.gov.il/shaam/{tsandbox|production}/longtimetoken/oauth2/token` (standard authorize then token code flow; see the OpenAPI User Guide).
+- **Software identity travels in the request body, not the auth header:**
+  - `accounting_software_number` (mandatory): the registration certificate number of the accounting software in the ITA software registry. If no registration certificate exists, send the company number / ID of the document producer.
+  - `client_software_key` (optional): the invoice issuer's client key with the software publisher.
 
 ## Endpoints
 
+| Service | Sandbox | Production |
+|---------|---------|------------|
+| Allocation (single) | `POST https://ita-api.taxes.gov.il/shaam/tsandbox/Invoices/v2/Approval` | `POST https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval` |
+| Allocation (batch) | `POST https://ita-api.taxes.gov.il/shaam/tsandbox/Multi-invoices/v2/MultiApproval` | `POST https://ita-api.taxes.gov.il/shaam/production/Multi-invoices/v2/MultiApproval` |
+| Lookup by allocation # | `GET https://ita-api.taxes.gov.il/shaam/tsandbox/invoice-information/v1/details` | `GET https://openapi.taxes.gov.il/shaam/production/invoice-information/v1/details` |
+
+V1 (`Invoices/v1/Approval`) was the transitional version and is superseded by V2. All v2 input field names are lowercase.
+
 ### Request Allocation Number
 ```
-POST /api/tax/e-invoice/allocation
+POST https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval
 Content-Type: application/json
-Authorization: Bearer {token}
+Authorization: Bearer {oauth2_user_restricted_token}
 
 {
-  "seller_tin": "123456782",
-  "buyer_tin": "987654328",
-  "invoice_type": 300,
+  "invoice_id": "INV-2026-0001",
+  "invoice_type": 305,
+  "vat_number": "123456782",
+  "invoice_reference_number": "2026-0001",
+  "customer_vat_number": "987654324",
   "invoice_date": "2026-01-15",
-  "total_amount": 17550,
-  "net_amount": 15000,
-  "vat_amount": 2550,
-  "currency": "ILS"
+  "invoice_issuance_date": "2026-01-15",
+  "accounting_software_number": 4324243,
+  "amount_before_discount": 15000,
+  "discount": 0,
+  "payment_amount": 15000,
+  "vat_amount": 2700,
+  "payment_amount_including_vat": 17700
 }
 
-Response:
+Success response:
 {
-  "allocation_number": "SHAAM-2026-123456",
-  "valid_until": "2026-02-15T00:00:00Z",
-  "status": "approved"
+  "status": 200,
+  "message": "Invoice approved",
+  "confirmation_number": "20240627231846297178091822",
+  "approved": true
 }
 ```
 
-### Validate Invoice Structure
-```
-POST /api/tax/e-invoice/validate
-Content-Type: application/json
-Authorization: Bearer {token}
-
-{invoice_object}
-
-Response:
-{
-  "valid": true,
-  "errors": [],
-  "warnings": ["Consider adding buyer email for digital delivery"]
-}
-```
-
-### Check Allocation Status
-```
-GET /api/tax/e-invoice/status/{allocation_number}
-Authorization: Bearer {token}
-
-Response:
-{
-  "allocation_number": "SHAAM-2026-123456",
-  "status": "used",
-  "invoice_number": "INV-2026-0001",
-  "used_date": "2026-01-15"
-}
-```
+The allocation number is the `confirmation_number` field, a long numeric string (not a "SHAAM-2026-..." token). Print the **9 right-most digits** on the invoice under the heading "Allocation Number" (Mispar Haktzaa). A not-approved response returns `"confirmation_number": "0"`, `"approved": false`, with error details in `message.errors[]`.
 
 ## Error Codes
 | Code | Meaning |
 |------|---------|
-| 400 | Invalid request structure |
-| 401 | Authentication failed |
-| 403 | Not authorized for this TIN |
-| 409 | Allocation already used |
+| 400 | Bad request structure |
+| 401 | Authentication failed (token invalid or expired) |
+| 403 | Not authorized for this VAT number |
 | 422 | Validation errors in invoice data |
-| 429 | Rate limited (max 100 requests/minute) |
+| 460 / 461 / 462 | Allocation-specific rejection reasons (see message.errors[]) |
 | 500 | SHAAM server error |
 
-## Developer Portal
-- Registration: https://openapi-portal.taxes.gov.il/sandbox/ (sandbox + developer registration)
-- Sandbox environment available for testing
-- Documentation primarily in Hebrew
+## Developer Resources
+- OpenAPI User Guide (auth + onboarding): <https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf>
+- Official ITA OpenAPI demo (reference implementation): <https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo>
+- Documentation is primarily in Hebrew.

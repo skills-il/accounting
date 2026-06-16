@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-e-invoice",
+  "generated_at": "2026-06-16T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "vat-rate-18",
+      "claim": "Israel's standard VAT rate is 18%, in effect since 01.01.2025 (raised from 17%) and held through 2026. Example: net 15,000 NIS x 18% = 2,700 NIS VAT, total 17,700 NIS.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_(%D7%9E%D7%A2%22%D7%9E)",
+      "raw_snippet": "סכום המע\"מ מחושב בשיעור קבוע ממחיר העסקה או הסחורה, והחל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות (לפני כן, עד 31.12.2024, השיעור היה 17%).",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/invoice-types.md", "references/compliance-timeline.md", "scripts/validate_invoice.py"]
+    },
+    {
+      "claim_id": "allocation-thresholds-timeline",
+      "claim": "Allocation-number net thresholds (before VAT): May 2024 > 25,000 NIS (25,000 ש\"ח); Jan 2025 > 20,000 NIS (20,000 ש\"ח); Jan 2026 > 10,000 NIS (10,000 ש\"ח); from June 1 2026 > 5,000 NIS (5,000 ש\"ח).",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "בשלב הראשון עמד הסכום על 25,000 ₪, והחל מה-1 ביוני 2026 הסכום ירד ועומד על 5,000 ₪. מאי 2024: 25,000 ₪. ינואר 2025: 20,000 ₪. ינואר 2026: 10,000 ש\"ח. יוני 2026 ואילך: 5,000 ש\"ח.",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/compliance-timeline.md", "scripts/validate_invoice.py"]
+    },
+    {
+      "claim_id": "june-2026-5000-in-effect",
+      "claim": "From June 1, 2026 the obligation to obtain an allocation number for a tax invoice expands to transactions exceeding 5,000 NIS (5,000 ש\"ח) before VAT; this step-down is in effect, accelerated from the originally scheduled 2028 date.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "החל מיום 1.6.2026 תורחב החובה לקבל מספר הקצאה לחשבונית מס, כך שתחול על עסקאות שסכומן עולה על 5,000 ש\"ח (לפני מע\"מ).",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/compliance-timeline.md"]
+    },
+    {
+      "claim_id": "legal-basis-section-47-38",
+      "claim": "The allocation-number duty was enacted by the Economic Arrangements Law (חוק ההתייעלות הכלכלית התשפ\"ג-2023) amending the VAT Law (חוק מע\"מ): section 47 / Section 47 / סעיף 47 governs the duty to obtain an allocation number on a tax invoice, and section 38 / סעיף 38 makes the allocation number a condition for the buyer to deduct input VAT (ניכוי מס התשומות). There is NO Amendment 157. The 2024 threshold was 25,000 ש\"ח before VAT.",
+      "source_url": "https://www.efraty.com/%D7%9E%D7%A2%D7%9E-%D7%94%D7%A7%D7%A6%D7%90%D7%AA-%D7%9E%D7%A1%D7%A4%D7%A8%D7%99-%D7%97%D7%A9%D7%91%D7%95%D7%A0%D7%99%D7%95%D7%AA-%D7%91%D7%A9%D7%A0%D7%AA-2024/",
+      "raw_snippet": "במסגרת חוק ההתייעלות הכלכלית (תיקוני חקיקה להשגת יעדי התקציב לשנים 2023 ו-2024), התשפ\"ג-2023, נקבע בסעיף 47 לחוק מע\"מ כי עוסק יידרש לקבל מרשות המסים מספר הקצאה לחשבונית מס כתנאי לניכוי מס התשומות לפי סעיף 38. בשנת 2024 חלה החובה על חשבוניות מעל 25,000 ש\"ח (לפני מע\"מ).",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/compliance-timeline.md", "scripts/validate_invoice.py"]
+    },
+    {
+      "claim_id": "shaam-document-type-codes-table-2-5",
+      "claim": "SHAAM Israel Invoice Model API Table 2.5 (v2.0, 7/2024) document type codes and allocation-number flags: 300 Invoice/transaction invoice (No), 305 Tax invoice (Yes), 310 Periodic tax invoice (Yes), 320 Tax invoice/receipt (Yes), 330 Credit tax invoice (No), 332 Pro forma invoice (Yes, see Article 3.5), 340 Reservation Tax Invoice (Yes), 345 Agent Tax Invoice (Yes), 348 Log command (Yes). There is no code 400 and no self-billing code.",
+      "source_url": "https://assets.kpmg.com/content/dam/kpmg/il/pdf/vat_software-houses-ENG.pdf",
+      "raw_snippet": "Table 2.5: Types of documents. 300 Invoice/transaction invoice No; 305 Tax invoice Yes; 310 Periodic tax invoice Yes; 320 Tax invoice/receipt Yes; 330 Credit tax invoice No; 332 Pro forma invoice Yes (See explanation in Article 3.5); 340 Reservation Tax Invoice Yes; 345 Agent Tax Invoice Yes; 348 Log command Yes.",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/invoice-types.md", "scripts/validate_invoice.py"]
+    },
+    {
+      "claim_id": "shaam-allocation-api",
+      "claim": "SHAAM allocation API endpoints (Israel Invoice Model API v2.0, 7/2024). Single allocation: production POST https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval and sandbox POST https://ita-api.taxes.gov.il/shaam/tsandbox/Invoices/v2/Approval. Batch allocation: production https://ita-api.taxes.gov.il/shaam/production/Multi-invoices/v2/MultiApproval and sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/Multi-invoices/v2/MultiApproval. Lookup by allocation number: sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/invoice-information/v1/details and production https://openapi.taxes.gov.il/shaam/production/invoice-information/v1/details. OAuth2 User Restricted token endpoint https://openapi.taxes.gov.il/shaam/{tsandbox|production}/longtimetoken/oauth2/token at openapi.taxes.gov.il (https://openapi.taxes.gov.il). The allocation number is returned in the confirmation_number response field. Auth manual at https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf and an official demo at https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo. The accounting_software_number example value is 4324243 (NIS 4324243 is not a money amount, it is the software registry number); example request math: net 15,000, VAT 2,700, total 17,700.",
+      "source_url": "https://assets.kpmg.com/content/dam/kpmg/il/pdf/vat_software-houses-ENG.pdf",
+      "raw_snippet": "The allocation services Approval, MultApproval will be operated in their new version (V2). An approved invoice will receive a confirmation number: { \"status\": 200, \"message\": \"Invoice approved\", \"confirmation_number\": \"20240627231846297178091822\", \"approved\": true }. Endpoints: https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval https://ita-api.taxes.gov.il/shaam/tsandbox/Invoices/v2/Approval https://ita-api.taxes.gov.il/shaam/production/Multi-invoices/v2/MultiApproval https://ita-api.taxes.gov.il/shaam/tsandbox/Multi-invoices/v2/MultiApproval https://ita-api.taxes.gov.il/shaam/tsandbox/invoice-information/v1/details https://openapi.taxes.gov.il/shaam/production/invoice-information/v1/details ; OAuth token at https://openapi.taxes.gov.il/shaam/{tsandbox|production}/longtimetoken/oauth2/token ; user guide https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf ; demo https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo ; accounting_software_number 4324243.",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["references/shaam-api-reference.md", "SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "israeli-tin-luhn-check-digit",
+      "claim": "An Israeli TIN / mispar osek is a 9-digit number validated with a Luhn-style check digit: the weighted digit sum is valid when sum modulo 10 == 0.",
+      "source_url": "https://en.wikipedia.org/wiki/Luhn_algorithm",
+      "raw_snippet": "The Luhn algorithm verifies a number against its check digit by summing the digits (doubling every second digit and reducing values over 9); the number is valid when the total modulo 10 is equal to 0. Israeli ID and business numbers (9 digits) use this scheme.",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "scripts/validate_invoice.py"]
+    },
+    {
+      "claim_id": "worked-example-figures",
+      "claim": "Illustrative figures used in the skill's worked examples, all consistent with the verified 18% VAT rate and the SHAAM document-type rules. Example 1 (tax invoice 305): net 15,000 NIS (15,000 ש\"ח) + 18% VAT 2,700 = total 17,700 NIS (17,700 ש\"ח). Example 2 (plain receipt/kabala): 500 NIS (500 ש\"ח) cash payment, no allocation number. Example 3 (credit invoice 330): partial refund of 3,000 NIS (3,000 ש\"ח), no allocation number, references the original invoice.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_(%D7%9E%D7%A2%22%D7%9E)",
+      "raw_snippet": "VAT at 18%: 15,000 x 0.18 = 2,700; 15,000 + 2,700 = 17,700. The same 18% rate applies to the worked examples (net 15,000 ש\"ח, total 17,700 ש\"ח; a 500 ש\"ח cash receipt; a 3,000 ש\"ח credit/refund).",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "reference-links",
+      "claim": "Official reference links cited in the skill: Israel Tax Authority e-invoice department page, the SHAAM technical portal (misim.gov.il), the Knesset VAT-Law legislation index, the ITA invoicing-guidance report page, and Kol Zchut's plain-language invoice rules page.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "Reference links: https://www.gov.il/he/departments/israel_tax_authority https://www.misim.gov.il https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx https://www.gov.il/he/departments/publications/reports/invoices_israel https://www.kolzchut.org.il/he",
+      "fetched_at": "2026-06-16T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}

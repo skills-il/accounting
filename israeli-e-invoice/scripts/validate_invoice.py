@@ -20,20 +20,23 @@ from datetime import datetime, date
 from typing import Optional
 
 
-# Valid Israeli invoice type codes
+# Valid SHAAM document type codes (Israel Invoice Model API, Table 2.5)
 VALID_INVOICE_TYPES = {
-    300: "Tax Invoice (Hashbonit Mas)",
-    305: "Tax Invoice / Receipt (Hashbonit Mas / Kabala)",
-    310: "Credit Invoice (Hashbonit Zikui)",
-    320: "Receipt (Kabala)",
-    330: "Proforma Invoice",
-    400: "Self-billing Tax Invoice",
+    300: "Transaction Invoice (Heshbon Iska)",
+    305: "Tax Invoice (Hashbonit Mas)",
+    310: "Periodic Tax Invoice (Hashbonit Mas Tkufatit)",
+    320: "Tax Invoice / Receipt (Hashbonit Mas / Kabala)",
+    330: "Credit Invoice (Hashbonit Mas Zikui)",
+    332: "Proforma Invoice",
+    340: "Reservation Tax Invoice",
+    345: "Agent Tax Invoice",
+    348: "Log Command (Pkudat Yoman)",
 }
 
-# Allocation number thresholds (NIS) by date range.
-# Israel Tax Authority reform (Amendment 157). Threshold applies to net amount,
-# excluding VAT. Required only when invoice amount is strictly greater than the
-# threshold and invoice type is 300, 305, or 310.
+# Allocation number thresholds (NIS) by date range. Requirement under the Economic
+# Arrangements Law 2023-2024 (amending VAT Law section 47). Threshold applies to the
+# net amount, excluding VAT, and only when the amount is strictly greater than the
+# threshold and the document type requires allocation (see ALLOCATION_REQUIRED_TYPES).
 ALLOCATION_THRESHOLDS = [
     ("2024-05-01", "2024-12-31", 25000),
     ("2025-01-01", "2025-12-31", 20000),
@@ -41,8 +44,10 @@ ALLOCATION_THRESHOLDS = [
     ("2026-06-01", None, 5000),  # accelerated from originally scheduled 2028
 ]
 
-# Invoice types that require allocation numbers
-ALLOCATION_REQUIRED_TYPES = {300, 305, 310}
+# Document types that require allocation numbers (305 tax invoice, 310 periodic,
+# 320 tax invoice/receipt, 332 proforma cash-basis, and the v2 codes 340/345/348).
+# Transaction invoices (300) and credit invoices (330) do NOT require allocation.
+ALLOCATION_REQUIRED_TYPES = {305, 310, 320, 332, 340, 345, 348}
 
 VAT_RATE = 0.18  # 18% effective 2025-01-01 (raised from 17%); held in 2026 budget
 
@@ -177,14 +182,14 @@ def generate_example_invoice() -> dict:
         "seller_name": "Example Business Ltd",
         "buyer_tin": "987654324",
         "buyer_name": "Client Company Ltd",
-        "invoice_type": 300,
+        "invoice_type": 305,
         "invoice_number": "INV-2026-0001",
         "date": "2026-01-15",
         "net_amount": 15000,
         "vat_amount": 2700,
         "total_amount": 17700,
         "currency": "ILS",
-        "allocation_number": "SHAAM-2026-123456",
+        "allocation_number": "178091822",
         "items": [
             {
                 "description": "Web development services",

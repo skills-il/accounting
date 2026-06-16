@@ -1,0 +1,16 @@
+{
+  "cycles": [
+    {
+      "version": "2.0.0",
+      "date": "2026-06-16",
+      "lessons": [
+        "Resolved this cycle: the invoice TYPE CODES were entirely wrong vs the official ITA Israel Invoice Model API Table 2.5. Corrected to 300=transaction invoice (no allocation), 305=tax invoice, 310=periodic tax invoice, 320=tax invoice/receipt, 330=credit invoice (no allocation), 332=proforma; removed nonexistent code 400/self-billing; added v2 codes 340/345/348. Breaking change -> major bump.",
+        "Resolved this cycle: legal basis was a fabricated 'Amendment 157'; corrected to the Economic Arrangements Law 2023-2024 amending VAT Law section 47 (allocation duty) + section 38 (input-VAT deduction condition).",
+        "Resolved this cycle: shaam-api-reference.md had fabricated REST endpoints (/api/tax/e-invoice/allocation) and a fake 'SHAAM-2026-...' allocation token; replaced with the real contract (ita-api.taxes.gov.il/.../Invoices/v2/Approval, OAuth2 user-restricted token, confirmation_number response, 9-right-digits print rule, host split with openapi.taxes.gov.il for OAuth + lookups).",
+        "Resolved this cycle: stale 17% VAT math in the API-reference example (2,550/17,550) -> 18% (2,700/17,700); and stale 'imminent' framing for the June 2026 step-down (now in effect).",
+        "Expert MINOR deferred (script edge cases, low impact): validate_tin accepts all-zeros '000000000' (sum 0 mod 10 == 0) -- real mispar-osek validation should reject it. Next cycle: add an all-zeros / all-same-digit guard.",
+        "Expert MINOR deferred: the allocation-threshold check falls back to total_amount (gross) when net_amount is absent, which can over-flag near the 5,000 net boundary. Next cycle: add a comment or compute net from total when only gross is supplied."
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: israeli-e-invoice
-description: Generate, validate, and manage Israeli e-invoices (hashbonit electronit) per Tax Authority (SHAAM) standards. Use when user asks to create Israeli invoices, request allocation numbers, validate invoice compliance, or asks about "hashbonit", "e-invoice", "SHAAM", "allocation number", or Israeli invoicing requirements. Supports tax invoice (300), tax invoice/receipt (305), credit invoice (310), receipt (320), and proforma (330) types. Do NOT use for general accounting, bookkeeping, or non-Israeli invoice formats.
+description: Generate, validate, and manage Israeli e-invoices (hashbonit electronit) per Tax Authority (SHAAM) standards. Use when user asks to create Israeli invoices, request allocation numbers, validate invoice compliance, or asks about "hashbonit", "e-invoice", "SHAAM", "allocation number", or Israeli invoicing requirements. Uses the official SHAAM document type codes: transaction invoice (300), tax invoice (305), periodic tax invoice (310), tax invoice/receipt (320), credit invoice (330), and proforma (332). Do NOT use for general accounting, bookkeeping, or non-Israeli invoice formats.
 license: MIT
 compatibility: Requires network access for SHAAM API calls. Works with Claude Code, Claude.ai, Cursor.
 ---
@@ -12,13 +12,18 @@ compatibility: Requires network access for SHAAM API calls. Works with Claude Co
 ### Step 1: Determine Invoice Type
 Ask the user what type of document they need:
 
-| Code | Hebrew | English | When to Use |
-|------|--------|---------|-------------|
-| 300 | hashbonit mas | Tax Invoice | B2B sales, services over threshold |
-| 305 | hashbonit mas / kabala | Tax Invoice / Receipt | B2C with immediate payment |
-| 310 | hashbonit zikui | Credit Invoice | Refunds, corrections, returns |
-| 320 | kabala | Receipt | Payment confirmation only |
-| 330 | hashbonit proforma | Proforma Invoice | Quotes, pre-billing (no allocation needed) |
+These are the official SHAAM "Israel Invoice" document type codes (Table 2.5 of the Tax Authority API spec). Do NOT guess codes; the numbers below are the canonical ones.
+
+| Code | Hebrew | English | Allocation # | When to Use |
+|------|--------|---------|--------------|-------------|
+| 300 | heshbon / heshbon iska | Transaction Invoice | No | Demand for payment, not a tax invoice |
+| 305 | hashbonit mas | Tax Invoice | Yes (above threshold) | B2B sales, services |
+| 310 | hashbonit mas tkufatit | Periodic Tax Invoice | Yes (above threshold) | Aggregated periodic billing |
+| 320 | hashbonit mas / kabala | Tax Invoice / Receipt | Yes (above threshold) | Sale with immediate payment |
+| 330 | hashbonit mas zikui | Credit Invoice | No | Refunds, corrections, returns |
+| 332 | heshbon iska / proforma | Proforma Invoice | Yes (cash-basis, see references) | Quotes, pre-billing |
+
+A plain payment receipt (kabala) is not part of the allocation document set and never needs an allocation number. The v2 spec adds reservation tax invoice (340), agent tax invoice (345), and the log command (348). There is no code 400 and no "self-billing" code in this taxonomy.
 
 ### Step 2: Collect Required Fields
 For all invoice types, gather:
@@ -35,16 +40,16 @@ For all invoice types, gather:
 
 ### Step 4: Check Allocation Number Requirement
 Determine if an allocation number is needed:
-- **Required if:** Invoice amount > current threshold AND invoice type is 300, 305, or 310
-- **Threshold timeline** (Israel Tax Authority Reform, Amendment 157):
+- **Required if:** the net amount is above the current threshold AND the document type requires allocation: tax invoice (305), periodic tax invoice (310), tax invoice/receipt (320), proforma (332), and the v2 codes (340, 345, 348).
+- **Threshold timeline** (allocation-number requirement under the Economic Arrangements Law 2023-2024 amending VAT Law section 47, accelerated schedule):
   - May 2024 - Dec 2024: > 25,000 NIS (excluding VAT)
   - Jan 2025 - Dec 2025: > 20,000 NIS (excluding VAT)
   - Jan 2026 - May 2026: > 10,000 NIS (excluding VAT)
-  - **June 1, 2026 onwards (imminent): > 5,000 NIS (excluding VAT)**
-  - Final stage (date TBD): full B2B coverage
-- **Not required for:** Receipts (320), proforma (330), invoices at or below threshold
+  - **June 1, 2026 onwards (in effect): > 5,000 NIS (excluding VAT)**
+  - Final stage (date TBD): full coverage
+- **Not required for:** transaction invoices (300), credit invoices (330), plain receipts (kabala), and any invoice at or below the threshold.
 
-**June 2026 transition warning:** The threshold drops from 10,000 NIS to 5,000 NIS on June 1, 2026 (accelerated from the originally scheduled 2028 date). Any tax invoice (300/305/310) issued on or after June 1, 2026 with a net amount above 5,000 NIS MUST carry an allocation number, otherwise the buyer cannot deduct input VAT. Verify the invoice issue date when checking the threshold, not the transaction date.
+**June 2026 transition warning:** The threshold dropped from 10,000 NIS to 5,000 NIS on June 1, 2026 (accelerated from the originally scheduled 2028 date). Any allocation-required invoice (305/310/320) issued on or after June 1, 2026 with a net amount above 5,000 NIS MUST carry an allocation number, otherwise the buyer cannot deduct input VAT. Verify the invoice issue date when checking the threshold, not the transaction date.
 
 If allocation number IS required:
 1. Inform user they must request from SHAAM before issuing
@@ -75,7 +80,7 @@ If validation fails, report specific errors and how to fix them.
 ### Example 1: Simple B2B Tax Invoice
 User says: "Create a tax invoice for a web development project, 15,000 NIS to ABC Ltd"
 Actions:
-1. Identify: Tax Invoice (type 300), above threshold -- allocation needed
+1. Identify: Tax Invoice (type 305), above threshold -- allocation needed
 2. Collect: Seller and buyer details
 3. Calculate: Net 15,000 + VAT 2,700 = Total 17,700 NIS
 4. Guide: Request allocation number from SHAAM
@@ -85,7 +90,7 @@ Result: Complete tax invoice with all required fields and allocation number guid
 ### Example 2: Small B2C Receipt
 User says: "I need a receipt for a 500 NIS cash payment"
 Actions:
-1. Identify: Receipt (type 320), below threshold -- no allocation needed
+1. Identify: a plain receipt (kabala) confirming payment. Receipts are not part of the allocation document set, so no allocation number is needed (and the 320 tax-invoice/receipt code is only for a combined tax-invoice-plus-receipt, not a standalone receipt).
 2. Collect: Seller and buyer details
 3. Generate: Receipt document
 Result: Simple receipt, no allocation number required
@@ -93,10 +98,10 @@ Result: Simple receipt, no allocation number required
 ### Example 3: Credit Invoice for Refund
 User says: "I need to issue a credit note for invoice #1234, partial refund of 3,000 NIS"
 Actions:
-1. Identify: Credit Invoice (type 310)
+1. Identify: Credit Invoice (type 330)
 2. Reference: Original invoice #1234
 3. Calculate: Credit amount with VAT reversal
-4. Check: Allocation requirement based on amount
+4. Note: credit invoices (330) do not require an allocation number, but they must reference the original invoice
 Result: Credit invoice referencing original, with correct VAT reversal
 
 ## Bundled Resources
@@ -106,8 +111,8 @@ Result: Credit invoice referencing original, with correct VAT reversal
 
 ### References
 - `references/shaam-api-reference.md` -- SHAAM (Tax Authority) API endpoints for requesting allocation numbers, OAuth2 authentication setup, and request/response formats. Consult when integrating with the SHAAM e-invoice API. Also referenced in Step 4 above.
-- `references/invoice-types.md` -- Complete listing of Israeli invoice type codes (300, 305, 310, 320, 330, 400) with required fields per type, VAT applicability, and allocation number requirements. Consult when determining which invoice type to use.
-- `references/compliance-timeline.md` -- Progressive e-invoice mandate timeline per Amendment 157 to the VAT Law, showing threshold reductions from 25,000 NIS down to all invoices. Consult when checking current allocation number thresholds.
+- `references/invoice-types.md` -- Complete listing of the SHAAM document type codes (300, 305, 310, 320, 330, 332, and the v2 codes 340/345/348) with required fields per type, VAT applicability, and allocation number requirements. Consult when determining which invoice type to use.
+- `references/compliance-timeline.md` -- Progressive e-invoice mandate timeline under the Economic Arrangements Law 2023-2024 (amending the VAT Law), showing threshold reductions from 25,000 NIS down to all invoices. Consult when checking current allocation number thresholds.
 
 ## Gotchas
 
@@ -144,4 +149,4 @@ Solution: Verify current rate at the Tax Authority website. Standard rate is 18%
 
 ### Error: "Invoice type not suitable"
 Cause: Wrong invoice type selected for the transaction
-Solution: Review the invoice type table in Step 1. Common mistake: using type 300 when 305 (with receipt) is needed for immediate payment.
+Solution: Review the invoice type table in Step 1. Common mistake: using type 305 (tax invoice) when 320 (tax invoice/receipt) is needed for immediate payment.
