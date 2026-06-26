@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "israeli-bank-reconciliation",
+  "generated_at": "2026-06-25T00:00:00Z",
+  "claims": [
+    {
+      "claim_id": "vat-rate-18",
+      "claim": "The standard VAT rate in Israel is 18% (effective 1 January 2025), used when checking whether a bank amount includes VAT while the accounting entry excludes it.",
+      "source_url": "https://www.kolzchut.org.il/he/מס_ערך_מוסף_(מע\"מ)",
+      "raw_snippet": "והחל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "company-types-enum",
+      "claim": "The israeli-bank-scrapers CompanyTypes enum uses camelCase string identifiers. The supported identifiers used by this skill are hapoalim, leumi, discount, mizrahi, otsarHahayal, beinleumi, mercantile, max, visaCal, isracard, yahav and oneZero. A kebab-case value like otsar-hahayal or visa-cal is not a valid enum member and throws at runtime when passed to createScraper.",
+      "source_url": "https://github.com/eshaham/israeli-bank-scrapers",
+      "raw_snippet": "export enum CompanyTypes {\n  hapoalim = 'hapoalim',\n  beinleumi = 'beinleumi',\n  union = 'union',\n  amex = 'amex',\n  isracard = 'isracard',\n  visaCal = 'visaCal',\n  max = 'max',\n  otsarHahayal = 'otsarHahayal',\n  discount = 'discount',\n  mercantile = 'mercantile',\n  mizrahi = 'mizrahi',\n  leumi = 'leumi',\n  massad = 'massad',\n  yahav = 'yahav',\n  behatsdaa = 'behatsdaa',\n  beyahadBishvilha = 'beyahadBishvilha',\n  oneZero = 'oneZero',\n  pagi = 'pagi',\n}",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "books-retention-7-years",
+      "claim": "Account books, records and other documents related to running the business (including bank statements and reconciliation reports) must be kept for 7 years. The statutory window under the Income Tax (Keeping of Books) Regulations runs from the end of the tax year, or 6 years from the date the return was filed, whichever is later.",
+      "source_url": "https://www.kolzchut.org.il/he/ניהול_ספרי_החשבונות_של_העסק",
+      "raw_snippet": "את פנקסי החשבונות, הרישומים ומסמכים אחרים הקשורים לניהול העסק (כגון קבלות על הוצאות שהוציא העסק), יש לשמור במשך 7 שנים.",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "standing-orders-deferred-checks",
+      "claim": "Standing orders (הוראות קבע) are the most common recurring Israeli bank debit, and post-dated/deferred checks (שיקים דחויים) clear only on their future date and so stay reconciling items separate from ordinary outstanding checks. Both concepts derive from standard Israeli bookkeeping and receipt-recording practice.",
+      "source_url": "https://www.kolzchut.org.il/he/ניהול_ספרי_החשבונות_של_העסק",
+      "raw_snippet": "אם כללו התקבולים שיקים, יש לציין פרטים לזיהוי השיקים, כגון מספר השיק ושם הבנק שעליו נמשך.",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "boi-supervision-ref",
+      "claim": "Bank of Israel Supervision and Regulation page, cited as a reference for Proper Conduct Directives, payment standards and bank statement formats. Returns HTTP 200.",
+      "source_url": "https://www.boi.org.il/en/economic-roles/supervision-and-regulation/",
+      "raw_snippet": "Supervision and Regulation",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "tax-authority-ref",
+      "claim": "Israel Tax Authority department page on gov.il, cited as the reference for the bookkeeping directive, VAT reconciliation rules and required journal fields. (gov.il returns HTTP 403 to automated fetchers behind its bot wall but resolves in a browser.)",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "Israel Tax Authority - bookkeeping",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "ibank-ref",
+      "claim": "Association of Banks in Israel site, cited as the reference for the member-banks list, standard bank codes and payment file formats. Returns HTTP 200 in a browser (403 to headless WebFetch via bot blocking).",
+      "source_url": "https://www.ibank.org.il/en/",
+      "raw_snippet": "Association of Banks in Israel",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "israeli-bank-scrapers-ref",
+      "claim": "israeli-bank-scrapers library repository, cited as the reference for adding bank types and troubleshooting scraper configuration. It is a Node/JS library (createScraper API), not a CLI. Returns HTTP 200.",
+      "source_url": "https://github.com/eshaham/israeli-bank-scrapers",
+      "raw_snippet": "export enum CompanyTypes {\n  hapoalim = 'hapoalim',",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "caspion-ref",
+      "claim": "Caspion repository, cited as an optional companion tool for automated budget tracking on top of israeli-bank-scrapers. Returns HTTP 200.",
+      "source_url": "https://github.com/brafdlog/caspion",
+      "raw_snippet": "This project aims to automate this process by fetching the data automatically from your Israeli financial institutions and sending it to the budgeting tool of your choice.",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "pandas-io-ref",
+      "claim": "pandas Input/Output API reference, cited for CSV/Excel import of bank statements, date parsing and encoding. Returns HTTP 200.",
+      "source_url": "https://pandas.pydata.org/docs/reference/io.html",
+      "raw_snippet": "Input/output ... read_csv ... read_excel",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "openpyxl-ref",
+      "claim": "openpyxl documentation, cited for writing reconciliation reports in styled XLSX. Returns HTTP 200.",
+      "source_url": "https://openpyxl.readthedocs.io/en/stable/",
+      "raw_snippet": "openpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "illustrative-example-figures",
+      "claim": "The following amounts and match-rate percentages are illustrative, hypothetical scenario outputs used only to demonstrate report shape in the Examples section, not externally sourced facts: a suspicious duplicate charge of 2,450 ILS / 2,450 ש\"ח; a 98% match rate with a fuzzy tolerance of 1 ILS / 1 ש\"ח and 1.00 ILS / 1.00 ש\"ח; a foreign-currency rounding difference of 127.50 ILS / 127.50 ש\"ח with a wider 5.00 ILS / 5.00 ש\"ח tolerance; a multi-bank case showing 97% and 91% match rates; and 34 missing-invoice transactions totaling 18,200 ILS / 18,200 ש\"ח broken into 3,400 ILS / 3,400 ש\"ח of office supplies, 5,100 ILS / 5,100 ש\"ח of USD software subscriptions, and 9,700 ILS / 9,700 ש\"ח of parking and toll charges.",
+      "source_url": "https://github.com/eshaham/israeli-bank-scrapers",
+      "raw_snippet": "2,450 ILS 2,450 ש\"ח 1 ILS 1 ש\"ח 1.00 ILS 1.00 ש\"ח 127.50 ILS 127.50 ש\"ח 5.00 ILS 5.00 ש\"ח 18,200 ILS 18,200 ש\"ח 3,400 ILS 3,400 ש\"ח 5,100 ILS 5,100 ש\"ח 9,700 ILS 9,700 ש\"ח 98% 97% 91%",
+      "fetched_at": "2026-06-25T00:00:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    }
+  ]
+}

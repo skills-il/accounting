@@ -1,0 +1,13 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-25",
+      "lessons": [
+        "Deferred MINOR: bank Excel/.xls export path + OFX caveat (no Israeli bank exports OFX natively).",
+        "Deferred MINOR: BOI representative-rate has no value on non-business days; carry forward prior rate.",
+        "Deferred: itemized fee sub-types עמלת ערוץ ישיר / דמי ניהול / ריבית חובה."
+      ]
+    }
+  ]
+}

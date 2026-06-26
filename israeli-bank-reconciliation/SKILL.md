@@ -51,16 +51,19 @@ Create a file named `bank-config.json` with the following structure:
 }
 ```
 
-Supported bank identifiers:
+Supported bank identifiers (these strings must match the `CompanyTypes` enum in `israeli-bank-scrapers` exactly; the enum uses camelCase, so a kebab-case value like `otsar-hahayal` throws at runtime when passed to `createScraper`):
 - `hapoalim` - Bank Hapoalim
 - `leumi` - Bank Leumi
 - `discount` - Discount Bank
 - `mizrahi` - Mizrahi Tefahot
-- `otsar-hahayal` - Otsar Ha-Hayal
+- `otsarHahayal` - Otsar Ha-Hayal
+- `beinleumi` - First International Bank (FIBI / Beinleumi)
 - `mercantile` - Mercantile Discount Bank
 - `max` - Max (formerly Leumi Card)
-- `visa-cal` - Visa Cal
+- `visaCal` - Visa Cal
 - `isracard` - Isracard
+
+The `CompanyTypes` enum also includes `yahav` and `oneZero` (the latter marked experimental), among others. Always copy the identifier verbatim from the enum rather than guessing the casing.
 
 Store actual credentials in environment variables, not in the config file.
 
@@ -128,6 +131,8 @@ Configure rules for automatic transaction matching. The matching engine supports
 
 **Pattern match**: Define regex patterns for recurring transactions (rent, utilities, subscriptions).
 
+**Standing-order match (hora'ot keva)**: Standing orders are the most common recurring Israeli bank debit (rent, loan repayments, gym, insurance, donations). Detect them by a stable amount that repeats on roughly the same day each month from the same payee, often carrying a "הוראת קבע" / "הו"ק" marker in the description. Treat a confirmed standing order as a recurring expense the books should already expect, and roll an unbooked one forward as a posting candidate (see Step 6) rather than chasing it as a missing invoice.
+
 ```javascript
 const matchingRules = [
   {
@@ -194,11 +199,13 @@ Book balance (closing, per the ledger)
 
 Signs depend on which side you start from; the rule is that every reconciling item is applied to whichever balance does not yet reflect it. Outstanding checks and deposits in transit are timing differences (the books are correct, the bank just has not caught up). Un-posted fees and interest are the opposite - the bank is correct and the books need a journal entry (see Step 6).
 
+Treat post-dated checks (shekim dehuyim) as a distinct reconciling item, separate from ordinary outstanding checks. A post-dated check is written and booked now but carries a future date and cannot clear until that date arrives, so it is not merely "in flight" for a day or two - it stays a reconciling item until its date passes and the bank actually debits it. List post-dated checks received (from customers) and post-dated checks issued (to vendors) on their own lines, keyed by their due date, and roll each one forward across periods until it clears. Mixing them into the outstanding-checks bucket understates how long the item will sit unreconciled.
+
 The report should include:
 - **Summary section**: Total matched, unmatched counts and amounts on each side
 - **Matched transactions table**: Bank entry paired with its accounting record
 - **Unmatched bank transactions**: Split into "missing invoice" and "un-booked bank-originated entry", sorted by amount descending
-- **Unmatched accounting records**: Records to investigate, including outstanding checks and deposits in transit
+- **Unmatched accounting records**: Records to investigate, including outstanding checks, post-dated checks (listed separately, keyed by due date), and deposits in transit
 - **Suspicious items**: Flagged entries requiring manual review
 - **Reconciliation bridge**: Book balance, the outstanding-checks / deposits-in-transit / fees / interest adjustments, and the resulting bank balance - the two sides must tie out to zero difference once all reconciling items are listed
 
@@ -212,6 +219,10 @@ Output formats:
 ### Step 8: Handle Foreign-Currency Accounts
 
 When reconciling a foreign-currency account or foreign-currency transactions, value the book entries using the Bank of Israel representative rate (sha'ar yatzig) for the relevant date. Be aware that the bank books its own conversion at its own rate on the settlement date, which will differ from the representative rate. The gap between the representative rate and the bank's actual conversion rate is a real exchange-rate difference - post it as an exchange-rate gain or loss, do not treat it as an unexplained discrepancy. Widen the matching tolerance for foreign-currency transactions accordingly.
+
+### Step 9: Retain the Reconciliation and Its Supporting Documents
+
+Account books, records, and the supporting documents tied to running the business (including the bank statements you reconciled against and the reconciliation reports themselves) must be kept for 7 years. Some of these flows feed an annual tax return (see Example 3), and the retention window runs from the end of the tax year, or 6 years from the date the return was filed, whichever is later. Archive each period's reconciliation report together with the bank statement and the matched accounting export that produced it, so the trail is reconstructible if the Tax Authority asks.
 
 ## Examples
 
