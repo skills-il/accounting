@@ -1,0 +1,35 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-06-25",
+      "lessons": [
+        "Re-confirm equipment immediate-expensing threshold (reference line ~12) next cycle - currently unverified.",
+        "If עוסק זעיר 30% auto-deduction specifics unconfirmed, tighten next cycle.",
+        "Deferred: monthly-VAT mode in vat-summary.py (only noted as limitation this cycle)."
+      ]
+    },
+    {
+      "version": "1.2.0-fix-round",
+      "date": "2026-06-26",
+      "type": "judge+expert fix round (no version bump)",
+      "blocking_fixes": [
+        "JUDGE: corrected the monthly-vs-bi-monthly VAT filing-frequency turnover threshold to the verified annual-turnover figure (above it => monthly, at/below => bi-monthly). The higher figure the skill previously used belongs to the SEPARATE detailed-reporting (דיווח מפורט) obligation - do not conflate. Verified verbatim at benporat-cpa.com.",
+        "JUDGE: corrected the deductible business-gift ceiling per recipient per year (raised effective January 2024). Verified verbatim at gmcpa.co.il.",
+        "EXPERT: Equipment is a depreciable asset (פחת) - capitalize and depreciate over useful life, NOT a same-year full expense. Fixed the category tables in SKILL.md + SKILL_HE.md, added a depreciable-assets section to the reference, and added a Gotcha. Input VAT remains fully reclaimable in the first period. Verified at finka.co.il.",
+        "EXPERT: added the seven-year document-retention Must (keep books + supporting docs seven years from end of tax year, or six years from filing, whichever later) to Step 7 and the reference. Verified verbatim at greeninvoice.co.il.",
+        "JUDGE evidence: removed the unverifiable kolzchut equipment-threshold snippet and the mis-sourced Form 126 / monthly-VAT snippets; re-sourced each changed fact to a page whose text literally contains the snippet. Form 126 reframed as employer-only (salaried employees) with an 'only if you employ people' caveat; freelancers without employees do not file it."
+      ],
+      "lessons": [
+        "Do not conflate the VAT filing-frequency turnover threshold with the detailed-reporting (דיווח מפורט) threshold - they are different obligations with different numbers.",
+        "gov.il returns 403 to automated fetchers; CPA-firm pages (benporat-cpa, gmcpa, zscpa) and greeninvoice/finka carry the same figures with quotable snippets - source evidence from those.",
+        "The specific low-value equipment cut-off could not be pinned to a single authoritative quotable page; stated the depreciation PRINCIPLE instead and told the user to confirm the exact cut-off with the accountant.",
+        "domain-checklist.md is a build-time coverage artifact; it trips the evidence gate via its currency/URL tokens, so it is kept OUTSIDE the shipped skill folder (not in references/)."
+      ],
+      "deferred_minors": [
+        "Advance payments (מקדמות): osek zair has no advance payments, but the general advance-payment obligation for other self-employed is only implied via the tax calendar; could add an explicit one-line note next cycle.",
+        "Clarify the overlap between the osek patur ceiling and the osek zair turnover ceiling (they coincide numerically for 2026 but are different tracks); a one-line disambiguation would help."
+      ]
+    }
+  ]
+}

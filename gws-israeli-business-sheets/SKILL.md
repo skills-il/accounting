@@ -45,6 +45,8 @@ Before building any sheet, ask whether the user is an **osek murshe** (authorize
 
 An osek patur whose annual turnover crosses the ceiling (NIS 120,000 for 2025, NIS 122,833 for 2026) must convert to osek murshe. If a user is near the ceiling, flag it.
 
+**Osek zair (micro-dealer) 2026 reform.** A separate income-tax track for low-turnover self-employed (turnover ceiling CPI-linked, about NIS 122,833 for 2026) grants an automatic 30% expense deduction off turnover with no need to itemize receipts, plus a simplified annual report and no advance payments. If the user is a low-turnover freelancer, mention that this track may suit them and tell them to confirm eligibility with their accountant or the Tax Authority before opting in.
+
 ### Step 3: Create a New Financial Tracking Spreadsheet
 
 When the user wants to set up a new income/expense tracking sheet, create it with proper Israeli financial structure.
@@ -63,15 +65,21 @@ When the user wants to set up a new income/expense tracking sheet, create it wit
 | H | Invoice # | מספר חשבונית | Text | Invoice reference |
 | I | Payment Method | אמצעי תשלום | Text | Bank/PayPal/Cash |
 | J | Notes | הערות | Text | Additional details |
+| K | Allocation # | מספר הקצאה | Text | Israel Invoice allocation number for invoices at/above the threshold |
+| L | Withholding | ניכוי במקור | ILS currency | Tax withheld at source by the payer, if any |
 
-For an **osek patur**, drop columns D and E and rename column F to `Amount` / `סכום` (gross only), since no VAT applies.
+Column K records the **allocation number (מספר הקצאה)** the seller obtains from the Tax Authority's Israel Invoice platform. From January 1, 2026 every invoice of NIS 10,000 or more (before VAT) needs one, and from June 1, 2026 the threshold drops to NIS 5,000 or more (before VAT). Without it the buyer cannot deduct input VAT on the invoice, so capture it whenever it applies.
+
+Column L records **withholding tax at source (ניכוי במקור)**. Some clients are required to withhold income tax and pay the business net of that amount, so log the withheld sum here. The business needs its own אישור ניכוי מס במקור (withholding rate certificate) and this column feeds the annual Form 856 the payer files.
+
+For an **osek patur**, drop columns D and E and rename column F to `Amount` / `סכום` (gross only), since no VAT applies. Keep columns K and L if relevant (an osek patur can still be subject to withholding and, above the threshold, to allocation numbers).
 
 **Tax-deductible categories for Israeli businesses:**
 
 | Category (EN) | Category (HE) | Deduction Rate |
 |---------------|---------------|----------------|
 | Office Rent | שכירות משרד | 100% |
-| Equipment | ציוד | 100% |
+| Equipment | ציוד | Depreciable (פחת) - capitalize and depreciate, not 100% in year 1 |
 | Phone & Internet | טלפון ואינטרנט | 100% (if business-only) |
 | Professional Services | שירותים מקצועיים | 100% |
 | Car Expenses | הוצאות רכב | Limited (45% or fixed) |
@@ -89,8 +97,8 @@ gws sheets spreadsheets create --json '{"properties":{"title":"Business Tracker 
 
 # Write the header row into the first row (use the spreadsheetId from the create response)
 gws sheets spreadsheets values update \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A1:J1","valueInputOption":"RAW"}' \
-  --json '{"values":[["Date","Description","Category","Amount (excl. VAT)","VAT (18%)","Total (incl. VAT)","Type","Invoice #","Payment Method","Notes"]]}'
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A1:L1","valueInputOption":"RAW"}' \
+  --json '{"values":[["Date","Description","Category","Amount (excl. VAT)","VAT (18%)","Total (incl. VAT)","Type","Invoice #","Payment Method","Notes","Allocation #","Withholding"]]}'
 ```
 
 ### Step 4: Append Income and Expense Entries
@@ -104,15 +112,15 @@ When the user wants to log a transaction, calculate the VAT automatically (osek 
 # Amount excl. VAT = Total / 1.18 = 5,000 ILS
 # VAT = Amount * 0.18 = 900 ILS
 gws sheets spreadsheets values append \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J","valueInputOption":"USER_ENTERED"}' \
-  --json '{"values":[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer",""]]}'
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
+  --json '{"values":[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer","","HK-2026-0001","0"]]}'
 ```
 
 The `+append` helper is a shorter equivalent for a single simple row:
 
 ```bash
 gws sheets +append --spreadsheet SPREADSHEET_ID \
-  --json-values '[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer",""]]'
+  --json-values '[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer","","HK-2026-0001","0"]]'
 ```
 
 **For expense entries:**
@@ -120,8 +128,8 @@ gws sheets +append --spreadsheet SPREADSHEET_ID \
 ```bash
 # Example: Office internet bill of 236 ILS (200 + 36 VAT)
 gws sheets spreadsheets values append \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J","valueInputOption":"USER_ENTERED"}' \
-  --json '{"values":[["20/01/2026","Bezeq Internet","Phone & Internet","200","36","236","Expense","","Direct Debit",""]]}'
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
+  --json '{"values":[["20/01/2026","Bezeq Internet","Phone & Internet","200","36","236","Expense","","Direct Debit","","",""]]}'
 ```
 
 **VAT calculation formulas (osek murshe only):**
@@ -138,10 +146,10 @@ When the user needs a financial overview, read the data and compute summaries.
 
 ```bash
 # Read all entries from the sheet using the helper (returns the raw values array)
-gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:J"
+gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"
 
 # Equivalent raw API call (response is a ValueRange with a "values" array of arrays)
-gws sheets spreadsheets values get --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J"}'
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L"}'
 ```
 
 Both forms return JSON with a `values` field: an array of rows, each row an array of cell strings. The first row is the header. After reading the data, calculate and present:
@@ -165,13 +173,15 @@ For an osek patur, present income, expenses, and net profit only.
 | 5 | September-October | November 15 |
 | 6 | November-December | January 15 |
 
+Limitation: businesses above the monthly-VAT turnover threshold (annual turnover over NIS 1,520,000) file VAT **monthly**, not bi-monthly; at or below it they file bi-monthly. This threshold updates on January 1 each year, so confirm the current figure on the Tax Authority site. (Do not confuse this filing-frequency threshold with the separate detailed-reporting (דיווח מפורט) obligation, which kicks in at a different, higher turnover level.) `scripts/vat-summary.py` and Steps 5-6 assume the 6 bi-monthly periods only. For a monthly filer, run the summary per calendar month instead of per bi-monthly period and confirm the reporting cadence with the accountant.
+
 ### Step 6: Generate Tax-Period Summary Reports
 
 When the user needs to prepare data for their accountant or for VAT reporting, create a summary sheet.
 
 ```bash
 # Read all data
-gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:J"
+gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"
 ```
 
 After reading, use Python (via `scripts/vat-summary.py`) to:
@@ -205,7 +215,7 @@ When the user wants local backups or wants to share data with their accountant, 
 ```bash
 # Export the main tracking sheet as CSV
 gws sheets spreadsheets values get \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J"}' --format csv > business-tracker-2026.csv
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L"}' --format csv > business-tracker-2026.csv
 
 # Export a specific VAT period
 gws sheets spreadsheets values get \
@@ -218,6 +228,8 @@ Use the `scripts/backup-sheets.py` script for automated multi-tab backup:
 python scripts/backup-sheets.py --spreadsheet-id SPREADSHEET_ID --output-dir ./backups/2026-01 --tabs "Sheet1,VAT-Period-1"
 ```
 
+**Document retention.** Israeli bookkeeping rules require the business to keep its books and all supporting documents (invoices, receipts, bank records) for at least 7 years from the end of the tax year (or 6 years from the date the annual return was filed, whichever is later). A CSV backup is a convenience copy, not a substitute for retaining the original documents. Tell the user to archive backups in dated folders and keep the source invoices/receipts for the full retention period.
+
 ### Step 8: Auto-Log Payments from Structured Input
 
 When the user provides transaction data in bulk (from a bank statement or invoice list), parse and append multiple rows in one call.
@@ -225,11 +237,11 @@ When the user provides transaction data in bulk (from a bank statement or invoic
 ```bash
 # Append multiple rows in one call
 gws sheets spreadsheets values append \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J","valueInputOption":"USER_ENTERED"}' \
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
   --json '{"values":[
-    ["01/02/2026","Client A - Monthly Retainer","Professional Services","10000","1800","11800","Income","INV-2026-010","Bank Transfer",""],
-    ["03/02/2026","AWS Hosting","Software & Subscriptions","450","81","531","Expense","","Credit Card",""],
-    ["05/02/2026","Business Lunch - Client B","Meals & Entertainment","300","54","354","Expense","","Credit Card","80% deductible"]
+    ["01/02/2026","Client A - Monthly Retainer","Professional Services","10000","1800","11800","Income","INV-2026-010","Bank Transfer","","HK-2026-0010","0"],
+    ["03/02/2026","AWS Hosting","Software & Subscriptions","450","81","531","Expense","","Credit Card","","",""],
+    ["05/02/2026","Business Lunch - Client B","Meals & Entertainment","300","54","354","Expense","","Credit Card","80% deductible","",""]
   ]}'
 ```
 
@@ -240,8 +252,8 @@ Before making changes, offer the user a dry-run preview. The `--dry-run` flag va
 ```bash
 # Preview what would be appended without writing
 gws sheets spreadsheets values append \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J","valueInputOption":"USER_ENTERED"}' \
-  --json '{"values":[["15/03/2026","Test Entry","Office Rent","5000","900","5900","Expense","","Bank Transfer",""]]}' \
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
+  --json '{"values":[["15/03/2026","Test Entry","Office Rent","5000","900","5900","Expense","","Bank Transfer","","",""]]}' \
   --dry-run
 ```
 
@@ -267,7 +279,7 @@ User says: "Create a Google Sheet to track my freelance income and expenses with
 Actions:
 1. Ask whether the user is an osek murshe or an osek patur (this decides whether VAT columns are included)
 2. Run `gws sheets spreadsheets create --json '{"properties":{"title":"Freelance Tracker 2026"}}'` and read the `spreadsheetId` from the response
-3. Write the header row with `gws sheets spreadsheets values update` (10 columns for an osek murshe, fewer for an osek patur)
+3. Write the header row with `gws sheets spreadsheets values update` (12 columns for an osek murshe, fewer for an osek patur)
 4. Show the user the spreadsheet ID and link, and explain the column structure
 
 Result: A new Google Sheet with the correct Israeli structure for the user's VAT status, ready for entries.
@@ -277,7 +289,7 @@ Result: A new Google Sheet with the correct Israeli structure for the user's VAT
 User says: "Create a VAT summary for January-February 2026 and export it as CSV"
 
 Actions:
-1. Run `gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:J"` to pull all entries
+1. Run `gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"` to pull all entries
 2. Run `python scripts/vat-summary.py` to filter Jan-Feb transactions and compute totals
 3. Add a "VAT-Period-1-2026" tab with `gws sheets spreadsheets batchUpdate` and write the summary with `gws sheets spreadsheets values update`
 4. Export the summary tab with `gws sheets spreadsheets values get --format csv`
@@ -314,6 +326,7 @@ Result: Three new rows appended to the tracking sheet with proper categorization
 - An osek patur does not charge VAT on income and cannot reclaim input VAT on expenses. Agents may add VAT columns and compute a VAT liability for an osek patur, which is wrong. Always confirm the user's VAT status first.
 - Meal and entertainment expenses are only 80% deductible in Israel. Agents may categorize these as 100% deductible, overstating tax deductions.
 - Car expenses have complex deduction rules in Israel (45% or a fixed monthly amount, whichever is lower). Agents may apply 100% deduction, which would be incorrect for most businesses.
+- Equipment (computers, monitors, furniture) is a depreciable asset (פחת), not a 100%-in-year-one expense. Agents may book the full purchase price as a one-time expense, which overstates the first-year deduction. Capitalize the asset and spread the deduction over its useful life (for example, computers are commonly depreciated at 33% a year over 3 years). Only low-value or consumable office items are expensed in full in the year of purchase. The input VAT on the purchase is still fully reclaimable in the first period (osek murshe). Confirm the depreciation rate and any low-value threshold with the accountant.
 - Israeli VAT is 18% (since January 2025). Agents trained on older data may use 17%, which was the previous rate, leading to incorrect calculations throughout the spreadsheet.
 - The `gws` command surface is generated from Google's Discovery API. There is no `gws sheets create` or `gws sheets read` top-level command. Use `gws sheets spreadsheets <method>` with `--params`/`--json`, or the `+read` / `+append` helpers. When unsure, run `gws sheets --help`.
 

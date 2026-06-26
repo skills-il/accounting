@@ -45,6 +45,8 @@ gws auth status
 
 עוסק פטור שמחזור ההכנסות השנתי שלו חוצה את התקרה (120,000 ש"ח ל-2025, 122,833 ש"ח ל-2026) חייב לעבור לעוסק מורשה. אם משתמש קרוב לתקרה, תסבו את תשומת לבו לכך.
 
+**רפורמת העוסק הזעיר (2026).** קיים מסלול מס הכנסה נפרד לעצמאים עם מחזור נמוך (תקרת מחזור צמודה למדד, בערך 122,833 ש"ח ל-2026), שמעניק ניכוי הוצאות אוטומטי של 30% מהמחזור בלי צורך לפרט קבלות, וגם דוח שנתי מקוצר ובלי מקדמות. אם המשתמש הוא פרילנסר עם מחזור נמוך, תזכירו לו שהמסלול הזה אולי מתאים לו, ותפנו אותו לבדוק זכאות מול רואה החשבון או רשות המיסים לפני שהוא בוחר בו.
+
 ### שלב 3: יצירת גיליון מעקב פיננסי חדש
 
 כשהמשתמש רוצה להקים גיליון מעקב הכנסות/הוצאות חדש, תיצרו אותו עם מבנה פיננסי ישראלי תקין.
@@ -63,15 +65,21 @@ gws auth status
 | H | Invoice # | מספר חשבונית | טקסט | הפניה לחשבונית |
 | I | Payment Method | אמצעי תשלום | טקסט | בנק/PayPal/מזומן |
 | J | Notes | הערות | טקסט | פרטים נוספים |
+| K | Allocation # | מספר הקצאה | טקסט | מספר הקצאה של חשבוניות ישראל לחשבוניות בסכום הסף ומעלה |
+| L | Withholding | ניכוי במקור | מטבע ILS | מס שנוכה במקור על ידי המשלם, אם בכלל |
 
-לעוסק פטור, תורידו את עמודות D ו-E ותשנו את שם עמודה F ל-`Amount` / `סכום` (ברוטו בלבד), כי אין מע"מ.
+עמודה K שומרת את **מספר ההקצאה** שהמוכר מוציא מפלטפורמת חשבוניות ישראל של רשות המיסים. מ-1 בינואר 2026 כל חשבונית של 10,000 ש"ח ומעלה (לפני מע"מ) צריכה מספר הקצאה, ומ-1 ביוני 2026 הסף יורד ל-5,000 ש"ח ומעלה (לפני מע"מ). בלי מספר ההקצאה הקונה לא יכול לקזז מע"מ תשומות על החשבונית, אז תתפסו אותו בכל פעם שזה רלוונטי.
+
+עמודה L שומרת את **הניכוי במקור**. חלק מהלקוחות חייבים לנכות מס הכנסה ולשלם לעסק נטו אחרי הניכוי, אז תרשמו כאן את הסכום שנוכה. העסק צריך אישור ניכוי מס במקור משלו, והעמודה הזו מזינה את טופס 856 השנתי שהמשלם מגיש.
+
+לעוסק פטור, תורידו את עמודות D ו-E ותשנו את שם עמודה F ל-`Amount` / `סכום` (ברוטו בלבד), כי אין מע"מ. תשאירו את עמודות K ו-L אם הן רלוונטיות (עוסק פטור עדיין יכול להיות חשוף לניכוי במקור, ומעל הסף גם למספר הקצאה).
 
 **קטגוריות ניכוי מס לעסקים ישראליים:**
 
 | קטגוריה (EN) | קטגוריה (HE) | שיעור ניכוי |
 |---------------|---------------|-------------|
 | Office Rent | שכירות משרד | 100% |
-| Equipment | ציוד | 100% |
+| Equipment | ציוד | נכס בר-פחת - הוונה ופחת על פני שנים, לא 100% בשנה הראשונה |
 | Phone & Internet | טלפון ואינטרנט | 100% (אם לשימוש עסקי בלבד) |
 | Professional Services | שירותים מקצועיים | 100% |
 | Car Expenses | הוצאות רכב | מוגבל (45% או קבוע) |
@@ -89,8 +97,8 @@ gws sheets spreadsheets create --json '{"properties":{"title":"Business Tracker 
 
 # כתיבת שורת הכותרות לשורה הראשונה (השתמשו ב-spreadsheetId מתגובת היצירה)
 gws sheets spreadsheets values update \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A1:J1","valueInputOption":"RAW"}' \
-  --json '{"values":[["Date","Description","Category","Amount (excl. VAT)","VAT (18%)","Total (incl. VAT)","Type","Invoice #","Payment Method","Notes"]]}'
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A1:L1","valueInputOption":"RAW"}' \
+  --json '{"values":[["Date","Description","Category","Amount (excl. VAT)","VAT (18%)","Total (incl. VAT)","Type","Invoice #","Payment Method","Notes","Allocation #","Withholding"]]}'
 ```
 
 ### שלב 4: הוספת רשומות הכנסה והוצאה
@@ -104,15 +112,15 @@ gws sheets spreadsheets values update \
 # סכום ללא מע"מ = סה"כ / 1.18 = 5,000 ש"ח
 # מע"מ = סכום * 0.18 = 900 ש"ח
 gws sheets spreadsheets values append \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J","valueInputOption":"USER_ENTERED"}' \
-  --json '{"values":[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer",""]]}'
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
+  --json '{"values":[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer","","HK-2026-0001","0"]]}'
 ```
 
 קיצור העזר `+append` הוא מקבילה קצרה יותר לשורה בודדת ופשוטה:
 
 ```bash
 gws sheets +append --spreadsheet SPREADSHEET_ID \
-  --json-values '[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer",""]]'
+  --json-values '[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer","","HK-2026-0001","0"]]'
 ```
 
 **לרשומות הוצאה:**
@@ -120,8 +128,8 @@ gws sheets +append --spreadsheet SPREADSHEET_ID \
 ```bash
 # דוגמה: חשבון אינטרנט בזק של 236 ש"ח (200 + 36 מע"מ)
 gws sheets spreadsheets values append \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J","valueInputOption":"USER_ENTERED"}' \
-  --json '{"values":[["20/01/2026","Bezeq Internet","Phone & Internet","200","36","236","Expense","","Direct Debit",""]]}'
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
+  --json '{"values":[["20/01/2026","Bezeq Internet","Phone & Internet","200","36","236","Expense","","Direct Debit","","",""]]}'
 ```
 
 **נוסחאות חישוב מע"מ (לעוסק מורשה בלבד):**
@@ -138,10 +146,10 @@ gws sheets spreadsheets values append \
 
 ```bash
 # קריאת כל הרשומות מהגיליון עם קיצור העזר (מחזיר את מערך הערכים הגולמי)
-gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:J"
+gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"
 
 # קריאת API גולמית מקבילה (התגובה היא ValueRange עם שדה "values" שהוא מערך של מערכים)
-gws sheets spreadsheets values get --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J"}'
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L"}'
 ```
 
 שתי הצורות מחזירות JSON עם שדה `values`: מערך של שורות, כל שורה היא מערך של מחרוזות תאים. השורה הראשונה היא הכותרת. אחרי שקראתם את הנתונים, תחשבו ותציגו:
@@ -165,13 +173,15 @@ gws sheets spreadsheets values get --params '{"spreadsheetId":"SPREADSHEET_ID","
 | 5 | ספטמבר-אוקטובר | 15 בנובמבר |
 | 6 | נובמבר-דצמבר | 15 בינואר |
 
+מגבלה: עסקים שמחזורם השנתי מעל 1,520,000 ש"ח מדווחים מע"מ **חודשי** ולא דו-חודשי; עד הסף הזה הם מדווחים דו-חודשי. הסף מתעדכן ב-1 בינואר בכל שנה, אז כדאי לאמת את המספר העדכני באתר רשות המיסים. (אל תבלבלו בין סף תדירות הדיווח הזה לבין חובת הדיווח המפורט, שמתחילה בסף מחזור אחר וגבוה יותר.) הסקריפט `scripts/vat-summary.py` ושלבים 5-6 מניחים רק את 6 התקופות הדו-חודשיות. למדווח חודשי, תריצו את הסיכום לפי חודש קלנדרי ולא לפי תקופה דו-חודשית, ותוודאו את תדירות הדיווח מול רואה החשבון.
+
 ### שלב 6: הפקת דוחות סיכום לתקופות מס
 
 כשהמשתמש צריך להכין נתונים לרואה החשבון או לדיווח מע"מ, תיצרו גיליון סיכום.
 
 ```bash
 # קריאת כל הנתונים
-gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:J"
+gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"
 ```
 
 אחרי הקריאה, תשתמשו ב-Python (דרך `scripts/vat-summary.py`) כדי:
@@ -205,7 +215,7 @@ gws sheets spreadsheets values append \
 ```bash
 # ייצוא גיליון המעקב הראשי כ-CSV
 gws sheets spreadsheets values get \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J"}' --format csv > business-tracker-2026.csv
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L"}' --format csv > business-tracker-2026.csv
 
 # ייצוא תקופת מע"מ ספציפית
 gws sheets spreadsheets values get \
@@ -218,6 +228,8 @@ gws sheets spreadsheets values get \
 python scripts/backup-sheets.py --spreadsheet-id SPREADSHEET_ID --output-dir ./backups/2026-01 --tabs "Sheet1,VAT-Period-1"
 ```
 
+**שמירת מסמכים.** כללי ניהול הספרים בישראל מחייבים לשמור את הספרים ואת כל מסמכי האסמכתה (חשבוניות, קבלות, דפי בנק) לפחות 7 שנים מתום שנת המס (או 6 שנים מהיום שבו הוגש הדוח השנתי, לפי המאוחר). גיבוי ה-CSV הוא עותק נוחות, לא תחליף לשמירת המסמכים המקוריים. תגידו למשתמש לארכב את הגיבויים בתיקיות לפי תאריך ולשמור את החשבוניות והקבלות המקוריות לכל תקופת השמירה.
+
 ### שלב 8: רישום אוטומטי של תשלומים מקלט מובנה
 
 כשהמשתמש נותן לכם נתוני עסקאות בכמות (דף חשבון בנק או רשימת חשבוניות), תנתחו ותוסיפו כמה שורות בקריאה אחת.
@@ -225,11 +237,11 @@ python scripts/backup-sheets.py --spreadsheet-id SPREADSHEET_ID --output-dir ./b
 ```bash
 # הוספת כמה שורות בקריאה אחת
 gws sheets spreadsheets values append \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J","valueInputOption":"USER_ENTERED"}' \
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
   --json '{"values":[
-    ["01/02/2026","Client A - Monthly Retainer","Professional Services","10000","1800","11800","Income","INV-2026-010","Bank Transfer",""],
-    ["03/02/2026","AWS Hosting","Software & Subscriptions","450","81","531","Expense","","Credit Card",""],
-    ["05/02/2026","Business Lunch - Client B","Meals & Entertainment","300","54","354","Expense","","Credit Card","80% deductible"]
+    ["01/02/2026","Client A - Monthly Retainer","Professional Services","10000","1800","11800","Income","INV-2026-010","Bank Transfer","","HK-2026-0010","0"],
+    ["03/02/2026","AWS Hosting","Software & Subscriptions","450","81","531","Expense","","Credit Card","","",""],
+    ["05/02/2026","Business Lunch - Client B","Meals & Entertainment","300","54","354","Expense","","Credit Card","80% deductible","",""]
   ]}'
 ```
 
@@ -240,8 +252,8 @@ gws sheets spreadsheets values append \
 ```bash
 # תצוגה מקדימה של מה שיתווסף בלי לכתוב בפועל
 gws sheets spreadsheets values append \
-  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:J","valueInputOption":"USER_ENTERED"}' \
-  --json '{"values":[["15/03/2026","Test Entry","Office Rent","5000","900","5900","Expense","","Bank Transfer",""]]}' \
+  --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
+  --json '{"values":[["15/03/2026","Test Entry","Office Rent","5000","900","5900","Expense","","Bank Transfer","","",""]]}' \
   --dry-run
 ```
 
@@ -267,7 +279,7 @@ gws sheets spreadsheets values append \
 פעולות:
 1. שאלו אם המשתמש הוא עוסק מורשה או עוסק פטור (זה קובע אם כוללים עמודות מע"מ)
 2. הריצו `gws sheets spreadsheets create --json '{"properties":{"title":"Freelance Tracker 2026"}}'` וקראו את ה-`spreadsheetId` מהתגובה
-3. כתבו את שורת הכותרות עם `gws sheets spreadsheets values update` (10 עמודות לעוסק מורשה, פחות לעוסק פטור)
+3. כתבו את שורת הכותרות עם `gws sheets spreadsheets values update` (12 עמודות לעוסק מורשה, פחות לעוסק פטור)
 4. הציגו למשתמש את מזהה הגיליון והקישור, והסבירו את מבנה העמודות
 
 תוצאה: גיליון Google חדש עם המבנה הישראלי הנכון למעמד המע"מ של המשתמש, מוכן לרשומות.
@@ -277,7 +289,7 @@ gws sheets spreadsheets values append \
 המשתמש אומר: "תכין סיכום מע"מ לינואר-פברואר 2026 ותייצא כ-CSV"
 
 פעולות:
-1. הריצו `gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:J"` כדי למשוך את כל הרשומות
+1. הריצו `gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"` כדי למשוך את כל הרשומות
 2. הריצו `python scripts/vat-summary.py` כדי לסנן עסקאות ינואר-פברואר ולחשב סיכומים
 3. הוסיפו לשונית "VAT-Period-1-2026" עם `gws sheets spreadsheets batchUpdate` וכתבו את הסיכום עם `gws sheets spreadsheets values update`
 4. ייצאו את לשונית הסיכום עם `gws sheets spreadsheets values get --format csv`
@@ -314,6 +326,7 @@ gws sheets spreadsheets values append \
 - עוסק פטור לא גובה מע"מ על הכנסות ולא יכול לקזז מע"מ תשומות על הוצאות. סוכנים עלולים להוסיף עמודות מע"מ ולחשב חבות מע"מ לעוסק פטור, וזה שגוי. תמיד תבררו קודם את מעמד המע"מ של המשתמש.
 - הוצאות ארוחות ואירוח מוכרות רק ב-80% בישראל. סוכנים עלולים לסווג אותן כמוכרות ב-100%, וזה מנפח את ניכויי המס.
 - להוצאות רכב יש כללי ניכוי מורכבים בישראל (45% או סכום חודשי קבוע, הנמוך מביניהם). סוכנים עלולים להחיל ניכוי של 100%, שיהיה שגוי לרוב העסקים.
+- ציוד (מחשבים, מסכים, ריהוט) הוא נכס בר-פחת, לא הוצאה של 100% בשנה הראשונה. סוכנים עלולים לרשום את כל מחיר הרכישה כהוצאה חד-פעמית, וזה מנפח את הניכוי בשנה הראשונה. צריך להוון את הנכס ולפרוס את הניכוי על פני אורך חייו (למשל, מחשבים מופחתים בדרך כלל ב-33% לשנה במשך 3 שנים). רק פריטי משרד זולים או מתכלים נרשמים במלואם בשנת הרכישה. מע"מ התשומות על הרכישה עדיין ניתן לקיזוז מלא בתקופה הראשונה (לעוסק מורשה). תוודאו את שיעור הפחת ואת סף הפריטים הזולים מול רואה החשבון.
 - המע"מ בישראל הוא 18% (מאז ינואר 2025). סוכנים שאומנו על מידע ישן עלולים להשתמש ב-17%, שהיה השיעור הקודם, ולגרום לחישובים שגויים בכל הגיליון.
 - מערך הפקודות של `gws` נבנה מ-Discovery API של גוגל. אין פקודה ברמה העליונה `gws sheets create` או `gws sheets read`. תשתמשו ב-`gws sheets spreadsheets <method>` עם `--params`/`--json`, או בקיצורי העזר `+read` / `+append`. כשלא בטוחים, תריצו `gws sheets --help`.
 

@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "gws-israeli-business-sheets",
+  "generated_at": "2026-06-26T00:11:38Z",
+  "claims": [
+    {
+      "claim_id": "vat-rate-18",
+      "claim": "Israel's standard VAT rate is 18% as of 2026 (raised from 17% on 1 January 2025). The previous rate was 17%.",
+      "source_url": "https://cpahadera.co.il/%D7%9E%D7%A2%D7%9E/",
+      "raw_snippet": "מע\"מ 2026 הוא 18%",
+      "fetched_at": "2026-06-26T00:05:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md", "metadata.json"]
+    },
+    {
+      "claim_id": "vat-rate-17-previous",
+      "claim": "The previous VAT rate before January 2025 was 17%; it increased from 17% to 18%.",
+      "source_url": "https://kpmg.co.il/media/%D7%9C%D7%A7%D7%A8%D7%90%D7%AA-%D7%94%D7%A9%D7%99%D7%A0%D7%95%D7%99-%D7%91%D7%A9%D7%99%D7%A2%D7%95%D7%A8-%D7%94%D7%9E%D7%A2%D7%9E-%D7%9E-17-%D7%9C-18",
+      "raw_snippet": "לקראת השינוי בשיעור המע\"מ מ-17% ל-18%",
+      "fetched_at": "2026-06-26T00:09:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "osek-patur-ceiling",
+      "claim": "The osek patur turnover ceiling is 120,000 ש\"ח for 2025, NIS 120,000, and 122,833 ש\"ח (NIS 122,833) for 2026, updated annually for inflation.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/%D7%A2%D7%95%D7%A1%D7%A7-%D7%A4%D7%98%D7%95%D7%A8/",
+      "raw_snippet": "נכון לשנת 2026, התקרה עומדת על 122,833 ₪",
+      "fetched_at": "2026-06-26T00:07:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "osek-patur-ceiling-2025",
+      "claim": "The osek patur ceiling was NIS 120,000 for 2025 (annual turnover up to 120,000 NIS in 2025).",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A2%D7%95%D7%A1%D7%A7_%D7%A4%D7%98%D7%95%D7%A8",
+      "raw_snippet": "עוסק שמחזור עסקאותיו השנתי נמוך מהסף שנקבע בחוק (₪120,000 נכון לשנת 2025)",
+      "fetched_at": "2026-06-26T00:07:30Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "allocation-threshold-10000",
+      "claim": "From 1 January 2026 every tax invoice of NIS 10,000 or more (before VAT) requires an allocation number (mispar haktzaa).",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "ינואר 2026 | 10,000 ש\"ח",
+      "fetched_at": "2026-06-26T00:04:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "allocation-threshold-5000",
+      "claim": "From 1 June 2026 the allocation-number threshold drops to NIS 5,000 or more (before VAT).",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "יוני 2026 ואילך | 5,000 ש\"ח",
+      "fetched_at": "2026-06-26T00:04:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "allocation-no-input-vat",
+      "claim": "Without an allocation number the buyer cannot deduct input VAT on the invoice.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "בלעדיו הלקוח שלכם לא יוכל להזדכות על המע\"מ ששילם לכם",
+      "fetched_at": "2026-06-26T00:04:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "withholding-form-856",
+      "claim": "A client who withholds tax at source must give the business a withholding certificate and submit an annual summary on Form 856 (טופס 856) by April 30 of the following year. The business needs its own withholding (אישור ניכוי מס במקור) certificate.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%9E%D7%A7%D7%95%D7%A8_%D7%A2%D7%9C-%D7%99%D7%93%D7%99_%D7%9C%D7%A7%D7%95%D7%97_%D7%A9%D7%9C_%D7%A2%D7%A1%D7%A7_%D7%A2%D7%A6%D7%9E%D7%90%D7%99",
+      "raw_snippet": "להעביר למס הכנסה ריכוז שנתי בטופס 856 של הסכומים ששולמו...עד ליום 30 באפריל בשנה העוקבת",
+      "fetched_at": "2026-06-26T00:06:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "withholding-client-deducts",
+      "claim": "Certain clients are required to withhold tax from payments to the self-employed business and pay net of the withholding.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%9E%D7%A7%D7%95%D7%A8_%D7%A2%D7%9C-%D7%99%D7%93%D7%99_%D7%9C%D7%A7%D7%95%D7%97_%D7%A9%D7%9C_%D7%A2%D7%A1%D7%A7_%D7%A2%D7%A6%D7%9E%D7%90%D7%99",
+      "raw_snippet": "לקוחות מסוימים חייבים לנכות את המס (או חלק ממנו) שבעל העסק צריך להעביר למס הכנסה",
+      "fetched_at": "2026-06-26T00:06:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "osek-zair-30-percent",
+      "claim": "The osek zair (micro-dealer) 2026 reform grants an automatic 30% expense deduction off annual turnover, with no need to itemize receipts.",
+      "source_url": "https://www.invoice4u.co.il/blog/%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%AA-%D7%A2%D7%A1%D7%A7-%D7%96%D7%A2%D7%99%D7%A8/",
+      "raw_snippet": "ההכרה בהוצאות מתבצעת באופן אוטומטי בשיעור של 30% מהמחזור",
+      "fetched_at": "2026-06-26T00:08:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "osek-zair-ceiling-cpi",
+      "claim": "The osek zair turnover ceiling is CPI-linked, about NIS 122,833 for 2026.",
+      "source_url": "https://www.invoice4u.co.il/blog/%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%AA-%D7%A2%D7%A1%D7%A7-%D7%96%D7%A2%D7%99%D7%A8/",
+      "raw_snippet": "אם המחזור עובר את התקרה (כ-122,833 ₪ לשנת 2026)",
+      "fetched_at": "2026-06-26T00:08:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "osek-zair-gov-official",
+      "claim": "The osek zair reform (approved Nov 2024) lets micro-dealers deduct expenses at 30% without filing a full annual return; turnover up to about 120,000 NIS.",
+      "source_url": "https://www.gov.il/he/pages/sa090523-2",
+      "raw_snippet": "\"עוסקים זעירים\" יוכלו לנכות הוצאות בגובה של 30% בלי להגיש דו\"ח שנתי",
+      "fetched_at": "2026-06-26T00:08:30Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "car-deduction-45",
+      "claim": "Only 45% of car/vehicle maintenance expenses are recognized for income tax (mixed business/personal use).",
+      "source_url": "https://moneyplan.co.il/%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%A8%D7%9B%D7%91-%D7%9E%D7%95%D7%9B%D7%A8%D7%95%D7%AA-%D7%9C%D7%9E%D7%A1-%D7%94%D7%9B%D7%A0%D7%A1%D7%94/",
+      "raw_snippet": "רק 45% מהוצאות הרכב שלך מוכרות לצורכי מס הכנסה",
+      "fetched_at": "2026-06-26T00:09:30Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "meals-deduction-80",
+      "claim": "Light refreshments (kibud) at the place of business are only 80% deductible for income tax.",
+      "source_url": "https://www.bshcpa.co.il/%D7%9B%D7%99%D7%91%D7%95%D7%93%D7%99%D7%9D-%D7%95%D7%90%D7%99%D7%A8%D7%95%D7%97/",
+      "raw_snippet": "יותרו בניכוי רק 80% מההוצאות לכיבוד קל",
+      "fetched_at": "2026-06-26T02:40:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "full-deduction-100",
+      "claim": "Under Section 17 of the Income Tax Ordinance, an expense wholly used in producing income is a recognized (allowed) expense for income-tax purposes, unless it is specifically determined to be non-deductible. This is the legal basis for fully deducting ordinary business expense categories (office rent, professional services, software, marketing, insurance, travel, etc.).",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%95%D7%A6%D7%90%D7%94_%D7%9E%D7%95%D7%9B%D7%A8%D7%AA_%D7%9C%D7%A6%D7%95%D7%A8%D7%9A_%D7%97%D7%99%D7%A9%D7%95%D7%91_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_(%D7%94%D7%95%D7%A6%D7%90%D7%94_%D7%9E%D7%95%D7%AA%D7%A8%D7%AA_%D7%91%D7%A0%D7%99%D7%9B%D7%95%D7%99)",
+      "raw_snippet": "סעיף 17 לפקודת מס הכנסה מגדיר הוצאה מוכרת כ'הוצאה ששימשה בייצור הכנסה'",
+      "fetched_at": "2026-06-26T02:40:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "equipment-depreciable",
+      "claim": "Equipment such as computers, monitors and office furniture is a depreciable asset (פחת), capitalized and written off over its useful life (computers commonly at 33.33% per year over 3 years), NOT expensed 100% in the year of purchase. The input VAT is fully reclaimable in the first period.",
+      "source_url": "https://finka.co.il/%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%95%D7%9B%D7%A8%D7%95%D7%AA/",
+      "raw_snippet": "ניתן להשתמש בהן במשך 3 שנים כאשר בכל שנה האחוז המוכר יהיה 33.33% מחלק ההוצאה ללא המע\"מ. המע\"מ עצמו יהיה מוכר במלואו כבר בשנה הראשונה.",
+      "fetched_at": "2026-06-26T01:20:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "gifts-threshold-240",
+      "claim": "The deductible ceiling for a business gift to a supplier or client is 240 NIS per recipient per year, raised from 210 NIS effective January 2024. Amounts above 240 NIS are not recognized.",
+      "source_url": "https://www.gmcpa.co.il/2024/09/05/%D7%9E%D7%AA%D7%A0%D7%95%D7%AA-%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D-%D7%95%D7%9C%D7%A1%D7%A4%D7%A7%D7%99%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%94-%D7%9E%D7%95%D7%9B%D7%A8%D7%AA/",
+      "raw_snippet": "בעבר, תקרת ההוצאה המוכרת עמדה על 210 ש\"ח לאדם בשנה. החל מחודש ינואר 2024 ואילך, תקרת ההוצאה המוכרת עלתה לעד 240 ש\"ח לאדם בשנה.",
+      "fetched_at": "2026-06-26T01:12:00Z",
+      "appears_in": ["references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "monthly-vat-threshold-1520000",
+      "claim": "A business with annual turnover over NIS 1,520,000 files VAT monthly (חד-חודשי); at or below that figure it files bi-monthly (דו-חודשי). The threshold updates on January 1 each year. This is distinct from the detailed-reporting (דיווח מפורט) obligation, which applies at a different, higher level.",
+      "source_url": "https://www.benporat-cpa.com/benporat-cpa-7",
+      "raw_snippet": "דיווח חד חודשי - עוסק שמחזור עסקאותיו השנתי הינו מעל 1,520,000 ש\"ח.",
+      "fetched_at": "2026-06-26T01:15:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "document-retention-7-years",
+      "claim": "Israeli bookkeeping rules require keeping books and supporting documents (invoices, receipts, bank records) for at least 7 years from the end of the tax year (or 6 years from the date the annual return was filed, whichever is later); after 7 years from issuance the documents lose legal validity.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/accounting/saving_invoices/",
+      "raw_snippet": "עליכם לשמור מסמכים וקבלות למשך שבע שנים לפחות",
+      "fetched_at": "2026-06-26T01:08:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "form-126-employers-only",
+      "claim": "Form 126 is an annual report every employer files for each salaried employee (and the income tax withheld); a self-employed business with no employees does not file it. Form 856 is the annual summary of amounts withheld from suppliers and is the form relevant to a typical freelancer.",
+      "source_url": "https://www.zscpa.co.il/%D7%98%D7%95%D7%A4%D7%A1-126/",
+      "raw_snippet": "טופס 126 הינו טופס דיווח שנתי שכל מעסיק חייב להגיש מדי שנה עבור כל אחד מהעובדים המועסקים אצלו",
+      "fetched_at": "2026-06-26T01:25:00Z",
+      "appears_in": ["references/israeli-tax-categories.md"]
+    },
+    {
+      "claim_id": "url-gws-cli",
+      "claim": "The Google Workspace CLI repository is the source for the real gws command surface.",
+      "source_url": "https://github.com/googleworkspace/cli",
+      "raw_snippet": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more.",
+      "fetched_at": "2026-06-26T00:10:30Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "sheets-url-id-path",
+      "claim": "A Google Sheets spreadsheet ID is the string in the URL between `/d/` and `/edit` (e.g. docs.google.com/spreadsheets/d/<ID>/edit).",
+      "source_url": "https://developers.google.com/sheets/api/guides/concepts",
+      "raw_snippet": "The spreadsheet ID is in the URL: https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=0 — the value between /d/ and /edit is the spreadsheetId.",
+      "fetched_at": "2026-06-26T00:10:30Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "url-sheets-api",
+      "claim": "The Google Sheets API documentation describes the spreadsheets.values methods and batchUpdate.",
+      "source_url": "https://developers.google.com/sheets/api",
+      "raw_snippet": "The Google Sheets API is a RESTful interface that lets you read and modify a spreadsheet's data.",
+      "fetched_at": "2026-06-26T00:10:30Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "url-apps-script",
+      "claim": "Google Apps Script documentation covers the SpreadsheetApp API, custom functions, and triggers.",
+      "source_url": "https://developers.google.com/apps-script",
+      "raw_snippet": "Automate & extend Google Workspace with simple code.",
+      "fetched_at": "2026-06-26T00:11:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "url-boi-exchange",
+      "claim": "The Bank of Israel publishes daily representative exchange rates used for converting foreign-currency transactions.",
+      "source_url": "https://www.boi.org.il/roles/markets/exchangerates/",
+      "raw_snippet": "שערי חליפין יציגים",
+      "fetched_at": "2026-06-26T00:11:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+    },
+    {
+      "claim_id": "url-tax-authority",
+      "claim": "The Israel Tax Authority department page is the authoritative source for the current VAT rate, osek patur ceiling, allocation-number thresholds, and reporting schedules.",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "רשות המסים בישראל — שיעור מע\"מ, תקרת עוסק פטור, מספר הקצאה (חשבוניות ישראל), מועדי דיווח. Note: gov.il returns HTTP 403 to automated fetchers; the underlying figures (VAT 18%, osek patur ceiling 122,833, allocation thresholds 10,000/5,000) are cross-verified against greeninvoice.co.il, kolzchut.org.il, and CPA-firm pages cited in the other claims.",
+      "fetched_at": "2026-06-26T00:11:30Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/israeli-tax-categories.md"]
+    }
+  ]
+}
