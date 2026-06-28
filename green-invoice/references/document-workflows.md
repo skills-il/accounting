@@ -20,7 +20,7 @@ A freelancer (osek murshe or osek patur) billing clients monthly.
 - Use type 320 with `vatType: 0` (no VAT added automatically)
 - Total = subtotal (no VAT)
 - Cannot issue standalone Tax Invoice (type 305)
-- Annual revenue limit: NIS 120,000 (as of 2026)
+- Annual revenue limit: NIS 122,833 (as of 2026; the ceiling is CPI-adjusted annually)
 
 **Best Practice:** Use labels on clients (e.g., "monthly", "retainer") to easily search and batch-process recurring invoices.
 
@@ -96,12 +96,13 @@ income: [{ description: "Partial refund", price: refund_amount }]
 
 Billing international clients in foreign currencies.
 
-**Create Document:**
+**Create Document** (zero-rated export tax invoice-receipt, paid immediately):
 ```json
 {
-  "type": 400,
+  "type": 320,
   "currency": "USD",
   "lang": "en",
+  "vatType": 0,
   "client": {
     "name": "International Corp",
     "country": "US",
@@ -112,7 +113,9 @@ Billing international clients in foreign currencies.
       "description": "Consulting Services",
       "quantity": 10,
       "price": 150,
-      "currency": "USD"
+      "currency": "USD",
+      "vatType": 0,
+      "vatRate": 0
     }
   ],
   "payment": [
@@ -126,11 +129,11 @@ Billing international clients in foreign currencies.
 ```
 
 **Key Points:**
-- Use type 400 (Receipt) for international clients (not type 320)
+- For an export SALE, issue a tax invoice (type 305 or 320), not a bare Receipt. Use type 400 (Receipt) only to record a payment against an already-issued invoice.
 - Set document `lang: "en"` for English
 - Set `currency` to the client's currency (USD, EUR, GBP, etc.)
 - If `currencyRate` is omitted, Green Invoice uses Bank of Israel exchange rates
-- VAT is typically exempt for international transactions (`vatType: 1`)
+- Export of services is zero-rated (0%) under VAT Law Section 30, NOT exempt. Keep rows taxable (`vatType: 0`) and set `vatRate: 0` per income row. Do NOT use `vatType: 1` (Exempt): exemption (פטור) is legally distinct from zero-rating and blocks input-VAT recovery, and they are reported in different boxes of the VAT return.
 
 ---
 
@@ -177,7 +180,7 @@ Sending invoices at the start of each month for ongoing services.
 
 When clients withhold tax at source before paying.
 
-**Example:** Client owes NIS 10,000 but withholds 20% (NIS 2,000) for tax.
+**Example (osek murshe):** A NIS 10,000 service is NIS 11,800 with 18% VAT. The client withholds NIS 2,000 (the rate and base come from the client's withholding certificate, אישור ניכוי מס במקור, often computed on the net base) and remits NIS 9,800 in cash. The payment lines MUST sum to the document total (11,800): 9,800 received + 2,000 withheld.
 
 ```json
 {
@@ -186,7 +189,7 @@ When clients withhold tax at source before paying.
     { "description": "Service", "quantity": 1, "price": 10000, "currency": "ILS" }
   ],
   "payment": [
-    { "type": 4, "price": 8000, "currency": "ILS" },
+    { "type": 4, "price": 9800, "currency": "ILS" },
     { "type": 0, "price": 2000, "currency": "ILS" }
   ]
 }

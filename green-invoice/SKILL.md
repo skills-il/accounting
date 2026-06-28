@@ -103,7 +103,7 @@ Green Invoice supports 13 document types. Each has a numeric code used in API ca
 | 600 | קבלת פיקדון | Deposit Receipt | Security deposits |
 | 610 | משיכת פיקדון | Deposit Withdrawal | Deposit returns |
 
-**Key rule:** For Israeli clients who pay immediately, use type `320` (Tax Invoice-Receipt). For invoices where payment comes later, use type `300` (Transaction Invoice). For international clients, use type `400` (Receipt).
+**Key rule:** For Israeli clients who pay immediately, use type `320` (Tax Invoice-Receipt). For invoices where payment comes later, use type `300` (Transaction Invoice). For an export sale to a foreign client (osek murshe), issue a tax invoice (type `305` or `320`) with each income row zero-rated via `vatRate: 0`. Export of services is zero-rated (0%) under VAT Law Section 30, NOT exempt, so keep the rows taxable (`vatType: 0`) and set the rate to zero rather than marking them `vatType: 1` (Exempt). Use type `400` (Receipt) only to record a payment against an already-issued invoice, never as the sole document for a sale.
 
 ### Step 4: Create Documents
 
@@ -155,13 +155,13 @@ Required fields: `type`, `client` (with `name` and `emails`), `income` (line ite
 | 1 | Exempt (no VAT) |
 | 2 | Mixed (some items exempt, some not) |
 
-**VAT types (income row level):**
+**VAT types (income row level):** the income-row `vatType` uses the SAME enum as the document level. To set a specific rate on a line (e.g. 0% for a zero-rated export line), use the separate `vatRate` field, a decimal fraction (`0` for 0%, `0.18` for 18%). There is no "VAT included in price" value; verify field names against the canonical docs at `developers.morning.co`.
 
 | Code | Meaning |
 |------|---------|
 | 0 | Default (follows document VAT setting) |
-| 1 | VAT included in price |
-| 2 | Exempt for this line item |
+| 1 | Exempt (VAT-free) |
+| 2 | Mixed |
 
 ### Step 5: Payment Types
 
@@ -366,7 +366,7 @@ Consult `references/api-reference.md` for the complete webhook payload schema.
 
 ### Step 12: Currencies and Exchange Rates
 
-Green Invoice supports 28 currencies. If `currencyRate` is not specified, the system uses Bank of Israel (BOI) exchange rates for the document date.
+Green Invoice supports 27 document currencies. If `currencyRate` is not specified, the system uses Bank of Israel (BOI) exchange rates for the document date.
 
 Common currencies: ILS, USD, EUR, GBP, JPY, CHF, CAD, AUD.
 
@@ -453,7 +453,9 @@ Result: All new documents automatically downloaded and organized by type and mon
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| Green Invoice Developer Docs | https://www.greeninvoice.co.il/api-docs/ | Endpoint schemas, request/response formats. The older Apiary mirror (greeninvoice.docs.apiary.io) was retired in 2026. |
+| Morning API Documentation (canonical) | https://developers.morning.co | Current "morning API v2.0.0" docs. Authoritative for enum MEANINGS (vatType, document type codes, payment types) and field names. Supersedes Apiary for semantics. |
+| Green Invoice Developer Docs | https://www.greeninvoice.co.il/api-docs/ | Endpoint schemas, request/response formats. Public portal to the live Apiary interactive reference. |
+| Apiary Interactive Reference | https://greeninvoice.docs.apiary.io/ | Most detailed API reference: JWT token flow, add-document body schema, all enum tables (document types, payment types). |
 | Green Invoice In-App API Explorer | https://app.greeninvoice.co.il/api | Interactive API explorer (requires sign-in). Authoritative for current request/response field names. |
 | Tax Authority Connection Guide | https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/ | How to enable the gov.il authorization required for SHAAM allocation numbers (see Step 2) |
 | Generating API Key Guide | https://www.greeninvoice.co.il/help-center/generating-api-key/ | Current dashboard menu path and plan-tier requirements for API access |
@@ -472,7 +474,7 @@ Result: All new documents automatically downloaded and organized by type and mon
 - **SHAAM allocation number requires a one-time gov.il authorization in the user's Morning account.** This is the most common reason API integrations "look correct" but produce invoices the customer's accountant rejects. The integration is NOT automatic on signup. See Step 2 for the full setup, the 3-month expiry, and the renewal workflow. The threshold is currently NIS 10,000 net (since Jan 1, 2026) and drops to NIS 5,000 net on Jun 1, 2026 (final step in the rollout). Pair with the `israeli-e-invoice` skill for end-to-end SHAAM compliance.
 - **Plan tiers gate features in the dashboard.** API access requires the Best plan; webhooks require the Extra plan. A user on a lower tier will not see "API Keys" or "Webhooks" in the dashboard menu - this is not a bug, it is the gate. Check the plan before debugging missing menu items.
 - **Webhook signature verification.** Treat any unverified webhook payload as suspect. The current signature header name and hashing algorithm are NOT documented in the public help-center articles as of May 2026 - inspect the headers on a real test webhook delivery to your endpoint (sandbox or production), or sign in to the in-app API explorer to learn the current scheme. As a safety net, on receipt of a webhook always do a server-to-server `GET /v1/documents/{id}` lookup with your authenticated API token before trusting any field on the payload.
-- **Apiary docs URL is retired.** The historical `greeninvoice.docs.apiary.io` mirror was sunset in 2026 and now returns HTTP 502. Use `https://www.greeninvoice.co.il/api-docs/` (public) or `https://app.greeninvoice.co.il/api` (signed-in) instead. Agents trained before 2026 may still link to the dead Apiary URL.
+- **Use the Apiary interactive reference for exact schemas.** `https://greeninvoice.docs.apiary.io/` is live and is the most detailed API reference: it documents the JWT token flow, the add-document request body, and every enum table. The `https://www.greeninvoice.co.il/api-docs/` portal (public) and `https://app.greeninvoice.co.il/api` (signed-in explorer) surface the same content. When a field name is unclear, confirm it against Apiary rather than guessing.
 - **Rate limits.** The API allows roughly 3 requests per second per token before returning HTTP 429. The exact ceiling is not published; treat 429 as a soft error and back off exponentially. For batch operations, add a queue.
 
 ## Troubleshooting
@@ -487,7 +489,7 @@ Solution: Check your business type. Osek Patur should use type 320 (Tax Invoice-
 
 ### Error: "VAT calculation mismatch"
 Cause: Mixing vatType settings between document level and income row level
-Solution: Set `vatType: 0` at document level to use defaults. Only override at the income row level when you have mixed VAT items. If VAT is included in prices, set income row `vatType: 1`.
+Solution: Set `vatType: 0` at document level to use defaults. Only override at the income row level when a line's VAT treatment differs from the document. To apply a specific rate to a line (e.g. 0% on a zero-rated export line), set the row's `vatRate` (decimal), not `vatType`.
 
 ### Error: "Client email required"
 Cause: Creating a document without providing client email

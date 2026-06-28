@@ -375,11 +375,13 @@ Returns the authenticated user profile.
 
 ### VAT Types (Income Row)
 
+The income-row `vatType` uses the same DocumentVatType enum as the document level. Set a specific rate on a line with the separate `vatRate` field (decimal: `0` for 0%, `0.18` for 18%). There is no "VAT included in price" value.
+
 | Code | Meaning |
 |------|---------|
 | 0 | Default |
-| 1 | VAT Included |
-| 2 | Exempt |
+| 1 | Exempt (VAT-free) |
+| 2 | Mixed |
 
 ### Business Types
 
@@ -487,7 +489,7 @@ Full webhook payload structure on document creation:
       "quantity": 1,
       "price": 1000,
       "currency": "ILS",
-      "taxIncludedInPrice": false
+      "vatRate": 0.18
     }
   ],
   "transactions": [],
@@ -518,4 +520,4 @@ Full webhook payload structure on document creation:
 - API key generation + plan-tier requirements: https://www.greeninvoice.co.il/help-center/generating-api-key/
 - Webhooks overview (Extra plan required): https://www.greeninvoice.co.il/magazine/webhooks/
 
-Note: the historical `greeninvoice.docs.apiary.io` Apiary mirror was retired in 2026 and returns HTTP 502. Do not link to it.
+Note: the `greeninvoice.docs.apiary.io` Apiary interactive reference is live and is the most detailed source for the JWT token flow, the add-document body schema, and every enum table. The `www.greeninvoice.co.il/api-docs/` portal links to the same content.

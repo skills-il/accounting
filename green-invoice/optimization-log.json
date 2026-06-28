@@ -1,0 +1,20 @@
+{
+  "cycles": [
+    {
+      "version": "1.3.1",
+      "date": "2026-06-28",
+      "lessons": [
+        "CRITICAL (expert-found, pre-existing) FIXED: the skill routed export/international sales to a plain Receipt (type 400) and called export 'VAT-exempt' (vatType:1). For an osek murshe, export of services is ZERO-RATED (0%, VAT Law Sec 30), legally distinct from exempt (patur) and reported in different VAT-return boxes with opposite input-VAT consequences. Now: issue a tax invoice (305/320) with each income row at vatRate:0; use 400 only for a payment receipt. Fixed SKILL.md Key rule + income-row table + Workflow 4 JSON (now type 320, vatType:0, vatRate:0) + SKILL_HE mirrors.",
+        "FABRICATION FIXED: income-row vatType table claimed '1 = VAT included in price' and '2 = Exempt for line'. No such field/value exists. Canonical DocumentVatType enum (developers.morning.co) is 0=Default, 1=Exempt, 2=Mixed at BOTH document and row level; a specific rate is set via the separate vatRate field (decimal). Added developers.morning.co as the canonical Reference Links row (supersedes Apiary for enum meanings).",
+        "STALE fix: osek patur turnover ceiling was the 2025 round figure (120k); 2026 CPI-adjusted ceiling is 122,833 shekel. Re-verify yearly.",
+        "Removed a FALSE 'Apiary mirror retired / HTTP 502' claim (4 files). Apiary (greeninvoice.docs.apiary.io) is live and is the most detailed reference; the skill had been steering agents away from it. An inverse-fabrication: an invented deprecation.",
+        "Currency count corrected 28 -> 27 (the document-creatable currency enum has 27 entries on both Apiary and developers.morning.co).",
+        "VERIFIED unchanged and correct: host api.greeninvoice.co.il (no api.morning.co.il host), API-key->/account/token->JWT bearer (NOT OAuth2), decimal shekels (NOT agorot), 13 document types, SHAAM threshold NIS 5,000 from Jun 1 2026. The two historical fabrication traps (agorot, OAuth2) are absent.",
+        "CARRY (MAJOR): osek patur is told to use type 320 'Tax Invoice-Receipt'; for a patur Green Invoice renders it as חשבונית/קבלה (no מס) and a patur cannot issue 305 (already noted). Consider a per-business GET /documents/types note next cycle.",
+        "CARRY (verified, no change needed): credit notes (330) are EXCLUDED from the allocation-number requirement (only חשבונית מס + מס/קבלה above threshold need it) - the skill's silence on 330 is correct.",
+        "CARRY (MINOR): description says '8 payment types' while the enum table lists 9 rows (incl -1 Unpaid). Defensible (8 methods + Unpaid status) and left unchanged to avoid a description-eval cycle.",
+        "Evidence gate over-extracts on this API skill: verbed endpoint paths, example calc amounts, ILS code, AND its OWN optimization-log lessons (a shekel-amount mention written with the NIS prefix inside a lesson was extracted as a phantom claim - keep NIS-prefixed amounts out of log prose, write '120k' style instead). Documented under api-endpoints + internal-example-values + export-zero-rated entries."
+      ]
+    }
+  ]
+}

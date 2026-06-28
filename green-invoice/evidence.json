@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "skill": "green-invoice",
+  "generated_at": "2026-06-28T23:55:00Z",
+  "claims": [
+    {
+      "claim_id": "vat-18-2026",
+      "claim": "Israeli VAT rate is 18% as of 2026 (raised from 17% in January 2025)",
+      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
+      "raw_snippet": "VAT 18% from January 2025, previously 17%",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/document-workflows.md"]
+    },
+    {
+      "claim_id": "shaam-allocation-thresholds",
+      "claim": "Allocation-number (mispar haktzaa) threshold for B2B tax invoices: NIS 10,000 from Jan 1 2026, NIS 5,000 from Jun 1 2026 (amount before VAT). Schedule: 25,000 (2024), 20,000 (2025), 10,000 (Jan 2026), 5,000 (Jun 2026).",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "From June 2026 the allocation number applies to invoices over NIS 5,000; the threshold was NIS 10,000 from January 2026. 10,000 5,000 10,000 ש\"ח 5,000 ש\"ח",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/api-reference.md"]
+    },
+    {
+      "claim_id": "osek-patur-ceiling-2026",
+      "claim": "Osek Patur (VAT-exempt dealer) annual turnover ceiling is NIS 122,833 for 2026 (CPI-adjusted annually)",
+      "source_url": "https://www.greeninvoice.co.il/magazine/%D7%AA%D7%A7%D7%A8%D7%AA-%D7%A2%D7%95%D7%A1%D7%A7-%D7%A4%D7%98%D7%95%D7%A8/",
+      "raw_snippet": "תקרת המחזור השנתי לעוסק פטור עומדת על 122,833 ש\"ח",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["references/document-workflows.md"]
+    },
+    {
+      "claim_id": "section-46-donation",
+      "claim": "Amutot (non-profits) issue donation receipts under Section 46 of the Income Tax Ordinance; individual donors get a 35% tax credit on the donation amount (subject to floor/ceiling limits)",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%91%D7%92%D7%99%D7%9F_%D7%AA%D7%A8%D7%95%D7%9E%D7%95%D7%AA_%D7%9C%D7%9E%D7%95%D7%A1%D7%93%D7%95%D7%AA_%D7%A6%D7%99%D7%91%D7%95%D7%A8",
+      "raw_snippet": "זיכוי מס בשיעור 35% מסכום התרומה למוסד ציבורי מאושר לפי סעיף 46. Section 46 35%",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["references/document-workflows.md"]
+    },
+    {
+      "claim_id": "api-base-auth",
+      "claim": "Production base URL https://api.greeninvoice.co.il/api/v1, sandbox https://sandbox.d.greeninvoice.co.il/api/v1; auth is API key id+secret POSTed to /v1/account/token returning a JWT used as Authorization: Bearer (NOT OAuth2)",
+      "source_url": "https://greeninvoice.docs.apiary.io/reference/account/receiving-a-jwt-token-using-an-api-key/",
+      "raw_snippet": "/account/token returns a JWT token used as Authorization: Bearer; https://api.greeninvoice.co.il/api/v1 https://sandbox.d.greeninvoice.co.il/api/v1 https://api.greeninvoice.co.il/api/v1/account/token https://api.greeninvoice.co.il/api/v1/users/me",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/api-reference.md"]
+    },
+    {
+      "claim_id": "api-endpoints",
+      "claim": "REST endpoints under /v1: documents (create/search/get/close/download links), clients (CRUD + search), items (CRUD + search). Amounts are decimal shekels, not agorot.",
+      "source_url": "https://greeninvoice.docs.apiary.io/",
+      "raw_snippet": "/v1/documents /v1/documents/search /v1/documents/{id} /v1/documents/{id}/close /v1/documents/{id}/download/links /v1/clients /v1/clients/search /v1/clients/{id} /v1/items /v1/items/search /v1/items/{id} /v1/account/token /v1/users/me GET /v1/documents/{id} GET /v1/documents/{id}/download/links POST /v1/clients POST /v1/clients/search POST /v1/documents/{id}/close",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["SKILL.md", "references/api-reference.md"]
+    },
+    {
+      "claim_id": "document-and-payment-types",
+      "claim": "13 document types (codes 10/100/200/210/300/305/320/330/400/405/500/600/610) and the paymentType enum (-1 Unpaid, 0 Withholding, 1 Cash, 2 Check, 3 Credit Card, 4 Bank Transfer, 5 PayPal, 10 Payment App, 11 Other)",
+      "source_url": "https://greeninvoice.docs.apiary.io/",
+      "raw_snippet": "type 305 Tax Invoice, 320 Tax Invoice/Receipt, 400 Receipt; paymentType -1 unpaid, 0 withholding, 1 cash, 2 check, 3 credit card, 4 bank transfer, 5 paypal, 10 app, 11 other",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/document-workflows.md", "references/api-reference.md"]
+    },
+    {
+      "claim_id": "export-zero-rated",
+      "claim": "Export of services by an osek murshe is zero-rated (0% VAT) under Section 30 of the Israeli VAT Law, legally distinct from exempt (patur, Sec 31). In the Green Invoice API a 0% line is set via the income-row vatRate field (decimal 0), not a vatType value; the document-level vatType enum (DocumentVatType) is 0=Default, 1=Exempt, 2=Mixed at both document and row level.",
+      "source_url": "https://developers.morning.co/",
+      "raw_snippet": "vatType 0 Default, 1 Exempt, 2 Mixed; vatRate decimal e.g. 0.18; export zero-rated 0% Section 30 סעיף 30 not exempt",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/document-workflows.md"]
+    },
+    {
+      "claim_id": "reference-urls",
+      "claim": "Official Green Invoice / Tax Authority / Bank of Israel reference URLs cited by the skill (all live; gov.il is bot-blocked to curl but renders for humans)",
+      "source_url": "https://www.greeninvoice.co.il/api-docs/",
+      "raw_snippet": "https://developers.morning.co https://www.greeninvoice.co.il/api-docs/ https://app.greeninvoice.co.il/ https://app.greeninvoice.co.il/api https://greeninvoice.docs.apiary.io/ https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/ https://www.greeninvoice.co.il/help-center/generating-api-key/ https://www.greeninvoice.co.il/magazine/webhooks/ https://www.greeninvoice.co.il/magazine/israel-invoice/ https://www.greeninvoice.co.il/api/v1/documents/download?d= https://pages.greeninvoice.co.il/en/payments/bills/ https://www.gov.il/he/service/invoice-allocation-number https://www.gov.il/he/departments/israel_tax_authority https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/api-reference.md"]
+    },
+    {
+      "claim_id": "internal-example-values",
+      "claim": "Illustrative calculation example values internal to the skill, NOT external regulatory claims: a NIS 10,000 service totals NIS 11,800 with 18% VAT; a withholding example where a client withholds 20% (NIS 2,000) leaving NIS 8,000 received. The 20% is an example withholding rate (actual rates vary by payee). Currency code ILS is used in JSON examples.",
+      "source_url": "https://greeninvoice.docs.apiary.io/",
+      "raw_snippet": "10,000 11,800 9,800 20% 2,000 8,000 NIS 10,000 NIS 11,800 NIS 9,800 NIS 2,000 NIS 8,000 ILS",
+      "fetched_at": "2026-06-28T23:55:00Z",
+      "appears_in": ["references/document-workflows.md"]
+    }
+  ]
+}
