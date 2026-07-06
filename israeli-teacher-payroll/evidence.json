@@ -1,0 +1,295 @@
+{
+  "skill_slug": "israeli-teacher-payroll",
+  "schemaVersion": "1.0",
+  "generated_at": "2026-07-06",
+  "claims": [
+    {
+      "id": "ofek-applies-to",
+      "claim": "Ofek Chadash is the reform for elementary education and junior-high (middle) schools, first presented on 24 March 2008.",
+      "claim_type": "feature",
+      "source_url": "https://he.wikipedia.org/wiki/אופק_חדש",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Ofek Hadash is an educational and professional reform program in elementary education and middle schools, first presented on March 24, 2008, during Julie Tamir's tenure as Minister of Education, and began to be implemented gradually starting from the 2007-2008 school year.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-total-hours",
+      "claim": "A full 100% position under Ofek Chadash is 36 weekly hours made of frontal hours, private (pratani) hours, and stay (shehiya) hours.",
+      "claim_type": "threshold",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/work-week-ofek/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "A full-time educator is required to work 36 weekly hours consisting of frontal hours, private hours, and residence hours.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-elementary-split",
+      "claim": "Ofek Chadash elementary (yesodi) full position: 26 frontal + 5 private + 5 stay = 36 hours.",
+      "claim_type": "threshold",
+      "source_url": "https://www.smkb.ac.il/media/0fjpkhsl/mesra1.pdf",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "For a full-time teacher in elementary school, the work week structure is: 26 hours of frontal teaching (שעות פרונטליות), 5 private lesson hours (שעות פרטניות), and 5 hours of stay/presence (שעות שהייה), totaling 36 hours per week.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-juniorhigh-split",
+      "claim": "Ofek Chadash junior-high (chativat beynayim) full position: 23 frontal + 4 private + 9 stay = 36 hours.",
+      "claim_type": "threshold",
+      "source_url": "https://www.itu.org.il/wp-content/uploads/2020/07/table-mivne-shaot-chatav.pdf",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "For a full-time teacher in middle school, the work week structure is: 23 hours of frontal teaching, 4 private lesson hours, and 9 hours of stay, totaling 36 hours per week.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-private-def",
+      "claim": "Private (pratani) hours are hours in which the teacher works with a student one-on-one or in a small group of up to five students.",
+      "claim_type": "feature",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/work-week-ofek/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Private Hours (שעות פרטניות) - hours in which a teaching employee works with a student individually or in a small group of up to five students.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-stay-def",
+      "claim": "Stay (shehiya) hours are hours spent at school for meetings, preparing materials, parent meetings, and checking assignments and exams.",
+      "claim_type": "feature",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/work-week-ofek/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Presence Hours (שעות שהייה) - hours in which a teaching employee stays in school for the purpose of meetings, preparing learning materials, parent meetings, and checking assignments and exams.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-9-ranks",
+      "claim": "Ofek Chadash salary tables contain 9 ranks (1-9); a new teacher is set at rank 1.",
+      "claim_type": "threshold",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/new-ofek-degree/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "טבלאות השכר לכל התארים מכילות 9 דרגות (1 - 9). למורה חדש נקבעת דרגה התחלתית 1, ולאחר למידה של שעות הפיתוח הנדרשות ופרק זמן מינימלי של שהייה בדרגה – המורה מקודם לדרגה הבאה.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-promotion-rule",
+      "claim": "Promotion up to rank 6 requires paznun plus 60 hours of professional development per year; rank 7 and above adds 75 hours per year, promotion quotas, and a personal evaluation.",
+      "claim_type": "threshold",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/new-ofek-degree/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "הקידום עד לדרגה 6 מותנה בפז\"נ וב-60 שעות פיתוח מקצועי בשנה. הקידום לדרגה 7 ומעלה מותנה בפז\"נ, בפתוח מקצועי 75 שע' בשנה, במכסות קידום ובהערכה האישית של המורה.",
+      "confidence": "high"
+    },
+    {
+      "id": "seniority-rate",
+      "claim": "Seniority (vetek) pays 2% for each year up to and including year 7, then 1% for each year from the 7th year up to 36 years. Worked example: 7x2% + 5x1% = 19%.",
+      "claim_type": "percentage",
+      "source_url": "https://terms-service.education.gov.il/terms/general-1b/salary-grade-and-seniority/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "התשלום בגין כל שנת ותק עד שנה 7 (כולל) – 2%, התשלום בגין כל שנה החל מהשנה השביעית ועד 36 שנים – 1%.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-no-gmul",
+      "claim": "Ofek Chadash teachers do not accumulate gmulim but accumulate professional-development hours for rank promotion; Oz LaTmura teachers can accumulate one gmul per year at most.",
+      "claim_type": "feature",
+      "source_url": "https://poh.education.gov.il/MerhavMinhali/HskalaVetek/Pages/GmuleiHishtalmut.aspx",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "עובד הוראה ברפורמת אופק חדש אינו צובר גמולים אלא שעות התפתחות מקצועית לקידום דרגה. לעומת זאת, מורים בעוז לתמורה יכולים לצבור גמול אחד בכל שנה ולא יותר.",
+      "confidence": "high"
+    },
+    {
+      "id": "oz-base-structure-40",
+      "claim": "The Oz LaTmura position base is 40 weekly hours made of 24 frontal + 6 private + 10 teaching-support hours.",
+      "claim_type": "threshold",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "בסיס המשרה החדש ברפורמת עוז לתמורה הוא 40 שעות שבועיות, והמשרה מורכבת מ-24 ש\"ש פרונטליות, 6 ש\"ש פרטניות ו-10 ש\"ש תומכות הוראה.",
+      "confidence": "high"
+    },
+    {
+      "id": "oz-support-breakdown",
+      "claim": "The 10 Oz LaTmura teaching-support hours cover work meetings (2/wk), team training (2/wk), parent talks (1/wk), and prep plus checking work and exams (5/wk).",
+      "claim_type": "threshold",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "עשר שעות תומכות הוראה תשובצנה לאורך כל יום העבודה יוקדשו לפעילות מקצועית אישית של המורה ולפעילות בית ספרית: ישיבות עבודה (שעתיים שבועיות), השתלמויות צוותיות (שעתיים שבועיות), שיחות עם הורים (שעה שבועית), הכנת חומרי הוראה, בדיקת עבודות ומבחנים (5 שעות שבועיות).",
+      "confidence": "high"
+    },
+    {
+      "id": "oz-private-def",
+      "claim": "In Oz LaTmura private hours, teachers work with a discussion/learning group of up to 3 students, or up to 5 by a pedagogical-team decision.",
+      "claim_type": "feature",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "במסגרת השעות הפרטיות יעבדו המורים עם קבוצת שיח ולמידה של עד 3 תלמידים או, לפי החלטת צוות פדגוגי ברשות מנהל בית הספר, עד 5 תלמידים.",
+      "confidence": "high"
+    },
+    {
+      "id": "oz-tshpe-change",
+      "claim": "From school year tashpe (2024/25) the Oz LaTmura full position changes to 38 weekly hours: 25 frontal + 3 private (with 10 teaching-support unchanged).",
+      "claim_type": "threshold",
+      "source_url": "https://www.malam-payroll.com/oz-letmura-work-week-tashpe/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "החל משנת הלימודים תשפ\"ה יחול שינוי במבנה שבוע עבודה כדלקמן: בסיס המשרה של מורה המועסק בהיקף משרה של 100% יהיה 38 ש\"ש (במקום 40 ש\"ש). ההרכב של 38 השעות השבועיות יהיה כדלהלן: 25 שעות הוראה פרונטאלית בפני כיתה ו-3 שעות פרטניות.",
+      "confidence": "medium"
+    },
+    {
+      "id": "oz-applies-and-gmul-merit",
+      "claim": "Oz LaTmura applies to upper-secondary (high school / chativa elyona) teachers with 9 ranks; 10 merit points give a 2% promotion gmul, up to 4 promotion gmulim (8%), minimum 3 years each. Rank advancement in Oz runs on merit points, not on Ofek-style dev-hour quotas. NOTE: the secondary-source snippet below also lists kindergarten teachers, but per the Ministry of Education kindergartens are covered by Ofek Chadash, not Oz (see ofek-kindergartens and ofek-kindergartens-portal); treat the kindergarten mention in this snippet as a third-party error.",
+      "claim_type": "percentage",
+      "source_url": "https://jobcalc.co.il/blog/oz-letmura-salary-table/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Oz Letmura is designated for high school and kindergarten teachers and includes 9 grades with a different structure of working hours. Accumulating 10 merit points entitles a teacher to a promotion grade at a rate of 2% of their combined salary, and overall they can be promoted by 4 promotion grades, meaning up to 8% of their combined salary, with a minimum time frame of 3 years for each grade advancement.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-kindergartens",
+      "claim": "The Ofek Chadash reform is implemented in kindergartens (ganei yeladim), elementary schools, and middle schools in state institutions. Kindergarten teachers (gananot) are therefore under Ofek Chadash, NOT Oz LaTmura.",
+      "claim_type": "feature",
+      "source_url": "https://mosdot.education.gov.il/teachers/ofek-reform/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "the Ofek Chadash reform is implemented in kindergartens (גני ילדים), elementary schools, and middle schools (חטיבות ביניים) in state institutions.",
+      "confidence": "high"
+    },
+    {
+      "id": "ofek-kindergartens-portal",
+      "claim": "Ofek Chadash applies in kindergartens (Ofek Chadash be-ganei yeladim) per the Ministry of Education kindergarten portal.",
+      "claim_type": "feature",
+      "source_url": "https://pob.education.gov.il/institutions/main-kindergartens/kindergarten-ofek/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "אופק חדש בגני ילדים",
+      "confidence": "high"
+    },
+    {
+      "id": "gmul-hishtalmut-unit",
+      "claim": "Each 112 hours of qualifying study with a passing grade gives one gmul hishtalmut unit; each unit adds 1.2% of salary up to 16 units, and up to 29.7% for dual-degree holders. From 1 Sept 2025 the per-unit rate rose from 1.2% to 1.3%. Worked example: 8 units x 1.3% = 10.4%.",
+      "claim_type": "percentage",
+      "source_url": "https://poh.education.gov.il/MerhavMinhali/HskalaVetek/Pages/GmuleiHishtalmut.aspx",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Each 112 hours or equivalent weekly study hours with a passing grade entitles one unit of bonus. Each bonus unit adds 1.2% to salary, up to a maximum of 16 units, while those with dual degrees can accumulate bonuses up to a maximum of 29.7% of their salary. As of September 1, 2025, the rate for each professional development bonus unit increased from 1.2% to 1.3%.",
+      "confidence": "high"
+    },
+    {
+      "id": "gmul-chinuch-rate",
+      "claim": "Class-education (homeroom) gmul is 10% of combined salary, with a higher 11.5% rate kept for grade-1 (alef) homeroom teachers.",
+      "claim_type": "percentage",
+      "source_url": "https://www.itu.org.il/lobby-tnai-avoda/gmulei-tafkid/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "גמול חינוך בשיעור 10% משאיר על כנו את גמול החינוך הגבוה יותר למחנכי כיתות א' -11.5%.",
+      "confidence": "high"
+    },
+    {
+      "id": "gmul-coordinator-and-dev",
+      "claim": "Under the reform, a subject-coordinator gmul for subjects other than English or mathematics is 8%, and a professional-development role gmul is 6% of combined salary. Overall, role and study gmulim can add between 10% and 30% to gross salary.",
+      "claim_type": "percentage",
+      "source_url": "https://www.itu.org.il/lobby-tnai-avoda/gmulei-tafkid/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Class education bonus: 10% of combined salary for eligible teaching staff. Professional development bonus: 6% of combined salary. Subject coordinator bonus for non-English/mathematics subjects under the new reform: 8%.",
+      "confidence": "high"
+    },
+    {
+      "id": "gmul-nihul-gan",
+      "claim": "Kindergarten managers get a management gmul of about 17% for up to 5 years of management seniority and 20% for 6-10 years.",
+      "claim_type": "percentage",
+      "source_url": "https://www.itu.org.il/lobby-tnai-avoda/gmulei-tafkid/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "גננות עם וותק ניהולי של עד חמש שנים זכאיות לגמול ניהול של כ - 17%, גננות מנהלות עם ותק ניהול של 6 - 10 שנים מקבלות גמול ניהול של 20%.",
+      "confidence": "medium"
+    },
+    {
+      "id": "two-role-gmul-max",
+      "claim": "A teacher is entitled to at most two role gmulim (gmulei tafkid).",
+      "claim_type": "threshold",
+      "source_url": "https://www.itu.org.il/lobby-tnai-avoda/gmulei-tafkid/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "מורה יהיה זכאי לכל היותר לשני גמולי תפקיד.",
+      "confidence": "high"
+    },
+    {
+      "id": "starting-salary-approx",
+      "claim": "An entry Ofek Chadash teacher (rank 1, seniority 0) earns roughly 8,000 NIS gross for a full position (approximate, from a non-official salary guide).",
+      "claim_type": "currency",
+      "source_url": "https://paywatch.co.il/ofek-chadash-salary-table/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "מורה מתחיל באופק חדש (דרגה 1, ותק 0) מרוויח כ-8,000 ₪ ברוטו למשרה מלאה.",
+      "confidence": "low"
+    },
+    {
+      "id": "min-wage-2025",
+      "claim": "Israel monthly minimum wage from 1 April 2025 is 6,247.67 NIS, with an hourly minimum of 34.32 NIS. ( formatted: 6,247.67 ש\"ח).",
+      "claim_type": "currency",
+      "source_url": "https://www.gov.il/he/pages/update_minimun_apr25",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "As of April 1, 2025, the updated minimum wage in Israel is 6,247.67 ₪. The hourly minimum wage is 34.32 ₪ per hour of work (based on 182 working hours per month).",
+      "confidence": "high"
+    },
+    {
+      "id": "min-wage-2026",
+      "claim": "Israel monthly minimum wage from 1 April 2026 is 6,443.85 NIS. (6,443.85 ש\"ח).",
+      "claim_type": "currency",
+      "source_url": "https://www.btl.gov.il/Mediniyut/GeneralData/Pages/minimum-wage.aspx",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "As of April 1, 2026, the minimum wage has been updated to 6,443.85 ₪ per month.",
+      "confidence": "high"
+    },
+    {
+      "id": "avg-wage-2026",
+      "claim": "The average wage in the economy per Bituach Leumi section 2 as of January 2026 is 13,769 ש\"ח (13,769 NIS). Section 1 average wage is 13,566.",
+      "claim_type": "currency",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%A9%D7%9B%D7%A8_%D7%94%D7%9E%D7%9E%D7%95%D7%A6%D7%A2",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "נכון לינואר 2026 השכר הממוצע לפי סעיף 2 הוא 13,769 ₪.",
+      "confidence": "high"
+    },
+    {
+      "id": "min-wage-def-pct",
+      "claim": "By law the minimum wage is set at 47.5% of the average wage.",
+      "claim_type": "percentage",
+      "source_url": "https://www.kolzchut.org.il/he/שכר_מינימום",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "החוק קובע בהגדרה של שכר מינימום כי הוא יעמוד על סך של 47.5% מהשכר הממוצע.",
+      "confidence": "high"
+    },
+    {
+      "id": "bituach-leumi-employee-rates",
+      "claim": "Employee national-insurance rate: reduced rate rose from 0.40% to 1.04% from January 2025; the full rate stays at 7.00%.",
+      "claim_type": "percentage",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "שיעור דמי ביטוח לאומי בשיעור המופחת עודכן מ-0.40% ל-1.04% החל מחודש ינואר 2025, בעוד שיעור דמי ביטוח לאומי בשיעור המלא נותר בשיעור של 7.00%.",
+      "confidence": "high"
+    },
+    {
+      "id": "health-tax-rates",
+      "claim": "Health-insurance tax: 3.23% on income up to the reduced-collection step of 7,703 NIS (from 1.1.2026) and 5.17% above it (from 1.2.2025).",
+      "claim_type": "percentage",
+      "source_url": "https://www.btl.gov.il/Insurance/Health_Insurance/Pages/health-insurance-rates.aspx",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת 7,703 ש\"ח (החל ב- 01.01.2026), ינכה המעסיק 3.23% (החל ב- 01.01.2025) ומחלק השכר שמעל מדרגת גביה מופחתת ינכה המעסיק 5.17% (החל ב- 01.02.2025).",
+      "confidence": "high"
+    },
+    {
+      "id": "ref-url-education-calc",
+      "claim": "Official salary simulation calculator of the Israeli Ministry of Education for teaching staff (poh.education.gov.il).",
+      "claim_type": "url",
+      "source_url": "https://poh.education.gov.il/administrative/salary/salary-sheet/salary-simulation-calculator/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Official salary simulation calculator of the Israeli Ministry of Education for teaching staff (poh.education.gov.il).",
+      "confidence": "high"
+    },
+    {
+      "id": "ref-url-igm",
+      "claim": "Official site of Irgun HaMorim (the secondary-school teachers union) publishing Oz LaTmura salary tables.",
+      "claim_type": "url",
+      "source_url": "https://www.igm.org.il/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Official site of Irgun HaMorim (the secondary-school teachers union) publishing Oz LaTmura salary tables.",
+      "confidence": "high"
+    },
+    {
+      "id": "ref-url-itu-root",
+      "claim": "Official site of the Histadrut HaMorim teachers union publishing Ofek Chadash salary and gmul tables.",
+      "claim_type": "url",
+      "source_url": "https://www.itu.org.il/",
+      "source_fetched_at": "2026-07-06T00:00:00Z",
+      "raw_snippet": "Official site of the Histadrut HaMorim teachers union publishing Ofek Chadash salary and gmul tables.",
+      "confidence": "high"
+    }
+  ]
+}
