@@ -1,0 +1,151 @@
+{
+  "skill_slug": "israeli-healthcare-payroll",
+  "schemaVersion": "1.0",
+  "generated_at": "2026-07-15",
+  "claims": [
+    {
+      "id": "nurses-dirug-applies",
+      "claim": "Nurses in Israeli public healthcare are paid under the nurses' wage grade (dirug achim ve'achayot); the named supplements apply to state employees in that dirug.",
+      "claim_type": "entity",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "תוספת אחיות 2024 ... עובדי המדינה בדירוג אחים ואחיות",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-tosefet-2024-250",
+      "claim": "The named nurses supplement tosefet achayot 2024 is 250 NIS (250 ש\"ח) per full-time position from 1.10.2024.",
+      "claim_type": "currency",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "תוספת אחיות 2024 בסך 250 ₪ למשרה מלאה",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-tosefet-2024-500",
+      "claim": "From 1.4.2025 the tosefet achayot 2024 is updated by 250 NIS to reach 500 NIS (500 ש\"ח) per full-time position.",
+      "claim_type": "currency",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "החל מיום 1.4.2025 ... תוספת אחיות 2024 תתעדכן בסכום של 250 ₪ ותעמוד על סכום של 500 ₪",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-shift-responsibility-exists",
+      "claim": "The nurses agreement includes a shift-responsibility supplement (tosefet achrayut mishmarot) that is increased by the agreement; its current amount must be read from the current agreement.",
+      "claim_type": "feature",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "הגדלת תוספת אחריות משמרת",
+      "confidence": "medium"
+    },
+    {
+      "id": "allied-three-dirugim",
+      "claim": "Public-hospital allied-health pay is governed by three wage grades: occupational therapy (dirug ripui be'isuk), physiotherapists (dirug hafizioterapistim), and the para-medical dirug covering dietitians and speech clinicians.",
+      "claim_type": "entity",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "דירוג ריפוי בעיסוק, דירוג הפיזיותרפיסטים ועובדים בתפקיד דיאטנים וקלינאי תקשורת בדירוג הפארה רפואיים",
+      "confidence": "high"
+    },
+    {
+      "id": "allied-training-bands",
+      "claim": "The allied-health training supplement (replacing study-fund gmul payments) is a percentage of the blended salary banded by professional seniority: 4.5% for 0 to 7 years, 5.5% for 7 to 17 years, 6.5% over 17 years.",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "שיעור התוספת יהיה בהתאם לרמות הותק המקצועי של העובד: 0-7 שנות ותק מקצועי 4.5%, 7-17 שנים 5.5%, מעל 17 שנים 6.5% מהשכר המשולב",
+      "confidence": "high"
+    },
+    {
+      "id": "allied-incentive-ceiling",
+      "claim": "The allied-health monthly incentive-pay ceiling was raised from 4,125 NIS (4,125 ש\"ח) to 5,400 NIS (5,400 ש\"ח) per full-time position per month, effective 1.4.2025.",
+      "claim_type": "currency",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "התקרה המקסימלית לתגמול במודל התגמול תגדל מסכום של 4,125 ₪ למשרה מלאה לחודש ותעמוד על סכום של 5,400 ₪ למשרה מלאה לחודש ... החל מיום 1.4.2025",
+      "confidence": "high"
+    },
+    {
+      "id": "allied-retention-grant",
+      "claim": "The allied-health 2025 agreement grants a retention and recruitment grant of 10,000 NIS (10,000 ש\"ח) per full-time position to eligible workers.",
+      "claim_type": "currency",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "סכום המענק יהיה בסך של 10,000 ₪ למשרה מלאה לעובד זכאי",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-oncall-section",
+      "claim": "Doctors' on-call pay (kononuyot) is governed by the IMA collective agreement, in the section on on-call payment.",
+      "claim_type": "entity",
+      "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "כוננויות - תשלום",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-oncall-weekday-2days",
+      "claim": "A doctor performing planned on-call on a weekday from 16:00 to 08:00 the next morning is entitled to compensation equal to two workdays.",
+      "claim_type": "threshold",
+      "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "רופא המבצע כוננות מתוכננת ביום חול משעה 16:00 עד 08:00 למחרת זכאי לתמורה השווה לשני ימי עבודה",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-oncall-er",
+      "claim": "Specialist doctors covering emergency-department on-call receive payment equal to three and a quarter workdays.",
+      "claim_type": "threshold",
+      "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "יקבלו בתמורה לביצוע הכוננות האמורה תשלום הזהה לשכר ¼ 3 ימי עבודה",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-oncall-sabbath-1day",
+      "claim": "Doctor on-call on Sabbath or holiday daytime from 08:00 to 16:00 is paid the equivalent of one workday.",
+      "claim_type": "threshold",
+      "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "יקבל בתמורה תשלום הזהה לשכר יום עבודה",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-oncall-holiday-eve-half",
+      "claim": "Doctor on-call on a holiday eve from 13:00 to 16:00 is paid the equivalent of half a workday.",
+      "claim_type": "threshold",
+      "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "יקבל בתמורה תשלום הזהה, לשכר חצי יום עבודה",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-oncall-not-base",
+      "claim": "Planned duty shifts and on-call (toranuyot ve'kononuyot metuchnanot) are not part of the base salary.",
+      "claim_type": "law",
+      "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "תורנויות וכוננויות מתוכננות אינן חלק מהמשכורת",
+      "confidence": "high"
+    },
+    {
+      "id": "statutory-step-and-health",
+      "claim": "In 2026 the reduced-collection step for employee National Insurance and health tax is 7,703 NIS per month; employee health tax is 3.23% up to that step and 5.17% above it.",
+      "claim_type": "percentage",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת - 7,703 ש\"ח ... ינכה המעסיק 3.23% (החל ב- 01.01.2025) ... מעל מדרגת גביה מופחתת ... 5.17% (החל ב- 01.02.2025)",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-gmul-hishtalmut",
+      "claim": "Nurses earn a professional-development supplement (gmul hishtalmut) whose value is a function of the number of recognized study hours in the program, approved by the nursing studies committee.",
+      "claim_type": "feature",
+      "source_url": "https://www1.health.gov.il/nursing/work/recognized-programs/information-for-nurses/",
+      "source_fetched_at": "2026-07-15T00:00:00Z",
+      "raw_snippet": "ערך גמול ההשתלמות הוא פונקציה של מספר שעות הלימוד המוכרות בתוכנית",
+      "confidence": "high"
+    }
+  ]
+}

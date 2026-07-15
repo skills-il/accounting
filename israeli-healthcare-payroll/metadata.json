@@ -1,0 +1,28 @@
+{
+  "display_name": {
+    "he": "שכר עובדי מערכת הבריאות בישראל",
+    "en": "Israeli Healthcare Payroll"
+  },
+  "display_description": {
+    "he": "מסביר איך באמת נבנה תלוש של עובד במערכת הבריאות הציבורית בישראל, כי הוא שונה לגמרי משכר במגזר הפרטי. השכר נקבע לפי הסכמים קיבוציים ולפי דירוג: אחים ואחיות, שלושה דירוגים נפרדים במקצועות הבריאות (ריפוי בעיסוק, פיזיותרפיה, פארה רפואי לדיאטנים וקלינאי תקשורת), רוקחים בדירוג המחר, ורופאים בהסכם הר\"י. הסקיל מזהה את הדירוג הנכון, קורא את השכר המשולב לפי דרגה וותק, מוסיף תוספות ייחודיות כמו תוספת אחיות, תוספת ההשתלמות המדורגת של מקצועות הבריאות, ותשלום כוננויות ותורנויות לרופאים לפי ימי עבודה, ומראה איך מגיעים מברוטו לנטו. מתאים לאחים ואחיות, לעובדי מקצועות הבריאות, לרופאים, למנהלי שכר בבתי חולים ולכל מי שרוצה להבין תלוש במערכת הבריאות. לא מיועד לשכר רגיל במגזר הפרטי, לשכר עובדי הוראה או להעסקת מטפל סיעודי בבית.",
+    "en": "Explains how a payslip in Israel's public-healthcare system is actually built, which is nothing like private-sector pay. The salary is set by collective agreements and by wage grade (dirug): nurses, three separate allied-health grades (occupational therapy, physiotherapy, and the para-medical grade for dietitians and speech clinicians), pharmacists in the academic grade, and doctors under the IMA agreement. The skill identifies the right grade, reads the combined salary by rank and seniority, adds healthcare-specific supplements like the nurses' tosefet achayot, the banded allied-health training supplement, and doctors' on-call and duty pay valued in workdays, and shows how gross becomes net. Useful for nurses, allied-health workers, doctors, hospital payroll staff, and anyone reading a healthcare payslip. Do NOT use for standard private-sector payroll, teachers' pay, or employing a home caregiver."
+  },
+  "tags": {
+    "he": ["שכר אחיות", "מקצועות הבריאות", "תלוש שכר", "כוננויות", "דירוג", "ישראל"],
+    "en": ["nurse-salary", "healthcare-payroll", "payslip", "on-call", "dirug", "israel"]
+  },
+  "author": "skills-il",
+  "version": "1.0.0",
+  "category": "accounting",
+  "supported_agents": ["claude-code", "cursor", "github-copilot", "windsurf", "opencode", "codex", "openclaw", "antigravity", "gemini-cli", "chatgpt", "claude-ai", "claude-desktop", "manus"],
+  "openclaw": true,
+  "volatility": "legislative",
+  "authoritative_sources": [
+    { "url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/", "type": "regulator", "language": "he" },
+    { "url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/", "type": "regulator", "language": "he" },
+    { "url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118", "type": "regulator", "language": "he" },
+    { "url": "https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx", "type": "regulator", "language": "he" },
+    { "url": "https://www1.health.gov.il/nursing/work/recognized-programs/information-for-nurses/", "type": "regulator", "language": "he" }
+  ],
+  "domain_checklist_version": 1
+}
