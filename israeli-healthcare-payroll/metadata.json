@@ -12,7 +12,7 @@
     "en": ["nurse-salary", "healthcare-payroll", "payslip", "on-call", "dirug", "israel"]
   },
   "author": "skills-il",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "accounting",
   "supported_agents": ["claude-code", "cursor", "github-copilot", "windsurf", "opencode", "codex", "openclaw", "antigravity", "gemini-cli", "chatgpt", "claude-ai", "claude-desktop", "manus"],
   "openclaw": true,
@@ -21,6 +21,8 @@
     { "url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/", "type": "regulator", "language": "he" },
     { "url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/", "type": "regulator", "language": "he" },
     { "url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118", "type": "regulator", "language": "he" },
+    { "url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5111", "type": "regulator", "language": "he" },
+    { "url": "https://www.workrights.co.il/זכויות_רופאים", "type": "reference", "language": "he" },
     { "url": "https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx", "type": "regulator", "language": "he" },
     { "url": "https://www1.health.gov.il/nursing/work/recognized-programs/information-for-nurses/", "type": "regulator", "language": "he" }
   ],

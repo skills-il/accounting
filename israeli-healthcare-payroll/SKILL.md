@@ -123,32 +123,61 @@ hospitals and child-development units). The incentive and grants are variable or
 conditional lines, not part of the fixed base.
 
 **Doctors.** First pin the career stage, because the base track differs by it: a
-resident (mitmach / stajer) sits on a different base track from a specialist
-(mumche), who differs again from a senior or attending physician. Residents also
-carry stage-specific lines tied to board exams (bechinot shlav alef and bet) and
-a different on-call profile. Do not model "a doctor" as one base cell.
+resident (mitmach) sits on a different base track from a specialist (mumche), who
+differs again from a senior or attending physician. Residents are themselves split
+by the board exams: darga alef, before passing the written board exam (bechinat
+shlav alef), works a 45-hour week; darga bet, after it, works 42 hours. Each stage
+carries its own lines and a different on-call profile. Do not model "a doctor" as
+one base cell.
 
-A doctor's slip is structurally different: a large part of pay is on-call, and
-on-call is paid in workday equivalents that are NOT part of base salary. Two
-words are distinct and must not be conflated. Toranut is an on-site duty shift
-(for example night duty from 16:00 to 08:00). Kononut is on-call standby, the
-senior doctor consulted by the duty doctor. The IMA agreement values planned
-on-call in workday equivalents by timing band. Render the full band set:
+A doctor's slip is structurally different: a large part of pay is duty and
+on-call, both paid in workday equivalents that are NOT part of base salary. Two
+words are distinct, must not be conflated, and pay differently. Toranut is an
+on-site duty shift (the doctor is physically in the hospital). Kononut is on-call
+standby from home (the senior doctor the on-site doctor consults). A toranut pays
+roughly double a kononut for the same weekday, so never read a kononut value for
+an on-site duty. Both are valued off the doctor's day-value (erech yom), the
+monthly salary expressed as a single day's worth, so it rises with rank and the
+same shift pays a specialist more than a resident.
 
-| On-call timing | Payment |
+Toranut (on-site duty, IMA agreement section 42):
+
+| Toranut timing | Payment |
 |----------------|---------|
-| Weekday planned on-call, 16:00 to 08:00 next morning | Two workdays |
-| Emergency-department on-call by a specialist | Three and a quarter workdays |
+| Weekday | One workday plus three more (four day-equivalents) |
+| Friday eve or holiday eve | One workday plus four more (five day-equivalents) |
+| Sabbath or holiday daytime | Two workdays plus half (two and a half day-equivalents) |
+
+Kononut (on-call standby, IMA agreement section 49):
+
+| Kononut timing | Payment |
+|----------------|---------|
+| Weekday, 16:00 to 08:00 next morning | Two workdays |
+| Weekday, summoned in after 19:30 for 4.5 hours or more | Three workdays |
+| Emergency-department, by a specialist | Three and a quarter workdays |
 | Sabbath or holiday daytime, 08:00 to 16:00 | One workday |
 | Holiday eve, 13:00 to 16:00 | Half a workday |
 
 Planned duty shifts and on-call are not part of the base salary, so they do not
-enter the pension and severance base the way the combined salary does. Doctors in
-shortage specialties (miktzo'ot bemtzuka) such as neonatology, anesthesia, and
-intensive care carry an additional specialty premium; doctors serving in
-periphery hospitals carry a periphery incentive (tosefet periferia); and senior
-doctors often carry global additional hours (sha'ot nosafot globaliyot), a
-substantial line that is neither base nor on-call. Read the current rate for each.
+enter the pension and severance base the way the combined salary does. As a
+department-level sanity check (not an individual's line), a department's rota runs
+about 20 to 30 on-call slots a month, and about 60 in psychiatric hospitals; an
+individual doctor works a fraction of those. Residents also carry a presence/stay
+supplement (tosefet shehiya) among their standing slip lines; read the current
+amount.
+
+Three more doctor-specific lines sit outside the base:
+
+- Shortage-specialty premium (miktzo'ot bemtzuka): about 12.5% of the doctor's
+  salary, for specialties such as neonatology, anesthesia, cardiology, and the
+  general, pediatric, and cardiac intensive-care units.
+- Periphery: a one-time recruitment grant (ma'anak periferia) of 300,000 NIS, and
+  500,000 NIS for residents and shortage-specialty specialists, plus an ongoing
+  periphery premium that ramped from 10% (from 1.8.2011) to 17.5% (2012) to 25%
+  (from 1.8.2013) of salary for a resident or field specialist; read the current
+  ongoing rate.
+- Global additional hours (sha'ot nosafot globaliyot): a substantial senior-doctor
+  line that is neither base nor on-call; read the current amount.
 
 Use `scripts/healthcare_gross.py` to apply percentage tosafot to the
 combined-salary cell and add explicit shift or on-call shekel amounts you have
@@ -214,17 +243,19 @@ current 5,400 NIS ceiling. Run: `python3 scripts/healthcare_gross.py --base
 <cell> --tosefet 5.5 --add <incentive> --position 1.0`. Note the incentive is a
 variable line, not part of the fixed base.
 
-### Example 3: Hospital doctor on-call
+### Example 3: Hospital doctor, duty and on-call
 
 A specialist doctor under the IMA agreement, base read from the doctors' dirug
-cell, who did several weekday planned on-call shifts and one emergency-department
-on-call in the month. On-call is paid in workday equivalents: each weekday
-planned on-call from 16:00 to 08:00 is two workdays, and the emergency-department
-on-call is three and a quarter workdays. Compute each on-call amount as its
-workday-equivalent count times the doctor's daily rate, sum them, and pass the
-total as an explicit addition. These lines are NOT base salary, so they do not
-raise the pension and severance base. Run: `python3
-scripts/healthcare_gross.py --base <cell> --add <oncall_total> --position 1.0`.
+cell, who did several weekday on-site duties (toranut) and one weekday on-call
+standby (kononut) in the month. Duty and on-call are paid in workday equivalents
+times the day-value (erech yom): a weekday toranut is four day-equivalents (one
+plus three, section 42), and a weekday kononut is two day-equivalents (section
+49), so a toranut pays about double for the same day. Do not read the kononut
+value for an on-site duty. Compute each shift as its day-equivalent count times
+the doctor's day-value, sum them, and pass the total as an explicit addition.
+These lines are NOT base salary, so they do not raise the pension and severance
+base. Run: `python3 scripts/healthcare_gross.py --base <cell> --add <duty_total>
+--position 1.0`.
 
 ## Gotchas
 
@@ -270,7 +301,9 @@ scripts/healthcare_gross.py --base <cell> --add <oncall_total> --position 1.0`.
 |----------|---------------|
 | [Nurses' agreement summary (Malam)](https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/) | Nurses' dirug supplements (tosefet achayot 2024, shift-responsibility) |
 | [Allied-health agreement summary (Malam)](https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/) | Three allied-health dirugim, training bands, incentive ceiling, grants |
-| [IMA collective agreements (on-call payment)](https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118) | Doctors' on-call and duty day-equivalent values |
+| [IMA collective agreements (on-call payment, section 49)](https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118) | Doctors' on-call (kononut) day-equivalent values |
+| [IMA collective agreements (duty payment, section 42)](https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5111) | Doctors' on-site duty (toranut) day-equivalent values |
+| [Doctors' rights summary (WorkRights)](https://www.workrights.co.il/זכויות_רופאים) | Resident grades, shortage-specialty and periphery premiums, on-call frequency |
 | [Employee rates, National Insurance and health tax (Bituach Leumi)](https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx) | Reduced-collection step, health-tax rates, employee National Insurance rates |
 
 ## Bundled Resources

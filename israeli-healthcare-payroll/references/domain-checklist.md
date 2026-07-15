@@ -33,9 +33,14 @@ cover" row maps to a claim in evidence.json or to a structural instruction.
 - [x] Retention and recruitment grant up to 10,000 NIS/full-time for eligible settings. (allied-retention-grant)
 
 ### Doctors on-call and duty (render the full band set)
-- [x] Career stage sets the base track: resident (mitmach) vs specialist (mumche) vs senior; residents carry board-exam milestones and a different on-call profile. (structural)
-- [x] Periphery incentive (tosefet periferia) and global additional hours (sha'ot nosafot globaliyot) are large non-base, non-on-call lines. (structural)
-- [x] Toranut (on-site duty) vs kononut (on-call standby) are distinct pay lines. (structural, doctors-oncall-not-base)
+- [x] Career stage sets the base track: resident (mitmach) vs specialist (mumche) vs senior; residents split into darga alef (pre-board-exam, 45h) and darga bet (post-exam, 42h). (doctors-resident-grades)
+- [x] Shortage-specialty premium (miktzo'ot bemtzuka) about 12.5% of salary for neonatology/anesthesia/cardiology/intensive-care. (doctors-shortage-specialty-premium)
+- [x] Periphery recruitment grant 300,000 NIS (500,000 for residents) plus ongoing periphery premium; global additional hours (sha'ot nosafot globaliyot) for seniors. (doctors-periphery-grant)
+- [x] On-call frequency norm: about 20-30/month, ~60 in psychiatric hospitals (magnitude sanity check). (doctors-oncall-frequency)
+- [x] On-call (kononut) band: summoned in after 19:30 for 4.5h+ = 3 workdays. (doctors-oncall-called-after-1930)
+- [x] Toranut (on-site duty, section 42) tabled SEPARATELY from kononut (section 49): weekday = 1+3 (four day-equivalents), Fri/holiday eve = 1+4 (five), Sabbath/holiday day = 2+0.5. Toranut pays ~double kononut; do not conflate. (doctors-toranut-weekday, doctors-toranut-eve, doctors-toranut-weekend-day, doctors-oncall-not-base)
+- [x] Duty/on-call amount = day-value (erech yom, higher for specialists) times the day-equivalent count, not a plain daily rate. (structural)
+- [x] Residents carry a presence/stay supplement (tosefet shehiya). (doctors-shahiya-supplement)
 - [x] On-call day-equivalents by timing band: weekday 16:00 to 08:00 = 2 workdays; ER specialist = 3.25 workdays; Sabbath/holiday daytime 08:00 to 16:00 = 1 workday; holiday eve 13:00 to 16:00 = half workday. (doctors-oncall-weekday-2days, doctors-oncall-er, doctors-oncall-sabbath-1day, doctors-oncall-holiday-eve-half)
 - [x] On-call and planned duty are NOT part of base salary (no pension/severance base). (doctors-oncall-not-base)
 

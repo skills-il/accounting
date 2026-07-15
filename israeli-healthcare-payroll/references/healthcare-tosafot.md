@@ -29,26 +29,48 @@ and re-check the year on the slip.
 ## Doctors (IMA agreement)
 
 Pin the career stage first: a resident (mitmach), a specialist (mumche), and a
-senior physician sit on different base tracks, and residents carry board-exam
-(bechinot shlav alef and bet) milestones. Doctors' pay is dominated by on-call,
-paid in workday equivalents and NOT part of base salary. Toranut is an on-site
-duty shift; kononut is on-call standby (the senior doctor consulted by the duty
-doctor). The planned on-call values by timing band:
+senior physician sit on different base tracks. Residents split into darga alef
+(before the written board exam, 45 weekly hours) and darga bet (after it, 42
+hours). Doctors' pay is dominated by duty and on-call, both paid in workday
+equivalents and NOT part of base salary. Toranut is an on-site duty shift (in the
+hospital); kononut is on-call standby from home. A toranut pays roughly double a
+kononut for the same weekday, so the two must be tabled separately. Both are
+valued off the doctor's day-value (erech yom), a defined figure that is higher
+for a specialist than a resident.
 
-| On-call timing | Payment |
+Toranut (on-site duty, IMA section 42):
+
+| Toranut timing | Payment |
 |----------------|---------|
-| Weekday planned on-call, 16:00 to 08:00 next morning | Two workdays |
-| Emergency-department on-call by a specialist | Three and a quarter workdays |
+| Weekday | One workday plus three more (four day-equivalents) |
+| Friday eve or holiday eve | One workday plus four more (five day-equivalents) |
+| Sabbath or holiday daytime | Two workdays plus half (two and a half day-equivalents) |
+
+Kononut (on-call standby, IMA section 49):
+
+| Kononut timing | Payment |
+|----------------|---------|
+| Weekday, 16:00 to 08:00 next morning | Two workdays |
+| Weekday, summoned in after 19:30 for 4.5 hours or more | Three workdays |
+| Emergency-department, by a specialist | Three and a quarter workdays |
 | Sabbath or holiday daytime, 08:00 to 16:00 | One workday |
 | Holiday eve, 13:00 to 16:00 | Half a workday |
 
-Compute an on-call amount as its workday-equivalent count times the doctor's
-daily rate. Because these lines are not base salary, they do not raise the
-pension and severance base. Doctors in shortage specialties (miktzo'ot bemtzuka,
-for example neonatology, anesthesia, and intensive care) carry an additional
-specialty premium; doctors in periphery hospitals carry a periphery incentive
-(tosefet periferia); and senior doctors often carry global additional hours
-(sha'ot nosafot globaliyot). Read the current rate for each.
+Compute a duty or on-call amount as its workday-equivalent count times the
+doctor's day-value (erech yom), not a plain daily rate. As a department-level
+magnitude check (not an individual's line), a rota runs about 20 to 30 on-call
+slots a month, about 60 in psychiatric hospitals. Residents also carry a
+presence/stay supplement (tosefet shehiya) among their standing lines.
+
+Because these lines are not base salary, they do not raise the pension and
+severance base. Three more doctor lines sit outside the base: shortage-specialty
+premium (miktzo'ot bemtzuka) at about 12.5% of salary for neonatology,
+anesthesia, cardiology, and general/pediatric/cardiac intensive care; a one-time
+periphery recruitment grant (ma'anak periferia) of 300,000 NIS (500,000 NIS for
+residents and shortage-specialty specialists) plus an ongoing periphery premium
+that ramped from 10% (2011) to 25% (from 2013) of salary; and global additional
+hours (sha'ot nosafot globaliyot) for senior doctors. Read the current ongoing
+rate for the periphery premium and the global-hours amount.
 
 ## Shared, non-healthcare-specific lines
 

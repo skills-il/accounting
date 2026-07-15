@@ -1,0 +1,13 @@
+{
+  "cycles": [
+    {
+      "version": "1.1.0",
+      "date": "2026-07-15",
+      "lessons": [
+        "Expert MINOR deferred (toranut time-window cues): the kononut table anchors each band to a clock window (16:00-08:00, after 19:30, 08:00-16:00, 13:00-16:00) but the toranut table gives day-type only, not the on-site duty window. Add per-band time windows for toranut next cycle if a clean source is found.",
+        "Doctors' own continuing-education gemulim (Expert MAJOR, deferred): nurses' gmul hishtalmut is covered but doctors' equivalent pensionable education gemulim are not encoded; verify the exact mechanism against the current IMA agreement before adding.",
+        "erech yom is now defined as monthly salary expressed as a day's worth; a fuller structural derivation (which base components feed it) was left out to stay within the evidence-sourced scope."
+      ]
+    }
+  ]
+}
