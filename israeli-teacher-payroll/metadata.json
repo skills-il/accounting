@@ -4,15 +4,15 @@
     "en": "Israeli Teacher Payroll"
   },
   "display_description": {
-    "he": "מסביר איך באמת נבנה שכר של מורה בישראל, כי הוא שונה לגמרי משכר במגזר הפרטי. השכר נקבע לפי אחת משתי הרפורמות: אופק חדש (גני ילדים, יסודי וחטיבות ביניים) או עוז לתמורה (חטיבה עליונה בלבד), ולכל אחת מבנה שבוע עבודה משלה, טבלת דרגות ותק, וגמולים. הסקיל מזהה את הרפורמה הנכונה, קורא את חלוקת השעות בין שעות מול הכיתה לשעות פרטניות ושעות שהייה, מוסיף גמולים כמו גמול השתלמות וגמול חינוך, ומראה איך מגיעים מברוטו לנטו. מתאים למורים, גננות, מנהלי שכר בבתי ספר וכל מי שרוצה להבין תלוש של עובד הוראה. לא מיועד לשכר רגיל במגזר הפרטי, לרישום הנהלת חשבונות או לניווט בבגרויות ובמערכת החינוך.",
-    "en": "Explains how an Israeli teacher's salary is actually built, which is nothing like private-sector pay. Teacher pay is set by one of two reforms: Ofek Chadash (kindergartens, elementary, and junior-high) or Oz LaTmura (upper-secondary only), and each has its own work-week structure, rank-and-seniority table, and increments (gmulim). The skill identifies the right reform, reads the split between front-of-class hours and private and stay hours, adds gmulim like gmul hishtalmut and gmul chinuch, and shows how gross becomes net. Useful for teachers, kindergarten teachers, school payroll staff, and anyone reading a teacher's payslip. Do NOT use for standard private-sector payroll, bookkeeping entries, or Bagrut and school-system navigation."
+    "he": "מסביר איך באמת נבנה שכר של מורה בישראל, כי הוא שונה לגמרי משכר במגזר הפרטי. השכר נקבע לפי אחת משתי הרפורמות: אופק חדש (גני ילדים, יסודי וחטיבות ביניים) או עוז לתמורה (חטיבה עליונה בלבד), ולכל אחת מבנה שבוע עבודה משלה, טבלת דרגות ותק, וגמולים. הסקיל מזהה את הרפורמה הנכונה, קורא את חלוקת השעות בין שעות מול הכיתה לשעות פרטניות ושעות שהייה, מוסיף גמולים כמו גמול השתלמות וגמול חינוך, ומראה איך מגיעים מברוטו לנטו. כולל גם מקרה של מורה שמלמדת גם בחטיבת ביניים וגם בחטיבה עליונה ומקבלת שכר לפי שתי הרפורמות במקביל, לפי חלקיות המשרה בכל חטיבה, ואיחוד משכורות מול תיאום מס. מתאים למורים, גננות, מנהלי שכר בבתי ספר וכל מי שרוצה להבין תלוש של עובד הוראה. לא מיועד לשכר רגיל במגזר הפרטי, לרישום הנהלת חשבונות או לניווט בבגרויות ובמערכת החינוך.",
+    "en": "Explains how an Israeli teacher's salary is actually built, which is nothing like private-sector pay. Teacher pay is set by one of two reforms: Ofek Chadash (kindergartens, elementary, and junior-high) or Oz LaTmura (upper-secondary only), and each has its own work-week structure, rank-and-seniority table, and increments (gmulim). The skill identifies the right reform, reads the split between front-of-class hours and private and stay hours, adds gmulim like gmul hishtalmut and gmul chinuch, and shows how gross becomes net. It also covers the split appointment, where a teacher teaches in both a junior-high and a high school and earns under both reforms at once (each part by its position fraction), plus salary unification versus tax coordination. Useful for teachers, kindergarten teachers, school payroll staff, and anyone reading a teacher's payslip. Do NOT use for standard private-sector payroll, bookkeeping entries, or Bagrut and school-system navigation."
   },
   "tags": {
     "he": ["שכר מורים", "עובדי הוראה", "אופק חדש", "עוז לתמורה", "שכר", "ישראל"],
     "en": ["teacher-salary", "payroll", "ofek-chadash", "oz-latmura", "education", "israel"]
   },
   "author": "skills-il",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "accounting",
   "supported_agents": ["claude-code", "cursor", "github-copilot", "windsurf", "opencode", "codex", "openclaw", "antigravity", "gemini-cli", "chatgpt", "claude-ai", "claude-desktop", "manus"],
   "openclaw": true,
@@ -26,7 +26,8 @@
     "https://terms-service.education.gov.il/terms/general-1b/salary-grade-and-seniority/",
     "https://www.itu.org.il/",
     "https://www.igm.org.il/",
-    "https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx"
+    "https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx",
+    "https://poh.education.gov.il/administrative/transaction-details/position-scope/"
   ],
-  "domain_checklist_version": 1
+  "domain_checklist_version": 2
 }

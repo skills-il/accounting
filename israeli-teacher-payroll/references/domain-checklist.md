@@ -58,6 +58,7 @@ LaTmura. Every "Must cover" row maps to a claim in evidence.json.
 - [x] Teacher base pay comes from the collective-agreement tables, NOT the generic bracket math. (starting-salary-approx)
 
 ## Should cover (advanced)
+- [x] Split appointment / dual reform: a teacher teaching in both a junior-high (Ofek) and a high school (Oz) at once earns under BOTH reforms, each part by its own position fraction, table, hour structure, and gmulim; total = Ofek part + Oz part. Salary unification (ichud maskorot) puts both on one payslip (needs >=1/3 in junior-high for the Ministry route or >=1/2 in high school for the baalut route, plus kviut); without it two employers mean a yearly teum mas; above 100% combined, unification loses benefits capped at 100% (havraa, bigud, meonot). (split-appointment-dual-reform, ichud-maskorot-eligibility, ichud-maskorot-tax-coord, ichud-over-100-benefit-cap)
 - [x] Why the same teacher gets a different table under each reform.
 - [x] The tashpe transition for Oz (older payslips use the 40-hour base).
 - [x] "Shaot gil" and reductions in required frontal hours by age (mentioned, route to union guide).
@@ -83,6 +84,8 @@ LaTmura. Every "Must cover" row maps to a claim in evidence.json.
 - Histadrut HaMorim (work-week + gmulei tafkid): https://www.itu.org.il/
 - Bituach Leumi rates: https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx
 - Minimum / average wage: https://www.btl.gov.il/Mediniyut/GeneralData/Pages/minimum-wage.aspx
+- Position scope / combining across divisions (Portal Ovdei Horaa): see evidence claim ref-url-position-scope
+- Salary unification (ichud maskorot) eligibility + advantages/disadvantages: see evidence claims split-appointment-dual-reform, ichud-maskorot-eligibility, ichud-maskorot-tax-coord, ichud-over-100-benefit-cap
 
 ## Extraction notes
 - Kolzchut, gov.il, and Wikipedia could not be fetched directly (domain-verification block); numbers were captured from search snippets that quote those pages verbatim. Hour tables are text, not image-based, so no Playwright render was needed.

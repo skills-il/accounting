@@ -1,6 +1,6 @@
 ---
 name: israeli-teacher-payroll
-description: "Computes and explains the salary of Israeli teachers (ovdei horaa / sachar ovdei horaa) under the two collective-agreement reforms: Ofek Chadash (ofek chadash, New Horizon, covering kindergartens, elementary, and junior-high) and Oz LaTmura (oz latmura, upper-secondary only). Use when a user asks how a teacher's pay is built: reform, rank (daraga), seniority (vetek), the weekly work-week split between front-of-class hours and private (pratani) hours, gmul (gmul) increments like gmul hishtalmut or gmul chinuch, and how gross becomes net. Do NOT use for standard private-sector gross-to-net payroll (use israeli-payroll-calculator), bookkeeping journal entries (use israeli-bookkeeping-automation), or Bagrut and school-system navigation (use israeli-education-system)."
+description: "Computes and explains the salary of Israeli teachers (ovdei horaa / sachar ovdei horaa) under the two collective-agreement reforms: Ofek Chadash (ofek chadash, New Horizon, covering kindergartens, elementary, and junior-high) and Oz LaTmura (oz latmura, upper-secondary only). Use when a user asks how a teacher's pay is built: reform, rank (daraga), seniority (vetek), the weekly work-week split between front-of-class hours and private (pratani) hours, gmul (gmul) increments like gmul hishtalmut or gmul chinuch, and how gross becomes net. Also handles the split appointment, where one teacher teaches in both a junior-high and a high school and earns under both reforms at once, each part by its position fraction. Do NOT use for standard private-sector gross-to-net payroll (use israeli-payroll-calculator), bookkeeping journal entries (use israeli-bookkeeping-automation), or Bagrut and school-system navigation (use israeli-education-system)."
 license: MIT
 ---
 
@@ -35,7 +35,10 @@ The reform decides everything downstream, so pin it first.
 Kindergarten teachers (gananot) are under Ofek Chadash, not Oz LaTmura: the Ofek
 reform runs in kindergartens, elementary schools, and middle schools. Oz LaTmura
 covers upper-secondary only. If the user is unsure, ask which grades they teach.
-Never carry a number from one reform's table to the other.
+Never carry a number from one reform's table to the other. But a teacher who
+teaches in two divisions at once (for example a junior-high and a high school) is
+under both reforms at the same time; do not force a single reform on her, go to
+Step 1b.
 
 Who signs the payslip is a separate question from the reform. Upper-secondary
 teachers are often employed by a baalut (an operator such as ORT, Amal, AMIT, or
@@ -43,6 +46,59 @@ Branco Weiss) or by a municipality rather than directly by the Ministry of
 Education. The baalut issues the payslip and can run a different pension
 arrangement, even though the Oz LaTmura salary structure still applies. Ask who
 the employer of record is before reading a slip.
+
+### Step 1b: The split appointment (a teacher under both reforms at once)
+
+Step 1 pins ONE reform, but a teacher can teach across both divisions at the same
+time and earn under BOTH reforms. The common case is a six-year school (chativa
+shesh-shnatit): she teaches junior-high grades (7-9, Ofek Chadash, usually paid by
+the Ministry of Education) and upper-secondary grades (10-12, Oz LaTmura, usually
+paid by a baalut). A man can be in this position too; most teachers are women, so
+the wording here is in the feminine. Do NOT pick one reform. Run the gross build
+(Steps 2 to 3) TWICE, once per division, and add the two parts:
+
+- Each division is its own position fraction (chelkiyut misra), for example a
+  third position (1/3) in the junior-high plus two-thirds (2/3) in the high school.
+  Each fraction is relative to THAT reform's own full position (Ofek 36 hours, Oz
+  38 or 40), so combine them as fractions of a position, not as raw weekly hours.
+- Each part uses its OWN reform: its own hour structure (Step 2), its own combined
+  (rank x seniority) cell from that reform's table, and its own gmulim (Step 3),
+  then scaled by that division's fraction. Read the recognized rank for each reform
+  from the official table; the two ranks follow each reform's own advancement rules
+  and the ministry's cross-reform recognition, so do not assume they are identical
+  and do not invent a conversion. Seniority (vetek) is her own recognized teaching
+  seniority, read into each reform's table.
+- The two-gmul cap is per TEACHER, not per division: count role gmulim (gmulei
+  tafkid) across the whole appointment, so a homeroom gmul in the junior-high plus a
+  coordinator gmul in the high school is already the two-gmul maximum, not two per
+  side.
+- Total gross = Ofek part + Oz part. There is no blended table: the two parts stay
+  separate and are summed. She keeps being paid under both reforms according to her
+  position fraction in each division.
+
+Two reforms is NOT the same as two employers. Who pays the slip depends on the
+school's operator, not on the reform: a six-year school run by a single baalut or
+municipality can pay BOTH the Ofek junior-high part and the Oz high-school part on
+ONE payslip, and then there is one employer, one withholding, and no tax
+coordination to do, even though she is under both reforms. The two-employer case
+arises only when the two divisions are paid by two different payers (often the
+Ministry for the junior-high and a baalut for the high school, but confirm the
+actual payers, do not assume from the reform).
+
+Only when there are two payers: by default she gets two separate payslips, so she
+must file a tax coordination (teum mas) every year or the second employer withholds
+income tax at the top rate, and each payer also deposits her pension separately
+(possibly into different funds, each with its own ceiling). She can then request
+salary unification (ichud maskorot) to get both parts on ONE organized payslip (an
+Ofek section, an Oz section, a non-reform-benefits section, then a total), which
+removes the teum mas and consolidates the deposits under one payer. Unification
+needs permanence (kviut) at the employer she wants to be paid through, plus at
+least a third position (1/3) in the junior-high to unify through the Ministry, or
+at least a half position (1/2) in the high school to unify through the baalut. One
+caveat: when the two parts together exceed a full position (100%), unification can
+make her lose benefits that are capped at 100% of a position, such as havraa
+(recreation pay), bigud (clothing allowance), and meonot (childcare subsidy); weigh
+that against the convenience of one payslip.
 
 ### Step 2: Read the reform's work-week structure
 
@@ -192,6 +248,26 @@ same way under chelkiyut misra. Some role gmulim are not scaled like the combine
 salary, so a blanket multiply by the position fraction can misstate a part-time
 slip; confirm against the actual slip.
 
+### Example 4: Teacher split across both reforms in a six-year school
+
+A teacher in a six-year school teaches a third position (1/3) in the junior-high
+grades (Ofek Chadash, paid by the Ministry) and two-thirds (2/3) in the
+upper-secondary grades (Oz LaTmura, paid by an ORT baalut). She is under both
+reforms at once, so build gross TWICE and sum. Ofek part: read her Ofek combined
+cell for her rank and seniority, apply her Ofek role gmulim (say 10% gmul chinuch
+for a junior-high homeroom), scale by 1/3. Oz part: read her Oz combined cell for
+her Oz rank and the same recognized seniority, apply her Oz gmulim, scale by 2/3.
+Total gross = Ofek part + Oz part. Run the script once per division and add:
+`python3 scripts/teacher_gross.py --base <ofek_cell> --gmul 10 --position 0.333`
+then `python3 scripts/teacher_gross.py --base <oz_cell> --gmul 8 --position 0.667`.
+Her two role gmulim (homeroom in the junior-high, coordinator in the high school)
+are already the two-gmul maximum, counted across the whole appointment. If a single
+baalut runs the six-year school and pays both divisions, this is one payslip with
+no tax coordination; if the Ministry pays the junior-high and a baalut pays the
+high school, she files a yearly teum mas or requests ichud maskorot. Had her two
+fractions summed to more than a full position, the 100% benefit cap above would
+apply.
+
 ## Gotchas
 
 - **Re-adding seniority that is already in the cell.** The official (rank x
@@ -222,6 +298,12 @@ slip; confirm against the actual slip.
 - **Assuming both reforms share a structure.** Ofek rewards through rank
   (dev hours, no classic gmulim); Oz banks one gmul a year with merit-point
   promotions. Different tables, different hour splits, different increment logic.
+- **Forcing one reform on a teacher who teaches in both divisions.** A teacher in
+  both a junior-high and a high school is under both reforms at once. Build the
+  gross twice (one part per division, each by its own position fraction and its own
+  reform's table and gmulim) and sum; do not blend them into one table. Reform is
+  not employer: two separate payers (not the two reforms) are what create a yearly
+  teum mas, which ichud maskorot removes. See Step 1b.
 
 ## Reference Links
 
@@ -233,6 +315,7 @@ slip; confirm against the actual slip.
 | [Gmulei hishtalmut (Ministry of Education)](https://poh.education.gov.il/MerhavMinhali/HskalaVetek/Pages/GmuleiHishtalmut.aspx) | Professional-development gmul rules |
 | [Histadrut HaMorim](https://www.itu.org.il/) | Union salary tables and gmulei tafkid |
 | [Irgun HaMorim](https://www.igm.org.il/) | Upper-secondary teachers' union tables |
+| [Position scope (Portal Ovdei Horaa)](https://poh.education.gov.il/administrative/transaction-details/position-scope/) | How position fraction is set and combined across divisions |
 
 ## Bundled Resources
 

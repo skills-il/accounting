@@ -1,0 +1,28 @@
+{
+  "cycles": [
+    {
+      "version": "1.1.0",
+      "date": "2026-07-16",
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "מורה שמלמדת גם בחטיבת ביניים וגם בתיכון, איך מחשבים שכר?",
+          "מורה מלמדת חלק בחטיבת ביניים וחלק בחטיבה עליונה, זכאית לשכר לפי שתי הרפורמות?",
+          "איך מחשבים שכר של מתכנת בהייטק? (negative, correctly excluded)",
+          "מורה בעוז לתמורה, כמה שעות פרונטליות במשרה מלאה?"
+        ]
+      },
+      "lessons": [
+        "Added split-appointment / dual-reform coverage (Step 1b, Example 4, Gotcha 9): a teacher teaching in both a junior-high (Ofek) and a high school (Oz) earns under both reforms, each part by its position fraction, summed. Sourced from kesefmorim.com + the gov Portal Ovdei Horaa position-scope page (which documents העסקה מקבילה בשתי הרפורמות).",
+        "Expert review CRITICAL corrected before ship: reform is NOT employer. A six-year school run by a single baalut/reshut pays both divisions on one payslip with no teum mas; the two-payer / teum mas / ichud discussion is now gated on 'only when two separate payers'.",
+        "Cross-reform rank is recognized/converted, not independently invented per table; the skill now says read the recognized rank per reform and do not invent a conversion. The exact hamarat-daragot mapping was NOT asserted (no verifiable source) - if a future cycle finds an authoritative source for the simultaneous-split rank mapping, encode it.",
+        "Two-role-gmul cap is per teacher counted across the whole appointment, not two-per-division - reconnected in Step 1b + Example 4.",
+        "Pension across two employers: each payer deposits separately (possibly different funds/ceilings); ichud consolidates. Noted but the exact deposit-ceiling interaction across two payers was left to the slip - candidate for a future deepening if users ask."
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-teacher-payroll",
   "schemaVersion": "1.0",
-  "generated_at": "2026-07-06",
+  "generated_at": "2026-07-16",
   "claims": [
     {
       "id": "ofek-applies-to",
@@ -202,6 +202,42 @@
       "confidence": "high"
     },
     {
+      "id": "split-appointment-dual-reform",
+      "claim": "A teacher who teaches in both a junior-high (Ofek Chadash) and a high school (Oz LaTmura) at once is paid under BOTH reforms, each part according to her position fraction in each division. The two parts are computed separately and summed.",
+      "claim_type": "feature",
+      "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
+      "source_fetched_at": "2026-07-16T00:00:00Z",
+      "raw_snippet": "הוא ימשיך לקבל גם לפי אופק-חדש וגם לפי עוז-לתמורה, לפי חלקיות משרתו בכל אחת מהחטיבות.",
+      "confidence": "high"
+    },
+    {
+      "id": "ichud-maskorot-eligibility",
+      "claim": "To unify salaries (ichud maskorot) through the Ministry of Education a teacher needs at least a third position (1/3) in the junior-high; to unify through the baalut, at least a half position (1/2) in the high school; plus permanence (kviut) at the paying employer.",
+      "claim_type": "threshold",
+      "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
+      "source_fetched_at": "2026-07-16T00:00:00Z",
+      "raw_snippet": "כדי לקבל איחוד-משכורות ממשרד-החינוך, צריך לעבוד בחטיבת-הביניים לפחות שליש-משרה. כדי לקבל איחוד דרך הבעלות, צריך שיהיה לך בתיכון לפחות חצי משרה.",
+      "confidence": "high"
+    },
+    {
+      "id": "ichud-maskorot-tax-coord",
+      "claim": "Salary unification removes the need for annual tax coordination (teum mas). Without unification, two employers issue two separate payslips and the teacher must file teum mas or be over-withheld at the second employer.",
+      "claim_type": "feature",
+      "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
+      "source_fetched_at": "2026-07-16T00:00:00Z",
+      "raw_snippet": "איחוד משכורות פוטר אותנו מהצורך בתיאום-מס, מסיבה פשוטה.",
+      "confidence": "high"
+    },
+    {
+      "id": "ichud-over-100-benefit-cap",
+      "claim": "When the combined position exceeds 100%, salary unification can cost benefits that are capped at 100% of a position, such as bigud (clothing), havraa (recreation pay), and meonot (childcare).",
+      "claim_type": "feature",
+      "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
+      "source_fetched_at": "2026-07-16T00:00:00Z",
+      "raw_snippet": "כל ההטבות שמוגבלות ל-100% משרה (ביגוד, הבראה, מעונות ואולי שכחתי עוד משהו), פנסיה מעל 100%, גמול הכשרות למי שמחנך בחטיבה.",
+      "confidence": "high"
+    },
+    {
       "id": "starting-salary-approx",
       "claim": "An entry Ofek Chadash teacher (rank 1, seniority 0) earns roughly 8,000 NIS gross for a full position (approximate, from a non-official salary guide).",
       "claim_type": "currency",
@@ -271,6 +307,15 @@
       "source_url": "https://poh.education.gov.il/administrative/salary/salary-sheet/salary-simulation-calculator/",
       "source_fetched_at": "2026-07-06T00:00:00Z",
       "raw_snippet": "Official salary simulation calculator of the Israeli Ministry of Education for teaching staff (poh.education.gov.il).",
+      "confidence": "high"
+    },
+    {
+      "id": "ref-url-position-scope",
+      "claim": "Portal Ovdei Horaa page on position scope (heikef misra): how a teacher's position fraction is set and how it is combined across divisions.",
+      "claim_type": "url",
+      "source_url": "https://poh.education.gov.il/administrative/transaction-details/position-scope/",
+      "source_fetched_at": "2026-07-16T00:00:00Z",
+      "raw_snippet": "Portal Ovdei Horaa page on position scope (heikef misra): how a teacher's position fraction is set and how it is combined across divisions.",
       "confidence": "high"
     },
     {
