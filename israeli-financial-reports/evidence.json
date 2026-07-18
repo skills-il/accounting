@@ -9,7 +9,10 @@
       "source_url": "https://vatcalculator.co.il/",
       "raw_snippet": "שיעור המע\"מ הנוכחי בישראל עומד על 18%. שיעור זה בתוקף מאז ינואר 2025.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "vat-due-15-19-23",
@@ -17,7 +20,10 @@
       "source_url": "https://www.gov.il/he/service/reporting-or-payment-of-vat-reports",
       "raw_snippet": "מדווחים ומשלמים באופן מקוון נהנים מהטבה של עוד 4 ימי אשראי, ויכולים לדווח ולשלם עד ל-19 בכל חודש (במקום עד ל-15 בכל חודש). עוסקים החייבים בדיווח מפורט זוכים להארכה נוספת עם מועד אחרון לתשלום עד ה-23 בחודש העוקב.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "vat-cadence-threshold-1775000",
@@ -25,7 +31,10 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
       "raw_snippet": "עסקים שמחזור עסקאותיהם בשנה הקובעת (12 חודשים רצופים שמסתיימים ב-31 באוגוסט של שנת המס שחלפה) הוא עד 1,775,000 ₪ (1,775,000 ש\"ח) (נכון ל-01.01.2026) יגישו את הדו\"ח למע\"מ אחת לחודשיים; מי שמחזורו עולה על סכום זה מדווח אחת לחודש. הסכום המקביל לשנת 2025 היה 1,725,000 ₪.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pcn874-500k-2026",
@@ -33,7 +42,10 @@
       "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
       "raw_snippet": "As of 1 January 2026, self-employed individuals with annual turnover exceeding 500,000 NIS (500,000 ש\"ח) must file detailed VAT reports (PCN874 / טופס 6111). Companies became subject to this requirement starting September 2025. Detailed VAT reports must be filed by the 23rd of the following month. Cadence: עוסק אשר עד כה דיווח ושילם מע\"מ באופן דו-חודשי, ועתה חייב בדיווח מפורט, יעבור לדיווח ותשלום מע\"מ חד-חודשי (amir-cpa; cadence disputed vs gov.il pa280825-1). De-minimis aggregation: רשאי שלא לפרט את חשבוניות המס, שסכום כל אחת מהן לפני מע\"מ אינו עולה על 5,000 ש\"ח...יפרט בדוח את הסכום הכולל. Per the legislation, detailed reports must include for each invoice: מספרם הסידורי, הסמל שלהם...תאריכם, סכומם, וסכום המס הנובע מהם ... מספר הרישום של המוכר או של נותן השירות...ומספר הרישום של הקונה.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "osek-patur-ceiling-122833",
@@ -41,7 +53,10 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%A2%D7%95%D7%A1%D7%A7_%D7%A4%D7%98%D7%95%D7%A8",
       "raw_snippet": "מחזור העסקאות השנתי does not exceed 122,833 ₪ / 122,833 ש\"ח for 2026. עוסק פטור חייב להצהיר למע\"מ עד ל-31 בינואר בכל שנה על מחזור עסקאותיו. מי שסווג כעוסק פטור, אך מחזור העסקאות שלו גבוה מהסכום שצוין, צריך לגשת למשרד האזורי של מע\"מ.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "form-6111-300k",
@@ -49,7 +64,10 @@
       "source_url": "https://www.gov.il/he/service/itc6111",
       "raw_snippet": "Business owners whose annual turnover exceeds 300,000 NIS (300,000 ש\"ח, including VAT) are required by the Income Tax Ordinance to file Form 6111 (טופס 6111), which contains financial statement data (profit and loss statement, balance sheet, and tax adjustment report) in a uniform, detailed, and coded manner. The form consists of three main sections: a balance sheet, a profit and loss statement, and a tax adjustment report.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "corporate-tax-23",
@@ -57,7 +75,10 @@
       "source_url": "https://taxsummaries.pwc.com/israel/corporate/taxes-on-corporate-income",
       "raw_snippet": "The corporate tax rate is 23% in 2026 (same rate as in 2025).",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "accounting-standards-regime",
@@ -65,7 +86,10 @@
       "source_url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/",
       "raw_snippet": "All domestic entities which are governed by the Israeli Securities Law 1968, are required to apply IFRS Accounting Standards except for institutions... Private companies may apply either IFRS Accounting Standards or Israeli Accounting Standards. All SMEs (as defined in the IFRS for SMEs Accounting Standard as issued by the IASB) are permitted to use the IFRS for SMEs Accounting Standard.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "icpas-standards-source",
@@ -73,7 +97,10 @@
       "source_url": "https://www.icpas.org.il",
       "raw_snippet": "לשכת רו\"ח הינה הארגון היחיד של בעלי מקצוע חופשי בישראל העוסק בקביעת הנורמות והסטנדרטים של המקצוע",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "surtax-mas-yasaf",
@@ -81,7 +108,10 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
       "raw_snippet": "מי שהכנסתם השנתית עלתה על 721,560 ₪ חייבים במס בשיעור 3% בנוסף למדרגת המס הרגילה (47%). מס יסף הוא מס נוסף המוטל על יחידים בעלי הכנסה גבוהה, מעבר למס הרגיל.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "illustrative-example-figures",
@@ -89,7 +119,10 @@
       "source_url": "https://vatcalculator.co.il/",
       "raw_snippet": "Illustrative worked example at 18% VAT: 120,000 NIS sales x 18% = 21,600 NIS output VAT; 45,000 NIS purchases x 18% = 8,100 NIS input VAT; 21,600 - 8,100 = 13,500 NIS payable. Mirror in Hebrew: 120,000 ש\"ח, 45,000 ש\"ח, 21,600 ש\"ח, 8,100 ש\"ח, 13,500 ש\"ח, 1,000 ש\"ח. Computed from the verified standard rate שיעור המע\"מ הנוכחי בישראל עומד על 18%.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "vat-categories-zero-rated",
@@ -97,7 +130,10 @@
       "source_url": "https://www.agronet.co.il/%D7%9E%D7%A1-%D7%91%D7%A9%D7%99%D7%A2%D7%95%D7%A8-%D7%90%D7%A4%D7%A1-%D7%91%D7%9E%D7%9B%D7%99%D7%A8%D7%AA-%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA-%D7%A9%D7%9C%D7%90-%D7%A0/",
       "raw_snippet": "Fresh fruits and vegetables are subject to zero-rate VAT (מס בשיעור אפס / מע\"מ בשיעור אפס) when no processing has been done to them. According to VAT law, fresh fruits and vegetables are charged zero-rate VAT only if no processing has been done to them. Beyond the standard 18% rate, exports are zero-rated at 0% (still reportable) and certain supplies such as financial services are exempt; there is no reduced VAT rate. The 10% variance-highlight threshold used in the management-comparison example is an illustrative reporting convention, not a statutory figure.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-ifrs-foundation",
@@ -105,7 +141,10 @@
       "source_url": "https://www.ifrs.org",
       "raw_snippet": "Reference link in the skill's Reference table: IFRS Foundation https://www.ifrs.org for IFRS standards, mandatory for public companies and optional for private companies and SMEs in Israel.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-ita-vat",
@@ -113,7 +152,10 @@
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "Reference link in the skill's Reference table: Israel Tax Authority https://www.gov.il/he/departments/israel_tax_authority for VAT reporting and corporate tax filings.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-corporations-authority",
@@ -121,7 +163,10 @@
       "source_url": "https://www.gov.il/he/departments/israeli_corporations_authority",
       "raw_snippet": "Reference link in the skill's Reference table: Companies Registrar / רשות התאגידים https://www.gov.il/he/departments/israeli_corporations_authority for annual financial report obligations (דיווח שנתי לחברה). The Israeli Corporations Authority handles company annual reporting obligations on gov.il.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ref-openpyxl",
@@ -129,7 +174,10 @@
       "source_url": "https://openpyxl.readthedocs.io/en/stable/",
       "raw_snippet": "Reference link in the skill's Reference table: openpyxl documentation https://openpyxl.readthedocs.io/en/stable/ for writing styled XLSX reports from Python.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "income-tax-advances-mikdamot",
@@ -137,7 +185,10 @@
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "מקדמות מס הכנסה הן תשלומים תקופתיים שמשלמים עצמאים וחברות על חשבון המס השנתי. רשות המסים קובעת שיעור אחוזי מהמחזור שעל העסק לשלם מדי חודש או חודשיים. יש לדווח על מחזור ההכנסות ולשלם את המקדמה עד ה-15 בכל חודש (ומקוון עד ה-19).",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "domain-checklist-sources",
@@ -145,7 +196,31 @@
       "source_url": "https://www.kolzchut.org.il/he/הגשת_דוחות_תקופתיים_ותשלום_מס_ערך_מוסף",
       "raw_snippet": "Cadence threshold up to 1,775,000 ₪ / 1,775,000 ש\"ח (2026; 1,725,000 ₪ / 1,725,000 ש\"ח in 2025) → bi-monthly, above → monthly; the separate section 67a (סעיף 67א) detailed-filing threshold (1.67 million) is distinct. Authoritative source URLs in the checklist: https://www.kolzchut.org.il/he/הגשת_דוחות_תקופתיים_ותשלום_מס_ערך_מוסף ; https://www.gov.il/he/pages/vat-rate-amount-new ; https://www.gov.il/he/service/detailed-vat-reporting ; https://www.kolzchut.org.il/he/עוסק_פטור ; https://www.kolzchut.org.il/he/מדרגות_מס_הכנסה ; https://www.gov.il/he/pages/pa280825-1 ; https://www.amir-cpa.net/post/דיווח-מפורט-למע-מ-לעצמאי-מ-2026-חובות-והקלות ; https://www.btl.gov.il",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["references/domain-checklist.md"]
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-input-vat-2026",
+      "claim": "Israel Invoice Model (מודל חשבוניות ישראל): from 1 January 2026 input VAT on a tax invoice above the threshold is not deductible unless the invoice carries a valid Tax Authority allocation number (מספר הקצאה). Threshold before VAT: NIS 10,000 from 1 January 2026, dropping to NIS 5,000 from 1 June 2026.",
+      "source_url": "https://www.gov.il/he/departments/topics/israel-invoice/govil-landing-page",
+      "raw_snippet": "מספרי הקצאה אלה יידרשו כתנאי לניכוי מס התשומות בעסקאות שמעל לתקרה שנקבעה בחוק (20,000 ₪ לשנת 2025, 10,000 החל מה-1 בינואר 2026 ו-5,000 ₪ החל מה-1 ביוני 2026). 10,000 ש\"ח 5,000 ש\"ח NIS 10,000 NIS 5,000",
+      "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "osek-zeir-30-percent",
+      "claim": "An osek zeir (בעל עסק זעיר) with turnover up to the osek-patur ceiling (NIS 122,833 for 2026) may elect a flat 30%-of-turnover deemed-expense deduction for income tax instead of itemizing actual expenses, and files an abbreviated annual report.",
+      "source_url": "https://www.gov.il/he/pages/small-business-owner-income-tax",
+      "raw_snippet": "בעל עסק זעיר 30% מהמחזור ניכוי הוצאות רעיוניות מס הכנסה דוח מקוצר",
+      "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }

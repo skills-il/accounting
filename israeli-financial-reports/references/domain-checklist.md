@@ -31,6 +31,11 @@ output would be CORRECT and submission-appropriate for a real small business or 
    Source: https://www.gov.il/he/service/itc6111
 8. **Trial balance must balance (debits = credits) before deriving statements.**
    Source: standard double-entry accounting (Israeli Income Tax bookkeeping directives, הוראות ניהול ספרים).
+9. **Allocation-number (מספר הקצאה) gate on input VAT (Israel Invoice Model, 2026):** input VAT on
+   an above-threshold tax invoice is not deductible without a valid allocation number; pre-VAT
+   threshold 10,000 ₪ from 1 Jan 2026, 5,000 ₪ from 1 Jun 2026. Exclude such invoices' input VAT
+   from the VAT summary or it overstates the deductible input VAT.
+   Source: https://www.gov.il/he/departments/topics/israel-invoice/govil-landing-page
 
 ## Should cover (improves correctness / completeness, but absence won't actively mislead a filer)
 

@@ -21,7 +21,7 @@ Determine the business entity type before generating any report. Each type has d
 
 Confirm the reporting period: monthly, bi-monthly (for VAT), quarterly, or annual.
 
-Alongside VAT, an Osek Murshe or Chevra typically also files periodic income-tax advance payments (mikdamot, usually a percentage of turnover set by the Tax Authority) on the same gov.il portal. This skill produces the financial figures behind those reports; it does not perform the advance filing itself.
+Alongside VAT, an Osek Murshe or Chevra typically also files periodic income-tax advance payments (mikdamot, usually a percentage of turnover set by the Tax Authority) on the same gov.il portal. A self-employed osek separately pays periodic National Insurance (Bituach Leumi) contributions on their own account, a distinct mandatory obligation from VAT and the income-tax mikdamot. This skill produces the financial figures behind those reports; it does not perform the advance filing itself.
 
 ### Step 2: Gather Financial Data
 
@@ -116,6 +116,8 @@ Net Profit (Revach Naki)             145,376.00      127,435.00
 
 Apply the current Israeli corporate tax rate (23% as of 2026) for Chevra entities. For an Osek Murshe or other non-corporate entity, the profit flows to the owner's personal income tax: use the current income-tax bracket table (see Kol Zchut, Madregot Mas Hachnasa) rather than a single rate, and note that the high-income surtax (Mas Yasaf) applies on top of the regular brackets for high earners. Do not hardcode a stale bracket table; pull the live figures from the source.
 
+**Osek zeir (small-business) election:** a registered osek zeir (turnover up to the same 122,833 ceiling) may ELECT a flat 30%-of-turnover deemed-expense deduction in place of itemizing actual expenses, and files an abbreviated annual report. It is an election: the taxpayer takes whichever is larger, the 30% deemed deduction or their itemized actual expenses. So for such a taxpayer, do NOT automatically tax the actual P&L profit above, tax on the elected basis.
+
 ### Step 5: Generate the Balance Sheet (Maazan)
 
 Structure according to Israeli format with assets on one side, liabilities and equity on the other:
@@ -174,6 +176,34 @@ Use the indirect method as standard in Israeli reporting:
 2. **Investing Activities (Peulot Hashkaa)**: Capital expenditures, asset sales, investment purchases.
 3. **Financing Activities (Peulot Mimun)**: Loan proceeds/repayments, equity contributions, dividend payments.
 
+Illustrative indirect-method reconciliation (standalone example, NIS):
+
+```
+Doch Tazrim Mezumanim / Cash Flow Statement (indirect method)
+
+Operating Activities:
+  Net Profit                              145,376
+  Add: Depreciation (non-cash)             22,000
+  Increase in Accounts Receivable         (15,200)
+  Increase in Accounts Payable             13,800
+  Increase in Accrued + Tax Payable         8,659
+                                        ----------
+  Net Cash from Operating                 174,635
+
+Investing Activities:
+  Purchase of Equipment                   (20,000)
+
+Financing Activities:
+  Net Loan Proceeds                          1,196
+  Dividend Paid                          (100,000)
+                                        ----------
+  Net Cash from Financing                 (98,804)
+                                        ----------
+Net Increase in Cash                       55,831
+```
+
+Each worked block above (trial balance, P&L, balance sheet, this cash flow) is a standalone illustration using a different sample business; they are not meant to reconcile to one another.
+
 ### Step 7: Generate VAT Summary Report (Doch Maam)
 
 For Osek Murshe and Chevra, prepare the VAT summary:
@@ -199,6 +229,8 @@ Due Date: January 19, 2026 (online; 15th for paper)
 **Reporting cadence and deadlines:** the online (mekuvan) filing deadline is the 19th of the following month; paper filers must file by the 15th. Detailed (PCN874) filers get until the 23rd.
 
 **Detailed VAT reporting (PCN874):** as of 1 January 2026, a self-employed/individual Osek with annual turnover above 500,000 NIS must file the detailed PCN874 report (companies and partnerships with a corporate partner have been required since September 2025). Detailed filers face a 23rd-of-month deadline and per-period detailed reporting; whether the cadence is monthly or bi-monthly depends on the filer's existing classification (sources differ, so confirm against the filer's own VAT registration). The file lists per-invoice detail: invoice number, date, amount, VAT amount, and the counterparty's Osek (registration) number. From 2026, a self-employed detailed filer may aggregate (rather than itemize) tax invoices under 5,000 NIS pre-VAT as long as the combined total is stated.
+
+**Allocation-number (mispar haktza'a) gate on input VAT (Israel Invoice Model, 2026):** input VAT on a tax invoice ABOVE the threshold is NOT deductible unless the invoice carries a valid Tax Authority allocation number. Threshold (pre-VAT): NIS 10,000 from 1 January 2026, dropping to NIS 5,000 from 1 June 2026. Before summing Input VAT (Maam Tsumot) for the period, verify that every above-threshold supplier invoice has a valid allocation number and EXCLUDE the input VAT of any that do not. Otherwise the VAT summary overstates the deductible input VAT and understates the VAT payable, a real 2026 compliance error.
 
 ### Step 8: Format and Export
 

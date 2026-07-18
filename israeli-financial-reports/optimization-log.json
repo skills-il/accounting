@@ -17,6 +17,19 @@
         "Add worked cash-flow + notes-to-statements templates for a chevra next cycle.",
         "PCN874 detailed-filer cadence (monthly vs bi-monthly) is genuinely disputed across sources; kept hedged until gov.il clarifies."
       ]
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-07-18",
+      "lessons": [
+        "Zero figure drift: VAT cadence 1,775,000 (2026), corporate 23%, VAT 18%, Form 6111 >300k incl VAT, osek patur 122,833, deadlines 15/19/23, PCN874 500k all confirmed current.",
+        "CRITICAL (expert): added the allocation-number (מספר הקצאה) input-VAT gate to the Step 7 VAT summary. From 2026 input VAT on an above-threshold tax invoice (10,000 pre-VAT from Jan, 5,000 from 1 Jun) is non-deductible without a valid allocation number; Step 7 previously summed all input VAT and could overstate the deductible amount / understate VAT payable.",
+        "MAJOR (expert): added self-employed National Insurance as a named periodic obligation (was omitted while VAT/mikdamot/PCN874 were listed); added a worked indirect-method cash-flow example (closes the 2-cycle-deferred cash-flow-template gap) with a note that each worked block is a standalone illustration.",
+        "Added the osek-zeir 30%-of-turnover deemed-expense election to the Step 4 tax line; reworded to make clear it is an election (taxpayer takes the higher of the 30% deemed deduction or itemized actual).",
+        "Judge caught an evidence-integrity error: the allocation-number claim cited the WRONG gov.il URL (pa130725-2 is the 500k PCN874 notice, has no allocation-number text). Fixed to the israel-invoice landing page with the verbatim gov.il quote ('...10,000 החל מה-1 בינואר 2026 ו-5,000 ₪ החל מה-1 ביוני 2026'). Lesson: match the source page to the exact fact, not an adjacent-topic gov.il notice.",
+        "Added the allocation-number as a Must-cover checklist item (rubric was lagging the body); fixed a HE doubled-word typo ('רווח הרווח').",
+        "Deferred MINOR: notes-to-financial-statements template; show the balance-sheet retained-earnings roll-forward / dividend line so equity articulates; withholding-tax-at-source presentation; whole-shekel VAT-filing rounding note."
+      ]
     }
   ]
 }
