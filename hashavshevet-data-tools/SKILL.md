@@ -19,7 +19,7 @@ compatibility: Requires Python 3.9+ with openpyxl and chardet libraries
 
 > **Hashavshevet בענן (H-WEB / Wizcloud) public REST API.** The cloud version of Hashavshevet exposes a public REST API for documents, accounts, and transactions: <https://home.wizcloud.co.il/help/apidocument/>. Use this for ongoing two-way sync with Green Invoice / Rivhit / iCount instead of one-shot file dumps where possible.
 
-> **SHAAM allocation-number context (2026).** Sales-invoice journal entries created/imported through Hashavshevet for B2B amounts at or above the current threshold must carry an allocation number (mispar haktza'a). Threshold (VAT excluded): NIS 10,000 since January 2026. NIS 5,000 since 1 June 2026. An above-threshold tax invoice WITHOUT a valid allocation number cannot be used by the counterparty to deduct input VAT, so treat a missing allocation number as a hard validation error, not a soft "incomplete" warning. Hashavshevet בענן has built-in real-time SHAAM integration; the Windows version may need a separate workflow.
+> **SHAAM allocation-number context (2026).** Sales-invoice journal entries created/imported through Hashavshevet for B2B amounts exceeding the current threshold must carry an allocation number (mispar haktza'a). Threshold (VAT excluded): NIS 10,000 since January 2026 and NIS 5,000 since 1 June 2026. The requirement is date-dependent (phased in with a descending threshold), so when validating HISTORICAL or migrated invoices, scope the check to each invoice's own date against the threshold in force on that date, and skip invoices dated before the requirement began. Do NOT blanket-reject older invoices that never needed an allocation number. An above-threshold tax invoice WITHOUT a valid allocation number cannot be used by the counterparty to deduct input VAT, so treat a missing allocation number as a hard validation error, not a soft "incomplete" warning. On the buying side, capture and retain the allocation number printed on each above-threshold supplier invoice and carry it into the ledger and PCN874, that is what protects your client's own input-VAT deduction. Hashavshevet בענן has built-in real-time SHAAM integration; the Windows version may need a separate workflow.
 
 ### Step 1: Identify the Hashavshevet version and file format
 
@@ -168,7 +168,7 @@ def export_to_excel(records: list[dict], output_path: str, sheet_name: str = 'Da
 
 ### Step 5: Import data into Hashavshevet format
 
-When importing data into Hashavshevet, generate fixed-width files matching the expected layout:
+When importing data into Hashavshevet, generate fixed-width files matching the expected layout. **Caution:** the column maps here are the same best-guess heuristics flagged in the Instructions block, not an authoritative spec, and importing mis-aligned fixed-width data into a live company can corrupt the books. Prefer Hashavshevet's own documented import interface/template, and always test a generated file against a COPY of the company file first, never the live one.
 
 ```python
 def generate_hashavshevet_import(records: list[dict], columns: dict, output_path: str):
@@ -209,6 +209,7 @@ When migrating from Hashavshevet to cloud-based accounting solutions:
 - Where the target system supports it, import the native BKMV uniform file directly (יבוא נתונים מקובץ במבנה אחיד). Rivhit and other cloud systems accept the uniform file as-is. This is preferred over hand-mapped CSV/Excel because it preserves document-number continuity and the ITA-defined field structure.
 - Preserve document-numbering continuity (מספר עוקב) across the cutover so each document type keeps an unbroken running number.
 - Reconcile the new system's opening trial balance to the old system's closing trial balance before going live; investigate any difference rather than rounding it away.
+- The OPENFORMAT/BKMV uniform file does NOT contain payroll/salary records, only the bookkeeping and document data. A full company migration must separately extract payroll history (via Hashavshevet's payroll module / the annual payroll-reporting workflow); relying on the uniform file alone silently drops payroll.
 
 **iCount migration:**
 - Export chart of accounts, then map account numbers to iCount categories
@@ -233,12 +234,12 @@ When migrating from Hashavshevet to cloud-based accounting solutions:
 
 Two ITA filings are commonly produced from Hashavshevet data. Both are software-independent specs, so generate them from an OPENFORMAT export rather than from heuristic binary parsing:
 
-- **PCN874 (דוח מפורט מע"מ, detailed VAT report)**: a fixed-structure text file, NOT a flat invoice list. It starts with a header/opening record (the business osek number, the reporting period, and totals/counts), followed by detail records that are keyed by transaction-type code, sales/output transactions (עסקאות) versus input transactions (תשומות, plus special types such as import entries). For an input transaction the supplier's osek number is mandatory or the input VAT cannot be deducted. Detailed VAT reporting is obligatory only above the turnover threshold (for an individual osek, annual turnover above NIS 500,000 from 1 January 2026). A bookkeeper exports it monthly or bi-monthly and uploads it to the ITA, which cross-references input VAT against output VAT. Hashavshevet has a built-in PCN874 export. Spec lives on the ITA site (see Reference Links).
+- **PCN874 (דוח מפורט מע"מ, detailed VAT report)**: a fixed-structure text file, NOT a flat invoice list. It starts with a header/opening record (the business osek number, the reporting period, and totals/counts), followed by detail records that are keyed by transaction-type code, sales/output transactions (עסקאות) versus input transactions (תשומות, plus special types such as import entries). For an input transaction the supplier's osek number is mandatory or the input VAT cannot be deducted. Detailed VAT reporting is obligatory only above the turnover threshold (for an individual osek, annual turnover above NIS 500,000 from 1 January 2026). Two individual-osek reliefs apply: (a) tax invoices whose pre-VAT amount is NIS 5,000 or less may be reported as a single combined total rather than itemized line by line; (b) the osek may apply to their regional VAT office to defer the obligation to 1 January 2027 if, on their 2025 returns, at least 90% of input-VAT invoices were each NIS 5,000 or less. A bookkeeper exports it monthly or bi-monthly and uploads it to the ITA, which cross-references input VAT against output VAT. Hashavshevet has a built-in PCN874 export. Spec lives on the ITA site (see Reference Links).
 - **Form 6111 (טופס 6111, דוח התאמה למס, tax-adjustment report)**: an annex to the annual tax return carrying profit-and-loss, balance-sheet, and tax-adjustment data, filed online. A bookkeeper or CPA exports the trial balance from Hashavshevet, maps each account to the 6111 line codes, and submits the annex. Confirm the current line codes against the ITA's year-specific 6111 spec (see Reference Links).
 
 ### Step 7: Validate data integrity
 
-After any import or export operation, validate data integrity:
+After any import or export operation, validate data integrity. **Caveat on `validate_trial_balance` below:** in the paired debit+credit-per-row PKUDOT format it sums the same `amount` into both totals, so it is balanced by construction and CANNOT catch sign flips, wrong amounts, transposed digits, or a missing counter-leg. Treat it as a coarse smoke test only. Real balancing must come from the ITA file-check simulator (for an OPENFORMAT export) or a B100 debit-vs-credit movement check, not from this function, and do not present its "balanced" result to an auditor as assurance.
 
 ```python
 def validate_trial_balance(records: list[dict]) -> dict:
@@ -303,7 +304,7 @@ User says: "I downloaded bank transactions from Leumi as a CSV. I need to conver
 Actions:
 1. Read the Bank Leumi CSV file (UTF-8 with BOM)
 2. Map bank CSV columns to Hashavshevet PKUDOT fields: date to `entry_date`, description to `description`, amount to `amount`, reference number to `reference`
-3. Assign debit/credit accounts based on transaction direction (positive = debit bank account / credit income, negative = credit bank account / debit expense)
+3. Assign debit/credit accounts based on transaction direction, but do NOT treat the bank-line sign as a reliable income/expense classifier. A deposit is often a customer receipt against A/R (or a loan, VAT refund, owner capital, inter-account transfer), and a withdrawal is often a supplier payment against A/P (or salary, drawings, loan repayment), not P&L. Post receipts and payments against the open A/R / A/P sub-ledger unless the line is verified as income or expense; blindly crediting income on every deposit double-counts revenue for any accrual-basis business and misstates income tax
 4. Generate sequential entry numbers and assign to the current batch
 5. Format dates from YYYY-MM-DD (bank format) to DD/MM/YYYY (Hashavshevet format)
 6. Write the output as a fixed-width `.dat` file in Windows-1255 encoding

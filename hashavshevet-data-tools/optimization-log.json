@@ -1,0 +1,24 @@
+{
+  "skill": "hashavshevet-data-tools",
+  "cycles": [
+    {
+      "date": "2026-07-18",
+      "from_version": "1.2.0",
+      "to_version": "1.3.0",
+      "type": "minor",
+      "summary": "Zero fact drift verified (allocation-number threshold NIS 5,000 since 1 Jun 2026 is the FINAL step, no further reduction; PCN874 500k turnover threshold; OPENFORMAT record types; retention; Wizcloud API all confirmed current 2026-07-18). Added PCN874 individual-osek reliefs (invoices <=5,000 combined-total; defer-to-2027 if >=90% of 2025 input invoices <=5,000), a note that OPENFORMAT/BKMV excludes payroll, and input-invoice allocation-number capture. Then applied 4 expert-flagged MAJOR safety fixes in the heuristic/validator lane.",
+      "changes": [
+        "SKILL.md + SKILL_HE.md: PCN874 individual-osek reliefs (Step 6.5); BKMV-excludes-payroll note (Step 6); capture allocation number on input invoices (SHAAM note); version 1.2.0 -> 1.3.0.",
+        "Expert MAJOR fixes: (1) bank-line sign is NOT a reliable income/expense classifier - post against A/R/A/P sub-ledger, avoid double-counting revenue; (2) allocation-number validation is date-scoped to the invoice date vs the threshold in force, do not blanket-reject historical migration data; (3) validate_trial_balance is balanced-by-construction in the paired PKUDOT format - flagged as coarse smoke test, real balancing via the ITA simulator / B100; (4) fixed-width import caveat - heuristic offsets, test on a copy first, prefer documented import.",
+        "MINOR: 'at or above' -> 'exceeding' at the 5,000 boundary; SKILL_HE frontmatter version 1.2.0->1.3.0 + added gemini-cli to match metadata.json.",
+        "evidence.json: added pcn874-individual-osek-reliefs claim (gov.il/he/pages/pa280825-1)."
+      ],
+      "deferrals": [
+        "MINOR: update the two misim.gov.il links to the canonical secapp.taxes.gov.il host (they still 302-resolve, so not broken yet).",
+        "MINOR: note LF-vs-CRLF line terminators + exact record length for generated import files.",
+        "MINOR: reframe BKMV in Example 4 as an on-demand audit/derivation export, not a routine periodic upload like PCN874.",
+        "MINOR: state the ITA submission-portal file-size cap on BKMVDATA.TXT concretely."
+      ]
+    }
+  ]
+}

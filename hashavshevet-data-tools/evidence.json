@@ -9,7 +9,10 @@
       "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
       "raw_snippet": "In 2026, the threshold will be reduced to NIS 10,000 (before VAT) from January 1.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "shaam-threshold-5000-jun-2026",
@@ -17,7 +20,10 @@
       "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
       "raw_snippet": "From June 1, 2026, the threshold will be further reduced to NIS 5,000 (before VAT).",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "shaam-threshold-5000-grant-thornton",
@@ -25,7 +31,10 @@
       "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
       "raw_snippet": "החל מיום 1.6.2026 תורחב החובה לקבל מספר הקצאה לחשבונית מס, כך שתחול על עסקאות שסכומן עולה על 5,000 ש\"ח",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openformat-files-ini-bkmvdata",
@@ -33,7 +42,10 @@
       "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
       "raw_snippet": "הקובץ INI.TXT יכיל רשומה מובילה אחת ורשומות סיכום",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openformat-bkmvdata-opening-closing",
@@ -41,7 +53,10 @@
       "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
       "raw_snippet": "הקובץ BKMVDATA.TXT יכיל את נתוני בית העסק. בקובץ זה תהיה רשומת פתיחה אחת",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openformat-record-a100-z900",
@@ -49,7 +64,10 @@
       "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
       "raw_snippet": "מבנה רשומת פתיחה - A100",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openformat-a000-ini",
@@ -57,7 +75,10 @@
       "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
       "raw_snippet": "צריך להיות זהה לשדה \"סך רשומות כולל\" ברשומת סגירה",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "bkmv-zip-three-files",
@@ -65,7 +86,10 @@
       "source_url": "https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf",
       "raw_snippet": "README.TXT .3 - פרטים כלליים: בית העסק עבורו הופקו הקבצים, טווח התאריכים, שורת סיכום עבור כל",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openformat-record-c100-d110-d120",
@@ -73,7 +97,10 @@
       "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
       "raw_snippet": "מבנה רשומת \"כותרת מסמך\" ( HEADER ) C100 -",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openformat-record-b100-b110-m100",
@@ -81,7 +108,10 @@
       "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
       "raw_snippet": "מבנה רשומת \"תנועות בהנהלת חשבונות\" B100 -",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openformat-spec-horaot131",
@@ -89,7 +119,10 @@
       "source_url": "https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf",
       "raw_snippet": "הוראות להפקת קבצי במבנה אחיד - רשות המסים בישראל",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ita-file-check-simulator",
@@ -97,7 +130,10 @@
       "source_url": "https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
       "raw_snippet": "סימולטור הפקת קבצים - רשות המסים בישראל",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ita-file-check-simulator-govil",
@@ -105,7 +141,10 @@
       "source_url": "https://www.gov.il/he/service/file-review-simulator",
       "raw_snippet": "סימולטור לבדיקת קובץ במבנה אחיד לרישום תוכנה במס הכנסה",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "herp-bkmv-guide",
@@ -113,7 +152,10 @@
       "source_url": "https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf",
       "raw_snippet": "INI.TXT .1 - נתונים כלליים על בית העסק ועל תהליך הפקת הנתונים",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "hashavshevet-wizsoft-herp",
@@ -121,7 +163,10 @@
       "source_url": "https://www.h-erp.co.il",
       "raw_snippet": "חשבשבת H-ERP: תוכנה לניהול עסק, ניהול פיננסי, ניהול קשרי לקוחות, CRM",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "wizcloud-rest-api",
@@ -129,7 +174,10 @@
       "source_url": "https://home.wizcloud.co.il/help/apidocument/",
       "raw_snippet": "מערכת API מאפשרת לגורם שלישי (תוכנה אחרת בד\"כ) גישה לנתוני החברה של הלקוח",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pcn874-detailed-vat",
@@ -137,7 +185,10 @@
       "source_url": "https://home.wizcloud.co.il/help/pcn874/",
       "raw_snippet": "דוח זה מפרט, בין היתר, את חשבוניות המס שהעסק הפיק ואת חשבוניות המס שהעסק קיבל",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "form-6111",
@@ -145,7 +196,10 @@
       "source_url": "https://www.gov.il/BlobFolder/service/reporting-and-payment-2025-annual-tax-report-for-individuals/he/Service_Pages_Income_tax_annual-report-2026_6111-2025-ACC.pdf",
       "raw_snippet": "נספח לטופס הדוח השנתי ליחיד( 1) ולחבר בני אדם( 2) לשנת המס 2025",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "form-6111-govil-service",
@@ -153,7 +207,10 @@
       "source_url": "https://www.gov.il/he/service/itc6111",
       "raw_snippet": "נספח לדו\"ח השנתי - טופס 6111",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ita-department-govil",
@@ -161,7 +218,9 @@
       "source_url": "https://www.gov.il/en/departments/israel_tax_authority",
       "raw_snippet": "Israel Tax Authority",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md"]
+      "appears_in": [
+        "SKILL.md"
+      ]
     },
     {
       "claim_id": "ita-department-govil-he",
@@ -169,7 +228,9 @@
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "רשות המסים",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL_HE.md"]
+      "appears_in": [
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "cp1255-windows-1255",
@@ -177,7 +238,10 @@
       "source_url": "https://unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1255.TXT",
       "raw_snippet": "cp1255 to Unicode table",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "icount-cloud-accounting",
@@ -185,7 +249,10 @@
       "source_url": "https://www.icount.co.il/blog/invoice-israel/",
       "raw_snippet": "חשבוניות ישראל - איך להוציא מספר הקצאה לחשבונית מס [מעודכן ל-2026] - iCount",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "rivhit-cloud-accounting",
@@ -193,7 +260,10 @@
       "source_url": "https://www.rivhit.co.il/knowledgebase/%D7%99%D7%91%D7%95%D7%90-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9E%D7%A7%D7%95%D7%91%D7%A5-%D7%91%D7%9E%D7%91%D7%A0%D7%94-%D7%90%D7%97%D7%99%D7%93/",
       "raw_snippet": "יבוא נתונים מקובץ במבנה אחיד - ריווחית - פתרונות לניהול עסקים",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "invoice4u-cloud-accounting",
@@ -201,7 +271,10 @@
       "source_url": "https://www.invoice4u.co.il/blog/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2%D7%9E-%D7%93%D7%99%D7%95%D7%95%D7%97-874/",
       "raw_snippet": "דיווח מפורט למע\"מ (דיווח 874) - Invoice4u חשבוניות אונליין",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "green-invoice-cloud-accounting",
@@ -209,7 +282,10 @@
       "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
       "raw_snippet": "מודל חשבוניות ישראל: מספר הקצאה (מדריך מעודכן ל-2026)",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pcn874-structure-sales-inputs",
@@ -217,7 +293,10 @@
       "source_url": "https://www.rivhit.co.il/uploaded_files/documents/pcn874_manual_U1231.pdf",
       "raw_snippet": "קיזוז מע\"מ תשומות : כאשר מתקבלת חשבונית מספק ובית העסק מבקש לקזז את מע\"מ התשומות, חלה חובה לרשום את מספר העוסק מורשה של הספק",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pcn874-opening-record",
@@ -225,7 +304,10 @@
       "source_url": "https://www.rivhit.co.il/uploaded_files/documents/pcn874_manual_U1231.pdf",
       "raw_snippet": "לא נמצאה רשומת פתיחה בקובץ מספר",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pcn874-turnover-threshold-2026",
@@ -233,7 +315,10 @@
       "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
       "raw_snippet": "חובת הגשת דוח תקופתי מפורט למע\"מ על ידי עוסק שהוא יחיד, קרי עצמאי, אשר מחזור עסקאותיו עולה על 500,000 ש\"ח תחול החל מיום 1.1.2026",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "allocation-number-input-vat-blocked",
@@ -241,7 +326,10 @@
       "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
       "raw_snippet": "המשך העסקה ללא קבלת מספר הקצאה לחשבונית המס. במקרה זה לא יוכל מקבל החשבונית לנכות את מס התשומות בגינה.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "records-retention-7-years",
@@ -249,7 +337,10 @@
       "source_url": "https://www.shrcpa.co.il/the-retention-period-for-the-system-of-accounts-and-other-documents",
       "raw_snippet": "את מערכת החשבונות חובה לשמור במשך 7 שנים מתום שנת המס שאליה היא מתייחסת",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openpyxl-lib",
@@ -257,7 +348,10 @@
       "source_url": "https://openpyxl.readthedocs.io/en/stable/",
       "raw_snippet": "openpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pandas-io",
@@ -265,7 +359,21 @@
       "source_url": "https://pandas.pydata.org/docs/reference/io.html",
       "raw_snippet": "Read a comma-separated values (csv) file into DataFrame",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-individual-osek-reliefs",
+      "claim": "PCN874 individual-osek reliefs (ITA notice pa280825-1): a tax invoice whose pre-VAT amount is NIS 5,000 or less may be reported as a single combined total rather than itemized; and an osek may apply to the regional VAT office to defer the detailed-reporting obligation to 1 January 2027 if at least 90% of the input-VAT invoices on their 2025 returns were each NIS 5,000 or less. Turnover threshold for the obligation is NIS 500,000 for an individual osek from 1 January 2026.",
+      "source_url": "https://www.gov.il/he/pages/pa280825-1",
+      "raw_snippet": "דוח מפורט עוסק יחיד מחזור 500,000 90% 5,000 1.1.2027 חשבוניות תשומות",
+      "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
