@@ -53,16 +53,16 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 **Partially deductible expenses**:
 - **Vehicle expenses (higher-of rule)**: Fuel, licensing, compulsory + comprehensive insurance, leasing, repairs, parking, tolls, and depreciation. Per תקנות מס הכנסה (ניכוי הוצאות רכב) התשנ"ה-1995, the deductible amount is the HIGHER of [running expenses minus שווי שימוש (use-value)] OR [45% of running expenses]. The common "just take 45%" shortcut is wrong whenever the running-minus-use-value figure is larger. Note: שווי שימוש is NOT a computed or receipt-based number, it is a FIXED monthly amount the Tax Authority sets per vehicle from the official price-group (קבוצת מחיר) table, or for vehicles from 2010 onward as a percentage of the list price (currently 2.48%); look it up via the ITA שווי שימוש calculator so the higher-of branch is actually computable. Hard statutory condition: the user must record odometer (ק"מ) readings at the start and end of the tax year, or the deduction can be disqualified. Applies to a single vehicle used for business; a second vehicle is 0% unless proven business-essential.
 - **Mobile phone (טלפון נייד)**: Not a flat 80%. Per תקנות מס הכנסה (ניכוי הוצאות מסוימות) תשל"ב-1972, only the portion ABOVE the lower of 1,380 NIS per year (~115 NIS/month) or 50% of the expense is deductible, which acts as an effective ~50% disallowance floor.
-- **Landline from home (טלפון קווי מהבית)**: Deductible is the LOWER of 80% of the expense OR the amount exceeding 2,700 NIS (2025), within an annual ceiling of 26,600 NIS.
+- **Landline from home (טלפון קווי מהבית)**: Deductible is the LOWER of 80% of the expense OR the amount exceeding 2,700 NIS (2026, unchanged), within an annual ceiling of 26,600 NIS.
 - **Internet**: No fixed percentage. Split by actual business-use proportion (for a home connection, use the same business-use share as the home office).
 - **Home office (proportional)**: Deduct the percentage of home used exclusively for business. Calculate: (office area / total home area) x 100. Apply this percentage to rent, arnona, electricity, internet, and maintenance.
 - **Meals and entertainment** (correct rule, often misapplied):
   - **Hospitality / business meals with Israeli clients (אירוח בארץ): 0% deductible.** Per תקנות ניכוי הוצאות מסויימות 1972 reg. 2(1), hosting Israeli clients/partners is disallowed regardless of receipts. Coffee with a client at Aroma is **not** an 80% expense.
   - **Hospitality with foreign guests visiting Israel (אירוח אורחי חוץ)**: deductible up to a "reasonable" amount with proper documentation of the foreign guest.
   - **Light refreshments at the workplace (כיבוד קל)**: up to 80% deductible per ITA practice (coffee/tea/snacks for staff and visitors at the office).
-  - **Foreign-business-trip meals (אש"ל לחו"ל)**: 50% of documented meal cost. Per-diem caps (2025): roughly $97/day when lodging is claimed separately, or roughly $162/day when lodging is not claimed separately.
+  - **Foreign-business-trip meals (אש"ל לחו"ל)**: 50% of documented meal cost. Per-diem "other expenses" caps (2026): roughly $102/day when lodging is claimed separately, or roughly $171/day when lodging is not claimed separately.
   - Meals during a regular workday for the self-employed person alone: not deductible.
-- **Gifts to clients**: Up to 240 NIS per recipient per year (2025) for gifts given in Israel, and up to $15 USD per foreign recipient per year, per תקנות ניכוי הוצאות מסויימות 1972.
+- **Gifts to clients**: Up to 240 NIS per recipient per year (2026, unchanged) for gifts given in Israel, and up to $15 USD per foreign recipient per year, per תקנות ניכוי הוצאות מסויימות 1972.
 
 **Non-deductible expenses (0%)**:
 - Personal clothing (unless uniforms or protective gear)
@@ -72,10 +72,18 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - Life insurance premiums (unless keyman insurance for business)
 - Political donations
 
+**Self-employed retirement and insurance deductions (PERSONAL annual-return deductions, often missed)**:
+These are the self-employed filer's OWN deductions, claimed on the annual return (the nispach to Form 1301), NOT business-expense (P&L) lines. Do NOT book them to the chart of accounts below, account 68 "pension" there is for EMPLOYEES' pension (an employer cost); booking your own pension or keren hishtalmut as a business expense misstates profit and risks double-counting when the accountant also claims the personal deduction. They are also distinct from the ordinary life insurance listed as non-deductible above:
+- Contributions to a self-employed keren hishtalmut (קרן השתלמות לעצמאי) are income-tax deductible up to a cap based on determining income (hachnasa kovaat), roughly 4.5% (Sec. 17(5a) of the Ordinance).
+- Of the self-employed person's OWN National Insurance, exactly 52% of the ביטוח לאומי (National Insurance) component is income-tax deductible (Sec. 47A); the health-tax component (דמי ביטוח בריאות) is NOT deductible at all. A self-employed Bituach Leumi bill bundles both, so apply the 52% to the NI portion only, the annual Bituach Leumi certificate (ishur) pre-computes the deductible base. This is the filer's own contribution, not employee withholding, so do NOT treat it as out-of-scope payroll.
+- Loss-of-work-capacity insurance (ביטוח אובדן כושר עבודה) is deductible up to an income-based cap.
+- Self-employed pension contributions (kupat gemel / keren pensia) earn a deduction (Sec. 47) and a separate tax credit (Sec. 45A) up to caps.
+Confirm the exact caps with the accountant, they interact and are all capped against income.
+
 **Special rules**:
 - **Higher-value equipment**: Recognized through depreciation over its useful life rather than immediately (computers: 33% per year, office furniture: 6% per year). Low-value items are taken as an immediate expense; ~1,200 ILS is a common working threshold for flagging which items to treat as low-value, confirm the current figure with your accountant.
 - **Depreciation of vehicles**: 15% per year applied to the vehicle cost; the deductible portion of that depreciation is itself folded into the 45% higher-of running-cost rule above.
-- **Travel abroad**: Fully deductible if business purpose is documented. Per diem rules apply: accommodation receipts required, meal allowance up to the daily caps noted above (~$97/$162 per day, meals 50%).
+- **Travel abroad**: Fully deductible if business purpose is documented. Per diem rules apply: accommodation receipts required, meal allowance up to the daily caps noted above (~$102/$171 per day, meals 50%).
 - **Work clothing**: Deductible only if branded, protective, or required uniform. Regular business attire is not deductible.
 
 **VAT (Osek Murshe only)**:

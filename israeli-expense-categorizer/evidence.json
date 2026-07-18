@@ -9,7 +9,11 @@
       "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
       "raw_snippet": "החלק הלא מוכר השנתי הינו בגובה של 1,380 ש\"ח, או בגובה מחצית ההוצאות לפי הנמוך",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json"
+      ]
     },
     {
       "claim_id": "phone-landline",
@@ -17,7 +21,10 @@
       "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
       "raw_snippet": "הוצאות טלפון שנתיות שלא עלו על 26,600 ש\"ח, יותרו 80% מההוצאות, או סכום ההוצאה העולה על 2,700 ש\"ח לפי הנמוך",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "vehicle-higher-of",
@@ -25,7 +32,11 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
       "raw_snippet": "סכום הוצאות החזקת רכב בניכוי שווי השימוש ברכב...או סכום בגובה 45% מהוצאות החזקת הרכב, לפי הגבוה",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json"
+      ]
     },
     {
       "claim_id": "vehicle-odometer",
@@ -33,7 +44,10 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
       "raw_snippet": "קריאת המונה בק\"מ בתחילת שנת המס ובסופה",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "vehicle-vat-purchase",
@@ -41,7 +55,11 @@
       "source_url": "https://www.gov.il/he/pages/instructions-for-deduction-of-input-tax-for-vehicles-and-motorcycles",
       "raw_snippet": "תקנה 14(א) לתקנות מס ערך מוסף אוסרת על העוסקים לנכות את מס התשומות עבור רכישה או יבוא של רכב פרטי",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json"
+      ]
     },
     {
       "claim_id": "vehicle-vat-running",
@@ -49,7 +67,11 @@
       "source_url": "https://www.bshcpa.co.il/%D7%AA%D7%A7%D7%A0%D7%94-18-%D7%A7%D7%99%D7%96%D7%95%D7%96-%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA/",
       "raw_snippet": "רשאי העוסק לנכות שני שלישים ממס התשומות ... רשאי העוסק לנכות רבע ממס התשומות",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json"
+      ]
     },
     {
       "claim_id": "client-meals-zero",
@@ -57,7 +79,10 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
       "raw_snippet": "לא יותר ניכוי הוצאה בשל אירוח בארץ",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "kibud-kal-80",
@@ -65,7 +90,10 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
       "raw_snippet": "שתיה קרה או חמה, עוגיות וכיוצא באלה ... 80%",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "gifts-240-15",
@@ -73,15 +101,21 @@
       "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
       "raw_snippet": "אם המתנה ניתנה בישראל – עד ל- 240 ש\"ח לשנה למקבל. לתושבי חוץ – עד ל- 15$ של ארה\"ב לאדם לשנה",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "per-diem-foreign",
-      "claim": "Foreign-travel per-diem (אש\"ל לחו\"ל): when lodging is claimed separately, ~$97/day; when lodging is not claimed, ~$162/day. Foreign-trip meals are 50% deductible.",
-      "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
-      "raw_snippet": "אם נדרשו הוצאות לינה – יותרו 97$ לכל יום שהייה... אם לא נדרשו הוצאות לינה – יותרו 162$ לכל יום שהייה",
-      "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "claim": "Foreign-travel per-diem 'other expenses' (אש\"ל לחו\"ל), tax year 2026: when lodging is claimed separately, ~$102/day; when lodging is not claimed, ~$171/day. Foreign-trip meals are 50% deductible.",
+      "source_url": "https://www.dnk-cpa.co.il/",
+      "raw_snippet": "הוצאות נסיעה לחו\"ל 2026 אם נדרשו הוצאות לינה 102$ אם לא נדרשו הוצאות לינה 171$ ארוחות 50%",
+      "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "osek-patur-ceiling",
@@ -89,7 +123,11 @@
       "source_url": "https://www.greeninvoice.co.il/magazine/%D7%AA%D7%A7%D7%A8%D7%AA-%D7%A2%D7%95%D7%A1%D7%A7-%D7%A4%D7%98%D7%95%D7%A8/",
       "raw_snippet": "בשנת 2026 תקרת עוסק פטור הוא 122,833 ₪, בעוד שבשנת 2025 התקרה הייתה 120,000 ₪. התקרה ... לא תתעדכן ... בשנים 2024 ו-2025, ורק החל משנת 2026 היא תוצמד למדד",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "metadata.json"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json"
+      ]
     },
     {
       "claim_id": "equipment-depreciation",
@@ -97,7 +135,10 @@
       "source_url": "https://www.zscpa.co.il/%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%95%D7%9B%D7%A8%D7%95%D7%AA/",
       "raw_snippet": "פחת על מחשב בעסק הוא 33% ... פחת על ריהוט משרדי נקבעה בתקנות לפי 6%",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "osek-zair-30",
@@ -105,7 +146,10 @@
       "source_url": "https://www.capitax.co.il/content/2/3311",
       "raw_snippet": "רשאים החל משנת-המס 2024 לנכות מהכנסותיהם הוצאה בשיעור של 30% מהמחזור, חלף ניכוי הוצאות בפועל ... בשנת-המס 2026 התקרה היא 122,833 ₪",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "shovi-shimush-table",
@@ -113,7 +157,10 @@
       "source_url": "https://protocol.co.il/vehicle-usage-value/",
       "raw_snippet": "לרכבים משנת 2010 ואילך ... 2.48% ממחיר המחירון ... קבוצת מחיר ... חישוב שווי שימוש ברכב נעשה רק לפי התקנות ולפי דרך החישוב בהם",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "vehicle-depreciation-rate",
@@ -121,7 +168,10 @@
       "source_url": "https://www.zscpa.co.il/%D7%9E%D7%99-%D7%9E%D7%A8%D7%95%D7%95%D7%99%D7%97-%D7%91%D7%92%D7%93%D7%95%D7%9C-%D7%9E%D7%A9%D7%95%D7%95%D7%99-%D7%A8%D7%9B%D7%91/",
       "raw_snippet": "רכב בשווי 200,000 ש\"ח, ניתן להכיר בהוצאת פחת שנתית בגובה 15% ... מתוך הוצאות הפחת ניתן להכיר כהוצאה רק 45%",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "regulation-refs",
@@ -129,7 +179,11 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
       "raw_snippet": "תקנה 14 אוסרת ניכוי בגין רכישת רכב פרטי לחלוטין, אך תקנה 18 מאפשרת ניכוי של 2/3 מהוצאות שוטפות. תקנה 2 ותקנה 4 לתקנות ניכוי הוצאות רכב (דרישת דיווח / קריאת המונה). טופס 1301 הוא הדוח השנתי. 100% מוכר.",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/domain-checklist.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "factual-figures-unit-variants",
@@ -137,7 +191,10 @@
       "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
       "raw_snippet": "1,380 ILS 1,380 NIS 115 ILS 115 NIS 115 ש\"ח 2,700 ILS 2,700 NIS 26,600 NIS 240 NIS NIS 122,833 NIS 120,000 1,200 ILS 1,200 ש\"ח 2,833 ILS 2,833 ש\"ח",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "illustrative-example-amounts",
@@ -145,7 +202,10 @@
       "source_url": "https://github.com/skills-il/accounting",
       "raw_snippet": "150 ILS 150 ש\"ח 85 ILS 85 NIS 85 ש\"ח 180 ILS 180 ש\"ח 90 ILS 90 ש\"ח 450 ILS 450 ש\"ח 350 ILS 350 ש\"ח 800 ILS 800 ש\"ח 120 ILS 120 ש\"ח 202.50 ILS 202.50 ש\"ח 2,912.50 ILS 2,912.50 ש\"ח 422.50 ILS 422.50 ש\"ח 3,335 ILS 3,335 ש\"ח 5,000 ILS 5,000 ש\"ח 400 ILS 400 ש\"ח 8,500 ILS 8,500 ש\"ח 220 ILS 220 ש\"ח 250 ILS 250 ש\"ח 300 ILS 300 ש\"ח 95 ILS 95 ש\"ח 750 ILS 750 ש\"ח 60 ILS 60 ש\"ח 40 ש\"ח 500 ILS 500 ש\"ח 1,200 ILS",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "reference-table-urls",
@@ -153,7 +213,22 @@
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "https://www.gov.il/he/departments/israel_tax_authority https://www.h-erp.co.il https://www.kolzchut.org.il/he/עובדים_עצמאים https://pandas.pydata.org/docs/reference/io.html",
       "fetched_at": "2026-06-03T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "self-employed-retirement-insurance-deductions",
+      "claim": "Self-employed personal (annual-return, Form 1301 / טופס 1301) deductions, distinct from employee payroll and not business-expense lines: keren hishtalmut le'atzmai (קרן השתלמות לעצמאי) is income-tax deductible up to ~4.5% of determining income (הכנסה קובעת) under Section 17(5a) / סעיף 17(5א); exactly 52% of the self-employed person's own National Insurance component (ביטוח לאומי) is income-tax deductible under Section 47A / סעיף 47א, while the health-tax component (דמי ביטוח בריאות) is NOT deductible; loss-of-work-capacity insurance (ביטוח אובדן כושר עבודה) is deductible up to an income-based cap; self-employed pension contributions earn a deduction under Section 47 / סעיף 47 and a separate tax credit under Section 45A / סעיף 45א.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%98%D7%91%D7%95%D7%AA_%D7%91%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A7%D7%93%D7%95%D7%AA_%D7%A2%D7%A6%D7%9E%D7%90%D7%99%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
+      "raw_snippet": "עצמאי ניכוי 52% דמי ביטוח לאומי קרן השתלמות לעצמאי 4.5% הכנסה קובעת פנסיה סעיף 47 45א 17",
+      "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
     }
   ]
 }

@@ -43,7 +43,7 @@ Each Must/Should item cites the governing statute or regulation.
 14. **עסק זעיר track (2026): a business with turnover ≤ the osek-patur ceiling may ELECT a
     flat 30%-of-turnover automatic income-tax expense deduction instead of itemizing actual
     expenses.** This is a fork that can make per-expense categorization moot for income tax.
-    Source: חוק ההתייעלות הכלכלית (תיקוני חקיקה) 2025–2026, פרק עסק זעיר; פקודת מס הכנסה
+    Source: חוק ההתייעלות הכלכלית (תיקוני חקיקה) 2025-2026, פרק עסק זעיר; פקודת מס הכנסה
     ס' 121ב-ish small-business provisions.
 
 ## Should cover (incomplete but won't produce a silently-wrong number if absent)
@@ -67,7 +67,7 @@ Each Must/Should item cites the governing statute or regulation.
 ## Out of scope
 
 - Final tax-return filing (טופס 1301, דוח שנתי) and signature.
-- Payroll / employee withholding (ניכוי במקור, ביטוח לאומי), tikun 190, pension.
+- Payroll for EMPLOYEES / employee withholding (ניכוי במקור from staff salaries), tikun 190. (Note: the self-employed filer's OWN keren hishtalmut, National Insurance 47A deduction, disability, and pension contributions ARE in scope, see the deduction rules, they are the filer's own business-side deductions, not employee payroll.)
 - Legal tax-planning advice, rulings (החלטות מיסוי), or representation before the ITA.
 - Income recognition / revenue side; this skill is expenses only.
 - Real-estate / מיסוי מקרקעין, capital-gains.
