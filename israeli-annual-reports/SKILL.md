@@ -11,6 +11,8 @@ compatibility: Works with Claude Code, Cursor, GitHub Copilot, Windsurf, OpenCod
 ## Reporting Framework
 Israeli public companies adopted IFRS in 2008. Prior reports use Israeli GAAP. Banks report under the Bank of Israel Supervisor of Banks "Public Reporting Directives" (Hora'ot ha-Divuach la-Tzibur), an Israel-specific template that draws on US bank-reporting rules and incorporates IFRS for some topics, not plain IFRS. For insurers, Israel postponed first-time IFRS 17 implementation to 1 January 2025 (the original global effective date was 2023).
 
+**Check the reporting currency first, do not assume shekels.** Under IFRS a company reports in its functional / presentation currency (matbea hatzaga), and a large share of TASE issuers, especially tech and shipping names (e.g. ZIM, Tower, Nova, Camtek, Sapiens), present their statements in USD. Read the figures in the statement's own currency and convert only if the user explicitly needs another, forcing everything into NIS produces wrong numbers and wrong peer comparisons.
+
 ## Report Types and Deadlines
 | Report | Deadline | Content |
 |--------|----------|--------|
@@ -20,12 +22,16 @@ Israeli public companies adopted IFRS in 2008. Prior reports use Israeli GAAP. B
 | Immediate (Doch Miyadi) | Hours after event | Material events |
 | Shelf Prospectus | Valid up to 3 years | Securities offering framework |
 
+**Reviewed vs. audited (critical distinction):** only the ANNUAL statements are audited. The quarterly and half-yearly interim statements are REVIEWED (sekira) under the auditor's interim-review standard, which is LIMITED assurance ("nothing came to our attention"), not a full audit. Do not treat interim numbers as if they were audited.
+
 ## Annual Report Structure
 - Part A: Description of Business (operations, markets, risks)
 - Part B: Board Report (MD&A, financial review)
 - Part C: Financial Statements (balance sheet, P&L, cash flow, statement of changes in equity (Doch al ha-Shinuyim ba-Hon), and the Notes / Biurim)
   - In the Notes (Biurim), read: segment data, IFRS 16 lease liabilities, contingencies and provisions, related-party disclosures (IAS 24), and subsequent events. The analytic detail lives in the Notes, not on the face of the statements.
-- Part D: Additional Information (officer compensation, audit committee)
+- Part D: Additional Information (officer compensation, shareholder-approved remuneration policy, audit committee). Part D also carries the CEO and CFO management certifications (hatzharot menahalim) on the financial statements and on disclosure controls, the Israeli analogue of the US SOX management certification. In an ISOX-exempt small corporation the CEO/CFO still file a reduced certification on the financial statements themselves; only the disclosure-controls / internal-control-effectiveness portions are removed, and that reduction is itself a signal about the issuer's size/status.
+- Consolidated vs. separate/solo: an Israeli periodic report carries BOTH the consolidated (me'uchad) group statements AND a mandated separate/solo (nifrad) data section for the parent alone. Default headline analysis to the CONSOLIDATED figures. Grabbing the parent-only solo revenue/net profit materially misstates a holding company (and TASE is heavy with pyramidal holding structures).
+- ESG / sustainability: modern Israeli annual reports increasingly carry ESG and climate-risk disclosures. The ISA maintains a voluntary ESG/climate disclosure framework, and mandatory sustainability reporting is under active debate. Look for (and do not assume the absence of) an ESG or climate-risk section.
 
 ## Key Hebrew Financial Terms
 - Maazan = Balance Sheet
@@ -61,10 +67,10 @@ User says: "Help me understand Strauss Group's latest annual report from MAYA"
 Actions:
 1. Identify report type: Annual / Periodic Report (Doch Titkufti) filed on MAYA system
 2. Locate key sections: Balance Sheet (Maazan), Income Statement (Doch Revach VeHefsed), Cash Flow, and the Notes (Biurim)
-3. Extract key metrics: revenue, operating profit, and net profit in shekels
+3. Extract key metrics: revenue, operating profit, and net profit, in the statement's presentation currency (confirm it first, many issuers present in USD, not NIS)
 4. Read the Notes for segment data, lease liabilities, and related-party transactions, not just the face of the statements
 5. Check the auditor opinion grade (ICPAS standards 700/705): unqualified (Bilti Mesuyeget / Naki), qualified (Mesuyeget), adverse (Shlilit), or disclaimer (Himanut me-Chavat Daat). Separately, look for a going-concern emphasis (Hearat Esek Chai): this is an emphasis-of-matter paragraph (ICPAS 706/570) that does NOT change the opinion grade, but it is a red flag an analyst must read. For larger issuers also read the Key Audit Matters section (ISA 701) where the auditor flags the riskiest estimates
-6. Compare with previous year and sector benchmarks
+6. Compare with previous year and sector benchmarks, but first check whether the prior-year comparatives were restated or reclassified (hatzaga mechadash / siyug mechadash), which routinely breaks a naive year-over-year comparison. For a large (non-small-corp) issuer also read the auditor's SEPARATE opinion on the effectiveness of internal control over financial reporting (distinct from the CEO/CFO certifications), an adverse or qualified ICFR conclusion is a real red flag
 Result: Structured analysis of a plain Israeli industrial issuer's annual report with key financial highlights in context
 
 ### Example 2: Compare Israeli Bank Financial Statements (an exception)
@@ -72,7 +78,7 @@ User says: "Compare Leumi and Hapoalim annual reports"
 Actions:
 1. Pull latest annual reports from MAYA (maya.tase.co.il)
 2. Extract comparable metrics: total assets, net income, ROE, capital adequacy
-3. Normalize data to NIS millions for comparison
+3. Normalize data to the statements' reporting currency in millions (confirm it, NIS or USD); Israeli banks report in NIS, but do not assume that for every issuer
 4. Note regulatory differences in reporting (Bank of Israel Public Reporting Directives, drawing on US bank-reporting rules with IFRS for some topics, not plain IFRS)
 5. Create comparison table with key ratios
 Result: Side-by-side comparison of two Israeli banks' financial performance

@@ -15,6 +15,18 @@
         "Reviewer-added references/domain-checklist.md had em dashes and placeholder/elided URLs (ifrs.org with an elided path segment); converted all em dashes to commas and replaced elided URLs with their real full URLs so the evidence gate could back them. Added host-level + Hebrew-regulation (takana 5/7/9) evidence rows for the checklist's citations.",
         "Grounding fix cycle (stay 1.2.0): re-cited small-corp-relief-bundle from the GT ---72014 page to the sibling ---62014 page where the verbatim snippets (20% vs 10% materiality, internal-control cancellation, market-risk exemption, <300M) actually appear. Corrected the small-corp index criterion in both SKILL files and the checklist from the wrong 'TA-125' to the regulation's 'TA-100 or TA-Beyond-50' (Reg. 5d). Scoped the ixbrl-voluntary evidence snippet to what the Feb-2023 ISA PDF supports, and added a separate ixbrl-magna-50-datapoints row sourced to Yael Group for the ~50-item MAGNA download."
       ]
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-07-18",
+      "lessons": [
+        "Zero fact drift since 2026-06-04: iXBRL still VOLUNTARY (ISA reissued the voluntary call-to-join Dec 2025; mandatory awaits an un-enacted amendment), IFRS 17 first-time 2025, small-corp NIS 300M + TA-100/TA-Beyond-50, deadlines (3mo/60-day/Reg 7a), ICPAS 700/701/705/706/570, Companies Law sections, and all reference URLs re-verified.",
+        "CRITICAL (expert): skill hardcoded 'shekels' / 'normalize to NIS millions' in the examples, but many TASE issuers (ZIM, Tower, Nova, Camtek, Sapiens) present in USD under IFRS. Added a 'check the reporting currency first' note and de-hardcoded both examples. This was a pre-existing wrong-number hole the drift check would have missed.",
+        "Added reviewed-vs-audited (interim = limited-assurance review, not audit), CEO/CFO management certifications in Part D (with the precision that an ISOX-exempt small corp files a REDUCED cert, not none), and an ESG/sustainability note (voluntary ISA framework).",
+        "MAJORs applied: consolidated-vs-separate/solo (default to consolidated, solo misstates a holding company); restated/reclassified comparatives warning before YoY; auditor's separate ICFR-effectiveness opinion for large issuers.",
+        "Deferred MAJOR (next cycle): watch note on the ISA disclosure-reform interim report (29 Dec 2025, comment period to 12 Feb 2026) once enacted/cleanly sourceable.",
+        "Deferred MINOR: update the glossary + financial_parser.py with the new emphasis terms (סקירה, הצהרות מנהלים, מאוחד/נפרד, מטבע הצגה/פעילות, ESG); add a non-GAAP/adjusted-figures analyst warning; Companies Law 267A remuneration-policy detail; gov.il corporations legacy slug corporations_authority -> israeli_corporations_authority."
+      ]
     }
   ]
 }
