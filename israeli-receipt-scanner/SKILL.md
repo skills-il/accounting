@@ -155,21 +155,23 @@ Generate the extracted data in a structured format. Default to JSON:
 For CSV output, flatten the structure with these columns:
 `date, document_type, document_number, allocation_number, merchant_name, vat_registration, supplier_type, buyer_name, buyer_vat_number, subtotal, vat_amount, vat_deductible, total, payment_method, category`
 
-Set `vat_deductible` to `true` ONLY when ALL of these hold: the document is a חשבונית מס or חשבונית מס / קבלה issued by an osek murshe with a valid 9-digit osek number; it is an original invoice issued in the buyer's name and that buyer matches the business's own osek number (which the user supplies or configures); and, when the net amount is above the SHAAM threshold for the invoice's date, an allocation number is present. Set it to `false` (and set `needs_review: true`) when no buyer is printed or the buyer does not match, for a plain קבלה, a חשבונית עסקה (proforma), an osek-patur supplier, a fuel/vehicle-category document (see Step 7), or any foreign document.
+Set `vat_deductible` to `true` ONLY when ALL of these hold: (a) the document is a חשבונית מס or חשבונית מס / קבלה issued by an osek murshe with a valid 9-digit osek number; (b) the purchase is FOR THE BUSINESS (לצורכי העסק), not private consumption; (c) the invoice is issued in the buyer's name matching the business's own osek number, EXCEPT that a small-sum tax invoice or a cash-register (קופה-רושמת) slip below the ITA small-sum threshold may lawfully omit the buyer's VAT number and is still deductible for a genuine business purchase, so do NOT hard-deny a small no-buyer slip, set `needs_review: true` for the bookkeeper to confirm business use; and (d) when the net amount is above the SHAAM allocation threshold for the invoice's date, an allocation number is present. Set it to `false` (and `needs_review: true`) for an inherently-private category (groceries, personal clothing, personal medical, and the like), a plain קבלה, a חשבונית עסקה (proforma), an osek-patur supplier, a passenger-vehicle / fuel document (see Step 7), any foreign document, or a LARGE invoice (above the small-sum threshold) with no matching buyer.
 
 ### Step 7: Validate Extracted Data
 
 Perform validation checks on the extracted data:
 
-1. **VAT Calculation**: Verify that `total = subtotal + vat_amount` (tolerance of 0.05 NIS for rounding). Current Israeli VAT rate is 18%.
+1. **VAT Calculation**: Verify that `total = subtotal + vat_amount` (tolerance of 0.05 NIS for rounding). Current Israeli VAT rate is 18%. Not every Israeli receipt carries VAT: Eilat Free-Trade-Zone transactions and zero-rated supplies (exports, some fresh produce) legitimately show no VAT line. Do NOT treat a VAT-less Israeli receipt as an extraction error or automatically as an osek-patur, set `vat_rate: 0`, `vat_amount: 0`, note the zero-rated/Eilat reason, and skip the 18% mismatch check for it.
 2. **Date Format**: Ensure the date is valid and not in the future.
 3. **VAT Registration**: Validate that the osek murshe number is exactly 9 digits. The 9-digit number also carries a check digit, which should be validated with the Luhn mod-10 algorithm (the same scheme Israeli ID-type numbers use). Do NOT invent any other checksum formula.
 4. **Line Item Totals**: Verify that sum of line items equals the subtotal (within rounding tolerance).
 5. **Currency**: Confirm amounts are in NIS. Flag if foreign currency symbols are detected. A foreign document's tax line (US sales tax, EU VAT, etc.) must NEVER populate `vat_amount` or `vat_deductible`; it is not Israeli input VAT (reverse-charge applies). Set `vat_deductible: false` and add a foreign-vendor warning.
 6. **Allocation Number Threshold (date-aware)**: If the document is a tax invoice (חשבונית מס or חשבונית מס / קבלה), select the threshold band from the INVOICE's own date (not today): NIS 20,000 for invoices dated in 2025, NIS 10,000 for January through May 2026, NIS 5,000 from 1 June 2026 onward. If the subtotal (net) exceeds the band for that date AND `allocation_number` is null, emit a warning that without an allocation number the input VAT is not deductible. Digitizing an older shoebox invoice must not throw a false warning under today's lower band.
-7. **Buyer Identity**: Confirm the invoice is issued in the buyer's name and that `buyer_vat_number` matches the business's own osek number (which the user supplies or configures). If no buyer is printed, or it does not match, set `vat_deductible: false` and `needs_review: true`, and add a warning that the supplier side is valid but the invoice is not in the buyer's name.
+7. **Buyer Identity (with small-sum carve-out)**: Confirm the invoice is issued in the buyer's name and that `buyer_vat_number` matches the business's own osek number. If a LARGE invoice (above the ITA small-sum threshold) has no printed buyer, or the buyer does not match, set `vat_deductible: false` and `needs_review: true`, and warn that the supplier side is valid but the invoice is not in the buyer's name. BELOW the small-sum threshold, however, a valid חשבונית מס or קופה-רושמת slip may lawfully omit the buyer's VAT number, so do NOT hard-deny it: set `needs_review: true` and defer to the bookkeeper to confirm the purchase is for the business.
 8. **Six-Month Deduction Window**: Input VAT must be claimed within 6 months of the invoice issue date. If the invoice date is more than 6 months in the past, emit a warning that the invoice may be past the deduction window.
-9. **Deductibility Flag**: Set `vat_deductible: true` only when ALL hold: a חשבונית מס / חשבונית מס / קבלה from an osek murshe with a valid 9-digit osek number; an allocation number when above the date-aware threshold; the invoice is in the buyer's name and matches the business; and the category is not blocked. For fuel/vehicle-category documents (passenger vehicles and their running costs, including fuel) input VAT is restricted: a mixed business/private input deducts only two-thirds when use is mainly for the business (and as little as one-quarter when use is mainly private), so set `vat_deductible: false` with `needs_review: true` and flag the mixed-use split for the bookkeeper rather than claiming full deduction. Set `false` for a plain קבלה, a חשבונית עסקה (proforma), an osek-patur supplier, or a foreign document.
+9. **Deductibility Flag**: Set `vat_deductible: true` only when ALL hold: a חשבונית מס / חשבונית מס / קבלה from an osek murshe with a valid 9-digit osek number; the purchase is for the business, not private consumption; an allocation number when above the date-aware threshold; the buyer condition in item 7 (with its small-sum carve-out); and the category is not blocked. For a PASSENGER-vehicle document (private car and its running costs, including fuel) input VAT is restricted: a mixed business/private input deducts only two-thirds when use is mainly for the business (and as little as one-quarter when use is mainly private), so set `vat_deductible: false` with `needs_review: true`. A COMMERCIAL / work vehicle (רכב מסחרי, truck, taxi, driving-school or rental) is different: its fuel and running-cost input VAT is FULLY deductible, so flag `needs_review: true` for the bookkeeper to confirm the vehicle class rather than hard-coding the passenger-car restriction. Set `false` for an inherently-private-consumption item, a plain קבלה, a חשבונית עסקה (proforma), an osek-patur supplier, or a foreign document.
+
+10. **Cash-payment cap (Cash Law)**: under the Law for Reducing the Use of Cash (חוק לצמצום השימוש במזומן), a business transaction generally may not be paid in cash above NIS 6,000. If `payment.method` is cash and `total` exceeds NIS 6,000, emit a warning that the cash payment may breach the cash-law cap, which can disallow the expense / input VAT and expose the business to a monetary penalty. Flag for the bookkeeper rather than silently accepting it.
 
 If validation fails, include a `warnings` array in the output with specific issues found.
 
@@ -238,14 +240,14 @@ Result: Complete JSON with tax-relevant notes for the accountant.
 For B2B tax invoices at or above the current SHAAM threshold, the printed invoice must include an **allocation number (mispar haktza'a)** alongside the standard tax-invoice fields. Threshold timeline:
 
 - Jan 2025 - Dec 2025: required when net amount > NIS 20,000
-- **Jan 2026 (current): required when net amount > NIS 10,000**
-- Jun 2026 onwards: required when net amount > NIS 5,000
+- Jan - May 2026: required when net amount > NIS 10,000
+- **Jun 2026 onwards (current): required when net amount > NIS 5,000**
 
-When scanning a B2B tax invoice, extract `allocation_number: string|null` and flag missing values on invoices that exceed the band that applies to the invoice's own date (not today's date). Without an allocation number, the buyer loses input-VAT deduction. Receipts (type 320) and proforma documents do not require allocation numbers.
+When scanning a B2B tax invoice, extract `allocation_number: string|null` and flag missing values on invoices that exceed the band that applies to the invoice's own date (not today's date). Without an allocation number, the buyer loses input-VAT deduction. A plain receipt (קבלה) and a proforma invoice (חשבונית עסקה) do not require allocation numbers, but a חשבונית מס / קבלה (tax invoice / receipt) above the threshold DOES require one, just like a plain חשבונית מס.
 
 ## Foreign-Vendor Receipts
 
-App Store / Google Play / AWS / Azure / GCP / Stripe / OpenAI / Anthropic and similar foreign-issued receipts are NOT Israeli tax invoices and **cannot be used for VAT input deduction in Israel** without a separate reverse-charge VAT (`mas asakot` self-reporting) workflow. The skill should auto-tag these as foreign-vendor and surface the reverse-charge requirement, not categorize them as standard SaaS expenses.
+App Store / Google Play / AWS / Azure / GCP / Stripe / OpenAI / Anthropic and similar foreign-issued receipts are NOT Israeli tax invoices and **cannot be used for VAT input deduction in Israel** without a separate reverse-charge workflow: the importer of services issues a self-invoice (חשבונית עצמית), self-reports the output tax (mas asakot), and (if a fully-deducting osek murshe) simultaneously claims it as input tax; an osek patur / non-profit / financial institution that cannot fully offset bears the self-reported tax as a real cost. This self-invoice path is for imported SERVICES / SaaS. Imported physical GOODS are different: their Israeli VAT is paid at customs and deducted via the import entry (rashimon yevu), not via a self-invoice, so do not tag a foreign goods receipt as a services reverse-charge. The skill should auto-tag foreign receipts and surface the reverse-charge / self-invoice (or customs-import) requirement, not categorize them as standard SaaS expenses.
 
 ## Gotchas
 
@@ -254,6 +256,7 @@ App Store / Google Play / AWS / Azure / GCP / Stripe / OpenAI / Anthropic and si
 - Israeli receipts from osek patur (exempt dealers) do not contain VAT breakdowns. Agents may attempt to extract VAT from these receipts and produce incorrect calculations.
 - Thermal receipt paper degrades quickly in Israeli summer heat. OCR quality on faded receipts drops significantly, especially for Hebrew characters that are smaller and denser than Latin text.
 - Israeli business numbers (mispar osek) on receipts are 9 digits with a check digit. Agents may extract partial numbers or not validate the check digit, leading to incorrect business identification. Validate the check digit with the Luhn mod-10 algorithm (the scheme Israeli ID-type numbers use); do not invent any other formula.
+- A credit-card voucher / slip (שובר אשראי) alone is NOT a tax invoice and cannot support an input-VAT deduction, even for a business. It only proves payment. If the scanned document is a card voucher rather than a חשבונית מס, set `vat_deductible: false` and advise the user to obtain the tax invoice.
 
 
 ## Reference Links
@@ -280,7 +283,7 @@ Solution:
 
 ### Error: "VAT calculation mismatch"
 
-Cause: The calculated VAT (subtotal * 0.18) does not match the VAT amount printed on the receipt. This can happen due to rounding across many line items, mixed VAT-exempt and VAT-inclusive items, or items with reduced VAT rates.
+Cause: The calculated VAT (subtotal * 0.18) does not match the VAT amount printed on the receipt. This can happen due to rounding across many line items or a mix of standard-rated (18%), zero-rated (0%), and exempt items. Israel has no reduced positive VAT rate, a supply is 18%, zero-rated, or exempt, so do not assume a middle rate.
 
 Solution:
 1. Check if some items are VAT-exempt (e.g., fruits and vegetables in some contexts)

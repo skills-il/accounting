@@ -9,6 +9,19 @@
         "Expert review caught a silent over-claim: deductibility was set true from the SUPPLIER side alone. Israeli input VAT requires the invoice be issued in the BUYER's name (matched to the business's osek), plus date-aware allocation threshold, vehicle/fuel + mixed-use restriction (2/3 or 1/4, not full), the 6-month claim window, and a foreign tax-line guard. Added buyer_name/buyer_vat_number and made vat_deductible conjunctive across all gates.",
         "Deferred: programmatic buyer-osek matching needs the business's own osek as config/user input; the skill instructs to obtain it but ships no config mechanism (tied to the unshipped scripts/). Decide alongside the scripts next cycle."
       ]
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-07-18",
+      "lessons": [
+        "STALE fixed: the allocation-number '(current)' label sat on the 10,000 band; current is 5,000 since 1 Jun 2026. Moved '(current)' to the 5,000 band in both languages (HE was inconsistently labelled '(previous)' on 10k with no current marker). Date-aware validation logic was already correct.",
+        "Check-digit re-confirmed: calling the 9-digit osek/ID check 'Luhn mod-10' is CORRECT (for a 9-digit odd-length number the Israeli 1,2,1,2 weighting is palindromic and identical to Luhn); the earlier suspicion it was wrong was itself wrong.",
+        "MAJOR added: cash-law NIS 6,000 business cash-cap warning (the scanner captures payment.method + total, uniquely positioned to warn); Eilat/zero-rated branch so a legitimately VAT-less Israeli receipt is not flagged as an error or auto-classified osek-patur.",
+        "Judge caught a pre-existing factual error: 'Receipts (type 320) do not require allocation numbers' - ITA code 320 = חשבונית מס/קבלה, which DOES require one above threshold (plain receipt=400, proforma=332). Restated by document NAME to avoid the wrong code and the self-contradiction.",
+        "CRITICAL x2 (expert, pre-existing): (1) no business-purpose gate - vat_deductible could be true for a private-consumption invoice in the business's osek number; added a 'for the business, not private consumption' gate + force needs_review/false for private categories. (2) missing small-sum carve-out - a valid small חשבונית מס / קופה-רושמת slip below the ITA small-sum threshold may omit the buyer VAT number and IS deductible; stop hard-denying no-buyer small slips (needs_review, defer to bookkeeper); a LARGE no-buyer invoice stays false.",
+        "MAJOR (expert): commercial/work vehicles (רכב מסחרי, truck, taxi) get FULL input-VAT deduction, not the passenger-car 2/3 restriction; imported GOODS deduct via the customs import entry (רשימון יבוא), not a services self-invoice. Minors: named the self-invoice (חשבונית עצמית); credit-card voucher not a tax invoice; removed 'reduced VAT rate' wording (Israel has none); hedged reverse-charge for a non-full-deducting osek.",
+        "Judge caveat: the cash-law gov.il URL (departments/general/reducing_cash_use) 404s; repointed evidence to the Bank of Israel cash-reducing-law page."
+      ]
     }
   ]
 }
