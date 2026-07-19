@@ -1,6 +1,24 @@
 {
   "cycles": [
     {
+      "version": "1.2.0",
+      "date": "2026-07-19",
+      "trigger": "User feedback: the skill was not updated with wage agreements and could not answer 'a nurse at rank 13, what is her base salary?'",
+      "lessons": [
+        "RESOLVED from v1.1.0 lessons: none of the three carried items were addressed this cycle; they are re-logged below and are now 3 cycles old for the toranut windows item.",
+        "CARRY-STALE (3rd cycle): toranut per-band time windows are still absent while the kononut table has clock windows. Fix next cycle or move to domain-checklist 'Out of scope (explicit)'.",
+        "CARRY (2nd cycle): doctors' own pensionable continuing-education gemulim are still not encoded; verify against the current IMA agreement before adding.",
+        "Expert MAJOR deferred (M4): havraa and ktzuvat bigud are named but carry no days, per-day rate, seniority scaling or grade table. They are checklist rows satisfied by a name.",
+        "Expert MAJOR deferred (M5): global additional hours (sha'ot nosafot globaliyot) is covered for doctors only; nursing-management and allied-health global overtime arrangements are not covered.",
+        "Expert MAJOR deferred (M6): the temporary wage reduction now has both rate tracks and the computation base, but the doctors' own rates are named without values, and the severance-base treatment is unstated.",
+        "Expert MAJOR deferred (M7): tamritz non-pensionability is asserted in Step 4 with no evidence claim behind it. Same defect class as the pensionability gaps fixed this cycle, lower blast radius.",
+        "Discretionary deferred: entry rank and promotion ladder per education level (Expert M3). The rank range 10-21 and the seniority-0 equivalence point are shipped, but not where each education track ENTERS, so rank 13 cannot be plausibility-checked against a track.",
+        "METHOD LESSON: the wrong allied-health bands (4.5/5.5/6.5 vs the real 3.50/9.00/9.50) survived a prior cycle because the authoritative rate table is published as a PNG and the page text layer carries no numbers. Any percentage sourced from malam-payroll must be confirmed by READING the table image, not the text. The same was true of the wage-reduction rates.",
+        "METHOD LESSON: the same wrong bands were duplicated in three reference files. Fixing SKILL.md alone would have left them live. Always grep every reference file and script for a corrected figure.",
+        "METHOD LESSON: adding a framework-agreement layer introduced an order-of-operations contradiction across three passages (intro, worked example, script docstring). When adding a multiplicative layer, state the rule once and re-read every passage that touches a base."
+      ]
+    },
+    {
       "version": "1.1.0",
       "date": "2026-07-15",
       "lessons": [

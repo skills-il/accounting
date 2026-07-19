@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-healthcare-payroll",
   "schemaVersion": "1.0",
-  "generated_at": "2026-07-15",
+  "generated_at": "2026-07-19",
   "claims": [
     {
       "id": "nurses-dirug-applies",
@@ -23,11 +23,11 @@
     },
     {
       "id": "nurses-tosefet-2024-500",
-      "claim": "From 1.4.2025 the tosefet achayot 2024 is updated by 250 NIS to reach 500 NIS (500 ש\"ח) per full-time position.",
+      "claim": "From 1.4.2025 the tosefet achayot 2024 is updated by 250 NIS to reach 500 NIS (500 ש\"ח) per full-time position. It is salary for all purposes including the hourly rate, overtime, on-call, severance, pensions and keren hishtalmut, is pro-rated for part-time, and is excluded from special and reinforcement shift calculations.",
       "claim_type": "currency",
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "החל מיום 1.4.2025 ... תוספת אחיות 2024 תתעדכן בסכום של 250 ₪ ותעמוד על סכום של 500 ₪",
+      "raw_snippet": "החל מיום 1.4.2025 ... תוספת אחיות 2024 תתעדכן בסכום של 250 ₪ ותעמוד על סכום של 500 ₪ ... תוספת אחיות 2024 תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות וקריאות פתע, לעניין פיצויי פיטורים ... לעניין גמלאות, לעניין הפקדות לקופת גמל לקצבה ולעניין הפקדות לקרן השתלמות ... אחות המועסקת במשרה חלקית תהיה זכאית לתוספת אחיות 2024 בסכום שיחושב באופן יחסי לחלקיות משרתה ... לא תובא בחשבון לעניין חישוב התמורה בעד משמרות מיוחדות או משמרות תגבור",
       "confidence": "high"
     },
     {
@@ -50,12 +50,13 @@
     },
     {
       "id": "allied-training-bands",
-      "claim": "The allied-health training supplement (replacing study-fund gmul payments) is a percentage of the blended salary banded by professional seniority: 4.5% for 0 to 7 years, 5.5% for 7 to 17 years, 6.5% over 17 years.",
+      "claim": "From 1.4.2025 the allied-health tosefet hachsharot is a percentage of the combined salary only, banded by professional seniority: 3.50% for 0 to 7 years (7 excluded), 9.00% for 7 to 17 (17 excluded), 9.50% from 17. It replaces gmul hishtalmut; a worker receives the higher of the two, never both. It is salary for all purposes including the hourly rate, on-call, severance, pension-fund deposits and keren hishtalmut.",
       "claim_type": "percentage",
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
-      "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "שיעור התוספת יהיה בהתאם לרמות הותק המקצועי של העובד: 0-7 שנות ותק מקצועי 4.5%, 7-17 שנים 5.5%, מעל 17 שנים 6.5% מהשכר המשולב",
-      "confidence": "high"
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "החל מיום 1.4.2025, העובדים יהיו זכאים לתוספת שכר חודשית בשיעור כמפורט בטבלה בהתאם לוותק של העובד ... שתקרא תוספת הכשרות. זאת, חלף תשלום גמולי השתלמות. בסיס השכר לחישוב תוספת הכשרות הוא השכר המשולב של העובד בלבד ... 0 - 7 (לא כולל) 3.50% ; 7 - 17 (לא כולל) 9.00% ; 17 ואילך 9.50% ... עובד אשר יש לו גמולי השתלמות, יהיה זכאי לתוספת הגבוהה מבין השניים ... תוספת הכשרות תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות, קריאות פתע ושכר עידוד, לעניין פיצויי פיטורים ... לצורך הפרשות לקופת גמל לקצבה (לגבי עובדים שחל עליהם פנסיה צוברת), הפרשות לקרן השתלמות וכל הפרשה אחרת הנוהגת לגבי השכר המשולב",
+      "confidence": "high",
+      "note": "Band percentages read from the agreement's rate table, which is published as an image (tab3-1.png) and is not present in the page text layer. Superseded the earlier 4.5/5.5/6.5 figures, which could not be located in this source."
     },
     {
       "id": "allied-incentive-ceiling",
@@ -236,6 +237,107 @@
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "ערך גמול ההשתלמות הוא פונקציה של מספר שעות הלימוד המוכרות בתוכנית",
       "confidence": "high"
+    },
+    {
+      "id": "framework-agreement-2020-2027",
+      "claim": "The 17.7.2023 public-sector framework agreement for 2020-2027 pays a shekel supplement of 500 NIS plus cumulative percentage raises of 2.0% from the December 2024 salary, 3.5% from April 2025, 5.0% from April 2026 and 6.0% from April 2027.",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מסגרת-לשנים-2020-2027/",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "תוספות שכר שקליות בגובה 500 ₪ וכן תוספת אחוזית בשיעור של 6% ... ממשכורת חודש / תוספת אחוזית: דצמבר 2024 - 2.0% ; אפריל 2025 - 3.5% ; אפריל 2026 - 5.0% ; אפריל 2027 - 6.0%",
+      "confidence": "high"
+    },
+    {
+      "id": "temporary-wage-reduction",
+      "claim": "The temporary public-sector wage reduction has two tracks. By collective agreement: 2.290% from December 2024 to March 2025, 2.290% from April 2025 to December 2025, 1.200% from January 2026 to December 2026. By law: 0.000%, then 3.307%, then 1.200% over the same periods. It does not reduce the pensionable insured salary and appears on the slip as tikun pensioni.",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/השתתפות-העובדים-במגזר-הציבורי-בהוצאו/",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "תקופות הפחתת שכר / שיעור הפחתת שכר עפ\"י ההסכם / שיעור הפחתת שכר עפ\"י החוק: מדצמבר 2024 עד מרץ 2025 - 2.290% / 0.000% ; מאפריל 2025 עד דצמבר 2025 - 2.290% / 3.307% ; מינואר 2026 עד דצמבר 2026 - 1.200% / 1.200% ... הפחתת השכר תבוצע בתלוש השכר באמצעות רכיב שכר, אשר יקרא \"תיקון פנסיוני\"",
+      "confidence": "high",
+      "note": "Rate table published as images (hafhatatsachar.png, hafhatatsachar3.png) and read visually; the figures are not in the page text layer."
+    },
+    {
+      "id": "nurses-tosefet-nihul",
+      "claim": "From 1.12.2023 a management supplement (tosefet nihul) of 7.2% is paid to nurses at ranks 14 to 21 only, computed on the hourly-rate base (combined salary, seniority and the supplements existing on 31.12.2022), and it is pensionable. It is salary for all purposes including the hourly rate, overtime, on-call, severance, pensions, pension-fund deposits and keren hishtalmut.",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-11-12-2023/",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "החל מיום 1.12.2023 תשולם תוספת ניהול לאחות בדרגה 14-21 בלבד, בשיעור של 7.2% מהשכר לערך שעה, הכולל שכר משולב, תוספת ותק, כל תוספות שכר ותוספות לשכר (אחוזיות ושקליות) שהיו קיימות ביום 31.12.2022 ... תוספת ניהול תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות וקריאות פתע, לעניין פיצויי פיטורים ... לעניין גמלאות, לעניין הפקדות לקופת גמל לקצבה ולעניין הפקדות לקרן השתלמות",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-shift-responsibility-80",
+      "claim": "From 1.12.2023 the nurses' shift-responsibility supplement (tosefet achrayut mishmarot) is 80 NIS (80 ש\"ח) per shift, and it is explicitly NOT salary for the hourly rate, overtime, on-call, severance, pension or keren hishtalmut.",
+      "claim_type": "currency",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-11-12-2023/",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "החל מיום 1.12.2023 תעודכן תוספת אחריות משמרת כך שלאחיות הזכאיות תעמוד התוספת על סכום של 80 ₪ למשמרת ... אינה מהווה שכר לכל דבר ועניין, לא תובא בחשבון לעניין חישוב ערך שעה",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-table-structure",
+      "claim": "The nurses' combined-salary grid published by the Ministry of Finance Wage and Labour Agreements Division is split into five tables by education level (maasi, musmach, BA, MA, doctorate), each covering ranks 10 to 21 and seniority years 0 to 40, effective 01/12/2008. At seniority 0 the shared ladder cell is 3,960.7 NIS (3,960.7 ש\"ח) at doctorate rank 15, MA 16, BA 17, musmach 18 and maasi 19.",
+      "claim_type": "entity",
+      "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "משרד האוצר - האגף לשכר והסכמי עבודה ... משכורת משולבת בש\"ח לחודש לדירוג אחיות - מוסמך ... בתוקף מ - 01/12/08 ... דרגות ... רמה 10 ... רמה 21 ... שנות ותק",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-seniority-curve",
+      "claim": "The nurses' table defines the per-year seniority increment as a percentage of the previous seniority year's combined salary: 3.10% for years 1 to 9, 2.10% for 10 to 19, 1.90% for 20 to 32, 1.10% for 33 to 35, and 0.85% from year 36 on.",
+      "claim_type": "percentage",
+      "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "חישוב התוספת לכל שנת ותק יהיה כאחוז מהשכר המשולב בשנת הוותק הקודמת לה ... משנה 1 עד שנה 9 - 3.10% ... משנה 10 עד שנה 19 - 2.10% ... משנה 20 עד שנה 32 - 1.90% ... משנה 33 עד שנה 35 - 1.10% ... משנה 36 ואילך - 0.85%",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-rank13-cell",
+      "claim": "In the 01/12/2008 combined-salary grid, a registered nurse (musmach) at rank 13 with zero seniority has a combined salary of 3,037.67 NIS (3,037.67 ש\"ח, about 3,038 NIS / 3,038 ש\"ח) per month, which is a base index rather than take-home pay.",
+      "claim_type": "currency",
+      "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "משכורת משולבת בש\"ח לחודש לדירוג אחיות - מוסמך ... רמה 13 ... 0 ... 3,037.67",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-2024-agreement-tranches",
+      "claim": "The doctors' collective agreement signed 30.9.2024 updates the combined salary in tranches; the confirmed first leg is 4.88% from 1.1.2025. Later legs exist but their percentages and dates are not confirmable from a reachable published source.",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/הוראות-ביצוע-להסכם-קיבוצי-רופאים-מיום-30-9-2024/",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "החל מיום 1.1.2025 השכר המשולב ... יעודכן בשיעור של 4.88%",
+      "confidence": "medium"
+    },
+    {
+      "id": "doctors-mission-supplement",
+      "claim": "The doctors' national-mission supplement (tosefet mesima leumit) is paid as a base amount multiplied by a coefficient set by specialty and role, roughly 0.3 for residents and field physicians up to 1.5 for forensic medicine. It is mutually exclusive with tosefet mar'ag (higher of the two) and is excluded from the mashkoret koveat for gimlaot. It was raised in two steps during 2025 by the amending agreement of 31.3.2025.",
+      "claim_type": "currency",
+      "source_url": "https://www.malam-payroll.com/הוראות-ביצוע-להסכם-קיבוצי-רופאים-מיום-30-9-2024/",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "תוספת משימה לאומית ... לא תובא בחשבון לצורך חישוב המשכורת הקובעת ... הרופא יהיה זכאי לסכום הגבוה מבין השניים",
+      "confidence": "medium",
+      "note": "Specific shekel amounts deliberately NOT asserted: they could not be confirmed against a reachable source, and the coefficient makes the headline figure misleading for an individual doctor."
+    },
+    {
+      "id": "wage-reduction-law",
+      "claim": "The temporary wage reduction is anchored in the Law for the Participation of Employees and Office Holders in the Public Service in Steps to Stabilise the Fiscal Situation during 2025 and 2026 (Temporary Order), 5785-2025, applying from 1.4.2025 to 31.12.2026, with employers reporting the reduced amount in Tofes 126.",
+      "claim_type": "entity",
+      "source_url": "https://www.gov.il/he/pages/salary-reduction-2025-2026",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "חוק להשתתפותם של העובדים ובעלי תפקיד בשירות הציבורי, בצעדים לייצוב המצב הפיסקלי במדינה במהלך השנים 2025 ו-2026 (הוראת שעה), תשפ\"ה-2025 ... בדיווחים לשנות המס 2025 ו-2026, על המעסיקים לכלול את סכום הפחתת השכר שנוצר בעקבות החוק, במסגרת טופס 126",
+      "confidence": "high"
+    },
+    {
+      "id": "framework-working-week",
+      "claim": "The 2020-2027 framework agreement shortened the public-sector working week from 42 hours to 40 hours in two steps, which changes the monthly hours norm used to derive the hourly rate (erech shaa).",
+      "claim_type": "feature",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מסגרת-לשנים-2020-2027/",
+      "source_fetched_at": "2026-07-19T00:00:00Z",
+      "raw_snippet": "שבוע העבודה במגזר הציבורי יקוצר בשעתיים ... 41 שעות שבועיות (קיצור שעה אחת) ... 40 שעות שבועיות (קיצור שעה אחת)",
+      "confidence": "medium"
     }
   ]
 }

@@ -23,7 +23,7 @@ which grade, so the reader picks the right table before reading any number.
 - The base combined-salary cell comes only from the correct grade's table. The
   wrong grade gives the wrong base.
 - The tosafot differ by grade: the nurses' tosefet achayot is a nurses'-dirug
-  line; the training supplement banded 4.5% / 5.5% / 6.5% is an allied-health
+  line; tosefet hachsharot banded 3.50% / 9.00% / 9.50% is an allied-health
   line; on-call day-equivalents are a doctors' line.
 - Allied health is three grades, not one. Do not carry a figure from occupational
   therapy to physiotherapy or to the para-medical grade.

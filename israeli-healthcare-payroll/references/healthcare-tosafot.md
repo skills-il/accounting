@@ -22,7 +22,7 @@ and re-check the year on the slip.
 
 | Addition | How it is paid |
 |----------|----------------|
-| Training supplement (in place of study-fund gmulim) | A percentage of the combined salary banded by professional seniority: 4.5% for 0 to 7 years, 5.5% for 7 to 17 years, 6.5% over 17 years. Render the band that matches the worker's seniority. |
+| Tosefet hachsharot (in place of gmul hishtalmut), from 1.4.2025 | A percentage of the combined salary ONLY, banded by professional seniority with exclusive upper bounds: 3.50% for 0 to 7 years, 9.00% for 7 to 17 years, 9.50% from 17 years. Replaces gmul hishtalmut rather than adding to it; the worker receives the higher of the two, never both. Render the band that matches the worker's professional seniority (counted from licence date, excluding army and national service). |
 | Monthly incentive (tamritz) | A capped monthly performance line. The ceiling rose from 4,125 NIS to 5,400 NIS per full-time position per month from 1.4.2025. Variable, not part of the fixed base. |
 | Retention and recruitment grant | Up to 10,000 NIS per full-time position for eligible workers in specified settings (for example psychiatric hospitals and child-development units). Conditional and setting-specific. |
 

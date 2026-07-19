@@ -8,23 +8,79 @@
     "en": "Explains how a payslip in Israel's public-healthcare system is actually built, which is nothing like private-sector pay. The salary is set by collective agreements and by wage grade (dirug): nurses, three separate allied-health grades (occupational therapy, physiotherapy, and the para-medical grade for dietitians and speech clinicians), pharmacists in the academic grade, and doctors under the IMA agreement. The skill identifies the right grade, reads the combined salary by rank and seniority, adds healthcare-specific supplements like the nurses' tosefet achayot, the banded allied-health training supplement, and doctors' on-call and duty pay valued in workdays, and shows how gross becomes net. Useful for nurses, allied-health workers, doctors, hospital payroll staff, and anyone reading a healthcare payslip. Do NOT use for standard private-sector payroll, teachers' pay, or employing a home caregiver."
   },
   "tags": {
-    "he": ["שכר אחיות", "מקצועות הבריאות", "תלוש שכר", "כוננויות", "דירוג", "ישראל"],
-    "en": ["nurse-salary", "healthcare-payroll", "payslip", "on-call", "dirug", "israel"]
+    "he": [
+      "שכר אחיות",
+      "מקצועות הבריאות",
+      "תלוש שכר",
+      "כוננויות",
+      "דירוג",
+      "ישראל"
+    ],
+    "en": [
+      "nurse-salary",
+      "healthcare-payroll",
+      "payslip",
+      "on-call",
+      "dirug",
+      "israel"
+    ]
   },
   "author": "skills-il",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "category": "accounting",
-  "supported_agents": ["claude-code", "cursor", "github-copilot", "windsurf", "opencode", "codex", "openclaw", "antigravity", "gemini-cli", "chatgpt", "claude-ai", "claude-desktop", "manus"],
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "openclaw",
+    "antigravity",
+    "gemini-cli",
+    "chatgpt",
+    "claude-ai",
+    "claude-desktop",
+    "manus"
+  ],
   "openclaw": true,
   "volatility": "legislative",
   "authoritative_sources": [
-    { "url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/", "type": "regulator", "language": "he" },
-    { "url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/", "type": "regulator", "language": "he" },
-    { "url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118", "type": "regulator", "language": "he" },
-    { "url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5111", "type": "regulator", "language": "he" },
-    { "url": "https://www.workrights.co.il/זכויות_רופאים", "type": "reference", "language": "he" },
-    { "url": "https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx", "type": "regulator", "language": "he" },
-    { "url": "https://www1.health.gov.il/nursing/work/recognized-programs/information-for-nurses/", "type": "regulator", "language": "he" }
+    {
+      "url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/",
+      "type": "regulator",
+      "language": "he"
+    },
+    {
+      "url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
+      "type": "regulator",
+      "language": "he"
+    },
+    {
+      "url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
+      "type": "regulator",
+      "language": "he"
+    },
+    {
+      "url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5111",
+      "type": "regulator",
+      "language": "he"
+    },
+    {
+      "url": "https://www.workrights.co.il/זכויות_רופאים",
+      "type": "reference",
+      "language": "he"
+    },
+    {
+      "url": "https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx",
+      "type": "regulator",
+      "language": "he"
+    },
+    {
+      "url": "https://www1.health.gov.il/nursing/work/recognized-programs/information-for-nurses/",
+      "type": "regulator",
+      "language": "he"
+    }
   ],
   "domain_checklist_version": 1
 }
