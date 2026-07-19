@@ -56,7 +56,9 @@
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "החל מיום 1.4.2025, העובדים יהיו זכאים לתוספת שכר חודשית בשיעור כמפורט בטבלה בהתאם לוותק של העובד ... שתקרא תוספת הכשרות. זאת, חלף תשלום גמולי השתלמות. בסיס השכר לחישוב תוספת הכשרות הוא השכר המשולב של העובד בלבד ... 0 - 7 (לא כולל) 3.50% ; 7 - 17 (לא כולל) 9.00% ; 17 ואילך 9.50% ... עובד אשר יש לו גמולי השתלמות, יהיה זכאי לתוספת הגבוהה מבין השניים ... תוספת הכשרות תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות, קריאות פתע ושכר עידוד, לעניין פיצויי פיטורים ... לצורך הפרשות לקופת גמל לקצבה (לגבי עובדים שחל עליהם פנסיה צוברת), הפרשות לקרן השתלמות וכל הפרשה אחרת הנוהגת לגבי השכר המשולב",
       "confidence": "high",
-      "note": "Band percentages read from the agreement's rate table, which is published as an image (tab3-1.png) and is not present in the page text layer. Superseded the earlier 4.5/5.5/6.5 figures, which could not be located in this source."
+      "note": "Band percentages read from the agreement's rate table, which is published as an image (tab3-1.png) and is not present in the page text layer. Superseded the earlier 4.5/5.5/6.5 figures, which could not be located in this source.",
+      "verified_via": "image",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "allied-incentive-ceiling",
@@ -65,7 +67,9 @@
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "התקרה המקסימלית לתגמול במודל התגמול תגדל מסכום של 4,125 ₪ למשרה מלאה לחודש ותעמוד על סכום של 5,400 ₪ למשרה מלאה לחודש ... החל מיום 1.4.2025",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "allied-retention-grant",
@@ -74,7 +78,9 @@
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "סכום המענק יהיה בסך של 10,000 ₪ למשרה מלאה לעובד זכאי",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-oncall-section",
@@ -83,7 +89,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "כוננויות - תשלום",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-oncall-weekday-2days",
@@ -92,7 +100,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "רופא המבצע כוננות מתוכננת ביום חול משעה 16:00 עד 08:00 למחרת זכאי לתמורה השווה לשני ימי עבודה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-oncall-er",
@@ -101,7 +111,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "יקבלו בתמורה לביצוע הכוננות האמורה תשלום הזהה לשכר ¼ 3 ימי עבודה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-oncall-sabbath-1day",
@@ -110,7 +122,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "יקבל בתמורה תשלום הזהה לשכר יום עבודה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-oncall-holiday-eve-half",
@@ -119,7 +133,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "יקבל בתמורה תשלום הזהה, לשכר חצי יום עבודה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-oncall-not-base",
@@ -128,7 +144,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "תורנויות וכוננויות מתוכננות אינן חלק מהמשכורת",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-oncall-called-after-1930",
@@ -137,7 +155,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5118",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "רופא בכוננות מתוכננת הנקרא לבית החולים לאחר השעה 19:30 ונדרש לעבודה רפואית של 4.5 שעות לפחות, יקבל בתמורה לביצוע הכוננות האמורה תשלום הזהה לשכר 3 ימי עבודה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-shortage-specialty-premium",
@@ -146,7 +166,9 @@
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "תוספת למקצועות המצוקה עומדת על כ-12.5% ממשכורתו של הרופא ... נאונטולוגיה, הרדמה, קרדיולוגיה, טיפול נמרץ כללי, טיפול נמרץ ילדים וטיפול נמרץ לב",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-resident-grades",
@@ -155,7 +177,9 @@
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "מתמחה בדרג א' ... 45 שעות שבועיות ... דרג ב' ... 42 שעות שבועיות",
-      "confidence": "medium"
+      "confidence": "medium",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-oncall-frequency",
@@ -164,7 +188,9 @@
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "כ-20 עד 30 כוננויות בחודש ... כ-60 כוננויות מדי חודש",
-      "confidence": "medium"
+      "confidence": "medium",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-periphery-grant",
@@ -173,7 +199,9 @@
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "גובה המענק הנו 300,000 ש\"ח, למעט רופאים מתמחים ... 500,000 ש\"ח",
-      "confidence": "medium"
+      "confidence": "medium",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-toranut-weekday",
@@ -182,7 +210,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5111",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "יקבל רופא תשלום בסכום הזהה לשכר של יום עבודה ותוספת תשלום הזהה לשכר של 3 ימי עבודה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-toranut-eve",
@@ -191,7 +221,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5111",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "יקבל רופא תשלום בסכום הזהה לשכר של יום עבודה ותוספת תשלום הזהה לשכר 4 ימי עבודה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-toranut-weekend-day",
@@ -200,7 +232,9 @@
       "source_url": "https://www.ima.org.il/CollectiveAgreements/Default.aspx?CategoryId=5111",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "תשלום בסכום הזהה לשכר 2 ימי עבודה ותוספת תשלום הזהה לשכר חצי יום עבודה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-periphery-premium-ramp",
@@ -209,7 +243,9 @@
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "מתמחה או תחומי ... 10% ... 1.8.2011 ... 17.5% ... 1.8.2012 ... 25% ... 1.8.2013",
-      "confidence": "medium"
+      "confidence": "medium",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-shahiya-supplement",
@@ -218,7 +254,9 @@
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "תוספת שהייה",
-      "confidence": "medium"
+      "confidence": "medium",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "statutory-step-and-health",
@@ -227,7 +265,9 @@
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת - 7,703 ש\"ח ... ינכה המעסיק 3.23% (החל ב- 01.01.2025) ... מעל מדרגת גביה מופחתת ... 5.17% (החל ב- 01.02.2025)",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "nurses-gmul-hishtalmut",
@@ -236,7 +276,9 @@
       "source_url": "https://www1.health.gov.il/nursing/work/recognized-programs/information-for-nurses/",
       "source_fetched_at": "2026-07-15T00:00:00Z",
       "raw_snippet": "ערך גמול ההשתלמות הוא פונקציה של מספר שעות הלימוד המוכרות בתוכנית",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "framework-agreement-2020-2027",
@@ -245,7 +287,9 @@
       "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מסגרת-לשנים-2020-2027/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "תוספות שכר שקליות בגובה 500 ₪ וכן תוספת אחוזית בשיעור של 6% ... ממשכורת חודש / תוספת אחוזית: דצמבר 2024 - 2.0% ; אפריל 2025 - 3.5% ; אפריל 2026 - 5.0% ; אפריל 2027 - 6.0%",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "temporary-wage-reduction",
@@ -255,7 +299,9 @@
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "תקופות הפחתת שכר / שיעור הפחתת שכר עפ\"י ההסכם / שיעור הפחתת שכר עפ\"י החוק: מדצמבר 2024 עד מרץ 2025 - 2.290% / 0.000% ; מאפריל 2025 עד דצמבר 2025 - 2.290% / 3.307% ; מינואר 2026 עד דצמבר 2026 - 1.200% / 1.200% ... הפחתת השכר תבוצע בתלוש השכר באמצעות רכיב שכר, אשר יקרא \"תיקון פנסיוני\"",
       "confidence": "high",
-      "note": "Rate table published as images (hafhatatsachar.png, hafhatatsachar3.png) and read visually; the figures are not in the page text layer."
+      "note": "Rate table published as images (hafhatatsachar.png, hafhatatsachar3.png) and read visually; the figures are not in the page text layer.",
+      "verified_via": "image",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "nurses-tosefet-nihul",
@@ -264,7 +310,9 @@
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-11-12-2023/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "החל מיום 1.12.2023 תשולם תוספת ניהול לאחות בדרגה 14-21 בלבד, בשיעור של 7.2% מהשכר לערך שעה, הכולל שכר משולב, תוספת ותק, כל תוספות שכר ותוספות לשכר (אחוזיות ושקליות) שהיו קיימות ביום 31.12.2022 ... תוספת ניהול תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות וקריאות פתע, לעניין פיצויי פיטורים ... לעניין גמלאות, לעניין הפקדות לקופת גמל לקצבה ולעניין הפקדות לקרן השתלמות",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "nurses-shift-responsibility-80",
@@ -273,7 +321,9 @@
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-11-12-2023/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "החל מיום 1.12.2023 תעודכן תוספת אחריות משמרת כך שלאחיות הזכאיות תעמוד התוספת על סכום של 80 ₪ למשמרת ... אינה מהווה שכר לכל דבר ועניין, לא תובא בחשבון לעניין חישוב ערך שעה",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "nurses-table-structure",
@@ -282,7 +332,9 @@
       "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "משרד האוצר - האגף לשכר והסכמי עבודה ... משכורת משולבת בש\"ח לחודש לדירוג אחיות - מוסמך ... בתוקף מ - 01/12/08 ... דרגות ... רמה 10 ... רמה 21 ... שנות ותק",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "nurses-seniority-curve",
@@ -291,7 +343,9 @@
       "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "חישוב התוספת לכל שנת ותק יהיה כאחוז מהשכר המשולב בשנת הוותק הקודמת לה ... משנה 1 עד שנה 9 - 3.10% ... משנה 10 עד שנה 19 - 2.10% ... משנה 20 עד שנה 32 - 1.90% ... משנה 33 עד שנה 35 - 1.10% ... משנה 36 ואילך - 0.85%",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "nurses-rank13-cell",
@@ -300,7 +354,9 @@
       "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "משכורת משולבת בש\"ח לחודש לדירוג אחיות - מוסמך ... רמה 13 ... 0 ... 3,037.67",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-2024-agreement-tranches",
@@ -309,7 +365,9 @@
       "source_url": "https://www.malam-payroll.com/הוראות-ביצוע-להסכם-קיבוצי-רופאים-מיום-30-9-2024/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "החל מיום 1.1.2025 השכר המשולב ... יעודכן בשיעור של 4.88%",
-      "confidence": "medium"
+      "confidence": "medium",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "doctors-mission-supplement",
@@ -319,7 +377,9 @@
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "תוספת משימה לאומית ... לא תובא בחשבון לצורך חישוב המשכורת הקובעת ... הרופא יהיה זכאי לסכום הגבוה מבין השניים",
       "confidence": "medium",
-      "note": "Specific shekel amounts deliberately NOT asserted: they could not be confirmed against a reachable source, and the coefficient makes the headline figure misleading for an individual doctor."
+      "note": "Specific shekel amounts deliberately NOT asserted: they could not be confirmed against a reachable source, and the coefficient makes the headline figure misleading for an individual doctor.",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "wage-reduction-law",
@@ -328,7 +388,9 @@
       "source_url": "https://www.gov.il/he/pages/salary-reduction-2025-2026",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "חוק להשתתפותם של העובדים ובעלי תפקיד בשירות הציבורי, בצעדים לייצוב המצב הפיסקלי במדינה במהלך השנים 2025 ו-2026 (הוראת שעה), תשפ\"ה-2025 ... בדיווחים לשנות המס 2025 ו-2026, על המעסיקים לכלול את סכום הפחתת השכר שנוצר בעקבות החוק, במסגרת טופס 126",
-      "confidence": "high"
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     },
     {
       "id": "framework-working-week",
@@ -337,7 +399,9 @@
       "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מסגרת-לשנים-2020-2027/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
       "raw_snippet": "שבוע העבודה במגזר הציבורי יקוצר בשעתיים ... 41 שעות שבועיות (קיצור שעה אחת) ... 40 שעות שבועיות (קיצור שעה אחת)",
-      "confidence": "medium"
+      "confidence": "medium",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19"
     }
   ]
 }
