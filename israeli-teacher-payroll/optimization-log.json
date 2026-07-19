@@ -1,6 +1,18 @@
 {
   "cycles": [
     {
+      "version": "1.2.0",
+      "date": "2026-07-19",
+      "trigger": "Carried the israeli-healthcare-payroll v1.2.0 wage-agreement treatment across to the other payroll skills.",
+      "lessons": [
+        "DEBT (22 entries): --check-sources shows 22 pre-existing v1.1.0 evidence snippets that do not appear at their cited URL. Spot-checks suggest most are English PARAPHRASES of Hebrew sources rather than verbatim quotes, i.e. the numbers were never verbatim-anchored. None were introduced in this cycle and none of the 11 new claims failed. Next cycle must re-quote them verbatim or mark verified_via honestly. This is the exact state israeli-healthcare-payroll was in while it was hiding a real 3.5-point error.",
+        "NEGATIVE FINDING worth keeping: the 17.7.2023 public-sector framework agreement does NOT apply to teachers (their dirugim are represented by Histadrut HaMorim / Irgun HaMorim, not the general Histadrut). Copying the healthcare skill's framework section across would have been wrong. Verify scope before transferring a layer between skills.",
+        "Oz LaTmura coordinator (rakaz) gmul rates changed on 1.9.2025 but the authoritative table is an unread IMAGE. The skill routes those to the circular instead of asserting rates. Read the image next cycle and encode them.",
+        "Oz LaTmura wage-reduction rate for 1.5.2025-31.12.2025 is NOT CAPTURED: the 0.95% mitigation is scoped to Ofek Chadash only and no Irgun HaMorim equivalent was found. The skill says the law rate of 3.307% applies unless a separate agreement is located. Re-check next cycle.",
+        "A signed Oz tranche of +250 NIS lands 1.9.2026, weeks after this cycle. Re-verify it was paid on the next update."
+      ]
+    },
+    {
       "version": "1.1.0",
       "date": "2026-07-16",
       "holdout_before": 1.0,

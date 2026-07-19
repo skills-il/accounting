@@ -335,6 +335,130 @@
       "source_fetched_at": "2026-07-06T00:00:00Z",
       "raw_snippet": "Official site of the Histadrut HaMorim teachers union publishing Ofek Chadash salary and gmul tables.",
       "confidence": "high"
+    },
+    {
+      "id": "teacher-reduction-covered",
+      "claim": "Teachers are covered by the temporary public-sector wage reduction; the 27.3.2025 temporary-order law applies in full to members of Irgun HaMorim and the Histadrut.",
+      "claim_type": "feature",
+      "source_url": "https://www.itu.org.il/news/סוכם-מתווה-הפיצוי-לעוה/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "ארגון המורים וההסתדרות הכללית החדשה - כפופים אף הם לחוק זה, והוא חל במלואו על חבריהם",
+      "confidence": "high"
+    },
+    {
+      "id": "teacher-reduction-ofek-095",
+      "claim": "For Ofek Chadash teaching staff the temporary wage reduction was lowered from 3.307% to 0.95% for 1.5.2025 to 31.12.2025 by the collective agreement of 29.6.2025.",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/הסכם-הפחתת-שכר-לעובדי-הוראה-ברפורמת-או-2/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "ביום 29.6.2025 נחתם הסכם קיבוצי בין ממשלת ישראל לבין הסתדרות המורים בישראל ... בתוקף מ-1.5.2025 ועד 31.12.2025 שיעור הפחתת השכר הזמנית עבור הופחת מ-3.307% ל-0.95%",
+      "confidence": "high"
+    },
+    {
+      "id": "teacher-reduction-2026-12",
+      "claim": "From 1.1.2026 to 31.12.2026 the temporary wage reduction is 1.2% under both the agreement and the law, explicitly including Ofek Chadash teaching staff.",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/השתתפות-העובדים-במגזר-הציבורי-בהוצאו-2/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "בתוקף מ-1.1.2026 עד 31.12.2026 שיעור הפחתת שכר זמנית, הן לפי ההסכם והן לפי החוק, לרבות עובדי הוראה ב\"אופק חדש\", יקטן ויעמוד על 1.2%",
+      "confidence": "high"
+    },
+    {
+      "id": "teacher-reduction-rates-general",
+      "claim": "The general tracks are 2.290% from the 25.11.2024 collective agreement (December 2024) and 3.307% under the temporary-order law (April 2025).",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/השתתפות-העובדים-במגזר-הציבורי-בהוצאו-2/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "image",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "הסכם קיבוצי מיום 25.11.2024 | דצמבר 2024 | 2.290% ... חוק השתתפותם ... (הוראת שעה) | אפריל 2025 | 3.307%",
+      "note": "Rate table published as an image (hafhata.png); read visually.",
+      "confidence": "high"
+    },
+    {
+      "id": "teacher-reduction-payslip-label",
+      "claim": "On a teacher payslip the reduction appears as a single line under the symbol 'חוק הת. כלכלית אופק', not as the three-component 'tikun pensioni' used elsewhere in the public sector. It is scaled by an absence coefficient and does not affect the minimum-wage calculation.",
+      "claim_type": "entity",
+      "source_url": "https://www.malam-payroll.com/הסכם-הפחתת-שכר-לעובדי-הוראה-ברפורמת-או-2/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "בתלושי השכר, ההפחתה תתווסף לסמל \"חוק הת. כלכלית אופק\" ... ותוצג בשורה אחת ... ההפחתה תושפע מהיעדרויות (תוכפל באופן יחסי במקדם היעדרות) ... ההפחתה לא תשפיע על חישוב שכר מינימום",
+      "confidence": "high"
+    },
+    {
+      "id": "teacher-vetek-reduction",
+      "claim": "From September 2025 to December 2025 an additional reduction applied to teachers entitled to a seniority step, banded 1.9603% for under 6 years, 0.9900% for 6 to under 36, and 0.0000% from 36. The base is first-tier pensionable salary less the shekel supplements seniority does not affect. It applies only to signatory employers and not to teaching staff of local authorities.",
+      "claim_type": "percentage",
+      "source_url": "https://www.malam-payroll.com/הסכם-הפחתת-שכר-לעובדי-הוראה-ברפורמת-או-2/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "image",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "החל מחודש ספטמבר 2025 ועד חודש דצמבר 2025, יש להפחית משכורתו של עובד הוראה, אשר זכאי לקידום בוותק ... סכום הבסיס להפחתה = השכר הפנסיוני ברובד הראשון פחות תוספת שכר שקליות ... לא חלה על עובדי הוראה בשלטון המקומי ... 1.9603% | 0.9900% | 0.0000%",
+      "note": "Band table published as an image (tab01.png); read visually.",
+      "confidence": "high"
+    },
+    {
+      "id": "teacher-pension-not-reduced",
+      "claim": "The temporary wage reduction does not harm pension or provident contributions, does not reduce the mashkoret koveat for budgetary-pension retirees, and does not reduce gmulim or grants.",
+      "claim_type": "feature",
+      "source_url": "https://www.itu.org.il/news/סוכם-מתווה-הפיצוי-לעוה/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "לא ייפגעו ההפרשות לפנסיה ולגמל ... לא תיפגע המשכורת הקובעת לעובדים שפורשים לפנסיה תקציבית ... לא תהיה פגיעה בגמולים ובמענקים",
+      "confidence": "high"
+    },
+    {
+      "id": "teacher-dec2025-refund",
+      "claim": "The December 2025 reduction was 0.95% plus the school-hours amount otherwise payable that month, refunded through the reduction component in the January 2026 salary.",
+      "claim_type": "feature",
+      "source_url": "https://www.itu.org.il/news/סוכם-מתווה-הפיצוי-לעוה/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "גובה ההפחתה בחודש דצמבר 2025 יעמוד על 0.95% בתוספת הסכום שאמור להיות משולם באותו חודש. סכום זה יוחזר דרך רכיב ההפחתה במשכורת חודש ינואר 2026",
+      "confidence": "high"
+    },
+    {
+      "id": "framework-excludes-teachers",
+      "claim": "The 2020-2027 public-sector framework agreement's shekel supplement applies to employees paid under collective agreements for the dirugim represented by the Histadrut, which does not include teacher dirugim; its 'teaching employees' clause exists to prevent double cost for non-teachers pegged to the teacher scale. For the record its tranches, which teachers do NOT receive, are 2% (Dec 2024), 3.5% (Apr 2025), 5% (Apr 2026) and 6% (Apr 2027).",
+      "claim_type": "entity",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מסגרת-לשנים-2020-2027/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "הדירוגים המיוצגים על-ידי ההסתדרות ... עובדים, אשר מקבלים שכר לפי שכר עובדי הוראה לא יהיו זכאים לכפל עלות בגין אותה תקופה, הן מכוח הסכם מסגרת 2023, והן מכוח ההצמדה לשכר עובדי ההוראה ... דצמבר 2024 - 2.0% ; אפריל 2025 - 3.5% ; אפריל 2026 - 5.0% ; אפריל 2027 - 6.0%",
+      "confidence": "high"
+    },
+    {
+      "id": "teacher-clothing-2025",
+      "claim": "The teachers' annual clothing allowance was de-indexed and cut by 91 NIS (91 ש\"ח): 2,405 NIS paid in 2024 and 2,314 NIS in 2025.",
+      "claim_type": "currency",
+      "source_url": "https://www.itu.org.il/news/סוכם-מתווה-הפיצוי-לעוה/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "ביטול ההצמדה למדד ... והפחתה של 91 ₪ ... ביחס לקצובה ששולמה בשנת 2024 בסך 2,405 ש\"ח, בשנת 2025 תשולם קצובה בסך 2,314 ש\"ח",
+      "confidence": "high"
+    },
+    {
+      "id": "oz-shekel-supplement",
+      "claim": "The Irgun HaMorim agreement of 23.9.2024, effective 1.9.2025, raised the Oz LaTmura shekel supplement from 1,200 NIS (1,200 ש\"ח) to 1,518 NIS (1,518 ש\"ח), with two further signed steps of 250 NIS (250 ש\"ח) each dated 1.9.2026 and 1.9.2027.",
+      "claim_type": "currency",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-לעובדי-הוראה-בעוז-לתמורה/",
+      "source_fetched_at": "2026-07-19",
+      "verified_via": "browser",
+      "verified_at": "2026-07-19",
+      "raw_snippet": "תוספת שקלית ... 1,200 ₪ ... 1,518 ₪ ... החל מיום 1.9.2025 ... 250 ₪ ... 1.9.2026 ... 1.9.2027",
+      "note": "Coordinator (rakaz) gmul rates in the same agreement are published as an image and were NOT read; the skill routes those to the circular rather than asserting them.",
+      "confidence": "medium"
     }
   ]
 }
