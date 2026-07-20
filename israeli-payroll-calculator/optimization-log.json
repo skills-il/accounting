@@ -1,6 +1,20 @@
 {
   "cycles": [
     {
+      "version": "1.3.4",
+      "date": "2026-07-21",
+      "trigger": "Review-round pass with the new --check-sources gate; resolved two carry items deferred from v1.3.3.",
+      "lessons": [
+        "CORRECTNESS: references/bituach-leumi-rates.md had the SELF-EMPLOYED National Insurance rates wrong, 5.97% reduced / 17.83% full. Verified against BTL: self-employed NI is 4.47% reduced / 12.83% full. The skill's own evidence claim already had 4.47% right, so the reference file had silently drifted from the evidence. The gate's --check-sources surfaced 17.83% as unjustified.",
+        "CARRY RESOLVED (was MAJOR): keren hishtalmut (2.5% employee) is now surfaced in the net flow (new paragraph + Step 5 line), not just a gotcha. It is the biggest real-payslip deduction the default net omits.",
+        "CARRY RESOLVED (was MINOR): 2026 minimum wage (6,443.85/month, 35.40/hour from 1.4.2026) added as a Step 0 sanity check.",
+        "TWO DEAD SOURCE URLs found and re-pointed: the kolzchut pages for the Section 45a pension credit and for child credit points both now 404. Live content is at חובת_ביטוח_פנסיוני_לעובדים and נקודות_זיכוי_ממס_הכנסה(_להורים_לילדים_בגיל_17-6). The figures themselves (35% on 7% up to 8,148/yr, credit point 242/month) verified correct against the live pages.",
+        "VERIFIER FIX (shared): optimization-log.json is now in SKIP_FILES. Its prose ('no 53% error anywhere') was being read as a live 53% claim and blocking the gate. False positive fixed for all skills.",
+        "kolzchut is JS-rendered: curl returns only nav/footer chrome (which alone exceeds the 1500-char JS-shell heuristic), so it reads as 'unreachable' rather than 'empty'. Use a browser to read kolzchut article text.",
+        "Deferred: the reference file's employee worked-example and the age/pension/disability rate table were CPA-verified in v1.3.0/v1.3.3 and not re-read this cycle."
+      ]
+    },
+    {
       "version": "1.3.3",
       "date": "2026-07-20",
       "lessons": [

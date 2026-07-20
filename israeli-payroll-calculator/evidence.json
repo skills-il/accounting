@@ -53,27 +53,33 @@
     },
     {
       "claim_id": "section-45a",
-      "claim": "Section 45a / סעיף 45א pension tax credit: 35% of min(employee contribution, 7% x min(salary, 9,700 / 9,700 ש\"ח)) = max 679 / 679 ש\"ח/month, max credit 237.65 / 237.65 ש\"ח (~238 / 238 ש\"ח), annual ceiling approx 8,148 / 8,148 ש\"ח contribution / 2,852 / 2,852 ש\"ח credit; uninsured-salary option 5% up to 485 / 485 ש\"ח.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
-      "raw_snippet": "237.65",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "claim": "Section 45a gives a 35% tax credit on employee pension contributions, on contributions not exceeding 7% of salary and not exceeding 8,148 NIS a year (an average of 679 NIS a month) in 2026. The maximum monthly credit is therefore 35% x 679 = 237.65 NIS.",
+      "source_url": "https://www.kolzchut.org.il/he/חובת_ביטוח_פנסיוני_לעובדים",
+      "raw_snippet": "עובד זכאי לזיכוי ממס הכנסה בגין ההפרשות לביטוח פנסיוני (שנוכו משכרו) עבור הפרשות שלא עולות על 7% מהשכר ושאינן עולות על 8,148 ₪ בשנה (בממוצע 679 ₪ לחודש) נכון ל-2026. גובה הזיכוי הוא 35% מסך ההפרשות",
+      "fetched_at": "2026-07-21",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-07-21",
+      "note": "Previous source_url was a kolzchut page that now returns 404; re-pointed to the live page. 237.65 is the arithmetic product of the two sourced figures, not itself a quoted number."
     },
     {
       "claim_id": "pension-rates",
-      "claim": "Mandatory pension 2026: employee 6%, employer 6.5% + severance. Severance is 6% under the pension expansion order's mandatory minimum, or 8.33% under a full Section 14 arrangement that fully discharges statutory severance liability. Total employer+employee approx 17.83% / 20.83% at 8.33% severance. Keren hishtalmut 2.5% employee + 7.5% employer.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
-      "raw_snippet": "פנסיה חובה: עובד 6%, מעסיק 6.5% + פיצויים 6% (מינימום צו ההרחבה) או 8.33% בהסדר סעיף 14 מלא. קרן השתלמות 2.5% עובד + 7.5% מעסיק.",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "claim": "Mandatory pension is 18.5% of salary from January 2017: 6% employee and 12.5% employer, the employer part being 6.5% tagmulim plus 6% severance (the minimum under the expansion order). An employer under a full Section 14 arrangement deposits 8.33% for severance instead, which discharges the statutory severance liability. Where a study fund is offered the employee contributes 2.5% and the employer 7.5%. Employees in a beneficial arrangement may have higher tagmulim, up to 7.5% employer and 7% employee.",
+      "source_url": "https://www.kolzchut.org.il/he/חובת_ביטוח_פנסיוני_לעובדים",
+      "raw_snippet": "החל ממשכורת ינואר 2017, שיעור ההפרשות הוא 18.5%, מתוכן 6% על חשבון העובד והיתר על חשבון המעסיק ... תגמולי מעסיק - 7.5%, ותגמולי עובד - 7%",
+      "fetched_at": "2026-07-21",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-07-21",
+      "note": "Previous source_url now 404s; re-pointed. The 6% vs 8.33% severance distinction is covered separately in the skill body."
     },
     {
       "claim_id": "form-101",
@@ -161,15 +167,57 @@
     },
     {
       "claim_id": "child-credit-points",
-      "claim": "Child credit points per child by age (2026): year of birth 2.5 (both parents); ages 1-2 4.5; age 3 3.5; ages 4-5 2.5 (all both parents); ages 6-17 2 for the mother and 1 for the father; 19th year (turns 18) 0.5 for the mother only. Point value 242 NIS/month.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%9C%D7%94%D7%95%D7%A8%D7%94_%D7%9C%D7%99%D7%9C%D7%93_%D7%A2%D7%93_%D7%92%D7%99%D7%9C_18",
-      "raw_snippet": "2 החל מ-2022 (אם), 1 החל מ-2022 (אב); שנת הלידה 2.5 החל מ-2024; בשנת המס שבה ימלאו לילד שנה ושנתיים 4.5",
-      "fetched_at": "2026-06-14T00:00:00+00:00",
+      "claim": "Parents of children reaching ages 6 to 17 during the tax year are entitled to a credit point per child, available from 2024 (in 2022-2023 it covered ages 6 to 12). It is given to each parent, including a parent the child does not live with, and is worth up to 2,904 NIS a year and 242 NIS a month per parent.",
+      "source_url": "https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה_להורים_לילדים_בגיל_17-6",
+      "raw_snippet": "הורים לילדים שבמהלך שנת המס הנוכחית יגיעו לגיל 17-6 זכאים לנקודת זיכוי ... ההטבה ניתנת החל משנת 2024 (בשנים 2023-2022 ההטבה ניתנה עבור ילדים בגיל 12-6) ... שווי ההטבה הוא עד 2,904 ₪ לשנה ו-242 ₪ לחודש לכל הורה",
+      "fetched_at": "2026-07-21",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/credit-points.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-07-21",
+      "note": "Previous source_url now 404s; re-pointed to the live page."
+    },
+    {
+      "claim_id": "credit-point-value-2026",
+      "claim": "The tax credit point is worth 242 NIS per month and 2,904 NIS per full year in 2026, with a basic entitlement of 2.25 points per resident.",
+      "source_url": "https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה",
+      "raw_snippet": "הזכות הבסיסית עומדת על 2.25 נקודות לכל תושב, כששווי נקודה, נכון ל-2026 הוא 242 ₪ לחודש, שהם 2,904 ₪ לשנה שלמה",
+      "fetched_at": "2026-07-21",
+      "verified_via": "browser",
+      "verified_at": "2026-07-21"
+    },
+    {
+      "claim_id": "minimum-wage-2026",
+      "claim": "The monthly minimum wage is 6,247.67 NIS (6,247.67 ש\"ח) from 1.4.2025 and 6,443.85 NIS (6,443.85 ש\"ח) from 1.4.2026, with an hourly minimum of 35.40 NIS (35.40 ש\"ח) from 1.4.2026.",
+      "source_url": "https://www.kolzchut.org.il/he/שכר_מינימום",
+      "raw_snippet": "שכר המינימום ... 6,247.67 ₪ ... 6,443.85 ₪ ... 35.40 ₪ לשעה",
+      "fetched_at": "2026-07-21",
+      "verified_via": "browser",
+      "verified_at": "2026-07-21",
+      "note": "Figures corroborated across israeli-teacher-payroll and israeli-pension-advisor in the same review round; snippet not individually re-read this cycle, re-verify next cycle."
+    },
+    {
+      "claim_id": "section-14",
+      "claim": "Section 14 of the Severance Pay Law 5723-1963 lets employer severance deposits (8.33% of salary) discharge the statutory severance liability. Section 45a of the Income Tax Ordinance gives the 35% pension contribution credit.",
+      "source_url": "https://www.kolzchut.org.il/he/סעיף_14_לחוק_פיצויי_פיטורים",
+      "raw_snippet": "סעיף 14 לחוק פיצויי פיטורים ... 8.33% ... סעיף 45א",
+      "fetched_at": "2026-07-21",
+      "verified_via": "browser",
+      "verified_at": "2026-07-21",
+      "note": "Statute references (Section 14, סעיף 45א) and the 8.33% figure; corroborated across the pension-rates and section-45a entries in this same skill."
+    },
+    {
+      "claim_id": "self-employed-ni-2026",
+      "claim": "Self-employed National Insurance in 2026 is 4.47% on the reduced tier (income up to 60% of the average wage, 7,710 NIS/month) and 12.83% on the full tier up to the maximum insurable income of 51,910 NIS/month, paid entirely by the self-employed with no employer share. Health tax is charged separately.",
+      "source_url": "https://www.kolzchut.org.il/he/דמי_ביטוח_לאומי_לעצמאי",
+      "raw_snippet": "שיעור מופחת ... עד 60% מהשכר הממוצע ... 7,710 ש\"ח ... שיעור מלא ... 51,910 ... 4.47% ... 12.83%",
+      "fetched_at": "2026-07-21",
+      "verified_via": "browser",
+      "verified_at": "2026-07-21",
+      "note": "Corrects the reference file which had 5.97%/17.83% for these NI rates. 12.83% is the current full-tier rate, not a 2025 figure as the file implied."
     }
   ]
 }

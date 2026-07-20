@@ -10,6 +10,15 @@ compatibility: Works with Claude Code, Claude.ai, Cursor. No network access requ
 
 ## Instructions
 
+### Step 0: Sanity-check the gross against the minimum wage
+
+Before computing anything, check the gross is legal. The monthly minimum wage is
+6,247.67 NIS from 1.4.2025 and 6,443.85 NIS from 1.4.2026, with an hourly
+minimum of 35.40 NIS from 1.4.2026. A full-time gross below the figure in force
+for the month being computed is either a part-time position, an error in the
+input, or an underpayment worth flagging to the user before the arithmetic
+starts.
+
 ### Step 1: Gather Employee Information
 Collect from user:
 - **Gross monthly salary** (bruto, cash) in NIS
@@ -103,6 +112,16 @@ Pension applies to the **cash gross only** (not to shovi rechev). Mandatory for 
 
 The employee's contribution also generates the 35% tax credit computed in Step 2.5.
 
+**Keren hishtalmut (ask about it, do not silently omit it).** Where the employer
+offers a study fund, the employee side is typically 2.5% of salary and the
+employer side 7.5%, and the employee 2.5% is a real cash deduction that lands on
+the payslip. It is the largest ordinary deduction the default net calculation
+leaves out, so a net computed without it reads high for anyone who has one. It is
+not statutory, so do not assume it: ask whether the employee has a keren
+hishtalmut, and if so include the 2.5% in Step 5 and say that you did. Employer
+deposits are tax-exempt up to a salary ceiling that changes annually; above that
+ceiling the excess employer deposit becomes taxable income to the employee.
+
 ### Step 5: Calculate Net Salary (Neto)
 ```
 Net Cash = Cash Gross
@@ -110,6 +129,7 @@ Net Cash = Cash Gross
          - Bituach Leumi (on taxable_gross)
          - Health Tax (on taxable_gross)
          - Pension (6% of cash gross)
+         - Keren hishtalmut (2.5% of cash gross, ONLY if the employee has one)
          - Other deductions (union dues, loans, etc.)
 ```
 

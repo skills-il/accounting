@@ -46,14 +46,14 @@ Employee, monthly gross 12,000 NIS, no shovi rechev:
 (2025 equivalent: 7,522 x 3.5% + 4,478 x 12.0% = 263 + 537 = 800 NIS/month. The shift of 52 NIS/month roughly matches the Calcalist "576 NIS/year extra for employees" figure.)
 
 ## Self-Employed Rates (2026)
-Self-employed got a larger hit under Amendment 252 (reduced-tier rates rose sharply). Consult btl.gov.il for exact current rates before computing atzmai payroll.
+Self-employed pay the whole amount themselves (no employer share) in two brackets, split at 60% of the average wage (7,710 NIS/month in 2026) up to the maximum insurable income of 51,910 NIS/month. The reduced-tier rates rose under Amendment 252. The National Insurance rates below are self-employed NI only; health tax is a separate line. Re-verify against btl.gov.il before computing atzmai payroll.
 
 ### Reduced Bracket (up to 7,703 NIS/month)
-- National Insurance: ~5.97% (was 2.87% in 2025)
+- National Insurance: 4.47%
 - Health Tax: ~3.23%
 
 ### Full Bracket (7,704 - 51,910 NIS/month)
-- National Insurance: ~17.83% (was 12.83% in 2025)
+- National Insurance: 12.83%
 - Health Tax: ~5.17%
 
 ## Employee Rate Varies by Age and Pension Status (2026)
