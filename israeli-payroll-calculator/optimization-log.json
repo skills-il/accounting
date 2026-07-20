@@ -1,6 +1,16 @@
 {
   "cycles": [
     {
+      "version": "1.3.3",
+      "date": "2026-07-20",
+      "lessons": [
+        "CORRECTNESS: removed a false arithmetic derivation that framed the 7,703 BL reduced-tier threshold as '60% of the 2026 average wage of 13,769' (60% x 13,769 = 8,261, not 7,703). 7,703 is a separately-published BTL figure. Fixed the reference file, the script comment, and avoided picking between the §1 (13,566) and §2 (13,769) average-wage variants, which are both real BTL figures used for different purposes.",
+        "CONSISTENCY: SKILL body/script used 6% severance (mandatory minimum under the pension expansion order) while evidence.json cited 8.33%. Reconciled by stating both in the body + evidence: 6% is the mandatory minimum; 8.33% is the full Section 14 arrangement that discharges statutory severance liability. Calculator keeps 6% (correct default).",
+        "CONFIRMED CURRENT 2026 (CPA research): top marginal rate is 50% (47% + 3% surtax) with NO 53% error anywhere (a prior known bug, absent here); Amendment 288 brackets (20% to 19,000, 31% to 25,100, 35% from 25,101); credit point 242/mo; BL employee 4.27% reduced / 12.17% full with the FULL age/pension/disability rate table present; ceiling 51,910; Section 45a pension credit. Net-salary checker: no regeneration needed.",
+        "Deferred (MAJOR, over batch cap): surface keren hishtalmut (2.5% employee) as an optional net deduction in the calculator flow, not just a gotcha, it is the biggest real-payslip cash deduction the default net omits. Deferred (MINOR): add the 2026 minimum wage (6,443.85/mo, 35.40/hr from 1.4.2026); add a pension-contribution ceiling; niche BL rows (kibbutz, chalat imputed)."
+      ]
+    },
+    {
       "version": "1.3.0",
       "date": "2026-06-13",
       "lessons": [

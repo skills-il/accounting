@@ -41,7 +41,7 @@ PENSION_CREDIT_CONTRIBUTION_RATE = 0.07  # up to 7% of insured salary qualifies
 
 # Bituach Leumi (National Insurance) rates for employees (2026)
 # Per Amendment 252 (effective 1.1.2026): reduced-tier rates raised,
-# reduced-tier threshold now 7,703 (60% of 2026 average wage 13,769).
+# reduced-tier threshold now 7,703 (a separately-set BTL figure for 2026, not a plain 60% of the average wage).
 NI_REDUCED_CEILING = 7703       # NIS/month (reduced tier threshold, 2026)
 NI_FULL_CEILING = 51910         # NIS/month (max insurable salary, 2026)
 NI_REDUCED_RATE = 0.0104        # 1.04% employee NI (was 0.4% in 2025)

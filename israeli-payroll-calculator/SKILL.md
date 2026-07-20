@@ -99,7 +99,7 @@ For employees (2026, per Amendment 252):
 
 Pension applies to the **cash gross only** (not to shovi rechev). Mandatory for most employees since 2017:
 - Employee: 6% of cash gross (up to pension ceiling)
-- Employer: 6.5% + 6% severance
+- Employer: 6.5% + 6% severance (6% is the mandatory minimum severance under the pension expansion order; an employer under a full Section 14 arrangement deposits 8.33% instead, which fully discharges the statutory severance liability)
 
 The employee's contribution also generates the 35% tax credit computed in Step 2.5.
 

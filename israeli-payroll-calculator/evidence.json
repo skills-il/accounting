@@ -65,9 +65,9 @@
     },
     {
       "claim_id": "pension-rates",
-      "claim": "Mandatory pension 2026: employee 6%, employer 6.5% + 8.33% severance = 14.83%; total employer+employee approx 17.83% / 20.83%. Keren hishtalmut 2.5% employee + 7.5% employer.",
+      "claim": "Mandatory pension 2026: employee 6%, employer 6.5% + severance. Severance is 6% under the pension expansion order's mandatory minimum, or 8.33% under a full Section 14 arrangement that fully discharges statutory severance liability. Total employer+employee approx 17.83% / 20.83% at 8.33% severance. Keren hishtalmut 2.5% employee + 7.5% employer.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
-      "raw_snippet": "6.5%",
+      "raw_snippet": "פנסיה חובה: עובד 6%, מעסיק 6.5% + פיצויים 6% (מינימום צו ההרחבה) או 8.33% בהסדר סעיף 14 מלא. קרן השתלמות 2.5% עובד + 7.5% מעסיק.",
       "fetched_at": "2026-06-13T00:24:02.799218+00:00",
       "appears_in": [
         "SKILL.md",

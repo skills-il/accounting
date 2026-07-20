@@ -1,6 +1,6 @@
 # Bituach Leumi (National Insurance) Rates (2026)
 
-Amendment 252 to the National Insurance Law (effective 1.1.2026) raised the reduced-tier employee rate from 0.4% to 1.04% and the reduced-tier employer rate from 3.55% to 4.51%, and it updated the reduced-tier threshold to 7,703 NIS/month (60% of the 2026 average wage of 13,769 NIS/month). Full-bracket rates also edged up via health-tax re-basing.
+Amendment 252 to the National Insurance Law (effective 1.1.2026) raised the reduced-tier employee rate from 0.4% to 1.04% and the reduced-tier employer rate from 3.55% to 4.51%, and it set the reduced-tier threshold at 7,703 NIS/month (the reduced-tier ceiling published by Bituach Leumi for 2026, a separately-set figure, not a plain 60% of any single average-wage number). Full-bracket rates also edged up via health-tax re-basing.
 
 ## Employee Rates
 
