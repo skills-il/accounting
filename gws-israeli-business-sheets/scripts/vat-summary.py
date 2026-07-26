@@ -5,9 +5,9 @@ Reads exported sheet data (JSON or CSV) and produces a VAT period summary
 with totals for income, expenses, VAT collected, input VAT, and net liability.
 
 Usage:
-  python scripts/vat-summary.py --input data.json --period 1 --year 2026
-  python scripts/vat-summary.py --input data.csv --period 3 --year 2026 --output summary.csv
-  python scripts/vat-summary.py --help
+  python3 scripts/vat-summary.py --input data.json --period 1 --year 2026
+  python3 scripts/vat-summary.py --input data.csv --period 3 --year 2026 --output summary.csv
+  python3 scripts/vat-summary.py --help
 
 VAT Periods (Israel, bi-monthly):
   1 = Jan-Feb    2 = Mar-Apr    3 = May-Jun
@@ -54,15 +54,40 @@ def parse_date(date_str: str) -> datetime | None:
     return None
 
 
-def parse_amount(amount_str: str) -> float:
-    """Parse amount string, handling commas and currency symbols."""
-    if not amount_str:
+class AmountParseError(ValueError):
+    """Raised when a non-empty cell cannot be read as a number."""
+
+
+def parse_amount(amount_str) -> float:
+    """Parse an amount cell into a float.
+
+    Handles the shekel sign, thousands separators, currency words and
+    parenthesised negatives. The Sheets API returns FORMATTED_VALUE by default,
+    so a column formatted as ILS currency arrives as a string like
+    '\u20aa5,900.00'. Silently turning that into 0.0 is how this script used to
+    print a confident all-zero VAT report, so an unparseable non-empty cell now
+    raises instead.
+    """
+    if amount_str is None:
         return 0.0
-    cleaned = amount_str.replace(",", "").replace("ILS", "").replace("NIS", "").strip()
+    raw = str(amount_str).strip()
+    if not raw:
+        return 0.0
+    cleaned = raw
+    for token in ("\u20aa", "ILS", "NIS", "\u05e9\"\u05d7", "\u05e9\u05e7\u05dc", ","):
+        cleaned = cleaned.replace(token, "")
+    cleaned = cleaned.replace("\u00a0", " ").strip()
+    negative = cleaned.startswith("(") and cleaned.endswith(")")
+    if negative:
+        cleaned = cleaned[1:-1].strip()
     try:
-        return float(cleaned)
+        value = float(cleaned)
     except ValueError:
-        return 0.0
+        raise AmountParseError(
+            f"could not read {raw!r} as a number. If the cell is currency-formatted, "
+            "re-read the range with valueRenderOption=UNFORMATTED_VALUE."
+        )
+    return -value if negative else value
 
 
 def load_data(input_path: str) -> list[dict]:
@@ -115,7 +140,11 @@ def compute_summary(transactions: list[dict]) -> dict:
     vat_paid = 0.0
     income_count = 0
     expense_count = 0
-    category_totals: dict[str, float] = {}
+    income_categories: dict[str, float] = {}
+    expense_categories: dict[str, float] = {}
+    blocked_flags: list = []
+    mixed_flags: list = []
+    unknown_types: list = []
 
     AMOUNT_KEYS = ("Amount (excl. VAT)", "amount", "Amount", "amount_excl_vat",
                    "Amount excl VAT", 'סכום (ללא מע"מ)')
@@ -138,16 +167,29 @@ def compute_summary(transactions: list[dict]) -> dict:
         vat = parse_amount(raw_vat)
         category = txn.get("Category", txn.get("category", "Uncategorized"))
 
-        if txn_type == "income":
+        if txn_type in ("income", "\u05d4\u05db\u05e0\u05e1\u05d4"):
             total_income += amount
             vat_collected += vat
             income_count += 1
-        elif txn_type == "expense":
+            income_categories[category] = income_categories.get(category, 0) + amount
+        elif txn_type in ("expense", "\u05d4\u05d5\u05e6\u05d0\u05d4"):
             total_expenses += amount
             vat_paid += vat
             expense_count += 1
-
-        category_totals[category] = category_totals.get(category, 0) + amount
+            expense_categories[category] = expense_categories.get(category, 0) + amount
+            low = f"{category} {txn.get('Description', txn.get('description', ''))}".lower()
+            if any(k in low for k in ("car", "vehicle", "fuel", "\u05e8\u05db\u05d1", "\u05d3\u05dc\u05e7")):
+                blocked_flags.append((category, amount, vat, "car"))
+            elif any(k in low for k in ("meal", "lunch", "restaurant", "hospitality", "gift",
+                                        "\u05d0\u05e8\u05d5\u05d7", "\u05db\u05d9\u05d1\u05d5\u05d3",
+                                        "\u05d0\u05d9\u05e8\u05d5\u05d7", "\u05de\u05ea\u05e0")):
+                blocked_flags.append((category, amount, vat, "hospitality"))
+            elif any(k in low for k in ("home", "phone", "internet", "mobile",
+                                        "\u05d1\u05d9\u05ea", "\u05d8\u05dc\u05e4\u05d5\u05df",
+                                        "\u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8")):
+                mixed_flags.append((category, amount, vat))
+        else:
+            unknown_types.append(txn_type or "(blank)")
 
     # Fail loudly rather than reporting a confident zero. Silently returning
     # 0.00 income next to a plausible VAT liability is a filing hazard: the
@@ -181,7 +223,11 @@ def compute_summary(transactions: list[dict]) -> dict:
         "income_count": income_count,
         "expense_count": expense_count,
         "total_transactions": income_count + expense_count,
-        "category_totals": category_totals,
+        "income_categories": income_categories,
+        "expense_categories": expense_categories,
+        "blocked_flags": blocked_flags,
+        "mixed_flags": mixed_flags,
+        "unknown_types": unknown_types,
     }
 
 
@@ -205,15 +251,51 @@ def print_summary(summary: dict, period: int, year: int) -> None:
     print(f"  VAT Collected (on income):    {summary['vat_collected']:>12,.2f} ILS")
     print(f"  VAT Paid (input VAT):         {summary['vat_paid']:>12,.2f} ILS")
     print(f"  ---")
-    print(f"  VAT Liability (to pay):       {summary['vat_liability']:>12,.2f} ILS")
+    liab = summary["vat_liability"]
+    if liab >= 0:
+        print(f"  VAT Liability (to pay):       {liab:>12,.2f} ILS")
+    else:
+        print(f"  VAT REFUND claim (not a payment): {abs(liab):>9,.2f} ILS")
+        print("  A negative balance is a refund claim, which carries its own")
+        print("  substantiation requirements. Do not enter it as an amount to pay.")
     print()
 
-    if summary["category_totals"]:
-        print("  Breakdown by Category:")
-        for cat, total in sorted(summary["category_totals"].items(), key=lambda x: -x[1]):
+    if summary["income_categories"]:
+        print("  Income by Category:")
+        for cat, total in sorted(summary["income_categories"].items(), key=lambda x: -x[1]):
             print(f"    {cat:<30} {total:>12,.2f} ILS")
+        print()
+    if summary["expense_categories"]:
+        print("  Expenses by Category:")
+        for cat, total in sorted(summary["expense_categories"].items(), key=lambda x: -x[1]):
+            print(f"    {cat:<30} {total:>12,.2f} ILS")
+        print()
 
-    print(f"\n{'='*60}\n")
+    if summary["unknown_types"]:
+        print(f"  WARNING: {len(summary['unknown_types'])} row(s) had an unrecognised Type "
+              f"and were counted in NEITHER total: {sorted(set(summary['unknown_types']))}")
+        print("  Expected 'income'/'expense' or the Hebrew הכנסה/הוצאה.")
+        print()
+
+    if summary["blocked_flags"] or summary["mixed_flags"]:
+        print("  INPUT VAT REVIEW REQUIRED before filing:")
+        for cat, amount, vat, kind in summary["blocked_flags"]:
+            if kind == "car":
+                print(f"    {cat}: {vat:,.2f} ILS input VAT was included, but VAT on the")
+                print("      purchase or import of a private vehicle is NOT deductible at all")
+                print("      (Reg. 14), even at 100% business use; running costs are limited.")
+            else:
+                print(f"    {cat}: {vat:,.2f} ILS input VAT was included, but VAT on")
+                print("      hospitality, refreshments and gifts is generally not deductible.")
+        for cat, amount, vat in summary["mixed_flags"]:
+            print(f"    {cat}: {vat:,.2f} ILS input VAT was included at 100%, but a mixed")
+            print("      business/private input is limited to 2/3 (mainly business) or 1/4")
+            print("      (mainly private) under Reg. 18.")
+        print("  This script SUMS what you recorded; it does not apply these limits.")
+        print("  Adjust the input VAT with your accountant before filing.")
+        print()
+
+    print(f"{'='*60}\n")
 
 
 def export_csv(summary: dict, period: int, year: int, output_path: str) -> None:
@@ -226,8 +308,12 @@ def export_csv(summary: dict, period: int, year: int, output_path: str) -> None:
         writer.writerow(["VAT Liability", "", summary["vat_liability"], ""])
         writer.writerow(["Net Profit", summary["net_profit"], "", ""])
         writer.writerow([])
-        writer.writerow(["Category Breakdown", "Amount (ILS)", "", ""])
-        for cat, total in sorted(summary["category_totals"].items(), key=lambda x: -x[1]):
+        writer.writerow(["Income by Category", "Amount (ILS)", "", ""])
+        for cat, total in sorted(summary["income_categories"].items(), key=lambda x: -x[1]):
+            writer.writerow([cat, round(total, 2), "", ""])
+        writer.writerow([])
+        writer.writerow(["Expenses by Category", "Amount (ILS)", "", ""])
+        for cat, total in sorted(summary["expense_categories"].items(), key=lambda x: -x[1]):
             writer.writerow([cat, round(total, 2), "", ""])
 
     print(f"Summary exported to: {output_path}")

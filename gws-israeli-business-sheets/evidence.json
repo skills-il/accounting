@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "gws-israeli-business-sheets",
-  "generated_at": "2026-06-26T00:11:38Z",
+  "generated_at": "2026-07-26T22:57:31Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -313,6 +313,32 @@
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-tax-categories.md"
+      ]
+    },
+    {
+      "claim_id": "input-vat-private-vehicle-reg14",
+      "claim": "VAT paid on the purchase or import of a private vehicle, new or used, is not deductible as input VAT under Regulation 14(a) of the VAT Regulations, even where the vehicle serves the business exclusively.",
+      "source_url": "https://www.cpa.co.il/documents/maam/general/nikui-mas-tshumot-begin-rehav-mesharei.html",
+      "raw_snippet": "בתקנה 14(א) לתקנות מע\"מ נקבע, כי מע\"מ ששולם על רכישתו או ייבואו של \"רכב פרטי\", בין חדש ובין משומש, לא ניתן לניכוי כמס תשומות, גם אם הרכב משמש באופן מלא אך ורק לצורכי העסק",
+      "fetched_at": "2026-07-26T22:57:31Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md",
+        "scripts/vat-summary.py"
+      ]
+    },
+    {
+      "claim_id": "input-vat-mixed-use-reg18",
+      "claim": "Where an input serves both business and private use, Regulation 18 of the VAT Regulations allows deduction of two thirds of the input VAT where the use is mainly for business, and one quarter in the remaining cases.",
+      "source_url": "https://www.bshcpa.co.il/תקנה-18-קיזוז-תשומות/",
+      "raw_snippet": "יש להחיל את הוראות תקנה 18 לתקנות מע\"מ, כך שבמקרים בהם עיקר השימוש הוא לצורכי העסק יוכר 2/3 ממס התשומות, בעוד שביתר המקרים יוכר ניכוי של 1/4 ממס התשומות",
+      "fetched_at": "2026-07-26T22:57:31Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md",
+        "scripts/vat-summary.py"
       ]
     }
   ]

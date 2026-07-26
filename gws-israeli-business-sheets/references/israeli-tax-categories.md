@@ -32,8 +32,9 @@ Equipment such as computers, monitors, and office furniture is a **depreciable a
 
 | Category EN | Category HE | Deduction Rate | Notes |
 |-------------|-------------|----------------|-------|
-| Meals & Entertainment | ארוחות ואירוח | 80% | Business meals with clients or partners |
-| Car Expenses | הוצאות רכב | 45% or fixed | Fuel, maintenance, insurance, parking. Alternative: fixed deduction per km |
+| Light refreshments on the premises | כיבוד קל בבית העסק | 80% | Coffee, cold drinks, light refreshments consumed AT the place of business |
+| Hosting / entertainment | אירוח | Generally 0% | Taking a client to a restaurant is generally not deductible. A narrow exception exists for hosting a guest from abroad |
+| Car Expenses | הוצאות רכב | Higher of 45% or upkeep minus שווי שימוש | Fuel, maintenance, insurance, parking. The test is the HIGHER of the two, in the taxpayer's favour. There is no per-kilometre deduction regime for the self-employed in Israel |
 | Home Office | משרד ביתי | Proportional | Based on room area / total apartment area |
 | Phone | טלפון | Proportional | Business-use portion only. If separate business line, 100% |
 | Internet | אינטרנט | Proportional | Business-use portion. If business-only connection, 100% |
@@ -85,7 +86,7 @@ Israel's continuous-transaction-control model requires an allocation number (mis
 | Apr 30 | ריכוז שנתי 856 (ניכויים) | Form 856 annual withholding summary |
 | May 15 | דיווח מע"מ מרץ-אפר | VAT report Mar-Apr |
 | Jul 15 | דיווח מע"מ מאי-יוני | VAT report May-Jun |
-| Jul 31 | מקדמות מס - מחצית 1 | Tax advance - H1 |
+
 | Sep 15 | דיווח מע"מ יולי-אוג | VAT report Jul-Aug |
 | Nov 15 | דיווח מע"מ ספט-אוק | VAT report Sep-Oct |
 
@@ -94,3 +95,34 @@ Note on Form 126: Form 126 is the annual employer-withholding reconciliation for
 ## Document Retention
 
 Israeli bookkeeping rules require a business to keep its books and all supporting documents (invoices, receipts, bank statements) for at least **7 years** from the end of the tax year, or **6 years** from the date the annual return was filed, whichever is later. After 7 years from issuance the documents generally lose their legal validity. CSV backups are convenience copies, not a substitute for retaining the original source documents. Archive backups in dated folders and keep originals for the full retention period.
+
+## Input VAT deductibility is a SEPARATE question from income-tax deductibility
+
+The percentages above are income-tax deduction rates. Whether the VAT on the same
+expense can be reclaimed as input VAT is governed by its own rules, and the two
+answers frequently differ. The sheet has one VAT column, so an agent that just sums
+it will over-reclaim. Flag these three cases before the user files:
+
+| Expense | Input VAT treatment |
+|---|---|
+| Purchase or import of a private vehicle (including a commercial vehicle up to 3,500 kg) | **Not deductible at all** under Regulation 14(a), even where the vehicle is used exclusively for the business. A closed exception list covers car dealers, driving schools, rental and passenger-transport businesses. Running costs are separately limited. |
+| Hospitality, entertainment, refreshments and gifts | Generally **not deductible**, with a narrow exception for hosting a guest from abroad. This is why a client lunch is not simply an "80% expense". |
+| Mixed business/private inputs where the split cannot be factually separated (home office, phone, internet) | **2/3** of the input VAT where use is mainly for the business, **1/4** where mainly private, under Regulation 18. |
+
+`scripts/vat-summary.py` sums the VAT column as recorded and flags rows that look
+like these categories, but it does NOT apply the limits. That adjustment is the
+user's to make with their accountant. Each of these errors, left unadjusted,
+understates the VAT owed, which is the direction that attracts an assessment.
+
+## A Google Sheet is not a legal book of account
+
+Israeli bookkeeping rules require a computerised book to be a fixed file
+(kovetz kavua): records cannot be deleted, entries must be sequentially and
+automatically numbered with the sequence preserved, corrections must be additive
+so both the original and corrected data survive, and backups must be taken
+periodically. A freely editable Google Sheet satisfies none of those.
+
+The sheet this skill builds is therefore a management and reporting tool, not the
+user's book of account and not their invoicing system. Tell the user plainly that
+they still need a compliant invoicing and bookkeeping system alongside it, and
+that allocation numbers come from that system rather than from the spreadsheet.

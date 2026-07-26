@@ -5,9 +5,9 @@ Exports each tab from a Google Spreadsheet to a separate CSV file in the
 specified output directory. Useful for creating accountant-ready backups.
 
 Usage:
-  python scripts/backup-sheets.py --spreadsheet-id SHEET_ID --output-dir ./backups
-  python scripts/backup-sheets.py --spreadsheet-id SHEET_ID --output-dir ./backups --tabs "Sheet1,VAT-Period-1"
-  python scripts/backup-sheets.py --help
+  python3 scripts/backup-sheets.py --spreadsheet-id SHEET_ID --output-dir ./backups
+  python3 scripts/backup-sheets.py --spreadsheet-id SHEET_ID --output-dir ./backups --tabs "Sheet1,VAT-Period-1"
+  python3 scripts/backup-sheets.py --help
 
 Requires: gws CLI (npm install -g @googleworkspace/cli) with valid authentication.
 
@@ -24,6 +24,10 @@ from datetime import datetime
 from pathlib import Path
 
 
+class GwsError(RuntimeError):
+    """A gws invocation failed. Raised so callers can continue with other tabs."""
+
+
 def run_gws(args: list[str]) -> str:
     """Run a gws CLI command and return stdout."""
     cmd = ["gws"] + args
@@ -35,15 +39,18 @@ def run_gws(args: list[str]) -> str:
             timeout=60,
         )
         if result.returncode != 0:
-            print(f"Error running gws: {result.stderr}", file=sys.stderr)
-            sys.exit(1)
+            # Raise rather than sys.exit: sys.exit raises SystemExit, which the
+            # per-tab `except Exception` handler cannot catch, so one bad tab
+            # used to kill the whole backup silently.
+            raise GwsError(f"gws exited {result.returncode}: {result.stderr.strip()}")
         return result.stdout
     except FileNotFoundError:
-        print("Error: gws CLI not found. Install with: npm install -g @googleworkspace/cli", file=sys.stderr)
-        sys.exit(1)
+        raise GwsError(
+            "gws CLI not found. The recommended install is the pre-built binary from "
+            "https://github.com/googleworkspace/cli/releases, or: npm install -g @googleworkspace/cli"
+        )
     except subprocess.TimeoutExpired:
-        print("Error: gws command timed out after 60 seconds.", file=sys.stderr)
-        sys.exit(1)
+        raise GwsError("gws command timed out after 60 seconds.")
 
 
 def export_tab(spreadsheet_id: str, tab_name: str, output_dir: Path) -> str:
@@ -86,7 +93,9 @@ def main():
     )
     parser.add_argument(
         "--tabs",
-        help="Comma-separated list of tab names to export (default: all)",
+        help="Comma-separated list of tab names to export. REQUIRED: there is no "
+             "reliable 'all tabs' default, and silently backing up one tab against a "
+             "7-year retention obligation is worse than refusing.",
     )
 
     args = parser.parse_args()
@@ -97,9 +106,13 @@ def main():
     if args.tabs:
         tab_names = [t.strip() for t in args.tabs.split(",")]
     else:
-        tab_names = ["Sheet1"]
-        print("No --tabs specified, defaulting to 'Sheet1'.", file=sys.stderr)
-        print("Tip: specify tabs with --tabs 'Sheet1,VAT-Period-1,Summary'", file=sys.stderr)
+        print("Error: --tabs is required.", file=sys.stderr)
+        print("  This script does not enumerate tabs for you, and defaulting to a single", file=sys.stderr)
+        print("  tab would silently under-back-up records you must retain for 7 years.", file=sys.stderr)
+        print("  List the tabs explicitly, e.g. --tabs 'Sheet1,VAT-Period-1,Summary'", file=sys.stderr)
+        print("  You can see the tab names with:", file=sys.stderr)
+        print("    gws sheets spreadsheets get --params spreadsheetId=<ID>", file=sys.stderr)
+        sys.exit(1)
 
     print(f"Backing up {len(tab_names)} tab(s) to: {output_dir}/")
     exported = []
@@ -112,7 +125,11 @@ def main():
         except Exception as e:
             print(f"  Failed: {tab} - {e}", file=sys.stderr)
 
+    failed = len(tab_names) - len(exported)
     print(f"\nBackup complete: {len(exported)}/{len(tab_names)} tabs exported.")
+    if failed:
+        print(f"{failed} tab(s) FAILED. The backup is incomplete.", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

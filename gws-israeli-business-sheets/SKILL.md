@@ -53,6 +53,10 @@ An osek patur whose annual turnover crosses the ceiling (NIS 120,000 for 2025, N
 
 **Osek zair (micro-dealer) 2026 reform.** A separate income-tax track for low-turnover self-employed (turnover ceiling CPI-linked, about NIS 122,833 for 2026) grants an automatic 30% expense deduction off turnover with no need to itemize receipts, plus a simplified annual report and no advance payments. If the user is a low-turnover freelancer, mention that this track may suit them and tell them to confirm eligibility with their accountant or the Tax Authority before opting in.
 
+**Before anything else, set expectations about what this sheet is.** It is a management and reporting tool, not a legal book of account. Israeli bookkeeping rules require a computerised book to be a fixed file with non-deletable, automatically numbered records and additive corrections, and a freely editable Google Sheet meets none of that. The user still needs a compliant invoicing and bookkeeping system alongside this, and their allocation numbers come from that system. Say this once, early, rather than letting them discover it at an audit.
+
+Input-VAT deductibility also follows its own rules, separate from the income-tax percentages in this skill: VAT on a private vehicle is not reclaimable at all, VAT on hospitality and refreshments is generally not reclaimable, and mixed business/private inputs are limited to 2/3 or 1/4. See `references/israeli-tax-categories.md`. The VAT column records what was charged; that is not automatically what can be reclaimed.
+
 ### Step 3: Create a New Financial Tracking Spreadsheet
 
 When the user wants to set up a new income/expense tracking sheet, create it with proper Israeli financial structure.
@@ -88,8 +92,9 @@ For an **osek patur**, drop columns D and E and rename column F to `Amount` / `�
 | Equipment | ציוד | Depreciable (פחת) - capitalize and depreciate, not 100% in year 1 |
 | Phone & Internet | טלפון ואינטרנט | 100% (if business-only) |
 | Professional Services | שירותים מקצועיים | 100% |
-| Car Expenses | הוצאות רכב | Limited (45% or fixed) |
-| Meals & Entertainment | ארוחות ואירוח | 80% |
+| Car Expenses | הוצאות רכב | Income tax: higher of 45% or upkeep minus שווי שימוש. VAT: purchase not deductible, running costs limited |
+| Light refreshments on the premises (כיבוד קל) | כיבוד קל בבית העסק | 80% |
+| Hosting / entertainment (אירוח) | אירוח | Generally NOT deductible |
 | Travel | נסיעות | 100% |
 | Software & Subscriptions | תוכנה ומנויים | 100% |
 | Marketing | שיווק | 100% |
@@ -144,7 +149,7 @@ gws sheets spreadsheets values append \
 |----------|---------|---------|
 | Have total (incl. VAT), need breakdown | Amount = Total / 1.18, VAT = Total - Amount | 1180 / 1.18 = 1000, VAT = 180 |
 | Have net amount, need total | VAT = Amount * 0.18, Total = Amount + VAT | 1000 * 0.18 = 180, Total = 1180 |
-| Meal expense (80% deductible) | Deductible = Amount * 0.80 | 500 * 0.80 = 400 |
+| Light refreshments on the premises (80%) | Deductible = Amount * 0.80 | 500 * 0.80 = 400 |
 
 ### Step 5: Read and Summarize Financial Data
 
@@ -228,10 +233,10 @@ gws sheets spreadsheets values get \
   --params '{"spreadsheetId":"SPREADSHEET_ID","range":"VAT-Period-1!A:D"}' --format csv > vat-period-1-2026.csv
 ```
 
-Use the `scripts/backup-sheets.py` script for automated multi-tab backup:
+Use the `scripts/backup-sheets.py` script for automated multi-tab backup (both bundled scripts need Python 3.10 or newer, and `--tabs` is required because the script does not enumerate tabs for you):
 
 ```bash
-python scripts/backup-sheets.py --spreadsheet-id SPREADSHEET_ID --output-dir ./backups/2026-01 --tabs "Sheet1,VAT-Period-1"
+python3 scripts/backup-sheets.py --spreadsheet-id SPREADSHEET_ID --output-dir ./backups/2026-01 --tabs "Sheet1,VAT-Period-1"
 ```
 
 **Document retention.** Israeli bookkeeping rules require the business to keep its books and all supporting documents (invoices, receipts, bank records) for at least 7 years from the end of the tax year (or 6 years from the date the annual return was filed, whichever is later). A CSV backup is a convenience copy, not a substitute for retaining the original documents. Tell the user to archive backups in dated folders and keep the source invoices/receipts for the full retention period.
@@ -247,7 +252,7 @@ gws sheets spreadsheets values append \
   --json '{"values":[
     ["01/02/2026","Client A - Monthly Retainer","Professional Services","10000","1800","11800","Income","INV-2026-010","Bank Transfer","","HK-2026-0010","0"],
     ["03/02/2026","AWS Hosting","Software & Subscriptions","450","81","531","Expense","","Credit Card","","",""],
-    ["05/02/2026","Business Lunch - Client B","Meals & Entertainment","300","54","354","Expense","","Credit Card","80% deductible","",""]
+    ["05/02/2026","Office refreshments","כיבוד קל","300","54","354","Expense","","Credit Card","80% for income tax; input VAT on refreshments generally NOT deductible","",""]
   ]}'
 ```
 
@@ -296,7 +301,7 @@ User says: "Create a VAT summary for January-February 2026 and export it as CSV"
 
 Actions:
 1. Run `gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"` to pull all entries
-2. Run `python scripts/vat-summary.py` to filter Jan-Feb transactions and compute totals
+2. Run `python3 scripts/vat-summary.py` to filter Jan-Feb transactions and compute totals
 3. Add a "VAT-Period-1-2026" tab with `gws sheets spreadsheets batchUpdate` and write the summary with `gws sheets spreadsheets values update`
 4. Export the summary tab with `gws sheets spreadsheets values get --format csv`
 5. Display the summary: total income, total expenses, VAT collected, input VAT, net VAT liability
@@ -309,7 +314,7 @@ User says: "I got these payments this month: Client A paid 11,800 for consulting
 
 Actions:
 1. Parse each transaction, calculate the VAT breakdown (divide totals by 1.18)
-2. Categorize: consulting = Professional Services (income), hosting = Software & Subscriptions (expense), lunch = Meals & Entertainment (expense, 80% deductible)
+2. Categorize: consulting = Professional Services (income), hosting = Software & Subscriptions (expense). A client lunch is NOT an 80% item: hosting and entertainment in Israel are generally not deductible at all, and the 80% rate applies only to light refreshments consumed at the place of business
 3. Use `gws sheets spreadsheets values append` with a multi-row `values` array in `--json`
 4. Confirm all entries were logged with correct VAT calculations
 
@@ -318,8 +323,8 @@ Result: Three new rows appended to the tracking sheet with proper categorization
 ## Bundled Resources
 
 ### Scripts
-- `scripts/vat-summary.py` -- Generate bi-monthly VAT summary reports from sheet data. Run: `python scripts/vat-summary.py --help`
-- `scripts/backup-sheets.py` -- Backup Google Sheets tabs as local CSV files. Run: `python scripts/backup-sheets.py --help`
+- `scripts/vat-summary.py` -- Generate bi-monthly VAT summary reports from sheet data. Run: `python3 scripts/vat-summary.py --help`
+- `scripts/backup-sheets.py` -- Backup Google Sheets tabs as local CSV files. Run: `python3 scripts/backup-sheets.py --help`
 
 ### References
 - `references/israeli-tax-categories.md` -- Complete list of Israeli tax-deductible expense categories with deduction rates, plus VAT and osek patur/murshe rules. Consult when categorizing a business expense or confirming a tax fact.
@@ -330,8 +335,8 @@ Result: Three new rows appended to the tracking sheet with proper categorization
 - Israeli VAT reporting periods are bi-monthly (every 2 months), not quarterly as in many other countries. Agents may structure summaries on a quarterly basis, which does not match Israeli tax authority requirements.
 - Israeli date format is DD/MM/YYYY, not MM/DD/YYYY. Agents may use the American format, which causes confusion and errors when dates like 03/04/2026 could mean either March 4 or April 3.
 - An osek patur does not charge VAT on income and cannot reclaim input VAT on expenses. Agents may add VAT columns and compute a VAT liability for an osek patur, which is wrong. Always confirm the user's VAT status first.
-- Meal and entertainment expenses are only 80% deductible in Israel. Agents may categorize these as 100% deductible, overstating tax deductions.
-- Car expenses have complex deduction rules in Israel (45% or a fixed monthly amount, whichever is lower). Agents may apply 100% deduction, which would be incorrect for most businesses.
+- The 80% rate applies ONLY to light refreshments (כיבוד קל) consumed at the place of business. Hosting and entertainment (אירוח), including taking a client to a restaurant, are generally not deductible at all. Treating a client lunch as an 80% item overstates the deduction, and treating it as 100% overstates it further.
+- Car expenses: for income tax the deductible amount is the HIGHER of 45% of the vehicle upkeep or the upkeep minus the שווי שימוש (use value), not the lower of the two, and there is no per-kilometre deduction regime for the Israeli self-employed. For VAT the rule is stricter still: input VAT on the purchase or import of a private vehicle is not deductible at all, even at 100% business use, and running costs are limited. Applying a 100% deduction is wrong on both taxes.
 - Equipment (computers, monitors, furniture) is a depreciable asset (פחת), not a 100%-in-year-one expense. Agents may book the full purchase price as a one-time expense, which overstates the first-year deduction. Capitalize the asset and spread the deduction over its useful life (for example, computers are commonly depreciated at 33% a year over 3 years). Only low-value or consumable office items are expensed in full in the year of purchase. The input VAT on the purchase is still fully reclaimable in the first period (osek murshe). Confirm the depreciation rate and any low-value threshold with the accountant.
 - Israeli VAT is 18% (since January 2025). Agents trained on older data may use 17%, which was the previous rate, leading to incorrect calculations throughout the spreadsheet.
 - The `gws` command surface is generated from Google's Discovery API. There is no `gws sheets create` or `gws sheets read` top-level command. Use `gws sheets spreadsheets <method>` with `--params`/`--json`, or the `+read` / `+append` helpers. When unsure, run `gws sheets --help`.
