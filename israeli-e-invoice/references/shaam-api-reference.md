@@ -64,11 +64,46 @@ The allocation number is the `confirmation_number` field, a long numeric string 
 | 400 | Bad request structure |
 | 401 | Authentication failed (token invalid or expired) |
 | 403 | Not authorized for this VAT number |
+| 404 | No resource matches the requested URI; check the URI |
+| 406 | Server cannot fulfil the request; check permission for the vat_number (or customer_vat_number in the paragraph-3 case) |
 | 422 | Validation errors in invoice data |
-| 460 / 461 / 462 | Allocation-specific rejection reasons (see message.errors[]) |
 | 500 | SHAAM server error |
+
+**Application error codes are NOT HTTP statuses.** The Approval service returns
+HTTP 200 even when the invoice is not approved. Inspect `approved` and
+`confirmation_number`, then read `message.errors[]`:
+
+| Code | Meaning |
+|------|---------|
+| 431 | VAT number is incorrect |
+| 432 | Customer number is invalid: returned when the customer's osek/company number is missing, or when the supplier's own number was placed in the customer field. Use the sentinel `999999998` for a customer who does not deduct input VAT |
+| 434 | Invoice date is too old for approval |
+| 460 | Data is correct but the invoice is not approved |
+
+Treating 460 as a transport error makes an integration retry a request that can
+never succeed. Treat it as a business outcome and follow the refusal procedure.
 
 ## Developer Resources
 - OpenAPI User Guide (auth + onboarding): <https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf>
 - Official ITA OpenAPI demo (reference implementation): <https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo>
 - Documentation is primarily in Hebrew.
+
+## Invoice-decision service (reporting the chosen alternative)
+
+When a request is refused, the issuer must report which of the documented
+alternatives was taken:
+
+- `.../InvoiceDecisionApi/v1/Cancel` -- cancel the request
+- `.../InvoiceDecisionApi/v1/Continue` -- continue without an allocation number
+- `.../InvoiceDecisionApi/v1/FurtherObjection` -- apply to the control unit for a hearing
+
+Same host pattern as the other services (`ita-api.taxes.gov.il/shaam/tsandbox/...`
+for sandbox, production on the corresponding production path).
+
+## Onboarding
+
+OAuth2 credentials are not self-serve. The software must be registered in the Tax
+Authority's software registry, which issues an accounting-software number, and the
+sandbox must be enrolled separately. Budget for this before promising an
+integration date. Most small businesses never touch the API at all and use the
+Tax Authority's standalone web application instead.

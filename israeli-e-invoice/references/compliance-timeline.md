@@ -13,17 +13,19 @@ non-accelerated plan reached 5,000 NIS only in 2028.
 
 | Effective Date | Threshold | Applies To |
 |---------------|-----------|------------|
-| May 1, 2024 | > 25,000 NIS | Tax invoices (305, 310, 320) |
-| January 1, 2025 | > 20,000 NIS | Tax invoices (305, 310, 320) |
-| January 1, 2026 | > 10,000 NIS | Tax invoices (305, 310, 320) |
-| June 1, 2026 | > 5,000 NIS | Tax invoices (305, 310, 320) (confirmed) |
-| TBD (planned) | ALL invoices | All tax invoice types |
+| May 4, 2024 | net > 25,000 NIS (VAT > 4,500) | Tax invoices (305, 310, 320) |
+| January 1, 2025 | net > 20,000 NIS (VAT > 3,600) | Tax invoices (305, 310, 320) |
+| January 1, 2026 | net > 10,000 NIS (VAT > 1,800) | Tax invoices (305, 310, 320) |
+| June 1, 2026 | net > 5,000 NIS (VAT > 900) | Tax invoices (305, 310, 320) (in effect) |
 
-NOTE: Dates and thresholds should be verified against current Tax Authority
-announcements. Source: rashut-hamisim.gov.il and themarker.com (March 2025).
+NOTE: No further reduction is legislated or announced. Commentary speculates about
+a 2027 step or eventual full coverage, but no official source supports it, so do
+not present a further cut as scheduled. Sources: the gov.il allocation-number
+service page and the Tax Authority's Israel-Invoice FAQ, both current as of
+mid-2026.
 
 ## What "Above Threshold" Means
-- The threshold applies to the **net invoice amount, excluding VAT** (before adding the 18% VAT line)
+- The law states the threshold as the **net invoice amount, excluding VAT**, but the Tax Authority's operative test is the **VAT amount** derived from it (> 3,600 for 2025, > 1,800 from 1.1.2026, > 900 from 1.6.2026). For a wholly standard-rated invoice the two coincide; on a mixed invoice with an exempt or zero-rated component they diverge, and the VAT test governs
 - Credit invoices (330) do not require an allocation number
 - Multiple items on one invoice: total is what matters
 - Split invoices to avoid threshold: PROHIBITED (anti-avoidance rule)
@@ -31,8 +33,9 @@ announcements. Source: rashut-hamisim.gov.il and themarker.com (March 2025).
 ## Penalties for Non-Compliance
 - Invoice without required allocation number: May be disqualified as tax invoice
 - Buyer cannot claim input VAT on non-compliant invoice
-- Tax Authority may impose administrative fines
-- Repeated violations: possible criminal prosecution
+- The disallowed input VAT is deducted automatically from the inputs reported in the detailed report
+- Deducting input VAT on a tax invoice with no allocation number is an offence under the VAT Law
+- (No published schedule of administrative fines specific to this requirement was found; do not quote a fine amount)
 
 ## Exemptions
 - Plain payment receipts (kabala): Never require allocation (not part of the allocation document set)

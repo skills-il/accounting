@@ -11,6 +11,27 @@
         "Expert MINOR deferred (script edge cases, low impact): validate_tin accepts all-zeros '000000000' (sum 0 mod 10 == 0) -- real mispar-osek validation should reject it. Next cycle: add an all-zeros / all-same-digit guard.",
         "Expert MINOR deferred: the allocation-threshold check falls back to total_amount (gross) when net_amount is absent, which can over-flag near the 5,000 net boundary. Next cycle: add a comment or compute net from total when only gross is supplied."
       ]
+    },
+    {
+      "version": "2.1.0",
+      "date": "2026-07-26",
+      "lessons": [
+        "CRITICAL FIX: the allocation trigger tested the NET amount. The Tax Authority's operative criterion is the VAT amount (>3,600 for 2025, >1,800 from 1.1.2026, >900 from 1.6.2026). Verified verbatim on the ITA FAQ, which gov.il serves only to a real browser. On a wholly standard-rated invoice the tests coincide (5,000 x 18% = 900); they diverge on a mixed invoice with an exempt or zero-rated leg.",
+        "The mixed-invoice carve-out was challenged by the expert reviewer as my own extrapolation. It is not: ITA FAQ Q45 answers exactly this case and states that where the invoice's VAT is below the derived VAT amount there is no obligation to request a number and the customer does not need one to deduct input VAT, adding that the same answer applies to other dealers operating similarly. Verified in a browser before rejecting the challenge. The FAQ also recommends requesting on every invoice for uniformity, which is now in the skill.",
+        "CRITICAL FIX (script): the allocation test read total_amount as a fallback for net_amount. total_amount is GROSS, so every gross-only payload was inflated by 18% and produced false 'allocation required' errors right at the new boundary. Now derived as total / 1.18. This defect had been logged as deferred in an earlier cycle and was still live.",
+        "FIX (script): the 2024 VAT threshold was back-computed at 18% giving 4,500. VAT was 17% until 31.12.2024, so it is 4,250. An invoice with VAT between the two was wrongly cleared.",
+        "FIX (script): the VAT-mismatch check assumed every invoice is fully standard-rated, so a legitimate mixed invoice failed validation. It now accepts taxable_amount, bounds-checks it against net_amount, always errors on overstated VAT, and no longer lets a bare taxable_amount key silence understated VAT.",
+        "FIX (script): a zero vat_amount silently disabled the allocation test, including for the zero-rated reverse-charge invoice that the skill itself says DOES carry an allocation number. Zero now falls back to the net test.",
+        "FIX (script): credit notes (330) require an original-invoice reference in the prose but nothing checked it; allocation_number accepted any truthy value including a 26-digit confirmation number when only the 9 right-most digits belong on the invoice; and a TIN arriving as a JSON number lost its leading zero. All three now checked.",
+        "FIX: EN told an osek patur to 'use receipt (320)'. 320 is a tax-invoice type requiring an allocation number and an osek patur may not issue a tax invoice at all. The Hebrew file was already correct, the mirror image of the parity defect I introduced on the preceding skill in this batch.",
+        "REMOVED as unsourced: a 'TBD / ALL invoices' final timeline stage, an 'administrative fines' penalty with no published schedule, the claim that the June 2026 step was 'accelerated from 2028', a 30-day-forward and one-year-retroactive request window I could not confirm, and invoice type 331. The documented consequence is automatic disallowance of the input plus an offence under the VAT Law, which is what the skill now says.",
+        "PROCESS: I added two whole sections from a research agent's quotes without adding matching evidence entries, and both reviewers correctly flagged the entire block as unbacked. New content needs its evidence written at the same time as the prose, not after the gate complains. The gate only checks extracted claim TOKENS, so a paragraph of unsourced procedure can pass it while being entirely ungrounded.",
+        "CARRY: no token lifetime or refresh semantics, no rate limits or MultiApproval batch cap, and no idempotency guidance. After a timeout the caller cannot tell whether a number was issued and should look it up via invoice-information/v1/details before retrying; this is the most likely production incident and the skill is silent.",
+        "CARRY: sandbox and production use different hosts for the lookup endpoint (ita-api vs openapi). Stated in the reference but not flagged as the configuration trap it is.",
+        "CARRY: no guidance on cancelling or amending an already-allocated invoice, and the PCN 874 note gives no field mapping.",
+        "CARRY: ALLOCATION_REQUIRED_TYPES includes 332 unconditionally although the reference limits it to the cash-basis case, so a proforma quote can draw a spurious error.",
+        "CARRY: the control-unit hearing route has no stated deadline or decision-maker."
+      ]
     }
   ]
 }

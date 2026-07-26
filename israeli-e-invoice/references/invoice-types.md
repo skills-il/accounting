@@ -1,6 +1,6 @@
 # Israeli SHAAM Document Type Codes
 
-These are the official "Israel Invoice" document type codes from Table 2.5 of the Tax Authority API spec (v2.0, 7/2024). The allocation-number column reflects the spec; it applies only when the net amount is above the current threshold.
+These are the official "Israel Invoice" document type codes from Table 2.5 of the Tax Authority API spec (v2.0, 7/2024). The allocation-number column reflects the spec; it applies only when the invoice's VAT amount is above the current VAT threshold (the law states the headline figure as a net amount; see compliance-timeline.md).
 
 ## Standard Types
 
