@@ -117,10 +117,25 @@ def compute_summary(transactions: list[dict]) -> dict:
     expense_count = 0
     category_totals: dict[str, float] = {}
 
+    AMOUNT_KEYS = ("Amount (excl. VAT)", "amount", "Amount", "amount_excl_vat",
+                   "Amount excl VAT", 'סכום (ללא מע"מ)')
+    VAT_KEYS = ("VAT (18%)", "vat", "VAT", 'מע"מ')
+    unmatched_amount = 0
+
+    def pick(txn, keys):
+        for k in keys:
+            if k in txn and str(txn[k]).strip() != "":
+                return txn[k], True
+        return "0", False
+
     for txn in transactions:
         txn_type = txn.get("Type", txn.get("type", "")).strip().lower()
-        amount = parse_amount(txn.get("Amount (excl. VAT)", txn.get("amount", "0")))
-        vat = parse_amount(txn.get("VAT (18%)", txn.get("vat", "0")))
+        raw_amount, found_amount = pick(txn, AMOUNT_KEYS)
+        if not found_amount:
+            unmatched_amount += 1
+        amount = parse_amount(raw_amount)
+        raw_vat, _ = pick(txn, VAT_KEYS)
+        vat = parse_amount(raw_vat)
         category = txn.get("Category", txn.get("category", "Uncategorized"))
 
         if txn_type == "income":
@@ -133,6 +148,25 @@ def compute_summary(transactions: list[dict]) -> dict:
             expense_count += 1
 
         category_totals[category] = category_totals.get(category, 0) + amount
+
+    # Fail loudly rather than reporting a confident zero. Silently returning
+    # 0.00 income next to a plausible VAT liability is a filing hazard: the
+    # figure looks usable and is not.
+    if transactions and unmatched_amount == len(transactions):
+        print(
+            "Error: no recognised amount column found in the input.\n"
+            "  Expected one of: " + ", ".join(AMOUNT_KEYS) + "\n"
+            "  Found columns: " + ", ".join(sorted(transactions[0].keys())) + "\n"
+            "  Refusing to emit a summary that would report zero income.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+    if unmatched_amount:
+        print(
+            f"Warning: {unmatched_amount} of {len(transactions)} rows had no recognised "
+            "amount column and were counted as 0. Check the column headers before filing.",
+            file=sys.stderr,
+        )
 
     net_profit = total_income - total_expenses
     vat_liability = vat_collected - vat_paid

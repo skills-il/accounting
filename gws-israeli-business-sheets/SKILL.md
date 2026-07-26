@@ -24,7 +24,9 @@ Before performing any Google Sheets operations, confirm the Google Workspace CLI
 # Check if gws is installed
 gws --version
 
-# If not installed, install globally
+# If not installed: the recommended install is the pre-built binary for the
+# user's OS from https://github.com/googleworkspace/cli/releases, placed on $PATH.
+# npm is a convenience wrapper that downloads that same binary (needs Node 18+):
 npm install -g @googleworkspace/cli
 
 # Authenticate with Google OAuth
@@ -35,6 +37,10 @@ gws auth status
 ```
 
 If the user has not configured OAuth credentials, guide them through `gws auth login` with a Google Cloud project that has the Sheets API enabled. See `gws auth --help` for credential options.
+
+Two things to tell the user up front, because they affect whether this workflow keeps working:
+- `gws` is **not an officially supported Google product**, and it is under active development before v1.0, so breaking changes are expected. If a command in this skill fails, check `gws --help` and the current release notes before assuming the user did something wrong.
+- `gws` builds its command surface dynamically from Google's Discovery Service rather than shipping a fixed command list, so subcommands mirror the Sheets API resources and methods and can change when the API does. Run `gws sheets --help` to see what the installed version actually exposes rather than trusting a remembered command.
 
 ### Step 2: Confirm the User's VAT Status
 
@@ -68,7 +74,7 @@ When the user wants to set up a new income/expense tracking sheet, create it wit
 | K | Allocation # | מספר הקצאה | Text | Israel Invoice allocation number for invoices at/above the threshold |
 | L | Withholding | ניכוי במקור | ILS currency | Tax withheld at source by the payer, if any |
 
-Column K records the **allocation number (מספר הקצאה)** the seller obtains from the Tax Authority's Israel Invoice platform. From January 1, 2026 every invoice of NIS 10,000 or more (before VAT) needs one, and from June 1, 2026 the threshold drops to NIS 5,000 or more (before VAT). Without it the buyer cannot deduct input VAT on the invoice, so capture it whenever it applies.
+Column K records the **allocation number (מספר הקצאה)** the seller obtains from the Tax Authority's Israel Invoice platform. **The threshold in force is NIS 5,000 or more (before VAT), effective 1 June 2026.** It stepped down during 2026: NIS 10,000 from 1 January, then NIS 5,000 from 1 June. Use the current 5,000 figure, not the January one. Without an allocation number the buyer cannot deduct input VAT on the invoice, so capture it whenever it applies, and re-check the threshold before quoting it since it has been lowered repeatedly.
 
 Column L records **withholding tax at source (ניכוי במקור)**. Some clients are required to withhold income tax and pay the business net of that amount, so log the withheld sum here. The business needs its own אישור ניכוי מס במקור (withholding rate certificate) and this column feeds the annual Form 856 the payer files.
 
@@ -173,7 +179,7 @@ For an osek patur, present income, expenses, and net profit only.
 | 5 | September-October | November 15 |
 | 6 | November-December | January 15 |
 
-Limitation: businesses above the monthly-VAT turnover threshold (annual turnover over NIS 1,520,000) file VAT **monthly**, not bi-monthly; at or below it they file bi-monthly. This threshold updates on January 1 each year, so confirm the current figure on the Tax Authority site. (Do not confuse this filing-frequency threshold with the separate detailed-reporting (דיווח מפורט) obligation, which kicks in at a different, higher turnover level.) `scripts/vat-summary.py` and Steps 5-6 assume the 6 bi-monthly periods only. For a monthly filer, run the summary per calendar month instead of per bi-monthly period and confirm the reporting cadence with the accountant.
+Limitation: businesses above the monthly-VAT turnover threshold (turnover over NIS 1,775,000 as of 1 January 2026) file VAT **monthly**, not bi-monthly; at or below it they file bi-monthly. Turnover is measured over the determining year, the 12 consecutive months ending 31 August of the preceding tax year, not the calendar year. This threshold is re-indexed each January, so confirm the current figure. Do not confuse it with the separate detailed-reporting (דיווח מפורט) obligation, whose threshold is much LOWER: from 1 January 2026 a self-employed individual with turnover above NIS 500,000 must file the itemised PCN874 report, which lists every invoice rather than totals and must reconcile exactly with the periodic return. Above that turnover a plain spreadsheet stops being sufficient on its own. `scripts/vat-summary.py` and Steps 5-6 assume the 6 bi-monthly periods only. For a monthly filer, run the summary per calendar month instead of per bi-monthly period and confirm the reporting cadence with the accountant.
 
 ### Step 6: Generate Tax-Period Summary Reports
 
@@ -268,7 +274,7 @@ When the user needs to issue a tax invoice (חשבונית מס) to a customer, 
 - Description, quantity, and unit price of goods or services
 - Amount before VAT, the VAT amount, and the total including VAT (osek murshe). An osek patur issues a receipt or "חשבונית עסקה" with no VAT line.
 
-**Allocation number (מספר הקצאה) e-invoice mandate.** Israel's continuous-transaction-control model requires an allocation number from the Tax Authority's platform for tax invoices at or above a threshold, before the buyer can deduct input VAT. As of 2026 the threshold steps down: invoices of NIS 10,000 or more (before VAT) from January 1, 2026, and NIS 5,000 or more (before VAT) from June 1, 2026. When logging a large invoice, remind the user to obtain the allocation number through their invoicing software and record it alongside the invoice number.
+**Allocation number (מספר הקצאה) e-invoice mandate.** Israel's continuous-transaction-control model requires an allocation number from the Tax Authority's platform for tax invoices at or above a threshold, before the buyer can deduct input VAT. **The threshold currently in force is NIS 5,000 or more (before VAT), effective 1 June 2026** (it was NIS 10,000 from 1 January 2026). When logging an invoice at or above that figure, remind the user to obtain the allocation number through their invoicing software and record it alongside the invoice number. The threshold has been lowered twice in 2026 alone, so confirm the current figure rather than relying on a remembered one.
 
 ## Examples
 

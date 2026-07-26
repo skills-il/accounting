@@ -54,14 +54,15 @@ Equipment such as computers, monitors, and office furniture is a **depreciable a
 - Below the ceiling: "Osek Patur" (exempt dealer) - does not charge VAT on income and cannot reclaim input VAT on expenses. Issues a receipt or "cheshbonit iska" with no VAT line. Still tracks income and expenses for the annual income-tax return.
 - Above the ceiling: "Osek Murshe" (authorized dealer) - must charge VAT, may reclaim input VAT, and files periodic VAT returns. Some professions (lawyers, doctors, architects, consultants and similar) must register as osek murshe regardless of turnover.
 - An osek patur who crosses the ceiling must convert to osek murshe.
-- Reporting frequency: Bi-monthly (every 2 months) for businesses with annual turnover at or below NIS 1,520,000
-- Larger businesses (annual turnover over NIS 1,520,000): Monthly VAT reporting. This filing-frequency threshold updates on January 1 each year; confirm the current figure on the Tax Authority site. Do not confuse it with the separate detailed-reporting (דיווח מפורט) obligation, which applies at a different, higher turnover level.
+- Reporting frequency: Bi-monthly (every 2 months) for businesses with turnover at or below NIS 1,775,000 (as of 1 January 2026), measured over the determining year (12 consecutive months ending 31 August of the preceding tax year)
+- Larger businesses (turnover over NIS 1,775,000): Monthly VAT reporting.
+- **Detailed reporting (דיווח מפורט, PCN874) is a SEPARATE obligation with a much LOWER threshold. Do not conflate the two.** From 1 January 2026 a self-employed individual with annual turnover above NIS 500,000 (before VAT) must file it; companies and partnerships with a corporate partner came in from September 2025. It itemises every invoice rather than reporting totals, and must reconcile exactly with the periodic VAT return. Double-entry bookkeeping can trigger it independently of turnover. This filing-frequency threshold updates on January 1 each year; confirm the current figure on the Tax Authority site. Do not confuse it with the separate detailed-reporting (דיווח מפורט) obligation, which applies at a different, higher turnover level.
 
 ## Tax Invoice and Allocation Number (Mispar Haktzaa)
 
 A compliant Israeli tax invoice (cheshbonit mas) must show: the "cheshbonit mas" header and a running invoice number, the seller's business name and VAT/business ID, the customer's name, the invoice date, a description of goods or services, and (for an osek murshe) the amount before VAT, the VAT amount, and the total including VAT.
 
-Israel's continuous-transaction-control model requires an allocation number (mispar haktzaa) from the Tax Authority's platform for tax invoices at or above a threshold, before the buyer can deduct input VAT. As of 2026 the threshold steps down: invoices of **NIS 10,000 or more** (before VAT) from January 1, 2026, and **NIS 5,000 or more** (before VAT) from June 1, 2026. The supplier obtains the allocation number through their invoicing software and records it on the invoice.
+Israel's continuous-transaction-control model requires an allocation number (mispar haktzaa) from the Tax Authority's platform for tax invoices at or above a threshold, before the buyer can deduct input VAT. **Threshold in force: NIS 5,000 or more (before VAT), effective 1 June 2026.** It stepped down during 2026, from NIS 10,000 on 1 January to NIS 5,000 on 1 June. The threshold has been lowered repeatedly since the regime began, so verify the current figure before relying on it. The supplier obtains the allocation number through their invoicing software and records it on the invoice.
 
 ## Common Invoicing Services in Israel
 
