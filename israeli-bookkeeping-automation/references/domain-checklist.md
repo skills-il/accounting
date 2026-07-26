@@ -24,7 +24,7 @@ btl.gov.il/Insurance/Rates; BTL employer circular "שינוי בתשלום דמ�
 
 - **Standard resident employee, age 18 to retirement (עובד רגיל):**
   reduced (≤7,703) employee 4.27% (BL 1.04% + health 3.23%), employer 4.51%;
-  full (7,703–51,910) employee 12.17% (BL 7.00% + health 5.17%), employer 7.60%.
+  full (7,703 to 51,910) employee 12.17% (BL 7.00% + health 5.17%), employer 7.60%.
   (Source: btl.gov.il salaried-employee rates page, 2026.)
 - **Minor / youth under 18 (קטין / נער מתחת לגיל 18):**
   reduced total 0.61%, full total 2.12% (employer-borne; no employee health line). Youth pay
@@ -35,7 +35,7 @@ btl.gov.il/Insurance/Rates; BTL employer circular "שינוי בתשלום דמ�
   - Receiving old-age pension (מקבל קצבת זקנה): the working-pensioner income is exempt from the
     national-insurance (BL) component and bears the **health-insurance component only**, a regular-
     employee rate badly over-deducts.
-  - Ages 67–70 not yet receiving old-age pension: reduced employee ~3.93% / employer ~4.13%,
+  - Ages 67 to 70 not yet receiving old-age pension: reduced employee ~3.93% / employer ~4.13%,
     full employee ~10.03% / employer ~6.96% (verify exact split against the current circular).
   (Source: btl.gov.il salaried-employee rates page; kolzchut "דמי ביטוח לאומי לעובד שכיר".)
 - **Disability-pension recipient with annual NII certification (מקבל קצבת נכות):**
@@ -68,7 +68,7 @@ btl.gov.il/Insurance/Rates; BTL employer circular "שינוי בתשלום דמ�
 - Convalescence pay (דמי הבראה / havraa): the metadata/description claims the skill handles it,
   it must therefore appear as a payroll line (per-day rate × entitled days), or be dropped from
   the description. (Source: General convalescence-pay extension order.)
-- Severance fund vs. provision: distinguish the monthly 8.33% provision/deposit from a
+- Severance fund vs. provision: distinguish the monthly up-to-8.33% provision/deposit (6% is the extension-order floor; 8.33% is full liability) from a
   severance payout entry on termination.
 
 ### VAT (מע"מ)
@@ -79,7 +79,7 @@ btl.gov.il/Insurance/Rates; BTL employer circular "שינוי בתשלום דמ�
 - **Input-VAT deductibility by expense class** (a posting must apply the right fraction):
   passenger-car purchase 0% (blocked); car operating costs 2/3 (mainly business) or 1/4
   (mainly private); hospitality/business meals in Israel (אירוח) 0%; light refreshments
-  (כיבוד קל) input VAT 2/3 (the 80% figure is the separate income-tax expense cap, not input VAT);
+  (כיבוד קל) routine refreshments at the place of business: input VAT deductible in full, NOT 2/3 (2/3 is the vehicle-upkeep fraction; reg. 14 blocks the car purchase, the running-cost fraction sits in a separate provision). Reg. 15A separately blocks input VAT on a benefit to an employee (meals, staff events, gifts). The 80% figure is the separate income-tax expense cap;
   standard business goods/services 100%.
   (Source: VAT Regulations reg. 14 / reg. 15A; ITA practice.)
 - Cash-basis vs accrual VAT timing for services vs goods (חשבונית מס on supply vs receipt).
@@ -87,7 +87,7 @@ btl.gov.il/Insurance/Rates; BTL employer circular "שינוי בתשלום דמ�
 
 ### B2B invoicing, SHAAM allocation number (חשבונית ישראל / מספר הקצאה)
 
-- Net-amount thresholds by invoice issue date: 2025 > 20,000 ₪; Jan–May 2026 > 10,000 ₪;
+- Net-amount thresholds by invoice issue date: 2025 > 20,000 ₪; Jan to May 2026 > 10,000 ₪;
   **from 01.06.2026 > 5,000 ₪** (step-down in effect). Without the allocation number the
   buyer's input VAT is not deductible at year-end, surface on any large B2B AR entry.
   (Source: ITA "חשבונית ישראל" rollout schedule; Economic Arrangements Law.)
@@ -116,8 +116,7 @@ btl.gov.il/Insurance/Rates; BTL employer circular "שינוי בתשלום דמ�
 
 ### Entry mechanics
 
-- Debits = credits enforced on every pkuda. Israeli chart-of-accounts numbering (1xxx = assets,
-  not US-GAAP revenue). Date / asmachta / teur fields.
+- Debits = credits enforced on every pkuda. Account numbering is a per-business convention, not statutory: this skill's 3-digit scheme is illustrative, and what matters is that the ledger maps cleanly onto the Form 6111 sections and the OPENFORMAT export. Widths vary by package (3-digit, 4-digit, alphanumeric), so read the business's existing kartesset rather than assuming a scheme. Date / asmachta / teur fields.
 
 ---
 

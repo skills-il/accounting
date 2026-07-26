@@ -1,6 +1,6 @@
 ---
 name: israeli-bookkeeping-automation
-description: Generate proper double-entry journal entries (pkudat yoman) for common Israeli business transactions including payroll with all statutory components, VAT handling, asset depreciation, and revenue recognition. Use when you need to create accurate bookkeeping entries following the Israeli chart of accounts (matkonet heshbonot) standard numbering system. Supports both Osek Murshe (authorized dealer) double-entry and Osek Patur (exempt dealer) single-entry bookkeeping. Handles salary payments with income tax, bituach leumi, health insurance, pension, keren hishtalmut, and convalescence pay. Do NOT use for tax filing submissions, annual financial statement audits, or replacing a certified public accountant (roeh heshbon).
+description: Generate proper double-entry journal entries (pkudat yoman) for common Israeli business transactions including payroll with all statutory components, VAT handling, asset depreciation, and revenue recognition. Use when you need to create accurate bookkeeping entries using an illustrative Israeli account-numbering convention that you map onto the business's own kartesset and its Form 6111 codes. Supports both Osek Murshe (authorized dealer) double-entry and Osek Patur (exempt dealer) single-entry bookkeeping. Handles salary payments with income tax, bituach leumi, health insurance, pension, keren hishtalmut, and convalescence pay. Do NOT use for tax filing submissions, annual financial statement audits, or replacing a certified public accountant (roeh heshbon).
 license: MIT
 allowed-tools: Bash(python:*)
 compatibility: Works with all major AI coding agents
@@ -26,22 +26,22 @@ Determine which type of bookkeeping entry is needed:
 
 Check whether the business is:
 
-- **Osek Murshe (authorized dealer)**: Uses double-entry bookkeeping (hanhala kfula). Must charge and report VAT. Uses the full Israeli chart of accounts.
+- **Osek Murshe (authorized dealer)**: Uses double-entry bookkeeping (hanhala kfula). Must charge and report VAT. Uses a full double-entry account structure.
 - **Osek Patur (exempt dealer)**: Uses single-entry bookkeeping (hanhala pshuta). Does not charge VAT. Revenue under the annual threshold (122,833 ILS for 2026).
 
 ### Step 3: Apply the Israeli Chart of Accounts (Matkonet Heshbonot)
 
-Use the standard Israeli account numbering system:
+There is no single national chart of accounts that businesses must number their ledgers by. Bookkeeping software (Hashavshevet, Rivhit, and others) lets each business define its own card codes. What the numbering does have to support is classification: the bookkeeping directives and the OPENFORMAT export expect the ledger to map cleanly onto the Form 6111 sections in the annual report, so pick codes that map, rather than codes that merely look tidy. The table below is therefore an illustrative convention used consistently throughout this skill. Map it onto the kartesset the business actually uses, and onto its Form 6111 codes, rather than renumbering a live ledger to match it:
 
 | Range | Category | Examples |
 |-------|----------|----------|
-| 100-199 | Fixed Assets (rechush kavua) | 110 Computers, 120 Furniture, 130 Vehicles, 140 Leasehold improvements |
+| 100-199 | Fixed Assets (rechush kavua) | 110 Computers, 120 Furniture, 130 Vehicles, 140 Leasehold improvements, 150 Machinery. Each asset account has a matching accumulated-depreciation contra account at +1 (111, 121, 131, 141, 151); always credit the contra, never the asset itself |
 | 200-299 | Current Assets (rechush shotef) | 210 Bank (bank), 220 Cash (kupa), 230 Accounts receivable (hiyuvei lekuhot), 240 Input VAT (maam tsurot) |
 | 300-399 | Equity & Liabilities (hon va-hatvot) | 310 Owner equity (hon ba'alim), 320 Retained earnings (ruvhim tsvurim), 330 Bank loans (halvaa bank), 340 Accounts payable (zka'ei sapkim) |
 | 400-499 | Revenue (hachnasot) | 400 Service revenue (hachnasot misherutim), 410 Product revenue (hachnasot mimkarim), 420 Other income (hachnasot aherot) |
 | 500-599 | Cost of Goods (olut hamkhar) | 500 Materials (homrei gelem), 510 Direct labor (avoda yeshira) |
 | 600-699 | Operating Expenses (hotsa'ot tnuha) | 600 Salaries (hotsa'ot sachar), 601-604 Employer payroll costs (BL / pension / severance / KH ma'asik), 610 Rent (schar dira), 620 Insurance (bituah), 630 Depreciation (phat), 640 Office supplies (tsiyud misradi), 650 Professional services (sherutim miktso'iyim) |
-| 700-799 | Payroll Liabilities (hatvot sachar) | 710 Income tax payable (mas hachnasa leshalem), 720 Bituach leumi payable (BL leshalem), 730 Health insurance payable (mas briut leshalem), 740 Pension payable (pension leshalem), 750 Keren hishtalmut payable (KH leshalem), 760 Severance fund payable (kupat pitsuyim) |
+| 700-799 | Payroll Liabilities (hatvot sachar) | 710 Income tax payable (mas hachnasa leshalem), 720 Bituach leumi payable (BL leshalem), 730 Health insurance payable (mas briut leshalem), 740 Pension payable (pension leshalem), 750 Keren hishtalmut payable (KH leshalem), 760 Severance fund payable (kupat pitsuyim), 770 Salary payable (mascoret leshalem), 715 Withholding tax at source payable (nikui bamakor leshalem) |
 | 800-899 | Tax Accounts | 810 Output VAT (maam etsot), 820 VAT clearing (maam leshalem), 830 Corporate tax provision (hafrashat mas) |
 
 ### Step 4: Generate the Journal Entry
@@ -87,7 +87,8 @@ Source: National Insurance Institute salaried-employee rates (btl.gov.il/Insuran
 **Additional payroll components (not tiered):**
 - Pension employee contribution (pension oved): 6% of pensionable salary
 - Pension employer contribution (pension ma'asik): 6.5% of pensionable salary
-- Severance provision (pitsuyim): 8.33% (1/12 of annual salary)
+- Severance provision (pitsuyim): up to 8.33% (1/12 of annual salary). 8.33% is the full-liability rate and is common, but it is not automatic: the employer's actual severance rate is set by the applicable extension order, collective agreement or employment contract, and is often lower. Confirm the rate rather than assuming 8.33%. Whether it accumulates as a liability depends on the arrangement: under a section 14 arrangement (hesder lefi seif 14) the deposits come in place of the severance payment, so 760 should not accumulate a growing balance. Two caveats that decide real cases: the relief only reaches the portion actually deposited, so an employer depositing at less than the full-liability rate still carries the gap (hashlamat pitsuyim) as a liability; and section 14 depends on the signed arrangement meeting the general-permit conditions, not merely on money being deposited. Ask which arrangement applies, and at what rate, before posting.
+- Minimum wage (sachar minimum): 6,443.85 ILS/month for a full-time post and 35.40 ILS/hour, from 1 April 2026. A gross salary below this in a payroll entry is a red flag: stop and confirm the employee is genuinely part-time or on an hourly count rather than posting it.
 - Keren hishtalmut employee (KH oved): 2.5% of salary (optional, common)
 - Keren hishtalmut employer (KH ma'asik): 7.5% of salary, deductible up to the 15,712 ILS/month salary ceiling; employer KH on salary above that ceiling becomes a taxable benefit to the employee
 - Convalescence pay (dmei havraa): annual entitlement = daily rate (set by extension order, supply the current rate as an input) times entitled days by seniority. Post as a salary-expense line; this skill does not hard-code the daily rate.
@@ -104,6 +105,8 @@ For Osek Murshe businesses:
 
 Current VAT rate: 18% (since January 2025).
 
+**VAT timing (do not default to invoice date).** The rule above posts output VAT when the invoice is issued, which is correct for a sale of goods and for any business reporting on the accrual basis. Many service providers, however, report VAT on the CASH basis (basis mezuman): the VAT liability arises when payment is received, not when the invoice is issued, and what they issue up front is a heshbonit iska (proforma / demand for payment), with the heshbonit mas raised on receipt. Posting output VAT at invoice date for a cash-basis service provider over-reports VAT in that period. Establish which basis the business is on before generating any sales entry, and treat it as an input you must ask for rather than assume.
+
 ### Step 7: Handle Asset Depreciation (Phat)
 
 Apply Israeli Tax Authority (rashut hamisim) depreciation rates:
@@ -116,7 +119,7 @@ Apply Israeli Tax Authority (rashut hamisim) depreciation rates:
 | Leasehold improvements (shiputsim) | 10% | 140 |
 | Machinery, general (mekhonot) | 7% | 150 |
 
-Machinery is the general 7% rate; the depreciation regulations set higher per-type rates for specific machinery (for example tractors and self-propelled equipment 20%), so check the regulation appendix (tosefet bet) when the asset is a specialized machine. Depreciation is calculated on a straight-line basis (shitat hakav hayashar). Monthly depreciation = (Cost - Accumulated depreciation) * Annual rate / 12.
+Machinery is the general 7% rate; the depreciation regulations set higher per-type rates for specific machinery (for example tractors and self-propelled equipment 20%), so check the regulation appendix (tosefet bet) when the asset is a specialized machine. Depreciation is calculated on a straight-line basis (shitat hakav hayashar), so the base is always original cost, never the written-down balance. Monthly depreciation = Cost * Annual rate / 12, run from the date the asset was placed in service and stopped once accumulated depreciation reaches cost. For the first period, follow the convention the business's accountant already uses (a full month in the month of entry into service, or a pro-rata share of it) and state which convention the entry assumes. Do not subtract accumulated depreciation from the base: that is the reducing-balance method and it is not what these rates are.
 
 ## Examples
 
@@ -160,7 +163,7 @@ Debit (hova):
                                           Total:     19,252.00
 
 Credit (zchut):
-  210  Bank (bank) - net payment                     11,008.00
+  770  Salary payable (mascoret leshalem)            11,008.00
   710  Income tax payable (mas hachnasa)              1,500.00
   720  BL payable (employee + employer)               1,493.00
   730  Health insurance payable (mas briut)              626.00
@@ -169,6 +172,22 @@ Credit (zchut):
   760  Severance fund payable (pitsuyim)              1,250.00
                                           Total:     19,252.00
 ```
+
+Assumptions this entry states explicitly: the employer has NO section 14 arrangement and provides severance at the full 8.33%, so 760 accumulates. (8.33% x 15,000 is 1,249.50; it is shown rounded to 1,250 on both sides, so the entry still balances.)
+
+Salary is accrued on 31/01 but paid in February, so the net goes to salary payable, not to Bank. The payment itself is a second, separate entry on the actual value date:
+
+```
+Date: 09/02/2026
+Description: Payment of January 2026 net salary
+
+Debit (hova):
+  770  Salary payable (mascoret leshalem)            11,008.00
+Credit (zchut):
+  210  Bank (bank)                                   11,008.00
+```
+
+The statutory liabilities (710 to 760) are likewise cleared on their own remittance dates, not on the accrual date. Crediting Bank on the accrual date is the most common payroll-posting error: it understates the bank balance for a whole month and makes the bank reconciliation impossible to tie.
 
 Result: Balanced double-entry journal entry with all Israeli payroll components properly allocated. BL and health are calculated using tiered rates (reduced up to 7,703 ILS, full above). The entry separates employee deductions from employer costs and creates proper liabilities for statutory payments.
 
@@ -186,6 +205,7 @@ User says: "Record a sales invoice for consulting services, 10,000 ILS plus VAT"
 ```
 Date: 15/01/2026
 Reference: INV-2026-0042
+Allocation no. (mispar haktsa'a): 4471-8823-0091
 Description: Consulting services invoice - Client Name
 
 Debit (hova):
@@ -234,16 +254,16 @@ Credit (zchut):
                                           Total:       660.00
 ```
 
-Calculation: 24,000 * 33% / 12 = 660 ILS per month.
+Calculation: 24,000 * 33% / 12 = 660 ILS per month. Convention stated: a full month is taken in the month the asset was placed in service. If the business's accountant pro-rates instead, the January charge would be 660 * 27/31 = 575 and the schedule shifts accordingly. State whichever convention the entry uses.
 
-Result: Asset recorded at cost (excluding VAT which is recoverable). Depreciation at the Israeli Tax Authority rate of 33% for computer equipment.
+Result: Asset recorded at cost excluding RECOVERABLE VAT. Where the input VAT is blocked (a passenger car, for example, see the input-VAT table), the blocked VAT is part of the asset cost: capitalize it and depreciate it, do not expense it. Depreciation at the Israeli Tax Authority rate of 33% for computer equipment.
 
 ### Example 4: VAT Clearing Entry
 
 User says: "Prepare the bi-monthly VAT clearing entry. Output VAT collected: 45,000 ILS. Input VAT paid: 32,000 ILS."
 
 ```
-Date: 15/03/2026
+Date: 28/02/2026
 Reference: VAT-2026-0102
 Description: VAT clearing for January-February 2026
 
@@ -267,7 +287,7 @@ When you record a B2B sales-invoice pkudat yoman in 2026, the source invoice mus
 
 The June 2026 step-down took effect as scheduled, accelerated from the originally planned 2028 date. Use the invoice issue date, not the bookkeeping-entry date, when picking the threshold.
 
-The allocation number itself does not change the journal-entry shape, but the source invoice must include it (typically captured as a custom field on the AR journal line). Without it on the buyer's side, the input-VAT entry is not deductible at year-end. Surface this to the user when posting any large B2B invoice entry.
+The allocation number itself does not change the journal-entry shape, but the source invoice must include it (typically captured as a custom field on the AR journal line). Carry it on both sides. On the buyer's side there is a hard posting rule: if a purchase invoice is over the threshold and carries no allocation number, do NOT debit input VAT to 240. Post that VAT to a separate non-deductible suspense account, flag it to the user, and move it to 240 only once the supplier reissues the invoice with a number. Silently debiting 240 produces a VAT report that is over-claimed in that period, not merely a problem discovered at year-end.
 
 ## VAT input deduction by expense class
 
@@ -276,10 +296,11 @@ Not every input VAT line is fully recoverable. Common Israeli VAT rules to apply
 | Expense | Input VAT recoverable | Notes |
 |---|---|---|
 | Passenger-car purchase | 0% | Vehicle itself is fully blocked |
-| Passenger-car operating costs (fuel, repairs, parking) | 2/3 | Standard "mostly-business" rule per gov.il / VAT Law reg. 14 |
+| Passenger-car operating costs (fuel, repairs, parking) | 2/3 | Standard "mostly-business" rule. Note the citation: regulation 14 blocks the car PURCHASE. The 2/3 mixed-use fraction on running costs sits in a separate provision, so confirm the exact regulation number before citing one |
 | Passenger-car operating costs, mostly-private | 1/4 | Stricter rule when business use is incidental |
 | Hospitality / business meals in Israel | 0% | Disallowed input VAT (אירוח בארץ) |
-| Light refreshments at workplace (כיבוד קל) | 2/3 | Input VAT only. The income-tax expense deduction for כיבוד is a separate 80% cap, do not confuse the two |
+| Light refreshments at the place of business (כיבוד קל) | 100% | Routine refreshments served at the place of business (hot and cold drinks, biscuits) are a business input and the input VAT is deducted. Do NOT apply the 2/3 fraction, that is the vehicle-upkeep rule. What regulation 15A blocks is a benefit to an employee (tashuma bishvil oved: meals, staff events, gifts, entertainment), which is a different line. Keep the income-tax side separate: only 80% of the kibud expense is deductible for income tax, and for an osek murshe that 80% is applied to the pre-VAT base precisely because the VAT was already reclaimed here |
+| Employee meals, staff events, gifts (טובת הנאה לעובד) | 0% | Blocked by regulation 15A unless the business reports the benefit as a taxable self-supply at market value |
 | Standard goods + services for business | 100% | Full deduction with valid tax invoice |
 
 Verify the per-expense rule before posting input-VAT in journal entries; over-deduction creates audit exposure.
@@ -295,7 +316,7 @@ When automating bookkeeping, plan the export pipeline against these formats. Age
 
 ## Gotchas
 
-- Israeli bookkeeping uses a specific chart of accounts convention that differs from US GAAP chart numbering. Account numbers in the 1xxx range typically represent assets in Israeli systems, not revenue. Agents may apply US-style account numbering.
+- There is no single Israeli chart of accounts, so do not assume one. Different packages use different card codes and widths (3-digit, 4-digit, or alphanumeric), and the numbering in this skill is an illustrative convention. Always read the business's existing kartesset before posting, and never renumber it to match an example. Agents may apply US GAAP numbering, or treat an example chart as if it were statutory.
 - Payroll journal entries in Israel must include separate lines for pension (6%+6.5%), keren hishtalmut (2.5%+7.5%), Bituach Leumi (employer+employee), and health tax. Agents may produce simplified entries missing mandatory statutory components.
 - BL and health rates are tiered, not flat. The reduced rate applies only to the portion of salary up to the threshold (7,703 ILS for 2026), with the full rate on income above that. Agents may apply a flat rate to the entire salary, producing incorrect amounts.
 - Israeli double-entry bookkeeping requires VAT input (maam tsurot) and VAT output (maam etsot) to be tracked in separate accounts for bi-monthly reporting. Agents may combine them into a single VAT account.
