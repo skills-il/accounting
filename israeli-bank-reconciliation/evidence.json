@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-bank-reconciliation",
-  "generated_at": "2026-06-25T00:00:00Z",
+  "generated_at": "2026-07-27T00:48:37Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -9,7 +9,10 @@
       "source_url": "https://www.kolzchut.org.il/he/מס_ערך_מוסף_(מע\"מ)",
       "raw_snippet": "והחל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "company-types-enum",
@@ -17,7 +20,10 @@
       "source_url": "https://github.com/eshaham/israeli-bank-scrapers",
       "raw_snippet": "export enum CompanyTypes {\n  hapoalim = 'hapoalim',\n  beinleumi = 'beinleumi',\n  union = 'union',\n  amex = 'amex',\n  isracard = 'isracard',\n  visaCal = 'visaCal',\n  max = 'max',\n  otsarHahayal = 'otsarHahayal',\n  discount = 'discount',\n  mercantile = 'mercantile',\n  mizrahi = 'mizrahi',\n  leumi = 'leumi',\n  massad = 'massad',\n  yahav = 'yahav',\n  behatsdaa = 'behatsdaa',\n  beyahadBishvilha = 'beyahadBishvilha',\n  oneZero = 'oneZero',\n  pagi = 'pagi',\n}",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "books-retention-7-years",
@@ -25,7 +31,10 @@
       "source_url": "https://www.kolzchut.org.il/he/ניהול_ספרי_החשבונות_של_העסק",
       "raw_snippet": "את פנקסי החשבונות, הרישומים ומסמכים אחרים הקשורים לניהול העסק (כגון קבלות על הוצאות שהוציא העסק), יש לשמור במשך 7 שנים.",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "standing-orders-deferred-checks",
@@ -33,7 +42,10 @@
       "source_url": "https://www.kolzchut.org.il/he/ניהול_ספרי_החשבונות_של_העסק",
       "raw_snippet": "אם כללו התקבולים שיקים, יש לציין פרטים לזיהוי השיקים, כגון מספר השיק ושם הבנק שעליו נמשך.",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "boi-supervision-ref",
@@ -41,7 +53,10 @@
       "source_url": "https://www.boi.org.il/en/economic-roles/supervision-and-regulation/",
       "raw_snippet": "Supervision and Regulation",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "tax-authority-ref",
@@ -49,7 +64,10 @@
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "Israel Tax Authority - bookkeeping",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ibank-ref",
@@ -57,7 +75,10 @@
       "source_url": "https://www.ibank.org.il/en/",
       "raw_snippet": "Association of Banks in Israel",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "israeli-bank-scrapers-ref",
@@ -65,7 +86,10 @@
       "source_url": "https://github.com/eshaham/israeli-bank-scrapers",
       "raw_snippet": "export enum CompanyTypes {\n  hapoalim = 'hapoalim',",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "caspion-ref",
@@ -73,7 +97,10 @@
       "source_url": "https://github.com/brafdlog/caspion",
       "raw_snippet": "This project aims to automate this process by fetching the data automatically from your Israeli financial institutions and sending it to the budgeting tool of your choice.",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "pandas-io-ref",
@@ -81,7 +108,10 @@
       "source_url": "https://pandas.pydata.org/docs/reference/io.html",
       "raw_snippet": "Input/output ... read_csv ... read_excel",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "openpyxl-ref",
@@ -89,7 +119,10 @@
       "source_url": "https://openpyxl.readthedocs.io/en/stable/",
       "raw_snippet": "openpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "illustrative-example-figures",
@@ -97,7 +130,87 @@
       "source_url": "https://github.com/eshaham/israeli-bank-scrapers",
       "raw_snippet": "2,450 ILS 2,450 ש\"ח 1 ILS 1 ש\"ח 1.00 ILS 1.00 ש\"ח 127.50 ILS 127.50 ש\"ח 5.00 ILS 5.00 ש\"ח 18,200 ILS 18,200 ש\"ח 3,400 ILS 3,400 ש\"ח 5,100 ILS 5,100 ש\"ח 9,700 ILS 9,700 ש\"ח 98% 97% 91%",
       "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-inclusive-portion-15-25",
+      "claim": "At an 18% VAT rate the VAT portion of a VAT-INCLUSIVE amount is 18/118, i.e. about 15.25% (15.25%) of the gross. So a systematic gap of about 18% against a net figure, or about 15.25% against a gross figure, indicates a VAT-inclusive versus VAT-exclusive mismatch rather than a genuine reconciling item. This is arithmetic derived from the 18% rate, not a separate published figure.",
+      "source_url": "https://www.kolzchut.org.il/he/מס_ערך_מוסף",
+      "raw_snippet": "שיעור המע\"מ בישראל עומד על 18%",
+      "fetched_at": "2026-07-27T00:37:35Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "boi-representative-rates-notes",
+      "claim": "The Bank of Israel publishes representative (official) exchange rates and its explanatory notes describe how and when they are determined, which is the reference used when translating a foreign-currency bank line into shekels.",
+      "source_url": "https://www.boi.org.il/en/economic-roles/financial-markets/explanatory-notes-to-the-representative-exchange-rates/",
+      "raw_snippet": "Explanatory Notes to the Representative Exchange Rates",
+      "fetched_at": "2026-07-27T00:37:35Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "bookkeeping-directives-1973",
+      "claim": "The Income Tax (Bookkeeping) Directives, 1973 (הוראות מס הכנסה (ניהול פנקסי חשבונות), התשל\"ג-1973) govern how an Israeli business must keep its books, including the requirement that entries be supported by documentation and that the records be reconstructible and retained.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "הוראות מס הכנסה (ניהול פנקסי חשבונות), התשל\"ג-1973",
+      "fetched_at": "2026-07-27T00:37:35Z",
+      "note": "nevo.co.il returns 403 to plain fetchers; the instrument name and citation are stable and used here only as the statutory reference for the bookkeeping requirements.",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "open-banking-financial-info-law",
+      "claim": "Israel's Financial Information Service Law, 2021 established a licensed open-banking regime supervised by the Israel Securities Authority, under which a licensed provider accesses account data through open interfaces without the customer exposing their banking credentials. Business accounts have been within scope since December 2023.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/204508.htm",
+      "raw_snippet": "חוק שירות מידע פיננסי, התשפ\"ב-2021",
+      "fetched_at": "2026-07-27T00:48:37Z",
+      "note": "nevo returns 403 to plain fetchers; cited as the statutory reference for the licensed alternative to credential scraping.",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "boi-rate-business-days-only",
+      "claim": "Bank of Israel representative exchange rates are calculated once a day on foreign-currency business days only, so no rate is published on Saturdays, Sundays, Israeli holidays and certain other days. The rate is published after the afternoon sampling window closes, and the Bank of Israel states the rates have no official or legal standing in themselves.",
+      "source_url": "https://www.boi.org.il/en/economic-roles/financial-markets/explanatory-notes-to-the-representative-exchange-rates/",
+      "raw_snippet": "The Bank of Israel calculates representative exchange rates once a day on foreign-currency business days only... There are no representative rates on Saturdays, Sundays, Israeli holidays",
+      "fetched_at": "2026-07-27T00:48:37Z",
+      "verified_via": "browser",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cheque-provisional-credit-three-days",
+      "claim": "Under the banking directives on the timing of credit and debit for cheques, the collecting bank credits the customer on the clearing day itself, and that credit becomes final only after three further business days, during which the drawee bank may still refuse the cheque.",
+      "source_url": "https://he.wikisource.org/wiki/הוראות_הבנקאות_(שירות_ללקוח)_(מועד_זיכוי_וחיוב_בשיקים)",
+      "raw_snippet": "בנק גובה יזכה את לקוחו ביום הסליקה בשל שיק שהופקד באותו יום",
+      "fetched_at": "2026-07-27T00:48:37Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-5000-june-2026",
+      "claim": "Since 1 June 2026 a tax invoice of NIS 5,000 (5,000 ש\"ח) or more before VAT requires an allocation number (mispar haktzaa) from the Tax Authority platform, and without one the buyer cannot offset the VAT on that expense. The threshold was NIS 10,000 from 1 January 2026.",
+      "source_url": "https://www.chamber.org.il/serviceslobby/finance/1429/162557/",
+      "raw_snippet": "החל מ־1 ביוני 2026: חובת מספר הקצאה בניכוי מס תשומות תחול מעסקאות מעל 5,000 ₪",
+      "fetched_at": "2026-07-27T00:48:37Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 name: israeli-bank-reconciliation
-description: Automates bank reconciliation for Israeli banks (Leumi, Hapoalim, Discount, Mizrahi Tefahot) using the israeli-bank-scrapers library. Matches scraped or imported transactions to invoices and receipts, detects discrepancies, and generates reconciliation reports with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you need to reconcile bank statements against your accounting records, identify missing invoices, or prepare monthly closing reports for Israeli business accounts. Do NOT use for international bank accounts, cryptocurrency wallets, or investment portfolio reconciliation.
+description: Automates bank reconciliation for Israeli banks and credit-card issuers (Leumi, Hapoalim, Discount, Mizrahi Tefahot, Beinleumi/FIBI, Otsar Hahayal, Mercantile, Massad, Yahav, OneZero, and the card issuers Isracard, Max, Visa Cal, Amex) using the israeli-bank-scrapers library. Matches scraped or imported transactions to invoices and receipts, detects discrepancies, and generates reconciliation reports with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you need to reconcile bank statements against your accounting records, identify missing invoices, or prepare monthly closing reports for Israeli business accounts. Do NOT use for international bank accounts, cryptocurrency wallets, or investment portfolio reconciliation.
 license: MIT
 ---
 
@@ -20,9 +20,18 @@ npm init -y
 npm install israeli-bank-scrapers csv-parse csv-stringify dayjs
 ```
 
-If you plan to use OFX import instead of scraping, also install:
+If you plan to import a file instead of scraping, note what Israeli banks actually
+export. In practice they offer Excel (.xls/.xlsx) and CSV downloads; OFX is not a
+native export format at the Israeli retail banks, so treat CSV/Excel as the default
+file path and reach for OFX only if the user already has an aggregator or accounting
+package that emits it:
 
 ```bash
+# CSV is the realistic import path (csv-parse is already installed above)
+# For an Excel download, have the user "Save As" CSV in Excel or Sheets first,
+# which avoids pulling in an extra spreadsheet parser.
+
+# Only if the user genuinely has OFX files from an aggregator
 npm install ofx-js
 ```
 
@@ -32,24 +41,61 @@ For users who want automated budget tracking alongside reconciliation, consider 
 
 ### Step 2: Configure Bank Credentials
 
-Create a configuration file for your bank connections. Never hardcode credentials directly in scripts.
+**Credential fields differ per provider.** There is no single shape. Using Hapoalim's fields against Leumi will simply fail to log in, and repeated failed logins can lock the online-banking account, so get this right before the first run:
 
-Create a file named `bank-config.json` with the following structure:
+| Provider | Credential fields |
+|---|---|
+| `hapoalim` | `userCode`, `password` |
+| `leumi`, `mizrahi`, `otsarHahayal`, `beinleumi`, `massad`, `max`, `visaCal` | `username`, `password` |
+| `discount`, `mercantile` | `id`, `password`, `num` |
+| `isracard` | `id`, `card6Digits`, `password` |
+| `amex` | `username`, `card6Digits`, `password` |
+| `yahav` | `username`, `password`, `nationalID` |
+
+`oneZero` is the exception: it does not use the username/password shape and needs its own flow (email plus password plus an OTP step), so do not let it fall through to the default. Check the library README for the provider you actually use before running, since these can change between major versions.
+
+**Read the credentials from the environment at runtime.** A JSON file does NOT expand `${VAR}`: if you write `"password": "${BANK_PASSWORD}"` the scraper sends the literal string `${BANK_PASSWORD}` to the bank as your password, which fails and counts against the lockout threshold. Keep only non-secret routing in the config file:
 
 ```json
 {
   "accounts": [
-    {
-      "id": "main-business",
-      "bank": "hapoalim",
-      "credentials": {
-        "userCode": "${BANK_USER_CODE}",
-        "password": "${BANK_PASSWORD}"
-      }
-    }
+    { "id": "main-business", "companyId": "hapoalim", "credentialsEnvPrefix": "HAPOALIM" }
   ]
 }
 ```
+
+```javascript
+const { CompanyTypes } = require('israeli-bank-scrapers');
+
+// Field list per provider. Copy from the library README for your provider before
+// running; these can change between major versions.
+const CREDENTIAL_FIELDS = {
+  [CompanyTypes.hapoalim]:   ['userCode', 'password'],
+  [CompanyTypes.discount]:   ['id', 'password', 'num'],
+  [CompanyTypes.mercantile]: ['id', 'password', 'num'],
+  [CompanyTypes.isracard]:   ['id', 'card6Digits', 'password'],
+  [CompanyTypes.amex]:       ['username', 'card6Digits', 'password'],
+  [CompanyTypes.yahav]:      ['username', 'password', 'nationalID'],
+};
+const DEFAULT_FIELDS = ['username', 'password'];
+
+// Build credentials in code, from the environment, matching the provider's shape.
+function credentialsFor(account) {
+  const fields = CREDENTIAL_FIELDS[account.companyId] || DEFAULT_FIELDS;
+  const creds = {};
+  for (const field of fields) {
+    const envName = `${account.credentialsEnvPrefix}_${field.toUpperCase()}`;
+    const value = process.env[envName];
+    if (!value) {
+      throw new Error(`Missing ${envName}. Set it before running; do NOT put secrets in the config file.`);
+    }
+    creds[field] = value;
+  }
+  return creds;
+}
+```
+
+The loop throws on a missing field rather than sending an empty or literal placeholder value to the bank. Stop after a single authentication failure rather than retrying in a loop: Israeli banks lock online-banking access after a small number of failed attempts.
 
 Supported bank identifiers (these strings must match the `CompanyTypes` enum in `israeli-bank-scrapers` exactly; the enum uses camelCase, so a kebab-case value like `otsar-hahayal` throws at runtime when passed to `createScraper`):
 - `hapoalim` - Bank Hapoalim
@@ -63,9 +109,26 @@ Supported bank identifiers (these strings must match the `CompanyTypes` enum in 
 - `visaCal` - Visa Cal
 - `isracard` - Isracard
 
-The `CompanyTypes` enum also includes `yahav` and `oneZero` (the latter marked experimental), among others. Always copy the identifier verbatim from the enum rather than guessing the casing.
+- `amex` - American Express
+- `massad` - Massad
+- `yahav` - Bank Yahav
+- `oneZero` - OneZero (marked experimental in the library)
+
+Card issuers matter as much as banks here: a single bank line is usually the monthly aggregate charge from Isracard, Max, Visa Cal or Amex, and reconciling it means pulling that issuer's own transaction list and matching the sum. Always copy the identifier verbatim from the enum rather than guessing the casing, and check the library's README for the current list, since providers are added and occasionally deprecated.
 
 Store actual credentials in environment variables, not in the config file.
+
+### Step 2a: Understand what scraping costs you, and consider the licensed route first
+
+Before setting any of this up, tell the user plainly what the scraping path involves, because it is not a read-only token:
+
+- **You are handing full online-banking credentials to a script** that logs in as you through a headless browser. That is not the same as an API key, and it cannot be scoped or revoked independently of your own access.
+- **Bank terms of service.** Israeli online-banking agreements generally restrict disclosing credentials to third parties and automated access. Doing it anyway can shift liability for fraudulent activity onto the customer. This is a contractual and risk question, not a criminal one, but it is real and the user should make the decision knowingly.
+- **Lockout.** Repeated failed logins lock the account. Validate credentials before the run and stop on the first authentication failure.
+- **Two-factor authentication.** Where the bank enforces 2FA on every login, unattended scraping largely does not work. There is no generic OTP option in the scraper configuration; support is per-provider and limited. Do not promise the user a config flag that does not exist.
+- **The scraped data is sensitive at rest.** A full period of business transactions with counterparty names lands in local CSV/JSON. Keep it out of version control, restrict file permissions, and delete working copies when the reconciliation is signed off. For a business handling counterparty data this also engages Privacy Protection Law obligations.
+
+**There is a licensed alternative, and for a business account it is the better production path.** Israel's Financial Information Service Law established a regulated open-banking regime, supervised by the Israel Securities Authority, under which a licensed provider accesses account data through open interfaces **without the customer exposing their banking credentials**. Business accounts have been in scope since December 2023, and the regulator has since issued implementation directives to payment companies. If the user is setting this up for an ongoing business process rather than a one-off, point them at a licensed aggregator before pointing them at a scraper.
 
 ### Step 3: Fetch Bank Transactions
 
@@ -90,16 +153,36 @@ async function fetchTransactions(bankId, credentials, startDate) {
 
   return result.accounts.flatMap(account =>
     account.txns.map(txn => ({
-      date: txn.date,
+      date: txn.date,                     // value date
+      processedDate: txn.processedDate,   // posting date: THIS is the bank-side key
       amount: txn.chargedAmount,
+      originalAmount: txn.originalAmount,
+      originalCurrency: txn.originalCurrency,
       description: txn.description,
       memo: txn.memo || '',
-      reference: txn.identifier || '',
-      status: txn.status,
+      // identifier is a NUMBER (or undefined) in the library. Coerce to string,
+      // because the accounting side holds a string reference and a raw === between
+      // a number and a string is always false, which silently kills exact matching.
+      reference: txn.identifier != null ? String(txn.identifier) : '',
+      status: txn.status,                 // 'completed' | 'pending'
       accountNumber: account.accountNumber
     }))
   );
 }
+```
+
+Two filters you must apply before reconciling, or the period will never tie out:
+
+```javascript
+// 1. Posted only. Pending rows are not on the statement balance.
+const posted = txns.filter(t => t.status === 'completed');
+
+// 2. Close the period. createScraper takes startDate but NOT an endDate, so the
+//    scrape runs to today and will drag next month's rows into a closed period.
+const inPeriod = posted.filter(t => {
+  const d = new Date(t.processedDate || t.date);
+  return d >= periodStart && d <= periodEnd;
+});
 ```
 
 ### Step 4: Import Accounting Records
@@ -139,7 +222,11 @@ const matchingRules = [
     name: 'exact-reference',
     priority: 1,
     match: (bankTxn, accRecord) =>
-      bankTxn.reference === accRecord.reference &&
+      // Normalise both sides: the bank reference arrives as a number from the
+      // library and the ledger reference is a string. Compare as trimmed strings,
+      // and require both to be non-empty so blank === blank is not a "match".
+      String(bankTxn.reference ?? '').trim() !== '' &&
+      String(bankTxn.reference ?? '').trim() === String(accRecord.reference ?? '').trim() &&
       Math.abs(bankTxn.amount - accRecord.amount) < 0.01
   },
   {
@@ -165,6 +252,57 @@ const matchingRules = [
 ];
 ```
 
+`dayjs` must be required in this block if you run it separately: `const dayjs = require('dayjs');`
+
+**One-to-one rules cannot express the two most common Israeli cases.** Add grouped matching, or the card settlement and any split payment land in the exceptions list and the report overstates problems:
+
+```javascript
+// A) Card settlement: ONE bank debit covers MANY card transactions.
+// Pull the issuer's own transactions (isracard / max / visaCal / amex are in the
+// same CompanyTypes enum) and match the SUM for the settlement cycle.
+// cycleStart/cycleEnd come from the issuer's actual billing cycle, which you can
+// read off the card statement. Do NOT guess a fixed lookback: a rolling window
+// sweeps in the tail of the previous cycle and produces a false difference.
+// Amounts are compared as magnitudes throughout, since expenses are negative.
+function matchCardSettlement(bankDebit, cardTxns, cycleStart, cycleEnd, toleranceIls = 1.0) {
+  const inCycle = cardTxns.filter(t => {
+    const d = dayjs(t.processedDate || t.date);
+    return !d.isBefore(dayjs(cycleStart)) && !d.isAfter(dayjs(cycleEnd));
+  });
+  const total = inCycle.reduce((sum, t) => sum + Math.abs(t.amount), 0);
+  const difference = total - Math.abs(bankDebit.amount);
+  return Math.abs(difference) <= toleranceIls
+    ? { matched: true, coveredBy: inCycle }
+    : { matched: false, difference };
+}
+
+// B) Split / partial settlement: N ledger items to ONE bank line, or the reverse.
+// Try small subsets before declaring an exception.
+function* combinations(arr, size, start = 0, picked = []) {
+  if (picked.length === size) { yield picked; return; }
+  for (let i = start; i < arr.length; i++) {
+    yield* combinations(arr, size, i + 1, [...picked, arr[i]]);
+  }
+}
+
+function matchGroup(bankTxn, candidates, toleranceIls = 1.0, maxGroup = 3) {
+  const near = candidates.filter(c =>
+    Math.abs(dayjs(bankTxn.date).diff(dayjs(c.date), 'day')) <= 7);
+  for (let size = 2; size <= maxGroup; size++) {
+    for (const combo of combinations(near, size)) {
+      // Compare magnitudes, matching matchCardSettlement above.
+      const total = combo.reduce((sum, c) => sum + Math.abs(c.amount), 0);
+      if (Math.abs(total - Math.abs(bankTxn.amount)) <= toleranceIls) return combo;
+    }
+  }
+  return null;
+}
+```
+
+Reconcile the card side separately against the purchase ledger as well: matching only the settlement total proves the bank line, not the individual purchases behind it.
+
+**Tolerances are a policy choice, not a default.** A plus-or-minus 1 ILS amount window combined with plus-or-minus 3 days will cross-match distinct transactions of similar size in a busy account, and the fuzzy rule above compares no payee at all. Add a description or vendor similarity condition before relying on it, mark every fuzzy match as "requires review" in the report so it is visibly weaker than an exact-reference match, and never let a fuzzy match silently overwrite an exact one.
+
 ### Step 6: Run the Reconciliation Engine
 
 Execute the matching process and categorize results into three buckets:
@@ -186,25 +324,41 @@ Additionally flag suspicious transactions:
 
 ### Step 7: Build the Reconciliation Bridge
 
-A bank reconciliation is not just a count of matched and unmatched items - it must explain the gap between the book balance and the bank balance with an explicit bridge. Produce the canonical reconciliation:
+A bank reconciliation is not just a count of matched and unmatched items, it must explain the gap between the book balance and the bank balance with an explicit bridge that ties to zero.
+
+**Get the three balances first.** The bridge is unbuildable without them, and the scraper will not give them to you:
+- **Book opening and closing balance** come from the accounting system for the period being reconciled, not from the bank.
+- **Bank closing balance** must come from the period-end statement (the PDF/CSV the bank issues for that month). Note `account.balance` returned by `israeli-bank-scrapers` is the CURRENT balance at scrape time, not the closing balance of a past period, so it is the wrong number for a month-end reconciliation. Ask the user for the statement closing balance explicitly.
+
+Prove the book side moves as expected before bridging:
+
+```
+Book opening balance + receipts booked - payments booked = Book closing balance
+```
+
+Then bridge from the books to the bank:
 
 ```
 Book balance (closing, per the ledger)
-  - outstanding checks (hamcha'ot she-terem nifr'u): checks written and booked but not yet cleared by the bank
-  + deposits in transit (hafkadot ba-derech): deposits booked but not yet shown on the bank statement
-  - bank fees (amlot) not yet posted to the books
-  + bank interest not yet posted to the books
+  + outstanding checks (hamcha'ot she-terem nifr'u): written and booked, so already deducted
+    in the books, but not yet debited by the bank, so the bank is still higher by this amount
+  - deposits in transit (hafkadot ba-derech): booked as received, so already added in the books,
+    but not yet credited by the bank, so the bank is still lower by this amount
+  - bank fees (amlot) not yet posted to the books: the bank has already taken them
+  + bank interest not yet posted to the books: the bank has already credited it
   = Bank balance (closing, per the statement)
 ```
 
-Signs depend on which side you start from; the rule is that every reconciling item is applied to whichever balance does not yet reflect it. Outstanding checks and deposits in transit are timing differences (the books are correct, the bank just has not caught up). Un-posted fees and interest are the opposite - the bank is correct and the books need a journal entry (see Step 6).
+Sanity-check the direction rather than memorising signs: apply every reconciling item to whichever balance does not yet reflect it. A cheque you wrote has left your books but not the bank, so the bank still holds that cash and reads higher. A deposit you recorded has not reached the bank, so the bank reads lower. If your bridge does not land exactly on the statement balance, the difference is itself a finding: do not force it.
+
+The two timing items above are differences in when, not errors (the books are right, the bank has not caught up). Un-posted fees and interest are the reverse: the bank is right and the books need a journal entry (see Step 6).
 
 Treat post-dated checks (shekim dehuyim) as a distinct reconciling item, separate from ordinary outstanding checks. A post-dated check is written and booked now but carries a future date and cannot clear until that date arrives, so it is not merely "in flight" for a day or two - it stays a reconciling item until its date passes and the bank actually debits it. List post-dated checks received (from customers) and post-dated checks issued (to vendors) on their own lines, keyed by their due date, and roll each one forward across periods until it clears. Mixing them into the outstanding-checks bucket understates how long the item will sit unreconciled.
 
 The report should include:
 - **Summary section**: Total matched, unmatched counts and amounts on each side
 - **Matched transactions table**: Bank entry paired with its accounting record
-- **Unmatched bank transactions**: Split into "missing invoice" and "un-booked bank-originated entry", sorted by amount descending
+- **Unmatched bank transactions**: Split into "missing invoice" and "un-booked bank-originated entry", sorted by amount descending. For a missing-invoice item, chasing the invoice is not sufficient on its own: since 1 June 2026 a tax invoice at or above NIS 5,000 before VAT needs an allocation number (mispar haktzaa) from the Tax Authority platform, and without one the VAT on that expense cannot be offset. So flag unmatched debits at or above that threshold as "obtain an invoice CARRYING a valid allocation number", not merely "find the invoice"
 - **Unmatched accounting records**: Records to investigate, including outstanding checks, post-dated checks (listed separately, keyed by due date), and deposits in transit
 - **Suspicious items**: Flagged entries requiring manual review
 - **Reconciliation bridge**: Book balance, the outstanding-checks / deposits-in-transit / fees / interest adjustments, and the resulting bank balance - the two sides must tie out to zero difference once all reconciling items are listed
@@ -218,7 +372,9 @@ Output formats:
 
 ### Step 8: Handle Foreign-Currency Accounts
 
-When reconciling a foreign-currency account or foreign-currency transactions, value the book entries using the Bank of Israel representative rate (sha'ar yatzig) for the relevant date. Be aware that the bank books its own conversion at its own rate on the settlement date, which will differ from the representative rate. The gap between the representative rate and the bank's actual conversion rate is a real exchange-rate difference - post it as an exchange-rate gain or loss, do not treat it as an unexplained discrepancy. Widen the matching tolerance for foreign-currency transactions accordingly.
+When reconciling a foreign-currency account or foreign-currency transactions, value the book entries using the Bank of Israel representative rate (sha'ar yatzig). State your rate-date convention explicitly, because two different ones give two different answers: use the transaction date for valuing an individual entry, and the period-end date for revaluing the closing foreign-currency balance. Say which you used in the report.
+
+Two facts about the representative rate that trip up reconciliations on the Israeli calendar. It is calculated on foreign-currency business days only, so there is NO rate on Fridays, Saturdays, Sundays or holidays, and a transaction on those days must carry the last published rate forward. And it is published only after the sampling window closes in the afternoon, so a same-day booking cannot use a same-day rate in real time. The Bank of Israel also states the representative rates carry no official or legal standing in themselves; they bind a transaction only if the parties stipulated them, and the valuation rule for tax purposes comes from the Income Tax rules rather than from the rate publication. Be aware that the bank books its own conversion at its own rate on the settlement date, which will differ from the representative rate. The gap between the representative rate and the bank's actual conversion rate is a real exchange-rate difference - post it as an exchange-rate gain or loss, do not treat it as an unexplained discrepancy. Widen the matching tolerance for foreign-currency transactions accordingly.
 
 ### Step 9: Retain the Reconciliation and Its Supporting Documents
 
@@ -284,7 +440,7 @@ If an MCP server is available, prefer it for fetching transactions; fall back to
 - A reconciliation is cumulative. Outstanding checks and deposits in transit that do not clear roll forward as reconciling items into the next period. Agents may treat each month as independent and lose track of items in transit.
 - Israeli banks (Leumi, Hapoalim, Discount, Mizrahi-Tefahot, FIBI) each have different transaction export formats and date conventions. Agents may assume a uniform CSV structure across all banks.
 - Israeli bank transaction dates use DD/MM/YYYY format. Agents may parse dates as MM/DD/YYYY, silently swapping day and month for dates like 05/03/2026.
-- Check (hamchaa) clearing in Israel can take 1-3 business days, creating timing mismatches between bank statement dates and recorded dates. Agents may not account for float periods.
+- Check (hamchaa) clearing does not work the way "1-3 days of float" suggests, and the difference matters for reconciliation. A deposited cheque is credited on the clearing day itself, but that credit is PROVISIONAL and only becomes final after a further three business days, during which the drawee bank can still refuse it. So the credit appears on the statement immediately and can then be reversed. Practical consequence: a returned cheque can un-do a deposit you already matched in a prior period, which means re-opening that match, re-debiting the customer, and treating the reversal as more than a fee line.
 - Israeli banks use the Sunday-Thursday business week. Transactions on Friday or Saturday are processed on Sunday. Agents may apply Monday-Friday processing assumptions.
 - Credit card settlements in Israel arrive as lump-sum charges from card companies (Isracard, Cal, Max), not individual transactions. Agents may try to match individual purchases against bank statements instead of matching the settlement total.
 
