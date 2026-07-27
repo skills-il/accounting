@@ -195,7 +195,7 @@ When clients withhold tax at source before paying.
 }
 ```
 
-Payment type 0 (Withholding Tax) records the amount withheld. The document total remains NIS 10,000 + VAT, but the actual payment received is NIS 8,000 + the NIS 2,000 withheld for tax authorities.
+Payment type 0 (Withholding Tax) records the amount withheld. The document total is NIS 11,800 (10,000 net + 18% VAT), and the two payment lines must sum to exactly that: NIS 9,800 actually received in cash plus NIS 2,000 withheld and remitted to the Tax Authority by the client. If the payment lines sum to less than the document total the invoice-receipt stays open forever, which is the usual reason a withholding client shows a permanent balance.
 
 ---
 

@@ -24,6 +24,7 @@ Environment:
 import argparse
 import json
 import sys
+from decimal import Decimal, ROUND_HALF_UP
 import urllib.request
 import urllib.error
 import os
@@ -140,11 +141,41 @@ def cmd_create_document(args):
     if args.tax_id:
         payload["client"]["taxId"] = args.tax_id
     if args.payment_type is not None:
+        # The payment lines MUST sum to the DOCUMENT total, which is the gross amount.
+        # The income line carries the NET price, and with vatType 0 the server adds VAT
+        # on top according to the business type. Recording the net figure as the payment
+        # leaves a tax-invoice-receipt permanently open by exactly the VAT, and the bank
+        # reconciliation never balances. Compute the gross unless the caller states it.
+        net = Decimal(str(args.amount)) * Decimal(str(args.quantity))
+        if args.payment_amount is not None:
+            gross = Decimal(str(args.payment_amount))
+        elif args.vat_type == 1:
+            gross = net  # exempt: no VAT is added
+        else:
+            rate = Decimal(str(args.vat_rate)) / Decimal("100")
+            gross = (net * (Decimal("1") + rate)).quantize(
+                Decimal("0.01"), rounding=ROUND_HALF_UP
+            )
+            if args.vat_type == 2:
+                print(
+                    "WARNING: vatType 2 (mixed) means only part of the document is\n"
+                    "         VAT-bearing, so the gross cannot be derived from a single\n"
+                    f"         rate. Assuming {args.vat_rate}% on the whole amount. Pass\n"
+                    "         --payment-amount with the real document total instead.",
+                    file=sys.stderr,
+                )
         payload["payment"] = [{
             "type": args.payment_type,
-            "price": args.amount * args.quantity,
+            "price": float(gross),
             "currency": args.currency,
         }]
+        print(
+            f"Payment line: {gross} {args.currency} "
+            f"(net {net} + VAT at {args.vat_rate}%)"
+            if args.payment_amount is None and args.vat_type != 1
+            else f"Payment line: {gross} {args.currency}",
+            file=sys.stderr,
+        )
         if args.date:
             payload["payment"][0]["date"] = args.date
 
@@ -260,6 +291,8 @@ def main():
     doc_parser.add_argument("--currency", default="ILS", help="Currency code")
     doc_parser.add_argument("--lang", default="he", choices=["he", "en"])
     doc_parser.add_argument("--vat-type", type=int, default=0, help="VAT type (0=default, 1=exempt, 2=mixed)")
+    doc_parser.add_argument("--vat-rate", type=float, default=18.0, help="VAT percent used to derive the gross payment line (default 18)")
+    doc_parser.add_argument("--payment-amount", type=float, help="Explicit GROSS payment amount. Use this when the document total is not net*(1+vat-rate), e.g. vatType 2 (mixed).")
     doc_parser.add_argument("--date", help="Document date (YYYY-MM-DD)")
     doc_parser.add_argument("--due-date", help="Due date (YYYY-MM-DD)")
     doc_parser.add_argument("--tax-id", help="Client tax ID")

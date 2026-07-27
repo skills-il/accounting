@@ -12,7 +12,36 @@ Complete reference for all Green Invoice (Morning) API endpoints, request/respon
 
 ## Authentication
 
-### POST /v1/account/token
+Two flows are live (both verified 2026-07-27). OAuth 2.0 is the documented path for new
+work; the API-key flow below still functions and is what existing integrations use.
+
+### OAuth 2.0 (documented, use for new work)
+
+**Token endpoint:**
+
+| Environment | URL |
+|-------------|-----|
+| Production | `https://api.morning.co/idp/v1/oauth/token` |
+| Sandbox | `https://api.sandbox.morning.dev/idp/v1/oauth/token` |
+
+**Request:** form-encoded, `grant_type=client_credentials`, plus `client_id` and
+`client_secret` (your API key ID and secret).
+
+**Response:** `accessToken`, a signed JWT valid for **1 hour**. Use it as
+`Authorization: Bearer <accessToken>`. After an hour, protected endpoints return 401 and a
+new token must be requested, so any long-running job needs a refresh path.
+
+**Errors** follow the OAuth 2.0 / RFC 6749 format. Two are business state, not credentials:
+
+| Status | Error | Meaning |
+|--------|-------|---------|
+| 400 | `invalid_request` | Missing `grant_type` |
+| 400 | `unsupported_grant_type` | `grant_type` is not `client_credentials` |
+| 400 | `invalid_grant` | API key privilege expired, revoked, or pending |
+| 400 | `unauthorized_client` | No active subscription, or subscription lacks API access |
+| 401 | `invalid_client` | Missing or incorrect client credentials |
+
+### POST /v1/account/token (legacy, still functional)
 
 **Request:**
 ```json
@@ -41,14 +70,14 @@ Required for B2B tax invoices over the SHAAM allocation-number threshold. The AP
 3. The dashboard redirects to the gov.il Tax Authority portal for verification
 4. After successful verification, the browser returns to Morning automatically and the connection becomes active
 
-**Expiration:** the authorization is valid for 3 months. Morning sends an email reminder 10 days before expiry and shows a banner in the dashboard. Renewal requires repeating steps 1-4.
+**Expiration:** the authorization is valid for 3 months and must be renewed. Morning's help centre states that an alert appears in the system 10 days before the connection expires ("10 ימים לפני תום התוקף תופיע התראה במערכת לחידוש החיבור"). Renewal requires repeating steps 1-4.
 
 **Threshold schedule (net amounts, before VAT):**
 
 | Effective from | Threshold |
 |----------------|-----------|
-| Jan 1, 2026 | NIS 10,000 |
-| Jun 1, 2026 onward (final step) | NIS 5,000 |
+| Jan 1, 2026 | NIS 10,000 (superseded) |
+| Jun 1, 2026 onward (final step) | **NIS 5,000 (in force now, as of 2026-07-27)** |
 
 **API field for the allocation number:** the exact response-body field carrying the allocation number is not documented in the public help center. To learn it for your account, create a real authorized B2B invoice above the threshold and inspect the `GET /v1/documents/{id}` response, or use the in-app API explorer at `https://app.greeninvoice.co.il/api`. If the field is absent on a qualifying invoice, the user's authorization has lapsed or was never set up.
 
@@ -281,6 +310,7 @@ Returns the authenticated user profile.
 | Code | Name (he) | Name (en) |
 |------|-----------|-----------|
 | 10 | הצעת מחיר | Price Quote |
+| 20 | חשבון / אישור תשלום | Account / Payment Confirmation |
 | 100 | הזמנה | Order |
 | 200 | תעודת משלוח | Delivery Note |
 | 210 | תעודת החזרה | Return Note |
@@ -290,6 +320,7 @@ Returns the authenticated user profile.
 | 330 | חשבונית זיכוי | Credit Note |
 | 400 | קבלה | Receipt |
 | 405 | קבלה על תרומה | Donation Receipt |
+| 410 | ביטול תרומה | Donation Cancellation |
 | 500 | הזמנת רכש | Purchase Order |
 | 600 | קבלת פיקדון | Deposit Receipt |
 | 610 | משיכת פיקדון | Deposit Withdrawal |
@@ -520,4 +551,30 @@ Full webhook payload structure on document creation:
 - API key generation + plan-tier requirements: https://www.greeninvoice.co.il/help-center/generating-api-key/
 - Webhooks overview (Extra plan required): https://www.greeninvoice.co.il/magazine/webhooks/
 
-Note: the `greeninvoice.docs.apiary.io` Apiary interactive reference is live and is the most detailed source for the JWT token flow, the add-document body schema, and every enum table. The `www.greeninvoice.co.il/api-docs/` portal links to the same content.
+Note: the `greeninvoice.docs.apiary.io` Apiary interactive reference has been RETIRED. As of 2026-07-27 it returns HTTP 404 ("Apiary - Page not found"), verified in a browser; it was still live on 2026-06-28. The canonical reference is now `https://developers.morning.co` ("morning API Documentation (2.0.0)"), which is also where the current OAuth 2.0 authentication flow is documented.
+
+## Suppliers and Expenses (purchase side)
+
+The purchase side is where input VAT is reclaimed, and these endpoints sit outside the
+document flow so they are easy to miss.
+
+### POST /v1/suppliers
+
+Creates a supplier (a business or individual you buy from) for the current business.
+
+| Field | Type | Required | Notes |
+|-------|------|----------|-------|
+| `name` | string | Yes | Supplier name, e.g. ישראל ישראלי |
+| `active` | boolean | No | Defaults to true |
+| `department` | string | No | |
+
+### POST /v1/expenses
+
+Creates an expense. **The file-attachment behaviour is the trap:** an expense created
+WITHOUT a file is created immediately and is ready to use, while an expense created WITH a
+file (a receipt or supplier invoice) first becomes an expense DRAFT. A draft is a pending
+expense awaiting approval and is NOT counted as an actual expense until approved. Bulk
+importers that upload scanned supplier invoices and never approve the drafts will under-report
+expenses and under-claim input VAT.
+
+Headers for both: `Content-Type: application/json`, `Authorization: Bearer <accessToken>`.
