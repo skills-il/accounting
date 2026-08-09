@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-bank-reconciliation",
-  "generated_at": "2026-07-27T00:48:37Z",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -51,12 +51,14 @@
       "claim_id": "boi-supervision-ref",
       "claim": "Bank of Israel Supervision and Regulation page, cited as a reference for Proper Conduct Directives, payment standards and bank statement formats. Returns HTTP 200.",
       "source_url": "https://www.boi.org.il/en/economic-roles/supervision-and-regulation/",
-      "raw_snippet": "Supervision and Regulation",
-      "fetched_at": "2026-06-25T00:00:00Z",
+      "raw_snippet": "The Banking Supervision Department at the Bank of Israel in in charge of the stability of the banking system. The Payment Systems Oversight Division at the Bank of Israel is in charge of the stability and efficiency of the payment systems.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
       "claim_id": "tax-authority-ref",
@@ -106,8 +108,8 @@
       "claim_id": "pandas-io-ref",
       "claim": "pandas Input/Output API reference, cited for CSV/Excel import of bank statements, date parsing and encoding. Returns HTTP 200.",
       "source_url": "https://pandas.pydata.org/docs/reference/io.html",
-      "raw_snippet": "Input/output ... read_csv ... read_excel",
-      "fetched_at": "2026-06-25T00:00:00Z",
+      "raw_snippet": "pandas.read_table pandas.read_csv pandas.DataFrame.to_csv pandas.read_fwf pandas.read_clipboard pandas.DataFrame.to_clipboard pandas.read_excel pandas.DataFrame.to_excel",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
