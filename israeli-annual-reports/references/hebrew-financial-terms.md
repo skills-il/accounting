@@ -48,4 +48,4 @@
 - Banks: Bank of Israel Supervisor of Banks "Public Reporting Directives" (Hora'ot ha-Divuach la-Tzibur), drawing on US bank-reporting rules with IFRS for some topics
 - Insurance: IFRS 17 first-time implementation in Israel postponed to 2025 (global effective date was 2023)
 - Small private companies may use Israeli GAAP
-- Small corporation (taagid katan, Reg. 5d): reliefs bundle, half-yearly reporting (no Q1/Q3), no ISOX internal-control report, 20% valuation materiality (vs 10%), market-risk disclosure relief
+- Small corporation (taagid katan, defined in Reg. 5ג, reliefs in Reg. 5ד): reliefs bundle, half-yearly reporting (no Q1/Q3), no ISOX internal-control report, 20% valuation materiality (vs 10%), market-risk disclosure relief

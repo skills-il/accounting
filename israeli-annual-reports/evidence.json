@@ -9,7 +9,11 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
       "raw_snippet": "התאגיד יגיש לרשות דו\"ח תקופתי בכל שנה, תוך שלושה חדשים מתום שנת הדיווח שלו",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
     },
     {
       "claim_id": "quarterly-60-days",
@@ -17,23 +21,47 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
       "raw_snippet": "תוך שישים ימים מסוף הרבעון",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
     },
     {
-      "claim_id": "small-corp-semi-annual",
-      "claim": "A small corporation (taagid katan) whose debt is not held by the public is exempt from publishing Q1 and Q3 quarterly reports and instead files a semi-annual report (doch chatzi-shnati). Per ISA staff legal position 104-18 and the 2017 amendment.",
+      "claim_id": "small-corp-semi-annual-a",
+      "claim": "Under Reg. 5d(5)(a) of the Securities Regulations (Periodic and Immediate Reports) 5730-1970, a small corporation whose issued debt certificates are not held by the public files, instead of a quarterly report, a half-yearly report covering the six months ending on the last day of the sixth month.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "לעניין חובת הגשת דוח רבעוני של תאגיד שהציבור לא מחזיק תעודות התחייבות שהנפיק – (א) במקום דוח רבעוני יגיש התאגיד דוח חצי שנתי ובו הפרטים הנדרשים לפי פרק ד' לתקופה של חצי שנה המסתיימת ביום האחרון של החודש השישי",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-semi-annual-b",
+      "claim": "ISA staff published legal position 104-18 on 24 April 2017 on the reporting format of an exempt small corporation, following the amendment that cancelled the quarterly-report duty for small corporations whose debt certificates are not publicly held.",
       "source_url": "https://www.grantthornton.co.il/insights1/professional-insights/professional-insights-2019/proposal-to-cancel-reporting-requirement2/",
-      "raw_snippet": "תאגידים קטנים שהציבור אינו מחזיק בתעודות התחייבות שלהם ... יפרסמו דוח חצי-שנתי בלבד. עמדת סגל רשות ניירות ערך 104-18: מתכונת הדיווח של תאגיד קטן פטור",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "raw_snippet": "ביום 24 באפריל 2017 פרסם סגל הרשות את עמדה משפטית 104-18:",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
     },
     {
       "claim_id": "ifrs-adopted-2008",
       "claim": "Israeli entities governed by the Securities Law 1968 (TASE-listed / reporting corporations) must file financial statements applying IFRS for periods starting 1 January 2008.",
       "source_url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/",
-      "raw_snippet": "That Standard requires Israeli entities that are governed by the Israeli Securities Law, 1968 ... to file financial statements prepared applying IFRS Accounting Standards for periods starting 1 January 2008.",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "raw_snippet": "That Standard requires Israeli entities that are governed by the Israeli Securities Law, 1968 (including entities whose shares, units or debt securities are publicly traded and some other entities) to file financial statements prepared applying IFRS Accounting Standards for periods starting 1 January 2008",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
     },
     {
       "claim_id": "ifrs17-2025-israel",
@@ -41,7 +69,11 @@
       "source_url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/",
       "raw_snippet": "the effective date of IFRS 17 Insurance Contracts (and consequently IFRS 9 Financial Instruments) has been postponed to 1 January 2025",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
     },
     {
       "claim_id": "dual-listing-chapter-e3",
@@ -49,7 +81,10 @@
       "source_url": "https://www.nevo.co.il/law_html/law01/308_001.htm",
       "raw_snippet": "פרק ה'3: רישום למסחר בבורסה של ניירות ערך הנסחרים בבורסה בחו\"ל. \"תאגיד חוץ\" - תאגיד שניירות ערך שלו רשומים למסחר בבורסה בחו\"ל; \"הדין הזר\" - הדין החל על תאגיד חוץ בשל רישום ניירות הערך שלו למסחר בבורסה בחו\"ל, לרבות כללי אותה בורסה",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "companies-law-171-172",
@@ -57,15 +92,32 @@
       "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
       "raw_snippet": "סעיף 171. (א) חברה שהיא תאגיד מדווח תנהל חשבונות, וכמו כן תערוך דוחות כספיים לפי חוק ניירות ערך. סעיף 172. (א) חברה שאינה תאגיד מדווח, תערוך לכל שנה דוחות כספיים, שיכללו מאזן ליום 31 בדצמבר",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "companies-law-audit-committee",
-      "claim": "The Companies Law 5759-1999 sets audit-committee requirements (Sections 267-269) and related-party transaction approvals (Sections 270-275).",
+      "claim_id": "companies-law-audit-committee-a",
+      "claim": "Under the Companies Law 5759-1999 the audit committee is governed by Sections 114-118 (סימן ט': ועדת ביקורת): סעיף 114 requires the board of a public company, or of a private bond company, to appoint an audit committee from among its directors, and סעיף 115 sets its composition (at least three members, all external directors, a majority of independent directors).",
       "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
-      "raw_snippet": "סימן: ועדת ביקורת. 267. דירקטוריון של חברה ציבורית ימנה מבין חבריו ועדת ביקורת. ... 270. עסקאות של חברה המנויות להלן טעונות אישורים כקבוע בסימן זה",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "raw_snippet": "מינוי הועדה 114. דירקטוריון חברה ציבורית או חברה פרטית שהיא חברת איגרות חוב ימנה מבין חבריו ועדת ביקורת, והוראות סימן ח' יחולו עליה, בשינויים המחויבים.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "companies-law-audit-committee-b",
+      "claim": "Under the Companies Law 5759-1999, Section 270 lists the company transactions with interested parties that require the special approvals set out in Chapter Five (Sections 270-275).",
+      "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
+      "raw_snippet": "עסקאות הטעונות אישורים מיוחדים 270. עסקאות של חברה המפורטות להלן, טעונות אישורים כקבוע בפרק זה, ובלבד שהעסקה היא לטובת החברה:",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "magna-canonical-host",
@@ -73,7 +125,10 @@
       "source_url": "https://www.magna.isa.gov.il",
       "raw_snippet": "Magna Distribution Site",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "isa-website",
@@ -81,7 +136,10 @@
       "source_url": "https://www.isa.gov.il",
       "raw_snippet": "Israel Securities Authority / רשות ניירות ערך",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "maya-system",
@@ -89,7 +147,10 @@
       "source_url": "https://maya.tase.co.il",
       "raw_snippet": "מערכת אינטרנט להודעות / הבורסה לניירות ערך",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "tase-website",
@@ -97,7 +158,10 @@
       "source_url": "https://www.tase.co.il",
       "raw_snippet": "Tase Site / Tel Aviv Stock Exchange",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "ifrs-foundation",
@@ -105,7 +169,10 @@
       "source_url": "https://www.ifrs.org",
       "raw_snippet": "IFRS Foundation - International Financial Reporting Standards",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "companies-registrar",
@@ -113,15 +180,36 @@
       "source_url": "https://www.gov.il/he/departments/corporations_authority",
       "raw_snippet": "רשות התאגידים / רשם החברות",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
-      "claim_id": "auditor-opinion-grades-700-705",
-      "claim": "Israeli auditing standards define four auditor-opinion grades: unqualified (bilti mesuyeget, ICPAS 700) and the three modified grades under ICPAS 705 - qualified (mesuyeget), adverse (shlilit), and disclaimer (himanut me-chavat daat).",
+      "claim_id": "auditor-opinion-grades-705",
+      "claim": "Israeli auditing standard (Israel) 705, published by the Institute of Certified Public Accountants in Israel, governs an auditor's report that departs from the standard wording and covers the modified grades: qualified, adverse, or a disclaimer of opinion.",
       "source_url": "https://he.wikipedia.org/wiki/%D7%AA%D7%A7%D7%9F_%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA_705",
-      "raw_snippet": "תקן ביקורת (ישראל) 705 ... התקן מתייחס לדוחות ומצבים שונים, לדוגמה, כאשר חוות דעתו מסויגת, שלילית או שהוא בוחר להימנע מחוות דעת. תקן ביקורת (ישראל) 700 עוסק בנוסח האחיד בלתי מסוייג של דוח רואה חשבון מבקר.",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "raw_snippet": "התקן מתייחס לדוחות ומצבים שונים- לדוגמה, כאשר חוות דעתו מסויגת, שלילית או שהוא בוחר להימנע מחוות דעת.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
+    },
+    {
+      "claim_id": "auditor-opinion-grades-700",
+      "claim": "The complementary standard, Auditing Standard (Israel) 700 (revised 2024) published by ICPAS, governs forming an opinion and reporting on financial statements (the unmodified base report).",
+      "source_url": "https://icpas.org.il/wp-content/uploads/2026/02/32-2025-%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-700-%D7%9E%D7%AA%D7%95%D7%A7%D7%9F-2024.pdf",
+      "raw_snippet": "גיבוש חוות דעת ודיווח על דוחות כספיים",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ],
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
       "claim_id": "going-concern-emphasis-706",
@@ -129,23 +217,80 @@
       "source_url": "https://icpas.org.il/wp-content/uploads/2018/05/%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-570-%D7%9C%D7%A9%D7%99%D7%9E%D7%95%D7%A2-58.pdf",
       "raw_snippet": "פסקת הפניית תשומת לב (Emphasis of Matter) משמשת להסב את תשומת הלב לעניין שהוצג או נכלל בגילוי כראוי בדוחות הכספיים, אך אינה מסייגת/אינה משנה את חוות דעת רואה החשבון. הערת עסק חי (תקן ביקורת ישראל 570).",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ],
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
-      "claim_id": "kam-701",
-      "claim": "ICPAS 701 requires auditors to communicate Key Audit Matters (inyanei mafteach be-bikoret) in the auditor's report, applied mainly to public/listed companies, flagging the areas of greatest risk and judgment.",
-      "source_url": "https://icpas.org.il/professional_updates/%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-701/",
-      "raw_snippet": "תקן ביקורת (ישראל) 701 בדבר תקשור ענייני מפתח בביקורת בדוח רואה החשבון המבקר ... נדרש לתקשר ענייני מפתח בביקורת בדוח רואה החשבון המבקר בעיקר בחברות ציבוריות.",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "claim_id": "kam-701-a",
+      "claim": "Auditing Standard (Israel) 701 deals with the auditor's responsibility to communicate key audit matters in the auditor's report.",
+      "source_url": "https://icpas.org.il/wp-content/uploads/2023/03/32-%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-701-2021.pdf",
+      "raw_snippet": "תקן ביקורת זה עוסק באחריות רואה החשבון המבקר לתקשר (communicate) ענייני מפתח בביקורת",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ],
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
-      "claim_id": "small-corp-relief-bundle",
-      "claim": "A small corporation (taagid katan, Securities Regs Reg. 5d) is defined as one not included in the TA-100 or TA-Beyond-50 index with an average share market value below NIS 300M, and gets a bundle of reliefs: exemption from the internal-control (ISOX) report, raised valuation-attachment materiality threshold of 20% (instead of 10%), and market-risk disclosure relief.",
+      "claim_id": "kam-701-b",
+      "claim": "Auditing Standard (Israel) 701 applies to audits of the financial statements of listed entities (and the further categories listed in the standard), which is why key audit matters appear in the reports of larger TASE issuers rather than every company.",
+      "source_url": "https://icpas.org.il/wp-content/uploads/2023/03/32-%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-701-2021.pdf",
+      "raw_snippet": "תקן ביקורת זה חל על ביקורת דוחות כספיים של: (א) ישויות רשומות",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ],
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z"
+    },
+    {
+      "claim_id": "small-corp-relief-bundle-a",
+      "claim": "Under Reg. 5c(a)(1)(a) of the Securities Regulations (Periodic and Immediate Reports) 5730-1970, a corporation whose shares or participation units are held by the public is a small corporation if the market value of those shares or units on the exchange was below NIS 300 million (measured as the 60-day average preceding the determining date).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "תאגיד ייחשב תאגיד קטן אם התקיימו בו במועד הקובע תנאים אלה: (1) לעניין תאגיד שמניותיו או יחידות ההשתתפות שלו מוחזקות בידי הציבור, התקיימו שני אלה: (א) שווי המניות או יחידות ההשתתפות בבורסה היה נמוך משלוש מאות מיליון שקלים חדשים",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-relief-bundle-b",
+      "claim": "The second condition, as amended in 2016, is that the corporation is not included in one of the TASE leading share indices derived from the market value of their constituent corporations. The earlier wording, which named the TA-100 and TA-Beyond-50 indices, was replaced.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "(ב) התאגיד אינו נכלל באחד ממדדי המניות המובילים של הבורסה הנגזרים משווי שוק של התאגידים הנכללים בהם;",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-relief-bundle-c",
+      "claim": "The small-corporation reliefs include cancelling the duty to publish an internal-control report and the auditor's report on internal control (leaving only reduced management certifications), and raising the materiality threshold for attaching valuations to 20% instead of the 10% otherwise in force.",
       "source_url": "https://www.grantthornton.co.il/insights1/professional-insights/professional-insights-2014/---62014/",
-      "raw_snippet": "התאגיד לא נכלל במדד \"ת\"א - 100\" או במדד \"ת\"א יתר - 50\"; השווי הממוצע ... של המניות או יחידות ההשתתפות בבורסה היה נמוך מ- 300 מיליון ש\"ח. העלאת סף המהותיות בקשר עם צירוף הערכות שווי ל- 20% (חלף שיעור של 10%). ביטול החובה לפרסם דוח על הבקרה הפנימית ודוח רואה החשבון המבקר על הבקרה. מתן פטור מיישום הוראות התוספת השנייה בתקנות דוחות תקופתיים ומידיים (גילוי בדבר חשיפה לסיכוני שוק).",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md", "references/domain-checklist.md"]
+      "raw_snippet": "ביטול החובה לפרסם דוח על הבקרה הפנימית ודוח רואה החשבון המבקר על הבקרה הפנימית בתאגידים קטנים, כך שתאגידים קטנים יחוייבו בצירוף הצהרות מנהלים מצומצמות בלבד. העלאת סף המהותיות בקשר עם צירוף הערכות שווי ל- 20% (חלף שיעור של 10% אשר הינו בתוקף כיום).",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md",
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "ixbrl-voluntary",
@@ -153,7 +298,12 @@
       "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-63c5442fc580d/IXBRL042023.pdf",
       "raw_snippet": "תאגידים בישראל עוברים לדיווח iXBRL. הדיווח בפורמט זה יהפוך לחובה רק לאחר תיקון החקיקה הרלוונטי, והרשות מעודדת את התאגידים המדווחים להצטרף לפורמט באופן וולונטרי במועד מוקדם יותר.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
       "claim_id": "ixbrl-magna-50-datapoints",
@@ -161,7 +311,10 @@
       "source_url": "https://yaelgroup.com/securities-authority-about-to-adopt-the-xbrl-standard/",
       "raw_snippet": "רק 50 נתונים כספיים נבחרים, בעיקר מהדוחות הראשיים של החברות, המאזן ודוח רווח והפסד",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "shelf-prospectus-3-years",
@@ -169,7 +322,11 @@
       "source_url": "https://www.grantthornton.co.il/insights1/professional-insights/2024/Extension_of_shelf_prospectus_period_by_six_months/",
       "raw_snippet": "אישורים להארכת תשקיף מדף ב-12 חודשים נוספים (היינו, שנה שלישית) על פי סעיף 23א",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
     },
     {
       "claim_id": "immediate-report-timing",
@@ -177,15 +334,25 @@
       "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6253f4f00241c/ImmediateReports.pdf",
       "raw_snippet": "אירוע שנודע לתאגיד בין השעות 9:30 ל-17:00 ידווח עד השעה 9:30 של יום המסחר הבא; מידע שנודע לאחר 17:00 ועד 9:30 למחרת יוגש עד השעה 13:00 של יום המסחר הבא.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ],
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
       "claim_id": "periodic-report-reg7-nuance",
       "claim": "Under Reg. 7(a) of the Securities Regulations (Periodic and Immediate Reports) 5730-1970, the periodic report is due within 3 months of year-end AND at least 14 days before the AGM approving the statements, OR within 3 days of the auditor's opinion date, whichever is earliest.",
       "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
-      "raw_snippet": "התאגיד יגיש לרשות דוח תקופתי בכל שנה, תוך שלושה חדשים מתום שנת הדיווח שלו, ובלבד שהדוח יוגש ארבעה עשר יום או יותר לפני התאריך שנקבע לכינוס האסיפה הכללית ... או תוך שלושה ימים מתאריך החתימה של חוות דעתו של רואה החשבון המבקר ... לפי המוקדם",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "raw_snippet": "7. (א) התאגיד יגיש לרשות דו\"ח תקופתי בכל שנה, תוך שלושה חדשים מתום שנת הדיווח שלו, ובלבד שהדו\"ח יוגש 14 יום או יותר לפני התאריך שנקבע לכינוס האסיפה הכללית שבה יוגשו הדו\"חות הכספיים של התאגיד, או תוך שלושה ימים מתאריך החתימה של חוות דעתו של רואה חשבון המבקר של התאגיד על הדו\"חות הכספיים המבוקרים של התאגיד, לפי המוקדם.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
     },
     {
       "claim_id": "boi-public-reporting-directives",
@@ -193,31 +360,41 @@
       "source_url": "https://www.boi.org.il/roles/supervisionregulation/public-reports/",
       "raw_snippet": "תאגידים בנקאיים נדרשים לפרסם דוחות שנתיים ורבעוניים לציבור לפי הוראות הדיווח לציבור של המפקח על הבנקים, המאמצות את כללי הדיווח החלים על בנקים מובילים בארה\"ב (FASB, הוראות המפקחים על הבנקים בארה\"ב ו-SEC), עם שילוב תקני IFRS לנושאים מסוימים.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["SKILL.md", "SKILL_HE.md", "references/hebrew-financial-terms.md"]
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/hebrew-financial-terms.md"
+      ]
     },
     {
       "claim_id": "securities-regs-structure",
-      "claim": "Within the Securities Regulations (Periodic and Immediate Reports) 5730-1970: תקנה 5 (incl. 5ד, small-corporation definition and reliefs), תקנה 7 (annual periodic report deadline), תקנה 9 (incl. 9ב corporate-governance disclosure) and תקנה 10 (board report / MD&A content), and תקנה 39 (quarterly interim report).",
+      "claim": "Within the Securities Regulations (Periodic and Immediate Reports) 5730-1970 the relevant provisions are תקנה 5ג (which corporation counts as a small corporation), תקנה 5ד (reliefs for a small corporation), תקנה 5ה (further provisions for a small corporation), תקנה 7 (filing date of the periodic report), תקנה 9ב (report on the effectiveness of internal control over financial reporting and disclosure), תקנה 10 (board report on the state of the corporation's affairs) and תקנה 39 (quarterly report).",
       "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
-      "raw_snippet": "תקנה 5ד: הגדרת תאגיד קטן והקלות. תקנה 7: התאגיד יגיש לרשות דוח תקופתי בכל שנה, תוך שלושה חדשים מתום שנת הדיווח. תקנה 9 / תקנה 9ב: גילוי בדבר הממשל התאגידי. תקנה 10: דוח הדירקטוריון על מצב ענייני התאגיד. תקנה 39: דוח רבעוני, תוך שישים ימים מסוף הרבעון.",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["references/domain-checklist.md"]
+      "raw_snippet": "סעיף 5ג תאגיד שייחשב תאגיד קטן Go 14 סעיף 5ד הקלות לתאגיד קטן Go 14 סעיף 5ה הוראות נוספות לתאגיד קטן Go 15 פרק ב': הדו\"ח התקופתי – מועד הגשתו ופרטיו Go 16 סעיף 7 מועד הגשת הדו\"ח",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "icpas-host",
-      "claim": "The Institute of Certified Public Accountants in Israel (ICPAS) publishes the Israeli auditing standards (700/701/705/706) at icpas.org.il.",
-      "source_url": "https://icpas.org.il",
-      "raw_snippet": "לשכת רואי חשבון בישראל / ICPAS, אתר הפרסום של תקני הביקורת בישראל (700, 701, 705, 706).",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["references/domain-checklist.md"]
+      "claim": "The Institute of Certified Public Accountants in Israel (ICPAS) publishes the Israeli auditing standards at icpas.org.il, including Auditing Standard (Israel) 700.",
+      "source_url": "https://icpas.org.il/professional_updates/תקן-ביקורת-ישראל-700-3/",
+      "raw_snippet": "עמוד הבית / Professional Update / תקן ביקורת (ישראל) 700",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "bdo-host",
-      "claim": "BDO Israel published guidance on the small-corporation amendment cancelling the quarterly-report requirement (semi-annual reporting) at bdo.co.il.",
-      "source_url": "https://www.bdo.co.il",
-      "raw_snippet": "BDO Israel, תיקון תקנות ניירות ערך, ביטול חובת פרסום דוח רבעוני על ידי תאגידים קטנים.",
-      "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["references/domain-checklist.md"]
+      "claim": "BDO Israel (Ziv Haft) published guidance at bdo.co.il on ISA legal position 104-18, the reporting format of an exempt small corporation, which is the half-yearly-reporting regime that followed the cancellation of the quarterly-report duty.",
+      "source_url": "https://www.bdo.co.il/he-il/כתבות-ומאמרים/ביקורת-וראיית-חשבון/מחלקה-מקצועית/עמדה-משפטית-מספר-104-18-מתכונת-הדיווח-של-תאגיד-קט",
+      "raw_snippet": "עמדה משפטית מספר 104-18: מתכונת הדיווח של תאגיד קטן פטור",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "boi-host",
@@ -225,7 +402,9 @@
       "source_url": "https://www.boi.org.il",
       "raw_snippet": "בנק ישראל, הפיקוח על הבנקים, הוראות הדיווח לציבור של תאגידים בנקאיים.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["references/domain-checklist.md"]
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "grantthornton-host",
@@ -233,7 +412,9 @@
       "source_url": "https://www.grantthornton.co.il",
       "raw_snippet": "Grant Thornton Israel / פאהן קנה ושות', מחלקה מקצועית, הקלות לתאגידים קטנים והארכת תשקיף מדף.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["references/domain-checklist.md"]
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "ifrs-israel-profile-url",
@@ -241,7 +422,9 @@
       "source_url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/",
       "raw_snippet": "IFRS Foundation, View Jurisdiction: Israel. IFRS required for periods starting 1 January 2008; IFRS 17 postponed to 1 January 2025.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["references/domain-checklist.md"]
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
     },
     {
       "claim_id": "isa-104-18-pdf-url",
@@ -249,7 +432,21 @@
       "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_corporations_asset_library/corporations_pdf_pages-62eb9004f19c3/240417.pdf",
       "raw_snippet": "עמדה משפטית 104-18: מתכונת הדיווח של תאגיד קטן פטור.",
       "fetched_at": "2026-06-04T00:00:00Z",
-      "appears_in": ["references/domain-checklist.md"]
+      "appears_in": [
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z"
+    },
+    {
+      "claim_id": "kam-701-c",
+      "claim": "ICPAS publishes Auditing Standard (Israel) 701 on its professional-updates pages at icpas.org.il, which is where the standard's PDF is linked from.",
+      "source_url": "https://icpas.org.il/professional_updates/תקן-ביקורת-ישראל-701/",
+      "raw_snippet": "עמוד הבית / Professional Update / תקן ביקורת (ישראל) 701",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
     }
   ]
 }

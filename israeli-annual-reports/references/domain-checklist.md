@@ -20,7 +20,7 @@ company's periodic (תקופתי) filing on MAYA/MAGNA. Each item cited.
 4. **Half-yearly substitute for small corporations.** A תאגיד קטן whose debt
    is not publicly held is exempt from Q1/Q3 and files a half-yearly report
    instead. Source: 2017 amendment + ISA legal position 104-18, https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_corporations_asset_library/corporations_pdf_pages-62eb9004f19c3/240417.pdf ;
-   https://www.bdo.co.il (תיקון תקנות, ביטול חובת דוח רבעוני)
+   https://www.bdo.co.il/he-il/כתבות-ומאמרים/ביקורת-וראיית-חשבון/מחלקה-מקצועית/עמדה-משפטית-מספר-104-18-מתכונת-הדיווח-של-תאגיד-קט (עמדה משפטית 104-18)
 5. **IFRS adoption (2008) and the pre-2008 Israeli-GAAP boundary.** Source:
    IFRS Foundation Israel jurisdiction profile, https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/
 6. **Bank exception.** Banks report under Bank of Israel (Supervisor of Banks)
@@ -39,23 +39,24 @@ company's periodic (תקופתי) filing on MAYA/MAGNA. Each item cited.
    (בהסתייגות), adverse (חוות דעת שלילית), disclaimer (הימנעות מחוות דעת).
    Going-concern (הערת עסק חי) is an emphasis-of-matter paragraph
    (פסקת הפניית תשומת לב), NOT an opinion grade. Source: ISA(IL) 700/705/706,
-   ICPAS, https://icpas.org.il (תקן ביקורת ישראל 700, 705)
+   ICPAS, https://icpas.org.il/professional_updates/תקן-ביקורת-ישראל-700-3/ (תקן ביקורת ישראל 700, 705)
 9. **Correct core Hebrew terminology** (maazan, revach naki vs revach golmi,
    ביאורים, etc.). Source: standard IFRS-IL terminology / ICPAS glossary.
 
 ## Should cover (incomplete without these, but not actively misleading)
 
 10. **Small-corp relief is a bundle, not just half-yearly.** A תאגיד קטן
-    (avg. share market value < NIS 300M on the determining date, and not in
-    the TA-100 or TA-Beyond-50 index) also gets: exemption from the internal-control
+    (avg. share market value < NIS 300M on the determining date, and not
+    included in one of the TASE leading share indices derived from market cap;
+    Reg. 5ג) also gets: exemption from the internal-control
     (ISOX) report, raised valuation-attachment materiality threshold (20% vs
     10%), and market-risk disclosure relief. The analyst should expect those
-    disclosures to be *absent*. Source: Securities Regs 5730-1970 Reg. 5ד +
-    2014/2017 amendments, PwC/Grant Thornton/BDO client alerts;
-    https://www.grantthornton.co.il (הקלות לתאגידים קטנים)
+    disclosures to be *absent*. Source: Securities Regs 5730-1970 Reg. 5ג +
+    Reg. 5ד, https://www.nevo.co.il/law_html/law01/308_014.htm ; Grant Thornton
+    client alert, https://www.grantthornton.co.il/insights1/professional-insights/professional-insights-2014/---62014/
 11. **ISA 701 Key Audit Matters (ענייני מפתח בביקורת)** in the auditor's
     report of larger issuers, where the auditor flags the riskiest estimates.
-    Source: תקן ביקורת ישראל 701, https://icpas.org.il
+    Source: תקן ביקורת ישראל 701, https://icpas.org.il/professional_updates/תקן-ביקורת-ישראל-701/
 12. **Periodic-report timing nuance:** the periodic report must also be filed
     at least 14 days before the AGM that approves the statements, or within 3
     days of the auditor's opinion date, whichever is earlier (not just "within
@@ -83,9 +84,9 @@ company's periodic (תקופתי) filing on MAYA/MAGNA. Each item cited.
 
 - Securities Law 5728-1968 (Ch. ה'3 dual-listing), nevo 308_001.htm
 - Securities Regs (Periodic and Immediate Reports) 5730-1970, nevo 308_014.htm
-- Companies Law 5759-1999 (ss. 171, 172, 267-269, 270-275), nevo 71858.htm
+- Companies Law 5759-1999 (ss. 171, 172, 114-118, 270-275), nevo 71858.htm
 - ISA, isa.gov.il / new.isa.gov.il ; MAGNA, www.magna.isa.gov.il
 - TASE, tase.co.il ; MAYA, maya.tase.co.il
 - IFRS Foundation Israel profile, ifrs.org
-- ICPAS auditing standards 700/701/705/706, icpas.org.il
+- ICPAS auditing standards 700/701/705/706, https://icpas.org.il/professional_updates/תקן-ביקורת-ישראל-700-3/
 - Bank of Israel Supervisor of Banks Public Reporting Directives, boi.org.il
