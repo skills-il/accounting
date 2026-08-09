@@ -9,6 +9,11 @@ compatibility: Requires Claude Code with vision capabilities for image-based OCR
 
 # Israeli Receipt Scanner
 
+## Legal notice
+
+This is a free information tool operated by an AI model. It explains the rules and calculates from the figures you enter, but it does not examine your full circumstances and does not constitute tax advice. All of its outputs are produced automatically, with no involvement, review, or approval by a tax adviser or accountant, and an AI model may err, omit data, or present a wrong conclusion. The binding computation is the Tax Authority's and responsibility for reporting is yours. This tool is not a substitute for advice that takes account of the particular circumstances and needs of each person, and all use of its output is the user's sole responsibility.
+
+
 ## Instructions
 
 ### Step 1: Prepare the Receipt Image or Text
