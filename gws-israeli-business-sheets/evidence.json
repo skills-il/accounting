@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "gws-israeli-business-sheets",
-  "generated_at": "2026-07-26T22:57:31Z",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -238,10 +238,10 @@
     },
     {
       "claim_id": "url-gws-cli",
-      "claim": "The Google Workspace CLI repository is the source for the real gws command surface. The recommended installation is the pre-built binary published on the project's GitHub Releases page (https://github.com/googleworkspace/cli/releases); the npm package @googleworkspace/cli downloads that same binary. The project states it is not an officially supported Google product and is under active development before v1.0, and it builds its command surface dynamically from Google's Discovery Service rather than shipping a fixed command list.",
-      "source_url": "https://github.com/googleworkspace/cli",
-      "raw_snippet": "The recommended way to install `gws` is to download the pre-built binary for your OS and architecture from the **[GitHub Releases](https://github.com/googleworkspace/cli/releases)** page. ... This is **not** an officially supported Google product. ... `gws` doesn't ship a static list of commands. It reads Google's own [Discovery Service](https://developers.google.com/discovery) at runtime and builds its entire command surface dynamically. ... This project is under active development. Expect breaking changes as we march toward v1.0.",
-      "fetched_at": "2026-07-26T22:49:31Z",
+      "claim": "The Google Workspace CLI repository is the source for the real gws command surface. The recommended installation is the pre-built binary published on the project's GitHub Releases page. It is not an officially supported Google product.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/README.md",
+      "raw_snippet": "The recommended way to install `gws` is to download the pre-built binary for your OS and architecture from the **[GitHub Releases](https://github.com/googleworkspace/cli/releases)** page.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -339,6 +339,17 @@
         "SKILL_HE.md",
         "references/israeli-tax-categories.md",
         "scripts/vat-summary.py"
+      ]
+    },
+    {
+      "claim_id": "gws-not-official-google-product",
+      "claim": "The gws CLI is not an officially supported Google product.",
+      "source_url": "https://raw.githubusercontent.com/googleworkspace/cli/main/README.md",
+      "raw_snippet": "> This is **not** an officially supported Google product.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
       ]
     }
   ]
