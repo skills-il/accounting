@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-receipt-scanner",
-  "generated_at": "2026-06-03T20:49:36Z",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -137,10 +137,10 @@
     },
     {
       "claim_id": "buyer-name-required-for-input-VAT",
-      "claim": "Israeli input VAT is deductible only on an original tax invoice issued in the buyer's (operator's) name; the tax invoice must include the buyer's registration number, and only for small-sum invoices may the director permit omitting it. The exact buyer-registration-number-mandatory cutoff is set by ITA regulations and is stated qualitatively in the skill (no specific figure). The ITA rates page lists related small-sum thresholds that govern OTHER rules: NIS 358 (sec. 47a, the buyer's duty to demand a tax invoice) and NIS 309 (reg. 9a, a cash-register slip serving as a tax invoice). A generic retail slip with no buyer does not entitle that customer to deduct input VAT.",
-      "source_url": "https://www.gov.il/he/pages/vat-rate-amount-new",
-      "raw_snippet": "סעיף 47א לחוק חובתו של חייב במס לדרוש חשבונית מהמוכר החל מסכום של 1.1.2026 358 ... תקנה 9א ניהול פנקס חשבונות- קופה רושמת 1.1.2026 309 ... 47א. קונה שהוא חייב במס ... (א) עלה ערך הנכסים או השירותים על 358 שקלים חדשים אך לא הגיע ל- 28,778 שקלים חדשים, ידרוש ממוכר שהוא עוסק מורשה חשבונית מס ... תלוש מכירה של קופה רושמת שהוציא עוסק, יחשב כחשבונית מס לענין שרות שמחירו אינו עולה על 309 ש\"ח. VAT Law sec. 47(b)(1): \"חשבונית מס תכלול פרטים שקבע המנהל, ובלבד שיפורטו בה המס בנפרד וכן מספר הרישום של הקונה\"; the director may, for small-sum invoices, permit \"ציון המלים 'כולל מס' במקום פירוט המס בנפרד ואי-ציון מספר הרישום של הקונה\". Kol Zchut מס תשומות: \"ניתן לקזז מס תשומות אך ורק עבור רכישות שבוצעו לצורכי העסק, ובלבד שברשות העוסק חשבוניות מקוריות שהוצאו על שמו כדין\".",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "claim": "Israeli input VAT is deductible only for purchases made for the business and only where the operator holds original invoices lawfully issued in his own name. A generic retail slip with no printed buyer does not entitle that customer to deduct input VAT. The skill states the buyer-registration-number threshold qualitatively and cites no figure for it.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A1_%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA",
+      "raw_snippet": "ניתן לקזז מס תשומות אך ורק עבור רכישות שבוצעו לצורכי העסק, ובלבד שברשות העוסק חשבוניות מקוריות שהוצאו על שמו כדין",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -150,8 +150,8 @@
       "claim_id": "vehicle-fuel-input-vat-restricted",
       "claim": "Input VAT on a mixed business/private input (such as a passenger vehicle and its running costs, including fuel) is only partially deductible: up to two-thirds (2/3) when use is mainly for the business, and as little as one-quarter (1/4) when use is mainly private. Such documents should be flagged for the bookkeeper rather than claimed as fully deductible.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%A7%D7%99%D7%96%D7%95%D7%96_%D7%AA%D7%A9%D7%9C%D7%95%D7%9E%D7%99_%D7%9E%D7%A2%22%D7%9E_%D7%A9%D7%9C_%D7%A2%D7%95%D7%A1%D7%A7_%D7%9E%D7%95%D7%A8%D7%A9%D7%94_(%D7%9E%D7%A1_%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA)",
-      "raw_snippet": "אם עיקר השימוש לצורכי העסק - ניתן לנכות עד 2/3 ממס התשומות ... אם עיקר השימוש לא לצורכי העסק, אלא לצרכים פרטיים - אפשר לנכות עד 1/4 ממס התשומות",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "אם עיקר השימוש לצורכי העסק - מותר לנכות עד 2/3 ממס התשומות, אלא אם ניתן להוכיח שהחלק מההוצאה השייך לעסק הוא בשיעור אחר. אם עיקר השימוש לא לצורכי העסק, אלא לצרכים פרטיים - מותר לנכות עד 1/4 ממס התשומות",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -195,6 +195,19 @@
       "source_url": "https://www.gov.il/he/service/vat-exemption-eilat",
       "raw_snippet": "אילת אזור סחר חופשי פטור ממע\"מ שיעור אפס יצוא ללא מע\"מ",
       "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ita-small-sum-thresholds-2026",
+      "claim": "The ITA amounts page lists the small-sum thresholds that govern OTHER rules: the section 47a duty of a taxable person to demand a tax invoice from the seller, and regulation 9a on a cash-register slip. Both were updated on 1.7.2026; the section 47a figure is now 362 NIS (it was 358 from 1.1.2026) and regulation 9a is 309 NIS.",
+      "source_url": "https://www.gov.il/he/pages/vat-rate-amount-new",
+      "raw_snippet": "סעיף 47א לחוק חובתו של חייב במס לדרוש חשבונית מהמוכר החל מסכום של 1.7.2026 1.7.2026 362",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
