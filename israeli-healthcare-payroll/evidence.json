@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-healthcare-payroll",
   "schemaVersion": "1.0",
-  "generated_at": "2026-07-19",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "id": "nurses-dirug-applies",
@@ -9,8 +9,9 @@
       "claim_type": "entity",
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "תוספת אחיות 2024 ... עובדי המדינה בדירוג אחים ואחיות",
-      "confidence": "high"
+      "raw_snippet": "הסכם קיבוצי שנחתם ביום 1.11.2023 בדבר עדכון תנאי העסקה של עובדי המדינה בדירוג אחים ואחיות",
+      "confidence": "high",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "nurses-tosefet-2024-250",
@@ -27,8 +28,9 @@
       "claim_type": "currency",
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-1-11-2023-תשלום-תוספ/",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "החל מיום 1.4.2025 ... תוספת אחיות 2024 תתעדכן בסכום של 250 ₪ ותעמוד על סכום של 500 ₪ ... תוספת אחיות 2024 תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות וקריאות פתע, לעניין פיצויי פיטורים ... לעניין גמלאות, לעניין הפקדות לקופת גמל לקצבה ולעניין הפקדות לקרן השתלמות ... אחות המועסקת במשרה חלקית תהיה זכאית לתוספת אחיות 2024 בסכום שיחושב באופן יחסי לחלקיות משרתה ... לא תובא בחשבון לעניין חישוב התמורה בעד משמרות מיוחדות או משמרות תגבור",
-      "confidence": "high"
+      "raw_snippet": "החל מיום 1.4.2025 (במשכורת חודש אפריל המשולמת בחודש מאי) תוספת אחיות 2024 תתעדכן בסכום של 250 ₪ ותעמוד על סכום של 500 ₪ בסך הכול לאחות במשרה מלאה.",
+      "confidence": "high",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "nurses-shift-responsibility-exists",
@@ -54,11 +56,12 @@
       "claim_type": "percentage",
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "החל מיום 1.4.2025, העובדים יהיו זכאים לתוספת שכר חודשית בשיעור כמפורט בטבלה בהתאם לוותק של העובד ... שתקרא תוספת הכשרות. זאת, חלף תשלום גמולי השתלמות. בסיס השכר לחישוב תוספת הכשרות הוא השכר המשולב של העובד בלבד ... 0 - 7 (לא כולל) 3.50% ; 7 - 17 (לא כולל) 9.00% ; 17 ואילך 9.50% ... עובד אשר יש לו גמולי השתלמות, יהיה זכאי לתוספת הגבוהה מבין השניים ... תוספת הכשרות תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות, קריאות פתע ושכר עידוד, לעניין פיצויי פיטורים ... לצורך הפרשות לקופת גמל לקצבה (לגבי עובדים שחל עליהם פנסיה צוברת), הפרשות לקרן השתלמות וכל הפרשה אחרת הנוהגת לגבי השכר המשולב",
+      "raw_snippet": "שיעור התוספת יהיה בהתאם לרמות הותק המקצועי של העובד: ותק מקצועי שיעור אחוז התוספת מהשכר המשולב 0 - 7 (לא כולל) 3.50% 7 - 17 (לא כולל) 9.00% 17 ואילך 9.50%",
       "confidence": "high",
       "note": "Band percentages read from the agreement's rate table, which is published as an image (tab3-1.png) and is not present in the page text layer. Superseded the earlier 4.5/5.5/6.5 figures, which could not be located in this source.",
       "verified_via": "image",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "allied-incentive-ceiling",
@@ -66,10 +69,11 @@
       "claim_type": "currency",
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-קיבוצי-לעובדי-מקצועות-הבריאו/",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "התקרה המקסימלית לתגמול במודל התגמול תגדל מסכום של 4,125 ₪ למשרה מלאה לחודש ותעמוד על סכום של 5,400 ₪ למשרה מלאה לחודש ... החל מיום 1.4.2025",
+      "raw_snippet": "התקרה המקסימלית לתגמול במודל התגמול תמרוץ תגדל מסכום של 4,125 ₪ למשרה מלאה לחודש ותעמוד על סכום של 5,400 ₪ למשרה מלאה לחודש.",
       "confidence": "high",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "allied-retention-grant",
@@ -165,10 +169,11 @@
       "claim_type": "percentage",
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "תוספת למקצועות המצוקה עומדת על כ-12.5% ממשכורתו של הרופא ... נאונטולוגיה, הרדמה, קרדיולוגיה, טיפול נמרץ כללי, טיפול נמרץ ילדים וטיפול נמרץ לב",
+      "raw_snippet": "תוספת למקצועות המצוקה עומדת על כ-12.5% ממשכורתו של הרופא. היא נועדה עבור רופאים אשר עוסקים במקצועות הבאים: נאונטולוגיה, הרדמה, קרדיולוגיה, טיפול נמרץ כללי, טיפול נמרץ ילדים וטיפול נמרץ לב.",
       "confidence": "high",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "doctors-resident-grades",
@@ -176,10 +181,11 @@
       "claim_type": "feature",
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "מתמחה בדרג א' ... 45 שעות שבועיות ... דרג ב' ... 42 שעות שבועיות",
+      "raw_snippet": "שעות העבודה הקבועות לרופאים מתמחים מדרג א' אשר טרם עברו מבחן בכתב, הן 45 שעות בשבוע. עבור רופאים מתמחים מדרג ב', שעברו את המבחן, מדובר ב-42 שעות.",
       "confidence": "medium",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "doctors-oncall-frequency",
@@ -187,10 +193,11 @@
       "claim_type": "threshold",
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "כ-20 עד 30 כוננויות בחודש ... כ-60 כוננויות מדי חודש",
+      "raw_snippet": "במחלקות השונות בבתי החולים, יש כ-20 עד 30 כוננויות בחודש, להוציא בתי חולים ממשלתיים לבריאות הנפש, כמו לדוגמא באשקלון, בהם מתקיימים כ-60 כוננויות מדי חודש.",
       "confidence": "medium",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "doctors-periphery-grant",
@@ -198,10 +205,11 @@
       "claim_type": "currency",
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "גובה המענק הנו 300,000 ש\"ח, למעט רופאים מתמחים ... 500,000 ש\"ח",
+      "raw_snippet": "גובה המענק הנו 300,000 ש\"ח, למעט רופאים מתמחים או מומחים המשתייכים למקצועות המצוקה, אשר זכאים למענק בן 500,000 ש\"ח.",
       "confidence": "medium",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "doctors-toranut-weekday",
@@ -242,10 +250,11 @@
       "claim_type": "percentage",
       "source_url": "https://www.workrights.co.il/זכויות_רופאים",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "מתמחה או תחומי ... 10% ... 1.8.2011 ... 17.5% ... 1.8.2012 ... 25% ... 1.8.2013",
+      "raw_snippet": "סוג הרופא שיעור התוספת החל מיום 1.8.2011 שיעור התוספת החל מיום 1.8.2012 שיעור התוספת החל מיום 1.8.2013 מתמחה או תחומי 10% 17.5% 25%",
       "confidence": "medium",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "doctors-shahiya-supplement",
@@ -264,10 +273,11 @@
       "claim_type": "percentage",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx",
       "source_fetched_at": "2026-07-15T00:00:00Z",
-      "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת - 7,703 ש\"ח ... ינכה המעסיק 3.23% (החל ב- 01.01.2025) ... מעל מדרגת גביה מופחתת ... 5.17% (החל ב- 01.02.2025)",
+      "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת (שיעור מופחת) - 7,703 ש\"ח (החל ב- 01.01.2026)",
       "confidence": "high",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "nurses-gmul-hishtalmut",
@@ -286,10 +296,11 @@
       "claim_type": "percentage",
       "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מסגרת-לשנים-2020-2027/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "תוספות שכר שקליות בגובה 500 ₪ וכן תוספת אחוזית בשיעור של 6% ... ממשכורת חודש / תוספת אחוזית: דצמבר 2024 - 2.0% ; אפריל 2025 - 3.5% ; אפריל 2026 - 5.0% ; אפריל 2027 - 6.0%",
+      "raw_snippet": "במסגרת ההסכם תשולם תוספות שכר שקליות בגובה 500 ₪ וכן תוספת אחוזית בשיעור של 6%.",
       "confidence": "high",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "temporary-wage-reduction",
@@ -297,11 +308,12 @@
       "claim_type": "percentage",
       "source_url": "https://www.malam-payroll.com/השתתפות-העובדים-במגזר-הציבורי-בהוצאו/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "תקופות הפחתת שכר / שיעור הפחתת שכר עפ\"י ההסכם / שיעור הפחתת שכר עפ\"י החוק: מדצמבר 2024 עד מרץ 2025 - 2.290% / 0.000% ; מאפריל 2025 עד דצמבר 2025 - 2.290% / 3.307% ; מינואר 2026 עד דצמבר 2026 - 1.200% / 1.200% ... הפחתת השכר תבוצע בתלוש השכר באמצעות רכיב שכר, אשר יקרא \"תיקון פנסיוני\"",
+      "raw_snippet": "החל ממשכורת דצמבר 2024 מבוצעת במשכורתו/שכרו הפחתת שכר בשיעור של 2.29% ובחודש מאי 2025 יעבור לעבוד בדירוג, אשר לגביו חל החוק, שיעור ההפחתה לגביו ימשיך להיות 2.29% וזאת למרות ששיעור ההפחתה בחוק גבוה (3.307%) משיעור ההפחתה שבהסכם הקיבוצי.",
       "confidence": "high",
       "note": "Rate table published as images (hafhatatsachar.png, hafhatatsachar3.png) and read visually; the figures are not in the page text layer.",
       "verified_via": "image",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "nurses-tosefet-nihul",
@@ -309,10 +321,11 @@
       "claim_type": "percentage",
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-11-12-2023/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "החל מיום 1.12.2023 תשולם תוספת ניהול לאחות בדרגה 14-21 בלבד, בשיעור של 7.2% מהשכר לערך שעה, הכולל שכר משולב, תוספת ותק, כל תוספות שכר ותוספות לשכר (אחוזיות ושקליות) שהיו קיימות ביום 31.12.2022 ... תוספת ניהול תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות וקריאות פתע, לעניין פיצויי פיטורים ... לעניין גמלאות, לעניין הפקדות לקופת גמל לקצבה ולעניין הפקדות לקרן השתלמות",
+      "raw_snippet": "החל מיום 1.12.2023 תשולם תוספת ניהול לאחות בדרגה 14-21 בלבד, בשיעור של 7.2% מהשכר לערך שעה",
       "confidence": "high",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "nurses-shift-responsibility-80",
@@ -320,43 +333,47 @@
       "claim_type": "currency",
       "source_url": "https://www.malam-payroll.com/הסכם-שכר-בדרוג-אחיות-מיום-11-12-2023/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "החל מיום 1.12.2023 תעודכן תוספת אחריות משמרת כך שלאחיות הזכאיות תעמוד התוספת על סכום של 80 ₪ למשמרת ... אינה מהווה שכר לכל דבר ועניין, לא תובא בחשבון לעניין חישוב ערך שעה",
+      "raw_snippet": "החל מיום 1.12.2023 תעודכן תוספת אחריות משמרת כך שלאחיות הזכאיות תעמוד התוספת על סכום של 80 ₪ למשמרת.",
       "confidence": "high",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "nurses-table-structure",
       "claim": "The nurses' combined-salary grid published by the Ministry of Finance Wage and Labour Agreements Division is split into five tables by education level (maasi, musmach, BA, MA, doctorate), each covering ranks 10 to 21 and seniority years 0 to 40, effective 01/12/2008. At seniority 0 the shared ladder cell is 3,960.7 NIS (3,960.7 ש\"ח) at doctorate rank 15, MA 16, BA 17, musmach 18 and maasi 19.",
       "claim_type": "entity",
-      "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
+      "source_url": "https://ogdan.ladpc.net.il//wp-content/uploads/2017/03/%D7%90%D7%97%D7%99%D7%95%D7%AA-%D7%9E%D7%95%D7%A1%D7%9E%D7%9A1.pdf",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "משרד האוצר - האגף לשכר והסכמי עבודה ... משכורת משולבת בש\"ח לחודש לדירוג אחיות - מוסמך ... בתוקף מ - 01/12/08 ... דרגות ... רמה 10 ... רמה 21 ... שנות ותק",
+      "raw_snippet": "משכורת משולבת בש\"ח לחודש לדירוג אחיות - מוסמך",
       "confidence": "high",
-      "verified_via": "pdf",
-      "verified_at": "2026-07-19"
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "nurses-seniority-curve",
       "claim": "The nurses' table defines the per-year seniority increment as a percentage of the previous seniority year's combined salary: 3.10% for years 1 to 9, 2.10% for 10 to 19, 1.90% for 20 to 32, 1.10% for 33 to 35, and 0.85% from year 36 on.",
       "claim_type": "percentage",
-      "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
+      "source_url": "https://ogdan.ladpc.net.il//wp-content/uploads/2017/03/%D7%90%D7%97%D7%99%D7%95%D7%AA-%D7%9E%D7%95%D7%A1%D7%9E%D7%9A1.pdf",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "חישוב התוספת לכל שנת ותק יהיה כאחוז מהשכר המשולב בשנת הוותק הקודמת לה ... משנה 1 עד שנה 9 - 3.10% ... משנה 10 עד שנה 19 - 2.10% ... משנה 20 עד שנה 32 - 1.90% ... משנה 33 עד שנה 35 - 1.10% ... משנה 36 ואילך - 0.85%",
+      "raw_snippet": "3.10% משנה 1 עד שנה - 9 2.10% משנה 10 עד שנה - 19 1.90% משנה 20 עד שנה - 32 1.10% משנה 33 עד שנה - 35 0.85% משנה 36 ואילך -",
       "confidence": "high",
-      "verified_via": "pdf",
-      "verified_at": "2026-07-19"
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "nurses-rank13-cell",
       "claim": "In the 01/12/2008 combined-salary grid, a registered nurse (musmach) at rank 13 with zero seniority has a combined salary of 3,037.67 NIS (3,037.67 ש\"ח, about 3,038 NIS / 3,038 ש\"ח) per month, which is a base index rather than take-home pay.",
       "claim_type": "currency",
-      "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
+      "source_url": "https://ogdan.ladpc.net.il//wp-content/uploads/2017/03/%D7%90%D7%97%D7%99%D7%95%D7%AA-%D7%9E%D7%95%D7%A1%D7%9E%D7%9A1.pdf",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "משכורת משולבת בש\"ח לחודש לדירוג אחיות - מוסמך ... רמה 13 ... 0 ... 3,037.67",
+      "raw_snippet": "2,511.15 2,742.18 2,886.14 3,037.67 3,197.15 3,372.99",
       "confidence": "high",
-      "verified_via": "pdf",
-      "verified_at": "2026-07-19"
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "doctors-2024-agreement-tranches",
@@ -364,10 +381,11 @@
       "claim_type": "percentage",
       "source_url": "https://www.malam-payroll.com/הוראות-ביצוע-להסכם-קיבוצי-רופאים-מיום-30-9-2024/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "החל מיום 1.1.2025 השכר המשולב ... יעודכן בשיעור של 4.88%",
+      "raw_snippet": "החל מיום 1.1.2025 השכר המשולב שבטבלת השכר המשולב לדירוג הרופאים, אשר היה בתוקף ערב חתימת ההסכם הקיבוצי (לפי ההסכם הקודם מיום 25.8.2011 (להלן: הסכם 2011 ), יעודכן בשיעור של 4.88%.",
       "confidence": "medium",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "doctors-mission-supplement",
@@ -375,11 +393,12 @@
       "claim_type": "currency",
       "source_url": "https://www.malam-payroll.com/הוראות-ביצוע-להסכם-קיבוצי-רופאים-מיום-30-9-2024/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "תוספת משימה לאומית ... לא תובא בחשבון לצורך חישוב המשכורת הקובעת ... הרופא יהיה זכאי לסכום הגבוה מבין השניים",
+      "raw_snippet": "תוספת משימה לאומית, תהווה שכר לעניין פיצויי פיטורים, יבוצעו בגינה הפרשות לקרן השתלמות והיא לא תובא בחשבון לצורך חישוב המשכורת הקובעת",
       "confidence": "medium",
       "note": "Specific shekel amounts deliberately NOT asserted: they could not be confirmed against a reachable source, and the coefficient makes the headline figure misleading for an individual doctor.",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "wage-reduction-law",
@@ -387,10 +406,11 @@
       "claim_type": "entity",
       "source_url": "https://www.gov.il/he/pages/salary-reduction-2025-2026",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "חוק להשתתפותם של העובדים ובעלי תפקיד בשירות הציבורי, בצעדים לייצוב המצב הפיסקלי במדינה במהלך השנים 2025 ו-2026 (הוראת שעה), תשפ\"ה-2025 ... בדיווחים לשנות המס 2025 ו-2026, על המעסיקים לכלול את סכום הפחתת השכר שנוצר בעקבות החוק, במסגרת טופס 126",
+      "raw_snippet": "חוק להשתתפותם של העובדים ובעלי תפקיד בשירות הציבורי, בצעדים לייצוב המצב הפיסקלי במדינה במהלך השנים 2025 ו-2026 (הוראת שעה), תשפ\"ה-2025",
       "confidence": "high",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-08-09T00:00:00Z"
     },
     {
       "id": "framework-working-week",
@@ -398,10 +418,36 @@
       "claim_type": "feature",
       "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מסגרת-לשנים-2020-2027/",
       "source_fetched_at": "2026-07-19T00:00:00Z",
-      "raw_snippet": "שבוע העבודה במגזר הציבורי יקוצר בשעתיים ... 41 שעות שבועיות (קיצור שעה אחת) ... 40 שעות שבועיות (קיצור שעה אחת)",
+      "raw_snippet": "שבוע העבודה במגזר הציבורי יקוצר בשעתיים, מ-42 ל-40 שעות עבודה שבועיות בשתי פעימות, אשר יחולו באוקטובר 2023 ובספטמבר 2024.",
       "confidence": "medium",
       "verified_via": "browser",
-      "verified_at": "2026-07-19"
+      "verified_at": "2026-07-19",
+      "fetched_at": "2026-08-09T00:00:00Z"
+    },
+    {
+      "claim_id": "wage-reduction-form-126",
+      "claim": "Employers must report the wage reduction amount in Tofes 126 for tax years 2025 and 2026, in the field 'הפחתת משכורת לעובד/בעל תפקיד'.",
+      "source_url": "https://www.gov.il/he/pages/salary-reduction-2025-2026",
+      "raw_snippet": "טופס 126 – דיווח על רכיב השכר בדיווחים לשנות המס 2025 ו-2026, על המעסיקים לכלול את סכום הפחתת השכר שנוצר בעקבות החוק, במסגרת טופס 126 המוגש למס הכנסה.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "verified_via": "browser",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ogdan-salary-table-index",
+      "claim": "The Ogdan Tnaei Sherut section 4.1 (טבלאות שכר) is the index page that links the per-dirug combined-salary tables, including the 5 nurse tables (מוסמך, ב.א, מ.א, ד\"ר, מעשי).",
+      "source_url": "https://ogdan.ladpc.net.il/?page_id=4385",
+      "raw_snippet": "4.1 טבלאות שכר תוכן עניינים לחץ על כל שורה להצגת הטבלאות: רופאים רופאים וטרינרים דירוג מנהלי",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/nurses-salary-tables.md"
+      ]
     }
   ]
 }
