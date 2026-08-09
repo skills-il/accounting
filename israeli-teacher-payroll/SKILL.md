@@ -154,9 +154,9 @@ position, scale by the position fraction.
 
 **Oz LaTmura shekel supplement (tosefet shiklit).** The Irgun HaMorim agreement
 of 23.9.2024, whose execution directive took effect 1.9.2025, raised the Oz
-shekel supplement from 1,200 NIS to 1,518 NIS. Two further steps of 250 NIS each
-are signed and future-dated to 1.9.2026 and 1.9.2027, so a slip read in the
-autumn of 2026 should already carry the first of them. This is an Oz LaTmura
+shekel supplement from 1,200 NIS to 1,518 NIS. Later steps may have been agreed
+for subsequent school years, so read the current amount from the execution
+circular rather than assuming 1,518 NIS still holds. This is an Oz LaTmura
 line: do not apply it to an Ofek Chadash teacher.
 
 The same agreement also changed several coordinator (rakaz) gmulim from 1.9.2025.
