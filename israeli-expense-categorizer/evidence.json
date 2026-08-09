@@ -30,8 +30,8 @@
       "claim_id": "vehicle-higher-of",
       "claim": "Vehicle running expenses: deductible amount = the HIGHER of [running expenses minus שווי שימוש (use-value)] OR [45% of running expenses].",
       "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
-      "raw_snippet": "סכום הוצאות החזקת רכב בניכוי שווי השימוש ברכב...או סכום בגובה 45% מהוצאות החזקת הרכב, לפי הגבוה",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "(1) לגבי רכב, למעט אופנוע שסיווגו L3 ולמעט רכב כאמור בפסקאות (1ב), (1ג) ו-(1ד) – סכום הוצאות החזקת רכב בניכוי שווי השימוש ברכב כפי שנקבע בתקנות מס הכנסה (שווי השימוש ברכב), התשמ\"ז-1987 (להלן – תקנות שווי השימוש), או סכום בגובה 45% מהוצאות החזקת הרכב, לפי הגבוה;",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -65,8 +65,8 @@
       "claim_id": "vehicle-vat-running",
       "claim": "Per תקנה 18 of the VAT regulations, VAT on mixed-use vehicle running costs (fuel/repairs) is deductible at 2/3 (שני שלישים) when business is the primary use, and only 1/4 (רבע) of the input tax when the main use is not for business.",
       "source_url": "https://www.bshcpa.co.il/%D7%AA%D7%A7%D7%A0%D7%94-18-%D7%A7%D7%99%D7%96%D7%95%D7%96-%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA/",
-      "raw_snippet": "רשאי העוסק לנכות שני שלישים ממס התשומות ... רשאי העוסק לנכות רבע ממס התשומות",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "במצב בו עיקר השימוש בנכס או בשירות הוא לצורכי עסק, רשאי העוסק לנכות שני שלישים ממס התשומות, אך היה ועיקר השימוש בנכס או בשירות הוא שלא לצורכי עסק, רשאי העוסק לנכות רבע ממס התשומות.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -88,8 +88,8 @@
       "claim_id": "kibud-kal-80",
       "claim": "Only light refreshments at the workplace (כיבוד קל) are 80% deductible.",
       "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
-      "raw_snippet": "שתיה קרה או חמה, עוגיות וכיוצא באלה ... 80%",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "(1) 80% מההוצאות שהוצאו לכיבוד קל במקום העיסוק של הנישום; לענין זה, \"כיבוד קל\" - שתיה קרה או חמה, עוגיות וכיוצא באלה;",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -108,10 +108,10 @@
     },
     {
       "claim_id": "per-diem-foreign",
-      "claim": "Foreign-travel per-diem 'other expenses' (אש\"ל לחו\"ל), tax year 2026: when lodging is claimed separately, ~$102/day; when lodging is not claimed, ~$171/day. Foreign-trip meals are 50% deductible.",
-      "source_url": "https://www.dnk-cpa.co.il/",
-      "raw_snippet": "הוצאות נסיעה לחו\"ל 2026 אם נדרשו הוצאות לינה 102$ אם לא נדרשו הוצאות לינה 171$ ארוחות 50%",
-      "fetched_at": "2026-07-18T00:00:00Z",
+      "claim": "Foreign-travel per-diem 'other stay expenses' (הוצאות שהייה אחרות), tax year 2026: up to $102 per day of stay when lodging expenses are also claimed, and up to $171 per day of stay when lodging expenses are not claimed.",
+      "source_url": "https://www.dnk-cpa.co.il/%D7%97%D7%95%D7%96%D7%A8%D7%99%D7%9D-%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%D7%99%D7%99%D7%9D/%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%A0%D7%A1%D7%99%D7%A2%D7%94-%D7%9C%D7%97%D7%95%D7%9C-%D7%94%D7%9E%D7%95%D7%AA%D7%A8%D7%95%D7%AA-%D7%91%D7%A0%D7%99%D7%9B%D7%95%D7%99-%D7%91%D7%A9%D7%A0%D7%AA-2026/",
+      "raw_snippet": "ג. הוצאות שהייה אחרות: 1. אם נדרשו הוצאות לינה עד 102$ לכל יום שהייה (בשנת 2025 - 100$). 2. אם לא נדרשו הוצאות לינה עד 171$ לכל יום שהייה (בשנת 2025 - 167$).",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -119,10 +119,10 @@
     },
     {
       "claim_id": "osek-patur-ceiling",
-      "claim": "Osek Patur annual turnover ceiling is 122,833 ש\"ח for 2026, re-indexed (צמוד למדד) from 120,000 ש\"ח which applied in 2024-2025.",
-      "source_url": "https://www.greeninvoice.co.il/magazine/%D7%AA%D7%A7%D7%A8%D7%AA-%D7%A2%D7%95%D7%A1%D7%A7-%D7%A4%D7%98%D7%95%D7%A8/",
-      "raw_snippet": "בשנת 2026 תקרת עוסק פטור הוא 122,833 ₪, בעוד שבשנת 2025 התקרה הייתה 120,000 ₪. התקרה ... לא תתעדכן ... בשנים 2024 ו-2025, ורק החל משנת 2026 היא תוצמד למדד",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "claim": "The Osek Patur annual turnover ceiling is 122,833 ש\"ח for 2026, up from 120,000 ש\"ח in 2025.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A2%D7%95%D7%A1%D7%A7_%D7%A4%D7%98%D7%95%D7%A8",
+      "raw_snippet": "כדי להיות עוסק פטור אסור שמחזור העסקאות השנתי (ולא הרווח!) בעסק יעבור את הסכום של 122,833 ₪ (נכון לשנת 2026) (120,000 ₪ בשנת 2025).",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -133,8 +133,8 @@
       "claim_id": "equipment-depreciation",
       "claim": "Equipment for long-term use is recognized through annual depreciation rather than immediately: computers at 33% (over ~3 years), office furniture at 6% per year.",
       "source_url": "https://www.zscpa.co.il/%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%95%D7%9B%D7%A8%D7%95%D7%AA/",
-      "raw_snippet": "פחת על מחשב בעסק הוא 33% ... פחת על ריהוט משרדי נקבעה בתקנות לפי 6%",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "הפקודה מגדירה לכל סוג של רכוש קבוע מהו אחוז הפחת המוכר בגינו, לדוגמה פחת על ריהוט משרדי הוא 6%, פחת על מחשב בעסק הוא 33% וכו'.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -142,21 +142,32 @@
     },
     {
       "claim_id": "osek-zair-30",
-      "claim": "Under the 2026 small-business reform (חוק ההתייעלות הכלכלית, פרק בעל עסק זעיר), an osek (patur or murshe) whose turnover is under the osek-patur ceiling (122,833 ש\"ח for 2026) may elect a flat automatic income-tax deduction of 30% of turnover instead of itemizing actual expenses; an osek patur classified as עסק זעיר receives it automatically.",
+      "claim": "Under the 'בעל עסק זעיר' chapter added to the Income Tax Ordinance by the Economic Efficiency Law, an eligible business may deduct a flat 30% of turnover as an expense from tax year 2024 instead of itemising actual expenses. The turnover ceiling for the track is set separately from the VAT osek-patur status; the cited source states it as 120,000 NIS for tax years 2024-2025.",
       "source_url": "https://www.capitax.co.il/content/2/3311",
-      "raw_snippet": "רשאים החל משנת-המס 2024 לנכות מהכנסותיהם הוצאה בשיעור של 30% מהמחזור, חלף ניכוי הוצאות בפועל ... בשנת-המס 2026 התקרה היא 122,833 ₪",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "ואשר רשאים הָחל משנת-המס 2024 לנַכּוֹת מהכנסותיהם הוצאה בשיעור של 30% מהמחזוֹר, חֶלף ניכוי הוצאות בפועל.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ]
     },
     {
-      "claim_id": "shovi-shimush-table",
-      "claim": "שווי שימוש (use-value) is not a computed or receipt-based figure: it is a fixed monthly amount the Tax Authority sets per vehicle from the official price-group (קבוצת מחיר) table, or for vehicles registered from 2010 onward as a percentage of the list price (currently 2.48%), looked up via the official ITA שווי שימוש calculator.",
+      "claim_id": "shovi-shimush-table-a",
+      "claim": "שווי שימוש is a fixed Tax Authority amount, not a receipt-based figure: vehicles registered from 01.01.2010 onward use 2.48% of the list price per month, while earlier vehicles use the fixed monthly קבוצת מחיר (price-group) table (groups 1-7).",
       "source_url": "https://protocol.co.il/vehicle-usage-value/",
-      "raw_snippet": "לרכבים משנת 2010 ואילך ... 2.48% ממחיר המחירון ... קבוצת מחיר ... חישוב שווי שימוש ברכב נעשה רק לפי התקנות ולפי דרך החישוב בהם",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "מועד רישום הרכב במשרד התחבורה שווי השימוש (חודשי) שווי השימוש (שנתי) 01.01.2010 ואילך 2.48% 2.48% * 12 עד 31.12.2009 (המחירים מתואמים להיום) קבוצת מחיר 1 – 3,220 ₪ קבוצת מחיר 2 – 3,490 ₪ קבוצת מחיר 3 – 4,490 ₪ קבוצת מחיר 4 – 5,390 ₪ קבוצת מחיר 5 – 7,450 ₪ קבוצת מחיר 6 – 9,660 ₪ קבוצת מחיר 7 – 12,430 ₪ אופנוע L3 – בסך 1,070 ₪ קבוצת מחיר 1 – 38,640 ₪ קבוצת מחיר 2 – 41,880 ₪ קבוצת מחיר 3 – 53,880 ₪ קבוצת מחיר 4 – 64,680 ₪ קבוצת מחיר 5 – 89,400 ₪ קבוצת מחיר 6 – 115,920 ₪ קבוצת מחיר 7 – 149,160 ₪ אופנוע L3 – בסך 12,840 ₪",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "shovi-shimush-table-b",
+      "claim": "The Israeli Tax Authority publishes an official שווי שימוש calculator for a company car, operating on the linear-model method for vehicles from 2010 onward.",
+      "source_url": "https://protocol.co.il/vehicle-usage-value/",
+      "raw_snippet": "מחשבון שווי שימוש ברכב צמוד רשות המסים השיקה מחשבון שבו ניתן לחשב מהו שווי השימוש שחל על רכב צמוד מהעבודה. המחשבון פועל לפי שיטת המודל הלינארי עבור רכבים החל משנת 2010.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -166,8 +177,8 @@
       "claim_id": "vehicle-depreciation-rate",
       "claim": "Vehicle depreciation is 15% per year applied to the vehicle cost; the deductible portion of that depreciation is itself subject to the 45% running-cost rule.",
       "source_url": "https://www.zscpa.co.il/%D7%9E%D7%99-%D7%9E%D7%A8%D7%95%D7%95%D7%99%D7%97-%D7%91%D7%92%D7%93%D7%95%D7%9C-%D7%9E%D7%A9%D7%95%D7%95%D7%99-%D7%A8%D7%9B%D7%91/",
-      "raw_snippet": "רכב בשווי 200,000 ש\"ח, ניתן להכיר בהוצאת פחת שנתית בגובה 15% ... מתוך הוצאות הפחת ניתן להכיר כהוצאה רק 45%",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "נניח ורוכשים רכב בשווי 200,000 ש\"ח, במקרה זה ניתן להכיר בהוצאת פחת שנתית בגובה 15%, כלומר 30,000 ש\"ח בשנה. מתוך הוצאות הפחת בסכום של 30,000 ₪ ניתן להכיר כהוצאה רק 45%, לכן ההוצאה המוכרת היא 13,500 ₪.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -224,6 +235,18 @@
       "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%98%D7%91%D7%95%D7%AA_%D7%91%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A7%D7%93%D7%95%D7%AA_%D7%A2%D7%A6%D7%9E%D7%90%D7%99%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
       "raw_snippet": "עצמאי ניכוי 52% דמי ביטוח לאומי קרן השתלמות לעצמאי 4.5% הכנסה קובעת פנסיה סעיף 47 45א 17",
       "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "osek-zair-ceiling-2026",
+      "claim": "For 2026 the osek zair turnover ceiling is 122,833 NIS, the same figure as the VAT osek-patur ceiling, but the two statuses are independent: osek patur is a VAT status and osek zair is an income-tax track.",
+      "source_url": "https://zcpa.co.il/Article/osek-zair-2026",
+      "raw_snippet": "אם המחזור הוא 122,833 ש\"ח (התקרה) — ההכנסה החייבת היא 85,983 ש\"ח",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",

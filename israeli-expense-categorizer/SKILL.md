@@ -26,7 +26,7 @@ If a file path is provided, read the file. If expenses are described in text, pa
 
 Ask the user for their business registration type if not already known:
 
-- **Osek Patur** (exempt dealer): Annual turnover under the threshold (NIS 122,833 for 2026, re-indexed from NIS 120,000 that applied in 2024-2025). Cannot charge or deduct VAT. Income tax deductions still apply.
+- **Osek Patur** (exempt dealer): Annual turnover under the threshold (NIS 122,833 for 2026, up from NIS 120,000 in 2025). Cannot charge or deduct VAT. Income tax deductions still apply.
 - **Osek Murshe** (licensed dealer): Can charge and deduct VAT. Full income tax deductions apply.
 - **Company (Chevra Ba'am)**: Corporate tax rules apply. Full VAT deduction on eligible business expenses, but subject to the same תקנה 14 / תקנה 18 limits as an osek murshe (no input VAT on a private-car purchase, the 2/3 vs 1/4 split on running-cost VAT) and the same אירוח / meals VAT disallowance. A company is NOT exempt from these limits.
 
@@ -60,7 +60,7 @@ Categorize each expense using the following deduction rules from the Israeli Tax
   - **Hospitality / business meals with Israeli clients (אירוח בארץ): 0% deductible.** Per תקנות ניכוי הוצאות מסויימות 1972 reg. 2(1), hosting Israeli clients/partners is disallowed regardless of receipts. Coffee with a client at Aroma is **not** an 80% expense.
   - **Hospitality with foreign guests visiting Israel (אירוח אורחי חוץ)**: deductible up to a "reasonable" amount with proper documentation of the foreign guest.
   - **Light refreshments at the workplace (כיבוד קל)**: up to 80% deductible per ITA practice (coffee/tea/snacks for staff and visitors at the office).
-  - **Foreign-business-trip meals (אש"ל לחו"ל)**: 50% of documented meal cost. Per-diem "other expenses" caps (2026): roughly $102/day when lodging is claimed separately, or roughly $171/day when lodging is not claimed separately.
+  - **Foreign-business-trip subsistence (אש"ל לחו"ל)**: meals abroad are not deductible at a separate percentage, they fall inside the daily "other stay expenses" cap. Caps for 2026: up to $102 per day of stay when lodging expenses are also claimed, or up to $171 per day of stay when lodging expenses are not claimed.
   - Meals during a regular workday for the self-employed person alone: not deductible.
 - **Gifts to clients**: Up to 240 NIS per recipient per year (2026, unchanged) for gifts given in Israel, and up to $15 USD per foreign recipient per year, per תקנות ניכוי הוצאות מסויימות 1972.
 
@@ -83,7 +83,7 @@ Confirm the exact caps with the accountant, they interact and are all capped aga
 **Special rules**:
 - **Higher-value equipment**: Recognized through depreciation over its useful life rather than immediately (computers: 33% per year, office furniture: 6% per year). Low-value items are taken as an immediate expense; ~1,200 ILS is a common working threshold for flagging which items to treat as low-value, confirm the current figure with your accountant.
 - **Depreciation of vehicles**: 15% per year applied to the vehicle cost; the deductible portion of that depreciation is itself folded into the 45% higher-of running-cost rule above.
-- **Travel abroad**: Fully deductible if business purpose is documented. Per diem rules apply: accommodation receipts required, meal allowance up to the daily caps noted above (~$102/$171 per day, meals 50%).
+- **Travel abroad**: Fully deductible if business purpose is documented. Per diem rules apply: accommodation receipts required, subsistence up to the daily caps noted above ($102/$171 per day of stay).
 - **Work clothing**: Deductible only if branded, protective, or required uniform. Regular business attire is not deductible.
 
 **VAT (Osek Murshe only)**:

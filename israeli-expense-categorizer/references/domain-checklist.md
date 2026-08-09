@@ -48,12 +48,12 @@ Each Must/Should item cites the governing statute or regulation.
 
 ## Should cover (incomplete but won't produce a silently-wrong number if absent)
 
-1. **Osek patur ceiling = 122,833 ₪ for 2026 (CPI-linked from 2026; 120,000 in 2024-2025).**
-   Source: חוק מע"מ ס' 31(3) + הצמדה.
+1. **Osek patur ceiling = 122,833 ₪ for 2026 (120,000 ₪ in 2025).**
+   Source: חוק מע"מ ס' 31(3).
 2. **Landline-from-home cap: lower of 80% or amount over 2,700 ₪, within 26,600 ₪ ceiling.**
    Source: תקנות ניכוי הוצאות מסויימות 1972, תקנה 2.
 3. **Gifts: ≤ 240 ₪/recipient/yr in Israel; ≤ $15/foreign recipient/yr.** Source: same regs.
-4. **Foreign-travel per-diem / אש"ל לחו"ל caps; foreign-trip meals 50%.** Source: same regs,
+4. **Foreign-travel per-diem / אש"ל לחו"ל daily stay caps (meals sit inside the cap).** Source: same regs,
    תקנה 2(2) + annual ITA update.
 5. **Fines, penalties, traffic tickets = non-deductible.** Source: פקודת מס הכנסה ס' 32(12).
 6. **Work clothing deductible only if uniform/branded/protective.** Source: ITA practice,
