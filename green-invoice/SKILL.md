@@ -76,7 +76,7 @@ Content-Type: application/json
 Always start by verifying credentials work:
 
 ```bash
-curl -s https://api.greeninvoice.co.il/api/v1/users/me \
+curl -s https://api.greeninvoice.co.il/api/v1/documents/info \
   -H "Authorization: Bearer <token>" | python3 -m json.tool
 ```
 
@@ -186,7 +186,7 @@ Required fields: `type`, `client` (with `name` and `emails`), `income` (line ite
 | 1 | Exempt (no VAT) |
 | 2 | Mixed (some items exempt, some not) |
 
-**VAT types (income row level):** the income-row `vatType` uses the SAME enum as the document level. To set a specific rate on a line (e.g. 0% for a zero-rated export line), use the separate `vatRate` field, a decimal fraction (`0` for 0%, `0.18` for 18%). There is no "VAT included in price" value; verify field names against the canonical docs at `developers.morning.co`.
+**VAT types (income row level):** the income-row `vatType` is a DIFFERENT enum from the document-level one. A document uses `DocumentVatType` (`0` default, `1` exempt, `2` mixed); an income row uses `ItemVatType` (`0` default, `1` VAT included in price, `2` exempt). The two collide on the value `1`, so copying a document-level `vatType: 1` onto a row does not make the row exempt, it makes it VAT-inclusive and changes the amount charged. To set a specific rate on a line (e.g. 0% for a zero-rated export line), use the separate `vatRate` field, a decimal fraction (`0` for 0%, `0.18` for 18%).
 
 | Code | Meaning |
 |------|---------|

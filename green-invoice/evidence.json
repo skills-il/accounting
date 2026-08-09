@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "green-invoice",
-  "generated_at": "2026-07-27T00:00:00Z",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "claim_id": "vat-18-2026",
@@ -33,70 +33,64 @@
       "claim_id": "osek-patur-ceiling-2026",
       "claim": "Osek Patur (VAT-exempt dealer) annual turnover ceiling is NIS 122,833 for 2026 (CPI-adjusted annually)",
       "source_url": "https://www.greeninvoice.co.il/magazine/%D7%AA%D7%A7%D7%A8%D7%AA-%D7%A2%D7%95%D7%A1%D7%A7-%D7%A4%D7%98%D7%95%D7%A8/",
-      "raw_snippet": "<tr><td>2026</td><td>122,833",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "raw_snippet": "שנת המס  סכום תקרת ההכנסות לעוסק פטור 2026 122,833 ש\"ח 2025 120,000 ש\"ח",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "references/document-workflows.md"
       ]
     },
     {
       "claim_id": "section-46-donation",
-      "claim": "Amutot (non-profits) issue donation receipts under Section 46 of the Income Tax Ordinance; individual donors get a 35% tax credit on the donation amount (subject to floor/ceiling limits)",
+      "claim": "Amutot (non-profits) issue donation receipts under Section 46 of the Income Tax Ordinance; individual donors get a 35% tax credit on the donation amount (subject to floor/ceiling limits) Hebrew: זיכוי ממס הכנסה בשל תרומה לפי סעיף 46 לפקודת מס הכנסה.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%A9%D7%9C_%D7%AA%D7%A8%D7%95%D7%9E%D7%94_(%D7%A1%D7%A2%D7%99%D7%A3_46)",
-      "raw_snippet": "זיכוי ממס הכנסה בשל תרומה (סעיף 46) ... הזיכוי הוא בגובה 35% מסך התרומה",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "raw_snippet": "יחידים ועסקים שלא מאוגדים כחברה בע\"מ זכאים לזיכוי בגובה 35% מסכום התרומה",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "references/document-workflows.md"
       ]
     },
     {
       "claim_id": "api-base-auth",
-      "claim": "Production base URL https://api.greeninvoice.co.il/api/v1, sandbox https://sandbox.d.greeninvoice.co.il/api/v1. Authentication: the documented flow is OAuth 2.0 client_credentials at https://api.morning.co/idp/v1/oauth/token returning accessToken (a signed JWT, 1 hour). The legacy API-key flow POST /v1/account/token also still returns a JWT and remains functional.",
-      "source_url": "https://developers.morning.co/",
-      "raw_snippet": "Our APIs use the OAuth 2.0 protocol for authentication and authorization. ... https://api.greeninvoice.co.il/api/v1 ... https://sandbox.d.greeninvoice.co.il/api/v1",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "claim": "Production base URL https://api.greeninvoice.co.il/api/v1, sandbox https://sandbox.d.greeninvoice.co.il/api/v1, as declared in the servers block of the Morning API OpenAPI document. The legacy API-key flow POST /v1/account/token is not in the OpenAPI document but is still live (the host answers it 405 Method Not Allowed to a GET, i.e. the route exists and is POST-only).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"url\": \"https://api.greeninvoice.co.il/api/v1\", \"description\": \"Production\"",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/api-reference.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-07-27T00:00:00Z"
+      ]
     },
     {
       "claim_id": "api-endpoints",
-      "claim": "REST endpoints under /v1: documents, clients, items, suppliers, expenses, payments, partners, webhooks. Amounts are decimal shekels, not agorot. Includes GET /v1/users/me for verifying that credentials work.",
-      "source_url": "https://developers.morning.co/",
-      "raw_snippet": "Documents Items Clients Suppliers Expenses Payments Partners Webhooks ... /v1/documents /v1/documents/search /v1/documents/{id} /v1/clients /v1/clients/search /v1/clients/{id} /v1/items /v1/items/search /v1/suppliers /v1/expenses /v1/users/me (endpoint paths as used against base https://api.greeninvoice.co.il/api/v1) /v1/items/{id} GET /v1/documents/{id}/download/links POST /v1/clients/search POST /v1/documents/{id}/close POST /v1/expenses POST /v1/suppliers https://api.greeninvoice.co.il/api/v1/users/me  currency ILS, USD, EUR",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "claim": "REST resources under /api/v1 include documents, clients, items, suppliers, expenses, payments and partners. Amounts are decimal shekels, not agorot (vatRate is a decimal fraction such as 0.18). Verified paths present in the OpenAPI document (relative to base https://api.greeninvoice.co.il/api/v1): /v1/documents, /v1/documents/search, /v1/documents/{id}, GET /v1/documents/{id}, GET /v1/documents/{id}/download/links, POST /v1/documents/{id}/close, /v1/clients, POST /v1/clients, /v1/clients/search, POST /v1/clients/search, /v1/clients/{id}, /v1/items, /v1/items/search, /v1/items/{id}, POST /v1/expenses, POST /v1/suppliers. Supported currency values include ILS, USD and EUR.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"description\": \"VAT rate that will apply to a new document, expressed as a decimal fraction (e.g. 0.18 for 18%)\"",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "references/api-reference.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-07-27T00:00:00Z"
+      ]
     },
     {
       "claim_id": "document-and-payment-types",
-      "claim": "15 document types (codes 10/20/100/200/210/300/305/320/330/400/405/410/500/600/610) and the payment-group enum (0 withholding, 1 cash, 2 check, 3 credit card, 4 bank transfer, 5 PayPal, 10 payment app, 11 other).",
-      "source_url": "https://developers.morning.co/",
-      "raw_snippet": "10\tהצעת מחיר 20\tחשבון / אישור תשלום 100\tהזמנה 200\tתעודת משלוח 210\tתעודת החזרה 300\tחשבון עסקה 305\tחשבונית מס 320\tחשבונית מס / קבלה 330\tחשבונית זיכוי 400\tקבלה 405\tקבלה על תרומה 410\tביטול תרומה 500\tהזמנת רכש 600\tקבלת פיקדון 610\tמשיכת פיקדון",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "claim": "15 document type codes (10/20/100/200/210/300/305/320/330/400/405/410/500/600/610).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 305 | חשבונית מס |\\n| 320 | חשבונית מס / קבלה |\\n| 330 | חשבונית זיכוי |",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/document-workflows.md",
         "references/api-reference.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-07-27T00:00:00Z"
+      ]
     },
     {
       "claim_id": "export-zero-rated",
-      "claim": "Export of services by an osek murshe is zero-rated (0% VAT) under Section 30 of the Israeli VAT Law, legally distinct from exempt (patur, Sec 31). In the Green Invoice API a 0% line is set via the income-row vatRate field (decimal 0), not a vatType value; the document-level vatType enum (DocumentVatType) is 0=Default, 1=Exempt, 2=Mixed at both document and row level.",
-      "source_url": "https://developers.morning.co/",
-      "raw_snippet": "vatType 0 Default, 1 Exempt, 2 Mixed; vatRate decimal e.g. 0.18; export zero-rated 0% Section 30 סעיף 30 not exempt",
-      "fetched_at": "2026-06-28T23:55:00Z",
+      "claim": "Export of services by an osek murshe is zero-rated (0% VAT) under Section 30 of the Israeli VAT Law, legally distinct from exempt (patur, Sec 31). In the Morning API a 0% line is set via the income-row vatRate field (decimal 0), not a vatType value. The DOCUMENT-level enum DocumentVatType is 0=Default, 1=Exempt, 2=Mixed; the INCOME-ROW enum is a different one, ItemVatType, where 0=Default, 1=Included (VAT included in price), 2=Exempt. Hebrew: יצוא שירותים חייב במע\"מ בשיעור אפס לפי סעיף 30 לחוק מס ערך מוסף, להבדיל מעסקה פטורה לפי סעיף 31.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Item VAT type calculation.\\n\\n| Value | Meaning |\\n|-------|---------|\\n| 0 | Default (VAT added based on business type) |\\n| 1 | Included (VAT included in price) |\\n| 2 | Exempt (VAT-free) |",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -118,9 +112,9 @@
     {
       "claim_id": "internal-example-values",
       "claim": "Illustrative calculation example values internal to the skill, NOT external regulatory claims: a NIS 10,000 net service totals NIS 11,800 with 18% VAT; in the withholding example the client withholds NIS 2,000 and remits NIS 9,800 in cash, and the two payment lines (9,800 + 2,000) sum to the 11,800 document total.",
-      "source_url": "https://developers.morning.co/",
+      "source_url": "https://github.com/skills-il/accounting/blob/master/green-invoice/references/document-workflows.md",
       "raw_snippet": "Internal arithmetic example; 10000 * 1.18 = 11800, and 9800 + 2000 = 11800. Not an external claim.",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "references/document-workflows.md"
       ],
@@ -140,12 +134,10 @@
     },
     {
       "claim_id": "morning-api-2-oauth2-2026",
-      "claim": "The current Morning API documentation is versioned 'morning API Documentation (2.0.0)' and states that authentication uses OAuth 2.0, with the token endpoint at https://api.morning.co/idp/v1/oauth/token (sandbox https://api.sandbox.morning.dev/idp/v1/oauth/token), returning accessToken as a signed JWT valid for 1 hour.",
-      "source_url": "https://developers.morning.co/",
-      "raw_snippet": "Our APIs use the OAuth 2.0 protocol for authentication and authorization. ... https://api.morning.co/idp/v1/oauth/token ... https://api.sandbox.morning.dev/idp/v1/oauth/token ... the accessToken is valid for 1 hour",
-      "verified_via": "browser",
-      "verified_at": "2026-07-27T00:00:00Z",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "claim": "The current Morning API documentation is versioned 2.0.0 and states that authentication is implemented using OAuth 2.0.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Authentication is implemented using OAuth 2.0, providing secure, token-based authorization.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -154,12 +146,12 @@
     },
     {
       "claim_id": "apiary-reference-retired-2026-07",
-      "claim": "The greeninvoice.docs.apiary.io interactive reference has been retired and returns HTTP 404 as of 2026-07-27; it was live at the previous review on 2026-06-28.",
+      "claim": "The greeninvoice.docs.apiary.io interactive reference has been retired: the host no longer serves the API reference. The canonical reference is now developers.morning.co.",
       "source_url": "https://greeninvoice.docs.apiary.io/",
-      "raw_snippet": "Apiary - Page not found (HTTP 404, page title read in a browser on 2026-07-27)",
+      "raw_snippet": "Apiary - Page not found",
       "verified_via": "browser",
-      "verified_at": "2026-07-27T00:00:00Z",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -213,6 +205,183 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "api-sandbox-base-url",
+      "claim": "Sandbox base URL is https://sandbox.d.greeninvoice.co.il/api/v1.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"url\": \"https://sandbox.d.greeninvoice.co.il/api/v1\", \"description\": \"Sandbox\"",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "oauth-token-endpoint-prod",
+      "claim": "The OAuth 2.0 token endpoint host in production is https://api.morning.co (path /idp/v1/oauth/token). Full URL: https://api.morning.co/idp/v1/oauth/token",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"url\": \"https://api.morning.co\", \"description\": \"Production\"",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "oauth-token-endpoint-sandbox",
+      "claim": "The OAuth 2.0 token endpoint host in sandbox is https://api.sandbox.morning.dev (path /idp/v1/oauth/token). Full URL: https://api.sandbox.morning.dev/idp/v1/oauth/token",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"url\": \"https://api.sandbox.morning.dev\", \"description\": \"Sandbox\"",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "oauth-token-jwt-1h",
+      "claim": "The token endpoint returns accessToken as a signed JWT valid for 1 hour.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "This endpoint returns an access token (issued as a signed JWT) in the response body as `accessToken`.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "oauth-token-ttl",
+      "claim": "The accessToken is valid for 1 hour; expired tokens make protected endpoints return 401.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "the `accessToken` is valid for 1 hour.",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "oauth-error-business-state",
+      "claim": "On the OAuth token endpoint, invalid_grant means the API key privilege is expired, revoked or pending, and unauthorized_client means there is no active subscription or the subscription does not include API access. Neither is fixed by reissuing keys.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 400 | `invalid_grant` | API key privilege is expired, revoked, or pending |",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "oauth-error-unauthorized-client",
+      "claim": "unauthorized_client on the token endpoint means no active subscription, or a subscription that does not include API access.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 400 | `unauthorized_client` | No active subscription, or subscription does not include API access |",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "payment-group-enum",
+      "claim": "PaymentGroup enum: 0 withholding, 1 cash, 2 check, 3 credit card, 4 bank transfer, 5 PayPal, 10 payment app, 11 other.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 0 | ניכוי במקור |\\n| 1 | מזומן |\\n| 2 | צ׳ק |\\n| 3 | כרטיס אשראי |\\n| 4 | העברה בנקאית |\\n| 5 | פייפאל |\\n| 10 | אפליקציית תשלום |\\n| 11 | אחר |",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/document-workflows.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "document-vat-type-enum",
+      "claim": "Document-level vatType (DocumentVatType): 0 = Default (based on business type), 1 = Exempt (VAT-free), 2 = Mixed.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Document-level VAT type.\\n\\n| Value | Meaning |\\n|-------|---------|\\n| 0 | Default (based on business type) |\\n| 1 | Exempt (VAT-free) |\\n| 2 | Mixed (contains both exempt and taxable rows) |",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "no-users-me-endpoint",
+      "claim": "The credential smoke test is GET /api/v1/documents/info (operation Get Document Information), which requires a bearer token. Full URL: https://api.greeninvoice.co.il/api/v1/documents/info",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"operationId\": \"getDocumentInformation\", \"summary\": \"Get Document Information\"",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "users-me-endpoint-does-not-exist",
+      "claim": "GET /api/v1/users/me does not exist. It is absent from the Morning API OpenAPI document and the live host returns the same empty-message not-found body it returns for an undefined path, whereas the POST-only /account/token answers method-not-allowed and the public /documents/types answers OK. The non-existent path is GET /v1/users/me.",
+      "source_url": "https://api.greeninvoice.co.il/api/v1/users/me",
+      "raw_snippet": "GET https://api.greeninvoice.co.il/api/v1/users/me -> {\"errorCode\":404,\"errorMessage\":\"\"} (identical to an undefined path; POST-only /account/token returns 405 and public /documents/types returns 200)",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "verified_via": "live-http-probe",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "probe-documents-info-requires-auth",
+      "claim": "GET https://api.greeninvoice.co.il/api/v1/documents/info is live and requires a bearer token: unauthenticated it returns 401 with the Hebrew message 'גישה נדחתה, נא להתחבר מחדש'.",
+      "source_url": "https://api.greeninvoice.co.il/api/v1/documents/info",
+      "raw_snippet": "{\"errorCode\":401,\"errorMessage\":\"גישה נדחתה, נא להתחבר מחדש\"}",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "verified_via": "live-http-probe",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "probe-oauth-token-url-prod",
+      "claim": "The production OAuth 2.0 token URL is https://api.morning.co/idp/v1/oauth/token, formed from the servers block plus the path /idp/v1/oauth/token in the Morning API OpenAPI document.",
+      "source_url": "https://api.morning.co/idp/v1/oauth/token",
+      "raw_snippet": "\"/idp/v1/oauth/token\" with servers \"url\": \"https://api.morning.co\"",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "verified_via": "openapi-document",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "probe-oauth-token-url-sandbox",
+      "claim": "The sandbox OAuth 2.0 token URL is https://api.sandbox.morning.dev/idp/v1/oauth/token, formed from the servers block plus the path /idp/v1/oauth/token in the Morning API OpenAPI document.",
+      "source_url": "https://api.sandbox.morning.dev/idp/v1/oauth/token",
+      "raw_snippet": "\"/idp/v1/oauth/token\" with servers \"url\": \"https://api.sandbox.morning.dev\"",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "verified_via": "openapi-document",
+      "verified_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
       ]
     }
   ]

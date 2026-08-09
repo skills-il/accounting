@@ -295,11 +295,19 @@ Associates documents to a client.
 
 ---
 
-## Users API
+## Credential Smoke Test
 
-### GET /v1/users/me
+### GET /v1/documents/info
 
-Returns the authenticated user profile.
+Returns the issuing defaults for the authenticated business (next document numbers,
+the VAT rate that will apply, and the business type). It requires a valid bearer
+token, so it is the cheapest way to prove that authentication actually worked:
+an unauthenticated call returns `401` with
+`{"errorCode":401,"errorMessage":"גישה נדחתה, נא להתחבר מחדש"}`.
+
+There is no `GET /v1/users/me` endpoint. It appears in no version of the Morning
+API documentation and the host answers it with the same `{"errorCode":404}` body
+it returns for a path that was never defined, so do not use it as a health check.
 
 ---
 
@@ -406,13 +414,20 @@ Returns the authenticated user profile.
 
 ### VAT Types (Income Row)
 
-The income-row `vatType` uses the same DocumentVatType enum as the document level. Set a specific rate on a line with the separate `vatRate` field (decimal: `0` for 0%, `0.18` for 18%). There is no "VAT included in price" value.
+The income-row `vatType` is a DIFFERENT enum from the document-level one. The
+document uses `DocumentVatType`; an income row uses `ItemVatType`, where `1`
+means "VAT included in price" and `2` means exempt. The two enums collide on the
+value `1`, so copying a document-level `vatType: 1` onto a row does not make the
+row exempt, it makes the row VAT-inclusive and changes the amount charged.
 
 | Code | Meaning |
 |------|---------|
-| 0 | Default |
-| 1 | Exempt (VAT-free) |
-| 2 | Mixed |
+| 0 | Default (VAT added based on business type) |
+| 1 | Included (VAT included in price) |
+| 2 | Exempt (VAT-free) |
+
+Set a specific rate on a line with the separate `vatRate` field (decimal: `0` for
+0%, `0.18` for 18%).
 
 ### Business Types
 
