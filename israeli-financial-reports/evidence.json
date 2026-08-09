@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-financial-reports",
-  "generated_at": "2026-06-03T00:00:00Z",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
       "claim": "Israel's standard VAT rate is 18%, in effect since January 2025.",
-      "source_url": "https://vatcalculator.co.il/",
-      "raw_snippet": "שיעור המע\"מ הנוכחי בישראל עומד על 18%. שיעור זה בתוקף מאז ינואר 2025.",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_(%D7%9E%D7%A2%22%D7%9E)",
+      "raw_snippet": "והחל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -40,8 +40,8 @@
       "claim_id": "pcn874-500k-2026",
       "claim": "As of 1 January 2026, a self-employed/individual osek with annual turnover above 500,000 NIS must file the detailed PCN874 VAT report; companies/partnerships with a corporate partner were subject since September 2025. Detailed filers face a 23rd-of-month deadline and per-period detailed reporting; whether the cadence is monthly or bi-monthly is disputed across sources (amir-cpa states a move to monthly regardless of prior classification; gov.il pa280825-1 references bi-monthly detailed periods for Jan-Feb 2026), so it depends on the filer's existing classification and should be confirmed against their VAT registration. The file lists per-invoice detail (invoice serial number, date, amount, VAT amount, and counterparty registration/osek number). From 2026 a self-employed detailed filer may aggregate rather than itemize tax invoices each under 5,000 NIS pre-VAT, provided the combined total is stated.",
       "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
-      "raw_snippet": "As of 1 January 2026, self-employed individuals with annual turnover exceeding 500,000 NIS (500,000 ש\"ח) must file detailed VAT reports (PCN874 / טופס 6111). Companies became subject to this requirement starting September 2025. Detailed VAT reports must be filed by the 23rd of the following month. Cadence: עוסק אשר עד כה דיווח ושילם מע\"מ באופן דו-חודשי, ועתה חייב בדיווח מפורט, יעבור לדיווח ותשלום מע\"מ חד-חודשי (amir-cpa; cadence disputed vs gov.il pa280825-1). De-minimis aggregation: רשאי שלא לפרט את חשבוניות המס, שסכום כל אחת מהן לפני מע\"מ אינו עולה על 5,000 ש\"ח...יפרט בדוח את הסכום הכולל. Per the legislation, detailed reports must include for each invoice: מספרם הסידורי, הסמל שלהם...תאריכם, סכומם, וסכום המס הנובע מהם ... מספר הרישום של המוכר או של נותן השירות...ומספר הרישום של הקונה.",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "ההרחבה תחול על כל העסקים - עצמאים או חברות - שמחזורם עולה על 500,000 ש\"ח בשנה.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -116,13 +116,15 @@
     {
       "claim_id": "illustrative-example-figures",
       "claim": "Worked-example arithmetic in the skill's Example 1 is illustrative, not a regulatory fact: sales 120,000 NIS, deductible purchases 45,000 NIS, output VAT 21,600 NIS (120,000 x 18%), input VAT 8,100 NIS (45,000 x 18%), net VAT payable 13,500 NIS. The NIS formatting sample 1,000 ש\"ח is a currency-placement illustration.",
-      "source_url": "https://vatcalculator.co.il/",
+      "source_url": "https://github.com/skills-il/accounting/blob/master/israeli-financial-reports/SKILL.md",
       "raw_snippet": "Illustrative worked example at 18% VAT: 120,000 NIS sales x 18% = 21,600 NIS output VAT; 45,000 NIS purchases x 18% = 8,100 NIS input VAT; 21,600 - 8,100 = 13,500 NIS payable. Mirror in Hebrew: 120,000 ש\"ח, 45,000 ש\"ח, 21,600 ש\"ח, 8,100 ש\"ח, 13,500 ש\"ח, 1,000 ש\"ח. Computed from the verified standard rate שיעור המע\"מ הנוכחי בישראל עומד על 18%.",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
       "claim_id": "vat-categories-zero-rated",
@@ -217,6 +219,17 @@
       "source_url": "https://www.gov.il/he/pages/small-business-owner-income-tax",
       "raw_snippet": "בעל עסק זעיר 30% מהמחזור ניכוי הוצאות רעיוניות מס הכנסה דוח מקוצר",
       "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-filing-date-23rd",
+      "claim": "A detailed-VAT (PCN874) filer moves to monthly reporting and files by the 23rd of the month following the reporting period, not the 15th.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "הגשת הדיווח המפורט תיעשה עד ה-23 לחודש העוקב לתקופת הדיווח. למשל: הדוח המפורט בגין ינואר 2026 יוגש עד ה-23 בפברואר.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
