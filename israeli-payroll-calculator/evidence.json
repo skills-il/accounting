@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-payroll-calculator",
-  "generated_at": "2026-06-13T00:24:02.799218+00:00",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "claim_id": "tax-brackets",
       "claim": "2026 monthly income tax brackets: 10% to 7,010 / 7,010 ש\"ח, 14% to 10,060 / 10,060 ש\"ח, 20% to 19,000 / 19,000 ש\"ח, 31% to 25,100 / 25,100 ש\"ח, 35% to 46,690 / 46,690 ש\"ח, 47% to 60,130 / 60,130 ש\"ח, then 50% above 60,130 / 60,130 ש\"ח. The 50% top rate is the 47% statutory bracket plus a 3% mas yesafim surtax (47% + 3% = 50%); there is no higher combined rate. Annual surtax threshold approx 721,560 / 721,560 ש\"ח.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
-      "raw_snippet": "60,130",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "raw_snippet": "עד 84,120 ₪ עד 7,010 ₪ 10% 84,121- 120,720 ₪ 7,011- 10,060 ₪ 14% 120,721- 228,000 ₪ 10,061- 19,000 ₪ 20% 228,001- 301,200 ₪ 19,001- 25,100 ₪ 31% 301,201- 560,280 ₪ 25,101- 46,690 ₪ 35% 560,281- 721,560 ₪ 46,691- 60,130 ₪ 47% 721,561 ₪ ומעלה 60,131 ₪ ומעלה 50%",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -19,8 +19,8 @@
       "claim_id": "bl-rates",
       "claim": "Bituach Leumi + health 2026 (Amendment 252): employee reduced 1.04% NI + 3.23% health = 4.27%, full 7.0% + 5.17% = 12.17%; employer 4.51% reduced / 7.60% full; self-employed 4.47%+3.23%=7.7% then 12.83%+5.17%=18.0%. By age/pension (employee): under-18 0%/0%; old-age-pension recipient 0%/0%; 67-70 not receiving 0.61%+3.23%=3.93% then 4.86%+5.17%=10.03%; woman ret-67 3.95%/10.24%; disability 3.23%/5.17%. 2025 prior: 0.4%/0.40% reduced NI, 3.55% employer, 3.1%/3.10% health reduced, 5.0%/5.00% health full, 2.87%/5.97% self-employed reduced.",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
-      "raw_snippet": "4.27%",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "raw_snippet": "סך הכול 4.51% (החל ב- 01.01.2025) 4.27% (החל ב- 01.01.2025) 8.78% (החל ב- 01.01.2025) 7.6% (החל ב- 01.01.2019) 12.17% (החל ב- 01.02.2025) 19.77% (החל ב- 01.02.2025)",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -31,8 +31,8 @@
       "claim_id": "bl-thresholds",
       "claim": "BL reduced-tier threshold 7,703 / 7,703 ש\"ח (60% of 13,769 / 13,769 ש\"ח average wage); ceiling 51,910 / 51,910 ש\"ח; 2025 threshold 7,522 / 7,522 ש\"ח; non-working minimum 266 / 266 ש\"ח.",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
-      "raw_snippet": "51,910",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "raw_snippet": "מחלק השכר שמעל מדרגת גביה מופחתת ועד ההכנסה המרבית החייבת בדמי ביטוח (שיעור מלא) - 51,910 ש\"ח (החל ב- 01.01.2026)",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -43,8 +43,8 @@
       "claim_id": "credit-points",
       "claim": "Credit point value 242 / 242 ש\"ח per month = 2,904 / 2,904 ש\"ח per year (2026); base 2.25 resident, 2.75 woman.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
-      "raw_snippet": "242",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "raw_snippet": "הזכות הבסיסית עומדת על 2.25 נקודות לכל תושב, כששווי נקודה, נכון ל-2026 הוא 242 ₪ לחודש, שהם 2,904 ₪ לשנה שלמה.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -70,8 +70,8 @@
       "claim_id": "pension-rates",
       "claim": "Mandatory pension is 18.5% of salary from January 2017: 6% employee and 12.5% employer, the employer part being 6.5% tagmulim plus 6% severance (the minimum under the expansion order). An employer under a full Section 14 arrangement deposits 8.33% for severance instead, which discharges the statutory severance liability. Where a study fund is offered the employee contributes 2.5% and the employer 7.5%. Employees in a beneficial arrangement may have higher tagmulim, up to 7.5% employer and 7% employee.",
       "source_url": "https://www.kolzchut.org.il/he/חובת_ביטוח_פנסיוני_לעובדים",
-      "raw_snippet": "החל ממשכורת ינואר 2017, שיעור ההפרשות הוא 18.5%, מתוכן 6% על חשבון העובד והיתר על חשבון המעסיק ... תגמולי מעסיק - 7.5%, ותגמולי עובד - 7%",
-      "fetched_at": "2026-07-21",
+      "raw_snippet": "החל ממשכורת ינואר 2017, שיעור ההפרשות הוא 18.5%, מתוכן 6% על חשבון העובד והיתר על חשבון המעסיק",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -96,14 +96,16 @@
     {
       "claim_id": "misc-pct",
       "claim": "Worked-example net-of-gross ratios and intermediate rates appear across examples: 90%/91%/92%/93%/94%/95%/96%/98%/99% net, 75% (severance/sick), 100%, 0% / 0.00%, 1%, 2%, 4%, 8%, 9%, 50%.",
-      "source_url": "https://www.gov.il/he/service/income-tax-calculator",
-      "raw_snippet": "100%",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "source_url": "https://github.com/skills-il/accounting/blob/master/israeli-payroll-calculator/references/bituach-leumi-rates.md",
+      "raw_snippet": "Internal worked-example ratios and intermediate percentages computed inside this skill from the 2026 brackets and rates. Not an external regulatory claim.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/"
-      ]
+      ],
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
       "claim_id": "shovi-rechev",
@@ -120,14 +122,16 @@
     {
       "claim_id": "worked-examples",
       "claim": "Worked payroll examples derived from the 2026 brackets and rates above (gross-to-net, pension credit, shovi rechev): 12,000 NIS / 12,000 ש\"ח 13,500 NIS / 13,500 ש\"ח 14,000 NIS / 14,000 ש\"ח 14,530.69 NIS / 14,530.69 ש\"ח 15,000 NIS / 15,000 ש\"ח 168 NIS / 168 ש\"ח 18,500 NIS / 18,500 ש\"ח 19,000 NIS / 19,000 ש\"ח 20,000 NIS / 20,000 ש\"ח 22,000 NIS / 22,000 ש\"ח 25,000 NIS / 25,000 ש\"ח 25,500 NIS / 25,500 ש\"ח 329 NIS / 329 ש\"ח 3,500 NIS / 3,500 ש\"ח 480 NIS / 480 ש\"ח 523 NIS / 523 ש\"ח 52 NIS / 52 ש\"ח 576 NIS / 576 ש\"ח 8,000 NIS / 8,000 ש\"ח 800 NIS / 800 ש\"ח 852 NIS / 852 ש\"ח 900 NIS / 900 ש\"ח 238 NIS / 238 ש\"ח 485 NIS / 485 ש\"ח",
-      "source_url": "https://www.gov.il/he/service/income-tax-calculator",
-      "raw_snippet": "14,530.69",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "source_url": "https://github.com/skills-il/accounting/blob/master/israeli-payroll-calculator/references/bituach-leumi-rates.md",
+      "raw_snippet": "Internal gross-to-net worked examples computed inside this skill from the 2026 brackets and rates above. Not an external regulatory claim.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/"
-      ]
+      ],
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-08-09T00:00:00Z"
     },
     {
       "claim_id": "noise",
@@ -157,8 +161,8 @@
       "claim_id": "exact-forms-catchall",
       "claim": "Canonical 2026 figures (exact string forms): 13,769 NIS / 13,769 ש\"ח 2,852 NIS / 2,852 ש\"ח 2,904 NIS / 2,904 ש\"ח 237.65 NIS / 237.65 ש\"ח 242 NIS / 242 ש\"ח 266 NIS / 266 ש\"ח 51,910 NIS / 51,910 ש\"ח 60,130 NIS / 60,130 ש\"ח 679 NIS / 679 ש\"ח 7,522 NIS / 7,522 ש\"ח 7,703 NIS / 7,703 ש\"ח 721,560 NIS / 721,560 ש\"ח 8,148 NIS / 8,148 ש\"ח 9,700 NIS / 9,700 ש\"ח. Percentages: 7.00% 7.6% 12.0% 3.5% 2.12% 0.61% 4.86% 3.93% 10.03% 3.95% 10.24%.",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
-      "raw_snippet": "51,910",
-      "fetched_at": "2026-06-13T00:24:36.721449+00:00",
+      "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת (שיעור מופחת) - 7,703 ש\"ח (החל ב- 01.01.2026)",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -169,8 +173,8 @@
       "claim_id": "child-credit-points",
       "claim": "Parents of children reaching ages 6 to 17 during the tax year are entitled to a credit point per child, available from 2024 (in 2022-2023 it covered ages 6 to 12). It is given to each parent, including a parent the child does not live with, and is worth up to 2,904 NIS a year and 242 NIS a month per parent.",
       "source_url": "https://www.kolzchut.org.il/he/נקודות_זיכוי_ממס_הכנסה_להורים_לילדים_בגיל_17-6",
-      "raw_snippet": "הורים לילדים שבמהלך שנת המס הנוכחית יגיעו לגיל 17-6 זכאים לנקודת זיכוי ... ההטבה ניתנת החל משנת 2024 (בשנים 2023-2022 ההטבה ניתנה עבור ילדים בגיל 12-6) ... שווי ההטבה הוא עד 2,904 ₪ לשנה ו-242 ₪ לחודש לכל הורה",
-      "fetched_at": "2026-07-21",
+      "raw_snippet": "הורים לילדים שבמהלך שנת המס הנוכחית יגיעו לגיל 17-6 זכאים לנקודת זיכוי, שמשמעותה הנחה במס הכנסה שהם משלמים ההטבה ניתנת החל משנת 2024 (בשנים 2023-2022 ההטבה ניתנה עבור ילדים בגיל 12-6)",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -193,31 +197,42 @@
       "claim_id": "minimum-wage-2026",
       "claim": "The monthly minimum wage is 6,247.67 NIS (6,247.67 ש\"ח) from 1.4.2025 and 6,443.85 NIS (6,443.85 ש\"ח) from 1.4.2026, with an hourly minimum of 35.40 NIS (35.40 ש\"ח) from 1.4.2026.",
       "source_url": "https://www.kolzchut.org.il/he/שכר_מינימום",
-      "raw_snippet": "שכר המינימום ... 6,247.67 ₪ ... 6,443.85 ₪ ... 35.40 ₪ לשעה",
-      "fetched_at": "2026-07-21",
+      "raw_snippet": "החל מיום 01.04.2026 שכר המינימום הוא 6,443.85 ₪ לחודש למשרה מלאה ו-35.40 ₪ לשעה",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "verified_via": "browser",
       "verified_at": "2026-07-21",
       "note": "Figures corroborated across israeli-teacher-payroll and israeli-pension-advisor in the same review round; snippet not individually re-read this cycle, re-verify next cycle."
     },
     {
       "claim_id": "section-14",
-      "claim": "Section 14 of the Severance Pay Law 5723-1963 lets employer severance deposits (8.33% of salary) discharge the statutory severance liability. Section 45a of the Income Tax Ordinance gives the 35% pension contribution credit.",
+      "claim": "Section 14 of the Severance Pay Law 5723-1963 lets employer severance deposits (8.33% of salary) discharge the statutory severance liability. Section 45a of the Income Tax Ordinance gives the 35% pension contribution credit. Hebrew: סעיף 14 לחוק פיצויי פיטורים, התשכ\"ג-1963.",
       "source_url": "https://www.kolzchut.org.il/he/סעיף_14_לחוק_פיצויי_פיטורים",
-      "raw_snippet": "סעיף 14 לחוק פיצויי פיטורים ... 8.33% ... סעיף 45א",
-      "fetched_at": "2026-07-21",
+      "raw_snippet": "ההפרשות יהוו תחליף למלוא סכום הפיצויים רק אם המעסיק הפריש מדי חודש לקופת הפיצויים 8.33% משכר העובד.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "verified_via": "browser",
       "verified_at": "2026-07-21",
       "note": "Statute references (Section 14, סעיף 45א) and the 8.33% figure; corroborated across the pension-rates and section-45a entries in this same skill."
     },
     {
       "claim_id": "self-employed-ni-2026",
-      "claim": "Self-employed National Insurance in 2026 is 4.47% on the reduced tier (income up to 60% of the average wage, 7,710 NIS/month) and 12.83% on the full tier up to the maximum insurable income of 51,910 NIS/month, paid entirely by the self-employed with no employer share. Health tax is charged separately.",
+      "claim": "Self-employed National Insurance in 2026 is 4.47% on the reduced tier (income up to 60% of the average wage, 7,703 NIS/month) and 12.83% on the full tier up to the maximum insurable income of 51,910 NIS/month, paid entirely by the self-employed with no employer share. Health tax is charged separately.",
       "source_url": "https://www.kolzchut.org.il/he/דמי_ביטוח_לאומי_לעצמאי",
-      "raw_snippet": "שיעור מופחת ... עד 60% מהשכר הממוצע ... 7,710 ש\"ח ... שיעור מלא ... 51,910 ... 4.47% ... 12.83%",
-      "fetched_at": "2026-07-21",
+      "raw_snippet": "מחלק ההכנסה החייבת במס שלא עולה על 7,703 ₪ - 4.47% דמי ביטוח לאומי, 3.23% דמי ביטוח בריאות וסה\"כ 7.7%. מחלק ההכנסה החייבת במס שמעל 7,703 ₪ ועד 51,910 ₪ ( ההכנסה המירבית לחודש) - 12.83% דמי ביטוח לאומי, 5.17% דמי ביטוח בריאות וסה\"כ 18%.",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "verified_via": "browser",
       "verified_at": "2026-07-21",
       "note": "Corrects the reference file which had 5.97%/17.83% for these NI rates. 12.83% is the current full-tier rate, not a 2025 figure as the file implied."
+    },
+    {
+      "claim_id": "pension-credit-35-section-45a",
+      "claim": "Self-funded pension deposits give a 35% tax credit under section 45a of the Income Tax Ordinance (Hebrew: סעיף 45א לפקודת מס הכנסה).",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%98%D7%91%D7%95%D7%AA_%D7%91%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A7%D7%93%D7%95%D7%AA_%D7%A2%D7%A6%D7%9E%D7%90%D7%99%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
+      "raw_snippet": "לאחר חישוב המס, מפחיתים ממנו 35% מהסכום שהופקד באופן עצמאי לביטוח הפנסיוני",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }
