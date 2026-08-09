@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-bookkeeping-automation",
-  "generated_at": "2026-07-26T00:00:00Z",
+  "generated_at": "2026-08-09T00:00:00Z",
   "claims": [
     {
       "claim_id": "osek-patur-ceiling-2026",
@@ -176,16 +176,16 @@
     },
     {
       "claim_id": "openformat-validator-urls",
-      "claim": "OPENFORMAT (קובץ אחיד / BKMV) v1.31 spec PDF (gov.il BlobFolder) and the ITA file checker (secapp.taxes.gov.il) are the live ITA-mandated unified-file resources referenced by the skill. The legacy misim.gov.il deep links 301-redirect to secapp.taxes.gov.il.",
-      "source_url": "https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
-      "raw_snippet": "בדיקת קבצים במבנה אחיד ... מותאם למסמך הוראות להפקת קבצים גירסה 1.31. Spec PDF: https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf ; File checker: https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "claim": "The ITA unified-file (OPENFORMAT / BKMV) production instructions are published as version 1.31 in the gov.il spec PDF, and the ITA file checker is served from secapp.taxes.gov.il. The legacy misim.gov.il deep links redirect to secapp.taxes.gov.il.",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "הוראות להפקת קבצים גירסה 1.31",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "browser",
-      "verified_at": "2026-07-26T00:00:00Z",
+      "verified_via": "pdf-spec-filename-and-title",
+      "verified_at": "2026-08-09T00:00:00Z",
       "verification_note": "Confirmed by reading the cited page; the quoted values appear as short table cells that are split across HTML tags."
     },
     {
@@ -236,10 +236,10 @@
     },
     {
       "claim_id": "depreciation-machinery-general",
-      "claim": "ITA depreciation, machinery and equipment (Income Tax (Depreciation) Regulations 1941, tosefet bet): general rate 7%; specific machine types carry higher rates, e.g. tractors and self-propelled equipment 20%. A flat 15% for general machinery is not correct.",
+      "claim": "ITA depreciation, machinery and equipment (Income Tax (Depreciation) Regulations 1941, tosefet bet): the general machinery-and-equipment rate is 7%. A flat 15% for general machinery is not correct. Higher rates apply to specific classes, for example agricultural tractors and self-propelled machines at 20%.",
       "source_url": "https://he.wikisource.org/wiki/תקנות_מס_הכנסה_(פחת)",
-      "raw_snippet": "מכונות וציוד (1) כלליים - 7 ... טרקטורים וציוד מתנייע - 20",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "raw_snippet": "III . מכונות וציוד: (1) כלליים – 7",
+      "fetched_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -276,6 +276,30 @@
       "source_url": "https://www.kolzchut.org.il/he/פיצויי_פיטורים",
       "raw_snippet": "סעיף 14 לחוק פיצויי פיטורים",
       "fetched_at": "2026-07-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "depreciation-tractors-20",
+      "claim": "Agricultural tractors and self-propelled machines depreciate at 20% under the same regulations.",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_מס_הכנסה_(פחת)",
+      "raw_snippet": "ה. טרקטורים ומכונות בעלות הנעה עצמית – 20%",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ita-file-checker-url",
+      "claim": "The live ITA unified-file checker (בדיקת קבצים במבנה אחיד) is served at https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx; the legacy misim.gov.il deep link redirects there. The page is a JS-rendered ASP.NET form and returns an empty body to a plain HTTP client.",
+      "source_url": "https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
+      "raw_snippet": "https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
+      "fetched_at": "2026-08-09T00:00:00Z",
+      "verified_via": "live-http-probe",
+      "verified_at": "2026-08-09T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
