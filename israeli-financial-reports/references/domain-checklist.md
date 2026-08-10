@@ -10,7 +10,7 @@ output would be CORRECT and submission-appropriate for a real small business or 
    For 2026 the threshold is **1,775,000 NIS** (up to that figure → bi-monthly; above → monthly).
    (2025 was 1,725,000 NIS.) A hardcoded 1.5M figure mislabels every business between ~1.5M and
    1.775M as a monthly filer.
-   Source: https://www.kolzchut.org.il/he/הגשת_דוחות_תקופתיים_ותשלום_מס_ערך_מוסף ; gov.il VAT reporting service.
+   Source: https://www.kolzchut.org.il/he/הגשת_דו"חות_תקופתיים_ותשלום_מס_ערך_מוסף ; gov.il VAT reporting service.
 2. **Correct VAT due dates.** Paper: 15th of following month. Online (mekuvan): 19th. Detailed
    (PCN874) filers: 23rd.
    Source: https://www.gov.il/he/service/reporting-or-payment-of-vat-reports
@@ -73,7 +73,7 @@ output would be CORRECT and submission-appropriate for a real small business or 
 - Israel Tax Authority: VAT amounts & rates: https://www.gov.il/he/pages/vat-rate-amount-new
 - Israel Tax Authority: detailed VAT (PCN874): https://www.gov.il/he/service/detailed-vat-reporting
 - Israel Tax Authority: Form 6111: https://www.gov.il/he/service/itc6111
-- Kol Zchut: periodic VAT reporting (cadence threshold): https://www.kolzchut.org.il/he/הגשת_דוחות_תקופתיים_ותשלום_מס_ערך_מוסף
+- Kol Zchut: periodic VAT reporting (cadence threshold): https://www.kolzchut.org.il/he/הגשת_דו"חות_תקופתיים_ותשלום_מס_ערך_מוסף
 - Kol Zchut: osek patur: https://www.kolzchut.org.il/he/עוסק_פטור
 - Kol Zchut: income-tax brackets: https://www.kolzchut.org.il/he/מדרגות_מס_הכנסה
 - IFRS Foundation: Israel jurisdiction profile: https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/
