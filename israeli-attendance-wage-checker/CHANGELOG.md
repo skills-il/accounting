@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 (2026-08-11)
+
+- Step 0 now states that the section 30 exclusion is the employer's to prove and is construed narrowly, and that it turns on what the person actually did rather than on a job title.
+- Step 1 adds three things every figure downstream depends on: deriving an hourly rate from a global wage and stating the divisor, checking the derived rate against the minimum-wage floor for that period, and establishing whether tips form part of the wage.
+- New Step 7b corrects the global-overtime remedy. It is re-characterisation of the whole global sum under `סעיף 5` of the Wage Protection Law, not a top-up of the excess hours, and the cumulative conditions for a valid arrangement now sit in the body rather than only in the reference file.
+- New Step 7c on evidence-gathering when the employer keeps no ledger, and on the seven-year wage limitation under `סעיף 5(1)` of the Limitation Law, kept explicitly distinct from the one-year / 60-day delayed-wage clock.
+- New Step 7d flags sector extension orders and דמי חגים as out of scope rather than folding a guess into the figure.
+- Step 7 now warns against trimming a claim down to the 15/60 cap. The cap limits the evidentiary presumption, not how many hours may be claimed.
+- `scripts/reconcile_hours.py` implements the rest-day pay-basis split (`--pay-basis monthly` values rest-day hours at the marginal premium element only, since the salary already covers the day), and refuses input spanning more than seven days, because the weekly limb is applied once.
+
 ## 1.0.0 (2026-08-11)
 
 Initial release.

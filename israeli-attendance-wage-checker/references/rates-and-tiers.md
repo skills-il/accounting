@@ -56,7 +56,12 @@ Same hours, two different owed figures. Get the pay basis before answering.
 |---|---|---|
 | The day itself | Already covered by the monthly salary | Not otherwise paid |
 | Marginal entitlement for hours in the weekly rest | The **premium element on top** of the salary already covering the day | The **full 150 percent** of the regular hourly wage |
-| Compensating rest | Given, and **paid** (not deducted from salary or leave) | Given, and **unpaid** unless an agreement provides otherwise |
+| Compensating rest | Given. Treated as **paid** in practice (not deducted from salary or leave) | Given. Treated as **unpaid** unless an agreement provides otherwise |
+
+**Sourcing caution on that last row.** `סעיף 17(א)(2)` requires compensating rest but is **silent on
+whether it is paid**. The paid-for-monthly / unpaid-for-hourly split is settled labour-court practice
+rather than statutory text, and it is NOT in this skill's evidence file. State it as practice, not as
+a provision, and do not quote a section number for it.
 
 `סעיף 17(ב)` separately lets an employer of a monthly-or-longer-salaried employee give **an hour and
 a half of rest** for each rest-day hour worked, in place of the money. Compensating rest cannot be

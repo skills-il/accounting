@@ -19,6 +19,10 @@ Usage:
       --day "sun,08:00,17:00,0.75" --day "mon,08:00,19:30,0.75" \\
       --day "sat,09:00,15:00,0.5,rest"
   python3 reconcile_hours.py --example
+
+SCOPE: ONE WEEK AT A TIME. The weekly limb is applied once, to whatever days you pass, so handing
+it a month silently treats the month as a single week and mis-tiers everything. It refuses input
+spanning more than 7 days for that reason; loop over weeks and sum the results yourself.
 """
 
 from __future__ import annotations
@@ -81,7 +85,11 @@ def parse_day(raw: str) -> Day:
                paid_break="paidbreak" in flags)
 
 
-def reconcile(days: list[Day], weekly_bound: float, rate: float):
+def reconcile(days: list[Day], weekly_bound: float, rate: float, pay_basis: str = "hourly"):
+    if len(days) > 7:
+        raise ValueError(f"{len(days)} days passed. This script applies the WEEKLY limb once, so it "
+                         f"handles ONE week at a time. Split the period into weeks and sum the "
+                         f"results, or the weekly tiering will be wrong.")
     rows, notes = [], []
     ordinary_pool = 0.0
     buckets = {"ordinary": 0.0, "ot125": 0.0, "ot150": 0.0, "rest150": 0.0}
@@ -107,13 +115,17 @@ def reconcile(days: list[Day], weekly_bound: float, rate: float):
     # Pass 2, WEEKLY, on the ordinary hours that survived pass 1.
     weekly_excess = max(0.0, ordinary_pool - weekly_bound)
     if weekly_excess > 0:
-        t1 = min(weekly_excess, TIER1_HOURS)
-        t2 = max(0.0, weekly_excess - TIER1_HOURS)
+        # STATED ASSUMPTION, not a statutory rule. s.16(a) ties the two-hour 125% tier to
+        # "שתי השעות הנוספות הראשונות שבאותו יום" - it is expressly DAILY. The statute does not
+        # say how to tier hours that become overtime only via the WEEKLY limb, so this script
+        # does NOT open a second two-hour tier here (an earlier version did, which invented a
+        # rule). It values the weekly excess at the base overtime rate and says so in the output.
         buckets["ordinary"] = ordinary_pool - weekly_excess
-        buckets["ot125"] += t1
-        buckets["ot150"] += t2
-        notes.append(f"{weekly_excess:g} ordinary hour(s) exceeded the weekly bound of "
-                     f"{weekly_bound:g} and were tiered as overtime.")
+        buckets["ot125"] += weekly_excess
+        notes.append(f"ASSUMPTION: {weekly_excess:g} ordinary hour(s) exceeded the weekly bound "
+                     f"of {weekly_bound:g} and are valued here at {TIER1_RATE:g}x. The statute "
+                     f"tiers overtime per DAY, and is silent on tiering the weekly excess, so "
+                     f"this rate is an assumption rather than a statutory rule.")
     else:
         buckets["ordinary"] = ordinary_pool
 
@@ -125,8 +137,18 @@ def reconcile(days: list[Day], weekly_bound: float, rate: float):
             notes.append(f"COMPLIANCE: only {gap:g}h between {a.label} and {b.label}; "
                          f"s.21 requires at least {MIN_GAP_HOURS:g}h. Still owed, but flag it.")
 
+    # SKILL.md Step 4: the rest-day figure splits by pay basis. A monthly-salaried employee is
+    # already paid for the day inside the salary, so only the PREMIUM ELEMENT (0.5x) is marginal.
+    # An hourly or daily paid employee is not otherwise paid for it and is owed the full 1.5x.
+    rest_multiplier = (RESTDAY_RATE - 1.0) if pay_basis == "monthly" else RESTDAY_RATE
+    if buckets["rest150"] > 0 and pay_basis == "monthly":
+        notes.append(f"PAY BASIS: monthly salaried, so the {buckets['rest150']:g} rest-day hour(s) "
+                     f"are valued at the marginal premium element ({rest_multiplier:g}x) only. The "
+                     f"salary already covers the day itself. Compensating rest is owed separately "
+                     f"and is not money.")
+
     pay = (buckets["ordinary"] * rate + buckets["ot125"] * rate * TIER1_RATE
-           + buckets["ot150"] * rate * TIER2_RATE + buckets["rest150"] * rate * RESTDAY_RATE)
+           + buckets["ot150"] * rate * TIER2_RATE + buckets["rest150"] * rate * rest_multiplier)
     return rows, buckets, pay, notes
 
 
@@ -137,6 +159,9 @@ def main(argv=None) -> int:
     p.add_argument("--weekly-bound", type=float, default=42.0,
                    help="42 since the 2018 order, 45 is the statutory figure, 40 for some public bodies")
     p.add_argument("--rate", type=float, help="regular hourly wage INCLUDING all supplements (s.18)")
+    p.add_argument("--pay-basis", choices=["monthly", "hourly"], default="hourly",
+                   help="monthly salaried employees are ALREADY paid for the rest day, so only the "
+                        "premium element is marginal; hourly/daily paid are owed the full 150%%")
     p.add_argument("--example", action="store_true")
     a = p.parse_args(argv)
 
@@ -155,15 +180,20 @@ def main(argv=None) -> int:
         print(f"error: {e}", file=sys.stderr)
         return 2
 
-    rows, b, pay, notes = reconcile(days, a.weekly_bound, a.rate)
+    try:
+        rows, b, pay, notes = reconcile(days, a.weekly_bound, a.rate, a.pay_basis)
+    except ValueError as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 2
 
-    print(f"{'day':<8}{'ordinary':>10}{'ot@125%':>10}{'ot@150%':>10}{'rest@150%':>11}")
+    print(f"{'day':<8}{'ordinary':>10}{'ot@125%':>10}{'ot@150%':>10}{'rest day':>11}")
     print("-" * 49)
     for label, o, t1, t2, r in rows:
         print(f"{label:<8}{o:>10g}{t1:>10g}{t2:>10g}{r:>11g}")
     print("-" * 49)
     print(f"{'TOTAL':<8}{b['ordinary']:>10g}{b['ot125']:>10g}{b['ot150']:>10g}{b['rest150']:>11g}")
-    print(f"\nGross owed at {a.rate:g}/h (weekly bound {a.weekly_bound:g}h): {pay:,.2f} NIS")
+    print(f"\nGross owed at {a.rate:g}/h (weekly bound {a.weekly_bound:g}h, "
+          f"{a.pay_basis} basis): {pay:,.2f} NIS")
     for n in notes:
         print(f"  - {n}")
     print("\n  Gross only. No tax, National Insurance, health tax or pension is deducted here.")

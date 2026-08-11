@@ -235,6 +235,16 @@
       "confidence": "high",
       "fetched_at": "2026-08-11T00:00:00Z",
       "notes": "Without the hour value the employee cannot check the premium arithmetic at all."
+    },
+    {
+      "claim_id": "hitiyashnut-s5-seven-years",
+      "claim": "A civil claim that is not about land prescribes in seven years, running from the day the cause of action arose. A wage claim is such a claim, so each unpaid payment carries its own seven-year clock, distinct from the much shorter delayed-wage clock.",
+      "claim_type": "statute",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%94%D7%94%D7%AA%D7%99%D7%99%D7%A9%D7%A0%D7%95%D7%AA",
+      "raw_snippet": "התקופה שבה מתיישנת תביעה שלא הוגשה עליה תובענה (להלן – תקופת ההתיישנות) היא –\n\n(1) בשאינו מקרקעין – שבע שנים;",
+      "confidence": "high",
+      "fetched_at": "2026-08-11",
+      "notes": "Section 5 of the Limitation Law, read with section 6 (the period starts on the day the cause of action arose). Cited in Step 7c to keep the seven-year wage clock separate from the one-year / 60-day delayed-wage clock in Step 8."
     }
   ]
 }
