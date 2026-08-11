@@ -620,6 +620,18 @@
       "appears_in": [
         "SKILL.md"
       ]
+    },
+    {
+      "claim_id": "seniority-2pct-to-year-6",
+      "claim": "Teaching seniority (vetek) pays 2% for each year up to and including year 6, then 1% for each year from the seventh year to year 36.",
+      "source_url": "https://meyda.education.gov.il/files/Ofek/OfekChadashTashsat.pdf",
+      "raw_snippet": "ותק בהוראה :התשלום בגין כל שנת ותק עד שנה ) 6כולל( – 2 % התשלום בגין כל שנה החל מהשנה השביעית ועד 36שנים – 1 %",
+      "fetched_at": "2026-08-11",
+      "verified_via": "pdf",
+      "verified_at": "2026-08-11",
+      "appears_in": [
+        "SKILL.md"
+      ]
     }
   ]
 }

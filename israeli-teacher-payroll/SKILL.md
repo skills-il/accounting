@@ -139,7 +139,7 @@ position, scale by the position fraction.
    grids of rank (daraga) by seniority (vetek). The cell you read for a given
    (rank, seniority) pair IS the "combined salary" (sachar meshulav): it ALREADY
    includes seniority. Do NOT add a seniority percentage on top of it, or you
-   double-count. The 2% per year up to year 7 and 1% per year from year 8 to
+   double-count. The 2% per year up to year 6 (inclusive) and 1% per year from year 7 to
    year 36 is the rule the table already applied to produce that cell; it is not
    something you re-add.
 2. Rank context (for reading the right row): rank 1 is a new teacher. Under Ofek
