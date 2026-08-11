@@ -1,6 +1,6 @@
 ---
 name: israeli-payroll-calculator
-description: Calculate Israeli payroll including income tax, Bituach Leumi (National Insurance), health tax, pension contributions, shovi rechev (company-car use value), and net salary. Use when user asks to calculate salary, "tlush maskoret", payroll deductions, "bruto to neto", employer cost, tax credits (nekudot zikui), company car impact on salary, or needs help understanding Israeli payslip items. Covers employees, freelancers (atzmai), and employer cost calculations. Do NOT use for US, UK, or other countries' payroll calculations.
+description: Calculate Israeli payroll including income tax, Bituach Leumi (National Insurance), health tax, pension contributions, shovi rechev (company-car use value), and net salary. Use when user asks to calculate salary, "tlush maskoret", payroll deductions, "bruto to neto", employer cost, tax credits (nekudot zikui), company car impact on salary, or needs help understanding Israeli payslip items. Covers employees, freelancers (atzmai), and employer cost calculations. This skill starts from an AGREED GROSS. Do NOT use it to work out what gross is owed from a timesheet, or to check overtime, weekly-rest premium or a missing hours record (use israeli-attendance-wage-checker), and do NOT use it for US, UK, or other countries' payroll calculations.
 license: MIT
 allowed-tools: Bash(python:*)
 compatibility: Works with Claude Code, Claude.ai, Cursor. No network access required.
@@ -9,6 +9,9 @@ compatibility: Works with Claude Code, Claude.ai, Cursor. No network access requ
 # Israeli Payroll Calculator
 
 ## Instructions
+
+**Scope check before anything else.** This skill converts an AGREED GROSS into net. If the user does not yet know the gross, because the question is really about hours worked, overtime tiers, Shabbat premium, paid versus unpaid breaks, or an employer who kept no attendance record, that is a different computation and it comes first: `israeli-attendance-wage-checker` produces the gross owed from a timesheet, and this skill takes it from there.
+
 
 ### Step 0: Sanity-check the gross against the minimum wage
 
