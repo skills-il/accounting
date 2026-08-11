@@ -293,10 +293,10 @@
     },
     {
       "claim_id": "url-tax-authority",
-      "claim": "The Israel Tax Authority department page is the authoritative source for the current VAT rate, osek patur ceiling, allocation-number thresholds, and reporting schedules.",
+      "claim": "The Israel Tax Authority gov.il department page is the skill's pointer to the authority that consolidates income tax, real-estate taxation, VAT, purchase tax, customs and stamp duty. NOTE: the specific figures the skill takes from this pointer (VAT 18%, osek patur ceiling 122,833, allocation-number thresholds 10,000 / 5,000) are NOT stated on this landing page; they are carried by the other claims in this file and should be re-sourced to the gov.il VAT amounts-and-rates page.",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "רשות המסים בישראל — שיעור מע\"מ, תקרת עוסק פטור, מספר הקצאה (חשבוניות ישראל), מועדי דיווח. Note: gov.il returns HTTP 403 to automated fetchers; the underlying figures (VAT 18%, osek patur ceiling 122,833, allocation thresholds 10,000/5,000) are cross-verified against greeninvoice.co.il, kolzchut.org.il, and CPA-firm pages cited in the other claims.",
-      "fetched_at": "2026-06-26T00:11:30Z",
+      "raw_snippet": "רשות המסים בישראל מאחדת את אגפי המס השונים: מס הכנסה, מיסוי מקרקעין, מס ערך מוסף, מס קנייה, מכס ומס בולים.",
+      "fetched_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",

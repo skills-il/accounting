@@ -153,7 +153,7 @@ position, scale by the position fraction.
 
 | Gmul | Rate |
 |------|------|
-| Gmul hishtalmut (professional development) | 1.2% per 112-hour unit, up to 16 units; up to 29.7% for dual-degree. Per-unit rate rose to 1.3% from 1.9.2025 |
+| Gmul hishtalmut (professional development) | 1.2% per 112-hour unit, up to 16 units. Per-unit rate rose to 1.3% from 1.9.2025 |
 | Gmul chinuch (homeroom) | 10%, or 11.5% for grade-1 homeroom |
 | Gmul rikuz miktzoa (subject coordinator, not English/math) | 8% |
 | Gmul pituach miktzoi (professional-development role) | 6% |

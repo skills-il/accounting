@@ -128,14 +128,16 @@
     },
     {
       "claim_id": "reference-links",
-      "claim": "Official reference links cited in the skill: the Israel Tax Authority department page, the SHAAM API host ita-api.taxes.gov.il, the Tax Authority's Israel-Invoice FAQ, the ITA invoicing-guidance report page, and Kol Zchut's plain-language invoice rules page. The previously cited misim.gov.il is not the live developer surface and was removed.",
+      "claim": "URL inventory: the official reference links this skill cites, being the Israel Tax Authority department page, the ITA invoicing-guidance report page, the Knesset legislation index and Kol Zchut. Registered here as an inventory of the links themselves; no single one of these pages evidences the others. The substantive Israel-Invoice rules are evidenced by the dedicated entries in this file.",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "Reference links: https://www.gov.il/he/departments/israel_tax_authority https://www.misim.gov.il https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx https://www.gov.il/he/departments/publications/reports/invoices_israel https://www.kolzchut.org.il/he",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "fetched_at": "2026-08-11T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "url-inventory (the snippet is the list of links themselves, not text quoted from a page)",
+      "verified_at": "2026-08-11T00:00:00Z"
     },
     {
       "claim_id": "allocation-vat-amount-criterion",

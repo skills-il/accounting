@@ -23,7 +23,7 @@ the combined salary from the reform's table, so compute the base first.
 
 | Gmul | Rate | Basis / notes |
 |------|------|---------------|
-| Gmul hishtalmut (professional development) | 1.2% per unit, up to 16 units; up to 29.7% for dual-degree holders | 112 study hours (or equivalent) with a passing grade = 1 unit. Per-unit rate rose from 1.2% to 1.3% on 1 Sept 2025. |
+| Gmul hishtalmut (professional development) | 1.2% per unit, up to 16 units | 112 study hours (or equivalent) with a passing grade = 1 unit. Per-unit rate rose from 1.2% to 1.3% on 1 Sept 2025. |
 | Gmul chinuch (homeroom / class education) | 10% of combined salary | Grade-1 (alef) homeroom teachers keep a higher 11.5%. |
 | Gmul rikuz miktzoa (subject coordinator) | 8% | For subjects other than English or mathematics, under the reform. |
 | Gmul pituach miktzoi (professional-development role) | 6% of combined salary | Role-based. |

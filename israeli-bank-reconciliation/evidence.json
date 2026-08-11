@@ -62,14 +62,15 @@
     },
     {
       "claim_id": "tax-authority-ref",
-      "claim": "Israel Tax Authority department page on gov.il, cited as the reference for the bookkeeping directive, VAT reconciliation rules and required journal fields. (gov.il returns HTTP 403 to automated fetchers behind its bot wall but resolves in a browser.)",
+      "claim": "The Israel Tax Authority (רשות המסים בישראל) has an official department page on gov.il.",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "Israel Tax Authority - bookkeeping",
-      "fetched_at": "2026-06-25T00:00:00Z",
+      "raw_snippet": "רשות המסים בישראל",
+      "fetched_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "source_label": "רשות המסים בישראל - עמוד המשרד ב-gov.il"
     },
     {
       "claim_id": "ibank-ref",

@@ -34,7 +34,7 @@ LaTmura. Every "Must cover" row maps to a claim in evidence.json.
 ### Gmul (gmul) table (render EVERY gmul type as its own row)
 - [x] Ofek teachers accumulate dev hours, NOT gmulim; Oz teachers accumulate max 1 gmul/year. (ofek-no-gmul)
 - [x] Oz merit-point promotion gmul: 10 points = 2%, up to 4 gmulim = 8%. (oz-applies-and-gmul-merit)
-- [x] Gmul hishtalmut: 112 hours = 1 unit; 1.2% per unit up to 16, up to 29.7% dual-degree; per-unit rate 1.2% to 1.3% from 1.9.2025. (gmul-hishtalmut-unit)
+- [x] Gmul hishtalmut: 112 hours = 1 unit; 1.2% per unit up to 16; per-unit rate 1.2% to 1.3% from 1.9.2025. (gmul-hishtalmut-unit)
 - [x] Gmul chinuch (homeroom): 10%, grade-1 homeroom 11.5%. (gmul-chinuch-rate)
 - [x] Subject-coordinator gmul (non-English/math): 8%; professional-development role gmul: 6%. (gmul-coordinator-and-dev)
 - [x] Kindergarten management gmul (gmul nihul gan), an Ofek Chadash role: ~17% (up to 5 yrs), 20% (6-10 yrs). (gmul-nihul-gan)

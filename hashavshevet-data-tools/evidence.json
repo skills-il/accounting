@@ -126,14 +126,16 @@
     },
     {
       "claim_id": "ita-file-check-simulator",
-      "claim": "The ITA provides a file-check simulator for uniform-structure files at frmCheckFiles.aspx on misim.gov.il.",
-      "source_url": "https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
-      "raw_snippet": "סימולטור הפקת קבצים - רשות המסים בישראל",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "claim": "The Israel Tax Authority runs a uniform-structure file-check simulator (סימולטור הפקת קבצים) at TmbakmmsmlNew/frmCheckFiles.aspx; misim.gov.il now 302-redirects to secapp.taxes.gov.il. It validates BKMVDATA/INI files against the \"הוראות להפקת קבצים\" specification version 1.31 and is a helper tool for software houses",
+      "source_url": "https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
+      "raw_snippet": "בדיקת קבצים במבנה אחיד יש לבחור סט תווים ולאחר מכן לבחור קבצים. מותאם למסמך \"הוראות להפקת קבצים \" גירסה 1.31 הסימולטור הוא כלי עזר לבתי התוכנה לבדיקת נכונות פיתוח כלי ההפקה ולפיכך תוצאות הבדיקה תקפות אך ורק למועד ביצוען.",
+      "fetched_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-11"
     },
     {
       "claim_id": "ita-file-check-simulator-govil",
@@ -194,12 +196,13 @@
       "claim_id": "form-6111",
       "claim": "Form 6111 (טופס 6111) is the tax-adjustment report (דוח התאמה למס): an annex to the annual tax return carrying profit-and-loss, balance-sheet, and tax-adjustment data, filed online to the ITA.",
       "source_url": "https://www.gov.il/BlobFolder/service/reporting-and-payment-2025-annual-tax-report-for-individuals/he/Service_Pages_Income_tax_annual-report-2026_6111-2025-ACC.pdf",
-      "raw_snippet": "נספח לטופס הדוח השנתי ליחיד( 1) ולחבר בני אדם( 2) לשנת המס 2025",
+      "raw_snippet": "‫נספח לטופס הדוח השנתי ליחיד(‪ )1‬ולחבר בני אדם(‪ )2‬לשנת המס ‪2025‬‬",
       "fetched_at": "2026-06-03T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "gov.il content API (programmatic re-extraction)"
     },
     {
       "claim_id": "form-6111-govil-service",
@@ -370,6 +373,19 @@
       "source_url": "https://www.gov.il/he/pages/pa280825-1",
       "raw_snippet": "דוח מפורט עוסק יחיד מחזור 500,000 90% 5,000 1.1.2027 חשבוניות תשומות",
       "fetched_at": "2026-07-18T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ita-simulator-legacy-url",
+      "claim": "The legacy misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx address still resolves: it 302-redirects to secapp.taxes.gov.il, which serves the Tax Authority file-production simulator page",
+      "source_url": "https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
+      "raw_snippet": "רשות המיסים - סימולטור הפקת קבצים נגישות תפריט נגישות שחור לבן ניגודיות כהה תצוגה רגילה דלג לתוכן ראשי",
+      "fetched_at": "2026-08-11",
+      "verified_at": "2026-08-11",
+      "verified_via": "curl",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"

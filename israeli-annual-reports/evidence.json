@@ -132,14 +132,17 @@
     },
     {
       "claim_id": "isa-website",
-      "claim": "The Israel Securities Authority (Reshut Niyarot Erech) website is at isa.gov.il (redirects to new.isa.gov.il).",
+      "claim": "The Israel Securities Authority (רשות ניירות ערך) website at isa.gov.il redirects to new.isa.gov.il.",
       "source_url": "https://www.isa.gov.il",
-      "raw_snippet": "Israel Securities Authority / רשות ניירות ערך",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "רשות ניירות ערך – מפוקחים",
+      "fetched_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-11",
+      "source_label": "Israel Securities Authority website (isa.gov.il, redirects to new.isa.gov.il)"
     },
     {
       "claim_id": "maya-system",
@@ -430,12 +433,12 @@
       "claim_id": "isa-104-18-pdf-url",
       "claim": "ISA staff legal position 104-18 (small exempt corporation reporting format, the half-yearly substitute) is published at this new.isa.gov.il PDF.",
       "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_corporations_asset_library/corporations_pdf_pages-62eb9004f19c3/240417.pdf",
-      "raw_snippet": "עמדה משפטית 104-18: מתכונת הדיווח של תאגיד קטן פטור.",
+      "raw_snippet": "‫עמדה משפטית מספר ‪ :104-18‬מתכונת הדיווח של תאגיד קטן פטור‬",
       "fetched_at": "2026-06-04T00:00:00Z",
       "appears_in": [
         "references/domain-checklist.md"
       ],
-      "verified_via": "pdf-text-extraction",
+      "verified_via": "gov.il content API (programmatic re-extraction)",
       "verified_at": "2026-08-09T00:00:00Z"
     },
     {

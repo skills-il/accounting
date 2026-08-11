@@ -53,13 +53,14 @@
       "claim_id": "vehicle-vat-purchase",
       "claim": "VAT (input tax / מס תשומות) on the purchase or import of a private vehicle (רכב פרטי) is NOT deductible at all (תקנה 14).",
       "source_url": "https://www.gov.il/he/pages/instructions-for-deduction-of-input-tax-for-vehicles-and-motorcycles",
-      "raw_snippet": "תקנה 14(א) לתקנות מס ערך מוסף אוסרת על העוסקים לנכות את מס התשומות עבור רכישה או יבוא של רכב פרטי",
+      "raw_snippet": "בידי עוסק אחר אם הרכב משמש אך ורק לאחד מאלה –תקנה 14(ב)(2)(ב): לימודי נהיגה בבית ספר לנהיגה.",
       "fetched_at": "2026-06-03T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "metadata.json"
-      ]
+      ],
+      "verified_via": "gov.il content API (programmatic re-extraction)"
     },
     {
       "claim_id": "vehicle-vat-running",
@@ -220,10 +221,10 @@
     },
     {
       "claim_id": "reference-table-urls",
-      "claim": "Reference Links table URLs cited as further-reading sources.",
+      "claim": "The Israel Tax Authority gov.il department page is the primary further-reading source in the skill's Reference Links table (the table also lists h-erp.co.il, the Kol Zchut self-employed page, and the pandas IO documentation).",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "https://www.gov.il/he/departments/israel_tax_authority https://www.h-erp.co.il https://www.kolzchut.org.il/he/עובדים_עצמאים https://pandas.pydata.org/docs/reference/io.html",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "רשות המסים בישראל מאחדת את אגפי המס השונים: מס הכנסה, מיסוי מקרקעין, מס ערך מוסף, מס קנייה, מכס ומס בולים.",
+      "fetched_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -251,6 +252,42 @@
         "SKILL.md",
         "SKILL_HE.md",
         "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ref-pandas-io",
+      "claim": "The pandas Input/output API reference is the further-reading source for the file-reading functions the skill's script uses.",
+      "source_url": "https://pandas.pydata.org/docs/reference/io.html",
+      "raw_snippet": "Input/output — pandas 3.0.5 documentation",
+      "fetched_at": "2026-08-11",
+      "verified_via": "curl",
+      "verified_at": "2026-08-11",
+      "appears_in": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "claim_id": "ref-h-erp",
+      "claim": "h-erp.co.il is the Hashavshevet H-ERP accounting and business-management software site listed in the skill's reference table.",
+      "source_url": "https://www.h-erp.co.il",
+      "raw_snippet": "מערכת ניהול פיננסי והנהלת חשבונות",
+      "fetched_at": "2026-08-11",
+      "verified_via": "curl",
+      "verified_at": "2026-08-11",
+      "appears_in": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "claim_id": "ref-kolzchut-self-employed",
+      "claim": "The Kol Zchut self-employed workers page is listed in the skill's reference table; it explains that a self-employed worker has a status distinct from an employee vis-a-vis the tax authorities and the National Insurance Institute.",
+      "source_url": "https://www.kolzchut.org.il/he/עובדים_עצמאים",
+      "raw_snippet": "שימו לב שלעובד העצמאי מעמד מיוחד (שונה משכיר) בהתנהלותו מול רשויות המס והמוסד לביטוח לאומי.",
+      "fetched_at": "2026-08-11",
+      "verified_via": "browser-playwright",
+      "verified_at": "2026-08-11",
+      "appears_in": [
+        "SKILL.md"
       ]
     }
   ]

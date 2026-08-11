@@ -294,12 +294,12 @@
     },
     {
       "claim_id": "ita-file-checker-url",
-      "claim": "The live ITA unified-file checker (בדיקת קבצים במבנה אחיד) is served at https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx; the legacy misim.gov.il deep link redirects there. The page is a JS-rendered ASP.NET form and returns an empty body to a plain HTTP client.",
+      "claim": "The live ITA unified-file checker (בדיקת קבצים במבנה אחיד) is served at https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx under the title \"סימולטור הפקת קבצים\". It is a JS-rendered ASP.NET form and returns an empty body to a plain HTTP client. It accepts INI.TXT and BKMVDATA.TXT, matches the \"הוראות להפקת קבצים\" spec version 1.31, and caps BKMVDATA at 4MB.",
       "source_url": "https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
-      "raw_snippet": "https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
-      "fetched_at": "2026-08-09T00:00:00Z",
-      "verified_via": "live-http-probe",
-      "verified_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "בדיקת קבצים במבנה אחיד יש לבחור סט תווים ולאחר מכן לבחור קבצים. מותאם למסמך \"הוראות להפקת קבצים \" גירסה 1.31",
+      "fetched_at": "2026-08-11",
+      "verified_via": "browser-playwright",
+      "verified_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"

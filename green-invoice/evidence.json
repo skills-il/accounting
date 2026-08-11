@@ -5,15 +5,17 @@
   "claims": [
     {
       "claim_id": "vat-18-2026",
-      "claim": "Israeli VAT rate is 18% as of 2026 (raised from 17% in January 2025)",
-      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "VAT 18% from January 2025, previously 17%",
-      "fetched_at": "2026-06-28T23:55:00Z",
+      "claim": "Government Decision 1270 of 14.01.2024 records the Finance Minister's intention to raise VAT on transactions and on imports of goods by one percentage point, to 18% instead of 17%, effective 1 January 2025",
+      "source_url": "https://www.gov.il/he/pages/dec1270-2024",
+      "raw_snippet": "לרשום את הודעת שר האוצר כי בכוונתו לתקן את צו מס ערך מוסף (שיעור המס על עסקה ועל יבוא טובין), התשס\"ה-2005 ולקבוע כי שיעור המס על עסקה ועל יבוא טובין יעלה באחוז אחד, כך שיעמוד על 18% במקום 17% החל מיום 1 בינואר 2025.",
+      "fetched_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/document-workflows.md"
-      ]
+      ],
+      "verified_via": "gov.il content API",
+      "verified_at": "2026-08-11"
     },
     {
       "claim_id": "shaam-allocation-thresholds",

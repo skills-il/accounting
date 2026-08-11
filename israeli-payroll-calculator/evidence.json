@@ -83,15 +83,16 @@
     },
     {
       "claim_id": "form-101",
-      "claim": "Form 101 (tofes 101, hatzharat oved) is filed with the employer to claim credit points.",
-      "source_url": "https://www.gov.il/he/service/income-tax-calculator",
-      "raw_snippet": "Form 101",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
+      "claim": "Form 101 (טופס 101) is filed with the employer under תקנות מס הכנסה (ניכוי ממשכורת ומשכר עבודה), התשנ\"ג-1993 at the start of each tax year, on starting a job, and on any change in personal details; it is the employer's basis for granting tax relief, and accurate details are what secure the credit points matching the employee's personal situation.",
+      "source_url": "https://www.gov.il/he/service/form_101",
+      "raw_snippet": "יש להקפיד על דיוק הפרטים על מנת לקבל את נקודות הזיכוי המתאימות למצבו האישי של העובד. נקודות הזיכוי מהוות סכום המקוזז ממס הכנסה החל על ההכנסות בשנת המס. אי הגשת טופס 101 עלולה לנכות לעובד את שיעור המס המירבי (47%)",
+      "fetched_at": "2026-08-11",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/"
-      ]
+      ],
+      "verified_at": "2026-08-11"
     },
     {
       "claim_id": "misc-pct",
@@ -132,18 +133,6 @@
       ],
       "verified_via": "internal-arithmetic",
       "verified_at": "2026-08-09T00:00:00Z"
-    },
-    {
-      "claim_id": "noise",
-      "claim": "Prose artifacts from amounts in lists (\", NIS\", \"NIS,\", \"NIS 2\", \"12,000 NIS\") are covered by the figures above.",
-      "source_url": "https://www.gov.il/he/service/income-tax-calculator",
-      "raw_snippet": ", NIS , NIS, NIS 2",
-      "fetched_at": "2026-06-13T00:24:02.799218+00:00",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md",
-        "references/"
-      ]
     },
     {
       "claim_id": "operational-urls",

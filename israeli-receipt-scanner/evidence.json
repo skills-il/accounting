@@ -82,14 +82,16 @@
     },
     {
       "claim_id": "reference-links",
-      "claim": "Reference links cited in the skill's tables for OCR tooling and Israeli tax authority guidance.",
+      "claim": "URL inventory: the reference links this skill cites in its tables, for OCR tooling (EasyOCR, Tesseract), image preprocessing (Pillow), and for Israeli tax-invoice, osek-murshe and VAT guidance (Israel Tax Authority and Kol Zchut). Registered here as an inventory of the links themselves; no single one of these pages evidences the others.",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "OCR engines: https://github.com/JaidedAI/EasyOCR (EasyOCR) and https://github.com/tesseract-ocr/tesseract (Tesseract). Image preprocessing: https://pillow.readthedocs.io/en/stable/ (Pillow). Tax invoice fields, osek murshe validation, and VAT rules: https://www.gov.il/he/departments/israel_tax_authority (Israel Tax Authority) and https://www.kolzchut.org.il/he (Kol Zchut).",
-      "fetched_at": "2026-06-03T20:49:36Z",
+      "fetched_at": "2026-08-11T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "url-inventory (the snippet is the list of links themselves, not text quoted from a page)",
+      "verified_at": "2026-08-11T00:00:00Z"
     },
     {
       "claim_id": "illustrative-example-values",
