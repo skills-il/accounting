@@ -141,12 +141,14 @@
     {
       "claim_id": "vat-inclusive-portion-15-25",
       "claim": "At an 18% VAT rate the VAT portion of a VAT-INCLUSIVE amount is 18/118, i.e. about 15.25% (15.25%) of the gross. So a systematic gap of about 18% against a net figure, or about 15.25% against a gross figure, indicates a VAT-inclusive versus VAT-exclusive mismatch rather than a genuine reconciling item. This is arithmetic derived from the 18% rate, not a separate published figure.",
-      "source_url": "https://www.kolzchut.org.il/he/מס_ערך_מוסף",
-      "raw_snippet": "שיעור המע\"מ בישראל עומד על 18%",
-      "fetched_at": "2026-07-27T00:37:35Z",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_%28%D7%9E%D7%A2%22%D7%9E%29",
+      "raw_snippet": "סכום המע״מ מחושב בשיעור קבוע ממחיר העסקה או הסחורה, והחל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות. עד 31.12.2024 היה שיעור המע\"מ 17%",
+      "fetched_at": "2026-08-13",
       "appears_in": [
         "references/domain-checklist.md"
-      ]
+      ],
+      "verified_via": "browser-playwright (same-origin fetch)",
+      "verified_at": "2026-08-13"
     },
     {
       "claim_id": "boi-representative-rates-notes",

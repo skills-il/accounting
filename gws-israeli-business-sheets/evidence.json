@@ -205,14 +205,16 @@
     {
       "claim_id": "monthly-vat-threshold-1775000",
       "claim": "A business whose turnover in the determining year (12 consecutive months ending 31 August of the preceding tax year) exceeds NIS 1,775,000 (1,775,000 ש\"ח) files VAT monthly; at or below that it files bi-monthly. Re-indexed each 1 January; an earlier year's figure was NIS 1,520,000.",
-      "source_url": "https://www.kolzchut.org.il/he/הגשת_דוחות_תקופתיים_ותשלום_מס_ערך_מוסף",
-      "raw_snippet": "עסקים שמחזור עסקאותיהם בשנה הקובעת (12 חודשים רצופים שמסתיימים ב-31 באוגוסט של שנת המס שחלפה) הוא עד 1,775,000 ₪ (נכון ל-01.01.2026) יגישו את הדו\"ח למע\"מ אחת לחודשיים",
-      "fetched_at": "2026-07-26T22:47:44Z",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "עסק שמחזור עסקאותיו השנתי נמוך מ- 1,775,000 ₪ (נכון ל-01.01.2026) נדרש לדווח למע\"מ פעם בחודשיים (דיווח דו-חודשי).",
+      "fetched_at": "2026-08-13",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-tax-categories.md"
-      ]
+      ],
+      "verified_via": "browser-playwright (same-origin fetch)",
+      "verified_at": "2026-08-13"
     },
     {
       "claim_id": "document-retention-7-years",
