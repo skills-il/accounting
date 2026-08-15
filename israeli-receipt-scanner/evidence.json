@@ -174,11 +174,13 @@
       "claim_id": "domain-checklist-sources",
       "claim": "Research domain-checklist (references/domain-checklist.md, a planning artifact) cites the following sources for input-VAT deductibility rules: document-type classification, supplier osek validation, osek-patur carrying no VAT, allocation-number threshold and input-VAT disallowance, invoice-in-buyer's-name requirement, the two-thirds partial-deduction rule (flag for bookkeeper rather than claiming 100%), private-vehicle input-VAT restriction, and the 6-month deduction deadline.",
       "source_url": "https://www.kolzchut.org.il/he/מס_תשומות",
-      "raw_snippet": "Sources cited in the domain checklist: Kol Zchut הוצאת חשבונית מס, חשבונית עסקה וקבלה (https://www.kolzchut.org.il/he/הוצאת_חשבונית_מס,_חשבונית_עסקה_וקבלה); Kol Zchut מס תשומות (https://www.kolzchut.org.il/he/מס_תשומות); Kol Zchut עוסק פטור (https://www.kolzchut.org.il/he/עוסק_פטור); Kol Zchut קיזוז תשלומי מע\"מ של עוסק מורשה (https://www.kolzchut.org.il/he/קיזוז_תשלומי_מע%22מ_של_עוסק_מורשה_(מס_תשומות)) which explains mixed-use inputs are only two-thirds deductible so the tool should flag for the bookkeeper rather than claiming 100%; ACI חובת מספר הקצאה בניכוי מס תשומות מ-2026 (https://aci.org.il/knowledge/allocation-number-input-tax-2026/); Lishkat HaMischar Tel Aviv (https://www.chamber.org.il/serviceslobby/finance/1429/162557/); Takanot Ma\"M pratim bechashbonit (https://www.nevo.co.il/law_html/law01/271_005.htm).",
+      "raw_snippet": "מס תשומות הוא מס ערך מוסף (מע\"מ) ששילם בעל עסק בגין רכישת שירותים או מוצרים שביצע עבור העסק",
       "fetched_at": "2026-06-04T00:00:00Z",
       "appears_in": [
         "references/domain-checklist.md"
-      ]
+      ],
+      "verified_via": "kolzchut page text read through the site MediaWiki API in a browser; snippet replaced with verbatim page text (the previous value was a generated summary)",
+      "verified_at": "2026-08-15"
     },
     {
       "claim_id": "cash-law-6000-cap",
@@ -213,6 +215,76 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ref-vat-regulations",
+      "claim": "תקנות מס ערך מוסף, תשל\"ו-1976 הן מקור החקיקה לניכוי מס תשומות ולדרישות החשבונית.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "תקנות מס ערך מוסף, תשל\"ו-1976",
+      "fetched_at": "2026-08-15",
+      "verified_via": "nevo page title confirmed",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ref-aci-allocation-number",
+      "claim": "חובת מספר הקצאה בניכוי מס תשומות מ-2026.",
+      "source_url": "https://aci.org.il/knowledge/allocation-number-input-tax-2026/",
+      "raw_snippet": "חובת מספר הקצאה בניכוי מס תשומות מ-2026 – הסבר מקצועי",
+      "fetched_at": "2026-08-15",
+      "verified_via": "curl with a browser user agent (page title)",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ref-chamber-invoice",
+      "claim": "דף לשכת המסחר בנושא החשבוניות; מפנה הלאה (HTTP 307) ולכן נבדק כמצביע ניווטי בלבד.",
+      "source_url": "https://www.chamber.org.il/serviceslobby/finance/1429/162557/",
+      "raw_snippet": "chamber.org.il serviceslobby finance",
+      "fetched_at": "2026-08-15",
+      "verified_via": "curl with a browser user agent; responds 307 redirect",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ref-kolzchut-osek-patur",
+      "claim": "עוסק פטור בכל-זכות.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A2%D7%95%D7%A1%D7%A7_%D7%A4%D7%98%D7%95%D7%A8",
+      "raw_snippet": "עוסק פטור",
+      "fetched_at": "2026-08-15",
+      "verified_via": "kolzchut MediaWiki API existence check",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ref-kolzchut-invoice-issue",
+      "claim": "הוצאת חשבונית מס, חשבונית עסקה וקבלה בכל-זכות.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%95%D7%A6%D7%90%D7%AA_%D7%97%D7%A9%D7%91%D7%95%D7%A0%D7%99%D7%AA_%D7%9E%D7%A1,_%D7%97%D7%A9%D7%91%D7%95%D7%A0%D7%99%D7%AA_%D7%A2%D7%A1%D7%A7%D7%94_%D7%95%D7%A7%D7%91%D7%9C%D7%94",
+      "raw_snippet": "הוצאת חשבונית מס, חשבונית עסקה וקבלה",
+      "fetched_at": "2026-08-15",
+      "verified_via": "kolzchut MediaWiki API existence check",
+      "verified_at": "2026-08-15",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
       ]
     }
   ]

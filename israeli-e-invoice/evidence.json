@@ -115,15 +115,15 @@
       "claim_id": "worked-example-figures",
       "claim": "Illustrative figures used in the skill's worked examples, all consistent with the verified 18% VAT rate and the SHAAM document-type rules. Example 1 (tax invoice 305): net 15,000 NIS (15,000 ש\"ח) + 18% VAT 2,700 = total 17,700 NIS (17,700 ש\"ח). Example 2 (plain receipt/kabala): 500 NIS (500 ש\"ח) cash payment, no allocation number. Example 3 (credit invoice 330): partial refund of 3,000 NIS (3,000 ש\"ח), no allocation number, references the original invoice.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_(%D7%9E%D7%A2%22%D7%9E)",
-      "raw_snippet": "VAT at 18%: 15,000 x 0.18 = 2,700; 15,000 + 2,700 = 17,700. The same 18% rate applies to the worked examples (net 15,000 ש\"ח, total 17,700 ש\"ח; a 500 ש\"ח cash receipt; a 3,000 ש\"ח credit/refund).",
+      "raw_snippet": "סכום המע״מ מחושב בשיעור קבוע ממחיר העסקה או הסחורה, והחל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות. עד 31.12.2024 היה שיעור המע\"מ 17%",
       "fetched_at": "2026-06-16T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
       "claim_type": "derived",
-      "verified_via": "browser",
-      "verified_at": "2026-07-26T00:00:00Z",
+      "verified_via": "kolzchut page text read through the site MediaWiki API in a browser; snippet replaced with verbatim page text (the previous value was a generated summary)",
+      "verified_at": "2026-08-15",
       "verification_note": "This is the skill's own worked arithmetic (15,000 x 18% = 2,700), recomputed rather than quoted from a source."
     },
     {
