@@ -385,6 +385,19 @@
         "SKILL_HE.md",
         "references/api-reference.md"
       ]
+    },
+    {
+      "claim_id": "ref-allocation-number-service",
+      "claim": "בקשה למספר הקצאה לחשבונית מס בשירות המקוון של רשות המסים. הכתובת הקודמת שנכללה כאן, invoice-allocation-number, מחזירה כעת 404.",
+      "source_url": "https://www.gov.il/he/service/request-assignment-number-for-tax-invoice",
+      "raw_snippet": "בקשה למספר הקצאה לחשבונית מס",
+      "fetched_at": "2026-08-16",
+      "verified_via": "gov.il content API (page title); the superseded slug was confirmed dead via the same API and by navigation",
+      "verified_at": "2026-08-16",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     }
   ]
 }

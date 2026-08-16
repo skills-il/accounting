@@ -538,7 +538,7 @@ Result: All new documents automatically downloaded and organized by type and mon
 | Generating API Key Guide | https://www.greeninvoice.co.il/help-center/generating-api-key/ | Current dashboard menu path and plan-tier requirements for API access |
 | Webhooks Overview | https://www.greeninvoice.co.il/magazine/webhooks/ | Plan-tier requirement (Extra) and configuration walkthrough |
 | Israel Tax Authority (VAT rates) | https://www.gov.il/he/departments/israel_tax_authority | Current VAT rate, business type rules |
-| SHAAM E-Invoice System (Tax Authority) | https://www.gov.il/he/service/invoice-allocation-number | Allocation number requirements for B2B invoices. Current threshold: NIS 5,000 net, in force since Jun 1, 2026 (final step of the rollout). |
+| SHAAM E-Invoice System (Tax Authority) | https://www.gov.il/he/service/request-assignment-number-for-tax-invoice | Allocation number requirements for B2B invoices. Current threshold: NIS 5,000 net, in force since Jun 1, 2026 (final step of the rollout). |
 | Bank of Israel Exchange Rates | https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/ | Daily representative rates used by Green Invoice for multi-currency documents |
 
 ## Gotchas

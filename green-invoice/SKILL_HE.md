@@ -544,7 +544,7 @@ Webhooks נשלחים ביצירת מסמך. ה-payload כולל את אוביי
 | מדריך יצירת מפתח API | https://www.greeninvoice.co.il/help-center/generating-api-key/ | נתיב התפריט העדכני בלוח הבקרה ודרישות מסלול לגישה ל-API |
 | סקירת Webhooks | https://www.greeninvoice.co.il/magazine/webhooks/ | דרישת מסלול (Extra) ומדריך הגדרה |
 | רשות המסים (שיעורי מע"מ) | https://www.gov.il/he/departments/israel_tax_authority | שיעור מע"מ עדכני, כללי סוגי עסק |
-| מערכת חשבוניות ישראל (שע"מ) | https://www.gov.il/he/service/invoice-allocation-number | דרישות מספר הקצאה לחשבוניות B2B. סף נוכחי: 5,000 ש"ח נטו, בתוקף מ-1.6.2026 (השלב הסופי ברפורמה). |
+| מערכת חשבוניות ישראל (שע"מ) | https://www.gov.il/he/service/request-assignment-number-for-tax-invoice | דרישות מספר הקצאה לחשבוניות B2B. סף נוכחי: 5,000 ש"ח נטו, בתוקף מ-1.6.2026 (השלב הסופי ברפורמה). |
 | שערי חליפין בנק ישראל | https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/ | שערים יציגים יומיים בשימוש חשבונית ירוקה למסמכים רב-מטבעיים |
 
 ## מלכודות נפוצות
