@@ -301,12 +301,16 @@
     },
     {
       "id": "health-tax-rates",
-      "claim": "Health-insurance tax: 3.23% on income up to the reduced-collection step of 7,703 NIS (from 1.1.2026) and 5.17% above it (from 1.2.2025).",
+      "claim": "דמי ביטוח בריאות לעובד שכיר: 3.23% על חלק השכר שעד מדרגת הגביה המופחתת, שעומדת על 7,703 ש\"ח מ-01.01.2026, ו-5.17% מעליה ועד ההכנסה המרבית 51,910 ש\"ח. הכתובת הקודמת, health-insurance-rates.aspx, מחזירה 404.",
       "claim_type": "percentage",
-      "source_url": "https://www.btl.gov.il/Insurance/Health_Insurance/Pages/health-insurance-rates.aspx",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
       "source_fetched_at": "2026-07-06T00:00:00Z",
-      "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת 7,703 ש\"ח (החל ב- 01.01.2026), ינכה המעסיק 3.23% (החל ב- 01.01.2025) ומחלק השכר שמעל מדרגת גביה מופחתת ינכה המעסיק 5.17% (החל ב- 01.02.2025).",
-      "confidence": "high"
+      "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת (שיעור מופחת) - 7,703 ש\"ח (החל ב- 01.01.2026)",
+      "confidence": "high",
+      "claim_id": "btl-health-insurance-rates-2026",
+      "verified_via": "Bituach Leumi employee-rates page fetched with a browser user agent; figures read off the live rate table",
+      "verified_at": "2026-08-16",
+      "fetched_at": "2026-08-16"
     },
     {
       "id": "ref-url-education-calc",
