@@ -298,8 +298,9 @@ twelve months, so July and August are paid even though school is on summer break
 The annual clothing allowance was de-indexed and cut by 91 NIS: 2,405 NIS in
 2024, 2,314 NIS in 2025.
 
-Context: minimum wage is 6,247.67 NIS/month (from 1.4.2025), 6,443.85 NIS (from
-1.4.2026); the average wage is 13,769 NIS (Jan 2026). Teacher base pay comes from
+Context: minimum wage is 6,443.85 NIS/month since 1.4.2026 (it was 6,247.67 NIS
+from 1.4.2025); the hourly rate on the 182-hour basis is 35.40 NIS. The average
+wage is 13,769 NIS (Jan 2026). Teacher base pay comes from
 the agreement table, not from these figures.
 
 ## Examples

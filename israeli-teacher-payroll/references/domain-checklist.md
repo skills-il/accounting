@@ -53,7 +53,7 @@ LaTmura. Every "Must cover" row maps to a claim in evidence.json.
 - [x] Havraa (recreation pay) and 12-month spread (July-August paid). Part-time caveat: not every role gmul scales like the combined salary under chelkiyut misra. (structural)
 
 ### Context baselines
-- [x] Minimum wage 6,247.67 NIS (1.4.2025), 6,443.85 NIS (1.4.2026), hourly 34.32 NIS. (min-wage-2025, min-wage-2026)
+- [x] Minimum wage 6,443.85 NIS/month in force since 1.4.2026 (6,247.67 NIS from 1.4.2025); hourly 35.40 NIS on the 182-hour basis, 34.64 NIS on the 186-hour basis. (min-wage-2025, min-wage-monthly-2026, min-wage-hourly-2025)
 - [x] Average wage 13,769 NIS (Jan 2026); minimum wage = 47.5% of average. (avg-wage-2026, min-wage-def-pct)
 - [x] Teacher base pay comes from the collective-agreement tables, NOT the generic bracket math. (starting-salary-approx)
 
