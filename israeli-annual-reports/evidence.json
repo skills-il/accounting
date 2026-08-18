@@ -429,7 +429,7 @@
       "claim_id": "ifrs-israel-profile-url",
       "claim": "The IFRS Foundation Israel jurisdiction profile (full URL) documents 2008 IFRS adoption and the IFRS 17 postponement to 2025.",
       "source_url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/",
-      "raw_snippet": "g entities whose shares, units or debt securities are publicly traded and some other entities) to file financial statements prepared applying IFRS Accounting Standards for periods starting 1 January 2008, except for banking institutions, credit card companies, entities subject to the Capital Market, Insurance and Savings Authority and certain dual listed entities.",
+      "raw_snippet": "entities whose shares, units or debt securities are publicly traded and some other entities) to file financial statements prepared applying IFRS Accounting Standards for periods starting 1 January 2008, except for banking institutions, credit card companies, entities subject to the Capital Market, Insurance and Savings Authority and certain dual listed entities.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "references/domain-checklist.md"
