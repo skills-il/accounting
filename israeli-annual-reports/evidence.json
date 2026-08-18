@@ -172,12 +172,14 @@
       "claim_id": "ifrs-foundation",
       "claim": "The IFRS Foundation publishes IFRS Standards at ifrs.org.",
       "source_url": "https://www.ifrs.org",
-      "raw_snippet": "IFRS Foundation - International Financial Reporting Standards",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "e, in effect, a global accounting language—companies in more than 140 jurisdictions are required to use them when reporting on their financial health. The IASB is supported by technical staff and a range of advisory bodies.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 6 of 7 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"financial\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "companies-registrar",
@@ -425,11 +427,13 @@
       "claim_id": "ifrs-israel-profile-url",
       "claim": "The IFRS Foundation Israel jurisdiction profile (full URL) documents 2008 IFRS adoption and the IFRS 17 postponement to 2025.",
       "source_url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/",
-      "raw_snippet": "IFRS Foundation, View Jurisdiction: Israel. IFRS required for periods starting 1 January 2008; IFRS 17 postponed to 1 January 2025.",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "es are publicly traded and some other entities) to file financial statements prepared applying IFRS Accounting Standards for periods starting 1 January 2008, except for banking institutions, credit card companies, entities subject to the Capital Market, Insurance and Savings Authority and certain dual listed entities.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "references/domain-checklist.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 13 of 15 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"starting\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "isa-104-18-pdf-url",

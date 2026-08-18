@@ -255,12 +255,14 @@
       "claim_id": "sheets-url-id-path",
       "claim": "A Google Sheets spreadsheet ID is the string in the URL between `/d/` and `/edit` (e.g. docs.google.com/spreadsheets/d/<ID>/edit).",
       "source_url": "https://developers.google.com/sheets/api/guides/concepts",
-      "raw_snippet": "The spreadsheet ID is in the URL: https://docs.google.com/spreadsheets/d/spreadsheetId/edit#gid=0 — the value between /d/ and /edit is the spreadsheetId.",
-      "fetched_at": "2026-06-26T00:10:30Z",
+      "raw_snippet": "Spreadsheet IDs are stable, even if the spreadsheet name changes. https://docs.google.com/spreadsheets/d/ SPREADSHEET_ID /edit?gid= SHEET_ID #gid= SHEET_ID Sheet A page or tab within a spreadsheet. The Sheets resource represents a sheet. It contains a unique numeric sheetId value and sheet title as part of the SheetProperties object. Sheet ID The unique identifier for a specific sheet within a spreadsheet.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched; 10 of 10 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"edit\"",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "url-sheets-api",
