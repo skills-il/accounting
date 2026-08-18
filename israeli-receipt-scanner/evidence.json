@@ -75,13 +75,13 @@
       "claim_id": "tesseract-heb-exists",
       "claim": "Tesseract ships a Hebrew model (heb.traineddata) in the tesseract-ocr/tessdata repo.",
       "source_url": "https://github.com/tesseract-ocr/tessdata",
-      "raw_snippet": "rum Trust center Partners View all resources Open Source COMMUNITY GitHub Sponsors Fund open source developers PROGRAMS Security Lab Maintainer Community Accelerator GitHub Stars Archive Program REPOSITORIES Topics Trending Collections Enterprise ENTERPRISE SOLUTIONS Enterprise platform AI-powered developer platform AVAILABLE ADD-ONS GitHub Advanced Security Enterprise-grade security features Copilot for Business Enterprise-grade AI features Premium Support Enterprise-grade 24/7 support Pricing Search / Sign in Sign up Appearan",
+      "raw_snippet": "GitHub - tesseract-ocr/tessdata: Trained models with fast variant of the \"best\" LSTM models + legacy models · GitHub",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched; 11 of 16 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"main\"",
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
       "verified_at": "2026-08-18"
     },
     {

@@ -417,11 +417,13 @@
       "claim_id": "grantthornton-host",
       "claim": "Grant Thornton Israel (Fahn Kanne) publishes professional guidance on small-corporation reliefs and shelf-prospectus rules at grantthornton.co.il.",
       "source_url": "https://www.grantthornton.co.il",
-      "raw_snippet": "Grant Thornton Israel / פאהן קנה ושות', מחלקה מקצועית, הקלות לתאגידים קטנים והארכת תשקיף מדף.",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "פאהן קנה - משרד רואי חשבון מובילים בישראל | Grant Thornton",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "references/domain-checklist.md"
-      ]
+      ],
+      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "ifrs-israel-profile-url",
