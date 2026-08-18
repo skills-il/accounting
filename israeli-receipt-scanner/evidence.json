@@ -108,12 +108,14 @@
       "claim_id": "osek-hp-9-digits",
       "claim": "Israeli company / VAT numbers (H.P. / osek murshe) are 9 numeric digits; Israeli ID-type numbers use Luhn mod-10 check-digit validation.",
       "source_url": "https://lookuptax.com/docs/tax-identification-number/israel-tax-id-guide",
-      "raw_snippet": "Israeli companies registered with the Israeli Corporations Authority (Rashut HaTaagidim) receive a 9-digit company registration number. Format: 9 numeric digits with no internal separators or embedded meaning.",
-      "fetched_at": "2026-06-03T20:49:36Z",
+      "raw_snippet": "Mispar Zehut (Teudat Zehut) H.P. Company Number (TIN for Legal Entities) ​ Israeli companies registered with the Israeli Corporations Authority (Rashut HaTaagidim) receive a 9-digit company registration number — commonly referred to as the H.P. number (from the Hebrew Hevra Pratit , private company). This number serves as the corporate TIN. Format: 9 numeric digits with no internal separators or embedded meaning.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "business-meal-vat-nondeductible",
@@ -130,12 +132,14 @@
       "claim_id": "allocation-threshold-date-aware-bands",
       "claim": "The allocation-number threshold band is selected by the invoice's own date: for invoices dated in 2025, NIS 20,000; for January through May 2026, NIS 10,000; and from 1 June 2026, NIS 5,000.",
       "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
-      "raw_snippet": "Threshold by invoice date: for 2025, NIS 20,000 (before VAT); for January through May 2026, NIS 10,000 (before VAT); from 1 June 2026, NIS 5,000 (before VAT). Source statements: \"In 2025, allocation numbers are required for invoices over NIS 20,000 (before VAT).\" \"In 2026, the threshold will be reduced to NIS 10,000 (before VAT) from January 1.\" \"From June 1, 2026, the threshold will be further reduced to NIS 5,000 (before VAT).\"",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "In 2025, allocation numbers are required for invoices over NIS 20,000 (before VAT). In 2026, the threshold will be reduced to NIS 10,000 (before VAT) from January 1. From June 1, 2026, the threshold will be further reduced to NIS 5,000 (before VAT). Source: herzoglaw.co.il Note that this post was (partially) written with the help of AI. It is always useful to review the original source material, and where needed to obtain (local) advice from a specialist.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "buyer-name-required-for-input-VAT",

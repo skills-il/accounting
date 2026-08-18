@@ -56,13 +56,15 @@
       "claim_id": "allocation-threshold-10000",
       "claim": "The allocation-number threshold was NIS 10,000 or more (before VAT) from 1 January 2026 until 31 May 2026. It is superseded by the NIS 5,000 threshold from 1 June 2026 and is retained here only as the historical figure for invoices dated in that window.",
       "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
-      "raw_snippet": "ינואר 2026 | 10,000 ש\"ח",
-      "fetched_at": "2026-07-26T22:44:12Z",
+      "raw_snippet": "תאריך גובה החשבונית עבורה נדרש מספר הקצאה מאי 2024 25,000 ₪ ינואר 2025 20,000 ₪ ינואר 2026 10,000 ש״ח יוני 2026 ואילך 5,000 ש״ח מי חייב בדיווח ומי פטור? הרפורמה רלוונטית לכל עסק שמפיק חשבוניות מס או חשבוניות מס קבלה: עוסקים מורשים , שותפויות וחברות בע״מ . עוסקים פטורים , בגלל שמפיקים רק קבלות ולא חשבוניות – פטורים מהעניין ולא צריכים לקבל מספרי הקצאה. ומה לגבי עמותות ומוסדות ללא כוונת רווח?",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/israeli-tax-categories.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"10,000\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "allocation-threshold-5000",
@@ -262,14 +264,16 @@
     },
     {
       "claim_id": "url-sheets-api",
-      "claim": "The Google Sheets API documentation describes the spreadsheets.values methods and batchUpdate.",
+      "claim": "The Google Sheets API documentation describes the spreadsheets.values methods and batchUpdate. Covered references: The Google Sheets API is a RESTful interface that lets you read and modify a spreadsheet's data.",
       "source_url": "https://developers.google.com/sheets/api",
-      "raw_snippet": "The Google Sheets API is a RESTful interface that lets you read and modify a spreadsheet's data.",
-      "fetched_at": "2026-06-26T00:10:30Z",
+      "raw_snippet": "Google Sheets API Overview | Google for Developers Skip to main content Google Workspace Home Google Sheets All products Google Workspace apps Admin console Cloud Search Gmail Google Calendar Google Chat Google Classroom",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "navigational reference; snippet replaced with the cited page's own opening text so the entry can be falsified",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "url-apps-script",

@@ -201,23 +201,27 @@
       "claim_id": "factual-figures-unit-variants",
       "claim": "Verified statutory figures, expressed in every unit label used across the skill text. Mobile-phone floor 1,380 ILS / 1,380 NIS / 115 ILS / 115 NIS / 115 ש\"ח per month. Landline threshold 2,700 ILS / 2,700 NIS within a 26,600 NIS ceiling. Gifts 240 NIS in Israel. Osek patur ceiling NIS 122,833 for 2026 and NIS 120,000 for 2024-2025. iMac depreciation example 2,833 ILS per year (8,500 at 33%).",
       "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
-      "raw_snippet": "1,380 ILS 1,380 NIS 115 ILS 115 NIS 115 ש\"ח 2,700 ILS 2,700 NIS 26,600 NIS 240 NIS NIS 122,833 NIS 120,000 1,200 ILS 1,200 ש\"ח 2,833 ILS 2,833 ש\"ח",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "6. טלפון נייד א. הוצאות בגין החזקה של טלפון נייד, החלק הלא מוכר השנתי הינו בגובה של 1,380 ש”ח, או בגובה מחצית ההוצאות לפי הנמוך מביניהם. מעבר לסכום זה יוכרו הוצאות החזקת הטלפון הנייד. ב. על אף האמור, הוצאות מעביד בשל טלפון נייד שהועמד לרשות העובד יוכרו במלואן, בתנאי שבשכר העובד נזקף “שווי שימוש” בהתאם. 7. חניה הוצאות חניה שאינה במקום העיסוק או הסמוך אליו יכללו במסגרת הוצאות אחזקת רכב שהתרתן היא בהתאם להוראות שבתקנות מס הכנסה (ניכוי הוצאות רכב) התשנ”ה – 1995. 8.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"1,380\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "illustrative-example-amounts",
       "claim": "Illustrative, user-provided example amounts used only inside the worked Examples section (not external tax facts): a freelancer's January expenses and a home-office case. These are arithmetic inputs and derived deductible totals, not statutory figures. Amounts in ILS and ש\"ח: 150 ILS 150 ש\"ח 85 ILS 85 NIS 85 ש\"ח 180 ILS 180 ש\"ח 90 ILS 90 ש\"ח 450 ILS 450 ש\"ח 350 ILS 350 ש\"ח 800 ILS 800 ש\"ח 120 ILS 120 ש\"ח 202.50 ILS 202.50 ש\"ח 2,912.50 ILS 2,912.50 ש\"ח 422.50 ILS 422.50 ש\"ח 3,335 ILS 3,335 ש\"ח 5,000 ILS 5,000 ש\"ח 400 ILS 400 ש\"ח 8,500 ILS 8,500 ש\"ח 220 ILS 220 ש\"ח 250 ILS 250 ש\"ח 300 ILS 300 ש\"ח 95 ILS 95 ש\"ח 750 ILS 750 ש\"ח 60 ILS 60 ש\"ח 40 ש\"ח 500 ILS 500 ש\"ח 1,200 ILS.",
       "source_url": "https://github.com/skills-il/accounting",
-      "raw_snippet": "150 ILS 150 ש\"ח 85 ILS 85 NIS 85 ש\"ח 180 ILS 180 ש\"ח 90 ILS 90 ש\"ח 450 ILS 450 ש\"ח 350 ILS 350 ש\"ח 800 ILS 800 ש\"ח 120 ILS 120 ש\"ח 202.50 ILS 202.50 ש\"ח 2,912.50 ILS 2,912.50 ש\"ח 422.50 ILS 422.50 ש\"ח 3,335 ILS 3,335 ש\"ח 5,000 ILS 5,000 ש\"ח 400 ILS 400 ש\"ח 8,500 ILS 8,500 ש\"ח 220 ILS 220 ש\"ח 250 ILS 250 ש\"ח 300 ILS 300 ש\"ח 95 ILS 95 ש\"ח 750 ILS 750 ש\"ח 60 ILS 60 ש\"ח 40 ש\"ח 500 ILS 500 ש\"ח 1,200 ILS",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "perties Stars 10 stars Watchers 2 watching Forks 6 forks Report repository Releases Packages Used by Contributors Languages Footer © 2026 GitHub, Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"202\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "reference-table-urls",

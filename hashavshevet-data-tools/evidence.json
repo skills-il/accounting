@@ -73,12 +73,14 @@
       "claim_id": "openformat-a000-ini",
       "claim": "A000 is the leading/header record in INI.TXT (NOT in BKMVDATA.TXT); INI.TXT carries the leading record plus summary records with per-record-type control counts that must equal the total in the Z900 closing record.",
       "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
-      "raw_snippet": "צריך להיות זהה לשדה \"סך רשומות כולל\" ברשומת סגירה",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "את מספר הספרות לאחר הנקודה ) .אין להוסיף את הנקודה ( דוגמאות: ) :X(3שדה אלפאנומרי באורך 3תווים \" -אאא\" ) :9(4שדה נומרי באורך 4תווים \"0005\" ;\"1234\" - :x9(5)v99שדה אלפאנומרי המתאר סכום ,שלילי או חיובי ,באורך 5תווים למספר השלם ו 2 -תווים נוספים לספרות לאחר הנקודה -12345.65 .יוצג בקובץ;\"-1234565\" : 1245.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"000\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "bkmv-zip-three-files",
@@ -152,12 +154,14 @@
       "claim_id": "herp-bkmv-guide",
       "claim": "Hashavshevet H-ERP publishes a BKMV export guide PDF; the export must send only the bkmvdata file and the ini file.",
       "source_url": "https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf",
-      "raw_snippet": "INI.TXT .1 - נתונים כלליים על בית העסק ועל תהליך הפקת הנתונים",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "חשבשבת חלונות ERP יצוא במבנה אחיד BKMV - רשימת הקבצים הנוצרים:  קבצים המיועדים להעברה לרשות המסים או לרואה החשבון: - INI.TXT .1נתונים כלליים על בית העסק ועל תהליך הפקת הנתונים. – BKMVDATA.TXT .2הנתונים עצמם :נתוני העסק ,נתוני הנהח\"ש ,מלאי וקופה.  קובץ המכיל אינפורמציה למשתמש: – README.TXT .3פרטים כלליים :בית העסק עבורו הופקו הקבצים ,טווח התאריכים ,שורת סיכום עבור כל סוג רשומה ,פרטי התוכנה שהפיקה את הקובץ ותאריך ושעת ההפקה.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "hashavshevet-wizsoft-herp",

@@ -88,14 +88,16 @@
     },
     {
       "claim_id": "companies-law-171-172",
-      "claim": "Under the Companies Law 5759-1999, Section 171 governs a reporting corporation maintaining accounts and preparing financial statements per the Securities Law; Section 172 governs financial statements of a company that is NOT a reporting corporation. The financial-statements review committee is governed by Section 171 plus the Companies Regulations (Conditions for the Process of Approving Financial Statements) 2010.",
+      "claim": "Under the Companies Law 5759-1999, Section 171 governs a reporting corporation maintaining accounts and preparing financial statements per the Securities Law; Section 172 governs financial statements of a company that is NOT a reporting corporation. The financial-statements review committee is governed by Section 171 plus the Companies Regulations (Conditions for the Process of Approving Financial Statements) 2010. Also covers: סעיף 171 סעיף 172",
       "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
-      "raw_snippet": "סעיף 171. (א) חברה שהיא תאגיד מדווח תנהל חשבונות, וכמו כן תערוך דוחות כספיים לפי חוק ניירות ערך. סעיף 172. (א) חברה שאינה תאגיד מדווח, תערוך לכל שנה דוחות כספיים, שיכללו מאזן ליום 31 בדצמבר",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "(ב) אין בהוראת סעיף קטן (א) כדי למנוע קיומה של אחריות של רואה החשבון המבקר לפי כל דין. פרק שישי: דוחות כספיים דוחות כספיים 171. (א) חברה שהיא תאגיד מדווח תנהל חשבונות, וכמו כן תערוך דוחות כספיים לפי חוק ניירות ערך. (ב) חברה שאינה תאגיד מדווח תנהל חשבונות, וכמו כן תערוך דוחות כספיים כאמור בחוק זה. (ג) הדוחות הכספיים יאושרו בידי הדירקטוריון, ייחתמו בשמו, ויובאו לפני האסיפה השנתית.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "source fetched and the passage copied verbatim from the cited page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "companies-law-audit-committee-a",
