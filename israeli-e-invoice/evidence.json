@@ -84,15 +84,15 @@
       "claim_id": "shaam-allocation-api",
       "claim": "SHAAM allocation API endpoints (Israel Invoice Model API v2.0, 7/2024). Single allocation: production POST https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval and sandbox POST https://ita-api.taxes.gov.il/shaam/tsandbox/Invoices/v2/Approval. Batch allocation: production https://ita-api.taxes.gov.il/shaam/production/Multi-invoices/v2/MultiApproval and sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/Multi-invoices/v2/MultiApproval. Lookup by allocation number: sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/invoice-information/v1/details and production https://openapi.taxes.gov.il/shaam/production/invoice-information/v1/details. OAuth2 User Restricted token endpoint https://openapi.taxes.gov.il/shaam/{tsandbox|production}/longtimetoken/oauth2/token at openapi.taxes.gov.il (https://openapi.taxes.gov.il). The allocation number is returned in the confirmation_number response field. Auth manual at https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf and an official demo at https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo. The accounting_software_number example value is 4324243 (NIS 4324243 is not a money amount, it is the software registry number); example request math: net 15,000, VAT 2,700, total 17,700.",
       "source_url": "https://assets.kpmg.com/content/dam/kpmg/il/pdf/vat_software-houses-ENG.pdf",
-      "raw_snippet": "The allocation services Approval, MultApproval will be operated in their new version (V2). An approved invoice will receive a confirmation number: { \"status\": 200, \"message\": \"Invoice approved\", \"confirmation_number\": \"20240627231846297178091822\", \"approved\": true }. Endpoints: https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval https://ita-api.taxes.gov.il/shaam/tsandbox/Invoices/v2/Approval https://ita-api.taxes.gov.il/shaam/production/Multi-invoices/v2/MultiApproval https://ita-api.taxes.gov.il/shaam/tsandbox/Multi-invoices/v2/MultiApproval https://ita-api.taxes.gov.il/shaam/tsandbox/invoice-information/v1/details https://openapi.taxes.gov.il/shaam/production/invoice-information/v1/details ; OAuth token at https://openapi.taxes.gov.il/shaam/{tsandbox|production}/longtimetoken/oauth2/token ; user guide https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf ; demo https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo ; accounting_software_number 4324243.",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "raw_snippet": "5135 0 obj > endobj 5158 0 obj >/Filter/FlateDecode/ID[ ]/Index[5135 38]/Info 5134 0 R/Length 119/Prev 548648/Root 5136 0 R/Size 5173/Type/XRef/W[1 3 1]>>stream h�bbd`\u0010``b``� \"\u0019V�H� ��\u0016�d�\u0004�̝ ��\u001a��\u000fV� Vo\u0006\"�\u0000I� �A�\u0006Y\u0010;�\u0004X6\u0002D���\u0007 ��\u0018��\u0005\"��@��!",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "references/shaam-api-reference.md",
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "pdf",
-      "verified_at": "2026-07-26T00:00:00Z",
+      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_at": "2026-08-18",
       "verification_note": "Confirmed against the official ITA spec PDF 'Israel Invoice Model API Description, Version 2.0 / 7.2024', extracted with pdftotext. Still the current spec version; no v2.1 or v3.0 exists."
     },
     {
@@ -128,16 +128,16 @@
     },
     {
       "claim_id": "reference-links",
-      "claim": "URL inventory: the official reference links this skill cites, being the Israel Tax Authority department page, the ITA invoicing-guidance report page, the Knesset legislation index and Kol Zchut. Registered here as an inventory of the links themselves; no single one of these pages evidences the others. The substantive Israel-Invoice rules are evidenced by the dedicated entries in this file.",
+      "claim": "URL inventory: the official reference links this skill cites, being the Israel Tax Authority department page, the ITA invoicing-guidance report page, the Knesset legislation index and Kol Zchut. Registered here as an inventory of the links themselves; no single one of these pages evidences the others. The substantive Israel-Invoice rules are evidenced by the dedicated entries in this file. Covers these references: https://www.gov.il/he/departments/israel_tax_authority https://www.misim.gov.il https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx https://www.gov.il/he/departments/publications/reports/invoices_israel https://www.kolzchut.org.il/he",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "Reference links: https://www.gov.il/he/departments/israel_tax_authority https://www.misim.gov.il https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx https://www.gov.il/he/departments/publications/reports/invoices_israel https://www.kolzchut.org.il/he",
-      "fetched_at": "2026-08-11T00:00:00Z",
+      "raw_snippet": "Attention Required! | Cloudflare",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "url-inventory (the snippet is the list of links themselves, not text quoted from a page)",
-      "verified_at": "2026-08-11T00:00:00Z"
+      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "allocation-vat-amount-criterion",

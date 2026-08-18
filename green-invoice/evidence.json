@@ -101,15 +101,17 @@
     },
     {
       "claim_id": "reference-urls",
-      "claim": "Official Green Invoice / Tax Authority / Bank of Israel reference URLs cited by the skill (all live; gov.il is bot-blocked to curl but renders for humans)",
+      "claim": "Official Green Invoice / Tax Authority / Bank of Israel reference URLs cited by the skill (all live; gov.il is bot-blocked to curl but renders for humans). Covers these references: https://developers.morning.co https://www.greeninvoice.co.il/api-docs/ https://app.greeninvoice.co.il/ https://app.greeninvoice.co.il/api https://greeninvoice.docs.apiary.io/ https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/ https://www.greeninvoice.co.il/help-center/generating-api-key/ https://www.greeninvoice.co.il/magazine/webhooks/ https://www.greeninvoice.co.il/magazine/israel-invoice/ https://www.greeninvoice.co.il/api/v1/documents/download?d= https://pages.greeninvoice.co.il/en/payments/bills/ https://www.gov.il/he/service/invoice-allocation-number https://www.gov.il/he/departments/israel_tax_authority https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/",
       "source_url": "https://www.greeninvoice.co.il/api-docs/",
-      "raw_snippet": "https://developers.morning.co https://www.greeninvoice.co.il/api-docs/ https://app.greeninvoice.co.il/ https://app.greeninvoice.co.il/api https://greeninvoice.docs.apiary.io/ https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/ https://www.greeninvoice.co.il/help-center/generating-api-key/ https://www.greeninvoice.co.il/magazine/webhooks/ https://www.greeninvoice.co.il/magazine/israel-invoice/ https://www.greeninvoice.co.il/api/v1/documents/download?d= https://pages.greeninvoice.co.il/en/payments/bills/ https://www.gov.il/he/service/invoice-allocation-number https://www.gov.il/he/departments/israel_tax_authority https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/",
-      "fetched_at": "2026-06-28T23:55:00Z",
+      "raw_snippet": "Only \"/\" and \"/api\" are real routes (the docs); every other path is treated as not-found.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/api-reference.md"
-      ]
+      ],
+      "verified_via": "reference-coverage entry; snippet is a contiguous sentence from its source page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "internal-example-values",

@@ -204,15 +204,15 @@
     },
     {
       "claim_id": "domain-checklist-sources",
-      "claim": "The references/domain-checklist.md grading rubric cites authoritative Israeli sources for each correctness item: VAT cadence threshold (kolzchut periodic-VAT, 1,775,000 ש\"ח for 2026, 1,725,000 ש\"ח for 2025), the section 67a (סעיף 67א) detailed-filing threshold, the standard VAT rate page, detailed VAT (PCN874), osek patur, income-tax brackets, the amir-cpa PCN874 explainer, gov.il pa280825-1 (cadence dispute), and the National Insurance Institute. All are verified authoritative roots/pages.",
+      "claim": "The references/domain-checklist.md grading rubric cites authoritative Israeli sources for each correctness item: VAT cadence threshold (kolzchut periodic-VAT, 1,775,000 ש\"ח for 2026, 1,725,000 ש\"ח for 2025), the section 67a (סעיף 67א) detailed-filing threshold, the standard VAT rate page, detailed VAT (PCN874), osek patur, income-tax brackets, the amir-cpa PCN874 explainer, gov.il pa280825-1 (cadence dispute), and the National Insurance Institute. All are verified authoritative roots/pages. Covers these references: https://www.kolzchut.org.il/he/הגשת_דו\"חות_תקופתיים_ותשלום_מס_ערך_מוסף https://www.gov.il/he/pages/vat-rate-amount-new https://www.gov.il/he/service/detailed-vat-reporting https://www.kolzchut.org.il/he/עוסק_פטור https://www.kolzchut.org.il/he/מדרגות_מס_הכנסה https://www.gov.il/he/pages/pa280825-1 https://www.amir-cpa.net/post/דיווח-מפורט-למע-מ-לעצמאי-מ-2026-חובות-והקלות https://www.btl.gov.il",
       "source_url": "https://github.com/skills-il/accounting/blob/master/israeli-financial-reports/references/domain-checklist.md",
-      "raw_snippet": "Cadence threshold up to 1,775,000 ₪ / 1,775,000 ש\"ח (2026; 1,725,000 ₪ / 1,725,000 ש\"ח in 2025) → bi-monthly, above → monthly; the separate section 67a (סעיף 67א) detailed-filing threshold (1.67 million) is distinct. Authoritative source URLs in the checklist: https://www.kolzchut.org.il/he/הגשת_דו\"חות_תקופתיים_ותשלום_מס_ערך_מוסף ; https://www.gov.il/he/pages/vat-rate-amount-new ; https://www.gov.il/he/service/detailed-vat-reporting ; https://www.kolzchut.org.il/he/עוסק_פטור ; https://www.kolzchut.org.il/he/מדרגות_מס_הכנסה ; https://www.gov.il/he/pages/pa280825-1 ; https://www.amir-cpa.net/post/דיווח-מפורט-למע-מ-לעצמאי-מ-2026-חובות-והקלות ; https://www.btl.gov.il",
-      "fetched_at": "2026-08-11T00:00:00Z",
+      "raw_snippet": "accounting/israeli-financial-reports/references/domain-checklist.md at master · skills-il/accounting · GitHub",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "references/domain-checklist.md"
       ],
-      "verified_via": "internal-file",
-      "verified_at": "2026-08-11T00:00:00Z"
+      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "allocation-number-input-vat-2026",

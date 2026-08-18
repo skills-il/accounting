@@ -87,15 +87,15 @@
     },
     {
       "claim_id": "israeli-bank-scrapers-ref",
-      "claim": "israeli-bank-scrapers library repository, cited as the reference for adding bank types and troubleshooting scraper configuration. It is a Node/JS library (createScraper API), not a CLI. Returns HTTP 200.",
+      "claim": "israeli-bank-scrapers library repository, cited as the reference for adding bank types and troubleshooting scraper configuration. It is a Node/JS library (createScraper API), not a CLI. Returns HTTP 200. Covers these references: https://github.com/tomerh2001/israeli-banks-actual-budget-importer) https://actualbudget.com/), https://github.com/tomyweiss/clarify-expences) https://github.",
       "source_url": "https://github.com/eshaham/israeli-bank-scrapers",
-      "raw_snippet": "- [Actual Budget Importer](https://github.com/tomerh2001/israeli-banks-actual-budget-importer) - A tool to import your banks data into [Actual Budget](https://actualbudget.com/), a free and open source financial manager. - [Clarify](https://github.com/tomyweiss/clarify-expences) - A full-stack personal finance app for tracking income and expenses. - [Asher MCP](https://github.",
+      "raw_snippet": "GitHub - eshaham/israeli-bank-scrapers: Provide scrapers for all major Israeli banks and credit card companies · GitHub",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"200\"; snippet replaced with the page's own wording around it",
+      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
       "verified_at": "2026-08-18"
     },
     {
