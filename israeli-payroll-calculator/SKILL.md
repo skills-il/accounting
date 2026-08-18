@@ -1,0 +1,240 @@
+---
+name: israeli-payroll-calculator
+description: Calculate Israeli payroll including income tax, Bituach Leumi (National Insurance), health tax, pension contributions, shovi rechev (company-car use value), and net salary. Use when user asks to calculate salary, "tlush maskoret", payroll deductions, "bruto to neto", employer cost, tax credits (nekudot zikui), company car impact on salary, or needs help understanding Israeli payslip items. Covers employees, freelancers (atzmai), and employer cost calculations. This skill starts from an AGREED GROSS. Do NOT use it to work out what gross is owed from a timesheet, or to check overtime, weekly-rest premium or a missing hours record (use israeli-attendance-wage-checker), and do NOT use it for US, UK, or other countries' payroll calculations.
+license: MIT
+allowed-tools: Bash(python:*)
+compatibility: Works with Claude Code, Claude.ai, Cursor. No network access required.
+---
+
+# Israeli Payroll Calculator
+
+## Instructions
+
+**Scope check before anything else.** This skill converts an AGREED GROSS into net. If the user does not yet know the gross, because the question is really about hours worked, overtime tiers, Shabbat premium, paid versus unpaid breaks, or an employer who kept no attendance record, that is a different computation and it comes first: `israeli-attendance-wage-checker` produces the gross owed from a timesheet, and this skill takes it from there.
+
+
+### Step 0: Sanity-check the gross against the minimum wage
+
+Before computing anything, check the gross is legal. The monthly minimum wage is
+6,247.67 NIS from 1.4.2025 and 6,443.85 NIS from 1.4.2026, with an hourly
+minimum of 35.40 NIS from 1.4.2026. A full-time gross below the figure in force
+for the month being computed is either a part-time position, an error in the
+input, or an underpayment worth flagging to the user before the arithmetic
+starts.
+
+### Step 1: Gather Employee Information
+Collect from user:
+- **Gross monthly salary** (bruto, cash) in NIS
+- **Tax credit points** (nekudot zikui): Default 2.25 for male resident, 2.75 for female
+- **Shovi rechev** (company-car use value, if any): Monthly NIS value. See Step 1.5.
+- **Other taxable allowances** (shovi telephone, meals above exemption, etc.)
+- **Pension arrangement:** Yes/No, contribution percentages
+- **Employment type:** Employee (sachir), Freelancer (atzmai)
+- **Age:** Affects NI rates (under/over 18, retirement age)
+
+### Step 1.5: Identify Taxable Imputed Income (shovi rechev, etc.)
+
+Shovi rechev and other employer-provided benefits are **taxable imputed income**, not a perk. They increase the tax and NI base but are NOT received as cash. This is the single most common source of wrong payroll calculations.
+
+Taxable base for income tax and bituach leumi:
+```
+taxable_gross = cash_gross + shovi_rechev + other_imputed_income
+```
+
+Pension base (does NOT include shovi rechev):
+```
+pension_base = cash_gross
+```
+
+Cash received (net):
+```
+net_cash = cash_gross - income_tax(taxable_gross)
+                     - bituach_leumi(taxable_gross)
+                     - health_tax(taxable_gross)
+                     - pension_employee(cash_gross)
+```
+
+**Common error:** Treating shovi rechev as a benefit that increases net salary. In reality it is the opposite: because it adds to the tax base while not being received as cash, shovi rechev *decreases* net pay. The employee is effectively paying tax on the use of the car.
+
+Reference: shovi rechev is defined in Income Tax Regulations (Shovi Rechev Hatamad). Value is published monthly by the Tax Authority based on the vehicle's list price and group.
+
+### Step 2: Calculate Income Tax
+Apply progressive tax brackets to the **taxable gross** (cash gross + shovi rechev + other imputed income):
+
+1. Calculate annual equivalent: `taxable_gross * 12`
+2. Apply brackets progressively (see references/tax-brackets.md). Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) widened brackets 3, 4, 5: 20% now runs to 19,000 NIS/month, 31% to 25,100, 35% from 25,101. The earlier "frozen 2025-2027" freeze no longer applies for 2026.
+3. Subtract tax credit points value: `credit_points * 242 NIS/month`
+4. Subtract pension tax credit (zikui gemel), see Step 2.5.
+5. Monthly tax = `max(0, bracketed_tax - credit_points_value - pension_credit)`
+
+IMPORTANT: Tax credits cannot create negative tax (no refund through payroll).
+
+### Step 2.5: Calculate Pension Tax Credit (Zikui Gemel, Section 45a)
+
+Employees who contribute to a pension fund get a **35% tax credit on their pension contribution**, separate from credit points. This is a frequently missed item: skipping it overstates tax by up to ~238 NIS/month.
+
+Rule (2026):
+```
+eligible_contribution = min(
+    actual_employee_pension_contribution,
+    7% * min(insured_salary, 9,700 NIS/month)
+)
+pension_credit = 35% * eligible_contribution
+```
+
+- Qualifying-salary ceiling (2026): **9,700 NIS/month**
+- Max qualifying contribution: 7% × 9,700 = **679 NIS/month**
+- Max monthly credit: 35% × 679 = **237.65 NIS/month**
+- Applied alongside credit points. Tax cannot go below zero.
+
+Example (15,000 NIS gross, 6% pension): actual contribution 900 NIS; capped at 679 (since 7% × 9,700 = 679); credit = 237.65 NIS/month.
+
+Example (8,000 NIS gross, 6% pension): actual contribution 480 NIS; cap here is 7% × 8,000 = 560 (below 679); eligible = 480; credit = 168 NIS/month.
+
+See `references/credit-points.md` for the full rule, including the additional 5% / 485 NIS option for uninsured salary.
+
+### Step 3: Calculate Bituach Leumi (National Insurance)
+
+NI and health tax apply to the **taxable gross** (cash gross + shovi rechev + other imputed income), capped at the max insurable salary. Two brackets: a reduced tier up to 60% of average wage, and a full tier from there up to the ceiling.
+
+For employees (2026, per Amendment 252):
+- On first 7,703 NIS: 1.04% NI + 3.23% health = **4.27%**
+- On amount 7,704 to 51,910 NIS: 7.0% NI + 5.17% health = **12.17%**
+- Maximum insurable salary: 51,910 NIS/month
+- Salary above the ceiling is not subject to NI or health tax.
+
+**The 4.27% / 12.17% is only the standard employee aged 18 to retirement.** The employee deduction is **0%** for an employee under 18 or one receiving an old-age pension, and **3.93% / 10.03%** for a working pensioner aged 67-70 not yet receiving the pension. Applying the flat rate to a minor or a pensioner over-charges them by the entire deduction. See `references/bituach-leumi-rates.md` for the full age/pension table.
+
+(2025 reference values for comparison: reduced 3.5% up to 7,522 NIS, full 12.0% up to 51,910. The reduced-tier rate nearly tripled in 2026.)
+
+### Step 4: Calculate Pension Deductions
+
+Pension applies to the **cash gross only** (not to shovi rechev). Mandatory for most employees since 2017:
+- Employee: 6% of cash gross (up to pension ceiling)
+- Employer: 6.5% + 6% severance (6% is the mandatory minimum severance under the pension expansion order; an employer under a full Section 14 arrangement deposits 8.33% instead, which fully discharges the statutory severance liability)
+
+The employee's contribution also generates the 35% tax credit computed in Step 2.5.
+
+**Keren hishtalmut (ask about it, do not silently omit it).** Where the employer
+offers a study fund, the employee side is typically 2.5% of salary and the
+employer side 7.5%, and the employee 2.5% is a real cash deduction that lands on
+the payslip. It is the largest ordinary deduction the default net calculation
+leaves out, so a net computed without it reads high for anyone who has one. It is
+not statutory, so do not assume it: ask whether the employee has a keren
+hishtalmut, and if so include the 2.5% in Step 5 and say that you did. Employer
+deposits are tax-exempt up to a salary ceiling that changes annually; above that
+ceiling the excess employer deposit becomes taxable income to the employee.
+
+### Step 5: Calculate Net Salary (Neto)
+```
+Net Cash = Cash Gross
+         - Income Tax (on taxable_gross)
+         - Bituach Leumi (on taxable_gross)
+         - Health Tax (on taxable_gross)
+         - Pension (6% of cash gross)
+         - Keren hishtalmut (2.5% of cash gross, ONLY if the employee has one)
+         - Other deductions (union dues, loans, etc.)
+```
+
+Shovi rechev does NOT appear as an addend here. The employee never received it as cash; only the tax effect flows through.
+
+### Step 6: Calculate Employer Total Cost (if requested)
+
+Employer NI applies to the taxable gross (includes shovi rechev). Pension and severance apply to cash gross.
+
+```
+Employer Cost = Cash Gross
+              + Employer NI (4.51% reduced / 7.6% full, on taxable_gross capped at 51,910)
+              + Employer Pension (6.5% of cash gross)
+              + Employer Severance (6% of cash gross)
+              + Vacation accrual
+              + Sick leave accrual
+```
+
+Note: In Israel, health tax is an employee-only deduction; there is no separate employer health component in the mandatory payroll stack.
+
+### Step 7: Present Clear Breakdown
+Present results as a payslip-style table. When shovi rechev is present, show the taxable gross row so the user understands why the deductions look larger than cash-gross alone would imply.
+
+| Item | Amount (NIS) |
+|------|-------------|
+| Gross Salary (cash) | XX,XXX |
+| Shovi Rechev (taxable, not cash) | +X,XXX |
+| **Taxable Gross** | **XX,XXX** |
+| Income Tax | -X,XXX |
+| Bituach Leumi | -XXX |
+| Health Tax | -XXX |
+| Pension (employee) | -X,XXX |
+| **Net Salary (cash)** | **XX,XXX** |
+
+CAVEAT: Always note "This is an estimate. Actual amounts may vary based on specific tax rulings, additional credits, employer agreements, or collective bargaining terms. Consult a certified Israeli accountant (roeh cheshbon) for exact figures."
+
+## Examples
+
+### Example 1: Standard Employee, No Company Car
+User says: "Calculate net salary for 20,000 NIS gross, male, no special credits"
+Result: Detailed breakdown showing 14,530.69 NIS net using 2026 rates (20,000 gross, 2.25 credit points, 6% pension).
+
+### Example 2: Employer Cost
+User says: "How much does it cost an employer to pay 15,000 NIS gross?"
+Result: Total employer cost approximately 17,500-18,500 NIS including NI, pension, and severance.
+
+### Example 3: Gross + Company Car (shovi rechev)
+User says: "I earn 22,000 NIS + company car with shovi rechev of 3,500. What's my net?"
+
+Correct flow:
+1. Taxable gross = 22,000 + 3,500 = 25,500 NIS
+2. Income tax applies to 25,500 (progressive brackets per Amendment 288, less 2.25 credit points and 35% pension credit)
+3. Bituach Leumi applies to 25,500 (two brackets: 4.27% reduced + 12.17% full per Amendment 252)
+4. Pension 6% applies to 22,000 only (not to shovi rechev)
+5. Net cash = 22,000 - income_tax - NI - health - pension ≈ 14,000 NIS (with gemel credit), or ~13,400-13,500 NIS if the gemel credit is omitted (common error)
+
+Wrong answer to avoid: adding the 3,500 shovi rechev to net. The employee never receives it as cash; the employer provides the car. Car value raises deductions, it does NOT raise take-home pay.
+
+## Bundled Resources
+
+### Scripts
+- `scripts/calculate_payroll.py`, Calculates Israeli gross-to-net salary with progressive income tax brackets, Bituach Leumi, health tax, pension contributions, and shovi rechev (company-car use value) as taxable imputed income. Supports employee and employer cost views. Run: `python scripts/calculate_payroll.py --help`. Use `--shovi-rechev <NIS>` to model a company car.
+
+### References
+- `references/tax-brackets.md`, Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) unfroze and widened brackets 3, 4, 5 for 2026. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
+- `references/bituach-leumi-rates.md`, Bituach Leumi (National Insurance) and health tax rates for employees and employers for 2026, covering the reduced and full brackets and the monthly insurable salary ceiling. Always verify the current-year values against btl.gov.il before relying on exact amounts.
+- `references/credit-points.md`, Israeli tax credit points (nekudot zikui) value and full eligibility table covering base credits, gender, new immigrants, children, single parents, and disability. Also documents the Section 45a pension tax credit (zikui gemel, 35% of pension contribution up to 679 NIS/month in 2026). Consult when determining total credits beyond the defaults in Step 1.
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| רשות המיסים (Tax Authority) | https://www.gov.il/he/service/income-tax-calculator | Official income tax calculator (authoritative for current-year rates) |
+| Income Tax brackets (Kolzchut) | https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94 | Current monthly and annual brackets, sourced from legislation |
+| Bituach Leumi employee rates | https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx | Employee/employer NI and health tax rates, ceilings |
+| Credit points (Nekudot Zikui) | https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94 | Credit point value and eligibility tables |
+| Shovi rechev (Hilan FAQ) | https://www.hilan.co.il/%D7%9E%D7%A8%D7%9B%D7%96-%D7%99%D7%93%D7%A2/%D7%91%D7%A1%D7%99%D7%A1-%D7%99%D7%93%D7%A2/%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A0%D7%A4%D7%95%D7%A6%D7%95%D7%AA/%D7%A8%D7%9B%D7%91-%D7%A6%D7%9E%D7%95%D7%93/ | How shovi rechev is applied to the payslip (tax base impact, not pension base) |
+
+## Gotchas
+
+- **Shovi rechev is taxable imputed income, not a benefit.** A company car adds to the income-tax and bituach-leumi base but is NOT received in cash. Agents commonly add shovi rechev to net salary instead of adding it to the tax base. This flips the sign of the impact and can overstate net pay by thousands of shekels. Pension base does NOT include shovi rechev.
+- **Amendment 288 (March 2026) unfroze and widened brackets.** The "frozen 2025-2027" line repeated in many older payroll references is out of date for 2026: the 20% bracket runs to 19,000 (was 16,150), 31% to 25,100 (was 22,440), 35% from 25,101. Values in training data that cite 16,150/22,440 as ceilings are wrong for 2026. Amendment 252 (Jan 2026) raised Bituach Leumi reduced-tier rates too: employee 0.4% → 1.04%, employer 3.55% → 4.51%, and the reduced threshold to 7,703.
+- **Zikui gemel (pension tax credit, sec. 45a) is frequently forgotten.** A 35% credit on the employee pension contribution (up to 7% × min(salary, 9,700) = 679 NIS/month) is applied on the payslip. Most payroll software computes it automatically, but agents hand-calculating tax often omit it and overstate monthly tax by up to ~238 NIS.
+- **Keren Hishtalmut** (2.5% employee + 7.5% employer) is tax-exempt up to a ceiling that changes yearly. Not included in this calculator's default flow. Add manually if the employer offers it.
+- **Mandatory pension since 2017:** 6% employee + 6.5% employer minimum. Agents may skip pension or use pre-2017 rates (5%+5%).
+- **Bituach Leumi ceiling caps deductions.** Salary above 51,910 NIS/month (2026) is not subject to NI or health tax. Agents may apply the full rate to the entire salary instead of capping.
+- **Credit points (nekudot zikui):** Base 2.25 for a resident; women get +0.5. Children add a lot and are age-banded per child (year of birth 2.5; ages 1-2 4.5; age 3 3.5; ages 4-5 2.5; ages 6-17 2 for the mother and 1 for the father), and new immigrants, single parents, disabled status, and academic degrees add more. Agents may omit them entirely and overstate the tax burden. These are separate from and stack with the pension credit above. See `references/credit-points.md` for the full per-age, per-parent table.
+
+## Troubleshooting
+
+### Error: "Net salary is way off for an employee with a company car"
+Cause: Shovi rechev was treated as a benefit added to net, or was omitted from the tax base.
+Solution: Shovi rechev adds to the taxable gross (for income tax and NI), not to cash received. Use `--shovi-rechev <NIS>` when running `calculate_payroll.py`. See Step 1.5 and Example 3.
+
+### Error: "Tax brackets may be outdated"
+Cause: Brackets do update, and sometimes mid-year. Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) widened brackets 3-5 and invalidated the earlier "frozen 2025-2027" framing. Amendment 252 (Jan 2026) simultaneously raised the Bituach Leumi reduced-tier rate and threshold.
+Solution: Verify current brackets at the Tax Authority website (gov.il/he/service/income-tax-calculator). Bituach Leumi tiers and the max insurable salary update annually and should be cross-checked against btl.gov.il, see `references/bituach-leumi-rates.md` and `references/tax-brackets.md` for the values used in this skill.
+
+### Error: "Tax is higher than my payslip shows"
+Cause: Zikui gemel (pension credit, sec. 45a) was omitted from the calculation. Payroll software applies this automatically; manual calculators usually forget it.
+Solution: Subtract the pension tax credit after bracket-based tax and credit points. See Step 2.5 and `references/credit-points.md`. Max ~238 NIS/month in 2026.
+
+### Error: "Credit points don't match"
+Cause: Various life circumstances affect credit points.
+Solution: Review the full credit point table. Common additions: female (+0.5), new immigrant (up to +3), each child by age (year of birth 2.5, ages 1-2 4.5, age 3 3.5, ages 4-5 2.5, ages 6-17 2 for the mother / 1 for the father), single parent (+1), disabled child (+2). See `references/credit-points.md`.

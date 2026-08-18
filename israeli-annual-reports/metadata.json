@@ -1,0 +1,41 @@
+{
+  "author": "skills-il",
+  "version": "1.4.0",
+  "category": "accounting",
+  "tags": {
+    "he": [
+      "דוחות-כספיים",
+      "דוח-שנתי",
+      "מאיה",
+      "תקינה-חשבונאית",
+      "רגולציה",
+      "ישראל"
+    ],
+    "en": [
+      "financial-reports",
+      "annual-report",
+      "maya",
+      "accounting-standards",
+      "regulation",
+      "israel"
+    ]
+  },
+  "display_name": {
+    "he": "דוחות שנתיים ישראליים",
+    "en": "Israeli Annual Reports"
+  },
+  "display_description": {
+    "he": "אינו ייעוץ מס ואינו דוח שהוגש. ניתוח דוחות שנתיים, דיווחים כספיים ודרישות רגולטוריות של חברות ישראליות. תשתמשו כשצריך לקרוא דוח תקופתי, להבין מונחים פיננסיים בעברית, לנתח דיווחי מאיה, או להכיר את דרישות חוק החברות.",
+    "en": "Not tax advice and not a filed return. Navigate and analyze Israeli corporate annual reports (dochot titkuftiim), financial filings, and regulatory disclosures. Use when user asks about Israeli annual reports, MAYA filings, IFRS financial statements, doch titkufti, dochot kaspiyim, or Companies Law reporting requirements. Covers TASE filing types, Israeli GAAP to IFRS transition, Hebrew financial terminology, and key financial statement analysis."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "antigravity",
+    "gemini-cli"
+  ]
+}

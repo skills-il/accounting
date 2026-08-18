@@ -1,0 +1,349 @@
+---
+name: israeli-financial-reports
+description: Generate Israeli-standard financial reports including profit and loss (Doch Revach VeHefsed), balance sheet (Maazan), trial balance (Maazan Bochein), and cash flow statements. Supports bilingual Hebrew/English output with NIS formatting, VAT summary reports for bi-monthly and monthly filing, year-end annual report preparation, and comparison periods. Works with Osek Patur, Osek Murshe, and Chevra (company) business types. Reflects the Israeli accounting-standards regime where full IFRS is mandatory only for public companies while private companies may use Israeli GAAP or IFRS for SMEs. Use when you need to produce financial statements, tax-related summaries, or periodic reports for Israeli businesses. Exports to PDF, Excel, and CSV formats. Do NOT use for tax filing submissions, payroll processing, or bank reconciliation workflows.
+license: MIT
+allowed-tools: Bash(python:*) Edit Read Write
+compatibility: Requires Claude Code
+---
+
+
+# Israeli Financial Reports
+
+## Legal notice
+
+This is a free information tool operated by an AI model. It explains the tax rules and helps you organise your own figures. All of its outputs are produced automatically by an AI model, with no involvement, review, or approval by a tax adviser or accountant. The output is not a tax opinion, not a return prepared by a licensed representative, and not professional advice, but a general calculation and explanation only: it does not examine the full extent of your income or your complete documents. An AI model may err, omit data, or present a wrong conclusion.
+
+Any form or text this tool produces is an automatic draft for your personal preparation only, and is not a filed return. Responsibility for reporting and for paying the tax is yours, the binding computation is the Tax Authority's, and representation before the Tax Authority is reserved to those permitted by law. This tool is not a substitute for advice that takes account of the particular circumstances and needs of each person. Consult a tax adviser or accountant before filing or paying. All use of its output is the user's sole responsibility.
+
+
+## Instructions
+
+### Step 1: Identify the Business Type and Reporting Period
+
+Determine the business entity type before generating any report. Each type has different reporting requirements under Israeli law:
+
+- **Osek Patur** (Exempt Dealer): Simplified reporting, no VAT collection. Annual turnover must stay under the exempt ceiling, which is 122,833 NIS for 2026. Files an annual declaration (Hatzharat Osek Patur) by around 31 January for the prior calendar year, not periodic VAT reports. Exceeding the ceiling mid-year forces conversion to Osek Murshe at the regional VAT office. Reports focus on income summary.
+- **Osek Murshe** (Licensed Dealer): Full VAT reporting required bi-monthly when annual turnover is up to 1,775,000 NIS (the 2026 figure; it was 1,725,000 NIS in 2025), and monthly when turnover exceeds it. Must produce profit and loss, and submit VAT returns. (The separate 1.67 million NIS figure is the section 67a detailed-filing threshold, not the cadence threshold.)
+- **Chevra (Company)**: Full financial statements required including balance sheet, profit and loss, cash flow statement, and notes to financial statements. Subject to Companies Law 1999 and Securities Authority requirements if public.
+
+Confirm the reporting period: monthly, bi-monthly (for VAT), quarterly, or annual.
+
+Alongside VAT, an Osek Murshe or Chevra typically also files periodic income-tax advance payments (mikdamot, usually a percentage of turnover set by the Tax Authority) on the same gov.il portal. A self-employed osek separately pays periodic National Insurance (Bituach Leumi) contributions on their own account, a distinct mandatory obligation from VAT and the income-tax mikdamot. This skill produces the financial figures behind those reports; it does not perform the advance filing itself.
+
+### Step 2: Gather Financial Data
+
+Collect the following data sources:
+
+1. **Chart of Accounts (Matkonit Cheshbonot)**: A common chart-of-accounts convention (Israel has no single mandated SME numbering scheme). For filing, map accounts to the official Form 6111 field structure per the ITA 6111 form and its instructions (https://www.gov.il/he/service/itc6111), confirming the year-specific field codes there:
+   - 1xxx: Assets (Rechush)
+   - 2xxx: Liabilities (Hitchayvuyot)
+   - 3xxx: Equity (Hon Atzmi)
+   - 4xxx: Revenue (Hachnasot)
+   - 5xxx: Cost of Goods Sold (Olut HaMecher)
+   - 6xxx: Operating Expenses (Hotzaot Tifuliyot)
+   - 7xxx: Financial Income/Expenses (Hachnasot/Hotzaot Mimun)
+   - 8xxx: Other Income/Expenses (Hachnasot/Hotzaot Acherot)
+   - 9xxx: Tax and Adjustments (Mas VeHitamot)
+
+2. **Transaction Journal (Yoman Peulot)**: All posted transactions for the period.
+3. **Opening Balances (Yitrot Pticha)**: Carried forward from previous period close.
+4. **VAT Records**: Input VAT (Maam Tsumot) and Output VAT (Maam Iskaot) for the period.
+
+### Step 3: Generate the Trial Balance (Maazan Bochein)
+
+Produce a trial balance that lists all accounts with their debit and credit balances:
+
+```
+Maazan Bochein / Trial Balance
+Period: January - December 2025
+Currency: NIS (New Israeli Shekel)
+
+Account  | Account Name           | Debit (NIS)  | Credit (NIS)
+---------|------------------------|-------------- |--------------
+1010     | Cash (Kupah)           | 45,230.00    |
+1020     | Bank Leumi (Current)   | 328,750.50   |
+1030     | Accounts Receivable    | 125,400.00   |
+2010     | Accounts Payable       |              | 89,200.00
+2020     | VAT Payable            |              | 12,350.00
+3010     | Owner's Equity         |              | 200,000.00
+4010     | Service Revenue        |              | 650,800.00
+5010     | Direct Costs           | 180,000.00   |
+6010     | Salaries (Maskorot)    | 195,000.00   |
+6020     | Rent (Schar Dira)      | 48,000.00    |
+6030     | Office Expenses        | 15,200.00    |
+7010     | Bank Charges           | 3,800.00     |
+9010     | Income Tax Provision   | 10,969.50    |
+         | TOTALS                 | 952,350.00   | 952,350.00
+```
+
+Verify that total debits equal total credits. Any imbalance indicates posting errors that must be resolved before proceeding.
+
+### Step 4: Generate the Profit and Loss Statement (Doch Revach VeHefsed)
+
+Structure the P&L according to Israeli format:
+
+```
+Doch Revach VeHefsed / Profit and Loss Statement
+For the Year Ended December 31, 2025
+(Amounts in NIS)
+
+                                    Current Year    Previous Year
+                                    -----------     ------------
+Revenue (Hachnasot):
+  Service Revenue                    650,800.00      580,200.00
+  Other Revenue                        8,500.00        5,100.00
+                                    -----------     ------------
+Total Revenue                        659,300.00      585,300.00
+
+Cost of Revenue (Olut HaMecher):
+  Direct Costs                      (180,000.00)    (155,000.00)
+                                    -----------     ------------
+Gross Profit (Revach Golmi)          479,300.00      430,300.00
+
+Operating Expenses (Hotzaot Tifuliyot):
+  Salaries and Benefits             (195,000.00)    (175,000.00)
+  Rent                               (48,000.00)     (48,000.00)
+  Office and General                  (15,200.00)     (12,800.00)
+  Depreciation (Pachat)              (22,000.00)     (20,000.00)
+                                    -----------     ------------
+Total Operating Expenses            (280,200.00)    (255,800.00)
+
+Operating Profit (Revach Tifuli)     199,100.00      174,500.00
+
+Financial Expenses (Hotzaot Mimun):
+  Bank Charges                        (3,800.00)      (3,200.00)
+  Interest Expense                    (6,500.00)      (5,800.00)
+                                    -----------     ------------
+Profit Before Tax (Revach Lifnei Mas) 188,800.00     165,500.00
+
+Income Tax (Mas Hachnasa)            (43,424.00)     (38,065.00)
+                                    -----------     ------------
+Net Profit (Revach Naki)             145,376.00      127,435.00
+```
+
+Apply the current Israeli corporate tax rate (23% as of 2026) for Chevra entities. For an Osek Murshe or other non-corporate entity, the profit flows to the owner's personal income tax: use the current income-tax bracket table (see Kol Zchut, Madregot Mas Hachnasa) rather than a single rate, and note that the high-income surtax (Mas Yasaf) applies on top of the regular brackets for high earners. Do not hardcode a stale bracket table; pull the live figures from the source.
+
+**Osek zeir (small-business) election:** a registered osek zeir (turnover up to the same 122,833 ceiling) may ELECT a flat 30%-of-turnover deemed-expense deduction in place of itemizing actual expenses, and files an abbreviated annual report. It is an election: the taxpayer takes whichever is larger, the 30% deemed deduction or their itemized actual expenses. So for such a taxpayer, do NOT automatically tax the actual P&L profit above, tax on the elected basis.
+
+### Step 5: Generate the Balance Sheet (Maazan)
+
+Structure according to Israeli format with assets on one side, liabilities and equity on the other:
+
+```
+Maazan / Balance Sheet
+As of December 31, 2025
+(Amounts in NIS)
+
+ASSETS (RECHUSH)                          Current Year    Previous Year
+Current Assets (Rechush Shotef):
+  Cash and Cash Equivalents                 45,230.00       38,500.00
+  Bank Accounts                            328,750.50      275,100.00
+  Accounts Receivable (Chayavim)           125,400.00      110,200.00
+  Prepaid Expenses (Hotza'ot Merosh)        12,000.00       10,000.00
+                                          -----------     ------------
+Total Current Assets                       511,380.50      433,800.00
+
+Non-Current Assets (Rechush Lo Shotef):
+  Equipment (Tziud)                        180,000.00      160,000.00
+  Less: Accumulated Depreciation           (62,000.00)     (40,000.00)
+  Intangible Assets                         25,000.00       30,000.00
+                                          -----------     ------------
+Total Non-Current Assets                   143,000.00      150,000.00
+
+TOTAL ASSETS                               654,380.50      583,800.00
+
+LIABILITIES AND EQUITY (HITCHAYVUYOT VEHON ATZMI)
+Current Liabilities (Hitchayvuyot Shotfot):
+  Accounts Payable (Zakaim)                 89,200.00       75,400.00
+  VAT Payable (Maam Leshalem)               12,350.00       10,800.00
+  Accrued Expenses (Hotzaot Leshlem)        18,500.00       15,200.00
+  Income Tax Payable                        43,424.00       38,065.00
+                                          -----------     ------------
+Total Current Liabilities                  163,474.00      139,465.00
+
+Non-Current Liabilities:
+  Long-term Loan (Halva'a LeZman Arokh)     145,530.50      144,335.00
+                                          -----------     ------------
+Total Liabilities                          309,004.50      283,800.00
+
+Equity (Hon Atzmi):
+  Share Capital (Hon Minayot)              200,000.00      200,000.00
+  Retained Earnings (Revachim Tzvurim)     145,376.00      100,000.00
+                                          -----------     ------------
+Total Equity                               345,376.00      300,000.00
+
+TOTAL LIABILITIES AND EQUITY               654,380.50      583,800.00
+```
+
+### Step 6: Generate the Cash Flow Statement (Doch Tazrim Mezumanim)
+
+Use the indirect method as standard in Israeli reporting:
+
+1. **Operating Activities (Peulot Shototfot)**: Start with net profit, adjust for non-cash items (depreciation, provisions), and working capital changes.
+2. **Investing Activities (Peulot Hashkaa)**: Capital expenditures, asset sales, investment purchases.
+3. **Financing Activities (Peulot Mimun)**: Loan proceeds/repayments, equity contributions, dividend payments.
+
+Illustrative indirect-method reconciliation (standalone example, NIS):
+
+```
+Doch Tazrim Mezumanim / Cash Flow Statement (indirect method)
+
+Operating Activities:
+  Net Profit                              145,376
+  Add: Depreciation (non-cash)             22,000
+  Increase in Accounts Receivable         (15,200)
+  Increase in Accounts Payable             13,800
+  Increase in Accrued + Tax Payable         8,659
+                                        ----------
+  Net Cash from Operating                 174,635
+
+Investing Activities:
+  Purchase of Equipment                   (20,000)
+
+Financing Activities:
+  Net Loan Proceeds                          1,196
+  Dividend Paid                          (100,000)
+                                        ----------
+  Net Cash from Financing                 (98,804)
+                                        ----------
+Net Increase in Cash                       55,831
+```
+
+Each worked block above (trial balance, P&L, balance sheet, this cash flow) is a standalone illustration using a different sample business; they are not meant to reconcile to one another.
+
+### Step 7: Generate VAT Summary Report (Doch Maam)
+
+For Osek Murshe and Chevra, prepare the VAT summary:
+
+```
+VAT Summary Report (Doch Sikum Maam)
+Period: November - December 2025
+Business: Example Ltd. (Osek Murshe)
+VAT Registration: 515-123456
+
+Output VAT (Maam Iskaot):
+  Taxable Sales                    185,400.00
+  VAT at 18%                       33,372.00
+
+Input VAT (Maam Tsumot):
+  Purchases and Expenses            98,200.00
+  VAT Claimed                      17,676.00
+
+VAT Payable (Maam Leshalem):        15,696.00
+Due Date: January 19, 2026 (online; 15th for paper)
+```
+
+**Reporting cadence and deadlines:** the online (mekuvan) filing deadline is the 19th of the following month; paper filers must file by the 15th. Detailed (PCN874) filers get until the 23rd.
+
+**Detailed VAT reporting (PCN874):** as of 1 January 2026, a self-employed/individual Osek with annual turnover above 500,000 NIS must file the detailed PCN874 report (companies and partnerships with a corporate partner have been required since September 2025). Detailed filers face a 23rd-of-month deadline and per-period detailed reporting; whether the cadence is monthly or bi-monthly depends on the filer's existing classification (sources differ, so confirm against the filer's own VAT registration). The file lists per-invoice detail: invoice number, date, amount, VAT amount, and the counterparty's Osek (registration) number. From 2026, a self-employed detailed filer may aggregate (rather than itemize) tax invoices under 5,000 NIS pre-VAT as long as the combined total is stated.
+
+**Allocation-number (mispar haktza'a) gate on input VAT (Israel Invoice Model, 2026):** input VAT on a tax invoice ABOVE the threshold is NOT deductible unless the invoice carries a valid Tax Authority allocation number. Threshold (pre-VAT): NIS 10,000 from 1 January 2026, dropping to NIS 5,000 from 1 June 2026. Before summing Input VAT (Maam Tsumot) for the period, verify that every above-threshold supplier invoice has a valid allocation number and EXCLUDE the input VAT of any that do not. Otherwise the VAT summary overstates the deductible input VAT and understates the VAT payable, a real 2026 compliance error.
+
+### Step 8: Format and Export
+
+Apply proper formatting for all reports:
+
+- **Currency**: NIS amounts with thousands separator (comma) and two decimal places: 1,234,567.89
+- **Negative amounts**: Use parentheses for negative values: (45,000.00)
+- **Bilingual headers**: Include both Hebrew and English section headers
+- **Comparison columns**: Current period alongside previous period
+- **Export formats**: PDF (for submission), Excel (for analysis), CSV (for import into accounting software)
+
+## Examples
+
+### Example 1: Bi-monthly VAT Report for Osek Murshe
+
+User says: "Generate my VAT report for the Jan-Feb 2025 bi-monthly period. I am an Osek Murshe. My sales were 120,000 NIS and my deductible purchases were 45,000 NIS."
+
+Actions:
+1. Confirm business type as Osek Murshe (bi-monthly VAT filing).
+2. Calculate Output VAT: 120,000 x 18% = 21,600 NIS.
+3. Calculate Input VAT: 45,000 x 18% = 8,100 NIS.
+4. Calculate net VAT payable: 21,600 - 8,100 = 13,500 NIS.
+5. Generate formatted bilingual VAT summary report with due date (March 19, 2025 (online; 15th for paper)).
+
+Result: A formatted VAT summary report showing 13,500 NIS payable to the Tax Authority (Rashut HaMisim), with bilingual headers and proper NIS formatting.
+
+### Example 2: Annual Financial Statements for a Chevra
+
+User says: "Prepare the full annual financial statements for my company for 2025. I have my trial balance data ready."
+
+Actions:
+1. Import trial balance data from the user's source.
+2. Verify trial balance balances (debits = credits).
+3. Generate Profit and Loss statement with current year vs. previous year comparison.
+4. Generate Balance Sheet with proper asset/liability/equity classification.
+5. Generate Cash Flow Statement using indirect method.
+6. Apply 23% corporate tax rate to calculate tax provision.
+7. Map the statements to Form 6111, the Israel Tax Authority structured annex (balance sheet, profit and loss, and tax-adjustment report) that must be filed online when annual turnover exceeds 300,000 NIS including VAT; this is the actual submission vehicle for the figures.
+8. Add bilingual headers (Hebrew/English) to all reports.
+9. Format all amounts in NIS with proper separators and parentheses for negatives.
+10. Export to PDF and Excel.
+
+Result: Complete set of annual financial statements (P&L, Balance Sheet, Cash Flow) in bilingual format, ready for submission to the Registrar of Companies (Rasham HaChevrot) and the Tax Authority.
+
+### Example 3: Quarterly Comparison Report for Management
+
+User says: "I need a Q3 vs Q2 profit and loss comparison for my business to present to investors."
+
+Actions:
+1. Extract Q2 and Q3 financial data from transaction records.
+2. Generate side-by-side P&L with columns for Q2, Q3, and change (amount and percentage).
+3. Highlight significant variances (changes exceeding 10%).
+4. Calculate key ratios: gross margin, operating margin, net margin for both quarters.
+5. Add trend indicators and summary commentary.
+
+Result: A management-oriented P&L comparison report showing quarter-over-quarter performance, including variance analysis and margin trends, formatted in NIS with bilingual headers.
+
+## Gotchas
+
+- Israeli financial reports use NIS (New Israeli Shekel) with the symbol appearing after the number in Hebrew context (1,000 ש"ח) but before in English context. Agents may place the currency symbol incorrectly.
+- Bi-monthly VAT summary reports must align with the 6 reporting periods (Jan-Feb, Mar-Apr, etc.), not quarters. Agents may group data by quarters, which does not match Israeli tax authority requirements.
+- Israeli balance sheets list assets on the right side and liabilities on the left in Hebrew format (RTL). Agents may produce LTR-formatted balance sheets that confuse Israeli accountants.
+- The Hebrew financial term "revach golmi" (gross profit) vs. "revach tafuli" (operating profit) vs. "revach naki" (net profit) are distinct concepts. Agents may mistranslate or conflate these terms.
+- Israeli small businesses (osek patur and osek murshe) have different reporting requirements. Agents may apply corporate reporting standards to sole proprietors, generating unnecessarily complex reports.
+
+
+## Reference Links
+
+| Source | URL | What to Check |
+|--------|-----|---------------|
+| IFRS Foundation | https://www.ifrs.org | IFRS standards (mandatory for public companies; optional for private companies and SMEs) |
+| Institute of Certified Public Accountants in Israel | https://www.icpas.org.il | Israeli accounting profession norms and standards |
+| Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | VAT reporting, corporate tax filings |
+| Companies Registrar | https://www.gov.il/he/departments/israeli_corporations_authority | Annual financial report obligations |
+| openpyxl documentation | https://openpyxl.readthedocs.io/en/stable/ | Writing styled XLSX reports from Python |
+
+## Troubleshooting
+
+### Error: "Trial balance does not balance"
+
+Cause: Total debits do not equal total credits, indicating one or more posting errors in the transaction journal. Common causes include single-sided entries, transposed digits, or unposted adjustments.
+
+Solution:
+1. Review the difference amount; check if any single transaction matches that amount.
+2. Divide the difference by 2 to check for entries posted to the wrong side.
+3. Divide the difference by 9; if it divides evenly, look for transposed digits.
+4. Run a journal entry audit to find entries without matching contra-entries.
+5. Check for unposted period-end adjustments (depreciation, accruals, provisions).
+
+### Error: "VAT rate mismatch"
+
+Cause: The VAT calculation uses an incorrect rate. Israel's standard VAT rate is 18% (in effect since January 2025). There is no reduced VAT rate in Israel: transactions are either standard-rated (18%), zero-rated (0%), or exempt. Exports are zero-rated, fresh unprocessed fruit and vegetables are zero-rated (not exempt and not "reduced"), and certain supplies such as financial services are exempt.
+
+Solution:
+1. Verify the current VAT rate from the Tax Authority (Rashut HaMisim) website.
+2. Check if any transactions are zero-rated exports (VAT = 0% but still reportable).
+3. Check for VAT-exempt items that should not have VAT applied.
+4. Separate transactions by VAT category: standard (18%), zero-rated (0%), exempt.
+5. Recalculate the VAT summary with correct rates per category.
+
+### Error: "Currency formatting inconsistency"
+
+Cause: Mixed formatting of NIS amounts across report sections, such as using different decimal separators or inconsistent negative number notation.
+
+Solution:
+1. Standardize all amounts to NIS with comma thousands separator: 1,234,567.89
+2. Use parentheses for negative values, not minus signs: (45,000.00) not -45,000.00
+3. Ensure all amounts show exactly two decimal places.
+4. Verify that the NIS symbol or "NIS" label appears consistently in report headers.

@@ -1,0 +1,69 @@
+{
+  "author": "skills-il",
+  "version": "1.1.0",
+  "category": "accounting",
+  "tags": {
+    "he": [
+      "שעות נוספות",
+      "דוח נוכחות",
+      "גמול שבת",
+      "תלוש שכר",
+      "חוק שעות עבודה ומנוחה",
+      "ישראל"
+    ],
+    "en": [
+      "overtime",
+      "timesheet",
+      "rest day premium",
+      "payslip",
+      "hours of work and rest law",
+      "israel"
+    ]
+  },
+  "display_name": {
+    "he": "בדיקת שכר מול דוח נוכחות",
+    "en": "Israeli Attendance Wage Checker"
+  },
+  "display_description": {
+    "he": "אינו ייעוץ משפטי. הופך דוח נוכחות ישראלי לבדיקת שכר: ממיר שעות כניסה ויציאה לשעות עבודה, מפצל אותן לשעות רגילות, שעות נוספות ושעות מנוחה שבועית, מחיל את התעריפים שבחוק ומראה כמה מגיע מול כמה שולם. מתאים גם למעסיק קטן שרוצה לבדוק שהוא עומד בחוק וגם לעובד שחושד שקיבל פחות. השתמשו כששואלים אם שילמו נכון על שעות נוספות או על שבת, איך מחשבים שעות נוספות, כמה שווה דוח נוכחות, או מה עושים כשהמעסיק לא ניהל רישום שעות. חשוב כי מדרגת שתי השעות הראשונות מתאפסת בכל יום מחדש ולא נצברת לחודש, שבוע העבודה שבחוק ושבוע העבודה בפועל הם שני מספרים שונים, ומעסיק שלא ניהל פנקס שעות נושא בנטל ההוכחה עד תקרה. אל תשתמשו לחישוב נטו (יש israeli-payroll-calculator), לפיצויי פיטורים או דמי הודעה מוקדמת, לניסוח תביעה, או לשכר עובדי הוראה ומטפלים זרים שיש להם סקילים ייעודיים.",
+    "en": "Not legal advice. Turns an Israeli timesheet into a wage reconciliation: converts clock-in and clock-out spans into working hours, splits them into ordinary, overtime and weekly-rest hours, applies the statutory premiums, and itemises what is owed against what was paid. Serves both a small employer checking compliance and an employee who suspects a short payslip. Use when a user asks whether they were paid correctly for overtime or Shabbat work, how to compute shaot nosafot, what a timesheet is actually worth, or what to do when the employer kept no hours record. It matters because the premium tiers reset daily rather than accumulating monthly, the statutory work week and the week actually used in the economy are different numbers, and an employer who kept no ledger carries the burden of proof up to a capped number of hours. Do NOT use for gross-to-net payroll (use israeli-payroll-calculator), for severance or notice pay, to draft a claim, or for teacher payroll or foreign-caregiver payroll, which have dedicated skills."
+  },
+  "supported_agents": [
+    "claude-code",
+    "cursor",
+    "github-copilot",
+    "windsurf",
+    "opencode",
+    "codex",
+    "openclaw",
+    "antigravity",
+    "gemini-cli",
+    "grok-build",
+    "chatgpt",
+    "claude-ai",
+    "claude-desktop",
+    "manus",
+    "gemini-spark",
+    "grok"
+  ],
+  "openclaw": true,
+  "volatility": "legislative",
+  "authoritative_sources": [
+    {
+      "url": "https://he.wikisource.org/wiki/חוק_שעות_עבודה_ומנוחה",
+      "type": "statute",
+      "language": "he"
+    },
+    {
+      "url": "https://he.wikisource.org/wiki/חוק_הגנת_השכר",
+      "type": "statute",
+      "language": "he"
+    },
+    {
+      "url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/extention-order-short-week-2018/he/extention-order-short-week-2018.pdf",
+      "type": "regulator",
+      "language": "he"
+    }
+  ],
+  "domain_checklist_version": 1
+}

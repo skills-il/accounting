@@ -1,0 +1,27 @@
+israeli-bank-reconciliation:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-bank-reconciliation/**'
+
+israeli-receipt-scanner:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-receipt-scanner/**'
+
+israeli-expense-categorizer:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-expense-categorizer/**'
+
+israeli-financial-reports:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-financial-reports/**'
+
+israeli-bookkeeping-automation:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-bookkeeping-automation/**'
+
+hashavshevet-data-tools:
+  - changed-files:
+    - any-glob-to-any-file: 'hashavshevet-data-tools/**'
+
+israeli-shaam-e-invoice-builder:
+  - changed-files:
+    - any-glob-to-any-file: 'israeli-shaam-e-invoice-builder/**'
