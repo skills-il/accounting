@@ -489,17 +489,19 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "Official site of Irgun HaMorim (the secondary-school teachers union) publishing Oz LaTmura salary tables.",
+      "claim": "אתר ארגון המורים, שמייצג את עובדי ההוראה בחטיבות העליונות ומפרסם את הסכמי עוז לתמורה ואת טבלאות השכר שלהם. igm.org.il מפנה לעמוד הבית שכתובתו site/pg/igm_home.",
       "claim_type": "url",
-      "source_url": "https://www.igm.org.il/",
-      "raw_snippet": "Official site of Irgun HaMorim (the secondary-school teachers union) publishing Oz LaTmura salary tables.",
+      "source_url": "https://www.igm.org.il/site/pg/igm_home",
+      "raw_snippet": "רן ארז, יו\"ר ארגון המורים איגרת אישית לציבור המורים והמורות - משרד החינוך נגד ארגון המורים",
       "confidence": "high",
       "claim_id": "ref-url-igm",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "Irgun HaMorim site read in a browser; the root URL redirects to its home page",
+      "verified_at": "2026-08-19"
     },
     {
       "claim": "אתר הסתדרות המורים הוא מקור ההסכמים והטבלאות של אופק חדש.",
