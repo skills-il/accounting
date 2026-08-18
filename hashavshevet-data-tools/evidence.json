@@ -375,14 +375,16 @@
     },
     {
       "claim_id": "pcn874-individual-osek-reliefs",
-      "claim": "PCN874 individual-osek reliefs (ITA notice pa280825-1): a tax invoice whose pre-VAT amount is NIS 5,000 or less may be reported as a single combined total rather than itemized; and an osek may apply to the regional VAT office to defer the detailed-reporting obligation to 1 January 2027 if at least 90% of the input-VAT invoices on their 2025 returns were each NIS 5,000 or less. Turnover threshold for the obligation is NIS 500,000 for an individual osek from 1 January 2026.",
+      "claim": "הודעת רשות המסים pa280825-1: עוסק יחיד שמחזורו עולה על 500,000 ₪ חייב בדוח מפורט החל מ-1.1.2026 (במקום 1.9.2025). הוא רשאי שלא לפרט חשבוניות שסכומן ללא מע\"מ אינו עולה על 5,000 ₪ ובלבד שיפרט את סכומן הכולל, ורשאי לבקש דחייה ל-1.1.2027 אם 90% לפחות מחשבוניות התשומות שלו הן מתחת ל-5,000 ₪.",
       "source_url": "https://www.gov.il/he/pages/pa280825-1",
-      "raw_snippet": "דוח מפורט עוסק יחיד מחזור 500,000 90% 5,000 1.1.2027 חשבוניות תשומות",
-      "fetched_at": "2026-07-18T00:00:00Z",
+      "raw_snippet": "יובהר, כי עוסק שהוא יחיד יהיה רשאי שלא לפרט את חשבוניות המס, שסכום כל אחת מהן בלא המס אינו עולה על 5,000 ₪, ובלבד שיפרט בדוח את הסכום הכולל של החשבוניות האמורות.",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "ITA notice page rendered in a browser; gov.il returns an empty shell to a plain fetch",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "ita-simulator-legacy-url",
