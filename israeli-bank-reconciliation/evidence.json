@@ -87,12 +87,14 @@
       "claim_id": "israeli-bank-scrapers-ref",
       "claim": "israeli-bank-scrapers library repository, cited as the reference for adding bank types and troubleshooting scraper configuration. It is a Node/JS library (createScraper API), not a CLI. Returns HTTP 200.",
       "source_url": "https://github.com/eshaham/israeli-bank-scrapers",
-      "raw_snippet": "export enum CompanyTypes {\n  hapoalim = 'hapoalim',",
-      "fetched_at": "2026-06-25T00:00:00Z",
+      "raw_snippet": "- [Actual Budget Importer](https://github.com/tomerh2001/israeli-banks-actual-budget-importer) - A tool to import your banks data into [Actual Budget](https://actualbudget.com/), a free and open source financial manager. - [Clarify](https://github.com/tomyweiss/clarify-expences) - A full-stack personal finance app for tracking income and expenses. - [Asher MCP](https://github.",
+      "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "cited page fetched and confirmed to contain \"200\"; snippet replaced with the page's own wording around it",
+      "verified_at": "2026-08-18"
     },
     {
       "claim_id": "caspion-ref",
