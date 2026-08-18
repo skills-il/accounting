@@ -84,14 +84,14 @@
       "claim_id": "shaam-allocation-api",
       "claim": "SHAAM allocation API endpoints (Israel Invoice Model API v2.0, 7/2024). Single allocation: production POST https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval and sandbox POST https://ita-api.taxes.gov.il/shaam/tsandbox/Invoices/v2/Approval. Batch allocation: production https://ita-api.taxes.gov.il/shaam/production/Multi-invoices/v2/MultiApproval and sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/Multi-invoices/v2/MultiApproval. Lookup by allocation number: sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/invoice-information/v1/details and production https://openapi.taxes.gov.il/shaam/production/invoice-information/v1/details. OAuth2 User Restricted token endpoint https://openapi.taxes.gov.il/shaam/{tsandbox|production}/longtimetoken/oauth2/token at openapi.taxes.gov.il (https://openapi.taxes.gov.il). The allocation number is returned in the confirmation_number response field. Auth manual at https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf and an official demo at https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo. The accounting_software_number example value is 4324243 (NIS 4324243 is not a money amount, it is the software registry number); example request math: net 15,000, VAT 2,700, total 17,700.",
       "source_url": "https://assets.kpmg.com/content/dam/kpmg/il/pdf/vat_software-houses-ENG.pdf",
-      "raw_snippet": "5135 0 obj > endobj 5158 0 obj >/Filter/FlateDecode/ID[ ]/Index[5135 38]/Info 5134 0 R/Length 119/Prev 548648/Root 5136 0 R/Size 5173/Type/XRef/W[1 3 1]>>stream h�bbd`\u0010``b``� \"\u0019V�H� ��\u0016�d�\u0004�̝ ��\u001a��\u000fV� Vo\u0006\"�\u0000I� �A�\u0006Y\u0010;�\u0004X6\u0002D���\u0007 ��\u0018��\u0005\"��@��!",
+      "raw_snippet": "chieve Budget Targets for Fiscal Years 2023 and 2024) 5723-2023, it is stipulated that as of the effective date of the law, an allocation number from the Tax Authority will be required for tax invoices as a condition for input tax deduction.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "references/shaam-api-reference.md",
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_via": "source re-fetched and decoded correctly (PDF via pdftotext, HTML with its declared encoding); snippet copied from the result",
       "verified_at": "2026-08-18",
       "verification_note": "Confirmed against the official ITA spec PDF 'Israel Invoice Model API Description, Version 2.0 / 7.2024', extracted with pdftotext. Still the current spec version; no v2.1 or v3.0 exists."
     },
@@ -130,13 +130,13 @@
       "claim_id": "reference-links",
       "claim": "URL inventory: the official reference links this skill cites, being the Israel Tax Authority department page, the ITA invoicing-guidance report page, the Knesset legislation index and Kol Zchut. Registered here as an inventory of the links themselves; no single one of these pages evidences the others. The substantive Israel-Invoice rules are evidenced by the dedicated entries in this file. Covers these references: https://www.gov.il/he/departments/israel_tax_authority https://www.misim.gov.il https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx https://www.gov.il/he/departments/publications/reports/invoices_israel https://www.kolzchut.org.il/he",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "Attention Required! | Cloudflare",
+      "raw_snippet": "רשות המסים בישראל מאחדת את אגפי המס השונים: מס הכנסה, מיסוי מקרקעין, מס ערך מוסף, מס קנייה, מכס ומס בולים.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_via": "gov.il department page rendered in a browser; the SPA returns an empty shell to a plain fetch, so only navigation shows its text",
       "verified_at": "2026-08-18"
     },
     {

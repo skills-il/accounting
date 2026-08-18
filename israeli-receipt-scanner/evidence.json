@@ -88,13 +88,13 @@
       "claim_id": "reference-links",
       "claim": "URL inventory: the reference links this skill cites in its tables, for OCR tooling (EasyOCR, Tesseract), image preprocessing (Pillow), and for Israeli tax-invoice, osek-murshe and VAT guidance (Israel Tax Authority and Kol Zchut). Registered here as an inventory of the links themselves; no single one of these pages evidences the others. Covers these references: https://github.com/JaidedAI/EasyOCR https://github.com/tesseract-ocr/tesseract https://pillow.readthedocs.io/en/stable/ https://www.gov.il/he/departments/israel_tax_authority https://www.kolzchut.org.il/he",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "Attention Required! | Cloudflare",
+      "raw_snippet": "רשות המסים בישראל מאחדת את אגפי המס השונים: מס הכנסה, מיסוי מקרקעין, מס ערך מוסף, מס קנייה, מכס ומס בולים.",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "reference-coverage entry; the links it covers moved into the claim and the snippet is a quote from its own source page",
+      "verified_via": "gov.il department page rendered in a browser; the SPA returns an empty shell to a plain fetch, so only navigation shows its text",
       "verified_at": "2026-08-18"
     },
     {

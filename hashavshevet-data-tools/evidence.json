@@ -86,13 +86,13 @@
       "claim_id": "bkmv-zip-three-files",
       "claim": "The Hashavshevet BKMV export ZIP, under the H-ERP guide's file list (רשימת הקבצים הנוצרים), contains three files: INI.TXT (general business/production info), BKMVDATA.TXT (the data itself: business, accounting, inventory, cash), and README.TXT (general production details for the user). Only INI.TXT and BKMVDATA.TXT are sent to the ITA or the CPA.",
       "source_url": "https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf",
-      "raw_snippet": "%PDF-1.5 %���� 1 0 obj >>> endobj 2 0 obj > endobj 3 0 obj >/ExtGState >/XObject >/ProcSet[/PDF/Text/ImageB/ImageC/ImageI] >>/MediaBox[ 0 0 612 792] /Contents 4 0 R/Group >/Tabs/S/StructParents 0>> en",
+      "raw_snippet": "חשבשבת חלונות ERP יצוא במבנה אחיד BKMV - יצוא נתונים במבנה אחיד BKMV - תוכנית יצוא נתונים במבנה אחיד יוצרת קובץ נתוני חשבשבת במבנה מיוחד ,שנקבע ע\"י רשות המסים .",
       "fetched_at": "2026-08-18",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "navigational claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_via": "source re-fetched and decoded correctly (PDF via pdftotext, HTML with its declared encoding); snippet copied from the result",
       "verified_at": "2026-08-18"
     },
     {
