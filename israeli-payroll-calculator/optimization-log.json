@@ -50,6 +50,24 @@
       "buckets": {
         "persistent_fail": []
       }
+    },
+    {
+      "date": "2026-08-19",
+      "version": "1.4.0",
+      "trigger": "Remediation: the bundled script could not reach the skill's own rate table, and that table was itself incomplete against the official source.",
+      "lessons": [
+        "A reference table that code cannot select from is not coverage. The skill documented a six-row Bituach Leumi category table while scripts/calculate_payroll.py hardcoded one row, so every non-standard employee was silently quoted the standard rate. The fix is the --ni-category dimension plus a domain-checklist row that makes reachability-from-code part of the coverage test.",
+        "Re-render the official table rather than trusting a prior cycle's transcription. Two defects only surfaced from a fresh extraction: the 67-to-70 row is women AND men (the skill said men), and its reduced-tier National Insurance component is 0.70% (the skill said 0.61%, which did not add up with the 3.23% health rate to the row's own published 3.93% total).",
+        "A correct rate can carry an unsourced label. The 3.23% / 5.17% disability row was right, but the '75%+/100%' qualifier attached to it was nowhere on the cited page; the official label is a work-injury or general-disability pension with an annual Bituach Leumi confirmation.",
+        "btl.gov.il rate pages serve real table markup to a plain curl. Extracting the <table> rows is both faster and more reliable than WebFetch, which had returned contradictory employee rates on this page in prior cycles."
+      ],
+      "buckets": {
+        "persistent_fail": [
+          "Keren hishtalmut is disclosed in prose but still not modelled in the script, so a default net reads high for anyone who has one.",
+          "The new-immigrant 12-month National Insurance exemption is described in the reference but is not selectable from the script; it sits on top of the category table rather than inside it."
+        ]
+      },
+      "notes": "The 53% top-marginal-rate question stayed closed and the 2026 brackets, credit point value, pension credit and ceilings were not touched."
     }
   ]
 }

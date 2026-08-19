@@ -30,7 +30,12 @@ Collect from user:
 - **Other taxable allowances** (shovi telephone, meals above exemption, etc.)
 - **Pension arrangement:** Yes/No, contribution percentages
 - **Employment type:** Employee (sachir), Freelancer (atzmai)
-- **Age:** Affects NI rates (under/over 18, retirement age)
+- **Bituach Leumi insurance category:** Age, whether an old-age pension is already
+  being drawn, whether the employee is a controlling shareholder (בעל שליטה) in
+  their own close company, whether they first became an Israeli resident after
+  age 62, and whether they are a soldier in regular service, an organ donor or a
+  treaty-country foreign resident. This picks the rate row and is NOT optional
+  for anyone who is not a plain 18-to-retirement resident employee. See Step 3.
 
 ### Step 1.5: Identify Taxable Imputed Income (shovi rechev, etc.)
 
@@ -95,15 +100,34 @@ See `references/credit-points.md` for the full rule, including the additional 5%
 
 ### Step 3: Calculate Bituach Leumi (National Insurance)
 
-NI and health tax apply to the **taxable gross** (cash gross + shovi rechev + other imputed income), capped at the max insurable salary. Two brackets: a reduced tier up to 60% of average wage, and a full tier from there up to the ceiling.
+NI and health tax apply to the **taxable gross** (cash gross + shovi rechev + other imputed income), capped at the max insurable salary. Two brackets: a reduced tier up to a separately published threshold (7,703 NIS/month in 2026, not a derived percentage of the average wage), and a full tier from there up to the ceiling.
 
-For employees (2026, per Amendment 252):
+For the standard employee, an Israeli resident aged 18 to retirement age (2026, per Amendment 252):
 - On first 7,703 NIS: 1.04% NI + 3.23% health = **4.27%**
 - On amount 7,704 to 51,910 NIS: 7.0% NI + 5.17% health = **12.17%**
 - Maximum insurable salary: 51,910 NIS/month
 - Salary above the ceiling is not subject to NI or health tax.
 
-**The 4.27% / 12.17% is only the standard employee aged 18 to retirement.** The employee deduction is **0%** for an employee under 18 or one receiving an old-age pension, and **3.93% / 10.03%** for a working pensioner aged 67-70 not yet receiving the pension. Applying the flat rate to a minor or a pensioner over-charges them by the entire deduction. See `references/bituach-leumi-rates.md` for the full age/pension table.
+**Pick the insurance category before computing.** The 4.27% / 12.17% is only column 1 of the
+official Bituach Leumi rate table. The employee deduction is **0%** for an employee under 18 or one
+already receiving an old-age pension, **4.25% / 11.96%** for a controlling shareholder in their own
+close company (every owner-director on their own payroll), **3.93% / 10.03%** for women and men aged
+67 to 70 not yet receiving the pension, **3.95% / 10.24%** for a woman between her own retirement age
+and the men's, **3.60% / 7.45%** for someone who first became an Israeli resident after age 62 and is
+below retirement age, **3.23% / 5.17%** for a recipient of a work-injury or general-disability
+pension holding an annual Bituach Leumi confirmation, and **1.04% / 7.00%** with NO health tax for a
+soldier in regular service, an organ donor or a treaty-country foreign resident. Applying the
+standard rate to a minor or a pensioner over-charges them by the entire deduction.
+
+The script encodes the whole table and will compute any row for you:
+
+```
+python scripts/calculate_payroll.py --list-ni-categories
+python scripts/calculate_payroll.py --gross 12000 --ni-category controlling-shareholder
+```
+
+See `references/bituach-leumi-rates.md` for the full table in prose, including the
+controlling-shareholder sub-row that exists under every age and status row.
 
 (2025 reference values for comparison: reduced 3.5% up to 7,522 NIS, full 12.0% up to 51,910. The reduced-tier rate nearly tripled in 2026.)
 
@@ -194,11 +218,11 @@ Wrong answer to avoid: adding the 3,500 shovi rechev to net. The employee never 
 ## Bundled Resources
 
 ### Scripts
-- `scripts/calculate_payroll.py`, Calculates Israeli gross-to-net salary with progressive income tax brackets, Bituach Leumi, health tax, pension contributions, and shovi rechev (company-car use value) as taxable imputed income. Supports employee and employer cost views. Run: `python scripts/calculate_payroll.py --help`. Use `--shovi-rechev <NIS>` to model a company car.
+- `scripts/calculate_payroll.py`, Calculates Israeli gross-to-net salary with progressive income tax brackets, Bituach Leumi, health tax, pension contributions, and shovi rechev (company-car use value) as taxable imputed income. Supports employee and employer cost views. Run: `python scripts/calculate_payroll.py --help`. Use `--shovi-rechev <NIS>` to model a company car, and `--ni-category <key>` to compute for a non-standard Bituach Leumi category (`--list-ni-categories` prints the whole official table).
 
 ### References
 - `references/tax-brackets.md`, Israeli income tax brackets (annual and monthly) with progressive rates from 10% to 50%. Amendment 288 (published 31.3.2026, retroactive to 1.1.2026) unfroze and widened brackets 3, 4, 5 for 2026. Also referenced in Step 2 and Troubleshooting below. Consult when computing income tax or verifying bracket thresholds.
-- `references/bituach-leumi-rates.md`, Bituach Leumi (National Insurance) and health tax rates for employees and employers for 2026, covering the reduced and full brackets and the monthly insurable salary ceiling. Always verify the current-year values against btl.gov.il before relying on exact amounts.
+- `references/bituach-leumi-rates.md`, Bituach Leumi (National Insurance) and health tax rates for employees and employers for 2026, covering the reduced and full brackets, the monthly insurable salary ceiling, and the full official rate table by insurance category (age, old-age pension, controlling shareholder, new resident over 62, soldier/organ donor/treaty resident), keyed to the script's `--ni-category` values. Always verify the current-year values against btl.gov.il before relying on exact amounts.
 - `references/credit-points.md`, Israeli tax credit points (nekudot zikui) value and full eligibility table covering base credits, gender, new immigrants, children, single parents, and disability. Also documents the Section 45a pension tax credit (zikui gemel, 35% of pension contribution up to 679 NIS/month in 2026). Consult when determining total credits beyond the defaults in Step 1.
 
 ## Reference Links
@@ -207,7 +231,7 @@ Wrong answer to avoid: adding the 3,500 shovi rechev to net. The employee never 
 |--------|-----|---------------|
 | רשות המיסים (Tax Authority) | https://www.gov.il/he/service/income-tax-calculator | Official income tax calculator (authoritative for current-year rates) |
 | Income Tax brackets (Kolzchut) | https://www.kolzchut.org.il/he/%D7%9E%D7%93%D7%A8%D7%92%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94 | Current monthly and annual brackets, sourced from legislation |
-| Bituach Leumi employee rates | https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx | Employee/employer NI and health tax rates, ceilings |
+| Bituach Leumi employee rates | https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx | Employee/employer NI and health tax rates, ceilings, and the full rate table by insurance category (form-102 columns 1, 2 and 3) |
 | Credit points (Nekudot Zikui) | https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94 | Credit point value and eligibility tables |
 | Shovi rechev (Hilan FAQ) | https://www.hilan.co.il/%D7%9E%D7%A8%D7%9B%D7%96-%D7%99%D7%93%D7%A2/%D7%91%D7%A1%D7%99%D7%A1-%D7%99%D7%93%D7%A2/%D7%A9%D7%90%D7%9C%D7%95%D7%AA-%D7%A0%D7%A4%D7%95%D7%A6%D7%95%D7%AA/%D7%A8%D7%9B%D7%91-%D7%A6%D7%9E%D7%95%D7%93/ | How shovi rechev is applied to the payslip (tax base impact, not pension base) |
 
@@ -218,6 +242,7 @@ Wrong answer to avoid: adding the 3,500 shovi rechev to net. The employee never 
 - **Zikui gemel (pension tax credit, sec. 45a) is frequently forgotten.** A 35% credit on the employee pension contribution (up to 7% × min(salary, 9,700) = 679 NIS/month) is applied on the payslip. Most payroll software computes it automatically, but agents hand-calculating tax often omit it and overstate monthly tax by up to ~238 NIS.
 - **Keren Hishtalmut** (2.5% employee + 7.5% employer) is tax-exempt up to a ceiling that changes yearly. Not included in this calculator's default flow. Add manually if the employer offers it.
 - **Mandatory pension since 2017:** 6% employee + 6.5% employer minimum. Agents may skip pension or use pre-2017 rates (5%+5%).
+- **The Bituach Leumi rate is not one number.** The official table has 11 employee categories plus a controlling-shareholder sub-row under each. An owner-director of a one-person Israeli company pays 4.25% / 11.96%, not 4.27% / 12.17%; a minor or a pensioner pays nothing; a soldier in regular service, an organ donor or a treaty-country foreign resident pays National Insurance only, with no health tax. Agents default to the standard row and silently over-charge everyone else. Pass `--ni-category` to the script.
 - **Bituach Leumi ceiling caps deductions.** Salary above 51,910 NIS/month (2026) is not subject to NI or health tax. Agents may apply the full rate to the entire salary instead of capping.
 - **Credit points (nekudot zikui):** Base 2.25 for a resident; women get +0.5. Children add a lot and are age-banded per child (year of birth 2.5; ages 1-2 4.5; age 3 3.5; ages 4-5 2.5; ages 6-17 2 for the mother and 1 for the father), and new immigrants, single parents, disabled status, and academic degrees add more. Agents may omit them entirely and overstate the tax burden. These are separate from and stack with the pension credit above. See `references/credit-points.md` for the full per-age, per-parent table.
 

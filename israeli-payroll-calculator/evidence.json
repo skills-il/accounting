@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-payroll-calculator",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-08-19T02:39:17+00:00",
   "claims": [
     {
       "claim_id": "tax-brackets",
@@ -223,6 +223,214 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-controlling-shareholder",
+      "claim": "Controlling shareholder in a close company (בעל שליטה בחברת מעטים), aged 18 to retirement: employee 4.25% reduced / 11.96% full, employer 4.46% / 7.38%. Total 8.71% / 19.34%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "8.71% (החל ב- 01.01.2025) 4.25% (החל ב- 01.01.2025) 4.46% (החל ב- 01.01.2025) 19.34% (החל ב- 01.02.2025) 11.96% (החל ב- 01.02.2025) 7.38% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-new-resident-over-62-over-70",
+      "claim": "Women and men over the old-age-pension eligibility age (70) who first became Israeli residents after age 62: employee 3.23% reduced / 5.17% full, employer 0.61% / 2.12%. Total 3.84% / 7.29%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "3.84% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) 0.61% (החל ב- 01.01.2025) 7.29% (החל ב- 01.02.2025) 5.17% (החל ב- 01.02.2025) 2.12% (החל ב- 01.01.2021)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-new-resident-over-62-over-70-shareholder",
+      "claim": "Same category, controlling shareholder sub-row: employee 3.23% / 5.17%, employer 0.6% / 2.06%. Total 3.83% / 7.23%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "3.83% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) 0.6% (החל ב- 01.01.2025) 7.23% (החל ב- 01.02.2025) 5.17% (החל ב- 01.02.2025) 2.06% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-new-resident-over-62-under-retirement",
+      "claim": "Woman or man below retirement age who first became an Israeli resident after age 62: employee 3.6% reduced / 7.45% full, employer 1.04% / 2.95%. Total 4.64% / 10.4%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "4.64% (החל ב- 01.01.2025) 3.6% (החל ב- 01.01.2025) 1.04% (החל ב- 01.01.2025) 10.4% (החל ב- 01.02.2025) 7.45% (החל ב- 01.02.2025) 2.95% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-new-resident-over-62-woman-to-67",
+      "claim": "Woman between her own retirement age and the men's retirement age who first became an Israeli resident after age 62: employee 3.28% / 5.52%, employer 0.7% / 2.47%. Total 3.98% / 7.99%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "3.98% (החל ב- 01.01.2025) 3.28% (החל ב- 01.01.2025) 0.7% (החל ב- 01.01.2025) 7.99% (החל ב- 01.02.2025) 5.52% (החל ב- 01.02.2025) 2.47% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-new-resident-over-62-67-to-70",
+      "claim": "Man or woman between the men's retirement age and the old-age-pension eligibility age who first became an Israeli resident after age 62: employee 3.26% / 5.31%, employer 0.66% / 2.31%. Total 3.92% / 7.62%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "3.92% (החל ב- 01.01.2025) 3.26% (החל ב- 01.01.2025) 0.66% (החל ב- 01.01.2025) 7.62% (החל ב- 01.02.2025) 5.31% (החל ב- 01.02.2025) 2.31% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-disability-pension",
+      "claim": "Recipients of a work-injury or general-disability pension holding an annual confirmation from Bituach Leumi (מקבלי קצבת נכות מעבודה או נכות כללית ויש להם אישור שנתי מהביטוח הלאומי): employee 3.23% / 5.17%, employer 0.61% / 2.12%. Total 3.84% / 7.29%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "3.84% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) 0.61% (החל ב- 01.01.2025) 7.29% (החל ב- 01.02.2025) 5.17% (החל ב- 01.02.2025) 2.12% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-woman-retirement-to-67-no-pension",
+      "claim": "Woman between her retirement age and the men's retirement age who is not receiving an old-age pension: employee 3.95% / 10.24%, employer 4.17% / 7.12%. Total 8.12% / 17.36%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "8.12% (החל ב- 01.01.2025) 3.95% (החל ב- 01.01.2025) 4.17% (החל ב- 01.01.2025) 17.36% (החל ב- 01.02.2025) 10.24% (החל ב- 01.02.2025) 7.12% (החל ב- 01.01.2021)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-age-67-70-no-pension",
+      "claim": "Women AND men aged 67 to 70 who are not receiving an old-age pension (נשים וגברים בין גיל 67 לגיל 70 שאינם מקבלים קצבת אזרח ותיק): employee 3.93% / 10.03%, employer 4.13% / 6.96%. Total 8.06% / 16.99%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "8.06% (החל ב- 01.01.2025) 3.93% (החל ב- 01.01.2025) 4.13% (החל ב- 01.01.2025) 16.99% (החל ב- 01.02.2025) 10.03% (החל ב- 01.02.2025) 6.96% (החל ב- 01.01.2021)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-age-67-70-no-pension-shareholder",
+      "claim": "Same category, controlling shareholder sub-row: employee 3.93% / 10.03%, employer 4.12% / 6.9%. Total 8.05% / 16.93%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "8.05% (החל ב- 01.01.2025) 3.93% (החל ב- 01.01.2025) 4.12% (החל ב- 01.01.2025) 16.93% (החל ב- 01.02.2025) 10.03% (החל ב- 01.02.2025) 6.9% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-under-18",
+      "claim": "Under 18 (מי שטרם מלאו לו 18 שנה): no employee deduction at all, employer 0.61% reduced / 2.12% full.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "0.61% (החל ב- 01.01.2025) -- 0.61% (החל ב- 01.01.2025) 2.12% (החל ב- 01.01.2019) -- 2.12% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-old-age-pension",
+      "claim": "Women and men receiving an old-age pension (נשים וגברים המקבלים קצבת אזרח ותיק): no employee deduction, employer 0.61% / 2.12%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "0.61% (החל ב- 01.01.2025) -- 0.61% (החל ב- 01.01.2025) 2.12% (החל ב- 01.01.2021) -- 2.12% (החל ב- 01.01.2021)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-minor-or-pensioner-shareholder",
+      "claim": "Controlling-shareholder sub-row for the under-18 and old-age-pension categories: no employee deduction, employer 0.6% reduced / 2.06% full.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "0.6% (החל ב- 01.01.2025) -- 0.6% (החל ב- 01.01.2025) 2.06% (החל ב- 01.01.2019) -- 2.06% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-soldier-organ-donor-treaty",
+      "claim": "Soldier in regular service, organ donor, or foreign resident from a social-security treaty country (חייל בשירות סדיר, תורם איברים, תושב זר ממדינת אמנה): employee 1.04% / 7%, employer 4.51% / 7.6%. Total 5.55% / 14.6%. These are National Insurance only, with no health-tax component.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "5.55% (החל ב- 01.01.2025) 1.04% (החל ב- 01.01.2025) 4.51% (החל ב- 01.01.2025) 14.6% (החל ב- 01.01.2019) 7% (החל ב- 01.01.2006) 7.6% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-cat-soldier-organ-donor-treaty-shareholder",
+      "claim": "Same category, controlling shareholder sub-row: employee 1.02% / 6.79%, employer 4.46% / 7.38%. Total 5.48% / 14.17%. Confirms the National-Insurance-only split used to derive every other row's NI component.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "5.48% (החל ב- 01.01.2025) 1.02% (החל ב- 01.01.2025) 4.46% (החל ב- 01.01.2025) 14.17% (החל ב- 01.01.2019) 6.79% (החל ב- 01.01.2013) 7.38% (החל ב- 01.01.2019)",
+      "fetched_at": "2026-08-19T02:38:48+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-form-102-columns",
+      "claim": "The Bituach Leumi employee rate table is organised by the columns of form 102 (טופס 102), the report on employing Israeli-resident workers. Exact string forms of the rates that the skill writes with a trailing zero: 0.60% / 0.6%, 0.70% / 0.7%, 3.60% / 3.6%, 6.90% / 6.9%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "פירוט שיעורי דמי הביטוח על פי סוגי העובדים והטורים בטופס 102 (דיווח על העסקת עובדים תושבי ישראל):",
+      "fetched_at": "2026-08-19T02:39:17+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md",
+        "scripts/calculate_payroll.py"
       ]
     }
   ]
