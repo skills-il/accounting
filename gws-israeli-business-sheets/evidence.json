@@ -281,12 +281,14 @@
       "claim_id": "url-apps-script",
       "claim": "Google Apps Script documentation covers the SpreadsheetApp API, custom functions, and triggers.",
       "source_url": "https://developers.google.com/apps-script",
-      "raw_snippet": "Automate & extend Google Workspace with simple code.",
-      "fetched_at": "2026-06-26T00:11:00Z",
+      "raw_snippet": "Apps Script | Google for Developers",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "claim about the source itself; snippet is the cited page's own title, fetched to confirm the page exists and is what the claim says it is",
+      "verified_at": "2026-08-19"
     },
     {
       "claim_id": "url-boi-exchange",
