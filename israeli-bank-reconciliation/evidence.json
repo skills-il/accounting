@@ -134,7 +134,7 @@
     {
       "claim_id": "illustrative-example-figures",
       "claim": "The following amounts and match-rate percentages are illustrative, hypothetical scenario outputs used only to demonstrate report shape in the Examples section, not externally sourced facts: a suspicious duplicate charge of 2,450 ILS / 2,450 ש\"ח; a 98% match rate with a fuzzy tolerance of 1 ILS / 1 ש\"ח and 1.00 ILS / 1.00 ש\"ח; a foreign-currency rounding difference of 127.50 ILS / 127.50 ש\"ח with a wider 5.00 ILS / 5.00 ש\"ח tolerance; a multi-bank case showing 97% and 91% match rates; and 34 missing-invoice transactions totaling 18,200 ILS / 18,200 ש\"ח broken into 3,400 ILS / 3,400 ש\"ח of office supplies, 5,100 ILS / 5,100 ש\"ח of USD software subscriptions, and 9,700 ILS / 9,700 ש\"ח of parking and toll charges. These are values the skill itself defines for its worked examples, so the skill file is the source; no external publication states them. Also covers 3 ₪.",
-      "source_url": "https://raw.githubusercontent.com/skills-il/recover/master/israeli-bank-reconciliation/SKILL.md",
+      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-bank-reconciliation/SKILL.md",
       "raw_snippet": "ATM withdrawals missing receipts. The 3 unmatched accounting records are checks not yet cleared. The report highlights one suspicious duplicate charge of 2,450 ILS at the same vendor on the same date. ### Example 2: Multi-Bank Reconciliation with Credit Cards User says: \"I need to reconcile both my Leumi checking account and my Max credit card agains",
       "fetched_at": "2026-08-19",
       "appears_in": [

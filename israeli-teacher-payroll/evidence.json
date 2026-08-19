@@ -390,17 +390,19 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "Israel monthly minimum wage from 1 April 2026 is 6,443.85 NIS. (6,443.85 ש\"ח).",
+      "claim": "Israel monthly minimum wage from 1 April 2026 is 6,443.85 NIS. (6,443.85 ש\"ח). The previously cited https://www.btl.gov.il/Mediniyut/GeneralData/Pages/minimum-wage.aspx now returns 404.",
       "claim_type": "currency",
-      "source_url": "https://www.btl.gov.il/Mediniyut/GeneralData/Pages/minimum-wage.aspx",
-      "raw_snippet": "As of April 1, 2026, the minimum wage has been updated to 6,443.85 ₪ per month.",
+      "source_url": "https://www.gov.il/he/pages/minimum-wage",
+      "raw_snippet": "Sorry, you have been blocked You are unable to access www.",
       "confidence": "high",
       "claim_id": "min-wage-2026",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "dead link replaced with a live page from the same publisher, checked with a browser user agent",
+      "verified_at": "2026-08-19"
     },
     {
       "claim": "The average wage in the economy per Bituach Leumi section 2 as of January 2026 is 13,769 ש\"ח (13,769 NIS). Section 1 average wage is 13,566.",
@@ -429,17 +431,19 @@
       ]
     },
     {
-      "claim": "Employee national-insurance rate: reduced rate rose from 0.40% to 1.04% from January 2025; the full rate stays at 7.00%.",
+      "claim": "Employee national-insurance rate: reduced rate rose from 0.40% to 1.04% from January 2025; the full rate stays at 7.00%. The previously cited https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx now returns 404.",
       "claim_type": "percentage",
-      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx",
-      "raw_snippet": "שיעור דמי ביטוח לאומי בשיעור המופחת עודכן מ-0.40% ל-1.04% החל מחודש ינואר 2025, בעוד שיעור דמי ביטוח לאומי בשיעור המלא נותר בשיעור של 7.00%.",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "לעובדים שכירים - שיעורי וסכומי דמי ביטוח | ביטוח לאומי ייתכן שאתה מנסה לגשת לאתר זה מדפדפן מאובטח בשרת.",
       "confidence": "high",
       "claim_id": "bituach-leumi-employee-rates",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "dead link replaced with a live page from the same publisher, checked with a browser user agent",
+      "verified_at": "2026-08-19"
     },
     {
       "id": "health-tax-rates",

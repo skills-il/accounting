@@ -100,7 +100,7 @@
     {
       "claim_id": "illustrative-example-values",
       "claim": "Skill-defined heuristics and illustrative example values, not external facts: a VAT rounding tolerance of 0.05 NIS (0.05 ש\"ח) per receipt and up to 0.10 NIS (0.10 ש\"ח) for many-line receipts; worked-example receipt amounts in Example 2 (fuel at NIS 7.45/L, 262.24 NIS / 262.24 ש\"ח, a water bottle at 8.90 NIS / 8.90 ש\"ח); and an illustrative 12% restaurant service charge in Example 3. These are authored teaching values, not claims about Israeli law or external data. These are values the skill itself defines for its worked examples, so the skill file is the source; no external publication states them.",
-      "source_url": "https://raw.githubusercontent.com/skills-il/recover/master/israeli-receipt-scanner/SKILL.md",
+      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-receipt-scanner/SKILL.md",
       "raw_snippet": "ading (sometimes) - Car wash or convenience store items as separate line items **Restaurants and Cafes**: - Service charge (שירות) as a percentage, usually 10-12% - Tip line (טיפ) may be blank or filled - Table number and server name - Split bill indicators **Online Purchases (invoices from Israeli e-commerce)**: - Digital format, often PDF - Shipping char",
       "fetched_at": "2026-08-19",
       "appears_in": [
