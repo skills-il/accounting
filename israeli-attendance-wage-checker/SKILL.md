@@ -1,42 +1,53 @@
 ---
 name: israeli-attendance-wage-checker
 description: >-
-  Not legal advice. Turns an Israeli timesheet into a wage reconciliation: converts clock-in and
-  clock-out spans into working hours, splits them into ordinary, overtime and weekly-rest hours,
-  applies the statutory premiums, and itemises owed against paid. Works for a small employer
-  checking compliance and for an employee who suspects a short payslip. Use when a user asks
-  whether they were paid correctly for overtime or Shabbat, how to compute shaot nosafot, what a
-  timesheet is actually worth, or what to do when the employer kept no hours record. It matters
-  because the premium tiers reset daily rather than monthly, the statutory week and the practical
-  week are different numbers, and an employer who kept no ledger carries the burden of proof up to
-  a capped number of hours. Do NOT use for gross-to-net (use israeli-payroll-calculator), for
-  severance or notice pay, to draft a claim, or for teacher or foreign-caregiver payroll.
+  Not legal advice. Audits an Israeli payslip and timesheet and itemises what is owed against what
+  was paid. Checks the payslip carries the components the law requires, converts clock-in and clock-
+  out spans into working hours, splits them into ordinary, overtime and weekly-rest hours, and
+  applies the statutory premiums. Works even when the payslip is the only document, because missing
+  components raise a presumption of an unlawful inclusive wage. Use when a user asks whether their
+  payslip is correct, whether overtime or Shabbat was paid correctly, how to compute shaot nosafot,
+  or what to do when the employer kept no hours record. It matters because the premium tiers reset
+  daily rather than monthly and the premium base includes every supplement. Do NOT use for gross-to-
+  net, tax or National Insurance deductions (use israeli-payroll-calculator), for severance, notice
+  pay or annual leave, to draft a claim or an employment contract, or for teacher or foreign-
+  caregiver payroll.
 license: MIT
 allowed-tools: 'Bash(python3:*)'
 compatibility: >-
   Knowledge plus a Python reconciliation helper (pure local arithmetic, no network). The helper is
-  optional: Step 6 states the same arithmetic for agents that cannot run scripts.
+  optional: Step 6 states the same arithmetic for agents that cannot run scripts, and the
+  payslip-only route in Step 1b needs no script at all.
 ---
 
-# Israeli Attendance Wage Checker
+# Israeli Payslip and Wage Checker
 
 ## Legal notice
 
-This is a free information tool operated by an AI model. It explains the law and computes an indicative figure from the hours you supply. All of its outputs are produced automatically by an AI model, with no involvement, review, or approval by an advocate. The output is not legal advice and not a legal opinion. It is a general explanation and an arithmetic estimate only: it does not read your employment contract, does not know which collective agreement or extension order applies to your workplace, does not check current case law, and does not examine your specific circumstances. An AI model may err, omit data, or present a wrong conclusion.
+This is a free information tool operated by an AI model. It explains the law and computes an indicative figure from the hours you supply. All of its outputs are produced automatically by an AI model, with no involvement, review, or approval by an advocate. The output is not legal advice and not a legal opinion. It is a general explanation and an arithmetic estimate only: it does not read your employment contract, does not know which collective agreement or extension order applies to your workplace, does not check current case law, and does not examine your specific circumstances. An AI model may err, omit data, or present a wrong conclusion. Where a payslip is the only document, the tool checks only what appears on the face of it: it has not seen the hours ledger, does not know whether the employer can rebut the presumption, and does not decide whether the applicability exclusion applies to you.
 
 The binding computation is the one your employer is obliged to make under the law and any applicable collective agreement, and a labour court decides any dispute about it. Any figure this tool produces is a draft for your personal preparation only, it is not a document prepared by an advocate, and it must not be relied on as evidence. This tool is not a substitute for advice that takes account of the particular circumstances and needs of each person, and before filing anything you should consult a licensed advocate. All use of the output is the user's sole responsibility.
 
 ## Problem
 
-An Israeli payslip shows a number of hours and a number of shekels, and almost nobody can tell whether the second follows from the first. The arithmetic is not intuitive: the premium tiers reset every day rather than accumulating over the month, so a worker can be owed overtime in a week where he worked exactly the standard hours. The statutory week and the week actually used in the economy are different figures, and quoting the wrong one moves every downstream number. Meal breaks come out of the count but some breaks stay in. And the most valuable rule of all is procedural rather than arithmetic: an employer who did not keep the hours ledger the law requires carries the burden of proving the employee did not work the disputed hours, up to a capped number of them. This skill starts from raw clock-in and clock-out entries and produces the reconciliation neither side usually has.
+An Israeli payslip shows a number of hours and a number of shekels, and almost nobody can tell whether the second follows from the first. The arithmetic is not intuitive: the premium tiers reset every day rather than accumulating over the month, so a worker can be owed overtime in a week where he worked exactly the standard hours. The statutory week and the week actually used in the economy are different figures, and quoting the wrong one moves every downstream number. Meal breaks come out of the count but some breaks stay in. And the most valuable rule of all is procedural rather than arithmetic: an employer who did not keep the hours ledger the law requires carries the burden of proving the employee did not work the disputed hours, up to a capped number of them. This skill works from whichever document the user actually holds. Given a timesheet it reconciles the hours; given only a payslip it audits the payslip on its own terms, because the components the law requires it to carry are the same ones the reconciliation would read, and their absence is itself a computable finding.
 
 ## Problem boundary
 
-This skill starts from HOURS and stops at GROSS owed. It does not compute income tax, National Insurance, health tax, pension, or net pay, which is `israeli-payroll-calculator`. It does not handle severance, notice pay, or end-of-employment settlements, and it does not compute annual leave, recuperation pay, or travel as standalone entitlements, though it flags them where they trigger a statutory presumption. It does not draft a claim or assess its merits. Teacher payroll and foreign-caregiver payroll have their own dedicated skills; do not reimplement them here.
+This skill starts from HOURS or from a PAYSLIP and stops at GROSS owed. It audits the earnings side of a payslip: the hours line, the value of a regular hour, and the premium components. It does **not** audit the deductions side. Income tax, National Insurance, health tax, pension and net pay are `israeli-payroll-calculator`, and a user who asks "is my net right?" should be handed off rather than answered here. It does not handle severance, notice pay, or end-of-employment settlements, and it does not compute annual leave, recuperation pay, or travel as standalone entitlements, though it flags them where they trigger a statutory presumption. It does not draft a claim or assess its merits. Teacher payroll and foreign-caregiver payroll have their own dedicated skills; do not reimplement them here.
 
 ## Instructions
 
 Read `references/rates-and-tiers.md` before computing any figure and `references/records-and-remedies.md` before answering anything about missing records, payslips, or late payment.
+
+**Route on the document the user has, not on the one you would prefer.** Most people arrive holding a payslip and nothing else, so treat that as the normal case rather than the degraded one:
+
+| What the user has | Where to go |
+|---|---|
+| A payslip only | Step 0, then Step 1, then **Step 1b**. Step 1b can produce a finding on its own. |
+| A payslip and a timesheet | Step 0 through Step 6, using Step 1b to check the payslip states what it must. |
+| A timesheet only | Step 0 through Step 6. Ask for the payslip, because without it there is nothing to compare owed against. |
+| Neither | Step 0, then Step 7. The absence of records is the finding. |
 
 ### Step 0, the applicability gate, run this first and every time
 
@@ -59,6 +70,39 @@ Two things about that gate matter more than the list itself, and most write-ups 
 6. **The hourly rate itself, where the wage is global.** A monthly wage does not state an hourly rate, and every premium in this skill is a multiple of one. Derive it from the wage and the agreed monthly hours basis, state the divisor you used, and say plainly that a different divisor changes every figure downstream. Do not silently assume a divisor.
 7. **Check the wage against the minimum-wage floor before anything else.** If the derived hourly rate is below the statutory minimum in force for that period, that shortfall is its own claim and it sits underneath the whole reconciliation. This skill does not carry the minimum-wage figure, because it is updated by order; look it up for the specific period rather than using a remembered number.
 8. **Tips.** In service sectors, whether tips form part of the wage, and on what basis they were recorded, changes the base every premium multiplies. Establish it rather than assuming the payslip's base line is the whole wage.
+
+### Step 1b, audit the payslip itself, and what to do when it is the only document
+
+A payslip is not merely a record of a decision already made. The law prescribes its contents, so it can be audited on its own terms with no timesheet beside it.
+
+**First, check the components are present.** The Schedule to חוק הגנת השכר, via `סעיף 24`, requires the payslip to state, among other things:
+
+| Component | What to look for | If absent |
+|---|---|---|
+| Hours actually worked in the period | A real hours figure, not a nominal 182 or 186 | Breach, and a presumption trigger |
+| Nominal hours at the workplace, and היקף משרה | The basis and the position scope. Check 1 cannot run without both | Breach. Ask before computing |
+| Value of a regular work hour | An explicit shekel-per-hour line | Breach. Without it the user cannot check any premium |
+| The regular wage | The base the premiums multiply | Breach |
+| Overtime and weekly-rest premium, itemised | **Units and amount**, not a lump "supplements" line | Breach, and a presumption trigger |
+| Leave balance, הבראה, נסיעות | Named lines or balances | Breach, and a presumption trigger. Hand the valuation off |
+
+An express note is also required where the supervision exclusion applies to the employee. Read any such note against Step 0 rather than accepting it: it records the employer's position on the gate, not a finding.
+
+**Second, check the payslip against itself.** Three arithmetic checks need no timesheet at all. Before running any of them, establish **what the wage line already contains**, because two lawful conventions differ: either it covers ordinary hours only and the overtime line carries the full 125 or 150 percent, or it already carries the 100 percent element of every hour worked and the overtime line carries only the supplement, 25 or 50 percent. Nearly every false finding comes from assuming one convention on a payslip drawn on the other.
+
+1. **Gate this on the convention, the pay basis, and the position scope.** For an hourly or daily paid employee the test turns on which convention the payslip uses. On the **supplement-only** convention the wage line already values every hour worked at 100 percent, so all hours times the value of a regular hour **equals** the wage line lawfully; that equality is expected, not a defect, and the premium sits wholly in the line check 2 reads. On the **full-rate** convention the wage line covers ordinary hours alone, so where the hours figure is all hours worked the product must **exceed** it by the overtime hours times the hourly value, and an exact match is the defect. Either way reconcile the residual rather than expecting a match: רטרו, השלמה לשכר מינימום, shift differentials, הבראה, נסיעות, a 13th salary and paid leave or sick hours each move one side lawfully, and equivalent-unit booking makes the count unreadable. For a **monthly-salaried** employee the test does not apply at all: the base is fixed and does not move with the hours worked. Check instead that the value of a regular hour equals the **full-time** base divided by the nominal basis, never the paid base, since משרה חלקית, mid-month start or termination and unpaid absence all prorate the base while the hourly value stays contractual. Allow two agorot for rounding, and more where a mid-month raise makes the full-time base ambiguous.
+2. Divide the stated overtime amount by the stated units, then read the quotient against the convention you established. On the full-rate convention, separate 125 and 150 lines each compare against the hourly value, a **single combined line** blends the tiers and lands between them, and a quotient at or near 100 percent means the premium was never applied. On the **supplement-only** convention the lawful quotients are 25 and 50 percent, and a monthly-salaried weekly-rest line at 50 percent is exactly what Step 4 requires, so reading either as an unpaid premium inverts the finding. Where the units are equivalent units, or a שעות גלובליות line carries a nominal count, the quotient means nothing and Step 7b is the route.
+3. Do **not** read a monthly hours total above the nominal basis as overtime. The basis is an average divisor, not a monthly cap, and a month with more working days lawfully produces more ordinary hours. A high hours line with zero overtime units is a question, not a finding: the daily and weekly split has to be seen. Nor is a total **below** the basis a finding: part-time, mid-month start and unpaid absence each produce one lawfully. Ask for the daily breakdown; if the employer has none, that absence is the Step 7 point.
+
+A payslip failing any of these carries a finding before a single attendance record is produced.
+
+**Third, and this is what makes a payslip-only case workable.** Where the disputed causes are non-payment of overtime premium, weekly-rest premium, leave pay, leave redemption, recuperation pay or travel, and the employer obliged to give a payslip gave none or gave one omitting those components, `סעיף 26ב(ג)` of חוק הגנת השכר raises a **presumption** that an unlawful inclusive wage was set contrary to `סעיף 5`, and the wage paid is treated as regular wage **exclusive of those components** unless the employer proves otherwise.
+
+Three things are easy to overstate. It is **rebuttable**, so report it as a presumption that shifts the argument and never as a decided entitlement. It attaches to the **enumerated causes only**, and is not a general "bad payslip means you win" rule. Leave, recuperation and travel appear as **triggers, not entitlements this skill prices**: name them and hand the valuation off.
+
+Its practical effect is large: the base is re-derived from the paid wage as regular wage and the premiums computed on top, rather than treated as already included. That is the Step 7b re-characterisation reached by another route, so never apply both to the same sum.
+
+**When the payslip is genuinely all there is**, the honest output is: the component breaches, the internal-consistency findings, the presumption and what it shifts, an hours figure asked of the user as their own factual version (Step 7 requires one), and a bounded range rather than a confident number. Say plainly that a timesheet, badge log or shift app would convert that range into a figure.
 
 ### Step 2, convert the raw spans into working hours
 
@@ -124,16 +168,16 @@ The labour courts do recognise a valid global arrangement, on cumulative conditi
 
 ### Step 7c, evidence, and how long the claim lives
 
-**Evidence first.** Where the employer has no ledger, the user's own material is what carries the claim. Tell them to collect, and preserve, what they already have: payslips for the whole period, the employment contract and any global-pay annex, their own diary or calendar, entry-badge or shift-app records, WhatsApp and email traffic showing when they were asked to stay, and the names of colleagues who worked the same shifts. A written request to the employer for the section 24 ledger is worth making in its own right, because a refusal is itself informative.
+**Evidence first.** Where the employer has no ledger, the user's own material carries the claim. Tell them to collect and preserve it first; `references/records-and-remedies.md` section 7 lists what counts, and why asking the employer in writing for the ledger is worth doing alone.
 
-**The limitation clock on the wage.** A wage claim is an ordinary civil claim and it prescribes in **seven years** (`סעיף 5(1)` of the Limitation Law, "בשאינו מקרקעין, שבע שנים"), running from when the cause of action arose, which for wages means each payment separately. Say this whenever a user asks about an old period, and keep it distinct from the far shorter delayed-wage clock in Step 8. Confusing the two is how a live seven-year wage claim gets abandoned because someone read the 60-day figure.
+**The limitation clock on the wage.** A wage claim is an ordinary civil claim and prescribes in **seven years** (`סעיף 5(1)` of the Limitation Law, "בשאינו מקרקעין, שבע שנים"), running from when the cause of action arose, which for wages means each payment separately. Say this whenever a user asks about an old period, and keep it distinct from the far shorter delayed-wage clock in Step 8. Confusing the two is how a live wage claim gets abandoned over the 60-day figure.
 
 ### Step 7d, what this skill does not price
 
-Flag these and stop, rather than folding a guess into the figure:
+Flag these and stop, rather than fold a guess into the figure:
 
-- **Sector extension orders** (guarding, cleaning, hotels and restaurants, manpower contractors, care work) set their own rates and supplements above the statutory floor. If one applies, it governs and the figures here are the fallback.
-- **דמי חגים** (holiday pay) is a separate entitlement with its own qualifying conditions and its own interaction with the rest-day rules. It is adjacent to this reconciliation, not part of it.
+- **Sector extension orders** (guarding, cleaning, hotels and restaurants, manpower contractors, care work) set their own rates and supplements above the statutory floor. If one applies it governs, and these figures are the fallback.
+- **דמי חגים** (holiday pay) is a separate entitlement with its own qualifying conditions and interaction with the rest-day rules. It is adjacent to this reconciliation, not part of it.
 
 ### Step 8, timing, and the two different clocks
 
@@ -155,9 +199,13 @@ Both work six hours in the weekly rest. The monthly-salaried employee is already
 
 The employee says he worked roughly ten overtime hours a week for a year and the employer produced nothing. Explain the burden shift, then immediately explain the cap and the requirement to give a minimal factual version, and produce the figure as a bounded range rather than as the full year at ten hours a week.
 
-### A payslip with no hours line
+### A payslip with no hours line, and nothing else
 
-Point out that the payslip must state the hours actually worked and the value of a regular hour, then move to the presumption that a missing or incomplete payslip triggers, which is set out in the references.
+The user has three payslips and no timesheet. Each shows a monthly gross and a single "supplements" line, with no hours figure, no value of a regular hour, and no overtime units. Run Step 1b: the missing hours line and the unitemised premium are breaches in their own right, and because the disputed cause is unpaid overtime premium they trigger the `סעיף 26ב(ג)` presumption, so the paid wage is treated as regular wage exclusive of the premium unless the employer proves otherwise. Then ask the user for their own factual version of the hours, and produce a bounded range. Do not produce a single figure from three payslips and an estimate.
+
+### A payslip that looks complete but is not
+
+The employee is hourly paid. The payslip states 195 hours worked, a value of a regular hour, a wage line of 195 times that value, and 20 overtime units against no premium amount. Establish the convention first: that wage line is reassuring on one reading and damning on the other. On the supplement-only convention 195 times the hourly value is exactly right and check 1 passes; on the full-rate convention that line should have covered only the 175 ordinary hours. Either way the employee was paid 195 hours of value for 175 ordinary and 20 overtime hours, where the lawful figure is 200: 175 plus 20 at 125 percent, or equivalently 195 plus the 25 percent supplement on 20. The premium was never applied, the shortfall is at least five hours of value and more if the daily split puts any of the 20 in the 150 percent tier, and no attendance record was needed. Check 1 alone would have missed it on a supplement-only payslip, which is why the convention comes first.
 
 ## Reference Links
 
@@ -184,6 +232,9 @@ Point out that the payslip must state the hours actually worked and the value of
 - **The premium base includes supplements.** Computing off bare base salary is how a compliant-looking payslip hides a shortfall.
 - **"No records means the employee wins everything" is wrong.** The burden shift is capped, and the employee must still give a minimal factual version.
 - **The delayed-wage clock is much shorter than the wage claim.** Reporting a halana figure without the one-year and 60-day limits misleads the user about what is still recoverable.
+- **A payslip alone is a workable case, not a dead end.** The `סעיף 26ב(ג)` presumption converts missing payslip components into a computable position, so never tell a user with no timesheet that nothing can be done.
+- **Do not apply the re-characterisation twice.** Step 1b's presumption and Step 7b's global-overtime remedy both re-derive the base from the paid wage. Reaching the same sum by both routes and stacking them inflates the claim.
+- **The deductions side is not this skill's.** A payslip audit that drifts into tax, National Insurance or pension has left its boundary; hand off to `israeli-payroll-calculator`.
 - **Check the applicability gate before doing any arithmetic.** For a genuine management or personal-trust role the entire computation is void, and producing a confident number for such a worker is worse than producing none.
 
 ## Troubleshooting
@@ -194,5 +245,7 @@ Point out that the payslip must state the hours actually worked and the value of
 | The premium comes out lower than the user expects | The base excluded supplements | Recompute the regular wage including all supplements the employer pays |
 | Two employees worked the same Saturday and the figures differ | Monthly-salaried versus hourly | This is correct. Explain the two regimes rather than reconciling them |
 | The employer says the salary already includes overtime | Inclusive wage | Such a wage is treated as regular wage only, so the entitlement survives; check whether an approved collective agreement applies |
-| The user wants net pay | Out of scope | Compute gross owed here and hand off to `israeli-payroll-calculator` |
+| The user has only a payslip and no timesheet | Treated as a dead end | Run Step 1b. Component breaches plus the `סעיף 26ב(ג)` presumption produce a finding without any attendance record |
+| The payslip shows overtime units but the premium looks like base rate | Premium never applied | Divide the overtime amount by the units and compare against 125 and 150 percent of the stated hourly value |
+| The user asks whether the tax or pension deduction is right | Out of scope | This skill audits the earnings side only. Hand off to `israeli-payroll-calculator` |
 | The worker is a manager | The applicability gate | Do not produce a premium figure as though it were owed. Explain the exclusion and that it turns on the actual role |

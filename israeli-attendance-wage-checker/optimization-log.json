@@ -1,0 +1,33 @@
+{
+  "cycles": [
+    {
+      "version": "1.2.0",
+      "date": "2026-08-25",
+      "holdout_before": 0.667,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [
+          "בתלוש שלי אין בכלל שורה של שעות, זה חוקי?",
+          "כמה ימי חופשה שנתית מגיעים לי בשנה"
+        ],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "אין לי דוח נוכחות, רק תלושים. אפשר לבדוק אם קיפחו אותי בשעות נוספות?",
+          "תבדקו לי אם ניכוי הפנסיה והמס בתלוש שלי נכון",
+          "אני מנהל מחלקה בלי שעון נוכחות, מגיע לי גמול שעות נוספות?",
+          "כמה מגיע למורה על שעות נוספות"
+        ]
+      },
+      "lessons": [
+        "ALL THREE internal-consistency checks invented for Step 1b were wrong on first draft, and none of the mechanical gates could have caught any of them, because each was arithmetic about the world rather than a cited claim. (1) 'hours x hourly value = wage line' had no pay-basis gate and would have reported a false shortfall on most lawful MONTHLY-SALARIED payslips. (2) The premium check assumed separate 125/150 lines; a single combined overtime line yields a blended quotient, so only ~100 percent is a reliable finding. (3) The hours-line check told the reader to treat a monthly total above the nominal basis as overtime, which CONTRADICTED the skill's own Gotcha 'Never compute from a monthly hour total' - the 182/186 divisor is an average, not a cap, and a month with more working days lawfully produces more ordinary hours. RULE FOR NEXT CYCLE: newly-invented arithmetic is the highest-risk content in any update and the evidence gate is blind to it by construction. Walk each new check through the ORDINARY case before the pathological one, and check it against the skill's own stated rules for contradiction.",
+        "Found by accident while making room under the word cap, not by any gate: Step 7c cited 'the סעיף 24 ledger' in both languages, but סעיף 24 is the payslip duty and the ledger duty is סעיף 25 of חוק שעות עבודה ומנוחה. The correct section was sitting in records-and-remedies.md section 1 the whole time. No gate catches a section number that is internally plausible and contradicted only by a reference file: the evidence gate checks that cited claims are real, not that the body cites the right one. Consider a cross-file section-reference consistency check next cycle.",
+        "The v1.1.0 eval file recorded annual leave and contract drafting as boundaries carried by the body rather than by the description, and counted them as passes anyway. Scored honestly this cycle they were failures, the 0.90 holdout gate rejected the first draft, and both are now named in the description. Do not carry a 'soft pass' forward again: if the description does not exclude it, it is a fail.",
+        "Open item carried from the domain checklist and now MORE pressing, not less: the 182 versus 186 hourly-divisor conflict. Step 1 item 6 derives an hourly rate and Step 1b now tells the reader a nominal 182 or 186 in the hours field is a red flag, so the skill both derives and comments on the divisor without a primary source settling which is right. Close this next cycle.",
+        "Discretionary edit deferred over the Phase 4.1 cap: the payslip internal-consistency checks in Step 1b are stated as prose and would be easier for an agent to execute as a short worked table in references/records-and-remedies.md.",
+        "Deferred: sec. 26b(c) names leave, recuperation and travel as presumption triggers while the Problem boundary excludes pricing them. The hand-off target for valuing them is not named anywhere. Decide next cycle whether to name a sibling skill or state plainly that no skill covers it.",
+        "Discoverability, not correctness, was the entire defect this cycle. The skill answered payslip questions correctly at v1.1.0 and had 5 installs against 144 views because its name and description led with the document users do not hold. Check the name against the query users actually type, not against what the skill internally does."
+      ]
+    }
+  ]
+}

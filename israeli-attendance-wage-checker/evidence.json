@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-attendance-wage-checker",
   "schemaVersion": "1.0",
-  "generated_at": "2026-08-11",
+  "generated_at": "2026-08-25T00:00:00Z",
   "method": "Statutory snippets sliced directly from the rendered he.wikisource pages (curl with a browser UA), so each is byte-contiguous on the cited page. The one PDF source is flagged for digit mangling and is trusted for a single figure only.",
   "claims": [
     {
@@ -245,6 +245,36 @@
       "confidence": "high",
       "fetched_at": "2026-08-11",
       "notes": "Section 5 of the Limitation Law, read with section 6 (the period starts on the day the cause of action arose). Cited in Step 7c to keep the seven-year wage clock separate from the one-year / 60-day delayed-wage clock in Step 8."
+    },
+    {
+      "claim_id": "wage-s26b-c-presumption",
+      "claim": "Where the disputed causes are non-payment of overtime premium, weekly-rest premium, leave pay, leave redemption, recuperation pay or travel, and the employer obliged to give a payslip gave none or gave one omitting those components, it is presumed that an unlawful inclusive wage was set contrary to sec. 5, and the wage paid is treated as regular wage exclusive of those components, unless the employer proves otherwise. [סעיף 26ב(ג)]",
+      "claim_type": "statute",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_השכר",
+      "raw_snippet": "לא מסר לעובד תלוש שכר, או מסר לעובד תלוש שכר שלא נכללו בו הרכיבים האמורים, חזקה היא כי נקבע לעובד שכר כולל",
+      "confidence": "high",
+      "fetched_at": "2026-08-25T00:00:00Z",
+      "notes": "Rebuttable. Sliced contiguously from the rendered wikisource page; template markup avoided so the snippet matches the rendered text layer."
+    },
+    {
+      "claim_id": "wage-s26b-c-triggers",
+      "claim": "The sec. 26b(c) presumption attaches only to the enumerated causes: overtime premium, weekly-rest premium, leave pay, leave redemption, recuperation pay and travel. [סעיף 26ב(ג)]",
+      "claim_type": "statute",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_השכר",
+      "raw_snippet": "אי־תשלום גמול שעות נוספות, גמול עבודה במנוחה השבועית, דמי חופשה, תמורת חופשה או פדיון חופשה, דמי הבראה או דמי נסיעות",
+      "confidence": "high",
+      "fetched_at": "2026-08-25T00:00:00Z",
+      "notes": "Note the maqaf (U+05BE) in אי־תשלום, as rendered by the source."
+    },
+    {
+      "claim_id": "wage-s26b-c-consequence",
+      "claim": "The consequence of the sec. 26b(c) presumption is that the wage paid is treated as regular wage exclusive of the components, unless the employer proves otherwise. [סעיף 26ב(ג)]",
+      "claim_type": "statute",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_השכר",
+      "raw_snippet": "ויראו בשכר ששולם לו כשכר רגיל, שהרכיבים האמורים אינם כלולים בו, אלא אם כן הוכיח המעסיק אחרת",
+      "confidence": "high",
+      "fetched_at": "2026-08-25T00:00:00Z",
+      "notes": "This is the re-derivation the payslip-only route in Step 1b relies on."
     }
   ]
 }

@@ -54,7 +54,20 @@ The Schedule to חוק הגנת השכר (via `סעיף 24`) requires the paysli
   supervision exclusion applies;
 - **the value of a regular work hour**;
 - other payments itemised, **including overtime and weekly-rest premium, with the number of units and
-  the amount**.
+  the amount**;
+- **היקף משרה** (position scope) and, for a non-monthly employee, the stated basis of pay;
+- employment start date and seniority;
+- leave days used and leave balance, sick-day balance, and הבראה;
+- the period covered, the date of payment, and cumulative (מצטבר) totals.
+
+Two of these carry weight the reconciliation depends on. The **nominal hours at the workplace** is the
+divisor the monthly branch of check 1 needs and the figure check 3 warns against misreading as a cap;
+**היקף משרה** is what makes that divisor computable for a part-timer, whose base is prorated while the
+hourly value stays contractual. Without both, check 1 cannot be run on a monthly payslip at all.
+
+The leave, הבראה and נסיעות lines matter for a second reason: `סעיף 26ב(ג)` names those very causes as
+presumption triggers, so a payslip missing its leave balance is both a breach and a trigger. This skill
+does not price them; name them and hand the valuation off.
 
 These are exactly the fields the reconciliation reads. Their absence is both a breach in itself and,
 under `סעיף 26ב(ג)`, a trigger: where the disputed causes are overtime, weekly-rest premium, leave,
@@ -105,3 +118,19 @@ Produce the reconciliation in this order, because it is the order in which the u
 4. Records position: what exists, what the employer was obliged to keep, and what follows.
 5. Timing: which clocks are running and which have expired.
 6. Hand-off: what a labour court would decide and what needs an advocate.
+
+## 7. Evidence to collect where the employer kept no ledger
+
+The user's own material is what carries the claim. Tell them to collect and preserve:
+
+- payslips for the whole period, and the employment contract with any global-pay annex;
+- their own diary or calendar;
+- entry-badge or shift-app records;
+- WhatsApp and email traffic showing when they were asked to stay;
+- the names of colleagues who worked the same shifts.
+
+A written request to the employer for the `סעיף 25` ledger is worth making in its own right, because a
+refusal is itself informative.
+
+Where the only document is a payslip, the same list applies, and the `סעיף 26ב(ג)` presumption in
+section 4 above is what carries the case in the meantime.

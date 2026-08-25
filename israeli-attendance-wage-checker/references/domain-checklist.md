@@ -1,6 +1,8 @@
 # Domain Coverage Checklist, israeli-attendance-wage-checker
 
-Generated: 2026-08-11. Every statutory row was verified against the source's own text layer on
+Generated: 2026-08-11. Revised 2026-08-25 (v2): the payslip route was promoted from a reference-only
+topic into a first-class entry point (Step 1b), because most users arrive holding a payslip and no
+timesheet. Every statutory row was verified against the source's own text layer on
 he.wikisource.org, sliced directly from the rendered page so each quoted snippet is contiguous.
 Aggregator pages were used for taxonomy discovery only and are not cited for any rule.
 
@@ -41,8 +43,13 @@ shift when the employer kept no ledger.
       cap in `סעיף 26ב(ב)`, and the employee's own minimal factual version.
 - [ ] Inclusive wage treated as regular wage only, `סעיף 5` of חוק הגנת השכר.
 - [ ] Payslip fields, the Schedule via `סעיף 24`: hours actually worked, value of a regular hour, and
-      itemised overtime and rest-day premium with units and amounts.
-- [ ] Presumption from a missing or incomplete payslip, `סעיף 26ב(ג)`.
+      itemised overtime and rest-day premium with units and amounts. IN BODY at Step 1b since v1.2.0.
+- [ ] Presumption from a missing or incomplete payslip, `סעיף 26ב(ג)`, WITH all three qualifiers: it
+      is rebuttable, it attaches only to the enumerated causes, and leave/recuperation/travel appear
+      as triggers rather than as entitlements this skill prices. IN BODY at Step 1b since v1.2.0.
+- [ ] Payslip internal-consistency checks that need no timesheet: hours times hourly value against
+      the regular-wage line; premium total divided by premium units against 125 and 150 percent;
+      hours line against the daily and weekly bounds.
 - [ ] Wage due date, `סעיף 9`, and delayed-wage compensation, `סעיף 17`, as the HIGHER of the two
       formulas.
 - [ ] The halana clock, `סעיף 17א`: one year, or 60 days from receipt, WHICHEVER IS EARLIER,
@@ -106,9 +113,10 @@ shift when the employer kept no ledger.
    this is closed.
 2. The current overtime caps from the general permit, with their publication reference and any live
    temporary provisions.
-3. The 182 versus 186 hourly-divisor conflict between the extension order and חוק שכר מינימום, which
-   this skill does not currently need because it takes the hourly rate as an input rather than
-   deriving it.
+3. The 182 versus 186 hourly-divisor conflict between the extension order and חוק שכר מינימום. This
+   is now MORE pressing than when it was first logged: Step 1 item 6 derives an hourly rate from a
+   global wage, and Step 1b tells the reader that a nominal 182 or 186 in the hours field is a red
+   flag, so the skill both derives and comments on the divisor. Close this with a primary source.
 
 ## Authoritative sources
 
