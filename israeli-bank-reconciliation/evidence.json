@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-bank-reconciliation",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-08-27T16:58:37.922482+00:00",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -164,7 +164,9 @@
       "fetched_at": "2026-07-27T00:37:35Z",
       "appears_in": [
         "references/domain-checklist.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T16:39:33.135573+00:00"
     },
     {
       "claim_id": "bookkeeping-directives-1973",
@@ -199,7 +201,8 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T16:38:49.206053+00:00"
     },
     {
       "claim_id": "cheque-provisional-credit-three-days",
@@ -215,13 +218,185 @@
     {
       "claim_id": "allocation-number-5000-june-2026",
       "claim": "Since 1 June 2026 a tax invoice of NIS 5,000 (5,000 ש\"ח) or more before VAT requires an allocation number (mispar haktzaa) from the Tax Authority platform, and without one the buyer cannot offset the VAT on that expense. The threshold was NIS 10,000 from 1 January 2026.",
-      "source_url": "https://www.chamber.org.il/serviceslobby/finance/1429/162557/",
-      "raw_snippet": "החל מ־1 ביוני 2026: חובת מספר הקצאה בניכוי מס תשומות תחול מעסקאות מעל 5,000 ₪",
-      "fetched_at": "2026-07-27T00:48:37Z",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "החל מיום 1.6.2026 תורחב החובה לקבל מספר הקצאה לחשבונית מס, כך שתחול על עסקאות שסכומן עולה על 5,000 ש\"ח",
+      "fetched_at": "2026-08-27T16:38:49.206053+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "allocation-schedule-full",
+      "claim": "The allocation-number regime began in May 2024. The threshold schedule before VAT is NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, and NIS 5,000 from June 2026.",
+      "source_url": "https://www.icount.co.il/blog/invoice-israel/",
+      "raw_snippet": "מאי 2024 25,000 ש״ח ינואר 2025 20,000 ש״ח ינואר 2026 10,000 ש״ח יוני 2026 5",
+      "fetched_at": "2026-08-27T16:38:23.166681+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-schedule-corroboration",
+      "claim": "Independent corroboration of the same four-step schedule from the start of the reform in May 2024.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מאי 2024 25,000 ₪ ינואר 2025 20,000 ₪ ינואר 2026 10,000 ש״ח יוני 2026 ואילך 5,000 ש״ח",
+      "fetched_at": "2026-08-27T16:38:23.166681+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-regime-start-may-2024",
+      "claim": "The Israel Invoices model came into force in May 2024, so transactions dated before that never required an allocation number.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מת חשבוניות ישראל, נכנסה לתוקף במאי 2024",
+      "fetched_at": "2026-08-27T16:38:23.166681+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s38a1-deduction-bar",
+      "claim": "Section 38(a1) of the VAT Law disallows the input-VAT deduction on a tax invoice whose amount before tax EXCEEDS NIS 5,000 (NIS 10,000 from January 2026 to May 2026) and which carries no number allocated by the Director. There is no buyer-request condition.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים (מינואר 2026 ועד מאי 2026: 10,000 שקלים חדשים) ושאינה כוללת מספר שהקצה לה המנהל",
+      "fetched_at": "2026-08-27T16:38:23.166681+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s47a2-zero-rate-carveout",
+      "claim": "Section 47(a2)(1) applies only to a tax invoice issued for a transaction whose tax is not at the zero rate, so a zero-rated or exempt-only invoice is outside the allocation-number requirement.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "הוראות סעיף קטן זה יחולו לעניין חשבונית מס שהוצאה בשל עסקה שהמס שחל לגביה אינו בשיעור אפס",
+      "fetched_at": "2026-08-27T16:38:23.166681+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-section-38-he",
+      "claim": "סעיף 38 לחוק מס ערך מוסף עוסק בניכוי מס תשומות, וסעיף קטן (א1) שולל את הניכוי בחשבונית מעל הסף שאין בה מספר שהקצה המנהל.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים",
+      "fetched_at": "2026-08-27T16:38:23.166681+00:00",
+      "appears_in": [
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-section-47-he",
+      "claim": "סעיף 47 לחוק מס ערך מוסף הוא הזכות להוציא חשבונית מס; סעיף קטן (א2)(1) מסדיר את בקשת מספר ההקצאה ואת החרגת עסקה בשיעור אפס.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "47. זכות להוציא חשבונית מס",
+      "fetched_at": "2026-08-27T16:38:23.166681+00:00",
+      "appears_in": [
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "boi-no-rate-days-exclude-friday",
+      "claim": "The Bank of Israel publishes representative rates on foreign-currency business days only, and names the no-rate days as Saturdays, Sundays, Israeli holidays, Christmas Day, New Year's Day and Easter. Friday is NOT among them.",
+      "source_url": "https://www.boi.org.il/en/economic-roles/financial-markets/explanatory-notes-to-the-representative-exchange-rates/",
+      "raw_snippet": "There are no representative rates on Saturdays, Sundays, Israeli holidays, Christmas Day, New Year",
+      "fetched_at": "2026-08-27T16:58:37.922482+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T16:58:37.922482+00:00"
+    },
+    {
+      "claim_id": "amex-login-fields-id",
+      "claim": "The library's SCRAPERS map declares amex loginFields as ['id','card6Digits',PASSWORD_FIELD]. The README prose says username, and the code is authoritative.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/master/src/definitions.ts",
+      "raw_snippet": "loginFields: ['id', 'card6Digits', PASSWORD_FIELD]",
+      "fetched_at": "2026-08-27T16:58:37.922482+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bank-scrapers-credentials.md"
+      ]
+    },
+    {
+      "claim_id": "behatsdaa-beyahad-login-fields",
+      "claim": "behatsdaa and beyahadBishvilha both declare loginFields ['id', PASSWORD_FIELD], a shape the skill previously did not carry, so a fallback to ['username','password'] would post a wrong-shaped credential.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/master/src/definitions.ts",
+      "raw_snippet": "[CompanyTypes.behatsdaa]",
+      "fetched_at": "2026-08-27T16:58:37.922482+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bank-scrapers-credentials.md"
+      ]
+    },
+    {
+      "claim_id": "onezero-login-fields",
+      "claim": "oneZero declares five login fields: email, password, otpCodeRetriever, phoneNumber, otpLongTermToken. otpCodeRetriever is a function, so oneZero credentials cannot be built from environment variables.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/master/src/definitions.ts",
+      "raw_snippet": "otpCodeRetriever",
+      "fetched_at": "2026-08-27T16:58:37.922482+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bank-scrapers-credentials.md"
+      ]
+    },
+    {
+      "claim_id": "vat-rate-17-before-2025",
+      "claim": "The VAT rate was 17% until 31 December 2024 and is 18% from 1 January 2025, so a retrospective reconciliation must apply the rate in force at the transaction date.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_%28%D7%9E%D7%A2%22%D7%9E%29",
+      "raw_snippet": "החל מיום 01.01.2025 הוא עומד על 18% ממחיר הרכישה או השירות. עד 31.12.2024 היה שיעור המע\"מ 17%",
+      "fetched_at": "2026-08-27T16:58:37.922482+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s47a2-issuer-duty",
+      "claim": "Section 47(a2)(1) places the duty to request an allocation number on the osek murshe issuing the tax invoice, at the buyer's demand, for a transaction exceeding the s.38(a1) amount.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "ובעסקה שסכומה, בלא המס, עולה על הסכום האמור בסעיף 38(א1)",
+      "fetched_at": "2026-08-27T16:58:37.922482+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-inclusive-portion-17-percent",
+      "claim": "At a 17% VAT rate the tax portion of a gross amount is 17/117 = 14.53%, the pre-2025 counterpart of the 18/118 = 15.25% signature. Arithmetic derived from the rate, not a published figure.",
+      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-bank-reconciliation/SKILL.md",
+      "raw_snippet": "its signature is 17/117 (14.53%), not 15.25%",
+      "fetched_at": "2026-08-27T16:58:52.549376+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-08-27T16:58:52.549376+00:00"
+    },
+    {
+      "claim_id": "example1-bank-side-match-rate",
+      "claim": "Example 1's illustrative figures give 142 matched of 150 bank lines, so the bank-side match rate is 142/150 = 94.7%. Arithmetic on the example's own hypothetical counts.",
+      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-bank-reconciliation/SKILL.md",
+      "raw_snippet": "A reconciliation report showing a 94.7% bank-side match rate (142 of 150 bank lines)",
+      "fetched_at": "2026-08-27T16:58:52.549376+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-08-27T16:58:52.549376+00:00"
     }
   ]
 }

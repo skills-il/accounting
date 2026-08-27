@@ -1,6 +1,6 @@
 ---
 name: israeli-bank-reconciliation
-description: Automates bank reconciliation for Israeli banks and credit-card issuers (Leumi, Hapoalim, Discount, Mizrahi Tefahot, Beinleumi/FIBI, Otsar Hahayal, Mercantile, Massad, Yahav, OneZero, and the card issuers Isracard, Max, Visa Cal, Amex) using the israeli-bank-scrapers library. Matches scraped or imported transactions to invoices and receipts, detects discrepancies, and generates reconciliation reports with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you need to reconcile bank statements against your accounting records, identify missing invoices, or prepare monthly closing reports for Israeli business accounts. Do NOT use for international bank accounts, cryptocurrency wallets, or investment portfolio reconciliation.
+description: Not accounting or tax advice. Automates bank reconciliation for Israeli banks and credit-card issuers (Leumi, Hapoalim, Discount, Mizrahi Tefahot, Beinleumi/FIBI, Otsar Hahayal, Mercantile, Massad, Yahav, OneZero, and the card issuers Isracard, Max, Visa Cal, Amex) using the israeli-bank-scrapers library. Matches scraped or imported transactions to invoices and receipts, detects discrepancies, and generates reconciliation reports with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you need to reconcile bank statements against your accounting records, identify missing invoices, or prepare monthly closing reports for Israeli business accounts. Do NOT use for international bank accounts, cryptocurrency wallets, or investment portfolio reconciliation.
 license: MIT
 ---
 
@@ -8,6 +8,13 @@ license: MIT
 # Israeli Bank Reconciliation
 
 Automate the process of reconciling Israeli bank transactions against your accounting records. This skill leverages the open-source `israeli-bank-scrapers` library to fetch transactions and provides a structured workflow for matching, discrepancy detection, and report generation.
+
+## Legal notice
+
+This is a free information tool operated by an AI model. It matches bank lines against accounting records and explains the bookkeeping and VAT rules involved. All of its outputs are produced automatically by an AI model, with no involvement, review, or approval by a tax adviser or accountant. A reconciliation it produces is not an audited reconciliation, not a tax opinion, and not professional advice, but a general working paper only: it does not examine the full extent of your income or your complete documents. An AI model may err, omit data, or present a wrong conclusion.
+
+Any classification it makes, including whether an expense's input VAT may be deducted or whether an invoice required an allocation number, is an automatic draft for your own preparation and is not a determination. Responsibility for reporting and for paying the tax is yours, the binding computation is the Tax Authority's, and representation before the Tax Authority is reserved to those permitted by law. This tool is not a substitute for advice that takes account of the particular circumstances and needs of each person. Have a tax adviser or accountant review the reconciliation before you rely on it for filing. All use of its output is the user's sole responsibility.
+
 
 ## Instructions
 
@@ -46,13 +53,14 @@ For users who want automated budget tracking alongside reconciliation, consider 
 | Provider | Credential fields |
 |---|---|
 | `hapoalim` | `userCode`, `password` |
-| `leumi`, `mizrahi`, `otsarHahayal`, `beinleumi`, `massad`, `max`, `visaCal` | `username`, `password` |
+| `leumi`, `mizrahi`, `otsarHahayal`, `beinleumi`, `massad`, `max`, `visaCal`, `union`, `pagi` | `username`, `password` |
+| `behatsdaa`, `beyahadBishvilha` | `id`, `password` |
 | `discount`, `mercantile` | `id`, `password`, `num` |
 | `isracard` | `id`, `card6Digits`, `password` |
-| `amex` | `username`, `card6Digits`, `password` |
+| `amex` | `id`, `card6Digits`, `password` |
 | `yahav` | `username`, `password`, `nationalID` |
 
-`oneZero` is the exception: it does not use the username/password shape and needs its own flow (email plus password plus an OTP step), so do not let it fall through to the default. Check the library README for the provider you actually use before running, since these can change between major versions.
+`oneZero` is the exception: it takes five fields (`email`, `password`, `otpCodeRetriever`, `phoneNumber`, `otpLongTermToken`), and `otpCodeRetriever` is a FUNCTION rather than a string, so it cannot be built from env vars and must not fall through to the default. **Never guess the shape for a provider that is not in the table**: sending `username` to a provider expecting `id` produces a well-formed but wrong request, the login fails, and it counts toward account lockout. Throw instead of guessing. Check the library README for the provider you actually use before running, since these can change between major versions.
 
 **Read the credentials from the environment at runtime.** A JSON file does NOT expand `${VAR}`: if you write `"password": "${BANK_PASSWORD}"` the scraper sends the literal string `${BANK_PASSWORD}` to the bank as your password, which fails and counts against the lockout threshold. Keep only non-secret routing in the config file:
 
@@ -64,36 +72,8 @@ For users who want automated budget tracking alongside reconciliation, consider 
 }
 ```
 
-```javascript
-const { CompanyTypes } = require('israeli-bank-scrapers');
+The full 19-provider credential table, the fail-closed credential builder, and the `ScraperOptions` that affect a reconciliation are in `references/bank-scrapers-credentials.md`. Never guess the field shape for a provider that is not listed there.
 
-// Field list per provider. Copy from the library README for your provider before
-// running; these can change between major versions.
-const CREDENTIAL_FIELDS = {
-  [CompanyTypes.hapoalim]:   ['userCode', 'password'],
-  [CompanyTypes.discount]:   ['id', 'password', 'num'],
-  [CompanyTypes.mercantile]: ['id', 'password', 'num'],
-  [CompanyTypes.isracard]:   ['id', 'card6Digits', 'password'],
-  [CompanyTypes.amex]:       ['username', 'card6Digits', 'password'],
-  [CompanyTypes.yahav]:      ['username', 'password', 'nationalID'],
-};
-const DEFAULT_FIELDS = ['username', 'password'];
-
-// Build credentials in code, from the environment, matching the provider's shape.
-function credentialsFor(account) {
-  const fields = CREDENTIAL_FIELDS[account.companyId] || DEFAULT_FIELDS;
-  const creds = {};
-  for (const field of fields) {
-    const envName = `${account.credentialsEnvPrefix}_${field.toUpperCase()}`;
-    const value = process.env[envName];
-    if (!value) {
-      throw new Error(`Missing ${envName}. Set it before running; do NOT put secrets in the config file.`);
-    }
-    creds[field] = value;
-  }
-  return creds;
-}
-```
 
 The loop throws on a missing field rather than sending an empty or literal placeholder value to the bank. Stop after a single authentication failure rather than retrying in a loop: Israeli banks lock online-banking access after a small number of failed attempts.
 
@@ -206,102 +186,15 @@ For CSV import, handle Israeli-specific formatting:
 
 ### Step 5: Define Matching Rules
 
-Configure rules for automatic transaction matching. The matching engine supports multiple strategies applied in priority order.
+Define the rules that pair a bank line with an accounting record, in this order of confidence:
 
-**Exact match**: Match by reference number and exact amount.
+1. **Exact**: same date and same amount.
+2. **Fuzzy date**: same amount within a small date window, for value-date drift.
+3. **Tolerance**: same date, amount within tolerance (1.00 ILS for shekel lines, 5.00 ILS where a currency conversion is involved).
+4. **Grouped**: one bank line settling several accounting records, and the card-settlement case where one debit covers a whole statement.
+5. **Reference**: match on cheque number, transaction identifier or asmachta where both sides carry one.
 
-**Fuzzy match**: Match by date range (+/- 3 days), amount tolerance (within 1 ILS), and vendor name similarity.
-
-**Pattern match**: Define regex patterns for recurring transactions (rent, utilities, subscriptions).
-
-**Standing-order match (hora'ot keva)**: Standing orders are the most common recurring Israeli bank debit (rent, loan repayments, gym, insurance, donations). Detect them by a stable amount that repeats on roughly the same day each month from the same payee, often carrying a "הוראת קבע" / "הו"ק" marker in the description. Treat a confirmed standing order as a recurring expense the books should already expect, and roll an unbooked one forward as a posting candidate (see Step 6) rather than chasing it as a missing invoice.
-
-```javascript
-const matchingRules = [
-  {
-    name: 'exact-reference',
-    priority: 1,
-    match: (bankTxn, accRecord) =>
-      // Normalise both sides: the bank reference arrives as a number from the
-      // library and the ledger reference is a string. Compare as trimmed strings,
-      // and require both to be non-empty so blank === blank is not a "match".
-      String(bankTxn.reference ?? '').trim() !== '' &&
-      String(bankTxn.reference ?? '').trim() === String(accRecord.reference ?? '').trim() &&
-      Math.abs(bankTxn.amount - accRecord.amount) < 0.01
-  },
-  {
-    name: 'amount-date-fuzzy',
-    priority: 2,
-    match: (bankTxn, accRecord) => {
-      const dateDiff = Math.abs(
-        dayjs(bankTxn.date).diff(dayjs(accRecord.date), 'day')
-      );
-      const amountDiff = Math.abs(bankTxn.amount - accRecord.amount);
-      return dateDiff <= 3 && amountDiff <= 1.0;
-    }
-  },
-  {
-    name: 'recurring-pattern',
-    priority: 3,
-    patterns: [
-      { regex: /חשמל|electric/i, category: 'utilities' },
-      { regex: /ארנונה|municipal/i, category: 'municipal-tax' },
-      { regex: /ביטוח|insurance/i, category: 'insurance' }
-    ]
-  }
-];
-```
-
-`dayjs` must be required in this block if you run it separately: `const dayjs = require('dayjs');`
-
-**One-to-one rules cannot express the two most common Israeli cases.** Add grouped matching, or the card settlement and any split payment land in the exceptions list and the report overstates problems:
-
-```javascript
-// A) Card settlement: ONE bank debit covers MANY card transactions.
-// Pull the issuer's own transactions (isracard / max / visaCal / amex are in the
-// same CompanyTypes enum) and match the SUM for the settlement cycle.
-// cycleStart/cycleEnd come from the issuer's actual billing cycle, which you can
-// read off the card statement. Do NOT guess a fixed lookback: a rolling window
-// sweeps in the tail of the previous cycle and produces a false difference.
-// Amounts are compared as magnitudes throughout, since expenses are negative.
-function matchCardSettlement(bankDebit, cardTxns, cycleStart, cycleEnd, toleranceIls = 1.0) {
-  const inCycle = cardTxns.filter(t => {
-    const d = dayjs(t.processedDate || t.date);
-    return !d.isBefore(dayjs(cycleStart)) && !d.isAfter(dayjs(cycleEnd));
-  });
-  const total = inCycle.reduce((sum, t) => sum + Math.abs(t.amount), 0);
-  const difference = total - Math.abs(bankDebit.amount);
-  return Math.abs(difference) <= toleranceIls
-    ? { matched: true, coveredBy: inCycle }
-    : { matched: false, difference };
-}
-
-// B) Split / partial settlement: N ledger items to ONE bank line, or the reverse.
-// Try small subsets before declaring an exception.
-function* combinations(arr, size, start = 0, picked = []) {
-  if (picked.length === size) { yield picked; return; }
-  for (let i = start; i < arr.length; i++) {
-    yield* combinations(arr, size, i + 1, [...picked, arr[i]]);
-  }
-}
-
-function matchGroup(bankTxn, candidates, toleranceIls = 1.0, maxGroup = 3) {
-  const near = candidates.filter(c =>
-    Math.abs(dayjs(bankTxn.date).diff(dayjs(c.date), 'day')) <= 7);
-  for (let size = 2; size <= maxGroup; size++) {
-    for (const combo of combinations(near, size)) {
-      // Compare magnitudes, matching matchCardSettlement above.
-      const total = combo.reduce((sum, c) => sum + Math.abs(c.amount), 0);
-      if (Math.abs(total - Math.abs(bankTxn.amount)) <= toleranceIls) return combo;
-    }
-  }
-  return null;
-}
-```
-
-Reconcile the card side separately against the purchase ledger as well: matching only the settlement total proves the bank line, not the individual purchases behind it.
-
-**Tolerances are a policy choice, not a default.** A plus-or-minus 1 ILS amount window combined with plus-or-minus 3 days will cross-match distinct transactions of similar size in a busy account, and the fuzzy rule above compares no payee at all. Add a description or vendor similarity condition before relying on it, mark every fuzzy match as "requires review" in the report so it is visibly weaker than an exact-reference match, and never let a fuzzy match silently overwrite an exact one.
+Apply them highest-confidence first and never let a lower-confidence rule overwrite a match a higher one already made. The full rule definitions, the field-by-field normalisation (Hebrew descriptions, date formats, sign conventions) and the grouped and card-settlement matchers are in `references/matching-rules.md`.
 
 ### Step 6: Run the Reconciliation Engine
 
@@ -313,6 +206,8 @@ Execute the matching process and categorize results into three buckets:
 The unmatched-bank bucket splits into two distinct cases that need different handling:
 
 - **Missing invoice**: a real business expense or income the user simply has not booked yet (a vendor charge with no recorded invoice, a client payment with no recorded invoice). These need to be *investigated* - the user must locate or create the supporting document.
+
+  The two directions carry different duties. On an unmatched DEBIT you are the recipient, and s.38(a1) is what bites: without an allocation number you lose the input VAT. On an unmatched CREDIT you are the ISSUER, and s.47(a2) is what bites: above the same threshold you must obtain the allocation number from the Tax Authority platform when the customer demands it, and an osek murshe issuing a tax invoice must do so. Do not apply only the recipient-side rule to a receipts reconciliation.
 - **Un-booked bank-originated entry**: an entry the bank itself generated that legitimately never had an invoice - bank fees (amlot), standing orders (hora'ot keva), interest, returned-check charges, currency-conversion fees. These are not missing documents. They must be *posted* directly to the books as the appropriate expense or income, not chased as missing invoices.
 
 Tag each unmatched bank entry as one of these two before reporting, so the user knows whether to search for a document or simply record a journal entry.
@@ -358,7 +253,11 @@ Treat post-dated checks (shekim dehuyim) as a distinct reconciling item, separat
 The report should include:
 - **Summary section**: Total matched, unmatched counts and amounts on each side
 - **Matched transactions table**: Bank entry paired with its accounting record
-- **Unmatched bank transactions**: Split into "missing invoice" and "un-booked bank-originated entry", sorted by amount descending. For a missing-invoice item, chasing the invoice is not sufficient on its own: since 1 June 2026 a tax invoice at or above NIS 5,000 before VAT needs an allocation number (mispar haktzaa) from the Tax Authority platform, and without one the VAT on that expense cannot be offset. So flag unmatched debits at or above that threshold as "obtain an invoice CARRYING a valid allocation number", not merely "find the invoice"
+- **Unmatched bank transactions**: Split into "missing invoice" and "un-booked bank-originated entry", sorted by amount descending. Chasing a missing invoice is not enough on its own: above the allocation-number threshold an invoice needs a `מספר הקצאה`, and without one s.38(a1) disallows the input VAT. Flag such debits as "obtain an invoice CARRYING a valid allocation number".
+
+  **Reconciliation is retrospective, so use the whole threshold table.** Before VAT: NIS 25,000 from May 2024, 20,000 from January 2025, 10,000 from January 2026, 5,000 from June 2026, nothing before May 2024. Test each unmatched debit against the threshold in force on ITS OWN date; today's 5,000 applied to a 2025 period raises a pile of false findings.
+
+  The statute says `עולה על` (EXCEEDS), so an invoice exactly at the threshold is out, and s.47(a2)(1) excludes zero-rated and exempt-only invoices, so do not flag an export. A missing number blocks only the recipient's input-VAT deduction; the expense still books
 - **Unmatched accounting records**: Records to investigate, including outstanding checks, post-dated checks (listed separately, keyed by due date), and deposits in transit
 - **Suspicious items**: Flagged entries requiring manual review
 - **Reconciliation bridge**: Book balance, the outstanding-checks / deposits-in-transit / fees / interest adjustments, and the resulting bank balance - the two sides must tie out to zero difference once all reconciling items are listed
@@ -374,7 +273,7 @@ Output formats:
 
 When reconciling a foreign-currency account or foreign-currency transactions, value the book entries using the Bank of Israel representative rate (sha'ar yatzig). State your rate-date convention explicitly, because two different ones give two different answers: use the transaction date for valuing an individual entry, and the period-end date for revaluing the closing foreign-currency balance. Say which you used in the report.
 
-Two facts about the representative rate that trip up reconciliations on the Israeli calendar. It is calculated on foreign-currency business days only, so there is NO rate on Fridays, Saturdays, Sundays or holidays, and a transaction on those days must carry the last published rate forward. And it is published only after the sampling window closes in the afternoon, so a same-day booking cannot use a same-day rate in real time. The Bank of Israel also states the representative rates carry no official or legal standing in themselves; they bind a transaction only if the parties stipulated them, and the valuation rule for tax purposes comes from the Income Tax rules rather than from the rate publication. Be aware that the bank books its own conversion at its own rate on the settlement date, which will differ from the representative rate. The gap between the representative rate and the bank's actual conversion rate is a real exchange-rate difference - post it as an exchange-rate gain or loss, do not treat it as an unexplained discrepancy. Widen the matching tolerance for foreign-currency transactions accordingly.
+Two facts about the representative rate that trip up reconciliations on the Israeli calendar. It is calculated on foreign-currency business days only. The Bank of Israel names the no-rate days as Saturdays, Sundays, Israeli holidays, Christmas Day, New Year's Day and Easter; Friday is NOT among them, so do not carry Thursday's rate onto a Friday transaction. On days that genuinely have no rate, carry the last published one forward. And it is published only after the sampling window closes in the afternoon, so a same-day booking cannot use a same-day rate in real time. The Bank of Israel also states the representative rates carry no official or legal standing in themselves; they bind a transaction only if the parties stipulated them, and the valuation rule for tax purposes comes from the Income Tax rules rather than from the rate publication. Be aware that the bank books its own conversion at its own rate on the settlement date, which will differ from the representative rate. The gap between the representative rate and the bank's actual conversion rate is a real exchange-rate difference - post it as an exchange-rate gain or loss, do not treat it as an unexplained discrepancy. Widen the matching tolerance for foreign-currency transactions accordingly.
 
 ### Step 9: Retain the Reconciliation and Its Supporting Documents
 
@@ -392,7 +291,7 @@ Actions:
 3. Run matching rules: exact reference match first, then fuzzy date+amount match
 4. Identify 142 matched transactions, 8 unmatched bank transactions, and 3 unmatched accounting records
 
-Result: A reconciliation report showing 98% match rate. The 8 unmatched bank entries are petty cash ATM withdrawals missing receipts. The 3 unmatched accounting records are checks not yet cleared. The report highlights one suspicious duplicate charge of 2,450 ILS at the same vendor on the same date.
+Result: A reconciliation report showing a 94.7% bank-side match rate (142 of 150 bank lines). Always say which denominator you used: bank lines, accounting lines and all items give three different numbers. The 8 unmatched bank entries are petty cash ATM withdrawals missing receipts. The 3 unmatched accounting records are checks not yet cleared. The report highlights one suspicious duplicate charge of 2,450 ILS at the same vendor on the same date.
 
 ### Example 2: Multi-Bank Reconciliation with Credit Cards
 
@@ -404,7 +303,7 @@ Actions:
 3. Run reconciliation separately for each account, then produce a combined summary
 4. Flag credit card installment transactions (split payments) that appear as single entries in accounting
 
-Result: Combined reconciliation report covering both accounts. Leumi checking shows 97% match rate with 12 unmatched items. Max credit card shows 91% match rate, with most unmatched items being installment splits. Report includes a recommendation to split 4 accounting entries to match the installment pattern. Total reconciliation difference: 127.50 ILS traced to a foreign currency conversion rounding difference.
+Result: Combined reconciliation report covering both accounts. Leumi checking shows 97% match rate with 12 unmatched items. Max credit card shows 91% match rate, with most unmatched items being installment splits. Report includes a recommendation to split 4 accounting entries to match the installment pattern. Residual difference: 127.50 ILS, traced to the gap between the representative rate and the bank's own conversion rate on a settlement. That is an exchange-rate difference, not a rounding tolerance, so it does not stay in the residual: post it as an exchange-rate gain or loss and the bridge then ties out to zero. A reconciliation that ends on a non-zero residual is not finished.
 
 ### Example 3: Detecting Missing Invoices Before Tax Filing
 
@@ -471,4 +370,4 @@ Solution: Convert the file to UTF-8 before parsing: `iconv -f WINDOWS-1255 -t UT
 
 ### Error: "Amount mismatch: bank shows -X but accounting shows -Y"
 Cause: Rounding differences in currency conversion, VAT calculations, or installment splitting can cause small discrepancies between bank amounts and accounting entries.
-Solution: Configure the matching tolerance threshold. For shekel amounts, a tolerance of 1.00 ILS handles most rounding cases. For transactions involving foreign currency conversion, increase tolerance to 5.00 ILS. If discrepancies are systematic, check whether VAT (18% in Israel) is included in bank amounts but excluded in accounting entries.
+Solution: Configure the matching tolerance threshold. For shekel amounts, a tolerance of 1.00 ILS handles most rounding cases. For transactions involving foreign currency conversion, increase tolerance to 5.00 ILS. If discrepancies are systematic, check whether VAT is included in bank amounts but excluded in accounting entries, using the rate in force on the TRANSACTION's date: 18% from 1 January 2025, 17% before. A 2024 period tested at 18% flags every correct pair, since its signature is 17/117 (14.53%), not 15.25%.
