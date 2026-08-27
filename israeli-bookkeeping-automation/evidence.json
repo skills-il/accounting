@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-bookkeeping-automation",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-08-27T17:00:00Z",
   "claims": [
     {
       "claim_id": "osek-patur-ceiling-2026",
-      "claim": "Osek Patur (exempt dealer) 2026 annual turnover ceiling is 122,833 ILS / 122,833 ש\"ח.",
+      "claim": "Osek Patur (exempt dealer) 2026 annual turnover ceiling is 122,833 ILS / 122,833 ש\"ח. An osek patur is NOT exempt from VAT in all cases: it must charge and remit VAT on a sale of real estate and on a sale of equipment on which it deducted input VAT. Certain professions cannot register as osek patur at any turnover, including bookkeeper, lawyer, accountant, tax adviser, engineer, architect and doctor.",
       "source_url": "https://www.kolzchut.org.il/he/עוסק_פטור",
-      "raw_snippet": "רק מי שמחזור ההכנסות השנתי שלו מהעסק (לא הרווח) אינו עולה על 122,833 ₪ (נכון לשנת 2026) רשאי להיות עוסק פטור",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "raw_snippet": "גם עוסק פטור חייב לגבות מס ערך מוסף מלקוחותיו ולהעביר את המס אל רשות המסים: עסקאות של מכירת מקרקעין.",
+      "fetched_at": "2026-08-27T17:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -55,10 +55,10 @@
     },
     {
       "claim_id": "depreciation-rates-ita",
-      "claim": "Israeli Tax Authority depreciation rates (Income Tax (Depreciation) Regulations 1941): personal computers/software 33%, general office furniture 6%, passenger vehicles 15%, leasehold improvements 10%.",
-      "source_url": "https://roeahesbon.com/שיעורי-פחת/",
-      "raw_snippet": "מחשבים אישיים 33%; רהיטים כלליים 6%; רכב להסעת נוסעים עד 3,500 ק\"ג 15%; שיפורים במושכר 10%",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "claim": "Depreciation rates come from Tosefta Bet to the income tax depreciation regulations. Example 3 depreciates a SERVER, which is an 'other computer' at 25%, giving 24,000 x 25% / 12 = 500 per month, not the 33% personal-computer rate.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_(%D7%A4%D7%97%D7%AA)",
+      "raw_snippet": "(א) מחשבים אישיים – 33 (ב) מחשבים אחרים – 25",
+      "fetched_at": "2026-08-27T17:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -66,6 +66,41 @@
       "verified_via": "pdf",
       "verified_at": "2026-07-26T00:00:00Z",
       "verification_note": "Rates confirmed against the text of תקנות מס הכנסה (פחת) extracted from the official PDF (btl.gov.il/Laws1/02_0103_100026.pdf) with pdftotext: personal computers 33, general furniture 6, general machinery 7, tractors and self-propelled equipment 20, ordinary passenger car 15. Leasehold improvements 10% is NOT in the regulation appendix and rests on a secondary CPA table."
+    },
+    {
+      "claim_id": "depreciation-furniture-classes",
+      "claim": "Furniture depreciates at 6% general, 9% in hotels and guesthouses, and 12% in cafes, restaurants and public entertainment venues.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_(%D7%A4%D7%97%D7%AA)",
+      "raw_snippet": "(1) כלליים – 6 (2) רהיטים ואבזרים המשמשים לבתי־מלון ולפנסיונים – 9 (3) רהיטים בבתי קפה, מסעדות, מקומות שעשועים ציבוריים",
+      "fetched_at": "2026-08-27T17:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "depreciation-leasehold-not-in-regulation",
+      "claim": "There is NO leasehold-improvements line in Tosefta Bet to the depreciation regulations. The 10% rate an earlier edition of this skill stated is not a published ITA rate. Practice is to write improvements off over the shorter of the lease term or useful life, so the rate is lease-specific.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_(%D7%A4%D7%97%D7%AA)",
+      "raw_snippet": "II . [תיקון: 1942, תשמ״ב] רהיטים ואבזרים: (1) כלליים – 6",
+      "fetched_at": "2026-08-27T17:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "negative finding: the full appendix was fetched and enumerated and contains no שיפורים במושכר row; the snippet is the neighbouring furniture row, cited to show the appendix itself was read",
+      "verified_at": "2026-08-27T17:00:00Z"
+    },
+    {
+      "claim_id": "depreciation-computers-split",
+      "claim": "The depreciation regulations split computers into two rates: personal computers at 33% and other computers, which is where a server sits, at 25%. General electronic and computerised equipment that is not a computer is 15%. A server depreciated at the personal-computer rate overstates the charge by a third.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_(%D7%A4%D7%97%D7%AA)",
+      "raw_snippet": "(א) מחשבים אישיים – 33 (ב) מחשבים אחרים – 25",
+      "fetched_at": "2026-08-27T17:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
     },
     {
       "claim_id": "vat-input-by-class",
@@ -89,10 +124,10 @@
     },
     {
       "claim_id": "shaam-allocation-thresholds",
-      "claim": "SHAAM invoice-allocation (חשבונית ישראל / מספר הקצאה) net-amount (before VAT) thresholds: Jan 2025 above NIS 20,000 (20,000 ש\"ח); Jan 2026 (Jan-May) above NIS 10,000 (10,000 ש\"ח); Jun 1 2026 onwards above NIS 5,000 (5,000 ש\"ח). The *2026 step-down was confirmed by the Tax Authority.",
+      "claim": "The SHAAM allocation-number (heshbonit Israel) regime began in May 2024 and the number is 9 digits. Thresholds, VAT-exclusive, on the invoice issue date: NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, NIS 5,000 from June 2026. Invoices dated before May 2024 never required one. A number is required only where all four conditions hold: above the threshold in force on that date; the invoice carries a VAT component; the recipient is an osek murshe; and the recipient asked for one. A missing number blocks the RECIPIENT's input-VAT deduction and does not void the invoice.",
       "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
-      "raw_snippet": "ינואר 2025 | 20,000 ₪ ; ינואר 2026 | 10,000 ש\"ח ; יוני 2026 ואילך | 5,000 ש\"ח",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "raw_snippet": "מאי 2024 | 25,000 ₪ | ינואר 2025 | 20,000 ₪ | ינואר 2026 | 10,000 ש״ח | יוני 2026 ואילך | 5,000 ש״ח",
+      "fetched_at": "2026-08-27T17:00:00Z",
       "appears_in": [
         "SKILL.md"
       ],
@@ -102,10 +137,10 @@
     },
     {
       "claim_id": "form-6111-openformat",
-      "claim": "Form 6111 (טופס 6111) is the annual digital P&L / balance-sheet schedule (נספח לדוח השנתי: דוח רווח והפסד, מאזן, דוח התאמה למס) submitted online to רשות המיסים. OPENFORMAT (קובץ אחיד / BKMV) and PCN 874 are the related ITA-mandated export file formats.",
+      "claim": "Form 6111 (טופס 6111) is not corporate-only: the online-filing obligation is turnover-driven and covers companies and self-employed oskim, with classes such as public institutions, banks, insurers and farmers exempt. The detailed VAT report (PCN 874) follows the osek's own reporting period, monthly or bi-monthly, and is structured as an opening record, transaction and input detail records, and a closing record.",
       "source_url": "https://www.zscpa.co.il/טופס-6111/",
-      "raw_snippet": "בעת מילוי והגשת הדוח השנתי יש לצרף נספחים שונים, ביניהם דוח התאמה למס, מאזן ודוח רווח והפסד",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "raw_snippet": "החובה להגישו באופן מקוון חלה על חברות ועוסקים שמחזור העסקאות השנתי שלהם",
+      "fetched_at": "2026-08-27T17:00:00Z",
       "appears_in": [
         "SKILL.md"
       ]
@@ -137,10 +172,10 @@
     },
     {
       "claim_id": "example3-depreciation-derived",
-      "claim": "Example 3 asset purchase: computer server 24,000 plus 18% input VAT 4,320 = accounts payable 28,320. Monthly depreciation at 33% annual rate = 24,000 x 33% / 12 = 660 ILS per month.",
-      "source_url": "https://roeahesbon.com/שיעורי-פחת/",
-      "raw_snippet": "מחשבים אישיים 33%",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "claim": "Depreciation rates come from Tosefta Bet to the income tax depreciation regulations. Example 3 depreciates a SERVER, which is an 'other computer' at 25%, giving 24,000 x 25% / 12 = 500 per month, not the 33% personal-computer rate.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_(%D7%A4%D7%97%D7%AA)",
+      "raw_snippet": "(א) מחשבים אישיים – 33 (ב) מחשבים אחרים – 25",
+      "fetched_at": "2026-08-27T17:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -190,10 +225,10 @@
     },
     {
       "claim_id": "btl-category-rates-2026",
-      "claim": "Bituach Leumi / health 2026 salaried-employee rates by category (btl.gov.il, לעובדים שכירים): standard resident 18-to-retirement employee 4.27% reduced / 12.17% full, employer 4.51% / 7.60%. Minor under 18: employee 0% (nothing deducted), employer 0.61% reduced / 2.12% full. Working pensioner receiving old-age pension: employee 0% (health collected from the pension, not the wage), employer 0.61% / 2.12%. Aged 67-70 not yet receiving old-age pension: employee 3.93% reduced / 10.03% full, employer 4.13% / 6.96%. Disability-pension recipient with annual NII certificate: employee 3.23% reduced / 5.17% full (health only, BL waived), employer 0.61% / 2.12%.",
+      "claim": "Bituach Leumi / health 2026 salaried-employee rates by category (btl.gov.il, לעובדים שכירים): standard resident 18-to-retirement employee 4.27% reduced / 12.17% full, employer 4.51% / 7.60%. Minor under 18: employee 0% (nothing deducted), employer 0.61% reduced / 2.12% full. Working pensioner receiving old-age pension: employee 0% (health collected from the pension, not the wage), employer 0.61% / 2.12%. Aged 67-70 not yet receiving old-age pension: employee 3.93% reduced / 10.03% full, employer 4.13% / 6.96%. Disability-pension recipient with annual NII certificate: employee 3.23% reduced / 5.17% full (health only, BL waived), employer 0.61% / 2.12%. The official employee table also carries a controlling-shareholder in a close company row at 4.25% reduced / 11.96% full employee and 4.46% / 7.38% employer, and a row for a woman between her retirement age and the male retirement age not drawing an old-age pension at 3.95% / 10.24% employee and 4.17% / 7.12% employer, plus rows for new residents first resident after age 62 and for soldiers in regular service, organ donors and treaty-country foreign residents. Maximum insurable income is 51,910 NIS/month, above which no BL or health is charged. Worked illustration: a 60,000 NIS salary tiers as 7,703 reduced, 44,207 full, and 8,090 above the 51,910 ceiling and therefore exempt.",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/לעובדים%20שכירים.aspx",
       "raw_snippet": "מי שטרם מלאו לו 18 שנה",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "fetched_at": "2026-08-27T17:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"

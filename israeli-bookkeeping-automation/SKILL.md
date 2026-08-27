@@ -34,7 +34,7 @@ Determine which type of bookkeeping entry is needed:
 Check whether the business is:
 
 - **Osek Murshe (authorized dealer)**: Uses double-entry bookkeeping (hanhala kfula). Must charge and report VAT. Uses a full double-entry account structure.
-- **Osek Patur (exempt dealer)**: Uses single-entry bookkeeping (hanhala pshuta). Does not charge VAT. Revenue under the annual threshold (122,833 ILS for 2026).
+- **Osek Patur (exempt dealer)**: Uses single-entry bookkeeping (hanhala pshuta). Revenue under the annual threshold (122,833 ILS for 2026). Does not charge VAT on its ordinary supplies, **but "never charges VAT" is too strong**: an osek patur must charge and remit VAT on a sale of real estate, and on a sale of equipment where it deducted the VAT on acquiring that equipment. Note also that certain professions cannot register as osek patur at all regardless of turnover, and the list includes a bookkeeper (menahel cheshbonot), lawyer, accountant, tax adviser, engineer, architect and doctor among others, so check the profession before assuming the status is available.
 
 ### Step 3: Apply the Israeli Chart of Accounts (Matkonet Heshbonot)
 
@@ -88,6 +88,12 @@ Rates are tiered: the reduced rate applies to the portion of salary up to the th
 | Working pensioner receiving old-age pension | 0% (collected from the pension, not the wage) | 0% | 0.61% / 2.12% |
 | Aged 67 to 70, not yet receiving old-age pension | 3.93% | 10.03% | 4.13% / 6.96% |
 | Disability-pension recipient (with annual NII certificate) | 3.23% (health only, BL waived) | 5.17% (health only) | 0.61% / 2.12% |
+| **Controlling shareholder in a close company (baal shlita)** | **4.25%** | **11.96%** | **4.46% / 7.38%** |
+| Woman between her retirement age and the male retirement age, not receiving old-age pension | 3.95% | 10.24% | 4.17% / 7.12% |
+
+The controlling-shareholder row matters more than its position suggests: an owner-manager drawing a salary from their own company is one of the most common payroll cases in exactly the audience this skill serves, and routing them through the standard row over-deducts. The woman-between-retirement-ages row exists because retirement age differs by sex; sending that population through the "aged 67 to 70" row, which is the male path, is the other easy mistake. The official table also carries rows for new residents first resident after age 62, and for soldiers in regular service, organ donors and treaty-country foreign residents. **Look up the row; do not default.**
+
+No BL or health is charged on the portion of salary above the maximum insurable income of 51,910 NIS/month, so a 60,000 NIS salary is tiered as 7,703 reduced, 44,207 full, and 8,090 exempt, not 7,703 reduced and 52,297 full.
 
 Source: National Insurance Institute salaried-employee rates (btl.gov.il/Insurance/Rates, 2026). For a working pensioner the health component is collected from the old-age pension, so nothing is deducted from the wage; the employer still pays the residual rate shown. The reduced/full split point (7,703) and the tiered rule apply to every category.
 
@@ -120,11 +126,18 @@ Apply Israeli Tax Authority (rashut hamisim) depreciation rates:
 
 | Asset Type | Annual Rate | Account |
 |-----------|-------------|---------|
-| Computers & software (mahshevim) | 33% | 110 |
+| Personal computers (mahshevim ishiyim) | 33% | 110 |
+| Other computers, including servers | 25% | 110 |
+| Electronic and computerised equipment (not computers) | 15% | 110 |
 | Office furniture (rihut misradi) | 6% | 120 |
-| Vehicles (rehev) | 15% | 130 |
-| Leasehold improvements (shiputsim) | 10% | 140 |
+| Vehicles (rehev), M1/N1/L/O default class | 15% | 130 |
+| Vehicles, other classes (taxi, driving-school, bus, rental, truck) | 16-25%, class-dependent | 130 |
+| Leasehold improvements (shiputsim) | See note below, NOT in the regulation | 140 |
 | Machinery, general (mekhonot) | 7% | 150 |
+
+**Note on leasehold improvements.** The 10% rate this skill previously stated is **not in the depreciation regulations**: Tosefta Bet has no leasehold-improvements line at all. Standard practice is to write them off over the shorter of the lease term (including option periods the tenant is likely to exercise) or the improvement's useful life, so the rate depends on the specific lease and there is no single number to quote. Ask for the lease term rather than applying a flat rate, and do not present a leasehold rate as an ITA-published figure.
+
+**Note on furniture and vehicles.** Furniture is 6% general, but 9% in hotels and guesthouses and 12% in cafes, restaurants and public entertainment venues. Vehicles are 15% only in the default M1/N1/L/O class; taxis and driving-school vehicles, buses and tour vehicles, rental-registered vehicles, and heavier N2/N3 classes each carry their own higher rate. Look up the class rather than defaulting to the headline row.
 
 Machinery is the general 7% rate; the depreciation regulations set higher per-type rates for specific machinery (for example tractors and self-propelled equipment 20%), so check the regulation appendix (tosefet bet) when the asset is a specialized machine. Depreciation is calculated on a straight-line basis (shitat hakav hayashar), so the base is always original cost, never the written-down balance. Monthly depreciation = Cost * Annual rate / 12, run from the date the asset was placed in service and stopped once accumulated depreciation reaches cost. For the first period, follow the convention the business's accountant already uses (a full month in the month of entry into service, or a pro-rata share of it) and state which convention the entry assumes. Do not subtract accumulated depreciation from the base: that is the reducing-balance method and it is not what these rates are.
 
@@ -246,7 +259,7 @@ Credit (zchut):
                                           Total:     28,320.00
 ```
 
-**Monthly depreciation entry (33% annual rate):**
+**Monthly depreciation entry (25% annual rate, see below):**
 
 ```
 Date: 31/01/2026
@@ -254,16 +267,16 @@ Reference: DEP-2026-01
 Description: Monthly depreciation - Server
 
 Debit (hova):
-  630  Depreciation expense (hotsa'ot phat)             660.00
+  630  Depreciation expense (hotsa'ot phat)             500.00
 
 Credit (zchut):
-  111  Accumulated depreciation - computers (phat nitsberet)  660.00
-                                          Total:       660.00
+  111  Accumulated depreciation - computers (phat nitsberet)  500.00
+                                          Total:       500.00
 ```
 
-Calculation: 24,000 * 33% / 12 = 660 ILS per month. Convention stated: a full month is taken in the month the asset was placed in service. If the business's accountant pro-rates instead, the January charge would be 660 * 27/31 = 575 and the schedule shifts accordingly. State whichever convention the entry uses.
+Calculation: 24,000 * 25% / 12 = 500 ILS per month. **The rate matters here and it is easy to get wrong.** The depreciation regulations split computers in two: personal computers depreciate at 33%, and *other* computers, which is where a server sits, at 25%. Using the personal-computer rate on a server overstates the monthly charge by a third, every month, for the life of the asset. Convention stated: a full month is taken in the month the asset was placed in service. If the business's accountant pro-rates instead, the January charge would be 500 * 27/31 = 435.48 and the schedule shifts accordingly. State whichever convention the entry uses.
 
-Result: Asset recorded at cost excluding RECOVERABLE VAT. Where the input VAT is blocked (a passenger car, for example, see the input-VAT table), the blocked VAT is part of the asset cost: capitalize it and depreciate it, do not expense it. Depreciation at the Israeli Tax Authority rate of 33% for computer equipment.
+Result: Asset recorded at cost excluding RECOVERABLE VAT. Where the input VAT is blocked (a passenger car, for example, see the input-VAT table), the blocked VAT is part of the asset cost: capitalize it and depreciate it, do not expense it. Depreciation at 25%, the rate for computers other than personal computers.
 
 ### Example 4: VAT Clearing Entry
 
@@ -287,39 +300,31 @@ Result: Output VAT liability cleared against input VAT credit. Net VAT payable o
 
 ## SHAAM allocation number on B2B sales-invoice journal entries
 
-When you record a B2B sales-invoice pkudat yoman in 2026, the source invoice must carry a SHAAM allocation number (mispar haktza'a) once it crosses the threshold in force on the invoice issue date:
-- Jan 2025 - Dec 2025: net amount > NIS 20,000
-- Jan 2026 - May 2026: net amount > NIS 10,000
-- **Jun 1, 2026 onwards (in effect): net amount > NIS 5,000**
+When you record a B2B sales-invoice pkudat yoman, the source invoice must carry a SHAAM allocation number (mispar haktza'a, 9 digits) once it crosses the threshold in force on the invoice issue date. **You need the WHOLE table, because bookkeeping routinely touches earlier years through migrations, catch-up posting and audit periods.** Thresholds are VAT-exclusive:
 
-The June 2026 step-down took effect as scheduled, accelerated from the originally planned 2028 date. Use the invoice issue date, not the bookkeeping-entry date, when picking the threshold.
+| Invoice issue date | Allocation number required above |
+|---|---|
+| Before May 2024 | Never. The regime did not exist |
+| May 2024 - Dec 2024 | NIS 25,000 |
+| Jan 2025 - Dec 2025 | NIS 20,000 |
+| Jan 2026 - May 2026 | NIS 10,000 |
+| **Jun 1, 2026 onwards (in effect)** | **NIS 5,000** |
 
-The allocation number itself does not change the journal-entry shape, but the source invoice must include it (typically captured as a custom field on the AR journal line). Carry it on both sides. On the buyer's side there is a hard posting rule: if a purchase invoice is over the threshold and carries no allocation number, do NOT debit input VAT to 240. Post that VAT to a separate non-deductible suspense account, flag it to the user, and move it to 240 only once the supplier reissues the invoice with a number. Silently debiting 240 produces a VAT report that is over-claimed in that period, not merely a problem discovered at year-end.
+The June 2026 step-down took effect as scheduled, accelerated from the originally planned 2028 date. Use the invoice issue date, not the bookkeeping-entry date, when picking the threshold, and never apply today's NIS 5,000 threshold to a 2025 invoice that only needed a number above NIS 20,000, or to a 2024 invoice whose threshold was NIS 25,000.
 
-## VAT input deduction by expense class
+**A number is required only when ALL FOUR of these hold. Do not flag an invoice that fails any one of them:**
+1. the amount is above the threshold in force on that invoice's date;
+2. the invoice carries a VAT component. A zero-rated invoice, or one covering only exempt transactions, does not need one, so do not flag export or zero-rated invoices;
+3. the recipient is an osek murshe. A sale to a private consumer, or to an osek patur, is out of scope;
+4. the recipient asked for an allocation number.
 
-Not every input VAT line is fully recoverable. Common Israeli VAT rules to apply when posting input-VAT entries:
+Applying condition 1 alone is the classic over-flagging failure: it strands deductible input VAT in a suspense account on B2C sales and on pre-regime invoices that never needed a number.
 
-| Expense | Input VAT recoverable | Notes |
-|---|---|---|
-| Passenger-car purchase | 0% | Vehicle itself is fully blocked |
-| Passenger-car operating costs (fuel, repairs, parking) | 2/3 | Standard "mostly-business" rule. Note the citation: regulation 14 blocks the car PURCHASE. The 2/3 mixed-use fraction on running costs sits in a separate provision, so confirm the exact regulation number before citing one |
-| Passenger-car operating costs, mostly-private | 1/4 | Stricter rule when business use is incidental |
-| Hospitality / business meals in Israel | 0% | Disallowed input VAT (אירוח בארץ) |
-| Light refreshments at the place of business (כיבוד קל) | 100% | Routine refreshments served at the place of business (hot and cold drinks, biscuits) are a business input and the input VAT is deducted. Do NOT apply the 2/3 fraction, that is the vehicle-upkeep rule. What regulation 15A blocks is a benefit to an employee (tashuma bishvil oved: meals, staff events, gifts, entertainment), which is a different line. Keep the income-tax side separate: only 80% of the kibud expense is deductible for income tax, and for an osek murshe that 80% is applied to the pre-VAT base precisely because the VAT was already reclaimed here |
-| Employee meals, staff events, gifts (טובת הנאה לעובד) | 0% | Blocked by regulation 15A unless the business reports the benefit as a taxable self-supply at market value |
-| Standard goods + services for business | 100% | Full deduction with valid tax invoice |
+The allocation number itself does not change the journal-entry shape, but the source invoice must include it (typically captured as a custom field on the AR journal line). Carry it on both sides. On the buyer's side there is a hard posting rule, but check all four conditions first: if a purchase invoice **that actually required a number under all four conditions** carries none, do NOT debit input VAT to 240. Post that VAT to a separate non-deductible suspense account, flag it to the user, and move it to 240 only once the supplier reissues the invoice with a number. Silently debiting 240 produces a VAT report that is over-claimed in that period, not merely a problem discovered at year-end. Note the precise effect of a missing number: it blocks the RECIPIENT's input-VAT deduction. It does not, by itself, void the invoice. If a supplier's request for a number was refused, reverse charge (hipuch chiyuv) is one of the routes open to them, so a refusal is not a dead end.
 
-Verify the per-expense rule before posting input-VAT in journal entries; over-deduction creates audit exposure.
+## VAT input deduction and filing formats
 
-## OPENFORMAT / PCN 874 / Form 6111
-
-Israeli bookkeeping software must be able to export:
-- **OPENFORMAT (קובץ אחיד / BKMV)**: ITA-mandated unified file (INI.TXT + BKMVDATA.TXT) for audits and CPA handoffs. Spec (v1.31): <https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf>. File checker: <https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx>.
-- **PCN 874**: bi-monthly detailed VAT return file (different from OPENFORMAT but related), generated by Hashavshevet, Rivhit, iCount, etc.
-- **Form 6111**: annual digital P&L / balance-sheet schedule for incorporated businesses, required as appendix to the corporate annual return.
-
-When automating bookkeeping, plan the export pipeline against these formats. Agents should know the file shapes exist even when not generating them directly.
+Input VAT is not always fully recoverable, and the Israeli filing formats (OPENFORMAT, PCN 874, Form 6111) have their own scoping rules. Both are reference data you consult while posting rather than steps in the workflow, so they live in `references/vat-input-and-filing-formats.md`. Consult it before posting any input VAT on a vehicle, hospitality or refreshments line, and before telling a client whether a filing obligation applies to them.
 
 ## Gotchas
 
@@ -337,7 +342,7 @@ When automating bookkeeping, plan the export pipeline against these formats. Age
 |--------|-----|---------------|
 | Bituach Leumi employer circular | btl.gov.il (Igeret LeMa'asik annual circular) | BL and health rates, thresholds, max insurable income |
 | Kolzchut - BL for salaried workers | kolzchut.org.il/he/דמי_ביטוח_לאומי_לעובד_שכיר | Employee/employer rate breakdown, threshold amounts |
-| Israeli Tax Authority - depreciation | mas.gov.il | Approved depreciation rates by asset type |
+| Depreciation regulations (Tosefta Bet) | https://he.wikisource.org/wiki/תקנות_מס_הכנסה_(פחת) | The full rate schedule by asset class. Note: the domain `mas.gov.il` cited by an earlier edition of this skill does not exist (NXDOMAIN); the Tax Authority is on taxes.gov.il and gov.il |
 | Kolzchut - Osek Patur | kolzchut.org.il/he/עוסק_פטור | Annual revenue threshold, VAT exemption rules |
 | Pensuni - tax ceilings | pensuni.com | Pension ceilings, keren hishtalmut limits, tax brackets |
 
@@ -353,13 +358,13 @@ Solution: Verify each line item. For payroll, ensure every deduction from the em
 
 Cause: Attempting to record input or output VAT entries for an exempt dealer (Osek Patur). Exempt dealers do not charge or reclaim VAT.
 
-Solution: For Osek Patur businesses, record revenue at the gross amount without separating VAT. Purchases should be recorded at the full amount including VAT (the VAT is a cost, not recoverable). Use single-entry bookkeeping: record income and expenses in a simple ledger (pinkas) without double-entry accounts.
+Solution: For Osek Patur businesses, record ordinary revenue at the gross amount without separating VAT. Purchases are recorded at the full amount including VAT (the VAT is a cost, not recoverable). Two exceptions where an osek patur DOES have output VAT to post: a sale of real estate, and a sale of equipment on which it previously deducted input VAT. Use single-entry bookkeeping: record income and expenses in a simple ledger (pinkas) without double-entry accounts.
 
 ### Error: "Depreciation rate mismatch"
 
 Cause: Using a depreciation rate that does not match the Israeli Tax Authority approved rates. Common mistakes include using US GAAP rates or confusing monthly and annual rates.
 
-Solution: Always reference the Israeli Tax Authority (rashut hamisim) depreciation schedule. Key rates: computers 33%, furniture 6%, vehicles 15%, machinery 7% (general rate, higher per-type rates exist), leasehold improvements 10%. Calculate monthly by dividing the annual rate by 12. The method is straight-line (shitat hakav hayashar) unless specifically approved otherwise.
+Solution: Always reference the depreciation regulations themselves (Tosefta Bet to Takanot Mas Hachnasa (Pchat)), not a remembered rate. Key rates: personal computers 33% but other computers including servers 25%, general electronic and computerised equipment 15%, furniture 6% general (9% hotels, 12% cafes and restaurants), passenger vehicles 15% in the default M1/N1 class only, machinery 7% (general rate, higher per-type rates exist), leasehold improvements 10%. Calculate monthly by dividing the annual rate by 12. The method is straight-line (shitat hakav hayashar) unless specifically approved otherwise.
 
 ### Error: "Missing employer bituach leumi contribution"
 
