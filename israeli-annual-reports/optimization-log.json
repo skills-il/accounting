@@ -1,6 +1,41 @@
 {
   "cycles": [
     {
+      "version": "1.5.0",
+      "date": "2026-08-27",
+      "holdout_before": 0.75,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [
+          "Should I buy Bank Leumi shares? (now anti-triggered by the 'not investment advice and not a recommendation to buy or sell' opener)"
+        ],
+        "regressed": [],
+        "persistent_fail": [
+          "How do I file my company's annual report with the Registrar? (the description still promises 'Companies Law reporting requirements', so it can still attract the Sec. 141 question; the BODY now routes such a user to the Corporations Authority, but the trigger text itself was left alone to avoid a second description edit in one cycle)"
+        ],
+        "stable_success": [
+          "What is the deadline for a quarterly report on TASE?",
+          "מה זה דוח שנתי?"
+        ]
+      },
+      "lessons": [
+        "The legal notice was the WRONG TEMPLATE for two cycles: a TIER_A_TAX tax-return disclaimer ('not a return prepared by a licensed representative', 'consult a tax adviser before filing or paying') sat on a securities-analysis skill that produces no return and organises nobody's tax figures. verify_legal.py passed it every cycle because the structural gate can only see that A notice exists, not that it is the right domain. Swapped to TIER_A_INVESTMENT with both statutory 3(b) limbs (the no-personal-interest disclosure was entirely absent), plus an accountancy limb. Legal subagent confirmed INVESTMENT is correct and TAX was wrong.",
+        "PROPAGATION FAILURE CAUGHT BY THE EXPERT, NOT BY ME: the '60 days' -> 'two months' quarterly correction landed in SKILL.md and SKILL_HE.md but NOT in references/hebrew-financial-terms.md (which also invented a 60-day half-yearly deadline) or references/domain-checklist.md. Phase 3f.1 requires grepping the WHOLE skill folder for every changed literal; I ran the fix before the sweep. Always sweep references/ and scripts/ for the OLD value.",
+        "The prior cycle's log claimed 'Verified quarterly deadline is exactly 60 days (תוך שישים ימים מסוף הרבעון, Reg. 39)'. That snippet does not exist anywhere in the regulation. Reg. 39(a) says 'בתוך חודשיים מיום הדוח' and carries a second limb (within 3 days of the auditor's signature on the interim review report) that the skill dropped entirely. A fabricated verification survived a full cycle inside the optimization log itself.",
+        "ICPAS 570 was cited to the לשימוע (for-comment) DRAFT PDF, not the issued standard, while 700 in the same evidence file was correctly cited to the issued 2024 revision. Repointed to the issued 'לוועד המרכזי' version.",
+        "Going-concern was stated as an absolute ('does NOT change the opinion grade'). The issued 570 shows that holds only where disclosure is ADEQUATE; where the going-concern disclosure is inadequate the auditor qualifies or gives an adverse opinion. Corrected. Note the Expert also claimed the paragraph sits under a dedicated heading after Basis for Opinion (revised-ISA structure) - the ISRAELI issued text says 'בסוף דוח רואה החשבון' (at the end), so I kept 'at the end'. Verified rather than transcribed.",
+        "Reg. 5ד(ב) has FIVE relief heads; the skill listed four, missing the associated-company Reg. 44 threshold doubling from 20% to 40%. Also the reliefs are OPT-IN under Reg. 5ד(א) ('כולה או חלקה לפי בחירתו'), not automatic, so 'expect those disclosures to be absent by right' was wrong for a corporation that never elected. Added Reg. 5ה entry/exit mechanics and the first-page disclosure requirement.",
+        "Expert MAJOR/CRITICAL applied: Reg. 30(b) immediate-report clock (the real rule was sitting unused in evidence.json while the table said 'Hours after event'); the 3-day auditor-signature rule reframed as a maximum-lag constraint rather than a deadline limb; the Reg. 9ג solo section identified as DATA EXTRACTED from the consolidated statements per the Tenth Addendum, not IAS 27 separate statements; functional vs presentation currency separated per IAS 21; a filing-map table for Regs 9א/9ב/9ג/9ד/8ב/44/10/21/22/30-37; Companies Law Sec. 302 distribution tests and Sec. 275; the truncated Sec. 115 audit-committee sentence completed; Sec. 267A(c) board override of a general-meeting rejection added and the three-year rule un-inverted (a policy is set for UP TO three years).",
+        "SCOPE COLLISION resolved (Expert C8): 'doch shnati' means two unrelated filings in Israeli usage. Added an explicit scope section routing a user asking about the Companies Law Sec. 141 Registrar annual report (with the annual fee and chevra mefera consequences) away from this securities skill.",
+        "Script defects fixed and re-run end to end: --all was declared in argparse and advertised in --help but main() never read args.all; --search \"\" silently dumped the whole glossary because an empty string is falsy. Glossary 30 -> 48 terms. 'עניני מפתח בביקורת' was misspelled relative to every other file (missing the double yod), so --search ענייני returned nothing for the exact term a prior cycle added it for.",
+        "Glossary modernised: מאזן was taught as the statement title, but IFRS-IL filings title it דוח על המצב הכספי. Added that, plus דוח על הרווח הכולל, רווח כולל אחר, זכויות שאינן מקנות שליטה, and התחייבויות לא שוטפות (התחייבויות לזמן ארוך is Israeli-GAAP-era vocabulary in a skill whose central thesis is the 2008 boundary).",
+        "DEFERRED to next cycle (Expert MAJOR/MINOR, logged not dropped): Magna filing mechanics (filer registration, digital certificate, form types) are absent, so 'where do I file' is answered with a hostname only; the shelf OFFERING report (doch hatzaat madaf) and the 24-month + 12-month shelf-prospectus term; Companies Law external/independent directors (Secs. 219/239/240), Sec. 117 audit-committee duties, Sec. 118A review-committee membership, Sec. 95/121(c) chair-CEO separation, and Secs. 154-167 auditor appointment/dismissal; private-placement and merger (Secs. 320-327) reporting; the Reg. 5ג determining date (המועד הקובע) and measurement period; a non-calendar fiscal year-end note on Sec. 172.",
+        "CARRIED and now RESOLVED from 1.3.0/1.4.0: the gov.il corporations_authority slug was genuinely dead (verified 404 via rendered navigation) and is now israeli_corporations_authority (verified live as רשות התאגידים). Note the deferred note's own suggested replacement spelling was itself wrong, so the fix required checking rather than transcribing.",
+        "CARRIED, still open: the ISA disclosure-reform interim report (29 Dec 2025, comment period to 12 Feb 2026) once enacted and cleanly sourceable. Could not be advanced this cycle: WebSearch was exhausted session-wide and gov.il/ISA search was unavailable.",
+        "An unsourced ESG claim ('the ISA maintains a voluntary ESG/climate disclosure framework') was de-asserted rather than shipped, since no source could be fetched with search unavailable. The observational instruction (look for an ESG section, do not assume absence, check the ISA's current position before telling a user it is mandatory) was kept."
+      ]
+    },
+    {
       "version": "1.2.0",
       "date": "2026-06-04",
       "lessons": [

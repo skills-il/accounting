@@ -15,7 +15,7 @@ company's periodic (תקופתי) filing on MAYA/MAGNA. Each item cited.
    (ביאורים) where the analytic detail lives. Source: IAS 1 presentation set,
    applied via IFRS adoption, https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/
 3. **Report types + deadlines.** Annual/periodic (3 months), quarterly
-   (interim, 60 days), immediate (miyadi). Source: Securities Regs (Periodic
+   (interim, two months from the report date and within 3 days of the auditor's review-report signature, Reg. 39(a)), immediate (miyadi, Reg. 30(b) next-trading-day clock). Source: Securities Regs (Periodic
    and Immediate Reports) 5730-1970, Reg. 7 / Reg. 39, https://www.nevo.co.il/law_html/law01/308_014.htm
 4. **Half-yearly substitute for small corporations.** A תאגיד קטן whose debt
    is not publicly held is exempt from Q1/Q3 and files a half-yearly report
@@ -38,7 +38,7 @@ company's periodic (תקופתי) filing on MAYA/MAGNA. Each item cited.
    (תקני ביקורת 700/705): unqualified (בלתי מסויגת/נקייה), qualified
    (בהסתייגות), adverse (חוות דעת שלילית), disclaimer (הימנעות מחוות דעת).
    Going-concern (הערת עסק חי) is an emphasis-of-matter paragraph
-   (פסקת הפניית תשומת לב), NOT an opinion grade. Source: ISA(IL) 700/705/706,
+   (a paragraph added at the end of the report), NOT an opinion grade WHERE DISCLOSURE IS ADEQUATE; where the going-concern disclosure is inadequate ICPAS 570 requires a qualified or adverse opinion. Source: ISA(IL) 700/705/570,
    ICPAS, https://icpas.org.il/professional_updates/תקן-ביקורת-ישראל-700-3/ (תקן ביקורת ישראל 700, 705)
 9. **Correct core Hebrew terminology** (maazan, revach naki vs revach golmi,
    ביאורים, etc.). Source: standard IFRS-IL terminology / ICPAS glossary.
@@ -88,5 +88,5 @@ company's periodic (תקופתי) filing on MAYA/MAGNA. Each item cited.
 - ISA, isa.gov.il / new.isa.gov.il ; MAGNA, www.magna.isa.gov.il
 - TASE, tase.co.il ; MAYA, maya.tase.co.il
 - IFRS Foundation Israel profile, ifrs.org
-- ICPAS auditing standards 700/701/705/706, https://icpas.org.il/professional_updates/תקן-ביקורת-ישראל-700-3/
+- ICPAS auditing standards 700/701/705/570, https://icpas.org.il/professional_updates/תקן-ביקורת-ישראל-700-3/
 - Bank of Israel Supervisor of Banks Public Reporting Directives, boi.org.il

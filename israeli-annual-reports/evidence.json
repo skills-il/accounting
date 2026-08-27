@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-annual-reports",
-  "generated_at": "2026-06-04T00:00:00Z",
+  "generated_at": "2026-08-27T02:38:14.906849+00:00",
   "claims": [
     {
       "claim_id": "annual-3-months",
@@ -17,10 +17,10 @@
     },
     {
       "claim_id": "quarterly-60-days",
-      "claim": "The quarterly report (interim financial statements) must be filed within 60 days (about 2 months) of the end of the quarter under Reg. 39 of the Securities Regulations (Periodic and Immediate Reports) 5730-1970.",
+      "claim": "Reg. 39(a) of the Securities Regulations (Periodic and Immediate Reports) 5730-1970: the quarterly report is filed within TWO MONTHS of the report date, and within 3 days of the auditor's signature on the interim review report.",
       "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
-      "raw_snippet": "תוך שישים ימים מסוף הרבעון",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "התאגיד יגיש לרשות דוח עתי, בתוך חודשיים מיום הדוח, ובלבד שהדוח העתי יוגש בתוך שלושה ימים מתאריך החתימה של רואה החשבון המבקר של התאגיד על דוח הסקירה",
+      "fetched_at": "2026-08-27T02:27:02.888921+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -77,10 +77,10 @@
     },
     {
       "claim_id": "dual-listing-chapter-e3",
-      "claim": "The dual-listing regime for an Israeli corporation traded on a foreign exchange (taagid chutz relying on ha-din ha-zar) is Chapter E3 (perek heh-3) of the Securities Law 5728-1968, not a single numbered regulation.",
+      "claim": "Chapter E3 of the Securities Law 5728-1968 ('ניירות ערך הרשומים למסחר בבורסה בחו\"ל') governs an Israeli-incorporated corporation whose securities are listed abroad; 'תאגיד חוץ' is defined as a corporation incorporated in Israel whose securities are listed for trading on a foreign exchange. Note Chapter E3A is a DIFFERENT chapter and must not be conflated.",
       "source_url": "https://www.nevo.co.il/law_html/law01/308_001.htm",
-      "raw_snippet": "פרק ה'3: רישום למסחר בבורסה של ניירות ערך הנסחרים בבורסה בחו\"ל. \"תאגיד חוץ\" - תאגיד שניירות ערך שלו רשומים למסחר בבורסה בחו\"ל; \"הדין הזר\" - הדין החל על תאגיד חוץ בשל רישום ניירות הערך שלו למסחר בבורסה בחו\"ל, לרבות כללי אותה בורסה",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "\"תאגיד חוץ\" - תאגיד שהואגד בישראל וניירות ערך שלו רשומים למסחר בבורסה בחו\"ל",
+      "fetched_at": "2026-08-27T02:27:02.888921+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -183,14 +183,16 @@
     },
     {
       "claim_id": "companies-registrar",
-      "claim": "The Israeli Companies Registrar / Corporations Authority maintains company filings at gov.il/he/departments/corporations_authority.",
-      "source_url": "https://www.gov.il/he/departments/corporations_authority",
-      "raw_snippet": "רשות התאגידים / רשם החברות",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "claim": "The Israeli Corporations Authority (רשות התאגידים), which contains the Companies Unit (יחידת החברות), is at gov.il/he/departments/israeli_corporations_authority. The legacy corporations_authority slug now 404s.",
+      "source_url": "https://www.gov.il/he/departments/israeli_corporations_authority",
+      "raw_snippet": "יחידות הרשות יחידת העמותות וחל\"צ יחידת החברות יחידת המשכונות",
+      "fetched_at": "2026-08-27T02:11:17.829164+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T02:11:17.829164+00:00"
     },
     {
       "claim_id": "auditor-opinion-grades-705",
@@ -219,18 +221,18 @@
       "verified_at": "2026-08-09T00:00:00Z"
     },
     {
-      "claim_id": "going-concern-emphasis-706",
-      "claim": "A going-concern emphasis (hearat esek chai) is an emphasis-of-matter paragraph (pisqat hafnayat tshumat lev) under ICPAS 706 (sourced from the going-concern standard ICPAS 570) that draws attention without modifying the auditor's opinion grade.",
-      "source_url": "https://icpas.org.il/wp-content/uploads/2018/05/%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-570-%D7%9C%D7%A9%D7%99%D7%9E%D7%95%D7%A2-58.pdf",
-      "raw_snippet": "פסקת הפניית תשומת לב (Emphasis of Matter) משמשת להסב את תשומת הלב לעניין שהוצג או נכלל בגילוי כראוי בדוחות הכספיים, אך אינה מסייגת/אינה משנה את חוות דעת רואה החשבון. הערת עסק חי (תקן ביקורת ישראל 570).",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "claim_id": "going-concern-emphasis-570",
+      "claim": "ICPAS Auditing Standard (Israel) 570 sec. 18: where significant going-concern doubt exists but the financial statements give adequate disclosure, the auditor ADDS a paragraph at the end of the report drawing attention to the notes, rather than modifying the opinion.",
+      "source_url": "https://icpas.org.il/wp-content/uploads/2018/08/%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-570-%D7%9C%D7%95%D7%95%D7%A2%D7%93-%D7%94%D7%9E%D7%A8%D7%9B%D7%96%D7%99.pdf",
+      "raw_snippet": "יוסיף פיסקה, בסוף דוח רואה החשבון המבקר, בה הוא יפנה תשומת לב לביאורים בדוחות הכספיים",
+      "fetched_at": "2026-08-27T02:35:22.173444+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/hebrew-financial-terms.md"
       ],
-      "verified_via": "pdf-text-extraction",
-      "verified_at": "2026-08-09T00:00:00Z"
+      "verified_via": "pdf",
+      "verified_at": "2026-08-27T02:35:22.173444+00:00"
     },
     {
       "claim_id": "kam-701-a",
@@ -371,7 +373,9 @@
         "SKILL.md",
         "SKILL_HE.md",
         "references/hebrew-financial-terms.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T02:15:37.140572+00:00"
     },
     {
       "claim_id": "securities-regs-structure",
@@ -458,6 +462,123 @@
       "appears_in": [
         "references/domain-checklist.md"
       ]
+    },
+    {
+      "claim_id": "companies-law-267a-remuneration-policy",
+      "claim": "Companies Law 5759-1999 Section 267A(a): the board of a public company, or of a private bond company, must set a remuneration policy for officers after considering the remuneration committee's recommendations.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
+      "raw_snippet": "להמליץ לדירקטוריון על מדיניות התגמול לנושאי משרה, כמשמעותה בסעיף 267א(א), וכן להמליץ לו, אחת לשלוש שנים, בעניין אישור המשך תוקפה של מדיניות תגמול שנקבעה לתקופה העולה על שלוש שנים, כאמור בסעיף 267א(ד)",
+      "fetched_at": "2026-08-27T02:13:09.684737+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "companies-law-118b-remuneration-committee",
+      "claim": "Companies Law Section 267A(a) requires the board to set the remuneration policy after considering the remuneration committee's recommendations submitted under Section 118B(1), and the policy requires general-meeting approval.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
+      "raw_snippet": "לאחר ששקל את המלצות ועדת התגמול שהוגשו לו לפי סעיף 118ב(1); מדיניות התגמול טעונה אישור האסיפה הכללית",
+      "fetched_at": "2026-08-27T02:13:09.684737+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-relief-associated-company-40",
+      "claim": "Reg. 5d(b)(2): for a small corporation, the threshold for attaching an associated company's financial statements under Reg. 44 doubles, reading 'twenty' as 'forty' (20% to 40%).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "לעניין צירוף דוחות כספיים של חברה כלולה, בתקנה 44, בכל מקום, במקום \"עשרים\" יקראו \"ארבעים\"",
+      "fetched_at": "2026-08-27T02:27:36.954347+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-reliefs-are-opt-in",
+      "claim": "Reg. 5d(a): the small-corporation reliefs are opt-in. The board decides the corporation will report under the regulation in whole or in part, and the decision takes effect only after an immediate report under Reg. 5e(a)(2).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "דירקטוריון תאגיד קטן רשאי להחליט כי התאגיד ידווח לפי הוראות תקנה זו או חלקן",
+      "fetched_at": "2026-08-27T02:27:36.954347+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "icpas-570-sec-18-emphasis",
+      "claim": "ICPAS 570 sec. 18: on significant going-concern doubt with adequate disclosure, the auditor adds a paragraph at the end of the report drawing attention to the notes.",
+      "source_url": "https://icpas.org.il/wp-content/uploads/2018/08/%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-570-%D7%9C%D7%95%D7%95%D7%A2%D7%93-%D7%94%D7%9E%D7%A8%D7%9B%D7%96%D7%99.pdf",
+      "raw_snippet": "יוסיף פיסקה, בסוף דוח רואה החשבון המבקר, בה הוא יפנה תשומת לב לביאורים בדוחות הכספיים",
+      "verified_via": "pdf",
+      "verified_at": "2026-08-27T02:35:22.173444+00:00",
+      "fetched_at": "2026-08-27T02:35:22.173444+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "icpas-570-inadequate-disclosure-modifies",
+      "claim": "ICPAS 570: if the auditor concludes the going-concern disclosure in the financial statements is NOT adequate, the auditor qualifies the opinion or issues an adverse opinion. The emphasis paragraph applies only where disclosure IS adequate.",
+      "source_url": "https://icpas.org.il/wp-content/uploads/2018/08/%D7%AA%D7%A7%D7%9F-%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-570-%D7%9C%D7%95%D7%95%D7%A2%D7%93-%D7%94%D7%9E%D7%A8%D7%9B%D7%96%D7%99.pdf",
+      "raw_snippet": "הגיע המבקר למסקנה שלא ניתן גילוי נאות בדוחות הכספיים, יסייג את חוות דעתו או ייתן חוות דעת שלילית מחמת העדר גילוי כאמור",
+      "verified_via": "pdf",
+      "verified_at": "2026-08-27T02:35:22.173444+00:00",
+      "fetched_at": "2026-08-27T02:35:22.173444+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "companies-law-141-registrar-annual-report",
+      "claim": "Companies Law Sec. 141: a company that is NOT a reporting corporation prepares and files an annual report with the Registrar once a year, within 14 days after the annual general meeting. This is a different filing from the securities periodic report.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
+      "raw_snippet": "חברה שאינה תאגיד מדווח תשלח לרשם החברות דין וחשבון שנתי, כאמור בסעיף 141",
+      "fetched_at": "2026-08-27T02:38:14.906849+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "raw_snippet_secondary": "דיווח שנתי של חברה שאינה תאגיד מדווח 141. (א) חברה שאינה תאגיד מדווח תערוך ותגיש לרשם, אחת לשנה, דין וחשבון שנתי כפי שיקבע השר, בתוך ארבעה עשר ימים לאחר האסיפה השנתית"
+    },
+    {
+      "claim_id": "companies-law-302-distribution-tests",
+      "claim": "Companies Law Sec. 302(a): a company may make a distribution out of its profits (the profit test) provided there is no reasonable concern the distribution will prevent it meeting its existing and expected liabilities when due (the solvency test).",
+      "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
+      "raw_snippet": "עליה להפוך להון מניות חלק מרווחיה, כמשמעותם בסעיף 302(ב)",
+      "fetched_at": "2026-08-27T02:38:14.906849+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "raw_snippet_secondary": "חלוקה מותרת 302. (א) חברה רשאית לבצע חלוקה מתוך רווחיה (להלן – מבחן הרווח), ובלבד שלא קיים חשש סביר שהחלוקה תמנע מן החברה את היכולת לעמוד בחבויותיה הקיימות והצפויות, בהגיע מועד קיומן (להלן – מבחן יכולת הפרעון)"
+    },
+    {
+      "claim_id": "companies-law-303-court-distribution",
+      "claim": "Companies Law Sec. 303(a): the court may, on a company's application, approve a distribution that does not meet the profit test, provided it is satisfied the solvency test is met.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
+      "raw_snippet": "חלוקה באישור בית משפט 303. (א) בית המשפט רשאי, לבקשת חברה, לאשר לה לבצע חלוקה שלא מקיימת את מבחן הרווח, ובלבד ששוכנע שמתקיים מבחן יכולת הפירעון",
+      "fetched_at": "2026-08-27T02:38:14.906849+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "immediate-report-reg30-clock",
+      "claim": "Reg. 30(b): an event first learned after 09:30 and before 17:00 on a trading day is reported no later than 09:30 the following trading day.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "החלפת תקנה 30 הנוסח הקודם: 30. (א) התאגיד יגיש לרשות ולרשם דו\"חות מיידיים על האירועים המפורטים בפרק זה",
+      "fetched_at": "2026-08-27T02:38:14.906849+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "raw_snippet_secondary": "משנודע לתאגיד לראשונה על אירוע לאחר השעה 9.30 ולפני השעה 17.00 ביום מסחר כלשהו – לא יאוחר משעה 9.30 ביום המסחר שלאחריו"
     }
   ]
 }

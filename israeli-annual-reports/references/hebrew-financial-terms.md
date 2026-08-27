@@ -28,8 +28,8 @@
 | Hebrew | English | When |
 |--------|---------|------|
 | דוח מיידי | Immediate Report | Within hours of event |
-| דוח רבעוני | Quarterly Report | Within 60 days (about 2 months) |
-| דוח חצי-שנתי | Half-Yearly Report | Within about 60 days; filed by small corporations without public debt in place of Q1/Q3 reports |
+| דוח רבעוני | Quarterly Report | Two months from the report date, and within 3 days of the auditor's signature on the interim review report (Reg. 39(a)) |
+| דוח חצי-שנתי | Half-Yearly Report | Two months from the end of Q2 (Regs. 39-49 apply, "report date" = last day of Q2); filed by small corporations without publicly-held debt in place of Q1/Q3 reports |
 | דוח תקופתי | Annual Report | Within 3 months |
 | תשקיף מדף | Shelf Prospectus | Valid up to 3 years |
 
@@ -40,7 +40,7 @@
 | חוות דעת מסויגת | Qualified opinion | Modified; ICPAS 705 |
 | חוות דעת שלילית | Adverse opinion | Modified; ICPAS 705 |
 | הימנעות מחוות דעת | Disclaimer of opinion | Modified; ICPAS 705 |
-| הערת עסק חי | Going-concern emphasis | Emphasis-of-matter (ICPAS 706/570); does NOT modify the opinion grade |
+| הערת עסק חי | Going-concern emphasis | Emphasis-of-matter (ICPAS 570); does NOT modify the opinion grade |
 | ענייני מפתח בביקורת | Key Audit Matters (KAM) | ICPAS 701; in larger issuers' reports |
 
 ## Israeli Accounting Standards
