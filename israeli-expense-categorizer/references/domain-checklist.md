@@ -13,8 +13,8 @@ Each Must/Should item cites the governing statute or regulation.
 1. **Osek Patur vs Osek Murshe vs Chevra distinction for VAT eligibility.** Osek patur
    cannot deduct input VAT; osek murshe / chevra can. Source: חוק מס ערך מוסף תשל"ו-1976,
    ss. 31, 38, 41.
-2. **Vehicle running-cost deduction = higher of [running costs − שווי שימוש] or [45%].**
-   Source: תקנות מס הכנסה (ניכוי הוצאות רכב) התשנ"ה-1995, תקנה 2.
+2. **Vehicle: pick the BRANCH before the rate.** תקנה 2 (income that is NOT employment income): higher of [running costs − שווי שימוש] or a percentage, and the percentage varies: 45% ordinary, 25% L3 motorcycle (2(1א)), 90% public bus / taxi (2(1ב)), 80% tour / desert (2(1ג)), 77.5% or 68% driving-instruction (2(1ד)). תקנה 3 (employer-provided רכב צמוד): running costs deductible IN FULL. תקנה 4 (the employee): no deduction against employment income. A רכב תפעולי is outside the definition of "רכב" altogether. There is NO rule disallowing a second vehicle. Odometer readings must be recorded per vehicle in the Sec. 131 return; תקנה 5 (in-vehicle device) was never brought into force.
+   Source: תקנות מס הכנסה (ניכוי הוצאות רכב) התשנ"ה-1995, תקנות 2, 3, 4, 6.
 3. **שווי שימוש (use-value) is a fixed amount from the official price-group (קבוצת מחיר)
    table per vehicle, not a derived/receipt figure.** Without it the higher-of rule cannot
    be computed. Source: תקנות מס הכנסה (שווי השימוש ברכב) התשמ"ז-1987.
@@ -50,9 +50,11 @@ Each Must/Should item cites the governing statute or regulation.
 
 1. **Osek patur ceiling = 122,833 ₪ for 2026 (120,000 ₪ in 2025).**
    Source: חוק מע"מ ס' 31(3).
-2. **Landline-from-home cap: lower of 80% or amount over 2,700 ₪, within 26,600 ₪ ceiling.**
-   Source: תקנות ניכוי הוצאות מסויימות 1972, תקנה 2.
-3. **Gifts: ≤ 240 ₪/recipient/yr in Israel; ≤ $15/foreign recipient/yr.** Source: same regs.
+2. **Landline from home is NOT deductible at all** unless the taxpayer proves to the assessing officer that the home is the MAIN place of his business (עיקר עסקו). Only then: at or below the indexed ceiling (~26,600 ₪) deduct the lower of 80% or the amount over ~2,700 ₪; above the ceiling deduct only the part over ~5,300 ₪. Part-year qualification is pro-rated by months/12 under תקנה 2ב(א1). The shekel figures are indexed annually under תקנה 2ג (nominals 1,800 / 3,600 / 18,000).
+   Source: תקנות ניכוי הוצאות מסויימות 1972, תקנה 2ב(א), 2ב(א1), 2ג.
+3. **Gifts: ≤ ~240 ₪/recipient/yr in Israel; ≤ $15/foreign recipient/yr, indexed annually under תקנה 2ג.** תקנה 2(4) also requires the recipient's identifying details, the place the gift was given, and receipts. Source: same regs.
+3a. **Work clothing (ביגוד) is 80%**, and 100% only where it cannot be used other than for work; it qualifies only if it prominently identifies the business or the law requires it. Source: same regs, תקנה 2(6).
+3b. **Professional association dues / דמי טיפול: 50%.** Source: same regs, תקנה 2(7).
 4. **Foreign-travel per-diem / אש"ל לחו"ל daily stay caps (meals sit inside the cap).** Source: same regs,
    תקנה 2(2) + annual ITA update.
 5. **Fines, penalties, traffic tickets = non-deductible.** Source: פקודת מס הכנסה ס' 32(12).
@@ -66,7 +68,7 @@ Each Must/Should item cites the governing statute or regulation.
 
 ## Out of scope
 
-- Final tax-return filing (טופס 1301, דוח שנתי) and signature.
+- Final annual tax-return filing and signature.
 - Payroll for EMPLOYEES / employee withholding (ניכוי במקור from staff salaries), tikun 190. (Note: the self-employed filer's OWN keren hishtalmut, National Insurance 47A deduction, disability, and pension contributions ARE in scope, see the deduction rules, they are the filer's own business-side deductions, not employee payroll.)
 - Legal tax-planning advice, rulings (החלטות מיסוי), or representation before the ITA.
 - Income recognition / revenue side; this skill is expenses only.

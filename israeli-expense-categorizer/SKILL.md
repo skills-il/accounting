@@ -49,7 +49,7 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - Office rent and utilities (electricity, water, arnona for dedicated office)
 - Professional services (accountant, lawyer, consultant fees)
 - Software subscriptions and SaaS tools used exclusively for business
-- Raw materials and inventory
+- Raw materials consumed in the period (see the inventory warning below)
 - Business insurance premiums
 - Marketing and advertising costs
 - Professional development courses directly related to the business
@@ -57,10 +57,18 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - Website hosting and domain costs
 - Employee salaries and related social costs
 
+**Inventory is NOT a period expense.** Stock bought and still unsold at year end does not reduce this year's profit. It reaches the P&L only through cost of goods sold (opening stock + purchases - closing stock), and a stocktake (ספירת מלאי) at the year end is required under the bookkeeping directives. Treating a December stock buy-in as "100% deductible" overstates the year's expense by the entire closing-stock balance. Flag inventory purchases for the accountant rather than expensing them.
+
 **Partially deductible expenses**:
-- **Vehicle expenses (higher-of rule)**: Fuel, licensing, compulsory + comprehensive insurance, leasing, repairs, parking, tolls, and depreciation. Per תקנות מס הכנסה (ניכוי הוצאות רכב) התשנ"ה-1995, the deductible amount is the HIGHER of [running expenses minus שווי שימוש (use-value)] OR [45% of running expenses]. The common "just take 45%" shortcut is wrong whenever the running-minus-use-value figure is larger. Note: שווי שימוש is NOT a computed or receipt-based number, it is a FIXED monthly amount the Tax Authority sets per vehicle from the official price-group (קבוצת מחיר) table, or for vehicles from 2010 onward as a percentage of the list price (currently 2.48%); look it up via the ITA שווי שימוש calculator so the higher-of branch is actually computable. Hard statutory condition: the user must record odometer (ק"מ) readings at the start and end of the tax year, or the deduction can be disqualified. Applies to a single vehicle used for business; a second vehicle is 0% unless proven business-essential.
-- **Mobile phone (טלפון נייד)**: Not a flat 80%. Per תקנות מס הכנסה (ניכוי הוצאות מסוימות) תשל"ב-1972, only the portion ABOVE the lower of 1,380 NIS per year (~115 NIS/month) or 50% of the expense is deductible, which acts as an effective ~50% disallowance floor.
-- **Landline from home (טלפון קווי מהבית)**: Deductible is the LOWER of 80% of the expense OR the amount exceeding 2,700 NIS (2026, unchanged), within an annual ceiling of 26,600 NIS.
+- **Vehicle expenses**: Fuel, licensing, compulsory + comprehensive insurance, leasing, repairs, parking, tolls, and depreciation, per תקנות מס הכנסה (ניכוי הוצאות רכב) התשנ"ה-1995. **Pick the right branch before picking a rate, because the regulation has three of them:**
+  - **תקנה 2, expenses in producing income that is NOT employment income** (the self-employed case): the deductible amount is the HIGHER of [running expenses minus שווי שימוש] OR a percentage of running expenses. **That percentage is not always 45%.** תקנה 2 sets five: 45% for an ordinary vehicle; **25% for an L3 motorcycle** (תקנה 2(1א)); 90% for an M1 whose sub-classification is a public bus or taxi (2(1ב)); 80% for an M1 tour or desert vehicle (2(1ג)); and 77.5%, or 68% where the taxpayer has two such cars and only one is automatic, for a driving-instruction vehicle (2(1ד)). A courier on an L3 motorcycle who applies 45% over-claims by 20 points of the whole running-cost bundle; a taxi driver who applies 45% instead of 90% loses half the deduction. Check the vehicle's classification on the רישיון רכב first.
+  - **תקנה 3, a vehicle the EMPLOYER put at an employee's disposal (רכב צמוד)**: running costs are deductible **IN FULL** ("יותרו בניכוי במלואן"). The employer does not apply the 45% higher-of rule at all; the employee is instead grossed up with שווי שימוש. Routing a small company with a company car to 45% under-claims roughly half the fleet cost.
+  - **תקנה 4, the employee's own side**: no deduction at all for vehicle running costs incurred in producing employment income.
+  - **שווי שימוש** is NOT computed from receipts: it is a fixed amount the Tax Authority sets per vehicle from the price-group (קבוצת מחיר) table, or for vehicles from 2010 onward as a percentage of the list price (currently 2.48%); look it up via the ITA calculator so the higher-of branch is actually computable.
+  - A **רכב תפעולי** (operational vehicle) falls OUTSIDE the regulation's definition of "רכב" entirely: a security vehicle used only operationally, or a vehicle put at no employee's disposal, used only for the business, where the place of business is not the owner's home and the vehicle does not leave the premises after hours. That, not any invented "second vehicle" rule, is the real carve-out. **There is no rule disallowing a second vehicle**: the regulation applies per vehicle, and each one stands or falls on the ordinary Sec. 17 wholly-and-exclusively test.
+  - Hard condition: the regulations' reporting rule requires the odometer (ק"מ) reading at the start and end of the tax year to be recorded per vehicle in the Sec. 131 return, or the deduction can be disqualified. (תקנה 5, the in-vehicle measuring device, never entered force: the regulations commenced in 1995 except for that one, whose start date was left to the Finance Minister. Do not tell a user their deduction fails for want of a device.)
+- **Mobile phone (טלפון נייד)**: Not a flat 80%. Per תקנות מס הכנסה (ניכוי הוצאות מסוימות) תשל"ב-1972, only the portion ABOVE the lower of about 1,380 NIS per year (~115 NIS/month) or 50% of the expense is deductible, which acts as an effective ~50% disallowance floor. This shekel figure is index-adjusted annually under תקנה 2ג, so confirm the current year's table.
+- **Landline from home (טלפון קווי מהבית)**: The default under תקנה 2ב(א) is that home landline costs are NOT DEDUCTIBLE AT ALL. They become deductible only if the taxpayer proves to the assessing officer that the home is the MAIN place of his business or vocation (עיקר עסקו). Do not let a home landline claim 80% without that. Once proven, two branches apply: if annual costs are at or below the indexed ceiling (about 26,600 NIS), deduct the LOWER of 80% of the cost or the part exceeding about 2,700 NIS; if costs exceed that ceiling, deduct only the part exceeding about 5,300 NIS. If the home served as the main place of business for only part of the year, תקנה 2ב(א1) pro-rates both the costs and the thresholds by the number of qualifying months over 12. The shekel figures here are the index-adjusted amounts (the regulation's own nominal texts are 1,800 / 3,600 / 18,000); they are re-adjusted annually under תקנה 2ג, so confirm the current tax year's table.
 - **Internet**: No fixed percentage. Split by actual business-use proportion (for a home connection, use the same business-use share as the home office).
 - **Home office (proportional)**: Deduct the percentage of home used exclusively for business. Calculate: (office area / total home area) x 100. Apply this percentage to rent, arnona, electricity, internet, and maintenance.
 - **Meals and entertainment** (correct rule, often misapplied):
@@ -69,7 +77,13 @@ Categorize each expense using the following deduction rules from the Israeli Tax
   - **Light refreshments at the workplace (כיבוד קל)**: up to 80% deductible per ITA practice (coffee/tea/snacks for staff and visitors at the office).
   - **Foreign-business-trip subsistence (אש"ל לחו"ל)**: meals abroad are not deductible at a separate percentage, they fall inside the daily "other stay expenses" cap. Caps for 2026: up to $102 per day of stay when lodging expenses are also claimed, or up to $171 per day of stay when lodging expenses are not claimed.
   - Meals during a regular workday for the self-employed person alone: not deductible.
-- **Gifts to clients**: Up to 240 NIS per recipient per year (2026, unchanged) for gifts given in Israel, and up to $15 USD per foreign recipient per year, per תקנות ניכוי הוצאות מסויימות 1972.
+- **Gifts to clients**: Up to about 240 NIS per recipient per year for gifts given in Israel, and up to $15 USD per foreign recipient per year, per תקנות ניכוי הוצאות מסויימות 1972. These are index-adjusted amounts re-set annually under תקנה 2ג, so check the current year's coordination table rather than assuming last year's figure carried over.
+
+**Commonly-missed deduction heads (Sec. 17 of the Ordinance)**: the general rule in Sec. 17 is that expenses laid out wholly and exclusively in producing income are deducted unless limited elsewhere, and it names heads this skill's category lists otherwise skip:
+- **Interest and linkage differences** on money borrowed, where the assessing officer is satisfied it funded the income-producing activity (Sec. 17(1)). This is what account 69 is for; a bank interest charge is a deduction, not an unclassifiable item.
+- **Repairs** to premises, plant and machinery (Sec. 17(3)), as distinct from an improvement, which is capital.
+- **Bad and doubtful debts** (Sec. 17(4)), on proof to the assessing officer that they went bad in the tax year; a later recovery is taxed when received. There is a separate VAT limb: a written-off debt can support a credit note and an input-VAT refund claim, which has its own procedure and time limit, so raise it with the accountant rather than only writing the debt off for income tax.
+- **The cost of preparing the return and handling assessments and appeals** (Sec. 17(11)), expressly denied where books were not kept.
 
 **Non-deductible expenses (0%)**:
 - Personal clothing (unless uniforms or protective gear)
@@ -80,9 +94,9 @@ Categorize each expense using the following deduction rules from the Israeli Tax
 - Political donations
 
 **Self-employed retirement and insurance deductions (PERSONAL annual-return deductions, often missed)**:
-These are the self-employed filer's OWN deductions, claimed on the annual return (the nispach to Form 1301), NOT business-expense (P&L) lines. Do NOT book them to the chart of accounts below, account 68 "pension" there is for EMPLOYEES' pension (an employer cost); booking your own pension or keren hishtalmut as a business expense misstates profit and risks double-counting when the accountant also claims the personal deduction. They are also distinct from the ordinary life insurance listed as non-deductible above:
-- Contributions to a self-employed keren hishtalmut (קרן השתלמות לעצמאי) are income-tax deductible up to a cap based on determining income (hachnasa kovaat), roughly 4.5% (Sec. 17(5a) of the Ordinance).
-- Of the self-employed person's OWN National Insurance, exactly 52% of the ביטוח לאומי (National Insurance) component is income-tax deductible (Sec. 47A); the health-tax component (דמי ביטוח בריאות) is NOT deductible at all. A self-employed Bituach Leumi bill bundles both, so apply the 52% to the NI portion only, the annual Bituach Leumi certificate (ishur) pre-computes the deductible base. This is the filer's own contribution, not employee withholding, so do NOT treat it as out-of-scope payroll.
+These are the self-employed filer's OWN deductions, claimed on the annual return and its schedules, NOT business-expense (P&L) lines. Do NOT book them to the chart of accounts below, account 68 "pension" there is for EMPLOYEES' pension (an employer cost); booking your own pension or keren hishtalmut as a business expense misstates profit and risks double-counting when the accountant also claims the personal deduction. They are also distinct from the ordinary life insurance listed as non-deductible above:
+- Contributions to a self-employed keren hishtalmut (קרן השתלמות לעצמאי) are deductible up to 4.5% of determining income (hachnasa kovaat) per Sec. 17(5a) of the Ordinance, where determining income is business or vocation taxable income before this deduction, capped at the amount stated in the section, NIS 156,000, which is the Ordinance's NOMINAL figure and is index-linked under Sec. 120B, so the live ceiling for the current tax year is materially higher. Look up the current indexed figure rather than using 156,000 directly.
+- Of the self-employed person's OWN National Insurance, exactly 52% of the ביטוח לאומי (National Insurance) component is income-tax deductible (Sec. 47A(a)), excluding the addition under Sec. 179(a) of the National Insurance Law, and the deduction cannot exceed taxable income before it; the health-tax component (דמי ביטוח בריאות) is NOT deductible at all. A self-employed Bituach Leumi bill bundles both, so apply the 52% to the NI portion only, the annual Bituach Leumi certificate (ishur) pre-computes the deductible base. This is the filer's own contribution, not employee withholding, so do NOT treat it as out-of-scope payroll.
 - Loss-of-work-capacity insurance (ביטוח אובדן כושר עבודה) is deductible up to an income-based cap.
 - Self-employed pension contributions (kupat gemel / keren pensia) earn a deduction (Sec. 47) and a separate tax credit (Sec. 45A) up to caps.
 Confirm the exact caps with the accountant, they interact and are all capped against income.
@@ -91,11 +105,18 @@ Confirm the exact caps with the accountant, they interact and are all capped aga
 - **Higher-value equipment**: Recognized through depreciation over its useful life rather than immediately (computers: 33% per year, office furniture: 6% per year). Low-value items are taken as an immediate expense; ~1,200 ILS is a common working threshold for flagging which items to treat as low-value, confirm the current figure with your accountant.
 - **Depreciation of vehicles**: 15% per year applied to the vehicle cost; the deductible portion of that depreciation is itself folded into the 45% higher-of running-cost rule above.
 - **Travel abroad**: Fully deductible if business purpose is documented. Per diem rules apply: accommodation receipts required, subsistence up to the daily caps noted above ($102/$171 per day of stay).
-- **Work clothing**: Deductible only if branded, protective, or required uniform. Regular business attire is not deductible.
+- **Work clothing (ביגוד)**: Per תקנה 2(6), qualifying work clothing is **80%** deductible, and 100% ONLY where the clothing cannot be used other than for work. It qualifies as ביגוד only if it prominently identifies the taxpayer's business, or the law requires it to be worn. So a branded polo shirt is 80%, not 100%. Regular business attire is not deductible at all.
+
+**Book amounts gross or net? Decide this before any figure is produced.**
+- An **osek murshe** books expenses NET of recoverable input VAT: the VAT is a receivable from the Tax Authority, not an expense. Do not take the gross invoice amount as the deductible base and then also report the VAT as reclaimable, that counts it twice.
+- An **osek patur** recovers no input VAT at all, so he books the VAT-INCLUSIVE amount as the expense, and depreciates equipment on the VAT-inclusive cost.
+- Where input VAT is only PARTLY recoverable (vehicle running costs at 2/3, or a mixed-use asset), the non-recoverable remainder is itself an expense.
+State which basis you used in the output, because every figure changes by roughly the VAT rate depending on the answer.
 
 **VAT (Osek Murshe only)**:
-- **Private vehicle (רכב פרטי) purchase**: Input VAT on the purchase or import of a private vehicle is NOT deductible at all (תקנה 14).
+- **Private vehicle (רכב פרטי) purchase**: Input VAT on the purchase or import of a private vehicle is NOT deductible (תקנה 14(א)). This is not absolute: תקנה 14 carries exceptions for businesses whose vehicles are their trade, and the ITA's own guide has a section on the exceptions (חריגים לאיסור ניכוי מס תשומות). If the client is a car dealer, a driving school, a rental fleet or a taxi/transport operator, do NOT apply the block without checking the exception, or they forgo the input VAT on every vehicle they buy.
 - **Vehicle running costs (fuel, repairs)**: Input VAT is 2/3 deductible when business is the primary use of the vehicle, and 1/4 deductible otherwise (תקנה 18).
+- **Allocation number (מספר הקצאה) on a supplier's tax invoice, the newest way to lose an input-VAT deduction.** Under the "Israel Invoices" regime a tax invoice above the threshold in force ON THE INVOICE DATE must carry a 9-digit allocation number, or the RECIPIENT cannot deduct the input VAT on it. The thresholds (before VAT) are NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, and NIS 5,000 from June 2026, so at the current threshold this now reaches ordinary business expenses: equipment, subcontractors, a quarter's rent. When categorizing an above-threshold expense for an osek murshe, check the supplier invoice actually carries the number and flag it if not. Do not over-apply it either: an allocation number is required only where the invoice carries a VAT component (a zero-rated or exempt-only invoice does not need one), the recipient is an osek murshe, and the recipient asked for one. Scope historical expenses to the threshold in force on their own date rather than today's.
 - Keep תקנה 14 and תקנה 18 separate: תקנה 14 blocks input VAT on the PURCHASE of a private vehicle entirely, while תקנה 18 governs the RUNNING-cost VAT (the 2/3 vs 1/4 split). They are different rules and should not be conflated.
 
 ### Step 4: Map to Israeli chart of accounts
@@ -187,7 +208,7 @@ Actions:
    - Rent: 15% deductible (home office), Account 63, 750 ILS deductible
    - Electricity: 15% deductible, Account 63, 60 ILS deductible
    - Arnona: 15% deductible, Account 63, 120 ILS deductible (quarterly, so 40/month)
-   - iMac: 100% deductible but must depreciate over 3 years (33%/year), Account 70, ~2,833 ILS/year depreciation
+   - iMac: 100% deductible but must depreciate over 3 years (33%/year), Account 70, ~2,805 ILS/year depreciation (8,500 x 33%)
    - Adobe CC: 100% deductible, Account 65, 220 ILS
    - Parking ticket: 0% deductible (fine/penalty), flag as non-deductible
    - Jeans: 0% deductible (personal clothing), flag as non-deductible
@@ -208,7 +229,7 @@ Actions:
 3. Auto-categorize based on vendor names and descriptions using pattern matching:
    - Gas station names (Paz, Sonol, Delek) -> Vehicle running costs; tag for the year-end higher-of rule (45% or running-minus-use-value), do not hard-code 45% per line
    - Cellcom/Partner mobile lines -> Mobile phone; apply the 1,380 ILS-or-50% floor, not a flat 80%
-   - Bezeq landline / HOT / internet -> Landline-or-internet; landline is the lower of 80% or the amount over 2,700 ILS, internet is split by business-use proportion
+   - Bezeq landline / HOT / internet -> Landline-or-internet; a HOME landline is disallowed entirely unless the home is proven to be the main place of business, and only then is it the lower of 80% or the amount over about 2,700 ILS. Internet is split by business-use proportion
    - Supermarket chains -> Flag as likely personal, 0%
    - Software vendors -> Office/General, 100%
 4. Flag ambiguous items for manual review

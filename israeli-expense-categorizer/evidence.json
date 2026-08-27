@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-expense-categorizer",
-  "generated_at": "2026-06-03T00:00:00Z",
+  "generated_at": "2026-08-27T03:13:30.586265+00:00",
   "claims": [
     {
       "claim_id": "phone-mobile-floor",
@@ -17,7 +17,7 @@
     },
     {
       "claim_id": "phone-landline",
-      "claim": "Home landline (טלפון קווי מהבית): deductible is the lower of 80% of the expense OR the amount exceeding 2,700 ש\"ח, subject to a 26,600 ש\"ח annual ceiling.",
+      "claim": "Coordination circular figures for the home landline: at or below 26,600 NIS annual cost the deduction is the lower of 80% or the amount exceeding 2,700 NIS. NOTE: these figures apply only once the taxpayer has proved the home is his main place of business (Reg. 2b(a)); see landline-two-branches-and-proration for the full rule and the above-ceiling branch.",
       "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
       "raw_snippet": "הוצאות טלפון שנתיות שלא עלו על 26,600 ש\"ח, יותרו 80% מההוצאות, או סכום ההוצאה העולה על 2,700 ש\"ח לפי הנמוך",
       "fetched_at": "2026-06-03T00:00:00Z",
@@ -51,16 +51,15 @@
     },
     {
       "claim_id": "vehicle-vat-purchase",
-      "claim": "VAT (input tax / מס תשומות) on the purchase or import of a private vehicle (רכב פרטי) is NOT deductible at all (תקנה 14).",
-      "source_url": "https://www.gov.il/he/pages/instructions-for-deduction-of-input-tax-for-vehicles-and-motorcycles",
-      "raw_snippet": "בידי עוסק אחר אם הרכב משמש אך ורק לאחד מאלה –תקנה 14(ב)(2)(ב): לימודי נהיגה בבית ספר לנהיגה.",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "claim": "Reg. 14(a) of the VAT Regulations: VAT paid on the purchase or import of a \"private vehicle\" is not deductible as input tax.",
+      "source_url": "https://www.bshcpa.co.il/%D7%AA%D7%A7%D7%A0%D7%94-18-%D7%A7%D7%99%D7%96%D7%95%D7%96-%D7%AA%D7%A9%D7%95%D7%9E%D7%95%D7%AA/",
+      "raw_snippet": "בתקנה 14(א) לתקנות מע\"מ נקבע, כי מע\"מ ששולם על רכישתו או ייבואו של \"רכב פרטי\"",
+      "fetched_at": "2026-08-27T02:57:32.488074+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "metadata.json"
-      ],
-      "verified_via": "gov.il content API (programmatic re-extraction)"
+      ]
     },
     {
       "claim_id": "vehicle-vat-running",
@@ -187,10 +186,10 @@
     },
     {
       "claim_id": "regulation-refs",
-      "claim": "The reference checklist cites תקנה 14 and תקנה 18 of the VAT regulations (vehicle input tax), תקנה 2 and תקנה 4 of תקנות ניכוי הוצאות רכב 1995 (vehicle deduction + reporting/odometer requirement), and the annual return form טופס 1301. Fully deductible items are recognized at 100%.",
-      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
-      "raw_snippet": "תקנה 14 אוסרת ניכוי בגין רכישת רכב פרטי לחלוטין, אך תקנה 18 מאפשרת ניכוי של 2/3 מהוצאות שוטפות. תקנה 2 ותקנה 4 לתקנות ניכוי הוצאות רכב (דרישת דיווח / קריאת המונה). טופס 1301 הוא הדוח השנתי. 100% מוכר.",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "claim": "Reg. 2b(a) of the Income Tax Regulations (Deduction of Certain Expenses) 1972: home landline costs are not deductible unless the taxpayer proves to the assessing officer that the home is the main place of his business or vocation.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "לא יותרו בניכוי הוצאות בשל החזקת טלפון שאינו נייד במקום מגוריו של הנישום או של בעל שליטה בנישום, זולת אם הוכיח הנישום או בעל השליטה בנישום, להנחת דעתו של פקיד השומה, כי בית המגורים משמש את עיקר עסקו או משלח ידו של הנישום",
+      "fetched_at": "2026-08-27T02:57:32.488074+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -212,16 +211,16 @@
     },
     {
       "claim_id": "illustrative-example-amounts",
-      "claim": "Illustrative, user-provided example amounts used only inside the worked Examples section (not external tax facts): a freelancer's January expenses and a home-office case. These are arithmetic inputs and derived deductible totals, not statutory figures. Amounts in ILS and ש\"ח: 150 ILS 150 ש\"ח 85 ILS 85 NIS 85 ש\"ח 180 ILS 180 ש\"ח 90 ILS 90 ש\"ח 450 ILS 450 ש\"ח 350 ILS 350 ש\"ח 800 ILS 800 ש\"ח 120 ILS 120 ש\"ח 202.50 ILS 202.50 ש\"ח 2,912.50 ILS 2,912.50 ש\"ח 422.50 ILS 422.50 ש\"ח 3,335 ILS 3,335 ש\"ח 5,000 ILS 5,000 ש\"ח 400 ILS 400 ש\"ח 8,500 ILS 8,500 ש\"ח 220 ILS 220 ש\"ח 250 ILS 250 ש\"ח 300 ILS 300 ש\"ח 95 ILS 95 ש\"ח 750 ILS 750 ש\"ח 60 ILS 60 ש\"ח 40 ש\"ח 500 ILS 500 ש\"ח 1,200 ILS.",
+      "claim": "The shekel amounts inside the worked Examples (invoice values such as 150, 180, 350, 8,500 and the totals derived from them) are ILLUSTRATIVE INPUTS invented for the examples, not sourced external figures, so they assert nothing about Israeli law. The only factual claims in the examples are the DEDUCTION RATES applied to them, which are evidenced separately by the regulation entries in this file.",
       "source_url": "https://github.com/skills-il/accounting",
-      "raw_snippet": "perties Stars 10 stars Watchers 2 watching Forks 6 forks Report repository Releases Packages Used by Contributors Languages Footer © 2026 GitHub, Inc. Footer navigation Terms Privacy Security Status Community Docs Contact Manage cookies Do not share my personal information You can’t perform that action at this time.",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Illustrative example inputs invented for the worked Examples in this skill, asserting nothing about Israeli law: 150 ILS, 85 ILS, 180 ILS, 450 ILS, 350 ILS, 800 ILS, 1,200 ILS, 120 ILS, 3,335 ILS, 2,912.50 ILS, 422.50 ILS, 202.50 ILS, 90 ILS, 247.50 ILS, 5,000 ILS, 400 ILS, 8,500 ILS, 2,805 ILS, 220 ILS, 250 ILS, 300 ILS, 95 ILS, 750 ILS, 60 ILS. Only the DEDUCTION RATES applied to these amounts are factual claims, and each is evidenced separately in this file.",
+      "fetched_at": "2026-08-27T02:59:09.902854+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"202\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "authored: these amounts are invented inputs for the worked Examples and assert nothing about the world, so there is no external source to check. The prior cycle pointed this entry at GitHub page-footer boilerplate, which laundered them past the gate; the deduction RATES applied to them are each evidenced separately in this file.",
+      "verified_at": "2026-08-27T03:01:05.102408+00:00"
     },
     {
       "claim_id": "reference-table-urls",
@@ -236,10 +235,10 @@
     },
     {
       "claim_id": "self-employed-retirement-insurance-deductions",
-      "claim": "Self-employed personal (annual-return, Form 1301 / טופס 1301) deductions, distinct from employee payroll and not business-expense lines: keren hishtalmut le'atzmai (קרן השתלמות לעצמאי) is income-tax deductible up to ~4.5% of determining income (הכנסה קובעת) under Section 17(5a) / סעיף 17(5א); exactly 52% of the self-employed person's own National Insurance component (ביטוח לאומי) is income-tax deductible under Section 47A / סעיף 47א, while the health-tax component (דמי ביטוח בריאות) is NOT deductible; loss-of-work-capacity insurance (ביטוח אובדן כושר עבודה) is deductible up to an income-based cap; self-employed pension contributions earn a deduction under Section 47 / סעיף 47 and a separate tax credit under Section 45A / סעיף 45א.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%98%D7%91%D7%95%D7%AA_%D7%91%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%94%D7%A4%D7%A7%D7%93%D7%95%D7%AA_%D7%A2%D7%A6%D7%9E%D7%90%D7%99%D7%95%D7%AA_%D7%9C%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99",
-      "raw_snippet": "עצמאי ניכוי 52% דמי ביטוח לאומי קרן השתלמות לעצמאי 4.5% הכנסה קובעת פנסיה סעיף 47 45א 17",
-      "fetched_at": "2026-07-18T00:00:00Z",
+      "claim": "Income Tax Ordinance Sec. 47A(a): an individual who paid National Insurance contributions on non-employment income is allowed a deduction of 52% of the amount paid, excluding the addition under Sec. 179(a) of the National Insurance Law, capped at taxable income before the deduction.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_001.htm",
+      "raw_snippet": "יותר לו ניכוי של 52% מהסכום ששילם, למעט תוספת לפי סעיף 179(א) לחוק הביטוח, ובלבד שהניכוי לא יעלה על הכנסתו החייבת שלפני הניכוי",
+      "fetched_at": "2026-08-27T02:47:46.710735+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -292,6 +291,313 @@
       "verified_at": "2026-08-11",
       "appears_in": [
         "SKILL.md"
+      ]
+    },
+    {
+      "claim_id": "keren-hishtalmut-atzmaim-17-5a",
+      "claim": "Income Tax Ordinance Sec. 17(5a): amounts an individual pays to a self-employed keren hishtalmut may not exceed 4.5% of determining income (hachnasa kovaat), where determining income is business/vocation taxable income before this deduction, up to NIS 156,000 per year.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_001.htm",
+      "raw_snippet": "סכומים ששילם יחיד לקרן השתלמות לעצמאים לא יעלו על 4.5% מהכנסתו הקובעת; לענין זה – \" הכנסה קובעת \" – הכנסתו החייבת של היחיד מעסק או ממשלח יד, לפני הניכוי לפי פסקה זו, ועד לסכום של 156,000 שקלים חדשים בשנה",
+      "fetched_at": "2026-08-27T02:47:46.710735+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ordinance-sec-47-47a-45a-refs",
+      "claim": "Income Tax Ordinance: Sec. 47 governs the deduction for provident/pension payments and cross-refers to Sec. 47A; Sec. 45A governs the corresponding tax credit.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_001.htm",
+      "raw_snippet": "סכומים ששילם יחיד בעד עצמו לקופת גמל לקצבה, בלא תשלום מקביל מטעם מעביד, ושהיחיד אינו זכאי בשלהם לזיכוי לפי סעיף 45א או לניכוי לפי סעיף 47",
+      "fetched_at": "2026-08-27T02:48:28.766268+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ordinance-sec-47a-crossref",
+      "claim": "Income Tax Ordinance Sec. 47 defines qualifying income before the deduction under that section and under Sec. 47A.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_001.htm",
+      "raw_snippet": "לפני הניכוי על פי סעיף זה ועל פי סעיף 47א",
+      "fetched_at": "2026-08-27T02:48:28.766268+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-blocks-input-vat",
+      "claim": "A tax invoice above the allocation-number threshold without a valid 9-digit allocation number cannot be used by the recipient to deduct the input VAT.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "קבלת מספר הקצאה בן 9 ספרות, אשר יש לציינו על גבי חשבונית המס כתנאי לניכוי מס התשומות על-ידי מקבל החשבונית",
+      "fetched_at": "2026-08-27T02:49:14.764971+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-conditions-expense",
+      "claim": "An allocation number is required only where the invoice includes a VAT component (zero-rated and exempt-only invoices are excluded), the recipient is an osek murshe, and the recipient requested one.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "החשבונית כוללת רכיב מע\"מ (כלומר, חשבוניות בשיעור אפס או חשבוניות הכוללות רק עסקאות פטורות אינן טעונות מספר הקצאה); מקבל החשבונית הינו עוסק מורשה; ומקבל החשבונית דרש מספר הקצאה",
+      "fetched_at": "2026-08-27T02:49:14.764971+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-threshold-schedule",
+      "claim": "Allocation-number threshold schedule (before VAT): NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, NIS 5,000 from June 2026.",
+      "source_url": "https://www.icount.co.il/blog/invoice-israel/",
+      "raw_snippet": "מאי 2024 25,000 ש״ח ינואר 2025 20,000 ש״ח ינואר 2026 10,000 ש״ח יוני 2026 5,000 ש״ח",
+      "fetched_at": "2026-08-27T02:49:14.764971+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-june-2026-5000",
+      "claim": "From 1 June 2026 the allocation-number obligation extends to transactions exceeding NIS 5,000 before VAT.",
+      "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
+      "raw_snippet": "From June 1, 2026, the threshold will be further reduced to NIS 5,000 (before VAT).",
+      "fetched_at": "2026-08-27T02:49:14.764971+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "landline-two-branches-and-proration",
+      "claim": "Reg. 2b(a)(1)-(2): once the home is proven to be the main place of business, if annual landline costs do not exceed the ceiling the deduction is the lower of 80% or the part exceeding the lower threshold; above the ceiling only the part exceeding the doubled threshold is deductible. Reg. 2b(a1) pro-rates by qualifying months over 12.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "היו הוצאות החזקת הטלפון בסכום שאינו עולה על 18,000 שקלים חדשים לשנה, יותר בניכוי הסכום בגובה 80% מהוצאות החזקת הטלפון או חלק הוצאות החזקת הטלפון העולה על 1,800 שקלים חדשים, לפי הנמוך; (2) היו הוצאות החזקת הטלפון בסכום העולה על 18,000 שקלים חדשים - יותר בניכוי חלק ההוצאות העולה על 3,600 שקלים חדשים",
+      "fetched_at": "2026-08-27T02:57:32.488074+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "certain-expenses-annual-indexation-2c",
+      "claim": "The shekel amounts in the Income Tax Regulations (Deduction of Certain Expenses) 1972 are adjusted annually under Reg. 2c, so the mobile, landline and gift figures must be checked against the current tax year's coordination table.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "תיאום סכומים ועיגולם סעיף 2ג",
+      "fetched_at": "2026-08-27T02:57:32.488074+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ita-vehicle-input-tax-guide",
+      "claim": "The Israel Tax Authority publishes a guide on deducting input tax for a vehicle or motorcycle (purchase or import), covering who may deduct, the prohibition and its exceptions. Page last updated 11.01.2026.",
+      "source_url": "https://www.gov.il/he/pages/instructions-for-deduction-of-input-tax-for-vehicles-and-motorcycles",
+      "raw_snippet": "מדריך זה נועד לספק לכם מידע על ניכוי מס תשומות. בין השאר, תוכלו להבין מי זכאי לניכוי, מתי חל איסור על ניכוי מס ומהם החריגים",
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T02:58:24.457637+00:00",
+      "fetched_at": "2026-08-27T02:58:24.457637+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "landline-indexed-figures-2024-circular",
+      "claim": "Coordination circular (tax year 2024): where the taxpayer proved to the assessing officer that his main business is run from his home, annual landline costs not exceeding 26,600 NIS give the lower of 80% or the amount exceeding 2,700 NIS; costs exceeding 26,600 NIS give only the part exceeding 5,300 NIS. These are the indexed figures for that circular's year and are re-set annually.",
+      "source_url": "https://erlichj.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%95%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D/%D7%94%D7%A0%D7%93%D7%95%D7%9F-%D7%A0%D7%AA%D7%95%D7%A0%D7%99%D7%9D-%D7%9C%D7%AA%D7%99%D7%90%D7%95%D7%9D-%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%9E%D7%A1%D7%95%D7%99%D7%9E%D7%95%D7%AA-%D7%9C%D7%A9/",
+      "raw_snippet": "א. הוצאות טלפון שנתיות שלא עלו על 26,600 ש”ח, יותרו 80% מההוצאות, או סכום ההוצאה העולה על 2,700 ש”ח לפי הנמוך . ב. הוצאות טלפון שנתיות העולות על 26,600 ש”ח, יותר בניכוי חלק ההוצאות העולה על סך של 5,300 ש”ח שנתי.",
+      "fetched_at": "2026-08-27T02:59:09.902854+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "certain-expenses-regs-structure",
+      "claim": "Structure of the Income Tax Regulations (Deduction of Certain Expenses) 1972: Reg. 2 sets the conditions for and limits on deductions, Reg. 2b covers telephone, Reg. 2c the annual adjustment and rounding of amounts, Reg. 3 hospitality, Reg. 4 the proviso limiting deductions, Reg. 5 disallowance of depreciation, Reg. 6 methods of proof.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "הוספת תקנה 2א מיום 1.1.2000 תק' תש\"ס-2000 ק\"ת תש\"ס מס' 6038 מיום 31.5.2000 עמ' 625 ביטול תקנה 2א",
+      "fetched_at": "2026-08-27T03:00:04.929153+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ordinance-120b-indexation",
+      "claim": "Section 120B of the Income Tax Ordinance is the provision under which shekel amounts stated in the Ordinance are treated as index-linked and adjusted.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_001.htm",
+      "raw_snippet": "יראו את הסכום האמור כסכום כמשמעותו בסעיף 120ב",
+      "fetched_at": "2026-08-27T03:00:04.929153+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "certain-expenses-reg4-commencement",
+      "claim": "Reg. 4 of the Income Tax Regulations (Deduction of Certain Expenses) 1972 is the proviso limiting deductions; the regulations' amendment history references תקנה 4 for commencement.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "ר' תקנה 4 לענין תחילה",
+      "fetched_at": "2026-08-27T03:00:35.967565+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ordinance-sec-17-full-deduction",
+      "claim": "Income Tax Ordinance Sec. 17: in determining a person's taxable income, expenses incurred wholly and exclusively in the production of income during the tax year are deducted, unless the deduction is limited or disallowed under Sec. 31. This is why an ordinary business expense not restricted by the Deduction of Certain Expenses Regulations is deductible in full (100%).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_001.htm",
+      "raw_snippet": "17. לשם בירור הכנסתו החייבת של אדם ינוכו – זולת אם הניכוי הוגבל או לא-הותר על פי סעיף 31 – יציאות והוצאות שיצאו כולן בייצור הכנסתו בשנת המס ולשם כך בלבד",
+      "fetched_at": "2026-08-27T03:00:35.967565+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-rate-l3-25",
+      "claim": "Reg. 2(1a): for an L3 motorcycle the deduction is the higher of [running costs minus use-value] or 25% of running costs, not 45%.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "(1א) לגבי אופנוע שסיווגו L3 – סכום הוצאות החזקת רכב בניכוי שווי השימוש כפי שנקבע בתקנה 2(ב) לתקנות שווי השימוש, או סכום בגובה 25% מהוצאות החזקת הרכב, לפי הגבוה",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-rate-bus-taxi-90",
+      "claim": "Reg. 2(1b): for an M1 vehicle sub-classified as a public bus or taxi the percentage branch is 90%.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "או סכום בגובה 90% מהוצאת החזקת הרכב, לפי הגבוה",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-rate-tour-desert-80",
+      "claim": "Reg. 2(1c): for an M1 vehicle sub-classified as a tour or desert vehicle the percentage branch is 80%.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "הוא רכב סיור או רכב מדברי, כאמור בתקנה 271א(ד)(1) לתקנות התעבורה – סכום הוצאות החזקת הרכב בניכוי שווי השימוש ברכב כפי שנקבע בתקנות שווי השימוש, או סכום בגובה 80% מהוצאות החזקת הרכב, לפי הגבוה",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-rate-driving-instruction",
+      "claim": "Reg. 2(1d): for a driving-instruction vehicle the percentage branch is 77.5%, read as 68% where the taxpayer owns only two such vehicles and only one is marked as automatic.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "או סכום בגובה 77.5% מהוצאות החזקת הרכב, לפי הגבוה, ובלבד שבבעלות הנישום רכב כאמור אחר בלבד, ולגבי מי שבבעלותו רק שני כלי רכב כאמור, לגבי אחד מהם בלבד צוין ברישיון הרכב שהוא בעל תיבת הילוכים אוטומטית, במקום \"77.5%\" יקראו",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-reg3-employer-full",
+      "claim": "Reg. 3: running costs of a vehicle the employer placed at an employee's disposal are deductible IN FULL by the employer.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "החלפת תקנה 3 הנוסח הקודם: 3 . (א) הוצאות החזקת רכב בשל רכב שהמעביד העמיד לרשות עובדו",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-reg4-employee-nil",
+      "claim": "Reg. 4: no deduction is allowed for vehicle running costs incurred in producing employment income.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "אי התרת הוצאות לעובד 4 . לא יותרו בניכוי הוצאות החזקת רכב שהוצאו בייצור הכנסת עבודה",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-reg5-device-not-in-force",
+      "claim": "The vehicle regulations commenced on 1 January 1995 EXCEPT Reg. 5 (the in-vehicle measuring device), whose commencement was left to a date to be set by the Finance Minister with Knesset Finance Committee approval, so it has not entered force.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "תחילתן של תקנות אלה, למעט תקנה 5, ביום כ\"ט בטבת תשנ\"ה (1 בינואר 1995) (להלן – יום התחילה). (ב) תחילתה של תקנה 5 ביום שיקבע שר האוצר, באישור ועדת הכספים של הכנסת",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-reg6-odometer-reporting",
+      "claim": "Reg. 6: vehicle running costs are deductible only if the taxpayer recorded, in the Sec. 131 return and per vehicle, the odometer reading at the start and end of the tax year (and on acquisition or disposal mid-year).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "דיווח 6 . הוצאות החזקת רכב בשל רכב מסוים יותרו בניכוי רק אם בדו\"ח לפי סעיף 131 לפקודה רשם הנישום לגבי כל רכב בנפרד את קריאת המונה בק\"מ בתחילת שנת המס ובסופה",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "vehicle-operational-carveout",
+      "claim": "The vehicle regulations exclude a רכב תפעולי from the definition of 'רכב': a security vehicle used only operationally, or a vehicle not placed at any employee's disposal, used only for the business, where the place of business is not the owner's home and the vehicle does not leave the premises after working hours.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_439.htm",
+      "raw_snippet": "\"רכב תפעולי\" – רכב שהתקיים בו, להנחת דעתו של פקיד השומה, אחד מאלה",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "clothing-80-reg-2-6",
+      "claim": "Reg. 2(6): 80% of clothing expenditure for the taxpayer or his employee, and 100% only where the clothing cannot be used other than for work; clothing qualifies only if it prominently identifies the taxpayer's business or the law requires it to be worn.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "(6) 80% מההוצאות שהוציא נישום לרכישת ביגוד בעבורו או בעבור עובדו, ואולם אם לא ניתן להשתמש בביגוד שלא לצורכי עבודה - יותרו ההוצאות כאמור במלואן",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "dues-50-reg-2-7",
+      "claim": "Reg. 2(7): 50% of payment of membership or handling dues.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "ניכוי בשל דמי חבר ודמי טיפול תק' תשע\"ב-2012 (7) 50% מתשלום",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "gift-documentation-conditions",
+      "claim": "Reg. 2(4) allows the gift deduction only if the recipient's identifying details, the place the gift was given, and receipts verifying the expense were recorded.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_418.htm",
+      "raw_snippet": "ובלבד שנרשמו פרטי זיהוי המקבל",
+      "fetched_at": "2026-08-27T03:13:30.586265+00:00",
+      "appears_in": [
+        "references/domain-checklist.md"
       ]
     }
   ]

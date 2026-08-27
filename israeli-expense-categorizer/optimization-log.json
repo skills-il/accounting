@@ -1,6 +1,27 @@
 {
   "cycles": [
     {
+      "version": "2.3.0",
+      "date": "2026-08-27",
+      "lessons": [
+        "FABRICATED RULE REMOVED: 'a second vehicle is 0% unless proven business-essential' had shipped for multiple cycles. No such condition exists anywhere in תקנות ניכוי הוצאות רכב 1995 (read in full from nevo). The regulation applies per vehicle. The real carve-out is רכב תפעולי, which sits OUTSIDE the definition of 'רכב'. A fabricated statutory condition is worse than an omission because the user cannot audit it.",
+        "45% was presented as the universal rate. תקנה 2 carries FIVE: 45% ordinary, 25% L3 motorcycle (2(1א)), 90% public bus/taxi (2(1ב)), 80% tour/desert (2(1ג)), 77.5%/68% driving-instruction (2(1ד)). A courier on an L3 applying 45% over-claims by 20 points; a taxi driver loses half. This is the same 'enumerate the whole table, do not spot-check the common row' defect that hit the allocation-number table in hashavshevet-data-tools this same batch.",
+        "The skill applied the self-employed 45% higher-of rule to a company car. תקנה 2 is scoped to income that is NOT employment income; תקנה 3 says an employer-provided רכב צמוד is deductible IN FULL; תקנה 4 denies the employee any deduction. Now a three-way fork.",
+        "Work clothing was implied 100%. תקנה 2(6) is 80%, and 100% only where the clothing cannot be used other than for work.",
+        "'Raw materials and inventory: 100% deductible' was the largest over-claim the skill could generate: closing stock is not a period expense, it reaches P&L only through COGS with a stocktake.",
+        "PROPAGATION FAILURE, SECOND TIME THIS BATCH: the landline correction landed in SKILL.md and SKILL_HE.md but not in references/domain-checklist.md or evidence.json, both of which still shipped the superseded formulation, so the skill contradicted itself across files. Phase 3f.1 requires grepping the WHOLE folder for every changed literal BEFORE committing. Same miss occurred on israeli-annual-reports in this batch.",
+        "The landline rule itself was an overstatement: home landline costs are NOT deductible at all unless the taxpayer proves the home is his MAIN place of business (תקנה 2ב(א)). The skill let any home landline claim 80%. Added the above-ceiling branch and the part-year proration (2ב(א1)).",
+        "Nothing anywhere said whether amounts are booked gross or net of VAT, which made every output ambiguous by roughly the VAT rate and double-counted VAT in Example 1. Added the rule per entity type.",
+        "Evidence hygiene: three snippets did not exist at their cited pages. One pointed at GitHub page-FOOTER boilerplate and was accepted because the page contained the substring '202', which laundered ~25 example amounts past the gate. Replaced with an explicit 'authored, no external source' marking, since invented example inputs genuinely have no source to check.",
+        "The 1972-regulation shekel figures (1,380 / 2,700 / 26,600 / 5,300 / 240) were labelled '(2026, unchanged)' but sourced ONLY to a tax-year-2024 coordination circular. They are index-adjusted annually under תקנה 2ג. Relabelled as approximate with an instruction to check the current year's table.",
+        "Sec. 47A(a) 52% and Sec. 17(5a) 4.5% were previously backed by a keyword-stub snippet that appeared on no page. Both are now quoted verbatim from the Ordinance. The Judge specifically confirmed the 47A 52% is NOT the unrelated year-table 52% (2020-2024=52%, 2025=57%, 2026=57.5%, 2027=62.5%) sitting ~79,000 characters earlier in the same document.",
+        "Confirmed NO fabricated future allocation-number threshold: the schedule stops at 5,000 from June 2026 and the string 2027 appears nowhere in the skill.",
+        "VERSION HYGIENE: metadata.json was still 2.2.0 and SKILL_HE.md frontmatter carried a legacy embedded metadata block at 2.1.0, a second source of truth that the project convention forbids (Claude Desktop rejects it). Removed, and the HE frontmatter description was missing the legal opening clause. Worth checking on every skill: israeli-annual-reports has the same embedded block and should have it removed next cycle.",
+        "DEFERRED (Expert CRITICAL/MAJOR, logged not dropped): the full תקנה 2(2) foreign-travel structure (lodging nights 1-7 vs 8+, the recognized-lodging cap, flight class, car hire, the 125% locations list) is still absent and only the אש\"ל pair is carried; תקנה 14's specific exception list and תקנה 15א mixed-use; בעל שליטה limits (ס' 32(9), ס' 18(ב) three-month rule); withholding-at-source flags on subcontractor and rent payments; the keren-hishtalmut reduction where the individual is both employed and self-employed (תקנה 2(5)); depreciation part-year proration and the asset-vs-charge account split; professional literature, association dues in the body, insurance-type splits, training vs new-qualification; a current indexed figure for the 17(5א) ceiling; and the unsourced ~1,200 low-value threshold.",
+        "CARRIED, still open from 2.0.0: a deterministic scripts/categorize.py enforcing the higher-of vehicle formula and the phone floor so an LLM cannot re-introduce flat-percentage errors. This cycle showed why it matters, since the flat-45% error was exactly the failure mode it was meant to prevent."
+      ]
+    },
+    {
       "version": "2.0.0",
       "date": "2026-06-03",
       "lessons": [
