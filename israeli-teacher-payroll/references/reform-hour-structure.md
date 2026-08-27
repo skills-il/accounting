@@ -53,9 +53,50 @@ prep and checking work and exams 5/wk.
 **Change from tashpe (school year 2024/25):** the full position becomes 38
 weekly hours, with 25 frontal and 3 private hours (the 10 support hours stay).
 Older payslips and older tables still show the 40-hour base, so check the year
-before you read a table. (The 38-hour split is from a payroll-provider circular;
-confirm the exact current split against the union table or the official
-calculator for the specific school year.)
+before you read a table. The 38-hour split is stated directly on the Ministry of
+Education Oz reform page, so it no longer needs a payroll-provider cross-check.
+
+**Age bands (Oz only).** The required hours fall with age:
+
+| Age | Frontal | Total |
+|-----|---------|-------|
+| Under 50 | 25 | 38 |
+| 50 to 55 | 23 | 36 |
+| Over 55 | 21 | 34 |
+
+**Ofek Chadash has age reductions too**, expressed as hours taken off rather than
+a replacement total: a serving teacher from age 50 loses 2 frontal hours; from 55
+loses 4 hours (3 frontal plus 1 private); a newly hired teacher from 50 loses 2. A
+kindergarten teacher in a chativa tzeira is treated as a school teacher for this.
+Both reforms' reductions are for high position fractions and scale down
+proportionally below that. Missing either scores an older teacher as
+under-working a full position.
+
+**Two more Ofek work-week variants** the elementary/junior-high rows above do
+not cover: a mother-teacher at 79% or 80% and up loses one frontal and one stay
+hour; and a shiluv or para-medical teaching worker runs 26 frontal + 3 private + 7
+stay in elementary, or 23 + 2 + 11 in a junior-high, with travel between schools
+counted as stay time.
+
+## Havraa days by teaching seniority
+
+Teachers are paid the PUBLIC-sector havraa day rate, not the private one. Days
+for a full position, proportional for part-time:
+
+| Seniority | Havraa days |
+|-----------|-------------|
+| First 3 years | 7 |
+| 4 to 10 years | 9 |
+| 11 to 15 years | 10 |
+| 16 to 19 years | 11 |
+| 20 to 24 years | 12 |
+| 25 years and over | 13 |
+
+**Position ceiling.** Maximum employment across all institutions together is
+100%. A mother-teacher (morah em) may go to 100% actual work plus a 7% mother
+supplement. Above 100% is possible only with ministry approval, in frontal hours
+only, up to 12 extra frontal hours (131.5% in total), and never above 50 weekly
+hours in any case.
 
 ## Practical implication
 
@@ -63,4 +104,5 @@ Two teachers with the same rank and seniority, one in Ofek elementary and one in
 Oz upper-secondary, sit on DIFFERENT base-pay tables and have different position
 sizes. Never carry a number from one reform to the other. When someone says "I
 teach 24 hours", ask which reform and which hours (frontal only, or the full
-position), because 24 frontal in Oz is a full position while 24 in Ofek is not.
+position), because 25 frontal in Oz has been a full position since tashpe (24 before that),
+while 25 in Ofek is not.
