@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "hashavshevet-data-tools",
-  "generated_at": "2026-06-03T00:00:00Z",
+  "generated_at": "2026-08-27T01:54:35.105520+00:00",
   "claims": [
     {
       "claim_id": "shaam-threshold-10000-jan-2026",
@@ -73,14 +73,14 @@
       "claim_id": "openformat-a000-ini",
       "claim": "A000 is the leading/header record in INI.TXT (NOT in BKMVDATA.TXT); INI.TXT carries the leading record plus summary records with per-record-type control counts that must equal the total in the Z900 closing record.",
       "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
-      "raw_snippet": "את מספר הספרות לאחר הנקודה ) .אין להוסיף את הנקודה ( דוגמאות: ) :X(3שדה אלפאנומרי באורך 3תווים \" -אאא\" ) :9(4שדה נומרי באורך 4תווים \"0005\" ;\"1234\" - :x9(5)v99שדה אלפאנומרי המתאר סכום ,שלילי או חיובי ,באורך 5תווים למספר השלם ו 2 -תווים נוספים לספרות לאחר הנקודה -12345.65 .יוצג בקובץ;\"-1234565\" : 1245.",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "יכיל רשומה מובילה אחת ורשומות סיכום",
+      "fetched_at": "2026-08-27T01:45:53.057232+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "cited page fetched and confirmed to contain \"000\"; snippet replaced with the page's own wording around it",
-      "verified_at": "2026-08-18"
+      "verified_via": "pdf",
+      "verified_at": "2026-08-27T01:45:53.057232+00:00"
     },
     {
       "claim_id": "bkmv-zip-three-files",
@@ -119,14 +119,16 @@
     },
     {
       "claim_id": "openformat-spec-horaot131",
-      "claim": "The ITA spec for producing uniform-structure files (הוראות להפקת קבצים במבנה אחיד), document horaot_131, is published on misim.gov.il.",
-      "source_url": "https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf",
-      "raw_snippet": "הוראות להפקת קבצי במבנה אחיד - רשות המסים בישראל",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "claim": "The ITA spec for producing uniform-structure files (הוראות להפקת קבצים), version 1.31, is published as a PDF on gov.il.",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "הוראות להפקת קבצים במבנה אחיד",
+      "fetched_at": "2026-08-27T01:38:33.221367+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-08-27T01:38:33.221367+00:00"
     },
     {
       "claim_id": "ita-file-check-simulator",
@@ -167,10 +169,10 @@
     },
     {
       "claim_id": "hashavshevet-wizsoft-herp",
-      "claim": "Hashavshevet is an Israeli software vendor (Wizsoft); its current products are H-ERP (Windows ERP) and the cloud version (חשבשבת בענן / Wizcloud).",
+      "claim": "Hashavshevet is an Israeli business-management software vendor; its current products are H-ERP (Windows ERP) and the cloud version (חשבשבת בענן / Wizcloud).",
       "source_url": "https://www.h-erp.co.il",
-      "raw_snippet": "חשבשבת H-ERP: תוכנה לניהול עסק, ניהול פיננסי, ניהול קשרי לקוחות, CRM",
-      "fetched_at": "2026-06-03T00:00:00Z",
+      "raw_snippet": "מערכת ERP חשבשבת המתקדמת בישראל: מערכת ניהול פיננסי, תוכנה מקיפה לניהול עסק, ניהול קשרי לקוחות CRM, הנהלת חשבונות ועוד",
+      "fetched_at": "2026-08-27T01:45:53.057232+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -208,7 +210,8 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "gov.il content API (programmatic re-extraction)"
+      "verified_via": "gov.il content API (programmatic re-extraction)",
+      "verified_at": "2026-08-27T01:38:33.221367+00:00"
     },
     {
       "claim_id": "form-6111-govil-service",
@@ -394,6 +397,241 @@
       "fetched_at": "2026-08-11",
       "verified_at": "2026-08-11",
       "verified_via": "curl",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "shaam-threshold-20000-2025",
+      "claim": "During 2025 the allocation-number threshold was NIS 20,000 (before VAT); this row is needed to validate migrated 2025 invoices.",
+      "source_url": "https://www.vatupdate.com/2026/01/12/thresholds-for-mandatory-allocation-numbers-on-tax-invoices-to-be-lowered-in-2026/",
+      "raw_snippet": "In 2025, allocation numbers are required for invoices over NIS 20,000 (before VAT).",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-9-digits",
+      "claim": "The allocation number issued by the Tax Authority is 9 digits.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "עוסק נדרש לפנות לרשות המסים באופן מקוון לצורך קבלת מספר הקצאה בן 9 ספרות",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-conditions",
+      "claim": "An allocation number is required only if the amount exceeds the threshold, the invoice includes a VAT component (zero-rated or exempt-only invoices are excluded), the recipient is an osek murshe, and the recipient requested it.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "החשבונית כוללת רכיב מע\"מ (כלומר, חשבוניות בשיעור אפס או חשבוניות הכוללות רק עסקאות פטורות אינן טעונות מספר הקצאה); מקבל החשבונית הינו עוסק מורשה; ומקבל החשבונית דרש מספר הקצאה",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-rejection-four-options",
+      "claim": "If a request for an allocation number is refused, four options are available: cancel; proceed without a number (recipient loses the input-VAT deduction); reverse charge; or apply to the control room for a hearing.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "עומדות בפניו, בהתאם להוראת הביצוע, ארבע החלופות הבאות: 1. ביטול הבקשה למספר הקצאה. 2. המשך העסקה ללא קבלת מספר הקצאה לחשבונית המס.",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-hearing-timeline",
+      "claim": "Hearing within 2 business days of the online notice; decision within 1 business day of its end or the request is deemed granted; objection within 30 days; decision within 21 business days or the objection is deemed accepted; appeal to the District Court.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "מועד השימוע ייקבע בתוך שני ימי עסקים ממועד משלוח ההודעה המקוונת",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-two-alternative-90pct-tests",
+      "claim": "The deferral to 1.1.2027 has TWO alternative 90% tests against the 2025 returns: 90% of the total amount of input tax invoices, OR 90% of the number of input tax invoices, each not exceeding NIS 5,000 before VAT.",
+      "source_url": "https://www.gov.il/he/pages/pa280825-1",
+      "raw_snippet": "א. שיעור של 90% לפחות מהסכום הכולל של חשבוניות מס התשומות מבוסס על חשבוניות מס, שסכום של כל אחת מהן בלא המס אינו עולה על 5,000 ₪. ב. שיעור של 90% לפחות מחשבוניות מס התשומות מורכב מחשבוניות מס שסכום כל אחת מהן בלא המס אינו עולה על 5,000 ₪.",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-placeholder-supplier-777777772",
+      "claim": "For aggregated input invoices of NIS 5,000 or less the supplier number is not itemized; the fixed placeholder 777777772 is entered instead.",
+      "source_url": "https://www.gov.il/he/pages/pa280825-1",
+      "raw_snippet": "בהתייחס לחשבוניות תשומה כאמור לא יידרש לפרט את מספר הספק אלא להזין \"מספר קבוע\" 777777772",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-reliefs-carveouts",
+      "claim": "The individual-osek reliefs do not apply to an osek who began filing detailed returns before the announcement, nor to a company.",
+      "source_url": "https://www.gov.il/he/pages/pa280825-1",
+      "raw_snippet": "ההקלות לעיל אינן חלות על עוסק, אשר החל בהגשת דוח תקופתי מפורט קודם לפרסום הודעה זו, וכן על עוסק שהוא חברה",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "wizcloud-api-docs-v2",
+      "claim": "The Wizcloud REST API reference is published at docs.wizcloud.co.il, current version Latest (2.0.0); home.wizcloud.co.il/help/apidocument/ is only the token help page.",
+      "source_url": "https://docs.wizcloud.co.il/docs/intro",
+      "raw_snippet": "Introduction to WizCloud API Version: Latest (2.0.0)",
+      "fetched_at": "2026-08-27T01:36:43.330034+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T01:38:33.221367+00:00"
+    },
+    {
+      "claim_id": "herp-current-release-2026a",
+      "claim": "The current Hashavshevet Windows ERP release is designated mahadura 2026a.",
+      "source_url": "https://downloads.h-erp.co.il/files/improvements/HashERP2026.pdf",
+      "raw_snippet": "חידושים במהדורה 2026a",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "openformat-spec-version-131",
+      "claim": "The ITA file-check simulator accepts uniform-structure files produced per the instructions document version 1.31 only.",
+      "source_url": "https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx",
+      "raw_snippet": "יש לטעון קבצים בגירסה 1.31 בלבד",
+      "fetched_at": "2026-08-27T01:36:13.601922+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T01:38:33.221367+00:00"
+    },
+    {
+      "claim_id": "shaam-threshold-25000-may-2024",
+      "claim": "The Israel-Invoices allocation-number regime began in May 2024 with a threshold of NIS 25,000 (before VAT); the full schedule is May 2024 25,000, January 2025 20,000, January 2026 10,000, June 2026 5,000.",
+      "source_url": "https://www.icount.co.il/blog/invoice-israel/",
+      "raw_snippet": "מאי 2024 25,000 ש״ח ינואר 2025 20,000 ש״ח ינואר 2026 10,000 ש״ח יוני 2026 5,000 ש״ח",
+      "fetched_at": "2026-08-27T01:54:35.105520+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "shaam-schedule-greeninvoice-corroboration",
+      "claim": "Independent corroboration of the same four-step allocation-number schedule from the start of the reform.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מאי 2024 25,000 ₪ ינואר 2025 20,000 ₪ ינואר 2026 10,000 ש״ח יוני 2026 ואילך 5,000 ש״ח",
+      "fetched_at": "2026-08-27T01:54:35.105520+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-standard-rate-18",
+      "claim": "Israel's standard VAT rate is 18% with no reduced rate as of 2026; the 2026 budget kept it at 18% and a proposed cut to 17% was rejected. The rate rose to 18% at the start of 2025, so migrated data spanning 2024-2026 crosses a rate change and must be recomputed at the document date.",
+      "source_url": "https://www.vatupdate.com/2026/07/25/global-vat-rates-by-country-2026-standard-and-reduced-rates/",
+      "raw_snippet": "Israel 18% None",
+      "fetched_at": "2026-08-27T01:54:35.105520+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-cut-to-17-rejected",
+      "claim": "A proposed VAT cut to 17% was rejected by the Finance Ministry, so 17% is not in force.",
+      "source_url": "https://www.vatupdate.com/category/israel/",
+      "raw_snippet": "Goldknopf Proposes VAT Cut to 17%, but Finance Ministry Rejects It",
+      "fetched_at": "2026-08-27T01:54:35.105520+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-companies-sept-2025-and-monthly",
+      "claim": "Companies with turnover above NIS 500,000 were obligated to file the detailed VAT report from the September 2025 period; becoming a detailed filer switches the business from bi-monthly to monthly reporting under section 67A(a), and online filing and payment are due by the 23rd of the following month.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "עוסקים שהנם חברות אשר מחזורן עולה על 500 אלפי ש\"ח חייבים בדיווח מפורט כבר החל מהתקופה ספטמבר 2025",
+      "fetched_at": "2026-08-27T01:54:35.105520+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-monthly-frequency-67a",
+      "claim": "An osek who reported bi-monthly and becomes liable for detailed reporting moves to monthly VAT reporting and payment per section 67A(a) of the VAT Law.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "בהתאם לסעיף 67א(א) לחוק מע\"מ",
+      "fetched_at": "2026-08-27T01:54:35.105520+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-online-deadline-23rd",
+      "claim": "For online filers the VAT return and payment are due by the 23rd of the following month, not the 15th.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "הגשת הדו\"ח ותשלום המס באופן מקוון, תתבצע עד ה-23 בחודש",
+      "fetched_at": "2026-08-27T01:54:35.105520+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-content-69a",
+      "claim": "Section 69A(a) of the VAT Law defines the contents of the detailed VAT report.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "לפי סעיף 69א(א) לחוק מע\"מ, דוח מפורט יכלול פרטים על",
+      "fetched_at": "2026-08-27T01:54:35.105520+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "withholding-form-856-annual",
+      "claim": "Form 856 is the annual withholding summary filed with the Tax Authority listing amounts paid, recipient details and tax withheld, due by 30 April of the following year.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%9E%D7%A7%D7%95%D7%A8_%D7%A2%D7%9C-%D7%99%D7%93%D7%99_%D7%9C%D7%A7%D7%95%D7%97_%D7%A9%D7%9C_%D7%A2%D7%A1%D7%A7_%D7%A2%D7%A6%D7%9E%D7%90%D7%99",
+      "raw_snippet": "להעביר למס הכנסה ריכוז שנתי בטופס 856 של הסכומים ששולמו, פרטי המקבלים והמס שנוכה עד ליום 30 באפריל בשנה העוקבת",
+      "fetched_at": "2026-08-27T01:55:40.111326+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "withholding-form-126-annual",
+      "claim": "Form 126 is filed by 30 April, must reconcile to the monthly 102 forms, and is also filed with the National Insurance Institute.",
+      "source_url": "https://www.zscpa.co.il/%D7%98%D7%95%D7%A4%D7%A1-126/",
+      "raw_snippet": "שידור טופס 126 לפני שידור הטופס באופן מקוון יש לוודא כי הנתונים תואמים למידע בטפסי 102. את הטופס חייבים לשדר למס הכנסה עד 30 באפריל",
+      "fetched_at": "2026-08-27T01:55:40.111326+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"

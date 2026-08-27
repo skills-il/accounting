@@ -2,6 +2,40 @@
   "skill": "hashavshevet-data-tools",
   "cycles": [
     {
+      "date": "2026-08-27",
+      "from_version": "1.3.0",
+      "to_version": "1.4.0",
+      "type": "minor",
+      "summary": "Expert review returned 6 CRITICALs, all verified against primary sources before encoding and all fixed. Headline: the allocation-number threshold table was still missing the opening row (May 2024 = NIS 25,000) and the regime commencement date, while the skill instructs date-scoped validation of migrated historical invoices, so 2024 data could not be scoped at all. Judge FAILed on 2 evidence snippets + 1 dropped statutory trigger; all fixed.",
+      "changes": [
+        "Threshold table completed to all four rows (May 2024 25,000 / Jan 2025 20,000 / Jan 2026 10,000 / Jun 2026 5,000) + pre-May-2024 out-of-scope rule. Corroborated by two independent sources with identical tables.",
+        "Added the 4 cumulative conditions for requiring an allocation number, including that zero-rated / exempt-only invoices are EXCLUDED (prevents false-flagging export invoices), and the 9-digit fact.",
+        "Clarified a missing allocation number blocks the RECIPIENT's input-VAT deduction and does not by itself void the invoice.",
+        "Added the refusal path: 4 options incl. reverse charge, plus hearing/objection timeline (2 business days / 1 business day deemed-granted / 30 days from the hearing / 21 business days deemed-accepted / District Court).",
+        "PCN874: corrected to TWO alternative 90% deferral tests (amount OR count); added 777777772 placeholder; added the company / already-filing carve-outs; corrected the duty scope (companies >500k from Sept 2025, not an individual-only turnover test); added monthly-frequency switch (s.67A(a)) and the 23rd-of-month online deadline.",
+        "Added date-scoped VAT-rate rule (18% current, 17% cut rejected, rate rose at start of 2025) so net/VAT recomputation across a migration window uses the document-date rate.",
+        "Migration checklist: added withholding continuity (tik nikuyim, 102/126/856, 30 April, 126 ties to 102 and goes to BTL), fixed-asset + depreciation register, inventory, comparatives, FX original-currency balances, postdated cheques, the per-account 6111/kod-miyun mapping field, and a target-system BKMV-capability gate.",
+        "Retention hardened: production-on-demand, separate backup copy, tievud chutz coverage, and produce/archive a validated BKMV export per year AT cutover.",
+        "Code: parse_fixed_width now raises on short records instead of silently truncating; generate_hashavshevet_import now writes CRLF, asserts constant record length, and uses errors='strict' so out-of-CP1255 Hebrew fails loudly instead of corrupting a name.",
+        "Example 1 no longer hands validate_trial_balance output to the auditor as assurance (it directly contradicted the Step 7 caveat).",
+        "Legacy fixed-width column maps + helpers moved to references/legacy-fixed-width.md, de-emphasising the writer per Expert C4 and bringing SKILL.md back under the 5,000-word cap.",
+        "Links: OPENFORMAT spec repointed to the working gov.il PDF (the misim.gov.il direct link is login-walled and serves HTML); simulator to secapp.taxes.gov.il; API docs to docs.wizcloud.co.il/docs/intro (the old link was the token page, documenting zero endpoints); current Windows release noted as mahadura 2026a.",
+        "evidence.json 35 -> 56 claims; --check-sources 45 verified, 0 unreachable, 0 FAILED."
+      ],
+      "lessons": [
+        "Record table verified complete this cycle: the v1.31 spec contains exactly 9 record types (A000, A100, B100, B110, C100, D110, D120, M100, Z900), all 9 present in the skill, no extras and no omissions.",
+        "Confirmed NO fabricated future threshold: neither source shows any step below NIS 5,000, and the skill does not assert finality. The only 2027 reference is the legitimate PCN874 deferral.",
+        "Expert MINOR N1 deferred: the frontmatter description and Examples 1-3 still address 'Hashavshevet Gold' and '2000+' as live targets while Step 1 calls them legacy names. Deferred because editing the description triggers the Phase 5.7 holdout gate; fix in a cycle that is already touching the description.",
+        "Expert MAJOR M1 deferred: PCN874 record-type letter codes, the allocation-number field position, whole-shekel convention and the credit-note sign convention are still undocumented; the section explains that PCN874 exists but does not let a user build or debug one.",
+        "Expert MAJOR M2 deferred: Form 6111 line-code mechanics (three numbered parts, code ranges, who must file, tie-out to the annual return) are still thin.",
+        "Expert MAJOR M4 deferred: C100 document-type codes are not documented, so a credit note can be double-counted as revenue by a naive parser.",
+        "Expert MAJOR M5 deferred: no osek/ח.פ. 9-digit check-digit validator, despite the skill declaring the supplier number mandatory for input-VAT deduction.",
+        "Expert MAJOR M6 deferred: bank-import example has no reconciliation step and no duplicate-import guard keyed on a stable bank reference.",
+        "Carried from 1.3.0 and now RESOLVED: the two misim.gov.il links were repointed to canonical hosts.",
+        "Carried from 1.3.0, still open: note LF-vs-CRLF and exact record length for generated import files was PARTLY resolved (CRLF + record-length assert now in references/legacy-fixed-width.md); state the ITA submission-portal file-size cap on BKMVDATA.TXT concretely (the simulator page mentions a 4MB cap, not yet encoded); reframe BKMV in Example 4 as an on-demand audit export rather than a routine periodic upload."
+      ]
+    },
+    {
       "date": "2026-07-18",
       "from_version": "1.2.0",
       "to_version": "1.3.0",

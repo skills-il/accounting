@@ -13,20 +13,26 @@ compatibility: Requires Python 3.9+ with openpyxl and chardet libraries
 
 > **Important: use the official OPENFORMAT/BKMV export, not direct binary parsing.**
 >
-> Hashavshevet does NOT publish public per-byte offsets for its internal `.dat` / `.hsh` / `.mdb` files. The publicly documented and ITA-mandated export from any Israeli bookkeeping software is **OPENFORMAT (קובץ אחיד / BKMV)**. The export produces a ZIP of three files: `INI.TXT` (production summary, holds the leading `A000` record plus per-record-type control-count summary records), `BKMVDATA.TXT` (the business data, with one `A100` opening record, then `C100`, `D110`, `D120`, `B100`, `B110`, `M100` records, then one `Z900` closing record), and `README.TXT` (general production details for the user). Only `INI.TXT` and `BKMVDATA.TXT` are sent to the ITA or the CPA. Spec: <https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf>. Hashavshevet's BKMV export guide: <https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf>. Validate output against the ITA simulator: <https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx>.
+> Hashavshevet does NOT publish public per-byte offsets for its internal `.dat` / `.hsh` / `.mdb` files. The publicly documented and ITA-mandated export from any Israeli bookkeeping software is **OPENFORMAT (קובץ אחיד / BKMV)**. The export produces a ZIP of three files: `INI.TXT` (production summary, holds the leading `A000` record plus per-record-type control-count summary records), `BKMVDATA.TXT` (the business data, with one `A100` opening record, then `C100`, `D110`, `D120`, `B100`, `B110`, `M100` records, then one `Z900` closing record), and `README.TXT` (general production details for the user). Only `INI.TXT` and `BKMVDATA.TXT` are sent to the ITA or the CPA. Spec: the ITA "הוראות להפקת קבצים" document, current version 1.31, at <https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf>. Note the older misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf address now redirects into the ITA login and serves an HTML page rather than the file, so use the gov.il address above. Hashavshevet's BKMV export guide: <https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf>. Validate output against the ITA simulator: <https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx> (the older misim.gov.il address still redirects there). The simulator states it accepts version 1.31 files only.
 >
 > The fixed-width column maps below (HESHIN_COLUMNS / PKUDOT_COLUMNS) are **best-guess heuristics for legacy Windows installations**, not authoritative specifications. Use them only as a fallback when no OPENFORMAT export is available; never claim them as the canonical Hashavshevet format. For any ITA filing, CPA handoff, or PCN874 / Form 6111 generation, export via OPENFORMAT instead.
 
-> **Hashavshevet בענן (H-WEB / Wizcloud) public REST API.** The cloud version of Hashavshevet exposes a public REST API for documents, accounts, and transactions: <https://home.wizcloud.co.il/help/apidocument/>. Use this for ongoing two-way sync with Green Invoice / Rivhit / iCount instead of one-shot file dumps where possible.
+> **Hashavshevet בענן (H-WEB / Wizcloud) public REST API.** The cloud version of Hashavshevet exposes a public REST API. The API reference lives at <https://docs.wizcloud.co.il/docs/intro> (current version 2.0.0), covering resources such as documents, journal, mainaccount, receipts, bankstatements, currencies and triggers. The page at <https://home.wizcloud.co.il/help/apidocument/> is only the token-issuing help page, not the endpoint reference. Use this for ongoing two-way sync with Green Invoice / Rivhit / iCount instead of one-shot file dumps where possible.
 
-> **SHAAM allocation-number context (2026).** Sales-invoice journal entries created/imported through Hashavshevet for B2B amounts exceeding the current threshold must carry an allocation number (mispar haktza'a). Threshold (VAT excluded): NIS 10,000 since January 2026 and NIS 5,000 since 1 June 2026. The requirement is date-dependent (phased in with a descending threshold), so when validating HISTORICAL or migrated invoices, scope the check to each invoice's own date against the threshold in force on that date, and skip invoices dated before the requirement began. Do NOT blanket-reject older invoices that never needed an allocation number. An above-threshold tax invoice WITHOUT a valid allocation number cannot be used by the counterparty to deduct input VAT, so treat a missing allocation number as a hard validation error, not a soft "incomplete" warning. On the buying side, capture and retain the allocation number printed on each above-threshold supplier invoice and carry it into the ledger and PCN874, that is what protects your client's own input-VAT deduction. Hashavshevet בענן has built-in real-time SHAAM integration; the Windows version may need a separate workflow.
+> **SHAAM allocation-number context (2026).** Sales-invoice journal entries created/imported through Hashavshevet for B2B amounts exceeding the current threshold must carry an allocation number (mispar haktza'a). The allocation number is 9 digits. The regime began in May 2024. Thresholds (VAT excluded), and you need the WHOLE table because migrated data spans several years: NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, NIS 5,000 from June 2026. Invoices dated before May 2024 predate the regime entirely and never needed an allocation number. The requirement is date-dependent (phased in with a descending threshold), so when validating HISTORICAL or migrated invoices, scope the check to each invoice's own date against the threshold in force on that date, and skip invoices dated before the requirement began. Do NOT blanket-reject older invoices that never needed an allocation number, and do NOT apply today's NIS 5,000 threshold to a 2025 invoice that only needed one above NIS 20,000, or to a 2024 invoice whose threshold was NIS 25,000. Getting this wrong on 2024-2025 data is the most likely failure in a real migration, because that is the window most migrations actually cover.
+>
+> An allocation number is required only when ALL of these hold, so do not flag an invoice that fails any of them: the amount is above the threshold in force on that date; the invoice carries a VAT component (a zero-rated invoice, or one covering only exempt transactions, does NOT need an allocation number, so do not flag export/zero-rated invoices); the recipient is an osek murshe; and the recipient asked for an allocation number. An above-threshold tax invoice WITHOUT a valid allocation number cannot be used by the counterparty to deduct input VAT, so treat a missing allocation number as a hard validation error, not a soft "incomplete" warning. Note the precise effect: it blocks the RECIPIENT's input-VAT deduction. It does not, by itself, make the invoice void. On the buying side, capture and retain the allocation number printed on each above-threshold supplier invoice and carry it into the ledger and PCN874, that is what protects your client's own input-VAT deduction. Hashavshevet בענן has built-in real-time SHAAM integration; the Windows version may need a separate workflow.
+>
+> **VAT rate is date-dependent too, so scope it the same way.** The standard Israeli VAT rate is currently 18% and there is no reduced rate; the 2026 budget kept it at 18%, and a proposed cut to 17% was rejected. The rate rose to 18% at the start of 2025, so a dataset spanning 2024-2026 crosses a rate change. When deriving net-from-gross or VAT-from-gross on migrated documents, apply the rate in force at the DOCUMENT date, never a single hardcoded rate; otherwise the עסקאות and תשומות totals in a PCN874 built from that data will be wrong, and the ITA cross-references those against the counterparty.
+
+> **When a request for an allocation number is REJECTED** (the Director has reasonable grounds to suspect the invoice was issued unlawfully), the osek has four options under the hora'at bitzua, and an agent should surface them rather than treating rejection as a dead end: (1) cancel the request; (2) proceed without an allocation number, in which case the recipient cannot deduct the input VAT; (3) reverse charge (hipuch chiyuv), where the seller receives a special allocation number and issues a zero-rated invoice, and the buyer (an osek murshe) issues a self-invoice carrying that number, reports and pays the output VAT, and deducts input VAT as far as the law allows; (4) apply to the control room for a hearing. Timeline: the hearing is scheduled within 2 business days of the online notice, and the Director must decide within 1 business day of its end, failing which the request is deemed granted. A refusal can be objected to online within 30 days of the date of the hearing; the Director must decide within 21 business days, failing which the objection is deemed accepted. A decision on the objection may be appealed to the District Court.
 
 ### Step 1: Identify the Hashavshevet version and file format
 
 Determine which version of Hashavshevet the user is working with and identify the relevant file formats:
 
 - **Legacy Hashavshevet (Windows, on-prem)**: Stores data in a proprietary ISAM or SQL backend. Direct binary parsing is unsupported and brittle; use the built-in OPENFORMAT export instead.
-- **Hashavshevet H-ERP (current Windows ERP)**: Standard product line as of 2026. Exports OPENFORMAT/BKMV for ITA + CPA workflows; legacy `.dat` / `.hsh` files may still appear in archives.
+- **Hashavshevet H-ERP (current Windows ERP)**: Standard product line as of 2026; the current release is designated mahadura 2026a rather than a numeric version. Exports OPENFORMAT/BKMV for ITA + CPA workflows; legacy `.dat` / `.hsh` files may still appear in archives.
 - **Hashavshevet בענן (H-WEB / Wizcloud, SaaS)**: Cloud-native, exports OPENFORMAT directly, plus a public REST API for live integration.
 - "Gold" / "2000+" naming is from 1990s/2000s legacy product lines; H-ERP / H-WEB are the current names.
 
@@ -46,25 +52,8 @@ Common Hashavshevet data files:
 
 Hashavshevet files typically use Windows-1255 (Hebrew) encoding. Convert to UTF-8 before processing:
 
-```python
-import chardet
+Read the bytes and decode as `windows-1255`. `chardet` can confirm it, but do not trust its guess over the domain rule: if detection returns `windows-1255`, `iso-8859-8`, `hebrew`, or nothing at all, use `windows-1255`. Decode with `errors='replace'` only when inspecting a suspect file; never when generating data you will import.
 
-def detect_and_convert(file_path: str) -> str:
-    """Detect encoding and convert Hashavshevet file to UTF-8."""
-    with open(file_path, 'rb') as f:
-        raw_data = f.read()
-
-    detected = chardet.detect(raw_data)
-    encoding = detected['encoding']
-
-    # Hashavshevet almost always uses Windows-1255
-    if encoding and encoding.lower() in ('windows-1255', 'iso-8859-8', 'hebrew'):
-        encoding = 'windows-1255'
-    elif encoding is None:
-        encoding = 'windows-1255'  # Safe fallback for Hebrew accounting data
-
-    return raw_data.decode(encoding, errors='replace')
-```
 
 Common encoding pitfalls:
 - Hashavshevet Gold always uses Windows-1255
@@ -72,143 +61,38 @@ Common encoding pitfalls:
 - Mixed encoding files occur when data was copy-pasted from other sources
 - BOM (Byte Order Mark) may be present in newer CSV exports
 
-### Step 3: Parse fixed-width Hashavshevet data files
+### Step 3: Parse legacy fixed-width files (fallback only)
 
-Hashavshevet `.dat` files use fixed-width column layouts. The column widths vary by file type:
-
-```python
-# HESHIN.dat (Chart of Accounts) column layout
-HESHIN_COLUMNS = {
-    'account_number': (0, 15),     # מספר חשבון
-    'account_name': (15, 65),      # שם חשבון
-    'account_type': (65, 67),      # סוג חשבון (1=asset, 2=liability, 3=equity, 4=income, 5=expense)
-    'parent_account': (67, 82),    # חשבון אב
-    'sort_code': (82, 92),         # קוד מיון
-    'is_active': (92, 93),         # פעיל (1=yes, 0=no)
-    'opening_balance': (93, 113),  # יתרת פתיחה
-    'currency': (113, 116),        # מטבע
-}
-
-# PKUDOT.dat (Journal Entries) column layout
-PKUDOT_COLUMNS = {
-    'entry_number': (0, 10),       # מספר פקודה
-    'batch_number': (10, 18),      # מספר מנה
-    'entry_date': (18, 28),        # תאריך (DD/MM/YYYY)
-    'account_debit': (28, 43),     # חשבון חובה
-    'account_credit': (43, 58),    # חשבון זכות
-    'amount': (58, 73),            # סכום
-    'currency': (73, 76),          # מטבע
-    'reference': (76, 96),         # אסמכתא
-    'description': (96, 146),      # תיאור
-    'value_date': (146, 156),      # תאריך ערך
-}
-```
-
-Parse these files using the column positions:
-
-```python
-def parse_fixed_width(content: str, columns: dict) -> list[dict]:
-    """Parse a fixed-width Hashavshevet data file."""
-    records = []
-    for line in content.strip().split('\n'):
-        if not line.strip():
-            continue
-        record = {}
-        for field_name, (start, end) in columns.items():
-            value = line[start:end].strip() if len(line) > start else ''
-            record[field_name] = value
-        records.append(record)
-    return records
-```
+If, and only if, no OPENFORMAT/BKMV export is available, see `references/legacy-fixed-width.md`
+for the legacy `.dat` column maps and the parse/generate helpers. That file carries the safety
+rules that go with them: the offsets are heuristics that vary by version, the parser must assert
+an expected record length rather than silently truncating a short line, generated import files
+need CRLF terminators and a constant record length, and encoding must be strict so an
+out-of-CP1255 Hebrew character fails loudly instead of becoming `?` inside a customer name.
+Never write a generated file into a live company; test against a copy.
 
 ### Step 4: Export data to modern formats
 
 Convert parsed Hashavshevet data to JSON, CSV, or Excel:
 
-```python
-import csv
-import json
+Use the standard library and `openpyxl` for this; there is nothing Hashavshevet-specific about the writing step. Two Israeli-specific details that DO matter:
 
-def export_to_csv(records: list[dict], output_path: str):
-    """Export parsed records to UTF-8 CSV with BOM for Excel compatibility."""
-    if not records:
-        return
-    with open(output_path, 'w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=records[0].keys())
-        writer.writeheader()
-        writer.writerows(records)
-
-def export_to_json(records: list[dict], output_path: str):
-    """Export parsed records to JSON with Hebrew support."""
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(records, f, ensure_ascii=False, indent=2)
-
-def export_to_excel(records: list[dict], output_path: str, sheet_name: str = 'Data'):
-    """Export parsed records to Excel with proper RTL formatting."""
-    from openpyxl import Workbook
-    from openpyxl.worksheet.properties import WorksheetProperties
-
-    wb = Workbook()
-    ws = wb.active
-    ws.title = sheet_name
-    ws.sheet_properties = WorksheetProperties(rightToLeft=True)
-
-    # Write headers
-    headers = list(records[0].keys())
-    for col, header in enumerate(headers, 1):
-        ws.cell(row=1, column=col, value=header)
-
-    # Write data
-    for row_idx, record in enumerate(records, 2):
-        for col_idx, header in enumerate(headers, 1):
-            ws.cell(row=row_idx, column=col_idx, value=record.get(header, ''))
-
-    wb.save(output_path)
-```
-
-### Step 5: Import data into Hashavshevet format
-
-When importing data into Hashavshevet, generate fixed-width files matching the expected layout. **Caution:** the column maps here are the same best-guess heuristics flagged in the Instructions block, not an authoritative spec, and importing mis-aligned fixed-width data into a live company can corrupt the books. Prefer Hashavshevet's own documented import interface/template, and always test a generated file against a COPY of the company file first, never the live one.
-
-```python
-def generate_hashavshevet_import(records: list[dict], columns: dict, output_path: str):
-    """Generate a fixed-width file for Hashavshevet import."""
-    lines = []
-    for record in records:
-        line = ''
-        sorted_cols = sorted(columns.items(), key=lambda x: x[1][0])
-        for field_name, (start, width_end) in sorted_cols:
-            width = width_end - start
-            value = str(record.get(field_name, ''))
-            # Pad or truncate to exact width
-            if len(value) > width:
-                value = value[:width]
-            else:
-                value = value.ljust(width)
-            line += value
-        lines.append(line)
-
-    with open(output_path, 'w', encoding='windows-1255', errors='replace') as f:
-        f.write('\n'.join(lines))
-```
-
-Import validation rules:
-- Account numbers must exist in the chart of accounts
-- Dates must be in DD/MM/YYYY format (Israeli date format)
-- Amounts must use period as decimal separator (not comma)
-- Debit and credit accounts cannot be the same
-- Batch numbers must be sequential within a fiscal year
-- Currency codes must match Hashavshevet's internal currency table. These internal numeric codes vary by installation, so confirm them against your installation's currency table rather than assuming a fixed mapping or reusing ISO 4217 codes.
+- **CSV for Excel must be `utf-8-sig`** (UTF-8 with BOM). Without the BOM Excel renders Hebrew as gibberish.
+- **Set the worksheet to RTL** when writing XLSX: `ws.sheet_properties = WorksheetProperties(rightToLeft=True)` (from `openpyxl.worksheet.properties`), and use `ensure_ascii=False` for JSON so Hebrew stays readable.
 
 ### Step 6: Data migration to cloud solutions
 
 When migrating from Hashavshevet to cloud-based accounting solutions:
 
 **Before you start (read this first):**
-- Migrating or exporting off Hashavshevet does NOT discharge the ניהול פנקסים retention duty. The accounting system and records must be retained 7 years from the end of the relevant tax year (or 6 years from the date the return was filed, whichever is later). Do NOT decommission or wipe the source Hashavshevet system after the cutover; keep it (or a complete archived copy) accessible for that full period.
+- Migrating or exporting off Hashavshevet does NOT discharge the ניהול פנקסים retention duty. The accounting system and records must be retained 7 years from the end of the relevant tax year (or 6 years from the date the return was filed, whichever is later). Do NOT decommission or wipe the source Hashavshevet system after the cutover; keep it (or a complete archived copy) accessible for that full period. Retention is not merely keeping bytes: you must be able to PRODUCE the uniform-structure file on an inspector's demand, so archived `.dat` files whose reader has been decommissioned do not satisfy it, a backup copy must be kept separately from the production copy, and the external documentation (תיעוד חוץ: invoices, receipts, delivery notes) is covered as well as the ledger. The safe practical step is to produce and archive a validated BKMV export for every retained tax year AT the cutover, while the licence is still live.
 - Where the target system supports it, import the native BKMV uniform file directly (יבוא נתונים מקובץ במבנה אחיד). Rivhit and other cloud systems accept the uniform file as-is. This is preferred over hand-mapped CSV/Excel because it preserves document-number continuity and the ITA-defined field structure.
 - Preserve document-numbering continuity (מספר עוקב) across the cutover so each document type keeps an unbroken running number.
 - Reconcile the new system's opening trial balance to the old system's closing trial balance before going live; investigate any difference rather than rounding it away.
+- Payroll is not the only continuity trap. Withholding (תיק ניכויים) is a SEPARATE ITA file with its own monthly 102 deposits and two annual reconciliations, טופס 126 (employees) and טופס 856 (suppliers subject to ניכוי במקור). Both are cumulative full-year reports filed by 30 April of the following year, and form 126 must reconcile to the monthly 102 forms and is filed with the National Insurance Institute as well, so a mid-year cutover leaves the new system holding only part of the year and the reconciliation will not tie. Extract the year-to-date withholding register per employee and per supplier and load it as opening cumulative data, or file the transition year from the old system. This is the most common Israeli migration failure and it surfaces months later, as an ITA cross-check discrepancy against counterparties.
+- Extract these too, none of which travel in a trial balance: the fixed-asset register with cost, accumulated depreciation and rates (needed for the depreciation annex and the 6111 balance sheet, and many cloud targets cannot hold a depreciation register at all, in which case it must be maintained outside the system); closing inventory and its valuation basis; prior-year comparatives (the annual return and 6111 require them); foreign-currency open balances with their ORIGINAL-currency amounts and revaluation basis; and postdated cheques (שיקים דחויים) held and issued, which are ledger balances in Israeli practice.
+- Preserve the per-account 6111 / kod-miyun mapping field. Israeli packages including Hashavshevet store it on the account card precisely so the mapping is done once; dropping it in the migration forces the whole 6111 mapping to be rebuilt by hand.
+- Confirm the TARGET system can itself produce a conforming uniform-structure (BKMV) file before cutting over. If it cannot, the client will be unable to satisfy an inspector's demand, which also defeats the retention plan below.
 - The OPENFORMAT/BKMV uniform file does NOT contain payroll/salary records, only the bookkeeping and document data. A full company migration must separately extract payroll history (via Hashavshevet's payroll module / the annual payroll-reporting workflow); relying on the uniform file alone silently drops payroll.
 
 **iCount migration:**
@@ -234,7 +118,7 @@ When migrating from Hashavshevet to cloud-based accounting solutions:
 
 Two ITA filings are commonly produced from Hashavshevet data. Both are software-independent specs, so generate them from an OPENFORMAT export rather than from heuristic binary parsing:
 
-- **PCN874 (דוח מפורט מע"מ, detailed VAT report)**: a fixed-structure text file, NOT a flat invoice list. It starts with a header/opening record (the business osek number, the reporting period, and totals/counts), followed by detail records that are keyed by transaction-type code, sales/output transactions (עסקאות) versus input transactions (תשומות, plus special types such as import entries). For an input transaction the supplier's osek number is mandatory or the input VAT cannot be deducted. Detailed VAT reporting is obligatory only above the turnover threshold (for an individual osek, annual turnover above NIS 500,000 from 1 January 2026). Two individual-osek reliefs apply: (a) tax invoices whose pre-VAT amount is NIS 5,000 or less may be reported as a single combined total rather than itemized line by line; (b) the osek may apply to their regional VAT office to defer the obligation to 1 January 2027 if, on their 2025 returns, at least 90% of input-VAT invoices were each NIS 5,000 or less. A bookkeeper exports it monthly or bi-monthly and uploads it to the ITA, which cross-references input VAT against output VAT. Hashavshevet has a built-in PCN874 export. Spec lives on the ITA site (see Reference Links).
+- **PCN874 (דוח מפורט מע"מ, detailed VAT report)**: a fixed-structure text file, NOT a flat invoice list. It starts with a header/opening record (the business osek number, the reporting period, and totals/counts), followed by detail records that are keyed by transaction-type code, sales/output transactions (עסקאות) versus input transactions (תשומות, plus special types such as import entries). For an input transaction the supplier's osek number is mandatory or the input VAT cannot be deducted. Do NOT treat the detailed-reporting duty as a single turnover test on individuals. Companies whose turnover exceeds NIS 500,000 were already obligated from the September 2025 period, and an individual osek (עוסק שהוא יחיד) whose annual turnover exceeds NIS 500,000 is obligated from 1 January 2026. Section 69א(א) of the VAT Law defines what the detailed report must contain. Two consequences a migration must plan for: becoming a detailed filer switches the business from bi-monthly to MONTHLY VAT reporting and payment under section 67א(א), and for online filing the return and payment are due by the 23rd of the following month, not the 15th. Two individual-osek reliefs apply: (a) tax invoices whose pre-VAT amount is NIS 5,000 or less may be reported as a single combined total rather than itemized line by line, and for those aggregated input invoices the supplier number is not itemized either, the fixed placeholder 777777772 is entered instead; (b) the osek may apply to their regional VAT office to defer the obligation to 1 January 2027, and there are TWO alternative qualifying tests against the 2025 returns, either of which suffices: at least 90% of the total AMOUNT of input tax invoices came from invoices each NIS 5,000 or less, OR at least 90% of the NUMBER of input tax invoices were each NIS 5,000 or less. The application must be accompanied by a declaration (tatzhir) and supporting documents if required. Both reliefs are narrower than they look: they do NOT apply to a company, and they do NOT apply to an osek who had already started filing detailed returns before the announcement was published. A bookkeeper exports it monthly or bi-monthly and uploads it to the ITA, which cross-references input VAT against output VAT. Hashavshevet has a built-in PCN874 export. Spec lives on the ITA site (see Reference Links).
 - **Form 6111 (טופס 6111, דוח התאמה למס, tax-adjustment report)**: an annex to the annual tax return carrying profit-and-loss, balance-sheet, and tax-adjustment data, filed online. A bookkeeper or CPA exports the trial balance from Hashavshevet, maps each account to the 6111 line codes, and submits the annex. Confirm the current line codes against the ITA's year-specific 6111 spec (see Reference Links).
 
 ### Step 7: Validate data integrity
@@ -293,9 +177,9 @@ Actions:
 3. Parse the fixed-width data using the PKUDOT column layout
 4. Filter records where `entry_date` falls within 01/01/2025 to 31/12/2025
 5. Export filtered records to Excel with RTL formatting and Hebrew column headers
-6. Validate that total debits equal total credits in the exported data
+6. Do NOT run `validate_trial_balance` here and present its result as assurance: in this paired debit+credit-per-row format it is balanced by construction (see the Step 7 caveat). If the auditor needs a balance assertion, produce it from an OPENFORMAT export checked in the ITA simulator, or from a B100 debit-vs-credit movement check
 
-Result: An Excel file `pkudot_2025.xlsx` with all 2025 journal entries, properly formatted with Hebrew headers, RTL sheet direction, and a validation summary confirming the trial balance is balanced.
+Result: An Excel file `pkudot_2025.xlsx` with all 2025 journal entries, properly formatted with Hebrew headers and RTL sheet direction. Any balance assertion handed to the auditor comes from the ITA simulator or a B100 movement check, not from `validate_trial_balance`.
 
 ### Example 2: Import bank transactions into Hashavshevet format
 
@@ -355,11 +239,14 @@ Result: A validated BKMV export for the 2025 tax year (`INI.TXT` + `BKMVDATA.TXT
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| Hashavshevet H-ERP official | https://www.h-erp.co.il | Hashavshevet product versions, file format guides |
+| Hashavshevet H-ERP official | https://www.h-erp.co.il | Hashavshevet product versions (current Windows release: mahadura 2026a), file format guides |
+| Wizcloud REST API reference | https://docs.wizcloud.co.il/ | Endpoint reference for Hashavshevet בענן (v2.0.0): documents, journal, receipts, bankstatements |
+| ITA notice pa280825-1 | https://www.gov.il/he/pages/pa280825-1 | PCN874 individual-osek reliefs: the two alternative 90% deferral tests, the 777777772 placeholder, and the company / already-filing carve-outs |
+| Allocation-number thresholds + rejection path | https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/ | 9-digit number, the four conditions, and the four options when a request is refused |
 | Israel Tax Authority | https://www.gov.il/en/departments/israel_tax_authority | Digital bookkeeping directive, required journal fields |
-| ITA OPENFORMAT / מבנה אחיד spec | https://www.misim.gov.il/TmbakmmsmlNew/Files/horaot_131.pdf | BKMV record types (A000 in INI.TXT; A100, C100, D110, D120, B100, B110, M100, Z900 in BKMVDATA.TXT), field offsets |
+| ITA OPENFORMAT / מבנה אחיד spec (v1.31) | https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf | All 9 BKMV record types (A000 in INI.TXT; A100, B100, B110, C100, D110, D120, M100, Z900 in BKMVDATA.TXT), field offsets. The old misim.gov.il direct link redirects into the ITA login and serves HTML |
 | Hashavshevet H-ERP BKMV guide | https://downloads.h-erp.co.il/files/general/bkmv7-erp.pdf | How to run the uniform-structure export, INI.TXT + BKMVDATA.TXT |
-| ITA file-check simulator | https://www.misim.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx | Validate a BKMV ZIP before CPA / ITA handoff |
+| ITA file-check simulator | https://secapp.taxes.gov.il/TmbakmmsmlNew/frmCheckFiles.aspx | Validate a BKMV ZIP before CPA / ITA handoff; accepts version 1.31 files only |
 | Form 6111 (tax-adjustment report) | https://www.gov.il/he/service/itc6111 | Annual-return annex line codes (P&L, balance sheet, tax adjustment) |
 | openpyxl documentation | https://openpyxl.readthedocs.io/en/stable/ | Writing XLSX files from Python, styled export |
 | pandas I/O reference | https://pandas.pydata.org/docs/reference/io.html | CSV/Excel import and export, encoding handling |
