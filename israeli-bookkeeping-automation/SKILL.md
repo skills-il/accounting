@@ -312,15 +312,22 @@ When you record a B2B sales-invoice pkudat yoman, the source invoice must carry 
 
 The June 2026 step-down took effect as scheduled, accelerated from the originally planned 2028 date. Use the invoice issue date, not the bookkeeping-entry date, when picking the threshold, and never apply today's NIS 5,000 threshold to a 2025 invoice that only needed a number above NIS 20,000, or to a 2024 invoice whose threshold was NIS 25,000.
 
-**A number is required only when ALL FOUR of these hold. Do not flag an invoice that fails any one of them:**
-1. the amount is above the threshold in force on that invoice's date;
-2. the invoice carries a VAT component. A zero-rated invoice, or one covering only exempt transactions, does not need one, so do not flag export or zero-rated invoices;
-3. the recipient is an osek murshe. A sale to a private consumer, or to an osek patur, is out of scope;
-4. the recipient asked for an allocation number.
+**Two separate rules are in play here, and conflating them is the classic error.**
 
-Applying condition 1 alone is the classic over-flagging failure: it strands deductible input VAT in a suspense account on B2C sales and on pre-regime invoices that never needed a number.
+**The SELLER'S duty to obtain a number** is s.47(א2)(1). It arises only at the buyer's demand and does not reach a zero-rated transaction: `ובעסקה שסכומה, בלא המס, עולה על הסכום האמור בסעיף 38(א1), חייב הוא לעשות כן לפי דרישת הקונה; הוראות סעיף קטן זה יחולו לעניין חשבונית מס שהוצאה בשל עסקה שהמס שחל לגביה אינו בשיעור אפס`.
 
-The allocation number itself does not change the journal-entry shape, but the source invoice must include it (typically captured as a custom field on the AR journal line). Carry it on both sides. On the buyer's side there is a hard posting rule, but check all four conditions first: if a purchase invoice **that actually required a number under all four conditions** carries none, do NOT debit input VAT to 240. Post that VAT to a separate non-deductible suspense account, flag it to the user, and move it to 240 only once the supplier reissues the invoice with a number. Silently debiting 240 produces a VAT report that is over-claimed in that period, not merely a problem discovered at year-end. Note the precise effect of a missing number: it blocks the RECIPIENT's input-VAT deduction. It does not, by itself, void the invoice. If a supplier's request for a number was refused, reverse charge (hipuch chiyuv) is one of the routes open to them, so a refusal is not a dead end.
+**The BUYER'S loss of the deduction** is s.38(א1), and it has NO buyer-request condition: `לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים (מינואר 2026 ועד מאי 2026: 10,000 שקלים חדשים) ושאינה כוללת מספר שהקצה לה המנהל`. Note the subsection carries the January-to-May 2026 figure itself, so the schedule is confirmable from the statute rather than only from vendor summaries, and that it says `עולה על` (EXCEEDS), so an invoice sitting exactly on a band figure is outside the rule.
+
+**The posting test is therefore THREE conditions, not four:**
+1. the amount EXCEEDS the threshold in force on that invoice's date;
+2. the invoice carries a VAT component. A zero-rated invoice, or one covering only exempt transactions, is outside the rule, so do not flag export or zero-rated invoices;
+3. the recipient is an osek murshe. A sale to a private consumer, or to an osek patur, is out of scope, because there is no deduction to lose.
+
+**"The buyer never asked" is NOT a fourth condition and must never gate the posting rule.** It decides whether the SELLER breached a duty; it has nothing to do with whether the BUYER can deduct. Treating it as a gate is how input VAT gets debited to 240 on an invoice whose deduction s.38(א1) has already disallowed, which over-claims the period.
+
+Applying condition 1 alone is the opposite failure and is equally real: it strands deductible input VAT in a suspense account on B2C sales and on pre-regime invoices that never needed a number. Conditions 2 and 3 are the guards against that.
+
+The allocation number itself does not change the journal-entry shape, but the source invoice must include it (typically captured as a custom field on the AR journal line). Carry it on both sides. On the buyer's side there is a hard posting rule, but check the three conditions first: if a purchase invoice **that meets all three** carries no number, do NOT debit input VAT to 240, whether or not anyone demanded one. Post that VAT to a separate non-deductible suspense account, flag it to the user, and move it to 240 only once the supplier reissues the invoice with a number. Silently debiting 240 produces a VAT report that is over-claimed in that period, not merely a problem discovered at year-end. Note the precise effect of a missing number: it blocks the RECIPIENT's input-VAT deduction. It does not, by itself, void the invoice. If a supplier's request for a number was refused, reverse charge (hipuch chiyuv) is one of the routes open to them, so a refusal is not a dead end.
 
 ## VAT input deduction and filing formats
 
