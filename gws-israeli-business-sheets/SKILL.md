@@ -78,11 +78,11 @@ When the user wants to set up a new income/expense tracking sheet, create it wit
 | K | Allocation # | מספר הקצאה | Text | Israel Invoice allocation number for invoices at/above the threshold |
 | L | Withholding | ניכוי במקור | ILS currency | Tax withheld at source by the payer, if any |
 
-Column K records the **allocation number (מספר הקצאה)** the seller obtains from the Tax Authority's Israel Invoice platform. **The threshold in force is NIS 5,000 or more (before VAT), effective 1 June 2026.** It stepped down during 2026: NIS 10,000 from 1 January, then NIS 5,000 from 1 June. Use the current 5,000 figure, not the January one. Without an allocation number the buyer cannot deduct input VAT on the invoice, so capture it whenever it applies, and re-check the threshold before quoting it since it has been lowered repeatedly.
+Column K records the **allocation number (מספר הקצאה)** the seller obtains from the Tax Authority's Israel Invoice platform. **The threshold in force is NIS 5,000 (before VAT) from June 2026**, but the threshold is date-dependent and the sheet holds history: NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, NIS 5,000 from June 2026, and nothing at all before May 2024. Test each row against the threshold in force on that row's own date, and see Step 10 for the four conditions that must all hold. Without an allocation number the buyer cannot deduct input VAT on the invoice, so capture it whenever it applies, and re-check the threshold before quoting it since it has been lowered repeatedly.
 
 Column L records **withholding tax at source (ניכוי במקור)**. Some clients are required to withhold income tax and pay the business net of that amount, so log the withheld sum here. The business needs its own אישור ניכוי מס במקור (withholding rate certificate) and this column feeds the annual Form 856 the payer files.
 
-For an **osek patur**, drop columns D and E and rename column F to `Amount` / `סכום` (gross only), since no VAT applies. Keep columns K and L if relevant (an osek patur can still be subject to withholding and, above the threshold, to allocation numbers).
+For an **osek patur**, drop columns D and E and rename column F to `Amount` / `סכום` (gross only), since no VAT applies. Keep column L (withholding), which can still apply. Drop column K: an osek patur is outside the allocation-number regime in both directions, because it issues receipts rather than tax invoices and cannot deduct input VAT.
 
 **Tax-deductible categories for Israeli businesses:**
 
@@ -279,7 +279,18 @@ When the user needs to issue a tax invoice (חשבונית מס) to a customer, 
 - Description, quantity, and unit price of goods or services
 - Amount before VAT, the VAT amount, and the total including VAT (osek murshe). An osek patur issues a receipt or "חשבונית עסקה" with no VAT line.
 
-**Allocation number (מספר הקצאה) e-invoice mandate.** Israel's continuous-transaction-control model requires an allocation number from the Tax Authority's platform for tax invoices at or above a threshold, before the buyer can deduct input VAT. **The threshold currently in force is NIS 5,000 or more (before VAT), effective 1 June 2026** (it was NIS 10,000 from 1 January 2026). When logging an invoice at or above that figure, remind the user to obtain the allocation number through their invoicing software and record it alongside the invoice number. The threshold has been lowered twice in 2026 alone, so confirm the current figure rather than relying on a remembered one.
+**Allocation number (מספר הקצאה) e-invoice mandate.** Israel's continuous-transaction-control model requires an allocation number from the Tax Authority's platform for a tax invoice above the threshold, before the buyer can deduct input VAT. The regime began in May 2024 and the threshold has stepped down since, so a sheet that holds several years of history needs the WHOLE table, not just today's row (amounts exclude VAT):
+
+| In force from | Threshold |
+|---|---|
+| May 2024 | NIS 25,000 |
+| January 2025 | NIS 20,000 |
+| January 2026 | NIS 10,000 |
+| June 2026 | NIS 5,000 |
+
+Invoices dated before May 2024 predate the regime entirely and never needed an allocation number. Scope the check to each invoice's OWN date against the threshold in force on that date: do not apply today's NIS 5,000 figure to a 2025 invoice that only needed a number above NIS 20,000, or to a 2024 invoice whose threshold was NIS 25,000, and do not flag a pre-May-2024 row as missing one. Backfilling old invoices into a new sheet is exactly where this goes wrong.
+
+An allocation number is required only when ALL of these hold, so do not flag a row that fails any of them: the amount is above the threshold in force on that date; the invoice carries a VAT component (a zero-rated invoice, or one covering only exempt transactions, does NOT need an allocation number, so do not flag export or zero-rated rows); the recipient is an osek murshe; and the recipient asked for an allocation number. A ledger row does not record whether the buyer asked, so do not treat that last condition as a reason to stay silent: flag any row that meets the first three and has an empty column K as "verify", rather than skipping it. The number itself is 9 digits. Note the precise effect of a missing one: it blocks the RECIPIENT's input-VAT deduction. It does not, by itself, make the invoice void. When logging a qualifying invoice, remind the user to obtain the number through their invoicing software and record it in column K alongside the invoice number.
 
 ## Examples
 
@@ -337,8 +348,8 @@ Result: Three new rows appended to the tracking sheet with proper categorization
 - An osek patur does not charge VAT on income and cannot reclaim input VAT on expenses. Agents may add VAT columns and compute a VAT liability for an osek patur, which is wrong. Always confirm the user's VAT status first.
 - The 80% rate applies ONLY to light refreshments (כיבוד קל) consumed at the place of business. Hosting and entertainment (אירוח), including taking a client to a restaurant, are generally not deductible at all. Treating a client lunch as an 80% item overstates the deduction, and treating it as 100% overstates it further.
 - Car expenses: for income tax the deductible amount is the HIGHER of 45% of the vehicle upkeep or the upkeep minus the שווי שימוש (use value), not the lower of the two, and there is no per-kilometre deduction regime for the Israeli self-employed. For VAT the rule is stricter still: input VAT on the purchase or import of a private vehicle is not deductible at all, even at 100% business use, and running costs are limited. Applying a 100% deduction is wrong on both taxes.
-- Equipment (computers, monitors, furniture) is a depreciable asset (פחת), not a 100%-in-year-one expense. Agents may book the full purchase price as a one-time expense, which overstates the first-year deduction. Capitalize the asset and spread the deduction over its useful life (for example, computers are commonly depreciated at 33% a year over 3 years). Only low-value or consumable office items are expensed in full in the year of purchase. The input VAT on the purchase is still fully reclaimable in the first period (osek murshe). Confirm the depreciation rate and any low-value threshold with the accountant.
-- Israeli VAT is 18% (since January 2025). Agents trained on older data may use 17%, which was the previous rate, leading to incorrect calculations throughout the spreadsheet.
+- Equipment (computers, monitors, furniture) is a depreciable asset (פחת), not a 100%-in-year-one expense. Agents may book the full purchase price as a one-time expense, which overstates the first-year deduction. Capitalize the asset and spread the deduction over its useful life (for example, computers are commonly depreciated at 33.33% a year over 3 years). Only low-value or consumable office items are expensed in full in the year of purchase. The input VAT on the purchase is still fully reclaimable in the first period (osek murshe). Confirm the depreciation rate and any low-value threshold with the accountant.
+- Israeli VAT is 18% (since January 2025). Agents trained on older data may use 17%, which was the previous rate, leading to incorrect calculations throughout the spreadsheet. The rate is also date-dependent, so a sheet that carries 2024 rows crosses the change: derive VAT on each row from the rate in force at that row's date rather than applying the column header's 18% to everything.
 - The `gws` command surface is generated from Google's Discovery API. There is no `gws sheets create` or `gws sheets read` top-level command. Use `gws sheets spreadsheets <method>` with `--params`/`--json`, or the `+read` / `+append` helpers. When unsure, run `gws sheets --help`.
 
 
@@ -372,4 +383,4 @@ Solution: Verify the spreadsheet ID from the Google Sheets URL (the string betwe
 
 ### Error: "VAT calculation mismatch"
 Cause: Rounding differences between manual calculation and sheet formulas.
-Solution: Always round VAT to 2 decimal places. Use the formula `Math.round(amount * 18) / 100` for precise Shekel calculations. Israeli tax authority accepts rounding to the nearest agora.
+Solution: Always round VAT to 2 decimal places. In Python use `round(amount * 0.18, 2)`; in the sheet itself use `=ROUND(D2*0.18, 2)`. (`Math.round` is JavaScript and runs on neither surface this skill uses.) Israeli tax authority accepts rounding to the nearest agora.

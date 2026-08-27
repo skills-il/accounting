@@ -21,9 +21,6 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-VAT_RATE = 0.18
-MEAL_DEDUCTION_RATE = 0.80
-CAR_DEDUCTION_RATE = 0.45
 
 PERIOD_MONTHS = {
     1: (1, 2),
@@ -120,11 +117,16 @@ def filter_by_period(transactions: list[dict], period: int, year: int) -> list[d
         print(f"Error: Invalid period {period}. Must be 1-6.", file=sys.stderr)
         sys.exit(1)
 
+    DATE_KEYS = ("Date", "date", "תאריך")
     start_month, end_month = PERIOD_MONTHS[period]
     filtered = []
 
     for txn in transactions:
-        date_str = txn.get("Date", txn.get("date", ""))
+        date_str = ""
+        for k in DATE_KEYS:
+            if k in txn and str(txn[k]).strip() != "":
+                date_str = txn[k]
+                break
         date = parse_date(date_str)
         if date and date.year == year and start_month <= date.month <= end_month:
             filtered.append(txn)
@@ -148,8 +150,11 @@ def compute_summary(transactions: list[dict]) -> dict:
 
     AMOUNT_KEYS = ("Amount (excl. VAT)", "amount", "Amount", "amount_excl_vat",
                    "Amount excl VAT", 'סכום (ללא מע"מ)')
-    VAT_KEYS = ("VAT (18%)", "vat", "VAT", 'מע"מ')
+    VAT_KEYS = ("VAT (18%)", "VAT (17%)", "vat", "VAT",
+                'מע"מ', 'מע"מ (18%)', 'מע"מ (17%)')
     unmatched_amount = 0
+    unmatched_vat = 0
+    income_missing_vat = 0
 
     def pick(txn, keys):
         for k in keys:
@@ -158,16 +163,23 @@ def compute_summary(transactions: list[dict]) -> dict:
         return "0", False
 
     for txn in transactions:
-        txn_type = txn.get("Type", txn.get("type", "")).strip().lower()
+        TYPE_KEYS = ("Type", "type", "סוג")
+        CATEGORY_KEYS = ("Category", "category", "קטגוריה")
+        DESCRIPTION_KEYS = ("Description", "description", "תיאור")
+        txn_type = str(pick(txn, TYPE_KEYS)[0] if pick(txn, TYPE_KEYS)[1] else "").strip().lower()
         raw_amount, found_amount = pick(txn, AMOUNT_KEYS)
         if not found_amount:
             unmatched_amount += 1
         amount = parse_amount(raw_amount)
-        raw_vat, _ = pick(txn, VAT_KEYS)
+        raw_vat, found_vat = pick(txn, VAT_KEYS)
+        if not found_vat:
+            unmatched_vat += 1
         vat = parse_amount(raw_vat)
-        category = txn.get("Category", txn.get("category", "Uncategorized"))
+        category = pick(txn, CATEGORY_KEYS)[0] if pick(txn, CATEGORY_KEYS)[1] else "Uncategorized"
 
         if txn_type in ("income", "\u05d4\u05db\u05e0\u05e1\u05d4"):
+            if found_vat and vat == 0 and amount != 0:
+                income_missing_vat += 1
             total_income += amount
             vat_collected += vat
             income_count += 1
@@ -177,7 +189,7 @@ def compute_summary(transactions: list[dict]) -> dict:
             vat_paid += vat
             expense_count += 1
             expense_categories[category] = expense_categories.get(category, 0) + amount
-            low = f"{category} {txn.get('Description', txn.get('description', ''))}".lower()
+            low = f"{category} {(pick(txn, DESCRIPTION_KEYS)[0] if pick(txn, DESCRIPTION_KEYS)[1] else '')}".lower()
             if any(k in low for k in ("car", "vehicle", "fuel", "\u05e8\u05db\u05d1", "\u05d3\u05dc\u05e7")):
                 blocked_flags.append((category, amount, vat, "car"))
             elif any(k in low for k in ("meal", "lunch", "restaurant", "hospitality", "gift",
@@ -207,6 +219,28 @@ def compute_summary(transactions: list[dict]) -> dict:
         print(
             f"Warning: {unmatched_amount} of {len(transactions)} rows had no recognised "
             "amount column and were counted as 0. Check the column headers before filing.",
+            file=sys.stderr,
+        )
+    if transactions and unmatched_vat == len(transactions):
+        print(
+            "Error: no recognised VAT column found in the input.\n"
+            "  Expected one of: " + ", ".join(VAT_KEYS) + "\n"
+            "  Found columns: " + ", ".join(sorted(transactions[0].keys())) + "\n"
+            "  Refusing to emit a summary that would report a zero VAT liability.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+    if unmatched_vat:
+        print(
+            f"Warning: {unmatched_vat} of {len(transactions)} rows had no recognised "
+            "VAT column and were counted as 0 VAT. Check the column headers before filing.",
+            file=sys.stderr,
+        )
+    if income_missing_vat:
+        print(
+            f"Warning: {income_missing_vat} income row(s) carry an amount but 0 VAT. "
+            "If these are zero-rated exports that is correct; if the VAT cell was simply "
+            "left blank, the VAT collected figure below understates what you owe.",
             file=sys.stderr,
         )
 
@@ -242,6 +276,9 @@ def print_summary(summary: dict, period: int, year: int) -> None:
     print(f"\n{'='*60}")
     print(f"  VAT Summary - Period {period} ({month_names[start_month]}-{month_names[end_month]} {year})")
     print(f"  Due date: {PERIOD_DUE_DATES[period]}")
+    print("  (statutory: 15 days after the period ends. An osek not required to\n"
+          "   file the detailed report who transmits online may report and pay\n"
+          "   to the 19th of the following month.)")
     print(f"{'='*60}\n")
 
     print(f"  Total Income (excl. VAT):     {summary['total_income']:>12,.2f} ILS  ({summary['income_count']} transactions)")

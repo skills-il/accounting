@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "gws-israeli-business-sheets",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-08-27T15:44:01.760213+00:00",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -19,9 +19,9 @@
     {
       "claim_id": "vat-rate-17-previous",
       "claim": "The previous VAT rate before January 2025 was 17%; it increased from 17% to 18%.",
-      "source_url": "https://kpmg.co.il/media/%D7%9C%D7%A7%D7%A8%D7%90%D7%AA-%D7%94%D7%A9%D7%99%D7%A0%D7%95%D7%99-%D7%91%D7%A9%D7%99%D7%A2%D7%95%D7%A8-%D7%94%D7%9E%D7%A2%D7%9E-%D7%9E-17-%D7%9C-18",
-      "raw_snippet": "לקראת השינוי בשיעור המע\"מ מ-17% ל-18%",
-      "fetched_at": "2026-06-26T00:09:00Z",
+      "source_url": "https://cpahadera.co.il/%D7%9E%D7%A2%D7%9E/",
+      "raw_snippet": "אחוז מע\"מ עלה ב-1% ביום 1.1.2025 (מ-17% ל-18%)",
+      "fetched_at": "2026-08-27T15:27:39.912398+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -44,8 +44,8 @@
       "claim_id": "osek-patur-ceiling-2025",
       "claim": "The osek patur ceiling was NIS 120,000 for 2025 (annual turnover up to 120,000 NIS in 2025).",
       "source_url": "https://www.kolzchut.org.il/he/%D7%A2%D7%95%D7%A1%D7%A7_%D7%A4%D7%98%D7%95%D7%A8",
-      "raw_snippet": "עוסק שמחזור עסקאותיו השנתי נמוך מהסף שנקבע בחוק (₪120,000 נכון לשנת 2025)",
-      "fetched_at": "2026-06-26T00:07:30Z",
+      "raw_snippet": "122,833 ₪ (נכון לשנת 2026) (120,000 ₪ בשנת 2025)",
+      "fetched_at": "2026-08-27T15:27:39.912398+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -69,9 +69,9 @@
     {
       "claim_id": "allocation-threshold-5000",
       "claim": "The allocation-number threshold in force is NIS 5,000 or more (5,000 ש\"ח, before VAT), effective 1 June 2026. This is the second step-down in 2026, after NIS 10,000 took effect on 1 January 2026. Verified as actually in force (not deferred) on 2026-07-27.",
-      "source_url": "https://www.chamber.org.il/serviceslobby/finance/1429/162557/",
-      "raw_snippet": "החל מ־1 ביוני 2026: חובת מספר הקצאה בניכוי מס תשומות תחול מעסקאות מעל 5,000 ₪",
-      "fetched_at": "2026-07-26T22:44:12Z",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "החל מיום 1.6.2026 תורחב החובה לקבל מספר הקצאה לחשבונית מס, כך שתחול על עסקאות שסכומן עולה על 5,000 ש\"ח",
+      "fetched_at": "2026-08-27T15:27:39.912398+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -136,17 +136,6 @@
       ]
     },
     {
-      "claim_id": "osek-zair-gov-official",
-      "claim": "The osek zair reform (approved Nov 2024) lets micro-dealers deduct expenses at 30% without filing a full annual return; turnover up to about 120,000 NIS.",
-      "source_url": "https://www.gov.il/he/pages/sa090523-2",
-      "raw_snippet": "\"עוסקים זעירים\" יוכלו לנכות הוצאות בגובה של 30% בלי להגיש דו\"ח שנתי",
-      "fetched_at": "2026-06-26T00:08:30Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "car-deduction-45",
       "claim": "Only 45% of car/vehicle maintenance expenses are recognized for income tax (mixed business/personal use).",
       "source_url": "https://moneyplan.co.il/%D7%94%D7%95%D7%A6%D7%90%D7%95%D7%AA-%D7%A8%D7%9B%D7%91-%D7%9E%D7%95%D7%9B%D7%A8%D7%95%D7%AA-%D7%9C%D7%9E%D7%A1-%D7%94%D7%9B%D7%A0%D7%A1%D7%94/",
@@ -174,8 +163,8 @@
       "claim_id": "full-deduction-100",
       "claim": "Under Section 17 of the Income Tax Ordinance, an expense wholly used in producing income is a recognized (allowed) expense for income-tax purposes, unless it is specifically determined to be non-deductible. This is the legal basis for fully deducting ordinary business expense categories (office rent, professional services, software, marketing, insurance, travel, etc.).",
       "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%95%D7%A6%D7%90%D7%94_%D7%9E%D7%95%D7%9B%D7%A8%D7%AA_%D7%9C%D7%A6%D7%95%D7%A8%D7%9A_%D7%97%D7%99%D7%A9%D7%95%D7%91_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_(%D7%94%D7%95%D7%A6%D7%90%D7%94_%D7%9E%D7%95%D7%AA%D7%A8%D7%AA_%D7%91%D7%A0%D7%99%D7%9B%D7%95%D7%99)",
-      "raw_snippet": "סעיף 17 לפקודת מס הכנסה מגדיר הוצאה מוכרת כ'הוצאה ששימשה בייצור הכנסה'",
-      "fetched_at": "2026-06-26T02:40:00Z",
+      "raw_snippet": "סעיף 17 לפקודת מס הכנסה מגדיר הוצאה מוכרת כ\"הוצאה ששימשה בייצור הכנסה\"",
+      "fetched_at": "2026-08-27T15:27:39.912398+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -299,7 +288,9 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T15:28:21.608474+00:00"
     },
     {
       "claim_id": "url-tax-authority",
@@ -327,10 +318,10 @@
     },
     {
       "claim_id": "input-vat-private-vehicle-reg14",
-      "claim": "VAT paid on the purchase or import of a private vehicle, new or used, is not deductible as input VAT under Regulation 14(a) of the VAT Regulations, even where the vehicle serves the business exclusively.",
+      "claim": "Regulation 14(a) of the VAT Regulations bars deduction of input VAT on the purchase (including import and lease) of a private vehicle, and since 1.1.2008 also of a commercial vehicle not exceeding 3,500 kg. Regulation 14(b) sets out a closed exception list.",
       "source_url": "https://www.cpa.co.il/documents/maam/general/nikui-mas-tshumot-begin-rehav-mesharei.html",
-      "raw_snippet": "בתקנה 14(א) לתקנות מע\"מ נקבע, כי מע\"מ ששולם על רכישתו או ייבואו של \"רכב פרטי\", בין חדש ובין משומש, לא ניתן לניכוי כמס תשומות, גם אם הרכב משמש באופן מלא אך ורק לצורכי העסק",
-      "fetched_at": "2026-07-26T22:57:31Z",
+      "raw_snippet": "לא יותר ניכוי מס תשומות עפ\"י תקנה 14 (א) לתקנות בגין רכישה (לרבות יבוא והשכרה) של רכב מסחרי שמשקלו אינו עולה על 3,500 ק\"ג",
+      "fetched_at": "2026-08-27T15:44:01.760213+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -360,6 +351,125 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-schedule-full",
+      "claim": "The allocation-number regime began in May 2024. The full threshold schedule (before VAT) is NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, and NIS 5,000 from June 2026.",
+      "source_url": "https://www.icount.co.il/blog/invoice-israel/",
+      "raw_snippet": "מאי 2024 25,000 ש״ח ינואר 2025 20,000 ש״ח ינואר 2026 10,000 ש״ח יוני 2026 5",
+      "fetched_at": "2026-08-27T15:25:17.987817+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-schedule-corroboration",
+      "claim": "Independent corroboration of the same four-step allocation-number schedule from the start of the reform in May 2024.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מאי 2024 25,000 ₪ ינואר 2025 20,000 ₪ ינואר 2026 10,000 ש״ח יוני 2026 ואילך 5,000 ש״ח",
+      "fetched_at": "2026-08-27T15:25:17.987817+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-regime-start-may-2024",
+      "claim": "The Israel Invoices model came into force in May 2024, so invoices dated before that never required an allocation number.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מת חשבוניות ישראל, נכנסה לתוקף במאי 2024",
+      "fetched_at": "2026-08-27T15:25:17.987817+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-9-digits",
+      "claim": "The allocation number issued by the Tax Authority is 9 digits.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "בן 9 ספרות",
+      "fetched_at": "2026-08-27T15:25:17.987817+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-four-conditions",
+      "claim": "An allocation number is required only when all four conditions hold: the amount exceeds the threshold in force; the invoice includes a VAT component (zero-rated invoices and invoices covering only exempt transactions are excluded); the recipient is an osek murshe; and the recipient requested one.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "חשבוניות בשיעור אפס",
+      "fetched_at": "2026-08-27T15:25:17.987817+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-recipient-osek-murshe",
+      "claim": "One of the cumulative conditions is that the invoice recipient is an osek murshe.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "מקבל החשבונית הינו עוסק מורשה",
+      "fetched_at": "2026-08-27T15:25:17.987817+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-effect-blocks-recipient-input-vat",
+      "claim": "Proceeding without an allocation number means the invoice recipient cannot deduct the input VAT for it; the invoice is not thereby void.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "לא יוכל מקבל החשבונית לנכות את מס התשומות",
+      "fetched_at": "2026-08-27T15:25:17.987817+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md"
+      ]
+    },
+    {
+      "claim_id": "vat-return-due-15th",
+      "claim": "A periodic VAT return must be filed no later than 15 days after the end of the reporting period, i.e. by the 15th of the month following the period.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "יש להגיש את הדו\"ח לכל המאוחר עד 15 ימים אחרי תום תקופת הדיווח (עד ה-15 בחודש שלאחר תקופת הדו\"ח)",
+      "fetched_at": "2026-08-27T15:44:29.883853+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/israeli-tax-categories.md",
+        "scripts/vat-summary.py"
+      ]
+    },
+    {
+      "claim_id": "vat-return-online-19th",
+      "claim": "An osek not required to file the detailed report (דיווח מפורט) who transmits the periodic return online may report and pay no later than the 19th of the month following the reporting period.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "ומשדרים את הדו\"ח התקופתי באופן מקוון, רשאים לדווח ולשלם לא יאוחר מה-19 בחודש העוקב לתקופת הדו\"ח",
+      "fetched_at": "2026-08-27T15:44:29.883853+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/vat-summary.py"
+      ]
+    },
+    {
+      "claim_id": "osek-murshe-mandatory-professions",
+      "claim": "Certain listed occupations (including lawyers, accountants, doctors, dentists, psychologists, physiotherapists, vets, architects, surveyors, bookkeepers, translators, appraisers, driving schools and laboratory owners) must register as osek murshe regardless of turnover and cannot be an osek patur.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A2%D7%95%D7%A1%D7%A7_%D7%A4%D7%98%D7%95%D7%A8",
+      "raw_snippet": "אלא אם העסק נמנה על העיסוקים המחייבים פתיחת תיק עוסק מורשה (למשל, מקצועות חופשיים: עורכי דין, רואי חשבון ואחרים)",
+      "fetched_at": "2026-08-27T15:45:07.389405+00:00",
+      "appears_in": [
+        "references/israeli-tax-categories.md"
       ]
     }
   ]
