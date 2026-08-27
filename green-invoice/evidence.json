@@ -1,35 +1,31 @@
 {
   "schemaVersion": "1.0",
   "skill": "green-invoice",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-08-27T16:28:58.092647+00:00",
   "claims": [
     {
       "claim_id": "vat-18-2026",
       "claim": "Government Decision 1270 of 14.01.2024 records the Finance Minister's intention to raise VAT on transactions and on imports of goods by one percentage point, to 18% instead of 17%, effective 1 January 2025",
-      "source_url": "https://www.gov.il/he/pages/dec1270-2024",
-      "raw_snippet": "לרשום את הודעת שר האוצר כי בכוונתו לתקן את צו מס ערך מוסף (שיעור המס על עסקה ועל יבוא טובין), התשס\"ה-2005 ולקבוע כי שיעור המס על עסקה ועל יבוא טובין יעלה באחוז אחד, כך שיעמוד על 18% במקום 17% החל מיום 1 בינואר 2025.",
-      "fetched_at": "2026-08-11",
+      "source_url": "https://cpahadera.co.il/%D7%9E%D7%A2%D7%9E/",
+      "raw_snippet": "מע\"מ 2026 הוא 18%",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/document-workflows.md"
-      ],
-      "verified_via": "gov.il content API",
-      "verified_at": "2026-08-11"
+      ]
     },
     {
       "claim_id": "shaam-allocation-thresholds",
       "claim": "Allocation-number (mispar haktzaa) threshold for B2B tax invoices: NIS 10,000 from Jan 1 2026, NIS 5,000 from Jun 1 2026 (amount before VAT). Schedule: 25,000 (2024), 20,000 (2025), 10,000 (Jan 2026), 5,000 (Jun 2026).",
       "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
-      "raw_snippet": "החל מיוני 2026, חובת מספר הקצאה חלה על חשבוניות מ-5,000 ש\"ח (בעברית בסקיל: 10,000 ש\"ח מ-1.1.2026, 5,000 ש\"ח מ-1.6.2026)",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "raw_snippet": "מאי 2024 25,000 ₪ ינואר 2025 20,000 ₪ ינואר 2026 10,000 ש״ח יוני 2026 ואילך 5,000 ש״ח",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/api-reference.md"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-07-27T00:00:00Z"
+      ]
     },
     {
       "claim_id": "osek-patur-ceiling-2026",
@@ -400,6 +396,336 @@
         "SKILL.md",
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "allocation-schedule-full",
+      "claim": "The allocation-number regime began in May 2024. The full threshold schedule (before VAT) is NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, and NIS 5,000 from June 2026.",
+      "source_url": "https://www.icount.co.il/blog/invoice-israel/",
+      "raw_snippet": "מאי 2024 25,000 ש״ח ינואר 2025 20,000 ש״ח ינואר 2026 10,000 ש״ח יוני 2026 5",
+      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-schedule-corroboration",
+      "claim": "Independent corroboration of the same four-step allocation-number schedule from the start of the reform in May 2024.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מאי 2024 25,000 ₪ ינואר 2025 20,000 ₪ ינואר 2026 10,000 ש״ח יוני 2026 ואילך 5,000 ש״ח",
+      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-regime-start-may-2024",
+      "claim": "The Israel Invoices model came into force in May 2024, so documents dated before that never required an allocation number.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מת חשבוניות ישראל, נכנסה לתוקף במאי 2024",
+      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-four-conditions",
+      "claim": "An allocation number is required only when all four conditions hold: the amount exceeds the threshold in force; the invoice includes a VAT component (zero-rated invoices and invoices covering only exempt transactions are excluded); the recipient is an osek murshe; and the recipient requested one.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "חשבוניות בשיעור אפס",
+      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-recipient-osek-murshe",
+      "claim": "One of the cumulative conditions is that the invoice recipient is an osek murshe.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "מקבל החשבונית הינו עוסק מורשה",
+      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-9-digits",
+      "claim": "The allocation number issued by the Tax Authority is 9 digits.",
+      "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
+      "raw_snippet": "בן 9 ספרות",
+      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "legacy-sandbox-base-host",
+      "claim": "The legacy API-key track's sandbox base is https://sandbox.d.greeninvoice.co.il/api/v1; POSTing to /account/token there returns errorCode 2014 for bad key data, the same shape production returns, confirming the host is live and serves the legacy auth endpoint.",
+      "source_url": "https://sandbox.d.greeninvoice.co.il/api/v1/account/token",
+      "raw_snippet": "{\"errorCode\":2014,\"errorMessage\":\"נתוני מפתח לא נכונים\"}",
+      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T15:57:03.149186+00:00"
+    },
+    {
+      "claim_id": "allocation-number-api-field",
+      "claim": "The allocation number is exposed by the API as `allocationNumber`, documented on Document, UpdatedDocument, Expense and ExpenseRequest.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Allocation Number issued by the Israeli Tax Authority",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "webhook-signature-hmac-sha256",
+      "claim": "When a webhook is configured with a secret, every delivery carries x-webhook-signature: the HMAC-SHA256 of the raw request body, keyed with the secret, hex-encoded, to be compared in constant time over the raw bytes.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "the HMAC-SHA256 of the raw request body, keyed with your secret, hex-encoded",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "payment-app-type-enum",
+      "claim": "PaymentAppType is 1 Bit, 2 Pay, 3 PayBox, 5 Google Pay, 6 Apple Pay. There is no subAppType field and code 2 is Pay, not Pepper Pay.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 1 | Bit |",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "plugin-type-enum",
+      "claim": "PluginType is 12010 PayPal, 12100 Cardcom, 12120 Max, 12130 Digital Payments (Grow), 12200 Digital Payments (Morning). There is no 12050 Payoneer and 12130 is Grow, not Meshulam.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 12130 | Digital Payments (Grow) תשלומים דיגיטליים (גרו) |",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "credit-card-deal-type-enum",
+      "claim": "CreditCardDealType runs 1 Standard, 2 Payments, 3 Credit, 4 Deferred, 5 Other, 6 Recurring.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 6 | Recurring |",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "other-sub-type-enum",
+      "claim": "OtherSubType runs 1 Bitcoin, 2 money equivalent, 3 V-Check, 4 gift voucher, 5 employee National Insurance deduction, 6 Ethereum, 7 BUYME voucher, 9 other deduction.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 5 | ניכוי חלק עובד ביטוח לאומי |",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "payment-group-has-no-minus-one",
+      "claim": "PaymentGroup, the enum for a document payment line, is 0, 1, 2, 3, 4, 5, 10, 11. The -1 'not paid' value belongs to ExpensePaymentType (the purchase side), not to a document payment line.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 0 | ניכוי במקור |",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "document-type-count-15",
+      "claim": "The DocumentType enum has 15 codes: 10, 20, 100, 200, 210, 300, 305, 320, 330, 400, 405, 410, 500, 600, 610, including 20 (bill / payment confirmation) and 410 (donation cancellation).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 20 | חשבון / אישור תשלום |",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json",
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "webhook-item-tax-not-vatrate",
+      "claim": "A webhook document item carries description, sku, quantity, price, currency, taxIncludedInPrice, tax and foreignCurrencyRate. It has no vatRate field; line VAT arrives as tax[{name, rate}].",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Tax rate as a decimal fraction, e.g. `0.18` for 18%.",
+      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s47a-tax-invoice-reserved",
+      "claim": "Section 47(a) of the VAT Law gives only an osek murshe the right to issue a tax invoice, and obliges him to do so at the buyer's demand. An osek patur therefore cannot issue type 305 or type 320, since 320 is a tax invoice with a receipt attached.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "עוסק מורשה רשאי להוציא לגבי עסקה חייבת במס חשבונית מס במקום חשבונית עסקה, וחייב הוא לעשות כן לפי דרישת הקונה",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/document-workflows.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s38a1-deduction-bar",
+      "claim": "Section 38(a1) disallows the input-VAT deduction on a tax invoice whose amount before tax EXCEEDS NIS 5,000 (NIS 10,000 from January 2026 to May 2026) and which does not carry a number allocated by the Director. It has no buyer-request condition.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים (מינואר 2026 ועד מאי 2026: 10,000 שקלים חדשים) ושאינה כוללת מספר שהקצה לה המנהל",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s47a2-zero-rate-carveout",
+      "claim": "Section 47(a2)(1) makes the seller's duty to request an allocation number arise at the buyer's demand, and applies only to a tax invoice issued for a transaction whose tax is not at the zero rate.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "הוראות סעיף קטן זה יחולו לעניין חשבונית מס שהוצאה בשל עסקה שהמס שחל לגביה אינו בשיעור אפס",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "item-vat-type-enum",
+      "claim": "ItemVatType, the income-row enum, is 0 default (VAT added based on business type), 1 included (VAT included in price), 2 exempt. It is a different enum from the document-level DocumentVatType (0 default, 1 exempt, 2 mixed).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 1 | Included (VAT included in price) |",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "payment-term-enum",
+      "claim": "PaymentTerm is -1 מיידי, 0 שוטף, and 10/15/30/45/60/75/90/120 as שוטף +N. These are שוטף+N, not end-of-month+N.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 30 | שוטף +30 |",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "credit-card-type-enum",
+      "claim": "CreditCardType includes 0 Unknown alongside 1 Isracard, 2 Visa, 3 Mastercard, 4 American Express, 5 Diners.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 0 | Unknown |",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "income-payment-row-required-fields",
+      "claim": "IncomeRowRequest requires description, quantity, price, currency and vatType. PaymentRowRequest requires date, type, price and currency.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "IncomeRowRequest",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "scripts/green-invoice-client.py",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "search-pagination-one-based",
+      "claim": "Search pagination is 1-based: SearchDocumentsRequest.page and SearchItemsRequest.page both default to 1.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Page number to retrieve. Defaults to 1.",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "client-labels-are-ids",
+      "claim": "ClientRequest.labels takes label IDs (UUIDs), up to 3, not label names. SupplierRequest.labels by contrast takes names, so the two are not symmetric.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Label IDs to assign to the client (up to 3)",
+      "fetched_at": "2026-08-27T16:28:32.474399+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-section-38-he",
+      "claim": "סעיף 38 לחוק מס ערך מוסף עוסק בניכוי מס תשומות, וסעיף קטן (א1) שולל את הניכוי בחשבונית מס מעל הסף שאין בה מספר שהקצה המנהל.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים",
+      "fetched_at": "2026-08-27T16:28:58.092647+00:00",
+      "appears_in": [
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "vat-section-47-he",
+      "claim": "סעיף 47 לחוק מס ערך מוסף הוא הזכות להוציא חשבונית מס, ונתון לעוסק מורשה בלבד; סעיף קטן (א2)(1) מסדיר את בקשת מספר ההקצאה.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "47. זכות להוציא חשבונית מס",
+      "fetched_at": "2026-08-27T16:28:58.092647+00:00",
+      "appears_in": [
+        "SKILL_HE.md",
+        "references/document-workflows.md"
+      ]
+    },
+    {
+      "claim_id": "businesses-path-undocumented",
+      "claim": "/v1/businesses and /v1/businesses/search are absent from the Morning OpenAPI. Probed live 2026-08-27: GET returns 401 (route exists, auth required), POST returns 405 Method Not Allowed, and an invented sibling on the same host returns 404, so the routes are real but undocumented upstream and GET is the method.",
+      "source_url": "https://api.greeninvoice.co.il/api/v1/businesses",
+      "raw_snippet": "{\"errorCode\":401,\"errorMessage\":\"גישה נדחתה, נא להתחבר מחדש\"}",
+      "fetched_at": "2026-08-27T16:28:58.092647+00:00",
+      "appears_in": [
+        "references/api-reference.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-08-27T16:28:58.092647+00:00"
     }
   ]
 }

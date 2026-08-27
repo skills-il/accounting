@@ -8,7 +8,6 @@ Complete reference for all Green Invoice (Morning) API endpoints, request/respon
 |-------------|-----|
 | Production | `https://api.greeninvoice.co.il/api/v1` |
 | Sandbox | `https://sandbox.d.greeninvoice.co.il/api/v1` |
-| WebSocket | `wss://wss.greeninvoice.co.il` |
 
 ## Authentication
 
@@ -76,10 +75,20 @@ Required for B2B tax invoices over the SHAAM allocation-number threshold. The AP
 
 | Effective from | Threshold |
 |----------------|-----------|
+| May 2024 (regime begins) | NIS 25,000 (superseded) |
+| Jan 1, 2025 | NIS 20,000 (superseded) |
 | Jan 1, 2026 | NIS 10,000 (superseded) |
-| Jun 1, 2026 onward (final step) | **NIS 5,000 (in force now, as of 2026-07-27)** |
+| Jun 1, 2026 onward (final step) | **NIS 5,000 (in force now, as of 2026-08-27)** |
 
-**API field for the allocation number:** the exact response-body field carrying the allocation number is not documented in the public help center. To learn it for your account, create a real authorized B2B invoice above the threshold and inspect the `GET /v1/documents/{id}` response, or use the in-app API explorer at `https://app.greeninvoice.co.il/api`. If the field is absent on a qualifying invoice, the user's authorization has lapsed or was never set up.
+Documents dated before May 2024 predate the regime. Scope any historical validation to each document's own date.
+
+**The two allocation-number rules (statute text).**
+
+*Seller's duty*, s.47(a2)(1) of חוק מס ערך מוסף: an osek murshe issuing a tax invoice above the s.38(a1) amount `חייב הוא לעשות כן לפי דרישת הקונה`, and the subsection applies only `לעניין חשבונית מס שהוצאה בשל עסקה שהמס שחל לגביה אינו בשיעור אפס` (so a zero-rated invoice is out of scope).
+
+*Buyer's loss of the deduction*, s.38(a1): `לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים (מינואר 2026 ועד מאי 2026: 10,000 שקלים חדשים) ושאינה כוללת מספר שהקצה לה המנהל`. There is no buyer-request condition here, so a validator must flag a qualifying invoice with no number even when nobody asked for one. Note `עולה על`: an invoice at exactly the threshold is outside the rule.
+
+**API field for the allocation number:** `allocationNumber`, documented in the Morning OpenAPI on `Document`, `UpdatedDocument`, `Expense` and `ExpenseRequest` as "Allocation Number issued by the Israeli Tax Authority". It is omitted when no number was assigned, so a qualifying B2B invoice coming back WITHOUT `allocationNumber` means the user's Tax Authority authorization has lapsed or was never set up. Note the two documented example shapes differ in length (`166056573` on the expense schemas, a much longer value on `Document`), so read it as an opaque string rather than validating it to 9 characters.
 
 Reference: https://www.greeninvoice.co.il/magazine/israel-invoice/ and https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/
 
@@ -188,7 +197,7 @@ Returns full document object.
 **Request:**
 ```json
 {
-  "page": 0,
+  "page": 1,
   "pageSize": 25,
   "number": 12345,
   "type": [320, 305, 300],
@@ -268,7 +277,7 @@ Closes an open document.
   "contactPerson": "string",
   "labels": ["string"],
   "taxId": "string",
-  "page": 0,
+  "page": 1,
   "pageSize": 25
 }
 ```
@@ -291,7 +300,9 @@ Associates documents to a client.
 ## Businesses API
 
 ### GET /v1/businesses
-### POST /v1/businesses/search
+### GET /v1/businesses/search
+
+Note: this path and `/v1/businesses` are absent from the Morning OpenAPI. Probed live 2026-08-27: GET returns 401 (route exists, auth required) while POST returns 405 Method Not Allowed, and an invented sibling on the same host returns 404, so GET is the method and these are undocumented-upstream routes. Treat them as unsupported.
 
 ---
 
@@ -347,7 +358,6 @@ it returns for a path that was never defined, so do not use it as a health check
 
 | Code | Name (he) | Name (en) |
 |------|-----------|-----------|
-| -1 | לא שולם | Unpaid |
 | 0 | ניכוי במקור | Withholding Tax |
 | 1 | מזומן | Cash |
 | 2 | המחאה | Check |
@@ -357,20 +367,27 @@ it returns for a path that was never defined, so do not use it as a health check
 | 10 | אפליקציית תשלום | Payment App |
 | 11 | אחר | Other |
 
-### Payment Sub-Types
+### Payment Sub-Types (OtherSubType, required when payment type is 'other')
 
 | Code | Name |
 |------|------|
-| 1 | Bitcoin |
-| 2 | Money Equivalent |
+| 1 | Bitcoin (ביטקוין) |
+| 2 | Money Equivalent (שווה כסף) |
 | 3 | V-Check |
+| 4 | Gift voucher (שובר מתנה) |
+| 5 | Employee National Insurance deduction (ניכוי חלק עובד ביטוח לאומי) |
+| 6 | Ethereum (אתריום) |
+| 7 | BUYME voucher |
+| 9 | Other deduction (ניכוי אחר) |
 
 ### Payment App Types
 
 | Code | Name | Status |
 |------|------|--------|
 | 1 | Bit | Active (Bank Hapoalim) |
-| 2 | Pepper Pay | Discontinued April 10, 2022 - legacy enum value, do not use for new payments |
+| 2 | Pay | |
+| 5 | Google Pay | |
+| 6 | Apple Pay | |
 | 3 | PayBox | Active (Discount Bank) |
 
 ### Credit Card Types
@@ -393,16 +410,17 @@ it returns for a path that was never defined, so do not use it as a health check
 | 3 | קרדיט | Credit |
 | 4 | חיוב נדחה | Deferred |
 | 5 | אחר | Other |
+| 6 | הוראת קבע | Recurring |
 
 ### Payment Plugin Types
 
 | Code | Name |
 |------|------|
 | 12010 | PayPal |
-| 12050 | Payoneer |
 | 12100 | Cardcom |
 | 12120 | Max (Leumi Card) |
-| 12130 | Meshulam |
+| 12130 | Digital Payments (Grow) תשלומים דיגיטליים (גרו) |
+| 12200 | Digital Payments (Morning) |
 
 ### VAT Types (Document Level)
 
@@ -444,16 +462,18 @@ Set a specific rate on a line with the separate `vatRate` field (decimal: `0` fo
 
 | Code | Meaning |
 |------|---------|
-| -1 | Immediate |
-| 0 | End of Month |
-| 10 | End of Month + 10 |
-| 15 | End of Month + 15 |
-| 30 | End of Month + 30 |
-| 45 | End of Month + 45 |
-| 60 | End of Month + 60 |
-| 75 | End of Month + 75 |
-| 90 | End of Month + 90 |
-| 120 | End of Month + 120 |
+| -1 | מיידי (immediate) |
+| 0 | שוטף |
+| 10 | שוטף +10 |
+| 15 | שוטף +15 |
+| 30 | שוטף +30 |
+| 45 | שוטף +45 |
+| 60 | שוטף +60 |
+| 75 | שוטף +75 |
+| 90 | שוטף +90 |
+| 120 | שוטף +120 |
+
+These are the spec's own labels. Note they are שוטף+N, not "end of month + N": שוטף+30 runs from the invoice's payment period, which is a different due date from end-of-month-plus-30.
 
 ### Supported Currencies
 
@@ -511,8 +531,8 @@ Full webhook payload structure on document creation:
   "bill": {
     "url": "https://pages.greeninvoice.co.il/en/payments/bills/..."
   },
-  "tax": [],
-  "total": 1170,
+  "tax": [{"name": "VAT", "rate": 0.18, "total": 180}],
+  "total": 1180,
   "description": "",
   "remarks": "",
   "reverseCharge": false,
@@ -535,7 +555,8 @@ Full webhook payload structure on document creation:
       "quantity": 1,
       "price": 1000,
       "currency": "ILS",
-      "vatRate": 0.18
+      "taxIncludedInPrice": false,
+      "tax": [{"name": "VAT", "rate": 0.18}]
     }
   ],
   "transactions": [],
@@ -555,7 +576,7 @@ Full webhook payload structure on document creation:
 | Language | Package | Install |
 |----------|---------|---------|
 | Python | green-invoice | `pip install green-invoice` |
-| PHP | mordisacks/greeninvoice | `composer require mordisacks/greeninvoice` |
+| PHP | greeninvoice/greeninvoice | `composer require greeninvoice/greeninvoice` (repo: github.com/MordiSacks/greeninvoice) |
 | PHP | bariew/greeninvoice | `composer require bariew/greeninvoice` |
 
 ## Official Documentation

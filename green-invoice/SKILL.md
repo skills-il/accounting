@@ -1,6 +1,6 @@
 ---
 name: green-invoice
-description: Integrate Green Invoice (Morning) API for Israeli invoicing, receipts, client management, and payment processing. Use when user asks to create invoices via Green Invoice, generate hashbonit mas through Morning API, manage clients in Green Invoice, set up webhook automation for document creation, query documents or expenses, or mentions "Green Invoice", "Morning", "hashbonit yeruka", "greeninvoice API", Israeli cloud invoicing, or needs to create tax invoice-receipt (cheshbonit mas/kabala). Covers all 13 document types, 8 payment types, client CRUD, item catalog, and webhook integration. Do NOT use for SHAAM allocation numbers or Tax Authority e-invoice compliance (use israeli-e-invoice), Cardcom payment processing (use cardcom-payment-gateway), or Tranzila integration (use tranzila-payment-gateway).
+description: Integrate Green Invoice (Morning) API for Israeli invoicing, receipts, client management, and payment processing. Use when user asks to create invoices via Green Invoice, generate hashbonit mas through Morning API, manage clients in Green Invoice, set up webhook automation for document creation, query documents or expenses, or mentions "Green Invoice", "Morning", "hashbonit yeruka", "greeninvoice API", Israeli cloud invoicing, or needs to create tax invoice-receipt (cheshbonit mas/kabala). Covers all 15 document types, 8 payment types, client CRUD, item catalog, and webhook integration. Do NOT use for SHAAM allocation numbers or Tax Authority e-invoice compliance (use israeli-e-invoice), Cardcom payment processing (use cardcom-payment-gateway), or Tranzila integration (use tranzila-payment-gateway).
 license: MIT
 compatibility: Requires network access for Green Invoice API calls (api.greeninvoice.co.il). API access requires a Best plan or higher; webhooks require Extra plan. API credentials obtained from the dashboard (Personal Area, Developer Tools, API Keys). Works with Claude Code, Claude.ai, Cursor.
 ---
@@ -29,7 +29,7 @@ The published documentation at `developers.morning.co` (versioned "morning API D
 | | OAuth 2.0 (documented, use this) | Legacy API-key flow |
 |---|---|---|
 | Token endpoint | `POST https://api.morning.co/idp/v1/oauth/token` | `POST https://api.greeninvoice.co.il/api/v1/account/token` |
-| Sandbox token endpoint | `https://api.sandbox.morning.dev/idp/v1/oauth/token` | same host as production, sandbox base URL |
+| Sandbox token endpoint | `https://api.sandbox.morning.dev/idp/v1/oauth/token` | `POST https://sandbox.d.greeninvoice.co.il/api/v1/account/token` |
 | Grant | `client_credentials` | JSON body with `id` + `secret` |
 | Response field | `accessToken` (a signed JWT) | JWT token |
 | Token lifetime | 1 hour | treat as short-lived; refresh on 401 |
@@ -88,10 +88,18 @@ The threshold schedule (amounts are NET, before VAT):
 
 | Effective from | Threshold |
 |----------------|-----------|
+| May 2024 (regime begins) | NIS 25,000 |
+| Jan 1, 2025 | NIS 20,000 |
 | Jan 1, 2026 | NIS 10,000 |
 | Jun 1, 2026 onward (final step) | **NIS 5,000 (in force now)** |
 
-Above the threshold, every B2B tax invoice must carry a `מספר הקצאה` (allocation number) issued by שע"מ (the Tax Authority). Without it, the recipient business cannot deduct input VAT - meaning your customer cannot legally reclaim the VAT they paid you.
+Documents dated before May 2024 predate the regime and never needed a number. The threshold is date-dependent: when validating or migrating historical documents, test each against the threshold in force on ITS OWN date, not today's.
+
+Two rules apply and conflating them is the classic error. The SELLER'S duty to obtain a number (s.47(a2)(1)) arises only when the buyer demands it, and does not apply to a zero-rated invoice. The BUYER'S loss of the deduction (s.38(a1)) has NO buyer-request condition: input VAT is disallowed on any qualifying invoice lacking a number, asked for or not.
+
+**So when validating, do NOT treat "the buyer never asked" as a pass.** Flag every tax invoice above that date's threshold that carries VAT and has no allocation number. The statute says `עולה על` (exceeds), so an invoice at exactly the threshold is outside it. The number is 9 digits, and a missing one blocks the recipient's deduction without voiding the invoice. Statute text in `references/api-reference.md`.
+
+Above the threshold, a B2B tax invoice must carry a `מספר הקצאה` (allocation number) issued by שע"מ. Without it your customer cannot deduct the input VAT they paid you.
 
 **Morning attaches the allocation number automatically, BUT ONLY AFTER a one-time authorization grant in the user's Morning account.** This is NOT automatic on signup. The user must:
 
@@ -99,18 +107,16 @@ Above the threshold, every B2B tax invoice must carry a `מספר הקצאה` (a
 2. The dashboard redirects to the Tax Authority gov.il portal for identity verification
 3. After authorization, the browser returns automatically to Morning, and the connection becomes active
 
-Vendor quote on what happens once active:
-> "מספר ההקצאה מתנהל אוטומטית" - the allocation number is managed automatically.
-> "מספר הקצאה לחשבונית מס יוצמד לחשבונית באמצעות המערכת שלנו, מבלי שצריך יהיה להיכנס לעוד פלטפורמות" - the allocation number is attached to the tax invoice via our system, without needing to enter another platform.
+Once active, Morning attaches the allocation number to the tax invoice through its own system, with no second platform to log into ("מספר ההקצאה מתנהל אוטומטית").
 
-**Critical: the authorization expires every 3 months and must be renewed manually.** Morning's help centre states the connection is valid for 3 months and that an alert appears in the system 10 days before it expires. Do not rely on an email arriving: treat the 10-day in-system alert as the notice and check the connection status from your own runbook. If the authorization lapses, qualifying invoices created via the API still succeed at HTTP level, but ship WITHOUT an allocation number - your customer's accountant will reject them.
+**Critical: the authorization expires every 3 months and must be renewed manually.** Morning's help centre states the connection is valid for 3 months with an in-system alert 10 days before expiry. Do not rely on an email; check the connection from your own runbook. If it lapses, qualifying invoices still succeed at HTTP level but ship WITHOUT an allocation number.
 
 **What to do in code:**
 1. Surface this requirement to the human user before they create their first large B2B invoice - the API does not currently expose a `tax_authority_connection_active` flag in public docs.
 2. After creating a qualifying B2B invoice, fetch the resulting document with `GET /v1/documents/{id}` and check the PDF / response for an allocation number. If missing, the user's authorization is lapsed or was never set up.
-3. The exact response-body field name carrying the allocation number is not documented publicly. Inspect a real authorized invoice via the in-app API explorer (`https://app.greeninvoice.co.il/api`) to learn the field for your account.
+3. The field is `allocationNumber`, documented in the Morning OpenAPI on `Document`, `UpdatedDocument`, `Expense` and `ExpenseRequest`. It is omitted when no number was assigned, so a qualifying invoice returning without it means the authorization lapsed. See `references/api-reference.md`.
 
-This skill does not cover SHAAM compliance end-to-end (allocation-number lifecycle, IRS-Israel filing). For that, use the `israeli-e-invoice` skill alongside this one.
+For end-to-end SHAAM compliance use the `israeli-e-invoice` skill alongside this one.
 
 ### Step 3: Understand Document Types
 
@@ -190,9 +196,9 @@ Required fields: `type`, `client` (with `name` and `emails`), `income` (line ite
 
 | Code | Meaning |
 |------|---------|
-| 0 | Default (follows document VAT setting) |
-| 1 | Exempt (VAT-free) |
-| 2 | Mixed |
+| 0 | Default (VAT added based on business type) |
+| 1 | Included (VAT is INCLUDED in the price you send) |
+| 2 | Exempt (VAT-free) |
 
 ### Step 5: Payment Types
 
@@ -200,7 +206,6 @@ When adding payment records to a document, use these type codes:
 
 | Code | Hebrew | English |
 |------|--------|---------|
-| -1 | לא שולם | Unpaid |
 | 0 | ניכוי במקור | Withholding Tax |
 | 1 | מזומן | Cash |
 | 2 | המחאה | Check |
@@ -210,24 +215,7 @@ When adding payment records to a document, use these type codes:
 | 10 | אפליקציית תשלום | Payment App (Bit, PayBox) |
 | 11 | אחר | Other |
 
-**Credit card types** (when payment type is 3):
-
-| Code | Card |
-|------|------|
-| 1 | Isracard |
-| 2 | Visa |
-| 3 | Mastercard |
-| 4 | American Express |
-| 5 | Diners |
-
-**Credit card deal types:**
-
-| Code | Type |
-|------|------|
-| 1 | Regular (ragil) |
-| 2 | Installments (tashlumim) |
-| 3 | Credit |
-| 4 | Deferred (chiyuv nidche) |
+**Credit card types** (`CreditCardType`, when payment type is 3): 0 Unknown, 1 Isracard, 2 Visa, 3 Mastercard, 4 American Express, 5 Diners. **Deal types** (`CreditCardDealType`): 1 Standard, 2 Payments, 3 Credit, 4 Deferred, 5 Other, 6 Recurring.
 
 ### Step 6: Manage Clients
 
@@ -242,19 +230,11 @@ When adding payment records to a document, use these type codes:
   "city": "Tel Aviv",
   "address": "Rothschild 45",
   "paymentTerms": 30,
-  "labels": ["tech", "monthly"]
+  "labels": ["3777a6ef-0000-0000-0000-000000000000"]
 }
 ```
 
-**Payment terms:**
-
-| Code | Meaning |
-|------|---------|
-| -1 | Immediate (shotef) |
-| 0 | End of month (shotef sof chodesh) |
-| 30 | End of month + 30 (shotef plus 30) |
-| 60 | End of month + 60 |
-| 90 | End of month + 90 |
+**Payment terms:** `PaymentTerm` is -1 (מיידי) and 0/10/15/30/45/60/75/90/120 for שוטף +N. Full table in `references/api-reference.md`. These are שוטף+N, not end-of-month+N.
 
 **Other client endpoints:**
 
@@ -271,7 +251,7 @@ When adding payment records to a document, use these type codes:
 {
   "name": "Startup",
   "active": true,
-  "page": 0,
+  "page": 1,
   "pageSize": 25
 }
 ```
@@ -282,7 +262,7 @@ When adding payment records to a document, use these type codes:
 
 ```json
 {
-  "page": 0,
+  "page": 1,
   "pageSize": 25,
   "type": [320, 305],
   "status": [0, 1],
@@ -547,10 +527,10 @@ Result: All new documents automatically downloaded and organized by type and mon
 - The most common document type for Israeli clients paying immediately is type 320 (Tax Invoice-Receipt), not type 305 (Tax Invoice). Agents may default to 305 because it sounds like the standard invoice type.
 - Osek Patur (exempt dealer) businesses cannot issue Tax Invoices (type 305). Agents may not check the business type before selecting a document type, causing API errors.
 - VAT rate in Israel is 18% as of 2026, not 17%. The rate changed in January 2025 and agents trained on older data may use the outdated 17% figure in calculations.
-- Payment type code 10 covers Israeli payment apps (Bit, PayBox), which are extremely common in Israel. Agents may not know these apps exist and default to bank transfer or credit card only. Note: Pepper Pay shut down on Apr 10, 2022; do not present it as a payment option. The historical enum value `subAppType: 2` may still exist for legacy rows but should not be used for new payments.
+- Payment type code 10 covers Israeli payment apps (Bit, PayBox), which are extremely common in Israel. Agents may not know these apps exist and default to bank transfer or credit card only. The app is named by `appType` (PaymentAppType): 1 Bit, 2 Pay, 3 PayBox, 5 Google Pay, 6 Apple Pay. There is no `subAppType` field, and code 2 is Pay, not Pepper Pay (Pepper Pay shut down on 10 Apr 2022 and is not in the enum at all).
 - **SHAAM allocation number requires a one-time gov.il authorization in the user's Morning account.** This is the most common reason API integrations "look correct" but produce invoices the customer's accountant rejects. The integration is NOT automatic on signup. See Step 2 for the full setup, the 3-month expiry, and the renewal workflow. The threshold is NIS 5,000 net, in force since Jun 1, 2026 and the final step of the rollout. It was NIS 10,000 between Jan 1 and May 31, 2026, so treat any integration written earlier in 2026 as skipping allocation numbers on invoices between 5,000 and 10,000, which silently breaks the customer's input-VAT deduction. Pair with the `israeli-e-invoice` skill for end-to-end SHAAM compliance.
 - **Plan tiers gate features in the dashboard.** API access requires the Best plan; webhooks require the Extra plan. A user on a lower tier will not see "API Keys" or "Webhooks" in the dashboard menu - this is not a bug, it is the gate. Check the plan before debugging missing menu items.
-- **Webhook signature verification.** Treat any unverified webhook payload as suspect. The current signature header name and hashing algorithm are NOT documented in the public help-center articles as of May 2026 - inspect the headers on a real test webhook delivery to your endpoint (sandbox or production), or sign in to the in-app API explorer to learn the current scheme. As a safety net, on receipt of a webhook always do a server-to-server `GET /v1/documents/{id}` lookup with your authenticated API token before trusting any field on the payload.
+- **Webhook signature verification.** When the webhook has a secret, every delivery carries `x-webhook-signature`: the HMAC-SHA256 of the RAW body, keyed with your secret, hex-encoded. Capture the raw bytes before JSON parsing and compare in constant time, since re-serializing changes the digest. With no secret there is no signature, and the safety net is a server-to-server `GET /v1/documents/{id}` before trusting any payload field. Full header list in `references/api-reference.md`.
 - **The Apiary reference is gone; use `developers.morning.co`.** `https://greeninvoice.docs.apiary.io/` now returns HTTP 404 ("Apiary - Page not found"), verified in a browser on 2026-07-27. It was live at the previous review a month earlier, so older guidance, including earlier versions of this skill, still points there. The canonical reference is now `https://developers.morning.co` ("morning API Documentation (2.0.0)"), with `https://app.greeninvoice.co.il/api` as the signed-in explorer. When a field name is unclear, confirm it there rather than guessing.
 - **Rate limits.** The ceiling is not published, so do not code against a specific requests-per-second number. Treat HTTP 429 as a soft, expected error: back off exponentially and retry rather than failing the job. For batch operations put the calls behind a queue with a concurrency limit you can tune down when you see 429s.
 
@@ -561,8 +541,8 @@ Cause: JWT token expired or invalid credentials
 Solution: Tokens expire. An OAuth access token is valid for exactly 1 hour, so a long batch run WILL hit this mid-way and must re-authenticate rather than fail. Re-authenticate against whichever flow you use: `POST https://api.morning.co/idp/v1/oauth/token` with `grant_type=client_credentials` (the documented path), or the legacy `POST /v1/account/token` with your API key ID and secret. On the OAuth endpoint, note that `invalid_grant` means the key is expired/revoked/pending and `unauthorized_client` means the subscription does not include API access; neither is fixed by retrying. Verify credentials in the Green Invoice dashboard under Personal Area (אזור אישי) > Developer Tools (כלים למפתחים) > API Keys. If the menu item is missing, the account is on a lower-tier plan; API access requires Best or higher.
 
 ### Error: "Document type not supported for your business type"
-Cause: Osek Patur (exempt dealer) cannot issue Tax Invoices (type 305)
-Solution: Check your business type. Osek Patur should use type 320 (Tax Invoice-Receipt) or type 400 (Receipt). Osek Murshe and Ltd. companies can use all document types.
+Cause: an osek patur cannot issue a tax invoice. s.47(a) of the VAT Law gives the right to issue one only to an osek murshe (`עוסק מורשה רשאי להוציא לגבי עסקה חייבת במס חשבונית מס`).
+Solution: this rules out BOTH 305 (חשבונית מס) and 320 (חשבונית מס/קבלה), since 320 is a tax invoice with a receipt attached. An osek patur issues 300 (חשבון עסקה), 400 (קבלה) or 20 (חשבון / אישור תשלום). Routing an osek patur to 320 makes them issue a document that purports to charge VAT they are not registered to collect, and the recipient's input VAT is disallowed. Osek murshe and Ltd. companies can use all document types.
 
 ### Error: "VAT calculation mismatch"
 Cause: Mixing vatType settings between document level and income row level

@@ -22,6 +22,7 @@ Environment:
 """
 
 import argparse
+import datetime
 import json
 import sys
 from decimal import Decimal, ROUND_HALF_UP
@@ -34,6 +35,7 @@ SANDBOX_BASE = "https://sandbox.d.greeninvoice.co.il/api/v1"
 
 DOCUMENT_TYPES = {
     10: "Price Quote",
+    20: "Bill / Payment Confirmation",
     100: "Order",
     200: "Delivery Note",
     210: "Return Note",
@@ -43,13 +45,13 @@ DOCUMENT_TYPES = {
     330: "Credit Note",
     400: "Receipt",
     405: "Donation Receipt",
+    410: "Donation Cancellation",
     500: "Purchase Order",
     600: "Deposit Receipt",
     610: "Deposit Withdrawal",
 }
 
 PAYMENT_TYPES = {
-    -1: "Unpaid",
     0: "Withholding Tax",
     1: "Cash",
     2: "Check",
@@ -104,6 +106,11 @@ def cmd_auth(args):
         sys.exit(1)
 
 
+def _today() -> str:
+    """Payment rows require a date; default to today in ISO form."""
+    return datetime.date.today().isoformat()
+
+
 def cmd_create_document(args):
     """Create a new document."""
     doc_type = args.type
@@ -130,6 +137,10 @@ def cmd_create_document(args):
                 "quantity": args.quantity,
                 "price": args.amount,
                 "currency": args.currency,
+                # Required by IncomeRowRequest. This is ItemVatType (0 default,
+                # 1 VAT INCLUDED in price, 2 exempt), a different enum from the
+                # document-level vatType above.
+                "vatType": args.row_vat_type,
             }
         ],
     }
@@ -149,8 +160,14 @@ def cmd_create_document(args):
         net = Decimal(str(args.amount)) * Decimal(str(args.quantity))
         if args.payment_amount is not None:
             gross = Decimal(str(args.payment_amount))
-        elif args.vat_type == 1:
-            gross = net  # exempt: no VAT is added
+        elif args.vat_type == 1 or args.row_vat_type == 2 or args.vat_rate == 0:
+            # exempt document, exempt row, or an explicitly zero-rated row
+            gross = net
+        elif args.osek_patur:
+            # An osek patur charges no VAT, so the server adds none and the
+            # payment must equal the net. Deriving a gross here over-paid every
+            # osek-patur document by the VAT.
+            gross = net
         else:
             rate = Decimal(str(args.vat_rate)) / Decimal("100")
             gross = (net * (Decimal("1") + rate)).quantize(
@@ -169,15 +186,15 @@ def cmd_create_document(args):
             "price": float(gross),
             "currency": args.currency,
         }]
-        print(
-            f"Payment line: {gross} {args.currency} "
-            f"(net {net} + VAT at {args.vat_rate}%)"
-            if args.payment_amount is None and args.vat_type != 1
-            else f"Payment line: {gross} {args.currency}",
-            file=sys.stderr,
-        )
-        if args.date:
-            payload["payment"][0]["date"] = args.date
+        if gross == net:
+            note = " (no VAT added)"
+        elif args.payment_amount is not None:
+            note = " (caller-supplied gross)"
+        else:
+            note = f" (net {net} + VAT at {args.vat_rate}%)"
+        print(f"Payment line: {gross} {args.currency}{note}", file=sys.stderr)
+        # date is required on a payment row (PaymentRowRequest.required).
+        payload["payment"][0]["date"] = args.date or _today()
 
     result = api_request("POST", "/documents", token=args.token, data=payload)
     print(f"Document created successfully!")
@@ -206,7 +223,7 @@ def cmd_search_documents(args):
     items = result.get("items", [])
     total = result.get("total", 0)
 
-    print(f"Found {total} documents (showing page {args.page + 1}):\n")
+    print(f"Found {total} documents (showing page {args.page}):\n")
     for doc in items:
         doc_type = DOCUMENT_TYPES.get(doc.get("type", 0), "Unknown")
         client = doc.get("client", {}).get("name", "N/A")
@@ -259,7 +276,7 @@ def cmd_search_clients(args):
     items = result.get("items", [])
     total = result.get("total", 0)
 
-    print(f"Found {total} clients (showing page {args.page + 1}):\n")
+    print(f"Found {total} clients (showing page {args.page}):\n")
     for client in items:
         emails = ", ".join(client.get("emails", []))
         print(f"  {client.get('name', 'N/A')} | {emails} | "
@@ -292,6 +309,10 @@ def main():
     doc_parser.add_argument("--lang", default="he", choices=["he", "en"])
     doc_parser.add_argument("--vat-type", type=int, default=0, help="VAT type (0=default, 1=exempt, 2=mixed)")
     doc_parser.add_argument("--vat-rate", type=float, default=18.0, help="VAT percent used to derive the gross payment line (default 18)")
+    doc_parser.add_argument("--row-vat-type", type=int, default=0,
+        help="ItemVatType on the income row (0=default, 1=VAT INCLUDED in price, 2=exempt). Required by the API; different enum from --vat-type.")
+    doc_parser.add_argument("--osek-patur", action="store_true",
+        help="Issuer is an osek patur: no VAT is added, so the payment line equals the net.")
     doc_parser.add_argument("--payment-amount", type=float, help="Explicit GROSS payment amount. Use this when the document total is not net*(1+vat-rate), e.g. vatType 2 (mixed).")
     doc_parser.add_argument("--date", help="Document date (YYYY-MM-DD)")
     doc_parser.add_argument("--due-date", help="Due date (YYYY-MM-DD)")
@@ -305,7 +326,7 @@ def main():
     search_doc_parser.add_argument("--to-date", help="To date (YYYY-MM-DD)")
     search_doc_parser.add_argument("--type", type=int, help="Document type filter")
     search_doc_parser.add_argument("--status", type=int, help="Document status filter")
-    search_doc_parser.add_argument("--page", type=int, default=0, help="Page number")
+    search_doc_parser.add_argument("--page", type=int, default=1, help="Page number")
     search_doc_parser.add_argument("--page-size", type=int, default=25, help="Page size")
 
     # get-document
@@ -329,7 +350,7 @@ def main():
     search_client_parser.add_argument("--token", required=True, help="JWT token")
     search_client_parser.add_argument("--name", help="Client name filter")
     search_client_parser.add_argument("--email", help="Client email filter")
-    search_client_parser.add_argument("--page", type=int, default=0, help="Page number")
+    search_client_parser.add_argument("--page", type=int, default=1, help="Page number")
     search_client_parser.add_argument("--page-size", type=int, default=25, help="Page size")
 
     args = parser.parse_args()

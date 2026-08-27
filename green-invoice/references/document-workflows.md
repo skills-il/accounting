@@ -17,9 +17,9 @@ A freelancer (osek murshe or osek patur) billing clients monthly.
 - Example: NIS 10,000 service = NIS 11,800 total
 
 **Osek Patur (Exempt Dealer):**
-- Use type 320 with `vatType: 0` (no VAT added automatically)
+- Use type 300 (חשבון עסקה), 400 (קבלה) or 20 (חשבון / אישור תשלום) with `vatType: 0` (no VAT added)
 - Total = subtotal (no VAT)
-- Cannot issue standalone Tax Invoice (type 305)
+- Cannot issue a tax invoice at all. s.47(a) of the VAT Law reserves that to an osek murshe, so BOTH 305 (חשבונית מס) and 320 (חשבונית מס/קבלה) are out, 320 being a tax invoice with a receipt attached
 - Annual revenue limit: NIS 122,833 (as of 2026; the ceiling is CPI-adjusted annually)
 
 **Best Practice:** Use labels on clients (e.g., "monthly", "retainer") to easily search and batch-process recurring invoices.
@@ -220,10 +220,10 @@ For amutot (non-profits) issuing donation receipts under Section 46.
 ```
 
 **Key Points:**
-- Type 405 (Donation Receipt) is only available for business type 4 (Amuta)
+- Type 405 (Donation Receipt) is not gated to one business type in the spec. What matters is the Section 46 approval, which turns on being a מוסד ציבורי under s.9(2) of the Income Tax Ordinance, defined as a חבר בני אדם, so a חברה לתועלת הציבור (business type 5) is not excluded
 - Set `vatType: 1` (exempt) as donations are not subject to VAT
 - Include donor's `taxId` (Teudat Zehut) for Section 46 tax deduction eligibility
-- The receipt allows the donor to claim a tax deduction (35% of donation amount, up to limits)
+- The receipt lets the donor claim a Section 46 זיכוי (a CREDIT against tax, not a deduction from income) at 35% of the donation for an individual, and at the s.126(a) rate for a company. There is an annual floor and a ceiling, and unused credit carries forward, so state the mechanism and route the donor to their accountant for the current figures
 
 ---
 
