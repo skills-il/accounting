@@ -82,3 +82,79 @@ rate for the periphery premium and the global-hours amount.
   overtime tiers above it) rather than a collective-agreement healthcare line.
   Keep it separate from the shift-responsibility supplement, and defer the
   mechanics to the israeli-payroll-calculator skill.
+
+
+The toranut table gives day-type only, with no clock window per band, while the
+kononut table anchors each band to a clock window. That asymmetry is a property
+of the source agreements (the 2011 base agreement and the 2.10.2023 agreement),
+not an omission here: no authoritative source publishes toranut clock windows.
+
+
+## Doctors: career stage, the agreement stack, and tosefet mesima leumit
+
+**Doctors.** First pin the career stage, because the base track differs by it: a
+resident (mitmach) sits on a different base track from a specialist (mumche), who
+differs again from a senior or attending physician. Residents are themselves split
+by the board exams: darga alef, before passing the written board exam (bechinat
+shlav alef), works a 45-hour week; darga bet, after it, works 42 hours. Each stage
+carries its own lines and a different on-call profile. Do not model "a doctor" as
+one base cell.
+
+Doctors have their own agreement (signed 30.9.2024, covering the state, Clalit,
+Hadassah and municipal hospitals) on top of the general framework, replacing the
+previous agreement of 25.8.2011. It raises the combined-salary table in three
+legs, each stated cumulatively against the pre-agreement table: 4.88% from
+1.1.2025, 1.62% more from 1.7.2025 for 6.5% cumulative, and 1% more from 1.1.2026
+for 7.5% cumulative. That agreement has been amended several times since
+(among them 23.1.2025 and 31.3.2025, plus a monitoring-committee decision of
+30.6.2025), so "the doctors' agreement" is a stack, not one document; name the
+amendment you are relying on.
+
+A separate tosefet mesima leumit is paid to entitled doctors for five years,
+1.1.2025 to 31.12.2029, then stops. Its base was 3,000 NIS per full position, was
+due to double to 6,000 from 1.7.2025, and the 31.3.2025 agreement instead staged
+it at 4,500 NIS for 1.7.2025 to 30.11.2025 and 6,000 NIS from 1.12.2025, while
+pension contributions are computed as though 6,000 applied throughout. It is
+salary for severance and carries keren hishtalmut, but is NOT in the mashkoret
+koveat.
+
+**The amount is a base figure multiplied by a coefficient (mekadem)** set by
+specialty and role in a table inside the agreement, so the headline base is NOT
+what an individual doctor receives. Read the worker's own coefficient from the
+Wage Commissioner circular; we could not source the coefficient range, so do not
+state one. Do not confuse this supplement with tosefet mar'ag, which is a
+separate shekel supplement with its own eligibility test.
+
+
+
+## רופאים: שלב הקריירה, ערימת ההסכמים ותוספת משימה לאומית (עברית)
+
+**רופאים.** לרופאים יש הסכם משלהם שנחתם ב-30.9.2024 וחל על המדינה, כללית, הדסה
+ובתי חולים עירוניים, מעל הסכם המסגרת הכללי, והוא מחליף את ההסכם הקודם מ-25.8.2011.
+ההסכם מעלה את טבלת השכר המשולב בשלוש פעימות, כל אחת מצטברת מול הטבלה שקדמה
+להסכם: 4.88% מ-1.1.2025, עוד 1.62% מ-1.7.2025 ובסך הכול 6.5%, ועוד 1% מ-1.1.2026
+ובסך הכול 7.5%. ההסכם תוקן כמה פעמים מאז (בהם 23.1.2025 ו-31.3.2025, והחלטת ועדת
+מעקב מ-30.6.2025), כך ש"הסכם הרופאים" הוא ערימה ולא מסמך אחד; כדאי לנקוב בתיקון
+שמסתמכים עליו.
+
+תוספת משימה לאומית נפרדת משולמת לרופאים זכאים למשך חמש שנים, מ-1.1.2025 עד
+31.12.2029, ונפסקת אחרי החלון הזה. הבסיס שלה היה 3,000 ש"ח למשרה מלאה, היה אמור
+לעלות ל-6,000 ש"ח מ-1.7.2025, והסכם 31.3.2025 קבע במקום זאת 4,500 ש"ח מ-1.7.2025
+עד 30.11.2025 ו-6,000 ש"ח מ-1.12.2025, בעוד ההפרשות לפנסיה מחושבות כאילו הבסיס
+עמד על 6,000 ש"ח לאורך כל התקופה. היא נחשבת שכר לעניין פיצויי פיטורים ומופרשת
+בגינה קרן השתלמות, אבל היא אינה נכללת במשכורת הקובעת לגמלאות. סכום הכותרת עדיין
+אינו מה שרופא בודד מקבל.
+
+**הסכום הוא סכום בסיס מוכפל במקדם** שנקבע לפי מקצוע ותפקיד בטבלה שבתוך ההסכם,
+ולכן סכום הכותרת אינו מה שרופא בודד מקבל. קראו את המקדם הספציפי של העובד מחוזר
+הביצוע של הממונה על השכר. לא הצלחנו לאמת את טווח המקדמים, ולכן אין לנקוב בטווח.
+אין לבלבל בין התוספת הזו לבין תוספת מר"ג, שהיא תוספת שקלית נפרדת עם מבחן זכאות
+משלה.
+
+התוספת אינה נכללת במשכורת הקובעת לגמלאות והיא מוגבלת בזמן ואינה קבועה.
+
+קודם קבעו את שלב הקריירה, כי מסלול הבסיס שונה לפיו: מתמחה יושב על מסלול
+בסיס שונה ממומחה, וזה שונה שוב מרופא בכיר. מתמחים עצמם מחולקים לפי בחינות ההתמחות:
+דרג א', לפני מעבר בחינת שלב א' בכתב, עובד שבוע של 45 שעות; דרג ב', אחריה, עובד 42
+שעות. לכל שלב שורות משלו ופרופיל כוננות שונה. אל תמדלו רופא כתא בסיס אחד.
+

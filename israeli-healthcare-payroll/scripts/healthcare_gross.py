@@ -79,6 +79,10 @@ def compute(combined_base: float, tosefet_pcts, add_amounts, position: float,
     position        position fraction, for example 1.0 full or 0.5 half. Applied
                     to the base-plus-tosafot part only.
     """
+    if combined_base < 0:
+        raise ValueError("--base cannot be negative")
+    if position <= 0:
+        raise ValueError("--position must be greater than 0")
     tosefet_total_pct = sum(tosefet_pcts)
     tosefet_pay = combined_base * (tosefet_total_pct / 100.0)
     core_full = combined_base + tosefet_pay
@@ -141,13 +145,15 @@ def main() -> None:
     parser.add_argument("--tosefet", type=float, action="append", default=None,
                         help="a percentage tosefet; repeat for several tosafot")
     parser.add_argument("--add", type=float, action="append", default=None,
-                        help="an explicit shekel addition (shift, on-call, "
-                             "clothing); repeat for several")
+                        help="an explicit shekel addition NOT scaled by "
+                             "position, because it reflects work actually done "
+                             "(shift premiums, on-call, duty); repeat for several")
     parser.add_argument("--add-prorated", type=float, action="append",
                         default=None, dest="add_prorated",
-                        help="shekel addition that IS pro-rated by position "
-                             "(for example tosefet achayot 2024, 500 NIS "
-                             "full-time)")
+                        help="shekel addition that IS pro-rated by position: "
+                             "tosefet achayot 2024, the framework shekel "
+                             "supplement (400 or 500 NIS), havraa, and the "
+                             "clothing allowance; repeat for several")
     parser.add_argument("--position", type=float, default=1.0,
                         help="position fraction, e.g. 1.0 full or 0.5 half")
     parser.add_argument("--example", action="store_true",
@@ -171,9 +177,12 @@ def main() -> None:
     tosafot = args.tosefet if args.tosefet else []
     adds = args.add if args.add else []
     prorated = args.add_prorated if args.add_prorated else []
-    result = compute(combined_base=args.base, tosefet_pcts=tosafot,
-                     add_amounts=adds, position=args.position,
-                     prorated_amounts=prorated)
+    try:
+        result = compute(combined_base=args.base, tosefet_pcts=tosafot,
+                         add_amounts=adds, position=args.position,
+                         prorated_amounts=prorated)
+    except ValueError as exc:
+        parser.error(str(exc))
     print(render(result))
 
 

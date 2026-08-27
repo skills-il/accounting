@@ -1,6 +1,28 @@
 {
   "cycles": [
     {
+      "version": "1.4.0",
+      "date": "2026-08-27",
+      "trigger": "Scheduled staleness pass; flagged DRIFT TYPE A alongside the other payroll skills.",
+      "lessons": [
+        "RESOLVED CARRY-STALE (3 cycles): toranut per-band clock windows. Closed as Out of scope (explicit) with a rationale, not left open. The kononut/toranut asymmetry is a property of the source agreements, and no authoritative source publishes toranut windows.",
+        "RESOLVED CARRY (M4): havraa and bigud now carry values. Havraa 511.60 NIS/day public sector from 1.6.2026; bigud 1,812.00 / 2,527.00 NIS for 2026. The bigud amounts are image-only and were read from the image, per the method lesson this skill already carries.",
+        "RESOLVED CARRY (M6): the doctors' own reduction rates now have values (1.081 / 1.781 / 1.081) and the skill's instrument attribution was corrected from the 31.3.2025 wage agreement to the 23.1.2025 freeze agreement.",
+        "RESOLVED CARRY (M5): global overtime for nursing management and allied health. Closed as Out of scope (explicit): a positive search found no such arrangement, so the correct action was to stop implying one exists rather than to keep hunting.",
+        "RESOLVED CARRY (M7): tamritz non-pensionability was asserted with no evidence for three cycles. Withdrawn rather than restated. Same treatment applied to the unsourced claim that the wage reduction spares the severance base.",
+        "STILL OPEN: doctors' own pensionable continuing-education gemulim (3rd cycle, no readable IMA source). Now recorded in domain-checklist.md as Out of scope (explicit) with a dated rationale so it stops recurring as a silent gap.",
+        "STILL OPEN: the public-sector havraa DAYS table for the health dirugim. Kol Zchut publishes only the private table and says expressly that the public numbers are higher. Recorded as UNRESOLVED, deliberately NOT out of scope, because a user will ask.",
+        "STILL OPEN: entry rank per education track on the nurse ladder.",
+        "METHOD LESSON (important, caught in this cycle): the research agent reported that government hospitals shortened the working week in a SINGLE step on 1.4.2024. The source says two steps, 1.12.2023 and 1.7.2024. Writing the reported version would have introduced a fresh error into the exact line the finding was about. A report is a place to look, never a fact to transcribe.",
+        "METHOD LESSON: the same agent reported the allied-health bands as image-only, echoing this skill's own prior institutional memory. They are page text now. A note that a table 'is an image' must be re-tested each cycle, because it permanently suppresses an answer the skill could otherwise give.",
+        "METHOD LESSON: a first fetch of the havraa page returned a 'public sector days table' identical to the private one. That was a model echo, not page content. Any table that arrives looking exactly like a table you already have should be re-read from the raw page before it is believed.",
+        "METHOD LESSON: the Judge said the 14.5.2025 doctors' havraa agreement did not exist because it was absent from the page it checked. The Expert found the dedicated Malam article, and the agreement is real, dated, and still running at 5% in 2026. A reviewer's negative is as much a lead as its positive: absence from ONE page is not absence.",
+        "METHOD LESSON: this cycle's own hedge on the severance base was the error, not the original text. The agreement expressly lists the one-off end-of-employment payment, bridging payments, the pension deposit and the mashkoret koveat as computed without the reduction. Withdrawing a claim is a change like any other and needs the source read before, not after.",
+        "NEW DEBT: hospital pharmacists and the academic dirug are named in the description but have no supplement set. Step 1 now routes them out explicitly rather than leaving a silent hole; either carry the mach'ar tosafot next cycle or cut them from the description (which drags in the description-eval gate).",
+        "NEW DEBT: whether the temporary wage reduction comes off before or after income tax is unstated, though the skill already notes the employer reports it in Tofes 126 under an income-tax field. Resolve next cycle; it moves every net estimate by the marginal rate on the reduced slice."
+      ]
+    },
+    {
       "version": "1.2.0",
       "date": "2026-07-19",
       "trigger": "User feedback: the skill was not updated with wage agreements and could not answer 'a nurse at rank 13, what is her base salary?'",

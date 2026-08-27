@@ -35,32 +35,38 @@ Work in four steps. Steps 1 to 3 build the GROSS; step 4 turns gross into net.
 Before any of them, know the layer sitting above every dirug: the public-sector
 framework agreement (heskem misgeret) signed 17.7.2023 covering 2020 to 2027. It
 moves EVERY wage-grade table, so a base read without it is stale by construction.
-It pays a flat shekel supplement (tosefet shiklit) that reached 500 NIS, plus
-cumulative percentage raises:
 
-| Effective from salary of | Cumulative percentage raise |
-|--------------------------|-----------------------------|
-| December 2024 | 2% |
-| April 2025 | 3.5% |
-| April 2026 | 5% |
-| April 2027 | 6% |
+It pays a flat shekel supplement (tosefet shiklit) of 400 NIS from 1.7.2023,
+raised to 500 NIS from 1.10.2024. **The raise to 500 does NOT reach everyone, and
+nurses are on the excluded list**: nurses (including public-health nurses), social
+workers, medical imaging technicians, medical technologists, and
+administrative-and-maintenance staff all stay at 400 NIS. Do not put 500 NIS on a
+nurse's slip. It also pays cumulative percentage raises: 2% from December 2024,
+3.5% from April 2025, 5% from April 2026, 6% from April 2027.
 
 **Order of operations (read this once and apply it consistently).** The tranches
 are folded INTO the published wage table: a table issued as "in force from
-1.4.2026" already contains the 5%. So the rule is: read a DATED cell, check the
-date, and do NOT apply a tranche on top of a cell that already postdates it.
-Apply a tranche yourself only when you are deliberately rolling a cell forward
-from an earlier in-force date to a later one, and say so explicitly when you do.
-Never apply a tranche to a cell of unknown date.
+1.4.2026" already contains the 5%. Read a DATED cell, check the date, and do NOT
+apply a tranche on top of a cell that already postdates it. Apply a tranche
+yourself only when deliberately rolling a cell forward from an earlier in-force
+date to a later one, and say so when you do. Never apply a tranche to a cell of
+unknown date.
 
-Separately, do not assume a tosefet yoker (general cost-of-living allowance) line
-is live. It is activated only by a separate extension order and is not paid
-routinely, so check whether one is in force for the month being read before
-putting it on a slip. The framework also shortened the public-sector working week
-(42 hours down to 40 in two steps). That matters beyond leave: the hourly rate
-(erech shaa) is the monthly salary divided by the monthly hours norm, so a
-shorter week RAISES erech shaa and every line derived from it. Use the hours norm
-in force for the month being read.
+The framework also shortened the working week from 42 hours to 40 in two steps,
+182 monthly hours to 177.667 and then 173.333. That matters beyond leave: the
+hourly rate (erech shaa) is monthly salary divided by the monthly hours norm, so
+a shorter week RAISES erech shaa and every line derived from it. **The tranche
+dates differ by employer and government hospitals are on their own schedule**:
+first tranche 1.12.2023 (at the latest 1.1.2024), second 1.7.2024 (or 1.6.2024 if
+the first was deferred). Every other employer under the agreement, local
+government included, ran 1.10.2023 (deferrable to 1.11.2023) and 1.9.2024. Use the
+hours norm actually in force for the month being read.
+
+Do not assume a tosefet yoker (cost-of-living allowance) line is live: it is
+activated only by a separate extension order and is not paid routinely.
+
+Full tables, the complete exclusion list, and the per-employer tranche schedule
+are in `references/framework-agreement.md`.
 
 ### Step 1: Identify the wage grade (dirug) and the employer
 
@@ -75,28 +81,28 @@ Finance Ministry, organized into occupational wage grades.
 | Occupational therapists | Occupational-therapy dirug (dirug ripui be'isuk) |
 | Physiotherapists | Physiotherapists' dirug |
 | Dietitians and speech clinicians | Para-medical dirug (dirug para-refui) |
-| Hospital pharmacists, medical physicists, some lab scientists | Academic dirug (dirug haMachar), not a health dirug |
+| Hospital pharmacists, medical physicists, some lab scientists | Academic dirug (dirug haMachar), not a health dirug. **This skill identifies the dirug for them but does NOT carry the academic-dirug supplement set**, so build their gross from the employer's own table and tosafot list rather than from Step 3, which covers nurses, allied health and doctors only |
 | Doctors | Doctors' dirug under the IMA (haRi) agreement |
 
-Allied health is not one grade: occupational therapy, physiotherapy, and the
-para-medical grade (dietitians and speech clinicians) are three separate tracks
-with their own tables and their own tosafot. Do not carry a number from one to
-another. Pharmacists and some hospital scientists sit in the academic dirug, not
-a health dirug, which is why two "healthcare" workers on the same ward can be on
-different tables.
+Allied health is not one grade: occupational therapy, physiotherapy and the
+para-medical grade are three separate dirugim. They are published as TWO table
+sets, occupational therapy sharing one with the para-medical grade and
+physiotherapy having its own, so never carry a physiotherapy number to either of
+the other two. Pharmacists and some hospital scientists
+sit in the academic dirug, which is why two "healthcare" workers on the same ward
+can be on different tables.
 
 The employer of record is a separate question from the dirug. The same nurse
-grade is paid by the Ministry of Health (government hospitals), by Clalit (which
-owns hospitals and community clinics), or by Hadassah or a municipal hospital.
-The employer issues the payslip and can run a different pension arrangement and
-different employer-specific supplements, even though the dirug table is the
-same. Ask who employs the worker before reading a slip.
+grade is paid by the Ministry of Health, Clalit, Hadassah, or a municipal
+hospital. The employer issues the payslip and can run a different pension
+arrangement and different employer-specific supplements even though the dirug
+table is the same. Ask who employs the worker before reading a slip.
 
 ### Step 2: Read the base combined salary (education, rank, seniority)
 
-The base line (sachar meshulav, combined salary) is read from a table that is
-THREE-dimensional, not two. Skipping the first dimension is the most common way
-to read the wrong number:
+The base line (sachar meshulav) is read from a table that is THREE-dimensional,
+not two. Skipping the first dimension is the most common way to read the wrong
+number:
 
 1. **Pick the table by education level.** The nurses' dirug is not one table but
    five: practical (maasi), registered (musmach), BA, MA, and doctorate.
@@ -110,45 +116,38 @@ double-count. The per-year increment is itself banded and flattens with age:
 33 to 35, and 0.85% from 36 on. A veteran whose base has stopped moving is on the
 flat end of that curve, not looking at a payroll error.
 
-Education does not open a separate pay scale; it shifts the worker along the same
+Education does not open a separate scale; it shifts the worker along the same
 ladder by about one rank per level. At seniority 0 the same cell is reached by a
-doctorate at rank 15, an MA at 16, a BA at 17, a registered nurse at 18, and a
-practical nurse at 19.
+doctorate at 15, an MA at 16, a BA at 17, a registered nurse at 18, a practical
+nurse at 19.
 
-**The combined-salary cell is an index, not a take-home base.** This is the single
-most misread thing on an Israeli healthcare slip. The cell for a registered nurse
-at rank 13 with no seniority is 3,037.67 NIS in the last openly published grid
-(effective 01/12/2008), while that nurse's actual monthly pay is several times
-that. The cell is what every percentage supplement, the hourly rate, and the
-pension base are computed FROM. If someone asks what a nurse at rank 13 earns,
-answering with the cell alone is wrong: give the cell as the base index, then add
-the supplements in Step 3. Do NOT also add a framework tranche here: a currently
-dated table already contains it (see the order-of-operations rule above).
+**The combined-salary cell is an index, not a take-home base.** This is the most
+misread thing on an Israeli healthcare slip. The cell for a registered nurse at
+rank 13 with no seniority is 3,037.67 NIS in the last openly published grid
+(effective 01/12/2008), while that nurse's actual pay is several times that. The
+cell is what every percentage supplement, the hourly rate and the pension base are
+computed FROM, so answering "what does a rank-13 nurse earn" with the cell alone
+is wrong: give it as the base index, then add Step 3. Do NOT add a framework
+tranche here; a currently dated table already contains it.
 
 `references/nurses-salary-tables.md` carries all five nurse grids in full (ranks
 10 to 21, seniority 0 to 40) so the ladder can be read directly. Those cells are
 effective 01/12/2008 and are reproduced for STRUCTURE ONLY.
 
-**Do NOT try to bridge the 2008 cells forward to a current base.** The gap is not
-bridgeable with anything in this skill: the 2008 grid predates every nurses'
-agreement and every public-sector raise between 2009 and 2023, and the 2020-2027
-framework tranches cover only the tail of that period. Multiplying a 2008 cell by
-2%, 3.5% or 5% produces a confidently wrong number, not an estimate. Use the file
-to read the STRUCTURE (which rank range applies, how education shifts the ladder,
-how the seniority curve flattens), never as the arithmetic base for current pay.
+**Do NOT bridge the 2008 cells forward to a current base.** The 2008 grid
+predates every nurses' agreement and every public-sector raise between 2009 and
+2023, and the framework tranches cover only the tail of that period. Multiplying
+a 2008 cell by 2%, 3.5% or 5% produces a confidently wrong number, not an
+estimate. Use the file for STRUCTURE only, never as the arithmetic base.
 
-**Where the current cell actually comes from.** No current-dated grid for this
-dirug is published openly, so there is no public URL to send the user to. Three
-routes, in order of reliability:
-
-1. **The worker's own payslip**, where the combined salary appears as a named
-   line (sachar meshulav). Fastest and most reliable, and usually the right
-   answer to "what is my base": ask them to read that line.
-2. **The employer's HR or payroll department**, which holds the current table.
-3. **The profession union or the Wage Commissioner**, on request.
-
-Feed that cell into `scripts/healthcare_gross.py`. If none is available, say the
-current cell cannot be established rather than estimating it from the 2008 grid.
+**Where the current cell actually comes from.** No current-dated grid is
+published openly, so there is no URL to send the user to. In order of
+reliability: the worker's own payslip, where it appears as a named line (sachar
+meshulav) and which is usually the right answer to "what is my base"; the
+employer's HR or payroll department, which holds the current table; then the
+profession union or the Wage Commissioner on request. Feed that cell into
+`scripts/healthcare_gross.py`. If none is available, say the current cell cannot
+be established rather than estimating it from the 2008 grid.
 
 ### Step 3: Add the healthcare tosafot (and, for doctors, on-call)
 
@@ -158,32 +157,23 @@ follow their own rules and are supplied as explicit amounts.
 
 **Nurses.** A nurse's base is driven by more than the combined-salary cell:
 
-- Gmul hishtalmut (professional-development supplement) is one of the largest
-  levers on a veteran nurse's pay. Its value is a function of the recognized
-  study hours, credited in units (a unit is a block of recognized study hours),
-  approved by the nursing studies committee, and it is a permanent, pensionable
-  percentage of the combined salary. Read the current per-unit rate and the unit
-  cap from the nursing committee rather than freezing a number. A slip that omits
-  gmul hishtalmut understates a course-holding nurse badly.
-- Tosefet achayot 2024: a named supplement for nurses, 250 NIS per full-time
-  position from 1.10.2024, updated to 500 NIS per full-time position from
-  1.4.2025. It counts as salary for all purposes: hourly rate, overtime, on-call,
-  severance, pension, and keren hishtalmut. It is pro-rated for part-time and is
-  excluded from special and reinforcement shift calculations.
-- Tosefet nihul (management supplement), from 1.12.2023: 7.2%, but paid ONLY to
-  nurses at ranks 14 to 21. A nurse at rank 13 or below does not receive it, so
-  do not apply it across the board. Its base is the hourly-rate base (combined
-  salary, seniority, and the salary supplements that existed on 31.12.2022), not
-  the combined salary alone. It is pensionable.
-- Tosefet achrayut mishmarot (shift-responsibility supplement), from 1.12.2023:
-  80 NIS per shift for entitled nurses. This one is NOT salary for other
-  purposes: it does not enter the hourly rate, overtime, on-call, severance, or
-  pension and keren hishtalmut deposits. Keep it separate from the pensionable
-  lines.
-- A rotating-shift supplement is paid to two-shift and three-shift workers, and
-  is distinct from both of the above and from statutory night and overtime pay.
-- An academic-degree supplement (tosefet toar) and legacy fold-in shekel
-  supplements also appear on many slips. Read the current rate for each.
+- Gmul hishtalmut is one of the largest levers on a veteran nurse's pay: a
+  permanent, pensionable percentage of the combined salary, credited in units of
+  recognized study hours approved by the nursing studies committee. Read the
+  current per-unit rate and unit cap from the committee rather than freezing a
+  number. Omitting it understates a course-holding nurse badly.
+- Tosefet achayot 2024: 250 NIS per full-time position from 1.10.2024, raised to
+  500 NIS from 1.4.2025. It counts as salary for all purposes (hourly rate,
+  overtime, on-call, severance, pension, keren hishtalmut), is pro-rated for
+  part-time, and is excluded from special and reinforcement shift calculations.
+- Tosefet nihul (management), from 1.12.2023: 7.2%, but ONLY for nurses at ranks
+  14 to 21, so do not apply it across the board. Its base is the hourly-rate base
+  as it stood on 31.12.2022, not the combined salary alone. Pensionable.
+- Tosefet achrayut mishmarot, from 1.12.2023: 80 NIS per shift. NOT salary for
+  any other purpose, so keep it out of the pensionable lines.
+- A rotating-shift supplement, an academic-degree supplement (tosefet toar), and
+  legacy fold-in shekel supplements also appear. Read each current rate. The full
+  per-dirug table is in `references/healthcare-tosafot.md`.
 
 
 **Allied health.** From 1.4.2025 the allied-health agreement pays tosefet
@@ -211,6 +201,12 @@ fund) itself is a separate payroll line and still applies, so do not read any of
 this as "no study fund". Tosefet hachsharot is salary for all purposes, including
 the hourly rate, on-call, severance, pension, and keren hishtalmut.
 
+Allied-health staff in government hospitals are also entitled to a position-scope
+grant (mena'ak heikef misra) under the same 22.4.2025 agreement, per implementation
+instructions issued 18.9.2025 and paid in the April 2026 salary. It is conditional,
+on an undertaking to work at a qualifying position fraction and on completing a
+number of months at it, so it will not appear on every slip and is easy to miss.
+
 Allied-health workers also have a capped monthly incentive (tamritz); the ceiling
 rose from 4,125 NIS to 5,400 NIS per full-time position per month for output from
 1.4.2025. A retention and recruitment grant of 10,000 NIS per full-time position
@@ -222,67 +218,39 @@ and the grant are variable or conditional lines, not part of the fixed base.
 
 
 **Doctors.** First pin the career stage, because the base track differs by it: a
-resident (mitmach) sits on a different base track from a specialist (mumche), who
-differs again from a senior or attending physician. Residents are themselves split
-by the board exams: darga alef, before passing the written board exam (bechinat
-shlav alef), works a 45-hour week; darga bet, after it, works 42 hours. Each stage
-carries its own lines and a different on-call profile. Do not model "a doctor" as
-one base cell.
+resident (mitmach) sits on a different track from a specialist (mumche), who
+differs again from a senior physician, and residents split by the board exams
+into darga alef (45-hour week) and darga bet (42). Do not model "a doctor" as one
+base cell.
 
-Doctors have their own agreement (signed 30.9.2024, covering the state, Clalit,
-Hadassah and municipal hospitals) on top of the general framework. It raises the
-combined salary in tranches, of which the confirmed first leg is 4.88% from
-1.1.2025. Later legs exist but their exact percentages and dates could not be
-confirmed against a reachable published source, so read them from the current
-Wage Commissioner implementation circular rather than assuming a figure. A
-separate tosefet mesima leumit (national-mission supplement) was raised during
-2025, in two steps rather than one, by the amending agreement of 31.3.2025. Do
-NOT quote a shekel amount for it from memory: the published amounts could not be
-confirmed against a reachable source, and more importantly the headline figure is
-not what any individual doctor receives.
+Doctors have their own agreement (30.9.2024, replacing the 2011 one) raising the
+combined-salary table cumulatively: 4.88% from 1.1.2025, 6.5% from 1.7.2025, 7.5%
+from 1.1.2026. It has been amended repeatedly, so name the amendment you rely on.
+A separate tosefet mesima leumit runs 1.1.2025 to 31.12.2029 on a base of 3,000
+NIS staged to 4,500 then 6,000, with pension computed as if 6,000 throughout; it
+is salary for severance and carries keren hishtalmut but is NOT in the mashkoret
+koveat. The base is multiplied by a per-specialty coefficient, so the headline
+figure is not what an individual doctor receives. Detail in
+`references/healthcare-tosafot.md`.
 
-**The amount is a base figure multiplied by a coefficient (mekadem)** set by
-specialty and role, roughly 0.3 to 1.5: residents and field physicians at the
-bottom, forensic medicine at the top. Applying the headline base to a resident
-overstates the line about threefold. Read both the current base and the worker's
-coefficient from the Wage Commissioner circular. It is mutually exclusive with
-tosefet mar'ag (higher of the two, never both), is NOT counted in the mashkoret
-koveat for gimlaot, and is time-limited rather than permanent.
+A doctor's slip is structurally different: much of the pay is duty and on-call,
+paid in workday equivalents that are NOT part of base salary. The two words are
+distinct and pay differently. Toranut is an on-site duty shift; kononut is
+on-call standby from home. A toranut pays roughly double a kononut for the same
+weekday, so never read a kononut value for an on-site duty. Both are valued off
+the doctor's day-value (erech yom), so the same shift pays a specialist more than
+a resident.
 
-A doctor's slip is structurally different: a large part of pay is duty and
-on-call, both paid in workday equivalents that are NOT part of base salary. Two
-words are distinct, must not be conflated, and pay differently. Toranut is an
-on-site duty shift (the doctor is physically in the hospital). Kononut is on-call
-standby from home (the senior doctor the on-site doctor consults). A toranut pays
-roughly double a kononut for the same weekday, so never read a kononut value for
-an on-site duty. Both are valued off the doctor's day-value (erech yom), the
-monthly salary expressed as a single day's worth, so it rises with rank and the
-same shift pays a specialist more than a resident.
+The day-equivalent values for each toranut and kononut band are tabulated in
+`references/healthcare-tosafot.md`. In outline, a weekday toranut pays four
+day-equivalents against a weekday kononut's two, which is why reading a kononut
+value for an on-site duty roughly halves the line.
 
-Toranut (on-site duty, IMA agreement section 42):
-
-| Toranut timing | Payment |
-|----------------|---------|
-| Weekday | One workday plus three more (four day-equivalents) |
-| Friday eve or holiday eve | One workday plus four more (five day-equivalents) |
-| Sabbath or holiday daytime | Two workdays plus half (two and a half day-equivalents) |
-
-Kononut (on-call standby, IMA agreement section 49):
-
-| Kononut timing | Payment |
-|----------------|---------|
-| Weekday, 16:00 to 08:00 next morning | Two workdays |
-| Weekday, summoned in after 19:30 for 4.5 hours or more | Three workdays |
-| Emergency-department, by a specialist | Three and a quarter workdays |
-| Sabbath or holiday daytime, 08:00 to 16:00 | One workday |
-| Sabbath eve or holiday eve, 13:00 to 16:00 | Half a workday |
-
-Planned duty shifts and on-call are not part of the base salary, so they do not
-enter the pension and severance base the way the combined salary does. As a
-department-level sanity check (not an individual's line), a department's rota runs
-about 20 to 30 on-call slots a month, and about 60 in psychiatric hospitals; an
-individual doctor works a fraction of those. A doctor's payslip also carries a presence/stay supplement
-(tosefet shehiya) among its standing lines; read the current amount.
+Planned duty and on-call are not part of base salary, so they do not enter the
+pension and severance base the way the combined salary does. As a department-level
+sanity check, a rota runs about 20 to 30 on-call slots a month and about 60 in
+psychiatric hospitals; an individual doctor works a fraction of those. A doctor's
+slip also carries a presence supplement (tosefet shehiya); read the amount.
 
 Three more doctor-specific lines sit outside the base:
 
@@ -323,43 +291,60 @@ pieces:
   Histadrut or the profession union. Do not omit it; read the current amount.
 - Temporary wage reduction (hafchatat sachar zmanit): a war-cost participation
   deduction, agreed by collective agreement on 25.11.2024 and separately
-  legislated on 27.3.2025. There are TWO tracks with different rates, and which
-  one applies depends on whether the worker is covered by the collective
-  agreement. Histadrut-represented healthcare dirugim are on the agreement track;
-  doctors are covered by their own agreement of 31.3.2025; workers outside an
-  approved collective agreement fall under the law track.
+  legislated in 2025. THREE tracks apply across the health dirugim, and which one
+  applies depends on the dirug, not on the employer. Histadrut-represented
+  healthcare dirugim are on the agreement track: 2.290% from December 2024 to
+  December 2025, then 1.200% for 2026. Workers outside an approved collective
+  agreement are on the law track: 0.000% to March 2025, 3.307% from April to
+  December 2025, then 1.200%. The doctors' dirug is on a third track of its own
+  under the agreement of 23.1.2025 (a freeze of the seniority supplement and of
+  index linkage), NOT the 31.3.2025 wage agreement: 1.081% from 1.1.2025, raised
+  to 1.781% for 1.7.2025 to 31.12.2025 by the monitoring committee of 30.6.2025,
+  then back to 1.081% for 2026. Under the separate agreement of 14.5.2025,
+  state-employed doctors' havraa was also cut, by 66.2% in 2025 and by 5% in 2026.
 
-| Period | By agreement | By law |
-|--------|--------------|--------|
-| December 2024 to March 2025 | 2.290% | 0.000% |
-| April 2025 to December 2025 | 2.290% | 3.307% |
-| January 2026 to December 2026 | 1.200% | 1.200% |
-
-  The two tracks converge at 1.200% for 2026 and the reduction ends 31.12.2026.
-  A worker who changes dirug between 1.4.2025 and 31.12.2025 KEEPS the track they
-  started on, even when the other track's rate is higher.
-
-  It is computed on the salary excluding havraa, the clothing allowance, expense
-  reimbursements, and payments not made monthly, weekly or daily; mena'ak yovel
-  IS in the base. It shows on the slip as "tikun pensioni" and also reduces the
-  keren hishtalmut base. It does NOT reduce the pensionable insured salary or
-  final-settlement payments, so never subtract it before computing a pension.
-  A 2025 or 2026 slip read without this line overstates net pay.
+  All three end 31.12.2026 and no successor instrument has been published, so do
+  not assume the 1.2% continues into 2027. A worker who changes dirug between
+  1.4.2025 and 31.12.2025 KEEPS the track they started on. The line shows as
+  "tikun pensioni", is computed on salary excluding havraa, the clothing
+  allowance, expense reimbursements and non-monthly payments (mena'ak yovel IS in
+  the base), and reduces the keren hishtalmut base. It does NOT reduce a one-off
+  end-of-employment payment to the worker or their survivors, bridging payments,
+  the amount paid into a pension fund, or the mashkoret koveat: the agreement
+  lists those expressly and requires them to be computed as if the reduction had
+  never been made, so never subtract it before computing those four items.
+  A 2025 or 2026 slip read without this line overstates net pay. Full tables in
+  `references/wage-reduction.md`.
 
 Pensionable base: not every line feeds the pension and severance base. As a rule
 the combined salary, gmul hishtalmut, and certain permanent tosafot are
-pensionable, while the incentive (tamritz), shift premiums, on-call, havraa, and
-the clothing allowance are not. For budgetary-pension veterans the pensionable
+pensionable, while shift premiums, on-call, havraa, and the clothing allowance
+are not. The incentive (tamritz) is widely treated as non-pensionable but we
+could not source that either way, so check the agreement rather than asserting
+it. For budgetary-pension veterans the pensionable
 subset (the mashkoret koveat gimlaot) is defined even more narrowly. When
 estimating a pension or severance figure, separate the pensionable lines from the
 rest rather than using the gross.
 
-Additions on the gross side (not deductions): healthcare workers receive havraa
-(recreation pay), and public-sector employees receive an annual clothing
-allowance (ktzuvat bigud), paid annually rather than monthly. Read the current
-payment month and the amount for the grade from the employer or the agreement
-rather than assuming them. These appear on the slip on their own schedule, not
+Additions on the gross side (not deductions): havraa (recreation pay) and an
+annual clothing allowance (ktzuvat bigud). Both appear on their own schedule, not
 evenly each month, and neither is pensionable.
+
+**Public-healthcare workers are PUBLIC sector, so the public havraa day rate
+applies**: 511.60 NIS a day from 1.6.2026, up from 471.40, per the Commissioner
+on Wages circular of 8.6.2026. **Do NOT apply that rate raw to a doctors'-dirug
+slip.** Under the collective agreement of 14.5.2025, state-employed doctors'
+havraa was cut by 66.2% in 2025 and is cut by 5% in 2026, so a doctor's havraa is
+the public rate less that year's reduction. The private-sector 451.50 NIS agreed on 22.6.2026
+is a different figure for a different population, and using it understates every
+havraa day. The days are higher than the private table and the per-dirug day
+table sits in the Takshir rather than on a readable page, so read the days from
+the employer and never reuse a private days table.
+
+The clothing allowance was updated 1.9455% over 2025 by the circular of
+17.6.2026, paid in the July 2026 salary and pro-rated. The 2026 amounts are
+1,812.00 NIS at level 3 (to administrative grade 16 or unified 7) and 2,527.00
+NIS at level 4 (grade 17 or 8 and above), per Takshir 28.425.
 
 Two more lines a practitioner will look for:
 
@@ -466,7 +451,7 @@ base. Run: `python3 scripts/healthcare_gross.py --base <cell> --add <duty_total>
 - **Modeling a doctor as one base cell.** A resident, a specialist, and a senior
   physician sit on different base tracks, and on-call and global hours sit on top.
   Pin the career stage before reading a doctor's slip.
-- **Treating every line as pensionable.** The incentive, shift premiums, on-call,
+- **Treating every line as pensionable.** Shift premiums, on-call,
   havraa, and the clothing allowance do not feed the pension and severance base.
   Do not estimate a pension or severance figure from the gross.
 - **Forgetting who signs the slip.** The same dirug is paid by the Ministry of
@@ -498,6 +483,10 @@ base. Run: `python3 scripts/healthcare_gross.py --base <cell> --add <duty_total>
   and the seniority-increment schedule. Cells are effective 01/12/2008 and are
   reproduced for structure, NOT as current pay.
 - `references/healthcare-tosafot.md` - the named healthcare additions and how each is paid.
+- `references/framework-agreement.md` - the 2020-2027 framework layer: shekel
+  supplement, exclusion list, percentage tranches, and the per-employer
+  working-week tranche schedule.
+- `references/wage-reduction.md` - the three temporary-wage-reduction tracks.
 - `references/domain-checklist.md` - the coverage contract for this skill.
 - `scripts/healthcare_gross.py` - applies percentage tosafot and explicit shift
   or on-call amounts to a combined-salary cell you supply (`--example` for a
