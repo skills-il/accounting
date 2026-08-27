@@ -5,14 +5,16 @@
   "claims": [
     {
       "claim_id": "vat-rate-18",
-      "claim": "Israel's standard VAT rate is 18%, in effect since 1 January 2025.",
-      "source_url": "https://sovos.com/regulatory-updates/vat/israel-vat-rate-increase-to-18-from-january-1-2025/",
-      "raw_snippet": "The standard VAT rate in Israel is increasing from 17% to 18% from January 1, 2025.",
-      "fetched_at": "2026-06-03T20:49:36Z",
+      "claim": "The Israeli VAT rate is set by order of the Finance Minister and has been 18% since 1.1.2025.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_(%D7%99%D7%A9%D7%A8%D7%90%D7%9C)",
+      "raw_snippet": "שיעור המע\"מ משתנה מפעם לפעם, ב צו שמוציא שר האוצר , לאחר התייעצות עם ועדת הכספים של הכנסת , כחלק מה מדיניות הפיסקלית של הממשלה: מתאריך שיעור המע\"מ 1.7.1976 8% 1.11.1977 12% 1.8.1982 15% 1.6.1985 17% 1.10.1985 15% 1.3.1990 16% 1.1.1991 18% 1.1.1993 17% 15.6.2002 18% 1.3.2004 17% 1.9.2005 16.5% 1.7.2006 15.5% 1.7.2009 16.5% 1.1.2010 16% 1.9.2012 17% 2.6.2013 18% 1.10.2015 17% 1.1.2025 18%",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim_id": "allocation-threshold-2025-20k",
@@ -193,26 +195,17 @@
       "verified_at": "2026-08-15"
     },
     {
-      "claim_id": "cash-law-6000-cap",
-      "claim": "Under the Law for Reducing the Use of Cash (חוק לצמצום השימוש במזומן), a business transaction generally may not be paid in cash above NIS 6,000; paying above the cap can disallow the expense / input VAT and exposes the business to a monetary penalty (עיצום כספי).",
-      "source_url": "https://www.boi.org.il/roles/paymentsystems/cashreducinglaw/",
-      "raw_snippet": "חוק לצמצום השימוש במזומן עוסק עסקה 6,000 ש\"ח מזומן עיצום כספי",
-      "fetched_at": "2026-07-18T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "eilat-zero-rated-vat",
-      "claim": "Not every Israeli receipt carries VAT: Eilat Free-Trade-Zone transactions are exempt from VAT (effective 0%), and zero-rated supplies (exports, certain fresh produce) legitimately show no VAT line, so a VAT-less Israeli receipt is not necessarily an error or an osek-patur.",
-      "source_url": "https://www.gov.il/he/service/vat-exemption-eilat",
-      "raw_snippet": "אילת אזור סחר חופשי פטור ממע\"מ שיעור אפס יצוא ללא מע\"מ",
-      "fetched_at": "2026-07-18T00:00:00Z",
+      "claim": "Under the Eilat Free Trade Zone Law, goods sold or services supplied in Eilat or the Hevel Eilot regional council by a dealer resident in the area, for consumption or use in the area, are exempt from VAT; certain durables such as cars and dishwashers are excluded and bear full VAT.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_(%D7%99%D7%A9%D7%A8%D7%90%D7%9C)",
+      "raw_snippet": "מכירות באזור אילת . על-פי חוק אזור סחר חופשי באילת (פטורים והנחות ממיסים) , מכירת מוצרים או מתן שירותים בעיר אילת או במועצה האזורית חבל אילות בידי עוסק תושב האזור לצריכה באזור אילת או שימוש בה, פטורים ממע\"מ. על מספר מוצרים בני קיימא כמכוניות, מדיחי כלים וכדומה לא חל הפטור והם חייבים במע\"מ בשיעור מלא.",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim_id": "ita-small-sum-thresholds-2026",
@@ -296,6 +289,189 @@
         "SKILL_HE.md",
         "references/domain-checklist.md"
       ]
+    },
+    {
+      "claim_id": "vat-38a-six-month-window",
+      "claim": "Input VAT may be deducted only within six months of the date the invoice, import declaration or other document was issued (section 38(א) of the VAT Law).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "עוסק זכאי לנכות מהמס שהוא חייב בו את מס התשומות הכלול בחשבונית מס שהוצאה לו כדין או בהצהרת ייבוא או במסמך אחר שאישר לענין זה המנהל, ובלבד שהצהרת הייבוא או המסמך האחר נושאים את שמו של העוסק כבעל הטובין ושהניכוי ייעשה בתוך ששה חדשים מיום הוצאת החשבונית, ההצהרה או המסמך.",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-38a1-allocation-disallows-deduction",
+      "claim": "Section 38(א1) disallows the BUYER's input-VAT deduction on a tax invoice whose amount before tax exceeds NIS 5,000 and which carries no number allocated by the Director. It operates on the deduction, not on the validity of the invoice, and 5,000 is the figure in the primary statute.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "על אף האמור בסעיף קטן (א), לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים ושאינה כוללת מספר שהקצה לה המנהל לפי סעיף 47(א2)(2) או (א3)(1) או (א4)",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-38a2-cash-law-disallowance",
+      "claim": "Section 38(א2) disallows input VAT on an invoice whose consideration was a payment decided to breach the Law for Reducing the Use of Cash where a monetary penalty was imposed under section 9 of that law, unless the dealer satisfies the Director that tax was duly paid on the transaction; a successful appeal against the penalty refunds the over-paid tax with linkage and interest.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "על אף האמור בסעיף קטן (א), לא יותר ניכוי מס התשומות הכלול בחשבונית מס אם התמורה שבשלה ניתנה חשבונית המס היא תשלום שהוחלט שנתינתו מהווה הפרה לפי חוק לצמצום השימוש במזומן, התשע\"ח-2018, ובשל ההפרה כאמור הוטל עיצום כספי לפי סעיף 9 לאותו חוק, אלא אם כן הוכח להנחת דעתו של המנהל כי בגין העסקה שולם מס כדין",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-47a2-zero-rate-carveout",
+      "claim": "The allocation-number mechanism in section 47(א2) applies only to a tax invoice issued for a transaction whose rate of tax is not zero, and the seller is obliged to request a number on an above-threshold transaction only at the buyer's demand.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "עוסק מורשה המוציא חשבונית מס כאמור בסעיף קטן (א), רשאי לבקש מהמנהל להקצות מספר לחשבונית המס (בסעיף קטן זה – המבקש), ובעסקה שסכומה, בלא המס, עולה על הסכום האמור בסעיף 38(א1), חייב הוא לעשות כן לפי דרישת הקונה; הוראות סעיף קטן זה יחולו לעניין חשבונית מס שהוצאה בשל עסקה שהמס שחל לגביה אינו בשיעור אפס;",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-47a2-3-refusal",
+      "claim": "Section 47(א2)(3) lets the Director decide not to allocate a number where there is reasonable ground to suspect the tax invoice would be issued unlawfully.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "היה למנהל יסוד סביר לחשש שחשבונית המס שלגביה הוגשה הבקשה תוצא שלא כדין, רשאי הוא להחליט שלא להקצות מספר לחשבונית המס (להלן – החלטה מקדמית)",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-14a-private-car-no-deduction",
+      "claim": "תקנה 14(א) לתקנות מע\"מ: המס שהוטל על מכירת רכב פרטי לעוסק או על ייבוא רכב כאמור בידי עוסק אינו ניתן לניכוי כלל. Regulation 14 of the VAT Regulations bars input VAT on the purchase or import of a private car.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "איסור לנכות מס תשומות על רכב מנועי 14. (א) המס שהוטל על מכירת רכב פרטי לעוסק או על ייבוא רכב כאמור בידי עוסק לא יהיה ניתן לניכוי.",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-14b-carveouts",
+      "claim": "תקנה 14(ב) מחריגה מהאיסור שבתקנה 14 עוסק שעיקר עסקו מכירת רכב. Regulation 14(b) carves out a dealer whose main business is selling vehicles.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "הוראות תקנת משנה (א) לא יחולו במקרים הבאים: תק' (מס' 5) תשמ\"ו-1986 (1) (בוטלה); (2) הייבוא או הרכישה נעשו – (א) בידי עוסק שעיקר עסקו מכירת רכב, לרבות רכב פרטי משומש לגבי רכב שאין בו שימוש ואינו מיועד לשימוש לבד ממכירתו במהלך העסק;",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-18b-mixed-use-default",
+      "claim": "תקנה 18(ב) לתקנות מע\"מ היא ברירת המחדל הכללית לשימוש מעורב בכל תשומה, ולא כלל שמיוחד לרכב: קביעת המנהל נחשבת שומה, ובהיעדרה מנוכים שני שלישים כשעיקר השימוש לעסק ורבע כשעיקר השימוש אינו לעסק. Regulation 18 sets the general mixed-use default.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "(1) קבע המנהל את החלק היחסי לשימוש שלא לצרכי עסק, יראו את קביעתו כשומה וינהגו על פיה, כל עוד לא נקבע אחרת; (2) לא קבע המנהל את החלק היחסי, ועיקר השימוש בנכס או בשירות הוא לצרכי עסק, רשאי העוסק לנכות שני שלישים ממס התשומות; (3) לא קבע המנהל את החלק היחסי ועיקר השימוש בנכס או בשירות הוא שלא לצרכי עסק, רשאי העוסק לנכות רבע ממס התשומות.",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-osek-patur-ceiling",
+      "claim": "סעיף 1 לחוק מע\"מ מגדיר עוסק פטור כעוסק שמחזור העסקאות שלו בכל עסקיו אינו עולה על 122,833 שקלים חדשים לשנה. Section 1 of the VAT Law sets the osek patur turnover ceiling.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "\" עוסק פטור \" – עוסק שמחזור העסקאות שלו בכל עסקיו אינו עולה על 122,833 שקלים חדשים לשנה או על סכום גבוה יותר שקבע שר האוצר;",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "cash-law-caps-2022",
+      "claim": "From 1 August 2022 the Cash Law caps a cash payment in a transaction with a business at NIS 6,000 or 10% of the transaction, whichever is lower; between non-businesses the cap is NIS 15,000, or NIS 50,000 for a private vehicle sale.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%A7_%D7%9C%D7%A6%D7%9E%D7%A6%D7%95%D7%9D_%D7%94%D7%A9%D7%99%D7%9E%D7%95%D7%A9_%D7%91%D7%9E%D7%96%D7%95%D7%9E%D7%9F",
+      "raw_snippet": "עיקרי המגבלות החל מ-1 באוגוסט 2022 הם: ב עסקה עם עוסק נאסר לשלם או לקבל תשלום מזומן שגובהו עולה 6,000 ש\"ח או 10% מהעסקה, הנמוך מביניהם. בעסקה בין מי שאינם עוסקים מגבלת התשלום היא 15,000 ש\"ח, או 50,000 ש\"ח בעסקה פרטית למכירת כלי רכב",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "confidence": "medium",
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-50-invalid-document-is-separate",
+      "claim": "סעיף 50 לחוק מע\"מ הוא ההוראה שעוסקת במסמך שהוצא שלא כדין ומטילה כפל מס, ולכן פסלות מסמך אינה התוצאה של היעדר מספר הקצאה. Section 50 is the separate provision on a document issued unlawfully, imposing double tax, which is where invalidity lives.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "כה מס תשומות הכלול בחשבונית מס שהוצאה שלא כדין, רשאי המנהל להטיל עליו כפל המס המצוין בחשבונית או המשתמע ממנה, אלא אם כן הוכיח להנחת דעתו של המנהל כי לא ידע שהחשבונית הוצאה שלא כדין. (ב) על דרישה לשלם כפל מס לפי סעיפים קטנים (א) או (א1) ניתן לערער לפני בית המשפט המחוזי",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-16-hosting-bar",
+      "claim": "תקנה 16 לתקנות מע\"מ אוסרת ניכוי מס תשומות בשל הוצאות אירוח, למעט הוצאה לאירוח אדם מחוץ לארץ. Regulation 16 bars input VAT on hosting expenses, except hosting a person from abroad.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "מס תשומות על אירוח 16. לא יהא ניתן לניכוי מס תשומות בשל הוצאות אירוח, פרט לניכוי מס תשומות על הוצאה לאירוח אדם מחוץ לארץ.",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-15a-employee-benefits",
+      "claim": "תקנה 15א מסייגת ניכוי מס תשומות על טובות הנאה לעובד, אלא אם הוכח שהתשומה נמכרה לעובד או ניתנה לו כשירות והמכירה נכללת בדוח התקופתי כעסקה חייבת במס. Regulation 15A restricts input VAT on employee benefits unless the input was sold or supplied to the employee and reported as a taxable transaction.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "אם הוכח, להנחת דעתו של המנהל, כי התשומה נמכרה לעובד או ניתנה לו כשירות, והמכירה או מתן השירות כלולים בדו\"ח תקופתי של העוסק כעסקאות חייבות במס שמחירן נקבע לפי הוראות סעיף 10 לחוק.",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-12g-not-in-dealer-name",
+      "claim": "תקנה 12ג מאפשרת למנהל להכיר בניכוי מס תשומות בחשבונית שלא על שם העוסק, אם הוכח שהתשומות שימשו לצורכי עסקו ומס התשומות הוא בעד טלפון, מים, גז, חשמל או הוצאות כיוצא באלה. Regulation 12C lets the Director allow a deduction on an invoice not in the dealer's name for utilities and like expenses.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "ת מס שהוצאה לסוגי עוסקים או לעוסק פלוני שלא על שמם, אם הוכח להנחת דעתו, כי התשומות שימשו לצרכי עסקם ומס התשומות הוא בעד טלפון, מים, גז, חשמל או הוצאות כיוצא באלה.",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     }
   ]
 }

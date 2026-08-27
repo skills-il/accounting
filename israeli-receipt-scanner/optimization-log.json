@@ -1,6 +1,21 @@
 {
   "cycles": [
     {
+      "version": "1.5.0",
+      "date": "2026-08-27",
+      "trigger": "Scheduled staleness pass; brief asked specifically to verify the allocation-number rule and to treat any future threshold row as unsourced.",
+      "lessons": [
+        "ANSWERED (brief question 1): the allocation rule gates the BUYER's input-VAT deduction and does NOT invalidate the invoice. Section 38(א1) sits in the input-tax chapter; section 47(א2)(3)(ג)(2) expressly permits issuing an invoice with no allocated number; invalidity is section 50. This skill already had it right. A sibling skill in the catalogue reportedly says 'the invoice is invalid' and is wrong.",
+        "ANSWERED (brief question 2): there is NO 2027 allocation band. NIS 5,000 is the figure in the primary statute (section 38(א1)), not a transitional step, so the phase-in is complete. Verified by string-searching the full consolidated VAT Law: 25,000 and 10,000 appear zero times anywhere in it. Any '2027' row elsewhere in the catalogue is fabricated.",
+        "METHOD LESSON: an audit finding proposed adding the regulation 18(ג) full-deduction election. The regulations text reads '(ג) (בוטלה)' -- repealed. Reading the primary source is what stopped a repealed provision being shipped as live law.",
+        "NEW DEBT: the 'ITA small-sum threshold' the buyer-identity carve-out hangs on still has no number. The amount lives in the Director's bookkeeping directives, not in the law or the regulations (the phrase 'סכום קטן' appears zero times in both). The skill's habit of naming it without a figure is correct; do NOT let a future cycle fill it in with a guess.",
+        "NEW DEBT: document-type codes remain unstated, deliberately. Two live numbering systems disagree (SHAAM has 340 = קבלה and 400 = תעודת חיוב; Green Invoice has 400 = קבלה), so a bare code would be misread. Naming documents rather than coding them stays the right call.",
+        "CARRY (3rd cycle): the scripts referenced in earlier cycles are still unshipped. Either write them or drop the references.",
+        "METHOD LESSON: the Expert found that regulation 16's hosting bar lived only in a worked example and never in the decision path. An OCR skill that emits a boolean is judged by its AND-list, not by its prose: a rule that is not in the list does not exist. Check every hard-false trigger against the list, not against the document.",
+        "NEW DEBT: the JSON record still has no field for the claiming business's own osek number, the vehicle class, whether a vehicle document is a purchase or a running cost, or the business-use share. The decision path now reads state the record cannot hold. Add them next cycle."
+      ]
+    },
+    {
       "version": "1.2.0",
       "date": "2026-06-03",
       "lessons": [
