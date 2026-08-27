@@ -177,7 +177,7 @@ Perform validation checks on the extracted data:
 3. **VAT Registration**: Validate that the osek murshe number is exactly 9 digits. The 9-digit number also carries a check digit, which should be validated with the Luhn mod-10 algorithm (the same scheme Israeli ID-type numbers use). Do NOT invent any other checksum formula.
 4. **Line Item Totals**: Verify that sum of line items equals the subtotal (within rounding tolerance).
 5. **Currency**: Confirm amounts are in NIS. Flag if foreign currency symbols are detected. A foreign document's tax line (US sales tax, EU VAT, etc.) must NEVER populate `vat_amount` or `vat_deductible`; it is not Israeli input VAT (reverse-charge applies). Set `vat_deductible: false` and add a foreign-vendor warning.
-6. **Allocation Number Threshold (date-aware)**: If the document is a tax invoice (חשבונית מס or חשבונית מס / קבלה), select the threshold band from the INVOICE's own date (not today): NIS 20,000 for invoices dated in 2025, NIS 10,000 for January through May 2026, NIS 5,000 from 1 June 2026 onward. If the subtotal (net) exceeds the band for that date AND `allocation_number` is null, emit a warning that without an allocation number the input VAT is not deductible. Digitizing an older shoebox invoice must not throw a false warning under today's lower band.
+6. **Allocation Number Threshold (date-aware)**: For a tax invoice, select the band from the INVOICE's own date, not today's: nothing before May 2024, then 25,000 / 20,000 / 10,000 / 5,000 (full table in the Allocation Number section). If the net subtotal EXCEEDS that date's band and `allocation_number` is null, warn that the input VAT is not deductible. An older shoebox invoice must not throw a false warning under today's lower band.
 7. **Buyer Identity (with small-sum carve-out)**: Confirm the invoice is issued in the buyer's name and that `buyer_vat_number` matches the business's own osek number. If a LARGE invoice (above the ITA small-sum threshold) has no printed buyer, or the buyer does not match, set `vat_deductible: false` and `needs_review: true`, and warn that the supplier side is valid but the invoice is not in the buyer's name. BELOW the small-sum threshold, however, a valid חשבונית מס or קופה-רושמת slip may lawfully omit the buyer's VAT number, so do NOT hard-deny it: set `needs_review: true` and defer to the bookkeeper to confirm the purchase is for the business.
 8. **Six-Month Deduction Window**: Input VAT must be claimed within 6 months of the invoice issue date. If the invoice date is more than 6 months in the past, emit a warning that the invoice may be past the deduction window.
 9. **Deductibility Flag**: Set `vat_deductible: true` only when ALL hold: a חשבונית מס / חשבונית מס / קבלה from an osek murshe with a valid 9-digit osek number; the purchase is for the business, not private consumption; the invoice is within the six-month window; an allocation number when above the date-aware threshold; the buyer condition in item 7 (with its small-sum carve-out); and the category is not blocked. Set `false` for an inherently-private-consumption item, a plain קבלה, a חשבונית עסקה (proforma), an osek-patur supplier, or a foreign document.
@@ -265,17 +265,24 @@ Result: Complete JSON with tax-relevant notes for the accountant.
 
 ## Allocation Number Field
 
-For B2B tax invoices at or above the current SHAAM threshold, the printed invoice must include an **allocation number (mispar haktza'a)** alongside the standard tax-invoice fields. Threshold timeline:
+A B2B tax invoice above the SHAAM threshold must carry an **allocation number (mispar haktza'a)**. The statute says `עולה על` (EXCEEDS), so an invoice sitting exactly on a band figure is outside it. Timeline:
 
+- Before May 2024: **none required**; the regime did not yet exist
+- May 2024 - Dec 2024: required when net amount > NIS 25,000
 - Jan 2025 - Dec 2025: required when net amount > NIS 20,000
 - Jan - May 2026: required when net amount > NIS 10,000
 - **Jun 2026 onwards (current): required when net amount > NIS 5,000**
 
-When scanning a B2B tax invoice, extract `allocation_number: string|null` and flag missing values on invoices that exceed the band that applies to the invoice's own date (not today's date). A plain receipt (קבלה) and a proforma invoice (חשבונית עסקה) do not require allocation numbers, but a חשבונית מס / קבלה (tax invoice / receipt) above the threshold DOES require one, just like a plain חשבונית מס.
+The first two rows matter most here, because this tool digitises accumulated paper: a 2024
+invoice tested against today's 5,000 warns on a document that never needed a number. The
+25,000 figure is absent from the CONSOLIDATED text of section 38(א1), which shows only the
+current schedule; that absence is not evidence the band never existed.
+
+Extract `allocation_number: string|null` and flag missing values only on invoices exceeding the band for the invoice's own date. A קבלה and a חשבונית עסקה need no allocation number; a חשבונית מס / קבלה above the threshold does, exactly like a plain חשבונית מס.
 
 **Zero-rated transactions are exempt.** Section 47(א2)(1) applies the allocation mechanism only to a tax invoice issued for a transaction whose rate of tax is not zero. So do NOT raise a missing-allocation warning on a large zero-rated invoice, which is the same population as the Eilat and export branch above.
 
-**What a missing number actually costs, and who bears it.** Section 38(א1) sits in the input-tax chapter and disallows the BUYER's deduction. It does not make the invoice invalid: the document remains a lawful tax invoice, the seller still owes output tax on it, and section 47(א2)(3)(ג)(2) expressly contemplates a seller issuing an invoice with no allocated number and attaches only the section 38(א1) consequence. Invalidity is a different provision (section 50, double tax on a document issued unlawfully) and missing allocation numbers are not in it. Say "the buyer cannot deduct", never "the invoice is invalid".
+**What a missing number costs, and who bears it.** Section 38(א1) sits in the input-tax chapter and disallows the BUYER's deduction. It does not invalidate the invoice: the document remains lawful, the seller still owes output tax, and section 47(א2)(3)(ג)(2) expressly contemplates an invoice issued with no allocated number, attaching only the 38(א1) consequence. Invalidity is section 50 (double tax on a document issued unlawfully) and missing allocation numbers are not in it. Say "the buyer cannot deduct", never "the invoice is invalid".
 
 **The seller is only obliged to ask when the buyer demands it.** Section 47(א2)(1) makes the request mandatory "לפי דרישת הקונה" on an above-threshold transaction. A buyer who never demanded a number and later cannot deduct has no complaint about the invoice itself, so if the field is empty the practical advice is to go back to the supplier and demand allocation, not to reject the document.
 

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-receipt-scanner",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-08-27T17:39:29.932284+00:00",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -472,6 +472,42 @@
       ],
       "verified_via": "curl",
       "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "allocation-schedule-full",
+      "claim": "The allocation-number regime began in May 2024. The threshold schedule before VAT is NIS 25,000 from May 2024, 20,000 from January 2025, 10,000 from January 2026 and 5,000 from June 2026.",
+      "source_url": "https://www.icount.co.il/blog/invoice-israel/",
+      "raw_snippet": "מאי 2024 25,000 ש״ח ינואר 2025 20,000 ש״ח ינואר 2026 10,000 ש״ח יוני 2026 5",
+      "fetched_at": "2026-08-27T17:39:29.932284+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-schedule-corroboration",
+      "claim": "Independent corroboration of the same four-step schedule from the start of the reform.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מאי 2024 25,000 ₪ ינואר 2025 20,000 ₪ ינואר 2026 10,000 ש״ח יוני 2026 ואילך 5,000 ש״ח",
+      "fetched_at": "2026-08-27T17:39:29.932284+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-regime-start-may-2024",
+      "claim": "The Israel Invoices reform came into force in May 2024, so an invoice dated before that never required an allocation number.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "מת חשבוניות ישראל, נכנסה לתוקף במאי 2024",
+      "fetched_at": "2026-08-27T17:39:29.932284+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
     }
   ]
 }
