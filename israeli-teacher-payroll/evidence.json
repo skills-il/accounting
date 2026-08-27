@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-teacher-payroll",
   "schemaVersion": "2",
-  "generated_at": "2026-07-16",
+  "generated_at": "2026-08-27T00:00:00Z",
   "claims": [
     {
       "claim": "אופק חדש היא רפורמת החינוך היסודי וחטיבות הביניים, שהוצגה לראשונה ב-24 במרץ 2008.",
@@ -24,42 +24,44 @@
       "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/work-week-ofek/",
       "raw_snippet": "עובד הוראה במשרה מלאה נדרש לעבוד 36 שעות שבועיות המורכבות משעות פרונטליות, שעות פרטניות ושעות שהייה.",
       "confidence": "high",
-      "verified_via": "gov.il content API",
+      "verified_via": "curl",
       "claim_id": "ofek-total-hours",
-      "fetched_at": "2026-08-11T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_at": "2026-08-17"
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
-      "claim": "משרה מלאה באופק חדש היא 36 שעות שבועיות המורכבות משעות פרונטליות, פרטניות ושהייה. הפילוח המדויק לכל שכבה מופיע בטבלאות שבוע העבודה שאליהן מפנה העמוד, ולא בעמוד עצמו.",
+      "claim": "An Ofek Chadash elementary teacher (and a chativa-tzeira kindergarten teacher) works 26 frontal, 5 private and 5 stay hours, 36 in total.",
       "claim_type": "threshold",
-      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/work-week-ofek/",
-      "raw_snippet": "עובד הוראה במשרה מלאה נדרש לעבוד 36 שעות שבועיות המורכבות משעות פרונטליות, שעות פרטניות ושעות שהייה.",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%9E%D7%91%D7%A0%D7%94-%D7%A9%D7%91%D7%95%D7%A2-%D7%A2%D7%91%D7%95%D7%93%D7%94/",
+      "raw_snippet": "למורה בבית ספר יסודי ולגננת בחטיבה הצעירה (חט\"צ) 26 שעות פרונטליות, 5 שעות פרטניות, 5 שעות שהייה – 36 שעות",
       "confidence": "high",
       "claim_id": "ofek-elementary-split",
-      "fetched_at": "2026-08-17",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "Ministry of Education Poh portal fetched with a browser user agent",
-      "verified_at": "2026-08-17"
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
-      "claim": "Ofek Chadash junior-high (chativat beynayim) full position: 23 frontal + 4 private + 9 stay = 36 hours.",
+      "claim": "An Ofek Chadash junior-high teacher works 23 frontal, 4 private and 9 stay hours, 36 in total.",
       "claim_type": "threshold",
-      "source_url": "https://www.itu.org.il/wp-content/uploads/2020/07/table-mivne-shaot-chatav.pdf",
-      "raw_snippet": "For a full-time teacher in middle school, the work week structure is: 23 hours of frontal teaching, 4 private lesson hours, and 9 hours of stay, totaling 36 hours per week.",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%9E%D7%91%D7%A0%D7%94-%D7%A9%D7%91%D7%95%D7%A2-%D7%A2%D7%91%D7%95%D7%93%D7%94/",
+      "raw_snippet": "למורה בחטיבת הביניים 23 שעות פרונטליות, 4 שעות פרטניות, 9 שעות שהייה – 36 שעות",
       "confidence": "high",
       "claim_id": "ofek-juniorhigh-split",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim": "Private (pratani) hours are hours in which the teacher works with a student one-on-one or in a small group of up to five students.",
@@ -67,14 +69,14 @@
       "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/work-week-ofek/",
       "raw_snippet": "שעות פרטניות - שעות שבהן עובד ההוראה עובד עם תלמיד באופן פרטני או בקבוצה קטנה של עד חמישה תלמידים.",
       "confidence": "high",
-      "verified_via": "gov.il content API",
+      "verified_via": "curl",
       "claim_id": "ofek-private-def",
-      "fetched_at": "2026-08-11T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_at": "2026-08-17"
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim": "Stay (shehiya) hours are hours spent at school for meetings, preparing materials, parent meetings, and checking assignments and exams.",
@@ -82,14 +84,14 @@
       "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/work-week-ofek/",
       "raw_snippet": "שעות שהייה - שעות שבהן עובד ההוראה שוהה בבית הספר למטרת ישיבות, הכנת חומרי למידה, מפגשים עם הורים ובדיקת עבודות ומבחנים.",
       "confidence": "high",
-      "verified_via": "gov.il content API",
+      "verified_via": "curl",
       "claim_id": "ofek-stay-def",
-      "fetched_at": "2026-08-11T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_at": "2026-08-17"
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim": "Ofek Chadash has 9 teacher ranks (1-9); principals and deputies have 4 ranks (alef-dalet).",
@@ -107,17 +109,19 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "Promotion up to rank 6 requires paznun plus 60 hours of professional development per year; rank 7 and above adds 75 hours per year, promotion quotas, and a personal evaluation.",
+      "claim": "Ofek Chadash promotion requires paznun (months in rank) plus shapam (professional-development hours) plus an evaluation: 30 months and 120 hours to ranks 2 and 3, 36 months and 180 hours to ranks 4, 5 and 6, 48 months and 210 hours to ranks 7, 8 and 9.",
       "claim_type": "threshold",
       "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/new-ofek-degree/",
-      "raw_snippet": "הקידום עד לדרגה 6 מותנה בפז\"נ וב-60 שעות פיתוח מקצועי בשנה. הקידום לדרגה 7 ומעלה מותנה בפז\"נ, בפתוח מקצועי 75 שע' בשנה, במכסות קידום ובהערכה האישית של המורה.",
+      "raw_snippet": "טבלת קידום דרגות החל משנת 2016: דרגה פז\"נ שפ\"מ 1–2 30 120 2–3 30 120 3–4 36 180 4–5 36 180 5–6 36 180 6–7 48 210 7–8 48 210 8–9 48 210",
       "confidence": "high",
       "claim_id": "ofek-promotion-rule",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_via": "curl"
     },
     {
       "claim": "Seniority (vetek) pays 2% for each year up to and including year 6, then 1% for each year from the 7th year up to 36 years.",
@@ -135,69 +139,79 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "Ofek Chadash teachers do not accumulate gmulim but accumulate professional-development hours for rank promotion; Oz LaTmura teachers can accumulate one gmul per year at most.",
+      "claim": "Under Oz LaTmura at most one gmul may be banked per year (sabbatical, half-sabbatical and unpaid leave excepted); Ofek Chadash teachers accumulate professional-development hours toward rank instead.",
       "claim_type": "feature",
       "source_url": "https://poh.education.gov.il/MerhavMinhali/HskalaVetek/Pages/GmuleiHishtalmut.aspx",
-      "raw_snippet": "עובד הוראה ברפורמת אופק חדש אינו צובר גמולים אלא שעות התפתחות מקצועית לקידום דרגה. לעומת זאת, מורים בעוז לתמורה יכולים לצבור גמול אחד בכל שנה ולא יותר.",
+      "raw_snippet": "על פי הסכם עוז לתמורה, ניתן לצבור גמול אחד בשנה, למעט שבתון, חצי שבתון וחל\"ת.",
       "confidence": "high",
       "claim_id": "ofek-no-gmul",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
-      "claim": "The Oz LaTmura position base is 40 weekly hours made of 24 frontal + 6 private + 10 teaching-support hours.",
+      "claim": "The original (pre-tashpe) Oz LaTmura full position was 40 weekly hours: 24 frontal, 6 private, 10 teaching-support. It still governs older payslips and older tables.",
       "claim_type": "threshold",
-      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
-      "raw_snippet": "בסיס המשרה החדש ברפורמת עוז לתמורה הוא 40 שעות שבועיות, והמשרה מורכבת מ-24 ש\"ש פרונטליות, 6 ש\"ש פרטניות ו-10 ש\"ש תומכות הוראה.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%96_%D7%9C%D7%AA%D7%9E%D7%95%D7%A8%D7%94",
+      "raw_snippet": "מבנה שבוע העבודה – עובד הוראה המועסק בהיקף משרה מלאה ישהה בבית הספר 40 שעות שבועיות. הרכב השעות: 24 שעות הוראה פרונטלית, 6 שעות הוראה פרטנית, 10 שעות תומכות הוראה.",
       "confidence": "high",
       "claim_id": "oz-base-structure-40",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim": "The 10 Oz LaTmura teaching-support hours cover work meetings (2/wk), team training (2/wk), parent talks (1/wk), and prep plus checking work and exams (5/wk).",
       "claim_type": "threshold",
       "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
-      "raw_snippet": "עשר שעות תומכות הוראה תשובצנה לאורך כל יום העבודה יוקדשו לפעילות מקצועית אישית של המורה ולפעילות בית ספרית: ישיבות עבודה (שעתיים שבועיות), השתלמויות צוותיות (שעתיים שבועיות), שיחות עם הורים (שעה שבועית), הכנת חומרי הוראה, בדיקת עבודות ומבחנים (5 שעות שבועיות).",
+      "raw_snippet": "שעות תומכות הוראה ישובצו לאורך כל יום העבודה ויוקדשו לפעילות מקצועית אישית של המורה ולפעילות בית ספרית לפי החלוקה הבאה: ישיבות עבודה 2 ש\"ש; השתלמויות צוות 2 ש\"ש; שיחות עם הורים 1 ש\"ש; הכנת חומרי הוראה, בדיקת עבודות ומבחנים 5 ש\"ש.",
       "confidence": "high",
       "claim_id": "oz-support-breakdown",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim": "In Oz LaTmura private hours, teachers work with a discussion/learning group of up to 3 students, or up to 5 by a pedagogical-team decision.",
       "claim_type": "feature",
       "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
-      "raw_snippet": "במסגרת השעות הפרטיות יעבדו המורים עם קבוצת שיח ולמידה של עד 3 תלמידים או, לפי החלטת צוות פדגוגי ברשות מנהל בית הספר, עד 5 תלמידים.",
+      "raw_snippet": "שעות עבודה עם קבוצת שיח ולמידה של עד 3 תלמידים או לפי החלטת צוות פדגוגי ברשות מנהל בית הספר, עד 5 תלמידים.",
       "confidence": "high",
       "claim_id": "oz-private-def",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
-      "claim": "From school year tashpe (2024/25) the Oz LaTmura full position changes to 38 weekly hours: 25 frontal + 3 private (with 10 teaching-support unchanged).",
+      "claim": "From tashpe the Oz LaTmura full position is 38 weekly hours: 25 frontal, 3 private, 10 teaching-support.",
       "claim_type": "threshold",
-      "source_url": "https://www.malam-payroll.com/oz-letmura-work-week-tashpe/",
-      "raw_snippet": "החל משנת הלימודים תשפ\"ה יחול שינוי במבנה שבוע עבודה כדלקמן: בסיס המשרה של מורה המועסק בהיקף משרה של 100% יהיה 38 ש\"ש (במקום 40 ש\"ש). ההרכב של 38 השעות השבועיות יהיה כדלהלן: 25 שעות הוראה פרונטאלית בפני כיתה ו-3 שעות פרטניות.",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "עובד הוראה במשרה מלאה נדרש לעבוד 38 שעות שבועיות. השעות השבועיות מורכבות מ-25 ש\"ש פרונטליות, 3 ש\"ש הוראה פרטנית ו-10 ש\"ש תומכות הוראה",
       "confidence": "medium",
       "claim_id": "oz-tshpe-change",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim": "עוז לתמורה היא רפורמת החינוך העל-יסודי, המיושמת מתשע\"ב; ההסכם נחתם ב-14 באוגוסט 2011. היא חלה על החטיבות העליונות, בעוד שגני הילדים מכוסים באופק חדש.",
@@ -240,7 +254,9 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_via": "curl"
     },
     {
       "claim": "A gmul hishtalmut (professional-development bonus) unit is 112 single study hours assessed with a positive grade.",
@@ -258,121 +274,124 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "Class-education (homeroom) gmul is 10% of combined salary, with a higher 11.5% rate kept for grade-1 (alef) homeroom teachers.",
+      "claim": "Under Ofek Chadash gmul chinuch is 10% of the combined salary or 1,000 NIS whichever is higher, and 11.5% or 1,000 NIS higher-of for a grade-1 homeroom or a junior-high gananet, from September 2023.",
       "claim_type": "percentage",
-      "source_url": "https://www.itu.org.il/lobby-tnai-avoda/gmulei-tafkid/",
-      "raw_snippet": "גמול חינוך בשיעור 10% משאיר על כנו את גמול החינוך הגבוה יותר למחנכי כיתות א' -11.5%.",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "מחנך כיתה: 10% מהשכר המשולב או 1000 ₪, הגבוה מבין השניים (מספטמבר 2023) [ 2 ] מחנך כיתה א'/ גננת חט\"ב: %11.5 מהשכר המשולב או 1000 ₪, הגבוה מבין השניים (מספטמבר 2023)",
       "confidence": "high",
       "claim_id": "gmul-chinuch-rate",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
-      "claim": "Under the reform, a subject-coordinator gmul for subjects other than English or mathematics is 8%, and a professional-development role gmul is 6% of combined salary. Overall, role and study gmulim can add between 10% and 30% to gross salary.",
+      "claim": "Under Ofek Chadash the subject-coordinator gmul is 6% in an elementary school and 8% in a junior-high.",
       "claim_type": "percentage",
-      "source_url": "https://www.itu.org.il/lobby-tnai-avoda/gmulei-tafkid/",
-      "raw_snippet": "Class education bonus: 10% of combined salary for eligible teaching staff. Professional development bonus: 6% of combined salary. Subject coordinator bonus for non-English/mathematics subjects under the new reform: 8%.",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "רכז מקצוע: בבית ספר יסודי – 6% מהשכר המשולב; בחטיבת ביניים – 8% מהשכר המשולב",
       "confidence": "high",
       "claim_id": "gmul-coordinator-and-dev",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
-      "claim": "Kindergarten managers get a management gmul of about 17% for up to 5 years of management seniority and 20% for 6-10 years.",
+      "claim": "The Ofek kindergarten-management gmul has three bands: 17% up to 5 years of management seniority (ranks 1-2), 20% for 6 to 10 years (ranks 3-4), 21% above 10 years (ranks 5-9), each with a floor of 1,500 NIS, whichever is higher.",
       "claim_type": "percentage",
-      "source_url": "https://www.itu.org.il/lobby-tnai-avoda/gmulei-tafkid/",
-      "raw_snippet": "גננות עם וותק ניהולי של עד חמש שנים זכאיות לגמול ניהול של כ - 17%, גננות מנהלות עם ותק ניהול של 6 - 10 שנים מקבלות גמול ניהול של 20%.",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%A0%D7%A0%D7%95%D7%AA-%D7%91%D7%90%D7%95%D7%A4%D7%A7-%D7%97%D7%93%D7%A9/",
+      "raw_snippet": "בעלת ותק בניהול של עד 5 שנים (כולל) בדרגה 1 עד 2 17% או מינימום 1500 ₪ הגבוה מבין השניים בעלת ותק בניהול של 6 עד 10 שנים (כולל) בדרגה 3 עד 4 20% או מינימום 1500 ₪ הגבוה מבין השניים בעלת ותק בניהול מעל 10 שנים בדרגה 5 עד 9 21% או מינימום 1500 ₪ הגבוה מבין השניים",
       "confidence": "medium",
       "claim_id": "gmul-nihul-gan",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_via": "curl"
     },
     {
-      "claim": "A teacher is entitled to at most two role gmulim (gmulei tafkid).",
+      "claim": "A teacher who is neither a first deputy nor a principal may hold at most two role gmulim; for a second deputy or above the deputy gmul counts as one of the two.",
       "claim_type": "threshold",
-      "source_url": "https://www.itu.org.il/lobby-tnai-avoda/gmulei-tafkid/",
-      "raw_snippet": "מורה יהיה זכאי לכל היותר לשני גמולי תפקיד.",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "עובד הוראה, שאינו סגן ראשון או מנהל, יכול לקבל שני גמולי תפקיד לכל היותר. לסגן שני ומעלה – גמול הסגנות ייחשב לאחד משני גמולי התפקיד",
       "confidence": "high",
       "claim_id": "two-role-gmul-max",
-      "fetched_at": "2026-07-06T00:00:00Z",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
-      "claim": "A teacher who teaches in both a junior-high (Ofek Chadash) and a high school (Oz LaTmura) at once is paid under BOTH reforms, each part according to her position fraction in each division. The two parts are computed separately and summed.",
+      "claim": "A teacher who teaches in both a junior-high (Ofek Chadash) and a high school (Oz LaTmura) at once is paid under BOTH reforms, each part according to her position fraction in each division. The two parts are computed separately and summed. Reported by a teacher-finance publication, not an official ministry or union page; the skill instructs the user to confirm with the payroll unit before electing.",
       "claim_type": "feature",
       "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
       "raw_snippet": "הוא ימשיך לקבל גם לפי אופק-חדש וגם לפי עוז-לתמורה, לפי חלקיות משרתו בכל אחת מהחטיבות.",
-      "confidence": "high",
+      "confidence": "medium",
       "claim_id": "split-appointment-dual-reform",
       "fetched_at": "2026-07-16T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_via": "curl"
     },
     {
-      "claim": "To unify salaries (ichud maskorot) through the Ministry of Education a teacher needs at least a third position (1/3) in the junior-high; to unify through the baalut, at least a half position (1/2) in the high school; plus permanence (kviut) at the paying employer.",
+      "claim": "To unify salaries (ichud maskorot) through the Ministry of Education a teacher needs at least a third position (1/3) in the junior-high; to unify through the baalut, at least a half position (1/2) in the high school; plus permanence (kviut) at the paying employer. Reported by a teacher-finance publication, not an official ministry or union page; the skill instructs the user to confirm with the payroll unit before electing.",
       "claim_type": "threshold",
       "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
       "raw_snippet": "כדי לקבל איחוד-משכורות ממשרד-החינוך, צריך לעבוד בחטיבת-הביניים לפחות שליש-משרה. כדי לקבל איחוד דרך הבעלות, צריך שיהיה לך בתיכון לפחות חצי משרה.",
-      "confidence": "high",
+      "confidence": "medium",
       "claim_id": "ichud-maskorot-eligibility",
       "fetched_at": "2026-07-16T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_via": "curl"
     },
     {
-      "claim": "Salary unification removes the need for annual tax coordination (teum mas). Without unification, two employers issue two separate payslips and the teacher must file teum mas or be over-withheld at the second employer.",
+      "claim": "Salary unification removes the need for annual tax coordination (teum mas). Without unification, two employers issue two separate payslips and the teacher must file teum mas or be over-withheld at the second employer. Reported by a teacher-finance publication, not an official ministry or union page; the skill instructs the user to confirm with the payroll unit before electing.",
       "claim_type": "feature",
       "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
       "raw_snippet": "איחוד משכורות פוטר אותנו מהצורך בתיאום-מס, מסיבה פשוטה.",
-      "confidence": "high",
+      "confidence": "medium",
       "claim_id": "ichud-maskorot-tax-coord",
       "fetched_at": "2026-07-16T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_via": "curl"
     },
     {
-      "claim": "When the combined position exceeds 100%, salary unification can cost benefits that are capped at 100% of a position, such as bigud (clothing), havraa (recreation pay), and meonot (childcare).",
+      "claim": "When the combined position exceeds 100%, salary unification can cost benefits that are capped at 100% of a position, such as bigud (clothing), havraa (recreation pay), and meonot (childcare). Reported by a teacher-finance publication, not an official ministry or union page; the skill instructs the user to confirm with the payroll unit before electing.",
       "claim_type": "feature",
       "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
       "raw_snippet": "כל ההטבות שמוגבלות ל-100% משרה (ביגוד, הבראה, מעונות ואולי שכחתי עוד משהו), פנסיה מעל 100%, גמול הכשרות למי שמחנך בחטיבה.",
-      "confidence": "high",
+      "confidence": "medium",
       "claim_id": "ichud-over-100-benefit-cap",
       "fetched_at": "2026-07-16T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim": "An entry Ofek Chadash teacher (rank 1, seniority 0) earns roughly 8,000 NIS gross for a full position (approximate, from a non-official salary guide).",
-      "claim_type": "currency",
-      "source_url": "https://paywatch.co.il/ofek-chadash-salary-table/",
-      "raw_snippet": "מורה מתחיל באופק חדש (דרגה 1, ותק 0) מרוויח כ-8,000 ₪ ברוטו למשרה מלאה.",
-      "confidence": "low",
-      "claim_id": "starting-salary-approx",
-      "fetched_at": "2026-07-06T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_via": "curl"
     },
     {
       "claim": "שכר המינימום החודשי הוא 6,443.85 ש\"ח החל מ-1.4.2026, לאחר שעמד על 6,247.67 ש\"ח מ-1.4.2025. העמוד עצמו עדיין מנוסח סביב הסכום הקודם ומציין את החדש בסוגריים.",
@@ -390,19 +409,19 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "Israel monthly minimum wage from 1 April 2026 is 6,443.85 NIS. (6,443.85 ש\"ח). The previously cited https://www.btl.gov.il/Mediniyut/GeneralData/Pages/minimum-wage.aspx now returns 404.",
+      "claim": "From 1.4.2026 the minimum wage is 6,443.85 NIS a month for a full position and 35.40 NIS an hour.",
       "claim_type": "currency",
-      "source_url": "https://www.gov.il/he/pages/minimum-wage",
-      "raw_snippet": "Sorry, you have been blocked You are unable to access www.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A9%D7%9B%D7%A8_%D7%9E%D7%99%D7%A0%D7%99%D7%9E%D7%95%D7%9D",
+      "raw_snippet": "החל מיום 01.04.2026 שכר המינימום הוא 6,443.85 ₪ לחודש למשרה מלאה ו-35.40 ₪ לשעה",
       "confidence": "high",
       "claim_id": "min-wage-2026",
-      "fetched_at": "2026-08-19",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "dead link replaced with a live page from the same publisher, checked with a browser user agent",
-      "verified_at": "2026-08-19"
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim": "The average wage in the economy per Bituach Leumi section 2 as of January 2026 is 13,769 ש\"ח (13,769 NIS). Section 1 average wage is 13,566.",
@@ -415,20 +434,9 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim": "By law the minimum wage is set at 47.5% of the average wage.",
-      "claim_type": "percentage",
-      "source_url": "https://www.kolzchut.org.il/he/שכר_מינימום",
-      "raw_snippet": "החוק קובע בהגדרה של שכר מינימום כי הוא יעמוד על סך של 47.5% מהשכר הממוצע.",
-      "confidence": "high",
-      "claim_id": "min-wage-def-pct",
-      "fetched_at": "2026-07-06T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
+      ],
+      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_via": "curl"
     },
     {
       "claim": "Employee national-insurance rate: reduced rate rose from 0.40% to 1.04% from January 2025; the full rate stays at 7.00%. The previously cited https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx now returns 404.",
@@ -829,19 +837,19 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "שכר המינימום השעתי על בסיס 182 שעות לחודש הוא 35.40 ש\"ח מ-1.4.2026 (34.32 ש\"ח קודם לכן); על בסיס 186 שעות לפי החוק הוא 34.64 ש\"ח.",
+      "claim": "The minimum hourly wage is 35.40 NIS from 1.4.2026, the 6,443.85 NIS monthly figure on the 182-hour basis.",
       "claim_type": "figure",
-      "source_url": "https://www.gov.il/he/pages/minimum-wage?chapterIndex=2",
-      "raw_snippet": "שכר השעה יחושב על בסיס 182 שעות לחודש ולכן, נכון להיום, השכר השעתי הוא 34.32 ₪ (החל מיום 1.4.2026 – 35.40 ש\"ח)",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A9%D7%9B%D7%A8_%D7%9E%D7%99%D7%A0%D7%99%D7%9E%D7%95%D7%9D",
+      "raw_snippet": "החל מיום 01.04.2026 שכר המינימום הוא 6,443.85 ₪ לחודש למשרה מלאה ו-35.40 ₪ לשעה",
       "confidence": "high",
-      "verified_via": "gov.il minimum-wage page read in a browser (SPA, not fetchable by curl)",
+      "verified_via": "curl",
       "claim_id": "min-wage-hourly-2025",
-      "fetched_at": "2026-08-17",
+      "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_at": "2026-08-17"
+      "verified_at": "2026-08-27T00:00:00Z"
     },
     {
       "claim": "שכר המינימום החודשי הוא 6,443.85 ש\"ח החל מ-1.4.2026, לאחר שעמד על 6,247.67 ש\"ח מ-1.4.2025. העמוד עצמו עדיין מנוסח סביב הסכום הקודם ומציין את החדש בסוגריים.",
@@ -911,6 +919,589 @@
       "appears_in": [
         "SKILL.md"
       ]
+    },
+    {
+      "claim_id": "oz-age-band-hours",
+      "claim": "Oz LaTmura full position falls by age: 23 frontal / 36 total at ages 50-55, 21 frontal / 34 total over 55.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "מגיל 55-50: 23 ש\"ש פרונטליות ו-36 ש\"ש בסך הכול; מעל גיל 55: 21 ש\"ש פרונטליות ו-34 ש\"ש בסך הכול",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-chinuch-floor-1000",
+      "claim": "Gmul chinuch is 10% or 1,000 NIS, whichever is higher, from 1.9.2024.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "גמול מחנך כיתה: החל מתאריך 1.9.2024 שיעור הגמול האחוזי למחנך כיתה יהיה בשיעור של 10% או 1,000 ש\"ח – הגבוה מבניהם.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-rakaz-miktzoa-9-math-eng",
+      "claim": "Subject-coordinator gmul is 8%, and 9% for mathematics and English coordinators, from 1.9.2025.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "רכז מקצוע: החל מתאריך 1.9.2025 שיעור הגמול לרכז מקצוע המועסק בתנאי הרפורמה במקצועות שאינם אנגלית ומתמטיקה יהיה 8%. הגמול האחוזי לרכזי מתמטיקה ואנגלית יהיה 9%.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-rakaz-tikshuv-pedagogi-8",
+      "claim": "Rakaz tikshuv ve-technologiot and rakaz pedagogi rose from 6% to 8% on 1.9.2025.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "גמול תפקיד לרכז תקשוב וטכנולוגיות (רכז תקשוב לשעבר): החל מתאריך 1.9.2025 שיעור גמול תפקיד לרכז יגדל משיעור של 6% ל-8%.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-rakaz-shichva",
+      "claim": "Rakaz shichva gets 6% or 1,100 NIS, whichever is higher, from 1.9.2025; four classes or more adds role hours.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "גמול רכז שכבה: החל מתאריך 1.9.2025 רכז שכבה של 3 כיתות זכאי לגמול בשיעור של 6% או 1,100 ש\"ח – הגבוה מבניהם.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-rakaz-chinuch-chevrati-10",
+      "claim": "Rakaz chinuch chevrati rose from 6% to 10% on 1.9.2024.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "גמול רכז חינוך חברתי: החל מתאריך 1.9.2024 שיעור גמול תפקיד לרכז חינוך חברתי ייגדל משיעור של 6% לשיעור של 10%.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-rakaz-6pct-roles",
+      "claim": "Rakaz miyumanuyot is a new 6% role from 1.9.2024.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "גמול תפקיד לרכז מיומנויות (תפקיד חדש): החל מתאריך 1.9.2024 יתווסף תפקיד של רכז מיומנויות, שיזכה בגמול תפקיד אחוזי בשיעור של 6%",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-yeutz-licence",
+      "claim": "Gmul yeutz is keyed to the licence from 1.9.2024: 12% on a temporary licence, 18% on a permanent one.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "השיעור המלא של גמול ייעוץ ליועץ חינוכי בעל רישיון זמני של 12%, והשיעור המלא של גמול ייעוץ ליועץ חינוכי בעל רישיון קבוע הוא 18%.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-chinuch-meyuchad-rates",
+      "claim": "Gmul chinuch meyuchad rose on 1.9.2024 to 10%, 15%, and 17% for autism or severe psychiatric settings.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "גמול חינוך מיוחד: החל מתאריך 1.9.2024 שיעור גמול חינוך מיוחד לעובד הוראה בעל הסמכה לחינוך מיוחד, יגדל באופן הבא: לפני ההסכם אחרי ההסכם 9% 10% 14% 15% 14% 17% (למועסקים תחת אוטיזם או הפרעות נפשיות קשות)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "oz-hishtalmut-quota-19",
+      "claim": "The Oz LaTmura gmul hishtalmut quota rose to 19 units in tashaf (1.9.2019), from 18.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/MerhavMinhali/HskalaVetek/Pages/GmuleiHishtalmut.aspx",
+      "raw_snippet": "בשנת הלימודים תש\"ף (1.9.19) מכסת הגמולים בעוז לתמורה עלתה ל-19 יחידות גמול.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "gmul-yozma-chinuchit-2026",
+      "claim": "A new Ofek Chadash gmul yozma chinuchit beit-sifrit takes effect 1.9.2026: 2 to 5 units per initiative, 200 NIS per unit per month, 400 to 1,000 NIS a month, re-decided annually.",
+      "claim_type": "rate",
+      "source_url": "https://www.itu.org.il/news/%D7%92%D7%9E%D7%95%D7%9C-%D7%97%D7%93%D7%A9-%D7%A2%D7%91%D7%95%D7%A8-%D7%99%D7%95%D7%96%D7%9E%D7%94-%D7%97%D7%99%D7%A0%D7%95%D7%9B%D7%99%D7%AA/",
+      "raw_snippet": "לכל יוזמה חינוכית יוקצו 2 עד 5 יחידות גמול, לפי החלטת מנהל המוסד החינוכי, וכפוף למכסה העומדת לרשותו. – כל יחידת גמול שווה 200 ₪ בחודש. – גובה הגמול יהיה בין 400 ₪ ל- 1,000 ₪ מדי חודש.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "havraa-public-2026",
+      "claim": "The public-sector havraa day rate is 511.60 NIS from 1.6.2026, up from 471.40 NIS, per the Commissioner on Wages circular of 8.6.2026. Teachers are public sector.",
+      "claim_type": "rate",
+      "source_url": "https://www.malam-payroll.com/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%AA%D7%A2%D7%A8%D7%99%D7%A4%D7%99-%D7%93%D7%9E%D7%99-%D7%94%D7%91%D7%A8%D7%90%D7%94-%D7%9C%D7%A9%D7%A0%D7%AA-2026/",
+      "raw_snippet": "לפי חוזר הממונה על השכר והסכמי עבודה מיום 8.6.2026, החל מיום 1.6.2026 התשלום ליום הבראה במגזר הציבורי עודכן לסכום של 511.60 ₪ ליום, במקום 471.40 ₪ ליום ששולם בשלוש השנים האחרונות.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "havraa-teacher-days",
+      "claim": "Teacher havraa days for a full position run 7 / 9 / 10 / 11 / 12 / 13 by teaching seniority, proportional for part-time.",
+      "claim_type": "rate",
+      "source_url": "https://www.malam-payroll.com/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%AA%D7%A2%D7%A8%D7%99%D7%A4%D7%99-%D7%93%D7%9E%D7%99-%D7%94%D7%91%D7%A8%D7%90%D7%94-%D7%9C%D7%A9%D7%A0%D7%AA-2026/",
+      "raw_snippet": "מספר ימי ההבראה לעובדי הוראה במשרה מלאה נקבע בהתאם לוותק בהוראה, כדלקמן: שנות ותק ימי הבראה 3 שנים ראשונות 7 ימים 4 – 10 שנים 9 ימים 11 – 15 שנים 10 ימים 16 – 19 שנים 11 ימים 20 – 24 שנים 12 ימים 25 שנים ומעלה 13 ימים",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "havraa-private-451",
+      "claim": "The private-sector havraa day rate agreed 22.6.2026 is 451.50 NIS, a separate figure from the public-sector rate teachers are paid.",
+      "claim_type": "rate",
+      "source_url": "https://www.malam-payroll.com/%D7%A2%D7%93%D7%9B%D7%95%D7%9F-%D7%AA%D7%A2%D7%A8%D7%99%D7%A4%D7%99-%D7%93%D7%9E%D7%99-%D7%94%D7%91%D7%A8%D7%90%D7%94-%D7%9C%D7%A9%D7%A0%D7%AA-2026/",
+      "raw_snippet": "ביום 22.6.2026 נחתם הסכם קיבוצי כללי בין ההסתדרות לבין נשיאות המגזר העסקי לעדכון תעריף דמי ההבראה במגזר הפרטי. בהתאם להסכם, תעריף יום הבראה צפוי להתעדכן מסך של 418 ₪ ליום לסך של 451.50 ₪ ליום.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "bigud-2026",
+      "claim": "Teacher clothing allowance in 2026 is 2,527 NIS for a full position at seniority level 4.",
+      "claim_type": "rate",
+      "source_url": "https://www.itu.org.il/wp-content/uploads/2026/07/%D7%A7%D7%A6%D7%95%D7%91%D7%AA-%D7%91%D7%99%D7%92%D7%95%D7%93-2026.pdf",
+      "raw_snippet": "תשולם קצובת ביגוד לכלל עובדי ההוראה הזכאים, לפי רמת ותק 4 בסכום של 2,527 ₪ למשרה מלאה.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "bl-max-insured-income",
+      "claim": "The maximum monthly income liable to national-insurance contributions is 51,910 NIS from 1.1.2026, and the reduced step is 7,703 NIS.",
+      "claim_type": "rate",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "מחלק השכר שמעל מדרגת גביה מופחתת ועד ההכנסה המרבית החייבת בדמי ביטוח (שיעור מלא) - 51,910 ש\"ח (החל ב- 01.01.2026)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "bl-employee-categorical-rows",
+      "claim": "An employee aged 67 to 70 not drawing an old-age pension pays 3.93% reduced and 10.03% full on the employee side.",
+      "claim_type": "rate",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "נשים וגברים בין גיל 67 לגיל 70 שאינם מקבלים קצבת אזרח ותיק 8.06% (החל ב- 01.01.2025) 3.93% (החל ב- 01.01.2025) 4.13% (החל ב- 01.01.2025) 16.99% (החל ב- 01.02.2025) 10.03% (החל ב- 01.02.2025) 6.96% (החל ב- 01.01.2021)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "bl-employee-pensioner-zero",
+      "claim": "An employee drawing an old-age pension, and an employee under 18, pay nothing on the employee side; only the employer pays 0.61% reduced and 2.12% full.",
+      "claim_type": "rate",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "נשים וגברים המקבלים קצבת אזרח ותיק 0.61% (החל ב- 01.01.2025) -- 0.61% (החל ב- 01.01.2025) 2.12% (החל ב- 01.01.2021) -- 2.12% (החל ב- 01.01.2021)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "bl-employee-disability-3-23",
+      "claim": "A recipient of a work-injury or general-disability pension holding an annual BL certificate pays 3.23% reduced and 5.17% full on the employee side.",
+      "claim_type": "rate",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "מקבלי קצבת נכות מעבודה או נכות כללית ויש להם אישור שנתי מהביטוח הלאומי 3.84% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) 0.61% (החל ב- 01.01.2025) 7.29% (החל ב- 01.02.2025) 5.17% (החל ב- 01.02.2025) 2.12% (החל ב- 01.01.2019)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "bl-employee-total-4-27-12-17",
+      "claim": "The employee total (national insurance plus health tax) for a column-1 resident aged 18 to retirement is 4.27% reduced and 12.17% full.",
+      "claim_type": "rate",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "סך הכול 4.51% (החל ב- 01.01.2025) 4.27% (החל ב- 01.01.2025) 8.78% (החל ב- 01.01.2025) 7.6% (החל ב- 01.01.2019) 12.17% (החל ב- 01.02.2025) 19.77% (החל ב- 01.02.2025)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "oz-position-ceiling",
+      "claim": "Maximum Oz employment across all institutions is 100%; over 100% needs ministry approval, frontal hours only, up to 12 extra frontal hours, 131.5% in total.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "התוספת המקסימלית היא 12 ש\"ש פרונטליות (סך הכל 131.5% משרה).",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "btl-form-102",
+      "claim": "Form 102 is the Bituach Leumi return on which an employer reports employees, and its columns are what the categorical employee rate table is keyed to.",
+      "claim_type": "form",
+      "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
+      "raw_snippet": "פירוט שיעורי דמי הביטוח על פי סוגי העובדים והטורים בטופס 102 (דיווח על העסקת עובדים תושבי ישראל)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-age-reduction",
+      "claim": "Under Ofek Chadash a serving teacher from age 50 loses 2 frontal hours and from 55 loses 4 hours (3 frontal plus 1 private); a newly hired teacher from 50 loses 2.",
+      "claim_type": "rate",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%9E%D7%91%D7%A0%D7%94-%D7%A9%D7%91%D7%95%D7%A2-%D7%A2%D7%91%D7%95%D7%93%D7%94/",
+      "raw_snippet": "מורה קיים מגיל 50 ומעלה (בהיקפי משרה גבוהים) זכאי להפחתה של 2 שעות מהשעות הפרונטאליות. מורה קיים מגיל 55 ומעלה זכאי (בהיקפי משרה גבוהים) להפחתה של 4 שעות עבודה – 3 שעות פרונטאליות ושעה אחת פרטנית.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-mother-teacher-79",
+      "claim": "An Ofek mother-teacher employed at 79% or 80% and above loses one frontal and one stay hour.",
+      "claim_type": "rule",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%9E%D7%91%D7%A0%D7%94-%D7%A9%D7%91%D7%95%D7%A2-%D7%A2%D7%91%D7%95%D7%93%D7%94/",
+      "raw_snippet": "מורה אם / גננת אם בחט\"צ , העובדת בהיקף כולל של 79% / 80% משרה ומעלה, זכאית להפחתת שעה מהשעות הפרונטליות ושעה משעות השהיה.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-shiluv-work-week",
+      "claim": "An Ofek shiluv or para-medical teaching worker runs 26 frontal + 3 private + 7 stay in elementary, or 23 + 2 + 11 in a junior-high, with travel between schools counted as stay time.",
+      "claim_type": "rule",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%9E%D7%91%D7%A0%D7%94-%D7%A9%D7%91%D7%95%D7%A2-%D7%A2%D7%91%D7%95%D7%93%D7%94/",
+      "raw_snippet": "למורה שילוב ולעובד הוראה בתפקיד פרא-רפואי בבית ספר יסודי 26 שעות פרונטליות, 3 שעות פרטניות, 7 שעות שהייה – 36 שעות למורה שילוב ולעובד הוראה בתפקיד פרא-רפואי בחטיבת הביניים 23 שעות פרונטליות, 2 שעות פרטניות, 11 שעות שהייה – 36 שעות",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-chinuch-meyuchad-8-5",
+      "claim": "Under Ofek Chadash the special-education gmul is 8.5%, 15%, or 17% in severe-psychiatric or autism settings, from September 2023.",
+      "claim_type": "rate",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "מורה לחינוך מיוחד בבית ספר יסודי או בחטיבת ביניים: % 8.5, או 15% מהשכר המשולב, או 17% מהשכר המשולב (במוסדות חנ\"מ/ כיתות עם הפרעות נפשיות קשות ואוטיזם) )מספטמבר 2023)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-morah-meshalevet",
+      "claim": "The Ofek inclusion-teacher gmul is 5.5%, or 9% for a matia teacher also drawing gmul chinuch kita, or 15% for a matia teacher who is not, or 10% in regular-institution allocated hours.",
+      "claim_type": "rate",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "מורה משלב/ת: 5.5% או 9% מהשכר המשולב (למורות מתי\"א המקבלת גמול חינוך כיתה) או 15% (למורות מתי\"א שאינן מקבלות גמול חינוך כיתה) או 10% (למורות שילוב בשעות תקן מוסדות רגילים) (מספטמבר 2023)",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-morah-chonech",
+      "claim": "The Ofek mentor-teacher gmul is 2.4% of the combined salary per intern, up to three interns.",
+      "claim_type": "rate",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "מורה חונך – 2.4% מהשכר המשולב עבור כל מתמחה עד שלושה מתמחים לחונך",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-gmul-beit-sifri-units",
+      "claim": "The Ofek school-level role gmul is 200 NIS per unit, up to 5 units per teacher (1,000 NIS per teacher, 36,000 NIS per school).",
+      "claim_type": "rate",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "גמול תפקיד בית ספרי (החל מספטמבר 2025)– 200 ₪ ליחידה ועד 5 יחידות למורה (עד 1000 ₪ למורה ועד 36,000 ₪ לכל ביה\"ס.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "teacher-retention-grant-10000",
+      "claim": "A one-off 10,000 NIS retention grant is paid in the September 2026 salary to a teacher whose employment began 1.9.2023.",
+      "claim_type": "amount",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "מענק שימור לעובד הוראה שהעסקתו החלה ביום 1.9.23 שתינתן במשכורת ספטמבר 2026 – 10,000 ₪",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-principal-no-gmul",
+      "claim": "A school principal may not draw a role gmul; a first deputy may serve only as a homeroom teacher.",
+      "claim_type": "rule",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "מנהל בי\"ס לא יכול לקבל גמול תפקיד. סגן מנהל ראשון יכול לשמש כמחנך כיתה בלבד.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-rakaz-other-rates",
+      "claim": "Other Ofek role gmulim: rakaz chinuch chevrati 8% elementary and 10% junior-high, rakaz shichva 6% or 1,000 NIS higher-of above four classes and 7% up to four, rakaz tikshuv 6% elementary and 8% junior-high, rakaz pedagogi 8%, rakaz maabada 3%, rakaz likuyot lemida 4%, sgan menahel sheni and menahel chativa tzeira 20%.",
+      "claim_type": "rate",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "רכז חינוך חברתי: בבית ספר יסודי – 8% מהשכר המשולב (מספטמבר 2023) בחטיבת ביניים – 10% מהשכר המשולב; [ 9 ] רכז שכבה: בשכבה בה יש יותר מ-4 כיתות – 6% מהשכר המשולב או 1000 ₪ הגבוה מבין השניים (מספטמבר 2023) בשכבה בה יש עד 4 כיתות – 7% מהשכר המשולב; [ 10 ] רכז מעבדה: 3% מהשכר המשולב;",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "oz-promotion-points",
+      "claim": "Oz role promotion points: rakaz shichva 4; rakaz chinuch chevrati and rakaz miktzoa 3; rakaz haaracha u-medida, rakaz hataamot le-bchinot ha-bagrut and rakaz tiyulim 2.5; mechanech kita 2; seven further roles added at 2.5 each from 1.9.2025.",
+      "claim_type": "rate",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "נקודות זכות התפקיד 4 רכז שכבה 3 רכז חינוך חברתי/מעורבות חברתית 3 רכז מקצוע 2.5 רכז הערכה ומדידה 2.5 רכז התאמות לבחינות הבגרות 2.5 רכז טיולים 2 מחנך כיתה",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "oz-50-hour-cap",
+      "claim": "Oz position excess may never be approved above 50 weekly hours across a teacher's whole employment.",
+      "claim_type": "rule",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "בכל מקרה לא תאושר חריגת משרה מעל 50 ש \" ש בכל היקף העסקתו של עובד ההוראה, בהתאם להסכמי השכר .",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "oz-mother-teacher-7pct",
+      "claim": "Oz maximum employment across all institutions is 100%; only a mother-teacher may exceed it, at 100% actual work plus a 7% mother supplement.",
+      "claim_type": "rule",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "היקף ההעסקה המקסימלי לעובד הוראה בכל מוסדות העסקתו יחד הוא 100%. למורה אם בלבד יוּתר היקף משרה גבוה יותר (100% עבודה בפועל + 7% תוספת אם).",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-gmul-full-position",
+      "claim": "All role gmulim are computed on a full position except the special-education and inclusion gmulim, which are computed on the share of frontal hours taught in the special-education setting.",
+      "claim_type": "rule",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "כל גמולי התפקיד מחושבים לפי משרה מלאה למעט גמול מורה לחינוך מיוחד ומורה שילוב. לאלה יחושב הגמול לפי שעות ההוראה הפרונטאליות בכיתה לחינוך מיוחד מתוך כלל שעות ההוראה הפרונטאליות שלהם.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md",
+        "scripts/teacher_gross.py"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-promotion-quotas-abolished",
+      "claim": "The 2016 agreement abolished the promotion quotas for Ofek Chadash ranks 7 to 9, requires 30 study hours a year, and set the stay periods at 30 months for ranks 2-3, 36 for 4-6 and 48 for 7-9, with a formative evaluation.",
+      "claim_type": "rule",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/new-ofek/new-ofek-degree/",
+      "raw_snippet": "חובת השתלמות של 30 שעות בשנה לצורך קידום. ביטול המכסות לקידום בדרגות 7–9. קידום עובד ההוראה במסלול קבוע מראש, ללא תלות במכסה פנויה.",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "ofek-gananet-amita",
+      "claim": "An Ofek gananet amita draws a 10% gmul unless she carries a management gmul or salary protection as a gan manager.",
+      "claim_type": "rule",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%A0%D7%A0%D7%95%D7%AA-%D7%91%D7%90%D7%95%D7%A4%D7%A7-%D7%97%D7%93%D7%A9/",
+      "raw_snippet": "גמול לגננת עמיתה – גננת תקבל גמול של 10%, למעט גננת גוררת גמול ניהול או גוררת שמירת שכר כמנהלת גן",
+      "confidence": "high",
+      "fetched_at": "2026-08-27T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-08-27T00:00:00Z"
     }
   ]
 }

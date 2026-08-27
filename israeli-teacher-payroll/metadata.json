@@ -26,7 +26,7 @@
     ]
   },
   "author": "skills-il",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "category": "accounting",
   "supported_agents": [
     "claude-code",
@@ -54,8 +54,8 @@
     "https://terms-service.education.gov.il/terms/general-1b/salary-grade-and-seniority/",
     "https://www.itu.org.il/",
     "https://www.igm.org.il/",
-    "https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx",
-    "https://poh.education.gov.il/administrative/transaction-details/position-scope/"
+    "https://poh.education.gov.il/administrative/transaction-details/position-scope/",
+    "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx"
   ],
   "domain_checklist_version": 2
 }

@@ -1,6 +1,24 @@
 {
   "cycles": [
     {
+      "version": "1.4.0",
+      "date": "2026-08-27",
+      "trigger": "Scheduled staleness pass five days before school year תשפ\"ז; the two payroll skills were flagged DRIFT TYPE A.",
+      "lessons": [
+        "RESOLVED CARRY (from 1.2.0): the 22 unverifiable v1.1.0 evidence snippets were audited. The ITU gmulei-tafkid page had moved (old URL 404s, sole source for four gmul rates), the Ofek per-level work-week splits were sourced to a dead ITU PDF, and several snippets were English paraphrases of Hebrew pages. All re-sourced verbatim against live pages this cycle. Lesson: a dead source URL is invisible to the default self-consistency pass; only --check-sources or the Judge finds it.",
+        "RESOLVED CARRY (from 1.2.0): the Oz rakaz gmul rates were NOT an image. The prior cycle recorded them as unreadable and instructed the agent to route the user to the circular. They are plain page text on poh.education.gov.il. Lesson: 'published as an image' is a claim that must itself be re-tested each cycle, because it permanently suppresses an answer the skill could give.",
+        "RESOLVED CARRY (from 1.2.0): positively searched again for an Irgun HaMorim / Oz mitigation for the May-Dec 2025 window. Contemporaneous payroll-law briefings state the opposite explicitly: Oz and 'olam yashan' staff are cut at 3.307% to end-2025 and 1.2% through 2026. The skill's existing assertion was correct and is now sourced rather than hedged.",
+        "RESOLVED CARRY (from 1.2.0): the 1.9.2026 Oz tranche. No execution circular for a 1.9.2026 tosefet shiklit tranche could be found; the 12.8.2025 circular covers only the 1.9.2025 tranche and names no successor. The skill keeps 1,518 NIS with its existing instruction to read the current amount from the circular. Re-check next cycle.",
+        "NEW DEBT: whether a shekel GMUL FLOOR prorates at part-time, and whether the higher-of test runs before or after the position fraction, is not stated by any source reached. For a half-position homeroom teacher the two orderings differ by 500 NIS. The script tests on the full position and says so in its output. Find an authoritative answer next cycle.",
+        "NEW DEBT: what replaces the temporary wage reduction from 1.1.2027, mid-tashpaz. Not settled by any source reached. Logged in domain-checklist.md as UNRESOLVED rather than out of scope.",
+        "NEW DEBT: the retention grant's tax and pension treatment (pensionable? prorated? spreadable for tax?) is not in the union announcement. The skill declines to assert any of the three.",
+        "NEW DEBT: the ichud maskorot thresholds (1/3 junior-high via the Ministry, 1/2 high school via the baalut, plus kviut) still rest on a commercial teacher-finance publication. Prose now says to confirm with the payroll unit before electing; find an official page next cycle.",
+        "NEW DEBT: the Oz merit-point-to-rank conversion (previously stated as 10 points = 2%, up to 8%) could not be confirmed on any live official page and was removed rather than kept unsourced. The ministry's nekudot zechut page should be read properly next cycle.",
+        "METHOD LESSON worth keeping: a research subagent split the Bituach Leumi form-102 table into BL-vs-health columns when the columns are actually employee-vs-employer. Taken at face value it would have shipped 'a working pensioner pays 0.61%/2.12%' when the employee in fact pays nothing. Establishing the column order from the known column-1 row (4.27 employee / 4.51 employer / 8.78 total) is what caught it. Never encode a reviewer's or researcher's split of an interleaved table without re-deriving it.",
+        "METHOD LESSON: the Expert found that the bundled script contradicted a rule this same cycle had just written into the reference file. The prose gate and the code are separate surfaces and nothing mechanical compares them. Diff every new normative sentence against the script before freezing."
+      ]
+    },
+    {
       "version": "1.2.0",
       "date": "2026-07-19",
       "trigger": "Carried the israeli-healthcare-payroll v1.2.0 wage-agreement treatment across to the other payroll skills.",
