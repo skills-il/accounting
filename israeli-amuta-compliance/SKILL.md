@@ -321,10 +321,13 @@ Registrar is satisfied the material defects were fixed, informed by the accompan
 and an amuta that **currently holds** a valid certificate has it revoked as of signature. Flag this
 and route the decision to the amuta's own professional advisers.
 
-**Ask about the lesser status.** An אישור על הגשת מסמכים is a separate, lesser confirmation that
-documents were filed, obtained through its own Registrar service. Many funders and ministries
-accept it as an interim while a full certificate is pending. A refused amuta is usually not told
-this exists.
+**There is a separate, lesser confirmation, but be precise about it.** The Registrar's service
+page refers to an **אישור על קבלת מסמכים**, alongside the proper management certificate. Two
+cautions before raising it with a refused amuta. Its documented population is a NEW amuta, or one
+that has not carried on continuous activity for two years, rather than an established amuta whose
+certificate was refused. And state support decisions condition support on the proper management
+certificate itself, so do not present the lesser confirmation as a substitute for it. Ask the
+Registrar whether it is available in the amuta's specific situation instead of assuming it is.
 
 **On challenging the decision itself.** A Registrar refusal is an administrative decision. Israeli
 administrative law attaches a right to be heard before an adverse decision, and such decisions are

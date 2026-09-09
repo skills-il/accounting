@@ -546,6 +546,17 @@
       "source_fetched_at": "2026-09-09T16:10:00Z",
       "raw_snippet": "תקבולים בשל תרומות יירשמו בפנקס שוברי קבלות נפרד; על כל קבלה בפנקס של שובר קבלות לתרומות תודפס בצורה בולטת לעין המילה ”תרומה“",
       "confidence": "high"
+    },
+    {
+      "id": "ishur-kabalat-mismachim",
+      "claim": "The Registrar's proper management certificate service page refers to applications for an אישור על קבלת מסמכים alongside the proper management certificate",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/he/service/association_certification_of_proper_management",
+      "source_fetched_at": "2026-09-09T16:45:00Z",
+      "raw_snippet": "המסבירה את השלבים בהגשת בקשות לאישור על קבלת מסמכים ואישור ניהול תקין",
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-09-09"
     }
   ]
 }

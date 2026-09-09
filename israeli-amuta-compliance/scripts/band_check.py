@@ -171,6 +171,10 @@ def main():
         return
     if a.turnover is None or a.certificate_year is None:
         p.error("--turnover and --certificate-year are required (or use --example)")
+    if a.turnover < 0:
+        p.error("--turnover cannot be negative")
+    if a.certificate_year < 2000 or a.certificate_year > 2100:
+        p.error("--certificate-year looks wrong: %d" % a.certificate_year)
     for line in evaluate(a.turnover, a.certificate_year, a.section_46, a.audit_threshold,
                          a.first_two_years, a.filed_online_small):
         print(line)
