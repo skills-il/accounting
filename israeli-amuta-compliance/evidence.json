@@ -1,0 +1,551 @@
+{
+  "skill_slug": "israeli-amuta-compliance",
+  "schemaVersion": "1.0",
+  "generated_at": "2026-09-09",
+  "claims": [
+    {
+      "id": "fee-reduced-176",
+      "claim": "The reduced annual amuta fee for 2026 is 176 NIS, available to amutot in the first two years after the incorporation year and to amutot that reported online that turnover did not exceed 300,000 NIS",
+      "claim_type": "currency",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "עמותות בשנתיים הראשונות שלאחר שנת ההתאגדות ועמותות אשר דיווחו באופן מקוון שמחזורן הכספי בשנת 2023, לא עלה על 300 אלף ₪- ישלמו אגרה שנתית מוזלת (בשנת 2026 הסכום עומד על 176 ₪). על מנת שהסכום המוזל יתעדכן על העמותה להגיש דיווחים שנתיים מקוונים לשנת 2024.",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-early-1338",
+      "claim": "An amuta with turnover above 300,000 NIS pays a reduced 1,338 NIS in 2026 if paid up to 31.03",
+      "claim_type": "currency",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "עד ליום 31.03: תשלום אגרה מופחתת (בשנת 2026 הסכום עומד על 1,338 ₪).",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-standard-1777",
+      "claim": "An amuta with turnover above 300,000 NIS pays the standard 1,777 NIS in 2026 from 01.04",
+      "claim_type": "currency",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "מיום 01.04: תשלום אגרה בתעריף רגיל ( בשנת 2026 הסכום עומד על 1,777 ₪).",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-exemption-abolished",
+      "claim": "The amuta annual-fee exemption was abolished from 2020 and every amuta must pay the annual fee",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "החל משנת 2020 הפטור מתשלום אגרה בוטל, וכל עמותה נדרשת לשלם את האגרה השנתית.",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-2024-reports-trigger",
+      "claim": "Amutot that filed online reports for 2024 with turnover not exceeding 300,000 NIS pay the reduced 176 NIS rate",
+      "claim_type": "currency",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "עמותות שהגישו דיווחים מקוונים לשנת 2024, והמחזור הכספי של העמותה אינו עולה על 300,000 ש\"ח, יידרשו לשלם תעריף מוזל בסך של 176 ש\"ח.",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-no-refund",
+      "claim": "An amuta that paid the full 2026 fee before filing its 2024 online reports is not entitled to a refund of the excess",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "עמותה ששילמה אגרה מלאה לשנת 2026, טרם הגשת הדיווחים המקוונים לשנת 2024, לא תהיה זכאית  לקבל החזר אגרת היתר ששולמה.",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-indexed",
+      "claim": "The amuta annual fee is updated once a year according to the index",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "האגרה  מתעדכנת אחת לשנה בהתאם למדד.",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-magak",
+      "claim": "Unpaid amuta fee debts can be transferred to the Centre for Fines Collection, after which the fee tier can no longer be changed",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "לאחר העברת החובות למג\"ק לא ניתן יהיה לבצע שינוי בתעריף האגרה.",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-chalatz-companies-unit",
+      "claim": "A public benefit company pays its annual fee at the companies unit, not the amutot unit",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/he/service/association-annual-fee",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "תשלום אגרה שנתית עבור חברה לתועלת הציבור מתבצע ביחידת החברות לתשלום.",
+      "confidence": "high"
+    },
+    {
+      "id": "s19a-organs",
+      "claim": "Every amuta must have a general assembly, a board and an audit committee under section 19(a) of the Associations Law",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "לכל עמותה תהיה אסיפה כללית, ועד וועדת בקורת, ויכול שיהיו לה מוסדות נוספים כאמור בתקנונה.",
+      "confidence": "high"
+    },
+    {
+      "id": "s19b-guf-mevaker",
+      "claim": "Under section 19(b) the general assembly may resolve that instead of an audit committee an accountant or a body approved by the Registrar is appointed, called the auditing body",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "האסיפה הכללית רשאית להחליט כי במקום ועדת בקורת ימונה רואה חשבון או גוף שאושר לענין זה בידי הרשם (להלן – הגוף המבקר).",
+      "confidence": "high"
+    },
+    {
+      "id": "s19c1-750k-base",
+      "claim": "סעיף 19(ג)(1) requires an amuta whose annual turnover exceeds 750,000 NIS, a 1996-adjusted base amount, to appoint an accountant. The amount operative for a given year is the gazetted indexed figure, not this base.",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "מבלי לפגוע בהוראות סעיף קטן (ב), עמותה שמחזורה השנתי עולה על 750,000 שקלים חדשים",
+      "confidence": "high"
+    },
+    {
+      "id": "s19c2-indexation",
+      "claim": "Section 19(c)(2) index-links the amount to the CPI, rounds to the nearest 10 NIS, and requires publication in the official gazette at the start of February each year",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "הסכום האמור בפסקה (1) יהיה צמוד למדד המחירים לצרכן שמפרסמת הלשכה המרכזית לסטטיסטיקה ויעוגל לסכום הקרוב שהוא מכפלה של עשרה שקלים חדשים; שר הפנים יפרסם ברשומות בתחילת חודש פברואר של כל שנה את הסכום האמור, כפי שהוא מעודכן לאותה שנה.",
+      "confidence": "high"
+    },
+    {
+      "id": "s19c-2026-amount",
+      "claim": "The updated section 19(c) turnover amount for 2026 is 1,380,630 NIS, published in Yalkut HaPirsumim 14348",
+      "claim_type": "currency",
+      "source_url": "https://olaw.org.il/yalkut/yalkut-14348.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "בתוקף סמכותי לפי סעיף 19(ג)(2) לחוק העמותות, התש\"ם-1980, אני מודיע כי הסכום המעודכן של סכום המחזור הכספי של עמותה לפי הסעיף האמור לשנת 2026 הוא 1,380,630 שקלים חדשים.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s30a-internal-auditor",
+      "claim": "סעיף 30א requires the board of an amuta whose turnover exceeds 10,000,000 NIS (עשרה מיליון שקלים חדשים) to appoint an internal auditor with the audit committee's agreement",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "הוועד של עמותה שמחזורה עולה על עשרה מיליון שקלים חדשים, או על סכום גבוה יותר שקבע שר המשפטים, באישור ועדת החוקה חוק ומשפט של הכנסת, ימנה, בהסכמת ועדת הביקורת, מבקר פנימי",
+      "confidence": "high"
+    },
+    {
+      "id": "s36a-maazan-every-amuta",
+      "claim": "סעיף 36(א) requires the board of every amuta to prepare a balance sheet and a statement of income and expenditure once a year for each tax year",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "הועד יכין אחת לשנה מאזן ודין וחשבון של הכנסות העמותה והוצאותיה (להלן – דו״ח כספי) בכל שנת מס, אשר יכלול פירוט מלא לפי הרשימה המופיעה",
+      "confidence": "high"
+    },
+    {
+      "id": "s36b-top-five",
+      "claim": "סעיף 36(ב) requires attaching a statement detailing all payments made or undertaken to each of the five highest paid people in the amuta, including retirement terms",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "הועד יצרף לדו״ח הכספי הודעה ובה פירוט מלא ומדוייק של כל התשלומים ששילמה העמותה או שהתחייבה לשלם, בשנה שלגביה מוגש הדו״ח הכספי, לכל אחד מחמשת מקבלי השכר הגבוה ביותר בעמותה לרבות פרטים בענין תנאי פרישה",
+      "confidence": "high"
+    },
+    {
+      "id": "s36d-deadline",
+      "claim": "סעיף 36(ד) requires the financial report to be filed with the Registrar no later than 30 June of the year following the report period, signed by two board members, and permits the Registrar to extend the date",
+      "claim_type": "date",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "הדו״ח הכספי המקורי או העתקו המאושר כדין יוגש לרשם לא יאוחר מיום 30 ביוני בשנה שלאחר תום תקופת הדו״ח, חתום בידי שנים מחברי הועד, ורשאי הרשם, להאריך את המועד להגשתם.",
+      "confidence": "high"
+    },
+    {
+      "id": "s37a-audit",
+      "claim": "סעיף 37(א) requires the financial report of an amuta obliged to appoint an accountant under סעיף 19(ג) to be presented to the general assembly audited",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "דו״ח כספי של עמותה החייבת במינוי רואה חשבון על פי",
+      "confidence": "high"
+    },
+    {
+      "id": "s37b-registrar-may-order-audit",
+      "claim": "סעיף 37(ב) lets the Registrar order that the financial report of an amuta not otherwise obliged to appoint an accountant be audited",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "הרשם רשאי, לבקשת ועדת הבקורת, או עשירית מכלל חברי העמותה, ואף מיזמתו הוא, להורות כי הדו״ח הכספי של עמותה אשר אינה חייבת במינוי רואה חשבון",
+      "confidence": "high"
+    },
+    {
+      "id": "second-schedule-750k-double-entry",
+      "claim": "The Second Schedule requires an amuta with turnover above 750,000 NIS to keep double-entry books",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "עמותה שמחזורה עולה על 750,000 שקלים חדשים, חייבת לנהל מערכת חשבונות על פי שיטת החשבונאות הכפולה באחת השיטות הנהוגות, לרבות:",
+      "confidence": "high"
+    },
+    {
+      "id": "second-schedule-750k-single",
+      "claim": "The Second Schedule allows an amuta with turnover not exceeding 750,000 NIS to keep a simpler accounts system",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "עמותה שמחזורה אינו עולה על 750,000 שקלים חדשים, חייבת לנהל, לכל שנת מס, מערכת חשבונות שתכלול לפחות –",
+      "confidence": "high"
+    },
+    {
+      "id": "four-annual-documents",
+      "claim": "The annual reports an amuta and a public benefit company must file are the financial report, the verbal report, the audit committee protocol and the general assembly report, due 30 June of the following year",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/he/pages/news-rejection",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "עמותה וחברה לתועלת הציבור נדרשות להגיש דיווחים שנתיים (דוח כספי, דוח מילולי, פרוטוקול ועדת ביקורת ודיווח אסיפה כללית) עד ליום 30 ביוני בשנה שלאחר תום תקופת הדוח.",
+      "confidence": "high"
+    },
+    {
+      "id": "extension-31-7-2026",
+      "claim": "The Registrar granted an extension for filing 2025 reports until 31 July 2026",
+      "claim_type": "date",
+      "source_url": "https://www.gov.il/he/pages/news-rejection",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "ניתנת בזאת ארכה להגשת הדיווחים עד ליום 31 ביולי 2026.",
+      "confidence": "high"
+    },
+    {
+      "id": "extension-only-2027",
+      "claim": "The 31 July 2026 extension applies only to applications for a proper management certificate for 2027",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/he/pages/news-rejection",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "יובהר כי ארכה זאת מתייחסת רק לבקשות לאישור ניהול תקין לשנת 2027.",
+      "confidence": "high"
+    },
+    {
+      "id": "cert-2026-window-closed",
+      "claim": "An application for a 2026 proper management certificate whose documents were due 30 June 2025 could be filed only until 30 June 2026",
+      "claim_type": "date",
+      "source_url": "https://www.gov.il/he/pages/news-rejection",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "בקשה לקבלת אישור ניהול תקין לשנת 2026 אשר המסמכים והדיווחים הנלווים לה היו אמורים להיות מוגשים ביום 30 ביוני 2025 אך טרם הוגשו - ניתן להגיש עד ליום 30 ביוני 2026 בלבד.",
+      "confidence": "high"
+    },
+    {
+      "id": "registrar-contact",
+      "claim": "The Registrar's amutot unit service centre operates Sunday to Thursday 8:00 to 16:00 on phone *5601 extension 2, WhatsApp 0504043362 and email Moked-amutot@justice.gov.il",
+      "claim_type": "company",
+      "source_url": "https://www.gov.il/he/service/association_certification_of_proper_management",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "טלפון: *5601, למחייגים מחו\"ל: 972-8-6831680. יש לבחור בשלוחה 2",
+      "confidence": "high"
+    },
+    {
+      "id": "s46-from-1-1-2026",
+      "claim": "From 1 January 2026 amutot holding a section 46 approval must report donations and donation cancellations through the Trumot Israel system",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "החל מיום 1.1.2026 תחול על העמותות חובת דיווח על תרומות וביטולי תרומות באמצעות המערכת.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-conditional",
+      "claim": "Section 46 approval is conditional on meeting the reporting duty under execution instruction 11/2025",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "החל מיום 1.1.2026 תחול חובת דיווח באמצעות המערכת על העמותות לגבי תרומות וביטולי התרומות. אישור לפי סעיף 46 מותנה בעמידה בחובת הדיווח על פי הוראת ביצוע זו.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-first-shekel",
+      "claim": "All donation receipts must be reported from the first shekel, and receipts that are not for donations are not reported",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "יש לדווח על כל הקבלות בשל תרומות שהתקבלו בעמותה החל מהשקל הראשון.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-morshe-al",
+      "claim": "Every amuta must appoint a super-authorised user who can report and authorise others to report to the donations system",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "כל עמותה נדרשת למנות מורשה-על שיוכל לדווח בעצמו ויוכל אף להסמיך אחרים מטעמו לדיווח למערכת התרומות.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-foreign-resident-id",
+      "claim": "A foreign resident donor is auto-filled with entity number 888888888",
+      "claim_type": "api-field",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "תושב חוץ - התוכנה תשלים אוטומטית מספר ישות 888888888.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-anonymous-id",
+      "claim": "An anonymous donation or a donation without an ID number is auto-filled with entity number 999999999",
+      "claim_type": "api-field",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "תרומה בעילום שם/תרומה ללא מספר תעודת זהות – התוכנה תשלים אוטומטית מספר ישות 999999999",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-receipt-exempt-still-reports",
+      "claim": "The duty to report donations and cancellations applies even where the amuta is exempt from issuing a receipt",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "יובהר כי חובת הדיווח על תרומות וביטולי תרומות, חלה גם במצבים בהם יש לעמותה פטור מהפקת קבלה.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-anonymous-no-benefit",
+      "claim": "An anonymous donation does not entitle the donor to a tax benefit",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "תרומה בעילום שם אינה מזכה בהטבת מס.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-report-number",
+      "claim": "Each reported donation receipt and each cancellation document is allocated a unique reporting number which appears on the receipt issued by the amuta",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "לכל קבלה בשל תרומה ולכל מסמך על ביטול קבלה בשל תרומה שידווחו למערכת יוקצה מספר דיווח (הקצאה) שהינו ייחודי לעמותה.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s46-basis-9-2015",
+      "claim": "The reporting duty derives from Supplement 1 to Income Tax Circular 9/2015 published on 10.7.2025",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "בהתאם לתוספת מס' 1 לחוזר מס הכנסה 9/2015 בנושא: קוים מנחים להחלת סעיף 46 לפקודת מס הכנסה (נוסח חדש) תשכ\"א – 1961 (להלן: \"הפקודה\") שפורסמה ביום 10.7.2025",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "chalatz-form-5",
+      "claim": "A public benefit company files an additional annual report, טופס 5, under סעיף 141 of the Companies Law 1999",
+      "claim_type": "form-number",
+      "source_url": "https://www.gov.il/he/service/association_annual_reporting_obligations",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "דיווח שנתי – טופס 5 בהתאם לסעיף 141 לחוק החברות, תשנ\"ט-1999",
+      "confidence": "high"
+    },
+    {
+      "id": "budgetkey-mcp",
+      "claim": "The BudgetKey MCP server is reached at the URL https://next.obudget.org/mcp and provides access to Israeli state budget and support-payment data",
+      "claim_type": "api-endpoint",
+      "source_url": "https://next.obudget.org/mcp",
+      "source_fetched_at": "2026-09-09T14:30:00Z",
+      "raw_snippet": "BudgetKey MCP server, install_command url:https://next.obudget.org/mcp, providing AI assistants with access to Israeli State Budget data via the BudgetKey API, covering budget book data, support programs and individual supports.",
+      "confidence": "high",
+      "verified_via": "registry",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "one-year-bar",
+      "claim": "A request for a proper management certificate is not processed where the accompanying documents and reports were filed more than a year late, that is after 30 June of the year for which the certificate is sought",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/news/new_arrangement/he/Arrangement.pdf",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "לא תטופל בקשה לקבלת אישור ניהול תקין, כאשר המסמכים והדיווחים הנלווים לה, הוגשו באיחור של למעלה משנה מהמועד הקבוע בחוק, דהיינו, לאחר יום ה-30 ביוני של השנה לגביה מבוקש האישור.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "cpa-quota-schedule",
+      "claim": "The 2026 extension arrangement lets participating accountants file 2025 client reports in quotas: 20 percent by 31.7.2026, a further 25 percent by 31.8.2026 reaching 45 percent cumulative, a further 25 percent by 4.10.2026 reaching 70 percent cumulative, and a further 30 percent by 1.11.2026 reaching 100 percent cumulative",
+      "claim_type": "date",
+      "source_url": "https://www.gov.il/BlobFolder/news/new_arrangement/he/Arrangement.pdf",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "עד ליום 31.7.2026 - 20% מהדוחות. עד ליום 31.8.2026 - 25% מהדוחות (45% במצטבר). עד ליום 4.10.2026 -25% מהדוחות (70% במצטבר). עד ליום 1.11.2026– 30% מהדוחות (100% במצטבר).",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "cpa-quota-conditions",
+      "claim": "An accountant who does not send the required client-list report by 31.7.2026 to Tfuza-amutot@justice.gov.il is not included in the extension arrangement, and a failure to meet the arrangement is treated as the amuta's own failure to comply with the law",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/news/new_arrangement/he/Arrangement.pdf",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "רו\"ח אשר לא ישלח את הדיווח כנדרש, לא ייכלל במסגרת הסדר הארכות.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "cpa-quota-amuta-bears-it",
+      "claim": "Failure to meet the extension arrangement is treated as the amuta's or public benefit company's own failure to comply with the law on filing documents, and can affect whether and when a certificate is granted or lead to other enforcement",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/news/new_arrangement/he/Arrangement.pdf",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "אי עמידה בהסדר תיחשב כאי עמידה של העמותה או החל\"צ בהוראות החוק בנוגע להגשת מסמכים, ויכולה להשפיע על עצם מתן אישור ניהול תקין ועל מועד מתן האישור, או להביא לנקיטת סמכויות אכיפה אחרות הנתונות על פי דין.",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s59-ceased-operating",
+      "claim": "סעיף 59 deems an amuta to have ceased operating if it fails to pay a fee within ninety days of the last date set for payment, or fails to file the financial report within ninety days of the date set in סעיף 36",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "לא שילמה אגרה שחובה עליה לשלם לפי חוק זה, תוך תשעים ימים מהיום האחרון שנקבע לתשלומם;",
+      "confidence": "high"
+    },
+    {
+      "id": "s59-strike-off",
+      "claim": "סעיף 59 lets the Registrar strike off an amuta deemed to have ceased operating, applying סעיף 368 of the Companies Ordinance",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "הרשם רשאי למחוק עמותה שחדלה לפעול, לפי הוראות",
+      "confidence": "high"
+    },
+    {
+      "id": "s36a-disclosure-gate",
+      "claim": "סעיף 36א(ב)(1) requires an amuta with turnover above 300,000 NIS to state in its financial report whether it received foreign political-entity donations whose cumulative value exceeds 20,000 NIS",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "עמותה שמחזורה עולה על 300,000 שקלים חדשים, תציין בדוח הכספי לפי",
+      "confidence": "high"
+    },
+    {
+      "id": "s36a-website",
+      "claim": "סעיף 36א(ג) requires the amuta to publish the foreign political-entity donation information on its own website, and where it has notified the Registrar it has no website the Registrar publishes it on the Ministry of Justice site",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "העמותה תפרסם באתר האינטרנט שלה מידע כאמור בסעיף קטן (ב); הודיעה העמותה לרשם כי אין לה אתר אינטרנט, יפרסם הרשם את המידע כאמור באתר האינטרנט של משרד המשפטים.",
+      "confidence": "high"
+    },
+    {
+      "id": "quarterly-foreign-donation",
+      "claim": "Section 2 (סעיף 2) of the Disclosure Duty Law 2011 requires a supported body that received a donation from a foreign political entity to file an online quarterly report with the Registrar within one week of the end of the quarter in which the donation was received, detailing the donor identity, the amount, the purpose and any conditions or undertakings",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_חובת_גילוי_לגבי_מי_שנתמך_על_ידי_ישות_מדינית_זרה",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "נתמך שקיבל תרומה מישות מדינית זרה, יגיש לרשם, בתוך שבוע מתום אותו רבעון שבו התקבלה התרומה, דוח בטופס מקוון שיקבע שר המשפטים",
+      "confidence": "high"
+    },
+    {
+      "id": "cert-app-arrears",
+      "claim": "The certificate application requires the amuta to confirm the full annual fee is paid, and an amuta that has not settled fees for earlier years must do so",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/proper_management_guidelines/he/association-2019.pdf",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "ככל‏שעמותה‏ לא‏הסדירה‏תשלום‏אגרה‏בשנים‏קודמות‏עליה‏לעשות‏כן",
+      "confidence": "medium",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "cert-app-internal-auditor-protocol",
+      "claim": "The certificate application set includes a board meeting protocol appointing an internal auditor, for an amuta whose turnover exceeds ten million NIS",
+      "claim_type": "form-number",
+      "source_url": "https://www.gov.il/BlobFolder/policy/proper_management_guidelines/he/association-2019.pdf",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "פרוטוקול ישיבת וועד העמותה למינוי מבקר פנימי",
+      "confidence": "medium",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "cert-app-top5-online-form",
+      "claim": "The certificate application set includes a named list of the five highest earners in the amuta, submitted on the online form",
+      "claim_type": "form-number",
+      "source_url": "https://www.gov.il/BlobFolder/policy/proper_management_guidelines/he/association-2019.pdf",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "רשימה שמית של 5 מקבלי השכר הגבוה ביותר בעמותה",
+      "confidence": "medium",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "governance-relatives-screen",
+      "claim": "The Registrar's proper management questionnaire screens for a majority of relatives among board members, a majority of relatives among authorised signatories, and salary recipients who are relatives of an audit committee member",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/policy/proper_management_guidelines/he/association-2019.pdf",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "האם‏קיים‏רוב‏של‏קרובי‏משפחה‏בין‏חברי‏הוועד?",
+      "confidence": "medium",
+      "verified_via": "pdf",
+      "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s36a-20000-limb",
+      "claim": "The סעיף 36א(ב)(1) disclosure is triggered only where the cumulative value of the foreign political-entity donations exceeds 20,000 NIS in the reported year",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T15:30:00Z",
+      "raw_snippet": "תרומות מישויות מדיניות זרות ששוויין המצטבר עולה על סכום של 20,000 שקלים חדשים",
+      "confidence": "high"
+    },
+    {
+      "id": "anon-donor-name-rule",
+      "claim": "The Second Schedule permits an amuta not to record a donor's name in the financial report, except for donations from a foreign political entity, where the receipt states תרומה בעילום שם in the donor-name field and either the donation does not exceed the maximum amount set by the Minister, or the Registrar granted a special approval not to name the donor",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T16:10:00Z",
+      "raw_snippet": "רשאית עמותה שלא לרשום בדו״ח הכספי שמו של תורם, למעט לגבי תרומות מישות מדינית זרה, אם צויינו בשובר הקבלה, במקום המיועד לרישום שם התורם, המלים ”תרומה בעילום שם“",
+      "confidence": "high"
+    },
+    {
+      "id": "registrar-special-approval",
+      "claim": "The Registrar may give a special approval not to state the donor's name in the financial report, under procedures set by the Minister",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T16:10:00Z",
+      "raw_snippet": "הרשם נתן אישור מיוחד שלא לציין את שם התורם בדו״ח הכספי, לפי הליכים ונהלים שקבע השר.",
+      "confidence": "high"
+    },
+    {
+      "id": "donation-receipt-book",
+      "claim": "The Second Schedule requires donation receipts to be recorded in a SEPARATE receipt book, requires the word תרומה to be printed conspicuously on every receipt in that book, and requires an amuta holding a Section 46 approval to print on the receipt the words that it holds an Income Tax approval for donations under Section 46",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-09-09T16:10:00Z",
+      "raw_snippet": "תקבולים בשל תרומות יירשמו בפנקס שוברי קבלות נפרד; על כל קבלה בפנקס של שובר קבלות לתרומות תודפס בצורה בולטת לעין המילה ”תרומה“",
+      "confidence": "high"
+    }
+  ]
+}
