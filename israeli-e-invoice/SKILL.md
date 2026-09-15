@@ -47,13 +47,13 @@ For all invoice types, gather:
 
 ### Step 4: Check Allocation Number Requirement
 Determine if an allocation number is needed:
-- **Required if:** the VAT amount is above the current VAT threshold AND the document type requires allocation: tax invoice (305), periodic tax invoice (310), tax invoice/receipt (320), proforma (332), and the v2 codes (340, 345, 348).
-- **Test the VAT amount, not the net amount.** The law states the headline figures as net amounts, but the ITA's operative criterion is the VAT derived from them: "נדרש מספר הקצאה רק כאשר סכום המע"מ גבוה מ-900 ₪" from 1 June 2026 (1,800 from 1 January 2026, 3,600 for 2025). For a wholly standard-rated invoice the two tests coincide, because 5,000 x 18% = 900. They diverge on a MIXED invoice with an exempt or zero-rated component, which can sit above the net threshold while its VAT stays below the VAT threshold, in which case no allocation number is required. The Tax Authority states this directly for the customs-agent case, where the taxable service or commission component is small next to the invoice total, and says the same answer applies to other dealers operating similarly. It nonetheless recommends requesting a number on every invoice where your software already supports it, so the process stays uniform.
+- **Required if ALL FOUR conditions hold** (Tax Authority API spec, section 1.2; in the statute, VAT Law s.47(a2)(1) obliges the dealer to request one "לפי דרישת הקונה", at the buyer's demand, and not for a zero-rated transaction): (1) the amount BEFORE VAT is above the current threshold; (2) the invoice includes a NON-ZERO VAT component, so a zero-rated invoice or one covering only exempt transactions needs no number; (3) the customer is an osek murshe (licensed dealer); (4) the customer has requested an allocation number. The document type must also be one that carries allocation: tax invoice (305), periodic tax invoice (310), tax invoice/receipt (320), proforma (332), and the v2 codes (340, 345, 348). A number MAY still be requested for any amount and any customer, including credits.
+- **Test the amount BEFORE VAT, as the statute does.** Both the duty to request a number (VAT Law s.47(a2)(1): a transaction "שסכומה, בלא המס, עולה" on the threshold) and the bar on deducting input VAT (s.38(a1)) are measured on the amount before VAT, not on the VAT amount. Do not convert the threshold into a VAT-amount figure and test that instead: on a mixed invoice with an exempt component the two give different answers, and the statute uses only the amount before VAT. Some guidance describes a relief for mixed invoices; it was read on the Tax Authority FAQ on 2026-09-15, but it is administrative guidance that the statute does not contain, and the skill does not rely on it, so where the amount before VAT is over the threshold, tell the user a number is required if the customer is an osek murshe who asks for one, and that requesting a number is the safe course in any doubtful case. Always ask whether a quoted figure includes VAT, since a VAT-inclusive figure can sit above the threshold while the amount before VAT does not.
 - **Threshold timeline** (allocation-number requirement under the Economic Arrangements Law 2023-2024 amending VAT Law section 47, accelerated schedule):
-  - From 4 May 2024 to Dec 2024: net > 25,000 NIS (VAT > 4,500)
-  - Jan 2025 to Dec 2025: net > 20,000 NIS (VAT > 3,600)
-  - Jan 2026 to May 2026: net > 10,000 NIS (VAT > 1,800)
-  - **June 1, 2026 onwards (in effect): net > 5,000 NIS (VAT > 900)**
+  - From 4 May 2024 to Dec 2024: net > 25,000 NIS
+  - Jan 2025 to Dec 2025: net > 20,000 NIS
+  - Jan 2026 to May 2026: net > 10,000 NIS
+  - **June 1, 2026 onwards (in effect): net > 5,000 NIS**
   - No further reduction has been legislated or announced. Commentary speculates about a 2027 step, but nothing official supports it, so do not tell a user a further cut is scheduled.
 - **Not required for:** transaction invoices (300), credit invoices (330), plain receipts (kabala), and any invoice at or below the threshold. The ITA has confirmed several cases that trip people up:
   - Credit notes (330) never need one, at any amount and for any reason.
@@ -61,9 +61,9 @@ Determine if an allocation number is needed:
   - Debit notes (hoda'at hiyuv) do not need one, because they reduce the input-VAT claim.
   - A cancellation document for a payment demand does not need one.
   - A customer who does not deduct input VAT (a private individual, or a malkar or financial institution that is not offsetting) does not oblige the supplier to request one. You may still request one for such a customer, and the Tax Authority recommends requesting on every invoice for process uniformity; in that case put the sentinel 999999998 in the customer-number field.
-  - Note the reverse-charge exception in the other direction: in that flow the supplier issues a zero-rated invoice that DOES carry an allocation number, so an invoice with no VAT charged on it does not automatically mean no allocation number is needed.
+  - A zero-rated or wholly exempt invoice carries no duty. The one zero-rated invoice that DOES carry a number is the reverse-charge replacement issued inside the refusal procedure (see below), which receives a SPECIAL allocation number; do not generalise it to ordinary zero-rated sales.
 
-**June 2026 transition warning:** The threshold dropped from 10,000 NIS to 5,000 NIS on June 1, 2026. Any allocation-required invoice (305/310/320) issued on or after June 1, 2026 with VAT above 900 NIS (net above 5,000 NIS on a wholly standard-rated invoice) MUST carry an allocation number, otherwise the buyer cannot deduct input VAT. Verify the invoice issue date when checking the threshold, not the transaction date.
+**June 2026 transition warning:** The threshold dropped from 10,000 NIS to 5,000 NIS on June 1, 2026. Any allocation-required invoice (305/310/320/340/345/348) issued on or after June 1, 2026 whose amount before VAT is above 5,000 NIS, where the buyer is an osek murshe who requests a number, MUST carry one, otherwise the buyer cannot deduct input VAT (s.38(a1)). Sources key the step to invoices issued from that date; no source read states which date governs a transaction that straddles the change, so flag it rather than guess.
 
 If allocation number IS required:
 1. Inform user they must request from SHAAM before issuing
@@ -85,7 +85,7 @@ Run validation checks:
 3. VAT calculation correct
 4. Invoice number sequential
 5. Date is parseable and consistent with the transaction
-6. Allocation number present if above threshold
+6. Allocation number present where all four conditions hold (amount before VAT above the threshold, non-zero VAT, an osek murshe customer who requested one)
 
 If validation fails, report specific errors and how to fix them.
 
@@ -93,11 +93,11 @@ If validation fails, report specific errors and how to fix them.
 
 The allocation number is returned immediately in the normal case. Two failure modes have documented procedures, and they are handled differently.
 
-**The Tax Authority refuses (substantive refusal).** Since 2025 the ITA may refuse a request where there is reasonable ground to suspect the invoice would be issued unlawfully. The issuer then has four documented alternatives: cancel the request; continue the transaction WITHOUT an allocation number; continue and offer the buyer a reverse charge (available only where the buyer is a registered osek murshe); or apply to the control unit and set a hearing. The reverse-charge route has a specific mechanic: cancel the refused invoice, issue a new one with identical details except a VAT value of zero and a different reference number, and that new invoice receives a special allocation number and is reported as a zero-rated transaction. If you continue without a number instead, the invoice must carry a prominent sentence stating that input tax may not be deducted against it. Report the chosen alternative back through the invoice-decision service (Cancel / Continue / FurtherObjection).
+**The Tax Authority refuses (substantive refusal).** Under VAT Law s.47(a2)(3) the Tax Authority may refuse a request where there is reasonable ground to suspect the invoice would be issued unlawfully. The issuer then has four documented alternatives: cancel the request; continue the transaction WITHOUT an allocation number; continue and offer the buyer a reverse charge (available only where the buyer is a registered osek murshe); or apply to the control unit and set a hearing. The reverse-charge route has a specific mechanic. The supplier cancels the held invoice by storno and re-requests with a zero-rate invoice that keeps the SAME invoice_id as the original, a different reference number, and the value 3 in the action field; that request returns a special allocation number, and the printout carries the caption "Customer must self-report this invoice" (API spec s.2.2.2). In the statute's terms (s.47(a3)), the buyer issues a tax invoice in its own name bearing that number and reports the transaction, while the supplier's zero-rate invoice states that it was issued under that subsection. If you continue without a number instead, the invoice must carry a prominent sentence stating that input tax may not be deducted against it. Report the chosen alternative back through the invoice-decision service (Cancel / Continue / FurtherObjection). The hearing timetable is set by statute (VAT Law s.47(a2)(3)(b) and s.47(a4)): the hearing is set within 2 business days of the online notice; a decision not given within 1 business day of the hearing counts as approval; a refusal can be objected to within 30 days of the hearing; the director must decide the objection within 21 business days or it counts as accepted; the decision on the objection can be appealed to the District Court.
 
 **The system is down (technical failure).** The emergency-number arrangement covers a significant failure of the Tax Authority's own systems, NOT a local connectivity problem. For a local failure the issuer has three options: request the number through the standalone web application; wait for the fault to clear, within the period the law allows for issuing the invoice; or issue the invoice without a number and request one retroactively once the fault is fixed. The waiting option is bounded by the period the law allows for issuing the invoice, up to 14 days from the tax point.
 
-**Request timing.** The Tax Authority accepts allocation requests for invoices dated ahead of the request, and retroactive requests once a fault is cleared, so a validator that rejects every future-dated invoice is wrong. Confirm the exact forward and retroactive windows against the Tax Authority's current guidance before relying on a specific number of days.
+**Request timing.** The Tax Authority accepts allocation requests for invoices dated ahead of the request, and retroactive requests once a fault is cleared, so a validator that rejects every future-dated invoice is wrong. Confirm the exact forward and retroactive windows against the Tax Authority's current guidance before relying on a specific number of days. A number can also be requested after the invoice is issued (VAT Law s.47(a2)(4)), but that does not change the deadline in s.38(a) for the buyer to deduct the input VAT within six months of the invoice date.
 
 ## Integration details that commonly break
 
@@ -112,9 +112,9 @@ The allocation number is returned immediately in the normal case. Two failure mo
 ### Example 1: Simple B2B Tax Invoice
 User says: "Create a tax invoice for a web development project, 15,000 NIS to ABC Ltd"
 Actions:
-1. Identify: Tax Invoice (type 305), above threshold -- allocation needed
+1. Identify: Tax Invoice (type 305). Confirm the 15,000 is before VAT; it is above the 5,000 threshold, so an allocation number is needed if ABC Ltd is an osek murshe and asks for one, which a business customer usually does
 2. Collect: Seller and buyer details
-3. Calculate: Net 15,000 + VAT 2,700 = Total 17,700 NIS
+3. Calculate: Net NIS 15,000 + VAT NIS 2,700 = Total NIS 17,700
 4. Guide: Request allocation number from SHAAM
 5. Generate: Formatted invoice document
 Result: Complete tax invoice with all required fields and allocation number guidance
@@ -159,11 +159,10 @@ Result: Credit invoice referencing original, with correct VAT reversal
 
 | Source | URL | What to Check |
 |--------|-----|---------------|
-| Israel Tax Authority - e-invoice | https://www.gov.il/he/departments/israel_tax_authority | Allocation number rules, invoice format, rollout schedule |
+| Israel Tax Authority - Israel Invoice API spec v2.0 (PDF) | https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf | Allocation conditions, document type codes, refusal alternatives, endpoints |
 | SHAAM API (sandbox + production) | https://ita-api.taxes.gov.il | Allocation-number API endpoints |
 | Tax Authority Israel-Invoice FAQ | https://www.gov.il/he/pages/faq_israel_invoice | Authoritative answers on thresholds, refusals, exemptions |
-| Knesset - VAT Law | https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx | Value Added Tax Law, invoice obligations |
-| ITA invoicing guidance | https://www.gov.il/he/departments/publications/reports/invoices_israel | Types of invoices (300/305/310/320/330), required fields |
+| VAT Law (Nevo) | https://www.nevo.co.il/law_html/law00/72813.htm | Sections 38(a1) and 47(a2) to (a4): the threshold, the duty at the buyer's demand, refusals, hearings |
 | Kol Zchut - invoice rules | https://www.kolzchut.org.il/he | Plain-language duties for small businesses |
 
 ## Troubleshooting
@@ -173,12 +172,12 @@ Cause: Israeli TIN (mispar osek) must be exactly 9 digits with valid check digit
 Solution: Verify the number with the check digit algorithm. Run scripts/validate_invoice.py for validation.
 
 ### Error: "Allocation number required"
-Cause: the invoice's VAT amount exceeds the current VAT threshold for mandatory allocation
+Cause: the invoice's amount before VAT exceeds the current threshold for mandatory allocation, and the other conditions also hold (non-zero VAT, a licensed-dealer customer who requested a number)
 Solution: Request allocation number from SHAAM API before issuing invoice. See Step 4.
 
 ### Error: "VAT rate mismatch"
 Cause: Using incorrect VAT rate (rate changes periodically)
-Solution: Verify current rate at the Tax Authority website. Standard rate is 18%, unchanged for 2026.
+Solution: Verify current rate at the Tax Authority website. Standard rate is 18% from 1 January 2025 (17% until 31 December 2024), unchanged for 2026.
 
 ### Error: "Invoice type not suitable"
 Cause: Wrong invoice type selected for the transaction

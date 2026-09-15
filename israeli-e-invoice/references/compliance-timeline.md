@@ -13,10 +13,10 @@ non-accelerated plan reached 5,000 NIS only in 2028.
 
 | Effective Date | Threshold | Applies To |
 |---------------|-----------|------------|
-| May 4, 2024 | net > 25,000 NIS (VAT > 4,500) | Tax invoices (305, 310, 320) |
-| January 1, 2025 | net > 20,000 NIS (VAT > 3,600) | Tax invoices (305, 310, 320) |
-| January 1, 2026 | net > 10,000 NIS (VAT > 1,800) | Tax invoices (305, 310, 320) |
-| June 1, 2026 | net > 5,000 NIS (VAT > 900) | Tax invoices (305, 310, 320) (in effect) |
+| May 4, 2024 | net > 25,000 NIS | Tax invoices (305, 310, 320, 340, 345, 348) |
+| January 1, 2025 | net > 20,000 NIS | Tax invoices (305, 310, 320, 340, 345, 348) |
+| January 1, 2026 | net > 10,000 NIS | Tax invoices (305, 310, 320, 340, 345, 348) |
+| June 1, 2026 | net > 5,000 NIS | Tax invoices (305, 310, 320, 340, 345, 348) (in effect) |
 
 NOTE: No further reduction is legislated or announced. Commentary speculates about
 a 2027 step or eventual full coverage, but no official source supports it, so do
@@ -25,10 +25,9 @@ service page and the Tax Authority's Israel-Invoice FAQ, both current as of
 mid-2026.
 
 ## What "Above Threshold" Means
-- The law states the threshold as the **net invoice amount, excluding VAT**, but the Tax Authority's operative test is the **VAT amount** derived from it (> 3,600 for 2025, > 1,800 from 1.1.2026, > 900 from 1.6.2026). For a wholly standard-rated invoice the two coincide; on a mixed invoice with an exempt or zero-rated component they diverge, and the VAT test governs
+- The statute tests the **amount before VAT** (VAT Law s.38(a1) for the deduction bar, s.47(a2)(1) for the duty to request at the buyer's demand): it is measured on the amount before VAT, not on the VAT amount. Do not convert the threshold into a VAT-amount figure. A relief for mixed invoices described in some guidance appears in the Tax Authority FAQ (read 2026-09-15) but is administrative guidance, not in the statute, and is not used by the skill; on a mixed invoice above the before-VAT threshold the safe course is to request a number
 - Credit invoices (330) do not require an allocation number
 - Multiple items on one invoice: total is what matters
-- Split invoices to avoid threshold: PROHIBITED (anti-avoidance rule)
 
 ## Penalties for Non-Compliance
 - Invoice without required allocation number: May be disqualified as tax invoice
@@ -38,6 +37,8 @@ mid-2026.
 - (No published schedule of administrative fines specific to this requirement was found; do not quote a fine amount)
 
 ## Exemptions
+- The duty applies only when four conditions ALL hold (Tax Authority API spec v2.0, section 1.2): the amount before VAT is above the threshold; the invoice includes a non-zero VAT component; the customer is a licensed dealer (osek murshe); and the customer has requested an allocation number. A number may still be requested for any amount and any customer, including credits.
+- Zero-rated invoices, and invoices covering only exempt transactions: no allocation required (no VAT component). The special number on a reverse-charge replacement invoice arises only inside the refusal procedure.
 - Plain payment receipts (kabala): Never require allocation (not part of the allocation document set)
 - Transaction invoices (type 300): Never require allocation (a demand for payment, not a tax invoice)
 - Credit invoices (type 330): Do not require allocation

@@ -10,7 +10,7 @@ This split is real: the allocation request runs on `ita-api.taxes.gov.il`, while
 
 ## Authentication
 - **Method:** OAuth2 "User Restricted" (token-based). There is NO per-request TLS client certificate.
-- **Token endpoint:** `https://openapi.taxes.gov.il/shaam/{tsandbox|production}/longtimetoken/oauth2/token` (standard authorize then token code flow; see the OpenAPI User Guide).
+- **Token endpoint:** not stated in the API spec, which refers to the section on authenticating and receiving a token in the OpenAPI User Guide. Take the exact token URL from that guide rather than guessing a path.
 - **Software identity travels in the request body, not the auth header:**
   - `accounting_software_number` (mandatory): the registration certificate number of the accounting software in the ITA software registry. If no registration certificate exists, send the company number / ID of the document producer.
   - `client_software_key` (optional): the invoice issuer's client key with the software publisher.

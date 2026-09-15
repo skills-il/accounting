@@ -50,26 +50,23 @@
     },
     {
       "claim_id": "legal-basis-section-47-38",
-      "claim": "The allocation-number duty was enacted by the Economic Arrangements Law (חוק ההתייעלות הכלכלית התשפ\"ג-2023) amending the VAT Law (חוק מע\"מ): section 47 / Section 47 / סעיף 47 governs the duty to obtain an allocation number on a tax invoice, and section 38 / סעיף 38 makes the allocation number a condition for the buyer to deduct input VAT (ניכוי מס התשומות). There is NO Amendment 157. The 2024 threshold was 25,000 ש\"ח before VAT.",
-      "source_url": "https://www.efraty.com/%D7%9E%D7%A2%D7%9E-%D7%94%D7%A7%D7%A6%D7%90%D7%AA-%D7%9E%D7%A1%D7%A4%D7%A8%D7%99-%D7%97%D7%A9%D7%91%D7%95%D7%A0%D7%99%D7%95%D7%AA-%D7%91%D7%A9%D7%A0%D7%AA-2024/",
-      "raw_snippet": "במסגרת חוק ההתייעלות הכלכלית (תיקוני חקיקה להשגת יעדי התקציב לשנים 2023 ו-2024), התשפ\"ג-2023, נקבע בסעיף 47 לחוק מע\"מ כי עוסק יידרש לקבל מרשות המסים מספר הקצאה לחשבונית מס כתנאי לניכוי מס התשומות לפי סעיף 38. בשנת 2024 חלה החובה על חשבוניות מעל 25,000 ש\"ח (לפני מע\"מ).",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "claim": "VAT Law section 47(a2)(1) (סעיף 47(א2)(1) לחוק מע\"מ): an osek murshe must request an allocation number at the buyer's demand for a transaction whose amount before VAT exceeds the section 38(a1) threshold (סעיף 38(א1)), and the subsection does not apply to a zero-rated transaction",
+      "source_url": "https://www.nevo.co.il/law_html/law00/72813.htm",
+      "raw_snippet": "ובעסקה שסכומה, בלא המס, עולה על הסכום האמור בסעיף 38(א1), חייב הוא לעשות כן לפי דרישת הקונה",
+      "fetched_at": "2026-09-15T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/compliance-timeline.md",
         "scripts/validate_invoice.py"
-      ],
-      "verified_via": "browser",
-      "verified_at": "2026-07-26T00:00:00Z",
-      "verification_note": "gov.il returns HTTP 403 to scripted fetches. The page was rendered in a browser and the threshold schedule read from the live DOM on 2026-07-26."
+      ]
     },
     {
       "claim_id": "shaam-document-type-codes-table-2-5",
       "claim": "SHAAM Israel Invoice Model API Table 2.5 (v2.0, 7/2024) document type codes and allocation-number flags: 300 Invoice/transaction invoice (No), 305 Tax invoice (Yes), 310 Periodic tax invoice (Yes), 320 Tax invoice/receipt (Yes), 330 Credit tax invoice (No), 332 Pro forma invoice (Yes, see Article 3.5), 340 Reservation Tax Invoice (Yes), 345 Agent Tax Invoice (Yes), 348 Log command (Yes). There is no code 400 and no self-billing code.",
-      "source_url": "https://assets.kpmg.com/content/dam/kpmg/il/pdf/vat_software-houses-ENG.pdf",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
       "raw_snippet": "Table 2.5: Types of documents. 300 Invoice/transaction invoice No; 305 Tax invoice Yes; 310 Periodic tax invoice Yes; 320 Tax invoice/receipt Yes; 330 Credit tax invoice No; 332 Pro forma invoice Yes (See explanation in Article 3.5); 340 Reservation Tax Invoice Yes; 345 Agent Tax Invoice Yes; 348 Log command Yes.",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "fetched_at": "2026-09-15T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -77,39 +74,37 @@
         "scripts/validate_invoice.py"
       ],
       "verified_via": "pdf",
-      "verified_at": "2026-07-26T00:00:00Z",
-      "verification_note": "Confirmed against the official ITA spec PDF 'Israel Invoice Model API Description, Version 2.0 / 7.2024', extracted with pdftotext. Still the current spec version; no v2.1 or v3.0 exists."
+      "verified_at": "2026-09-15",
+      "verification_note": "Re-cited 2026-09-15: the KPMG copy returns 404. Table 2.5 read in the ITA API spec v2.0 via pdftotext: 300 No, 305 Yes, 310 Yes, 320 Yes, 330 No, 331 Credit tax invoice I No (future use), 332 Pro forma Yes (see Article 3.5), 340 Reservation Yes, 345 Agent Yes, 348 Log command Yes."
     },
     {
       "claim_id": "shaam-allocation-api",
-      "claim": "SHAAM allocation API endpoints (Israel Invoice Model API v2.0, 7/2024). Single allocation: production POST https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval and sandbox POST https://ita-api.taxes.gov.il/shaam/tsandbox/Invoices/v2/Approval. Batch allocation: production https://ita-api.taxes.gov.il/shaam/production/Multi-invoices/v2/MultiApproval and sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/Multi-invoices/v2/MultiApproval. Lookup by allocation number: sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/invoice-information/v1/details and production https://openapi.taxes.gov.il/shaam/production/invoice-information/v1/details. OAuth2 User Restricted token endpoint https://openapi.taxes.gov.il/shaam/{tsandbox|production}/longtimetoken/oauth2/token at openapi.taxes.gov.il (https://openapi.taxes.gov.il). The allocation number is returned in the confirmation_number response field. Auth manual at https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf and an official demo at https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo. The accounting_software_number example value is 4324243 (NIS 4324243 is not a money amount, it is the software registry number); example request math: net 15,000, VAT 2,700, total 17,700.",
-      "source_url": "https://assets.kpmg.com/content/dam/kpmg/il/pdf/vat_software-houses-ENG.pdf",
-      "raw_snippet": "chieve Budget Targets for Fiscal Years 2023 and 2024) 5723-2023, it is stipulated that as of the effective date of the law, an allocation number from the Tax Authority will be required for tax invoices as a condition for input tax deduction.",
-      "fetched_at": "2026-08-18",
+      "claim": "The ITA allocation API (spec v2.0), read in the spec PDF 2026-09-15. Single allocation: https://ita-api.taxes.gov.il/shaam/tsandbox/Invoices/v2/Approval and https://ita-api.taxes.gov.il/shaam/production/Invoices/v2/Approval. Batch: https://ita-api.taxes.gov.il/shaam/tsandbox/Multi-invoices/v2/MultiApproval and https://ita-api.taxes.gov.il/shaam/production/Multi-invoices/v2/MultiApproval. Lookup: sandbox https://ita-api.taxes.gov.il/shaam/tsandbox/invoice-information/v1/details and production https://openapi.taxes.gov.il/shaam/production/invoice-information/v1/details. Hosts: https://ita-api.taxes.gov.il and https://openapi.taxes.gov.il. InvoiceDecisionApi/v1 Cancel/Continue/FurtherObjection; OAuth2 User Restricted. The token URL is not stated in the spec, which refers to the OpenAPI User Guide https://secapp.taxes.gov.il/OpenApiUserGuide/OpenApiUserGuide.pdf. Reference implementation linked by the skill: https://github.com/dsaddan/Israel-Tax-Authority-OpenAPI-Taxes-Demo (both inventoried at HEAD, not re-read this cycle).",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "All services are powered by an OAuth2 protocol",
+      "fetched_at": "2026-09-15T00:00:00Z",
       "appears_in": [
         "references/shaam-api-reference.md",
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "source re-fetched and decoded correctly (PDF via pdftotext, HTML with its declared encoding); snippet copied from the result",
-      "verified_at": "2026-08-18",
-      "verification_note": "Confirmed against the official ITA spec PDF 'Israel Invoice Model API Description, Version 2.0 / 7.2024', extracted with pdftotext. Still the current spec version; no v2.1 or v3.0 exists."
+      "verified_via": "pdf",
+      "verified_at": "2026-09-15",
+      "verification_note": "ITA API spec v2.0 via pdftotext. Endpoints read: ita-api.taxes.gov.il/shaam/{tsandbox|production}/Invoices/v2/Approval; Multi-invoices/v2/MultiApproval; invoice-information/v1/details and v1/confirmationNumber with sandbox on ita-api and PRODUCTION on openapi.taxes.gov.il; InvoiceDecisionApi/v1/{Cancel,Continue,FurtherObjection}. Authorizations: OAuth2 User Restricted. v1 allocation services discontinued after 31/12/2024. The token URL is NOT in the spec (it points to the OpenAPI User Guide), so the skill no longer states one."
     },
     {
       "claim_id": "israeli-tin-luhn-check-digit",
       "claim": "An Israeli TIN / mispar osek is a 9-digit number validated with a Luhn-style check digit: the weighted digit sum is valid when sum modulo 10 == 0.",
       "source_url": "https://en.wikipedia.org/wiki/Luhn_algorithm",
-      "raw_snippet": "The Luhn algorithm verifies a number against its check digit by summing the digits (doubling every second digit and reducing values over 9); the number is valid when the total modulo 10 is equal to 0. Israeli ID and business numbers (9 digits) use this scheme.",
-      "fetched_at": "2026-06-16T00:00:00Z",
+      "raw_snippet": "Most credit card numbers and many government identification numbers use the algorithm as a simple method of distinguishing valid numbers from mistyped or otherwise incorrect numbers",
+      "fetched_at": "2026-09-15T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "scripts/validate_invoice.py"
       ],
       "claim_type": "derived",
-      "verified_via": "browser",
-      "verified_at": "2026-07-26T00:00:00Z",
-      "verification_note": "The cited Wikipedia Luhn page does not document the Israeli scheme. The weights [1,2,1,2,...] with digit-fold and mod-10 were verified directly by executing the algorithm against known-valid Israeli numbers, and match the implementation in the israeli-id-validator skill. Treat as algorithmic, not source-quoted."
+      "verification_note": "Same page lists \"Israeli ID numbers\" among the systems that use it."
     },
     {
       "claim_id": "worked-example-figures",
@@ -128,20 +123,21 @@
     },
     {
       "claim_id": "reference-links",
-      "claim": "URL inventory: the official reference links this skill cites, being the Israel Tax Authority department page, the ITA invoicing-guidance report page, the Knesset legislation index and Kol Zchut. Registered here as an inventory of the links themselves; no single one of these pages evidences the others. The substantive Israel-Invoice rules are evidenced by the dedicated entries in this file. Covers these references: https://www.gov.il/he/departments/israel_tax_authority https://www.misim.gov.il https://main.knesset.gov.il/Activity/Legislation/Laws/Pages/default.aspx https://www.gov.il/he/departments/publications/reports/invoices_israel https://www.kolzchut.org.il/he",
-      "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
-      "raw_snippet": "רשות המסים בישראל מאחדת את אגפי המס השונים: מס הכנסה, מיסוי מקרקעין, מס ערך מוסף, מס קנייה, מכס ומס בולים.",
-      "fetched_at": "2026-08-18",
+      "claim": "URL inventory of the Reference Links this skill cites, registered as links, not as evidence of each other: the ITA API spec PDF https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf, the ITA Israel-Invoice FAQ https://www.gov.il/he/pages/faq_israel_invoice, the API host https://ita-api.taxes.gov.il, the VAT Law on Nevo https://www.nevo.co.il/law_html/law00/72813.htm, and Kol Zchut https://www.kolzchut.org.il/he. The substantive rules are evidenced by the dedicated entries in this file.",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "The disclosure obligation applies when four of the following conditions are met",
+      "fetched_at": "2026-09-15T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "gov.il department page rendered in a browser; the SPA returns an empty shell to a plain fetch, so only navigation shows its text",
-      "verified_at": "2026-08-18"
+      "verified_via": "pdf",
+      "verified_at": "2026-09-15",
+      "verification_note": "Reference Links now cite the ITA API spec PDF and the VAT Law on Nevo instead of the gov.il department page (an empty SPA shell to a fetch) and the generic Knesset laws page."
     },
     {
       "claim_id": "allocation-vat-amount-criterion",
-      "claim": "The Tax Authority's operative criterion for requiring an allocation number is the VAT amount, not the net amount: more than 3,600 NIS for 2025, more than 1,800 NIS from 1.1.2026, and more than 900 NIS from 1.6.2026.",
+      "claim": "Recorded, NOT used by the skill: the ITA Israel-Invoice FAQ (read in a browser 2026-07-26 and 2026-09-15) states VAT-amount figures for the duty. That is administrative guidance; the statute (VAT Law s.38(a1), s.47(a2)(1)) tests the amount before VAT, and the skill follows the statute.",
       "source_url": "https://www.gov.il/he/pages/faq_israel_invoice",
       "raw_snippet": "הקריטריון לבקשת מספר הקצאה ודיווח בדוח המפורט הינו סכום המע\"מ כנגזרת של הסכום הקבוע בחוק. כלומר, לשנת 2025 נדרש מספר הקצאה רק כאשר סכום המע\"מ גבוה מ-3,600 ₪, החל מיום 1.1.2026 נדרש מספר הקצאה רק כאשר סכום המע\"מ גבוה מ-1,800 ₪, והחל מיום 1.6.2026 נדרש מספר הקצאה רק כאשר סכום המע\"מ גבוה מ-900 ₪.",
       "fetched_at": "2026-07-26T00:00:00Z",
@@ -169,7 +165,7 @@
     },
     {
       "claim_id": "mixed-invoice-no-allocation",
-      "claim": "Where an invoice's VAT value is lower than the VAT derived from the transaction amount that triggers the allocation requirement, there is no obligation to request an allocation number, and the customer receiving such an invoice does not need one to deduct input VAT. The Tax Authority nonetheless recommends requesting a number on all invoices for process uniformity, and states the answer applies to other dealers operating similarly.",
+      "claim": "Recorded, NOT used by the skill: the ITA FAQ (read in a browser 2026-07-26 and 2026-09-15) states that a mixed invoice whose VAT stays under its VAT figure needs no number. This is administrative guidance, not in the statute; the skill does not rely on it and recommends requesting a number.",
       "source_url": "https://www.gov.il/he/pages/faq_israel_invoice",
       "raw_snippet": "וערך המע\"מ בחשבונית קטן מסכום המע\"מ הנגזר מסכום עסקה החייב במספר הקצאה, הרי שאין חובה לפנות לקבלת מספר הקצאה בגין אותה עסקה, והלקוח שמקבל כזו חשבונית, אינו נדרש למספר הקצאה לצורך ניכוי מס תשומות",
       "fetched_at": "2026-07-26T00:00:00Z",
@@ -236,6 +232,96 @@
         "SKILL.md",
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "allocation-four-conditions",
+      "claim": "Tax Authority API spec v2.0, section 1.2 (סעיף 1.2 במפרט; ובחוק סעיף 47(א2)(1)): The allocation-number duty applies only when four conditions all hold: amount before VAT above the threshold, a non-zero VAT component, the customer is a licensed dealer (osek murshe), and the customer requested a number; a number may be requested for any amount and customer, including credits",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "The invoice includes a non-zero VAT component. The customer is a \"licensed dealer\". The customer has requested an allocation number. However, an allocation number for each invoice may be requested, for any amount and for each customer including credits.",
+      "fetched_at": "2026-09-15T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-timeline.md",
+        "scripts/validate_invoice.py"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-09-15",
+      "verification_note": "ITA API Description v2.0 (7.2024), section 1.2, extracted with pdftotext. The same list opens 'The disclosure obligation applies when four of the following conditions are met'. Its year table (15,000 for 2026 etc.) is the ORIGINAL schedule, superseded by the accelerated one; only the four conditions are relied on. Corroborated in Hebrew by Grant Thornton Israel (25.5.2026): 'חשבוניות בשיעור אפס או חשבוניות הכוללות רק עסקאות פטורות אינן טעונות מספר הקצאה'."
+    },
+    {
+      "claim_id": "refusal-hearing-timetable",
+      "claim": "Refusal hearing timetable under VAT Law section 47(a2)(3)(b) and 47(a4) (סעיף 47(א4)): hearing within 2 business days of the online notice; a decision not given within 1 business day of the hearing counts as approval; objection within 30 days of the hearing; the director decides within 21 business days or the objection counts as accepted; appeal to the District Court",
+      "source_url": "https://www.nevo.co.il/law_html/law00/72813.htm",
+      "raw_snippet": "המנהל יחליט בהשגה בתוך 21 ימי עסקים מיום הגשתה",
+      "fetched_at": "2026-09-15T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-law-s38a1-5000",
+      "claim": "VAT Law section 38(a1): input tax on a tax invoice whose amount before VAT exceeds NIS 5,000 and which carries no number allocated by the director may not be deducted",
+      "source_url": "https://www.nevo.co.il/law_html/law00/72813.htm",
+      "raw_snippet": "לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים ושאינה כוללת מספר שהקצה לה המנהל",
+      "fetched_at": "2026-09-15T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/compliance-timeline.md",
+        "references/domain-checklist.md"
+      ],
+      "verification_note": "Statute text on Nevo fetched with curl 2026-09-15 (UTF-8). The statute tests the amount BEFORE VAT; the ITA FAQ also states VAT-amount figures, which the skill does not use."
+    },
+    {
+      "claim_id": "vat-law-s47a2-zero-rate",
+      "claim": "Section 47(a2) applies only to a tax invoice for a transaction that is not zero-rated",
+      "source_url": "https://www.nevo.co.il/law_html/law00/72813.htm",
+      "raw_snippet": "הוראות סעיף קטן זה יחולו לעניין חשבונית מס שהוצאה בשל עסקה שהמס שחל לגביה אינו בשיעור אפס",
+      "fetched_at": "2026-09-15T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/validate_invoice.py"
+      ]
+    },
+    {
+      "claim_id": "vat-law-s47a2-4-retroactive",
+      "claim": "A number may be requested after the invoice is issued (סעיף 47(א2)(4)), but that does not change the section 38(a) deadline (סעיף 38(א)) to deduct input VAT within six months of the invoice date",
+      "source_url": "https://www.nevo.co.il/law_html/law00/72813.htm",
+      "raw_snippet": "עוסק מורשה רשאי לבקש מהמנהל להקצות מספר לחשבונית מס גם לאחר הוצאת החשבונית, אולם אין בכך כדי לשנות מהמועד הקבוע בסעיף 38(א)",
+      "fetched_at": "2026-09-15T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verification_note": "s.38(a) on the same page: 'ושהניכוי ייעשה בתוך ששה חדשים מיום הוצאת החשבונית'."
+    },
+    {
+      "claim_id": "reverse-charge-statute-a3",
+      "claim": "Under section 47(a3) (סעיף 47(א3)) the buyer who takes on the tax issues a tax invoice in its own name bearing the allocated number and reports the transaction, and the supplier issues a zero-rate invoice stating it was issued under that subsection",
+      "source_url": "https://www.nevo.co.il/law_html/law00/72813.htm",
+      "raw_snippet": "הקונה יוציא חשבונית מס ערוכה על שמו הוא ויציין בה את המספר שהקצה לה המנהל",
+      "fetched_at": "2026-09-15T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "reverse-charge-spec-action3",
+      "claim": "API spec section 2.2.2 (סעיף 2.2.2): the reverse-charge re-request uses a zero-rate invoice with the same Invoice_Id as the original and the value 3 in the action field, returns a special allocation number, and the printout carries the caption 'Customer must self-report this invoice'",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "Customer must self-report this invoice",
+      "fetched_at": "2026-09-15T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-09-15",
+      "verification_note": "pdftotext: 'The invoice will bear the same details (other than the reference number and tax amount) with the same Invoice_Id included in the original invoice and the value 3 in the action field.' Storno cancels the original."
     }
   ]
 }

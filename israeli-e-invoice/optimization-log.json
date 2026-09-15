@@ -32,6 +32,26 @@
         "CARRY: ALLOCATION_REQUIRED_TYPES includes 332 unconditionally although the reference limits it to the cash-basis case, so a proforma quote can draw a spurious error.",
         "CARRY: the control-unit hearing route has no stated deadline or decision-maker."
       ]
+    },
+    {
+      "version": "2.3.0",
+      "date": "2026-09-15",
+      "lessons": [
+        "Resolved (GAP-MAJOR): the duty is four cumulative conditions (ITA API spec v2.0 s.1.2; in the statute s.47(a2)(1): request at the buyer's demand, not for a zero-rated transaction). Step 4 had only amount + type.",
+        "Resolved (Expert CRITICAL): the skill's 'test the VAT amount, not the net' rule came only from the ITA FAQ (read by the Judge 2026-09-15, administrative guidance) and contradicts s.38(a1) and s.47(a2)(1), which test the amount before VAT. On a mixed invoice it told users no number was needed while the statute bars the buyer's deduction. Now net-first; the FAQ relief is presented as administrative and the skill recommends requesting a number. The previous cycle had elevated the FAQ over the statute.",
+        "Resolved (Expert CRITICAL, partial): reverse charge now carries the spec mechanics (same invoice_id, action=3, caption, storno) and the statute's buyer self-invoice (s.47(a3)).",
+        "Resolved (arithmetic FAIL x8, all reproduced by running): 18% applied to 2024; buyer_tin and allocation_number not zero-padded; TypeError on a date object; every 332 flagged (spec: cash-basis only, now opt-in via proforma_cash_basis); sentinel 999999998 flagged; zero-VAT invoice flagged. The 'net fallback ignores taxable_amount' report was a false positive of the reviewer's VAT-first framing; under the statute the net test is correct.",
+        "Resolved (Judge FAIL): five broken citations re-cited to primary sources (Nevo, the ITA spec PDF, Wikipedia's actual sentence); the derived 2024 VAT figure 4,250 had no source and was REMOVED rather than sourced. The unsourced 'Since 2025' refusal date, 'split invoices PROHIBITED', and the longtimetoken token URL were removed.",
+        "Resolved CARRY: hearing timetable is statutory (s.47(a2)(3)(b), s.47(a4)), not merely a CPA-firm reading.",
+        "Added (Expert MAJOR): a post-issue number does not extend the s.38(a) six-month deduction deadline (s.47(a2)(4)); ask whether a quoted figure includes VAT; Example 1 now checks the customer conditions.",
+        "Lesson: the previous cycle's reviewer challenged the mixed-invoice rule and the author defended it from the FAQ. The statute was one curl away and settled it. Read the statute before defending an administrative source.",
+        "CARRY: which date selects the threshold for a transaction straddling a step is unsourced; the skill now says so. Token lifetime (vendor-reported 3 months) not on an ITA source. Rate limits, batch caps, idempotency after timeout, cancelling an allocated invoice: unpublished.",
+        "CARRY: The ITA FAQ blocked the author's WebFetch, curl and headless Playwright attempts, but the Judge rendered it on 2026-09-15 with the URL asserted. Lesson: \"I could not reach it\" is not \"unreachable\"; say who read it and when. The FAQ is administrative and not used; the skill follows the statute.",
+        "Deferred (Expert MINOR): add 340/345/348 to every document-type listing beyond the timeline table; the 'offence' wording rests on the July FAQ read.",
+        "Pre-existing, not changed: SKILL_HE.md has no YAML frontmatter (3 of 15 SKILL_HE.md files in skills-il/accounting share this).",
+        "Round 3 fixes: VAT-overstated check when only total and vat are given (a wrong VAT had lowered the derived net below the threshold); net rounded to 0.01; dead vat_threshold column and function removed; two FAQ evidence claims reworded as 'recorded, not used by the skill'; unevidenced invoices_israel Reference Links row removed. Deferred: taxable_amount range check skipped when net_amount is absent; an unparseable date still adds an allocation error (pre-existing).",
+        "Judge round 4 fix: removed the false 'FAQ unreachable/unverified on 2026-09-15' wording in 5 places (checklist M6, two evidence claims, compliance-timeline, Step 4 EN/HE) and the changelog; replaced 'and nothing else' in compliance-timeline; abs() guard on the overstated-VAT comparison for negative amounts on allocation types."
+      ]
     }
   ]
 }

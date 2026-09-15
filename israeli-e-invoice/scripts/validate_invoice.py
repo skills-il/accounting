@@ -33,26 +33,20 @@ VALID_INVOICE_TYPES = {
     348: "Log Command (Pkudat Yoman)",
 }
 
-# Allocation number thresholds by date range, as (net_threshold, vat_threshold).
-# Requirement under the Economic Arrangements Law 2023-2024 (amending VAT Law
-# section 47).
+# Allocation number thresholds by date range, as (start, end, net_threshold).
 #
-# IMPORTANT: the headline figures (25,000 / 20,000 / 10,000 / 5,000) are stated in
-# the law as NET amounts, but the ITA's operative test is the VAT AMOUNT derived
-# from them. Per the ITA FAQ: "נדרש מספר הקצאה רק כאשר סכום המע"מ גבוה מ-900 ₪"
-# from 1.6.2026 (and 1,800 from 1.1.2026, 3,600 for 2025).
+# The STATUTE keys the duty to the amount BEFORE VAT: VAT Law s.47(a2)(1) obliges
+# the dealer to request a number "בעסקה שסכומה, בלא המס, עולה על הסכום האמור
+# בסעיף 38(א1)", at the buyer's demand and not for a zero-rated transaction, and
+# s.38(a1) bars deducting input VAT on such an invoice without a number. The net
+# threshold is therefore the test this script applies.
 #
-# For a wholly standard-rated invoice the two tests coincide, since
-# 5,000 * 18% = 900. They DIVERGE on a mixed invoice that is partly exempt or
-# zero-rated: such an invoice can exceed the net threshold while its VAT stays
-# under the VAT threshold, in which case NO allocation number is required.
-# Testing the net amount alone raises false "allocation required" errors for
-# customs agents, lawyers and car dealers, whose invoices are mostly pass-through.
+# No VAT-amount figure is used: the statute tests only the amount before VAT.
 ALLOCATION_THRESHOLDS = [
-    ("2024-05-04", "2024-12-31", 25000, 4250),  # VAT was 17% until 31.12.2024
-    ("2025-01-01", "2025-12-31", 20000, 3600),
-    ("2026-01-01", "2026-05-31", 10000, 1800),
-    ("2026-06-01", None, 5000, 900),
+    ("2024-05-04", "2024-12-31", 25000),
+    ("2025-01-01", "2025-12-31", 20000),
+    ("2026-01-01", "2026-05-31", 10000),
+    ("2026-06-01", None, 5000),
 ]
 
 # Document types that require allocation numbers (305 tax invoice, 310 periodic,
@@ -61,6 +55,13 @@ ALLOCATION_THRESHOLDS = [
 ALLOCATION_REQUIRED_TYPES = {305, 310, 320, 332, 340, 345, 348}
 
 VAT_RATE = 0.18  # 18% effective 2025-01-01 (raised from 17%); held in 2026 budget
+
+
+def vat_rate_for(date_str) -> float:
+    """Standard VAT rate for an invoice date: 17% until 31.12.2024, 18% from 1.1.2025."""
+    if isinstance(date_str, str) and date_str < "2025-01-01":
+        return 0.17
+    return VAT_RATE
 
 
 def validate_tin(tin: str) -> bool:
@@ -83,18 +84,6 @@ def validate_tin(tin: str) -> bool:
     return total % 10 == 0
 
 
-def get_allocation_vat_threshold(invoice_date: str) -> Optional[int]:
-    """Get the VAT-amount allocation threshold for a given date.
-
-    This is the ITA's operative test. See ALLOCATION_THRESHOLDS.
-    """
-    for start, end, _net_threshold, vat_threshold in ALLOCATION_THRESHOLDS:
-        if invoice_date >= start:
-            if end is None or invoice_date <= end:
-                return vat_threshold
-    return None
-
-
 def get_allocation_threshold(invoice_date: str) -> Optional[int]:
     """Get the allocation number threshold for a given date.
 
@@ -104,7 +93,7 @@ def get_allocation_threshold(invoice_date: str) -> Optional[int]:
     Returns:
         Threshold amount in NIS, or None if no threshold applies.
     """
-    for start, end, threshold, _vat_threshold in ALLOCATION_THRESHOLDS:
+    for start, end, threshold in ALLOCATION_THRESHOLDS:
         if invoice_date >= start:
             if end is None or invoice_date <= end:
                 return threshold
@@ -121,6 +110,9 @@ def validate_invoice(invoice: dict) -> list:
         List of error strings. Empty list means valid.
     """
     errors = []
+    # Accept a date object as well as a YYYY-MM-DD string.
+    if isinstance(invoice.get("date"), (date, datetime)):
+        invoice = dict(invoice, date=invoice["date"].strftime("%Y-%m-%d"))
 
     # Check required fields
     required_fields = ["seller_tin", "invoice_type", "date", "total_amount"]
@@ -138,7 +130,7 @@ def validate_invoice(invoice: dict) -> list:
 
     # Validate buyer TIN (optional but must be valid if present)
     if "buyer_tin" in invoice and invoice["buyer_tin"]:
-        if not validate_tin(str(invoice["buyer_tin"])):
+        if not validate_tin(str(invoice["buyer_tin"]).zfill(9)):
             errors.append(
                 f"Invalid buyer TIN format: {invoice['buyer_tin']}. "
                 "Must be 9 digits with valid check digit."
@@ -163,7 +155,7 @@ def validate_invoice(invoice: dict) -> list:
             # here. Validate the date is parseable and leave the window to the
             # caller.
             _ = inv_date
-        except ValueError:
+        except (ValueError, TypeError):
             errors.append(
                 f"Invalid date format: {invoice['date']}. Use YYYY-MM-DD."
             )
@@ -184,19 +176,21 @@ def validate_invoice(invoice: dict) -> list:
                 f"taxable_amount {base} NIS must be between 0 and the net "
                 f"amount {invoice['net_amount']} NIS"
             )
-        expected_vat = round(base * VAT_RATE, 2)
+        rate = vat_rate_for(invoice.get("date"))
+        expected_vat = round(base * rate, 2)
         actual_vat = invoice["vat_amount"]
         if actual_vat - expected_vat > 0.01:
             errors.append(
-                f"VAT overstated: {actual_vat} NIS exceeds 18% of the "
+                f"VAT overstated: {actual_vat} NIS exceeds {round(rate * 100)}% of the "
                 f"standard-rated base ({base} NIS = {expected_vat} NIS)"
             )
         elif expected_vat - actual_vat > 0.01:
             errors.append(
-                f"VAT mismatch: expected {expected_vat} NIS (18% of "
+                f"VAT mismatch: expected {expected_vat} NIS ({round(rate * 100)}% of "
                 f"{invoice['net_amount']}), got {actual_vat} NIS. If part of "
                 f"this invoice is exempt or zero-rated, supply taxable_amount "
-                f"covering only the standard-rated portion."
+                f"covering only the standard-rated portion (taxable_amount 0 for a "
+                f"wholly zero-rated invoice)."
             )
 
     # A credit note must reference the invoice it reverses.
@@ -208,45 +202,71 @@ def validate_invoice(invoice: dict) -> list:
         )
 
     # Check allocation number requirement.
-    # The operative ITA test is the VAT amount, not the net amount (they differ on
-    # mixed invoices). Fall back to the net test only when no VAT figure is given.
+    # Optional booleans: customer_is_licensed_dealer, customer_requested_allocation.
+    # Absent = assumed true (the conservative reading for a B2B tax invoice).
+    # The statute (VAT Law s.38(a1), s.47(a2)(1)) tests the amount BEFORE VAT only.
+    # net_amount is used when given; otherwise it is derived as total - vat_amount,
+    # or as total / (1 + rate) when no VAT figure is given.
     if (
         "invoice_type" in invoice
         and "date" in invoice
         and ("net_amount" in invoice or "total_amount" in invoice)
     ):
         inv_type = invoice["invoice_type"]
-        if inv_type in ALLOCATION_REQUIRED_TYPES:
+        # A 332 proforma carries allocation only in the cash-basis case (spec Table 2.5,
+        # article 3.5); require it only when the caller says so.
+        proforma_not_cash_basis = inv_type == 332 and not invoice.get("proforma_cash_basis")
+        if inv_type in ALLOCATION_REQUIRED_TYPES and not proforma_not_cash_basis:
             # total_amount is GROSS. Comparing it against a NET threshold
             # over-states every gross-only payload by the VAT rate, so derive
             # the net figure instead.
             if "net_amount" in invoice:
                 net = invoice["net_amount"]
+            elif invoice.get("total_amount") is not None and invoice.get("vat_amount") is not None:
+                rate_t = vat_rate_for(invoice["date"])
+                max_vat = invoice["total_amount"] * rate_t / (1 + rate_t)
+                if abs(invoice["vat_amount"]) - abs(max_vat) > 0.01:
+                    errors.append(
+                        f"VAT overstated: {invoice['vat_amount']} NIS exceeds the most VAT a total "
+                        f"of {invoice['total_amount']} NIS can carry at {round(rate_t * 100)}% "
+                        f"({round(max_vat, 2)} NIS)"
+                    )
+                    # Test the duty on the larger, fully standard-rated net.
+                    net = invoice["total_amount"] / (1 + rate_t)
+                else:
+                    net = invoice["total_amount"] - invoice["vat_amount"]
             elif invoice.get("total_amount") is not None:
-                net = invoice["total_amount"] / (1 + VAT_RATE)
+                net = invoice["total_amount"] / (1 + vat_rate_for(invoice["date"]))
             else:
                 net = None
+            if net is not None:
+                net = round(net, 2)
             vat = invoice.get("vat_amount")
             try:
                 threshold = get_allocation_threshold(invoice["date"])
-                vat_threshold = get_allocation_vat_threshold(invoice["date"])
                 required = False
                 reason = ""
-                # A zero VAT figure does not settle the question: a zero-rated
-                # reverse-charge invoice still carries an allocation number. Fall
-                # back to the net test in that case.
-                if vat is not None and vat != 0 and vat_threshold is not None:
-                    required = vat > vat_threshold
-                    reason = (
-                        f"VAT amount {vat} NIS > VAT threshold "
-                        f"{vat_threshold} NIS"
-                    )
+                # Tax Authority API spec v2.0 s.1.2: the duty applies only when ALL
+                # of: amount above threshold, a NON-ZERO VAT component, the customer
+                # is a licensed dealer, and the customer requested a number. A
+                # zero-rated or wholly exempt invoice therefore carries no duty. The
+                # special number on a reverse-charge replacement (action=3) arises
+                # only inside the refusal procedure, not as a general requirement.
+                customer_not_dealer = invoice.get("customer_is_licensed_dealer") is False
+                customer_did_not_request = invoice.get("customer_requested_allocation") is False
+                # 999999998 is the sentinel for a customer who does not deduct input VAT.
+                sentinel_customer = str(invoice.get("buyer_tin", "")).zfill(9) == "999999998"
+                if vat == 0:
+                    required = False
+                elif customer_not_dealer or customer_did_not_request or sentinel_customer:
+                    required = False
                 elif threshold and net is not None:
+                    # VAT Law s.38(a1) and s.47(a2)(1) key the duty to the amount BEFORE VAT.
                     required = net > threshold
                     reason = (
-                        f"net amount {net} NIS > threshold {threshold} NIS "
-                        f"(no vat_amount supplied, so the net test was used; "
-                        f"supply vat_amount for a mixed invoice)"
+                        f"amount before VAT {round(net, 2)} NIS > threshold {threshold} NIS "
+                        f"(VAT Law s.38(a1), s.47(a2)(1)); this assumes the customer is a "
+                        f"licensed dealer who requested a number"
                     )
                 alloc = invoice.get("allocation_number")
                 if required and not alloc:
@@ -254,7 +274,9 @@ def validate_invoice(invoice: dict) -> list:
                         f"Allocation number required: {reason} "
                         f"for date {invoice['date']}"
                     )
-                elif alloc and not re.fullmatch(r"\d{9}", str(alloc)):
+                elif alloc and not re.fullmatch(
+                    r"\d{9}", str(alloc).zfill(9) if isinstance(alloc, int) else str(alloc)
+                ):
                     errors.append(
                         f"Allocation number must be the 9 right-most digits of "
                         f"the confirmation number, got {alloc!r}"
