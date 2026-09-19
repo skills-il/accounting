@@ -8,7 +8,7 @@ output would be CORRECT and submission-appropriate for a real small business or 
 
 1. **Correct VAT filing cadence threshold.** Monthly vs bi-monthly is set by annual turnover.
    For 2026 the threshold is **1,775,000 NIS** (up to that figure → bi-monthly; above → monthly).
-   (2025 was 1,725,000 NIS.) A hardcoded 1.5M figure mislabels every business between ~1.5M and
+   (2025 was 1,725,000 NIS; from 1.1.2027 it is 1,805,000 NIS.) A hardcoded 1.5M figure mislabels every business between ~1.5M and
    1.775M as a monthly filer.
    Source: https://www.kolzchut.org.il/he/הגשת_דו"חות_תקופתיים_ותשלום_מס_ערך_מוסף ; gov.il VAT reporting service.
 2. **Correct VAT due dates.** Paper: 15th of following month. Online (mekuvan): 19th. Detailed
@@ -33,9 +33,16 @@ output would be CORRECT and submission-appropriate for a real small business or 
    Source: standard double-entry accounting (Israeli Income Tax bookkeeping directives, הוראות ניהול ספרים).
 9. **Allocation-number (מספר הקצאה) gate on input VAT (Israel Invoice Model, 2026):** input VAT on
    an above-threshold tax invoice is not deductible without a valid allocation number; pre-VAT
-   threshold 10,000 ₪ from 1 Jan 2026, 5,000 ₪ from 1 Jun 2026. Exclude such invoices' input VAT
+   threshold 20,000 ₪ in 2025, 10,000 ₪ from 1 Jan 2026, 5,000 ₪ from 1 Jun 2026 (threshold in force on the invoice date governs). Exclude such invoices' input VAT
    from the VAT summary or it overstates the deductible input VAT.
    Source: https://www.gov.il/he/departments/topics/israel-invoice/govil-landing-page
+
+10. **Company statements are audited, and the Registrar annual report generally does not attach them.**
+    Private company statements must be audited by the company's CPA; the output is a draft, never
+    "ready for the Registrar".
+    Source: https://he.afiklaw.com/articles/a013
+11. **Osek zeir 30% deduction replaces actual expenses** (not "the higher of"), and usually exempts
+    the annual return. Source: https://www.gov.il/he/pages/small-business-owner-income-tax
 
 ## Should cover (improves correctness / completeness, but absence won't actively mislead a filer)
 
@@ -58,13 +65,13 @@ output would be CORRECT and submission-appropriate for a real small business or 
 5. **National Insurance (ביטוח לאומי) for the self-employed.** Periodic obligation distinct from
    VAT/income tax; out of statement scope but adjacent for a "periodic reports" skill.
    Source: https://www.btl.gov.il
-6. **Bilingual term precision** (revach golmi / tifuli / naki) and RTL balance-sheet layout.
+6. **Bilingual term precision** (revach golmi / tifuli / naki) and RTL rendering of Hebrew tables (no invented assets-right/liabilities-left layout).
 
 ## Out of scope (correctly excluded by the skill)
 
 - Actual VAT/tax filing submission (the skill says "Do NOT use for tax filing submissions").
 - Payroll processing and bank reconciliation (explicitly excluded).
-- Audit opinion issuance / statutory audit sign-off.
+- Audit opinion issuance / statutory audit sign-off (re-checked 2026-09-19: users may ask for "final" company statements, so the skill must say a company's statements are audited by its CPA and that its output is a draft; the audit itself stays out of scope).
 - Detailed depreciation schedules and tax-depreciation rates (תקנות פחת).
 
 ## Authoritative sources

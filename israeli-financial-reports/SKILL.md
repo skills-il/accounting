@@ -23,7 +23,7 @@ Any form or text this tool produces is an automatic draft for your personal prep
 Determine the business entity type before generating any report. Each type has different reporting requirements under Israeli law:
 
 - **Osek Patur** (Exempt Dealer): Simplified reporting, no VAT collection. Annual turnover must stay under the exempt ceiling, which is 122,833 NIS for 2026. Files an annual declaration (Hatzharat Osek Patur) by around 31 January for the prior calendar year, not periodic VAT reports. Exceeding the ceiling mid-year forces conversion to Osek Murshe at the regional VAT office. Reports focus on income summary.
-- **Osek Murshe** (Licensed Dealer): Full VAT reporting required bi-monthly when annual turnover is up to 1,775,000 NIS (the 2026 figure; it was 1,725,000 NIS in 2025), and monthly when turnover exceeds it. Must produce profit and loss, and submit VAT returns. (The separate 1.67 million NIS figure is the section 67a detailed-filing threshold, not the cadence threshold.)
+- **Osek Murshe** (Licensed Dealer): Full VAT reporting required bi-monthly when annual turnover is up to 1,775,000 NIS (the 2026 figure; it was 1,725,000 NIS in 2025, and it rises to 1,805,000 NIS from 1 January 2027), and monthly when turnover exceeds it. Must produce profit and loss, and submit VAT returns.
 - **Chevra (Company)**: Full financial statements required including balance sheet, profit and loss, cash flow statement, and notes to financial statements. Subject to Companies Law 1999 and Securities Authority requirements if public.
 
 Confirm the reporting period: monthly, bi-monthly (for VAT), quarterly, or annual.
@@ -123,7 +123,7 @@ Net Profit (Revach Naki)             145,376.00      127,435.00
 
 Apply the current Israeli corporate tax rate (23% as of 2026) for Chevra entities. For an Osek Murshe or other non-corporate entity, the profit flows to the owner's personal income tax: use the current income-tax bracket table (see Kol Zchut, Madregot Mas Hachnasa) rather than a single rate, and note that the high-income surtax (Mas Yasaf) applies on top of the regular brackets for high earners. Do not hardcode a stale bracket table; pull the live figures from the source.
 
-**Osek zeir (small-business) election:** a registered osek zeir (turnover up to the same 122,833 ceiling) may ELECT a flat 30%-of-turnover deemed-expense deduction in place of itemizing actual expenses, and files an abbreviated annual report. It is an election: the taxpayer takes whichever is larger, the 30% deemed deduction or their itemized actual expenses. So for such a taxpayer, do NOT automatically tax the actual P&L profit above, tax on the elected basis.
+**Osek zeir (small-business) election:** a registered osek zeir (turnover up to the same 122,833 ceiling) is entitled to deduct a flat 30% of turnover as expenses INSTEAD of claiming the expenses actually incurred (it replaces actual expenses; it is not added to them), and in most cases this also exempts them from filing an annual income-tax return. Ask which basis the user is on: for an osek zeir on the 30% basis, do NOT tax the actual P&L profit above, tax turnover minus the 30% deemed deduction.
 
 ### Step 5: Generate the Balance Sheet (Maazan)
 
@@ -183,7 +183,7 @@ Use the indirect method as standard in Israeli reporting:
 2. **Investing Activities (Peulot Hashkaa)**: Capital expenditures, asset sales, investment purchases.
 3. **Financing Activities (Peulot Mimun)**: Loan proceeds/repayments, equity contributions, dividend payments.
 
-Illustrative indirect-method reconciliation (standalone example, NIS):
+Indirect-method cash flow for the Step 4-5 business (NIS):
 
 ```
 Doch Tazrim Mezumanim / Cash Flow Statement (indirect method)
@@ -194,22 +194,29 @@ Operating Activities:
   Increase in Accounts Receivable         (15,200)
   Increase in Accounts Payable             13,800
   Increase in Accrued + Tax Payable         8,659
+  Increase in VAT Payable                   1,550
+  Increase in Prepaid Expenses             (2,000)
                                         ----------
-  Net Cash from Operating                 174,635
+  Net Cash from Operating                 174,185
 
 Investing Activities:
   Purchase of Equipment                   (20,000)
+  Disposal of Intangibles (at book value)   5,000
+                                        ----------
+  Net Cash from Investing                 (15,000)
 
 Financing Activities:
-  Net Loan Proceeds                          1,196
+  Net Loan Proceeds                         1,195.50
   Dividend Paid                          (100,000)
                                         ----------
-  Net Cash from Financing                 (98,804)
+  Net Cash from Financing                 (98,804.50)
                                         ----------
-Net Increase in Cash                       55,831
+Net Increase in Cash                       60,380.50
 ```
 
-Each worked block above (trial balance, P&L, balance sheet, this cash flow) is a standalone illustration using a different sample business; they are not meant to reconcile to one another.
+The 5,000 decrease in intangibles is shown as a disposal at book value (no gain or loss, so no P&L line). If the decrease is amortisation instead, record it as an expense in the P&L and add it back in operating activities; confirm the cause with the user.
+
+This cash flow is derived from the Step 4 P&L and the Step 5 balance sheet. Tie-out check (mandatory before output): the net increase in cash must equal the change in balance-sheet cash and bank, here (45,230.00 + 328,750.50) - (38,500.00 + 275,100.00) = 60,380.50. If it does not tie, a balance-sheet movement is missing from the statement. The Step 3 trial balance is a separate illustration and does not reconcile to Steps 4-6.
 
 ### Step 7: Generate VAT Summary Report (Doch Maam)
 
@@ -218,7 +225,7 @@ For Osek Murshe and Chevra, prepare the VAT summary:
 ```
 VAT Summary Report (Doch Sikum Maam)
 Period: November - December 2025
-Business: Example Ltd. (Osek Murshe)
+Business: Example (individual Osek Murshe, not a PCN874 detailed filer in 2025)
 VAT Registration: 515-123456
 
 Output VAT (Maam Iskaot):
@@ -233,11 +240,13 @@ VAT Payable (Maam Leshalem):        15,696.00
 Due Date: January 19, 2026 (online; 15th for paper)
 ```
 
+**Input VAT is the actual VAT on valid documents, not 18% of total purchases.** Sum the VAT shown on the supplier tax invoices (and import entries) for the period. Purchases from an osek patur, and exempt or zero-rated purchases, carry no deductible input VAT. The VAT regulations (Takanot Maam) limit or bar deduction for some expense types, such as private-use vehicles, mixed business/private items, and entertainment and gifts; apply those restrictions and confirm the deductible share with the user's accountant. Report zero-rated sales separately from standard-rated sales. The example figures above assume every purchase is fully deductible.
+
 **Reporting cadence and deadlines:** the online (mekuvan) filing deadline is the 19th of the following month; paper filers must file by the 15th. Detailed (PCN874) filers get until the 23rd.
 
 **Detailed VAT reporting (PCN874):** as of 1 January 2026, a self-employed/individual Osek with annual turnover above 500,000 NIS must file the detailed PCN874 report (companies and partnerships with a corporate partner have been required since September 2025). Detailed filers face a 23rd-of-month deadline and per-period detailed reporting; whether the cadence is monthly or bi-monthly depends on the filer's existing classification (sources differ, so confirm against the filer's own VAT registration). The file lists per-invoice detail: invoice number, date, amount, VAT amount, and the counterparty's Osek (registration) number. From 2026, a self-employed detailed filer may aggregate (rather than itemize) tax invoices under 5,000 NIS pre-VAT as long as the combined total is stated.
 
-**Allocation-number (mispar haktza'a) gate on input VAT (Israel Invoice Model, 2026):** input VAT on a tax invoice ABOVE the threshold is NOT deductible unless the invoice carries a valid Tax Authority allocation number. Threshold (pre-VAT): NIS 10,000 from 1 January 2026, dropping to NIS 5,000 from 1 June 2026. Before summing Input VAT (Maam Tsumot) for the period, verify that every above-threshold supplier invoice has a valid allocation number and EXCLUDE the input VAT of any that do not. Otherwise the VAT summary overstates the deductible input VAT and understates the VAT payable, a real 2026 compliance error.
+**Allocation-number (mispar haktza'a) gate on input VAT (Israel Invoice Model, 2026):** input VAT on a tax invoice (issued by an osek murshe) ABOVE the threshold is NOT deductible unless the invoice carries a valid Tax Authority allocation number. Threshold (pre-VAT): NIS 25,000 at the reform's first stage (2024), NIS 20,000 during 2025, NIS 10,000 from 1 January 2026, and NIS 5,000 from 1 June 2026. Apply the threshold in force on the invoice date, so a Nov-Dec 2025 period (as in the example above) uses NIS 20,000. Before summing Input VAT (Maam Tsumot) for the period, verify that every above-threshold supplier invoice has a valid allocation number and EXCLUDE the input VAT of any that do not. Otherwise the VAT summary overstates the deductible input VAT and understates the VAT payable, a real 2026 compliance error.
 
 ### Step 8: Format and Export
 
@@ -247,7 +256,8 @@ Apply proper formatting for all reports:
 - **Negative amounts**: Use parentheses for negative values: (45,000.00)
 - **Bilingual headers**: Include both Hebrew and English section headers
 - **Comparison columns**: Current period alongside previous period
-- **Export formats**: PDF (for submission), Excel (for analysis), CSV (for import into accounting software)
+- **Unaudited output**: statements this skill produces are unaudited compilations. Never label them "audited", and never add an auditor's report or opinion.
+- **Export formats**: PDF (for your accountant's review), Excel (for analysis), CSV (for import into accounting software)
 
 ## Examples
 
@@ -258,7 +268,7 @@ User says: "Generate my VAT report for the Jan-Feb 2025 bi-monthly period. I am 
 Actions:
 1. Confirm business type as Osek Murshe (bi-monthly VAT filing).
 2. Calculate Output VAT: 120,000 x 18% = 21,600 NIS.
-3. Calculate Input VAT: 45,000 x 18% = 8,100 NIS.
+3. Calculate Input VAT: 45,000 x 18% = 8,100 NIS (assumes the user's figure is already the deductible purchases and every invoice above the NIS 20,000 allocation threshold of that period (2025) carries an allocation number; otherwise apply the Step 7 rules).
 4. Calculate net VAT payable: 21,600 - 8,100 = 13,500 NIS.
 5. Generate formatted bilingual VAT summary report with due date (March 19, 2025 (online; 15th for paper)).
 
@@ -280,7 +290,7 @@ Actions:
 9. Format all amounts in NIS with proper separators and parentheses for negatives.
 10. Export to PDF and Excel.
 
-Result: Complete set of annual financial statements (P&L, Balance Sheet, Cash Flow) in bilingual format, ready for submission to the Registrar of Companies (Rasham HaChevrot) and the Tax Authority.
+Result: Complete set of annual financial statements (P&L, Balance Sheet, Cash Flow) in bilingual format, as a draft for the company's auditor. A company's financial statements must be audited by the company's CPA (roeh cheshbon mevaker) before they accompany the tax return; the output is not audited statements. Do not describe them as a Registrar filing: a private company's annual report to the Registrar of Companies generally does not attach the financial statements (only a company whose articles fail certain conditions must attach the balance sheet).
 
 ### Example 3: Quarterly Comparison Report for Management
 
@@ -299,7 +309,7 @@ Result: A management-oriented P&L comparison report showing quarter-over-quarter
 
 - Israeli financial reports use NIS (New Israeli Shekel) with the symbol appearing after the number in Hebrew context (1,000 ש"ח) but before in English context. Agents may place the currency symbol incorrectly.
 - Bi-monthly VAT summary reports must align with the 6 reporting periods (Jan-Feb, Mar-Apr, etc.), not quarters. Agents may group data by quarters, which does not match Israeli tax authority requirements.
-- Israeli balance sheets list assets on the right side and liabilities on the left in Hebrew format (RTL). Agents may produce LTR-formatted balance sheets that confuse Israeli accountants.
+- Hebrew reports must render RTL (labels on the right, amount columns to their left). Agents often emit LTR tables with Hebrew labels, which reads backwards. Do not invent a side-by-side "assets right, liabilities left" layout; use the vertical layout of Step 5 unless the user's accountant asks otherwise.
 - The Hebrew financial term "revach golmi" (gross profit) vs. "revach tafuli" (operating profit) vs. "revach naki" (net profit) are distinct concepts. Agents may mistranslate or conflate these terms.
 - Israeli small businesses (osek patur and osek murshe) have different reporting requirements. Agents may apply corporate reporting standards to sole proprietors, generating unnecessarily complex reports.
 
@@ -311,7 +321,7 @@ Result: A management-oriented P&L comparison report showing quarter-over-quarter
 | IFRS Foundation | https://www.ifrs.org | IFRS standards (mandatory for public companies; optional for private companies and SMEs) |
 | Institute of Certified Public Accountants in Israel | https://www.icpas.org.il | Israeli accounting profession norms and standards |
 | Israel Tax Authority | https://www.gov.il/he/departments/israel_tax_authority | VAT reporting, corporate tax filings |
-| Companies Registrar | https://www.gov.il/he/departments/israeli_corporations_authority | Annual financial report obligations |
+| Companies Registrar | https://www.gov.il/he/departments/israeli_corporations_authority | Company annual report (dooch shnati) obligations; statements generally not attached for a private company |
 | openpyxl documentation | https://openpyxl.readthedocs.io/en/stable/ | Writing styled XLSX reports from Python |
 
 ## Troubleshooting

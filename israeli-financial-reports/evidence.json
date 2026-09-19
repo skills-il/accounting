@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-financial-reports",
-  "generated_at": "2026-08-11T00:00:00Z",
+  "generated_at": "2026-09-19T00:00:00Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -29,10 +29,10 @@
     },
     {
       "claim_id": "vat-cadence-threshold-1775000",
-      "claim": "For 2026, a business with annual turnover up to 1,775,000 NIS files VAT bi-monthly; above that it files monthly. The 2025 figure was 1,725,000 NIS. The separate 1.67 million NIS figure is the section 67a detailed-filing threshold, not the cadence threshold.",
+      "claim": "For 2026, a business with annual turnover up to 1,775,000 NIS files VAT bi-monthly; above that it files monthly. The 2025 figure was 1,725,000 NIS.",
       "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
-      "raw_snippet": "עסקים שמחזור עסקאותיהם בשנה הקובעת (12 חודשים רצופים שמסתיימים ב-31 באוגוסט של שנת המס שחלפה) הוא עד 1,775,000 ₪ (נכון ל-01.01.2026) יגישו את הדו\"ח למע\"מ אחת לחודשיים. עסקים שמחזור עסקאותיהם הוא מעל 1,775,000 ₪ בשנה יגישו את הדו\"ח למע\"מ כל חודש.",
-      "fetched_at": "2026-08-11T00:00:00Z",
+      "raw_snippet": "הסכום הקובע לשנה שהחלה ביום 01.01.2026 הוא 1,775,000 ₪ - כך שעוסק שמחזור עסקאותיו הוא עד 1,775,000 ₪ צריך להגיש את הדו\"ח למע\"מ אחת לחודשיים, ועסק שמחזור עסקאותיו הוא מעל 1,775,000 ₪ בשנה צריך להגיש את הדו\"ח למע\"מ כל חודש.",
+      "fetched_at": "2026-09-19T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -167,7 +167,7 @@
     },
     {
       "claim_id": "ref-corporations-authority",
-      "claim": "The Israeli Corporations Authority (Companies Registrar) page is the authoritative source for annual financial-report obligations. The correct department slug is israeli_corporations_authority; the old corporations_authority slug returns a gov.il error page.",
+      "claim": "The Israeli Corporations Authority (Companies Registrar) page is the authoritative source for a company annual report (דוח שנתי) obligation.",
       "source_url": "https://www.gov.il/he/departments/israeli_corporations_authority",
       "raw_snippet": "רשות התאגידים",
       "fetched_at": "2026-08-11T00:00:00Z",
@@ -216,7 +216,7 @@
     },
     {
       "claim_id": "allocation-number-input-vat-2026",
-      "claim": "Israel Invoice Model (מודל חשבוניות ישראל): from 1 January 2026 input VAT on a tax invoice above the threshold is not deductible unless the invoice carries a valid Tax Authority allocation number (מספר הקצאה). Threshold before VAT: NIS 10,000 from 1 January 2026, dropping to NIS 5,000 from 1 June 2026.",
+      "claim": "Israel Invoice Model (מודל חשבוניות ישראל): input VAT on a tax invoice above the threshold is not deductible unless the invoice carries a valid Tax Authority allocation number (מספר הקצאה). Threshold before VAT: NIS 20,000 for 2025, NIS 10,000 from 1 January 2026, NIS 5,000 from 1 June 2026.",
       "source_url": "https://www.gov.il/he/departments/topics/israel-invoice/govil-landing-page",
       "raw_snippet": "מספרי הקצאה אלה יידרשו כתנאי לניכוי מס התשומות בעסקאות שמעל לתקרה שנקבעה בחוק (20,000 ₪ לשנת 2025, 10,000 החל מה-1 בינואר 2026 ו-5,000 ₪ החל מה-1 ביוני 2026). לבקש באופן מקוון מספר הקצאה לחשבונית מס, כשסכום העסקה לפני מע\"מ גבוה מ-5,000 ₪ (מעודכן לשנת 2026)",
       "fetched_at": "2026-08-11T00:00:00Z",
@@ -229,10 +229,10 @@
     },
     {
       "claim_id": "osek-zeir-30-percent",
-      "claim": "An osek zeir (בעל עסק זעיר) with turnover up to the osek-patur ceiling (NIS 122,833 for 2026) may elect a flat 30%-of-turnover deemed-expense deduction for income tax instead of itemizing actual expenses, and files an abbreviated annual report.",
+      "claim": "An osek zeir (בעל עסק זעיר), an osek patur or osek murshe whose 2026 turnover does not exceed NIS 122,833, is entitled to deduct 30% of turnover as expenses instead of claiming actual expenses, and in most cases this spares them the obligation to file an annual return.",
       "source_url": "https://www.gov.il/he/pages/small-business-owner-income-tax",
       "raw_snippet": "עצמאי המוגדר כ-\"בעל עסק זעיר\" (עוסק פטור או עוסק מורשה שמחזור הכנסותיו השנתי בשנת 2026 אינו עולה על 122,833 ₪), זכאי לנכות מהכנסותיו הוצאות בשיעור של 30% מהמחזור במקום לדרוש הוצאות שהוצאו בפועל. ברוב המקרים, הכרה זו תחסוך מאותם עסקים את החובה להגיש דו\"ח שנתי",
-      "fetched_at": "2026-08-11T00:00:00Z",
+      "fetched_at": "2026-09-19T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -302,6 +302,75 @@
       "source_url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/view-jurisdiction/israel/",
       "raw_snippet": "All SMEs (as defined in the IFRS for SMEs Accounting Standard as issued by the IASB) are permitted to use the IFRS for SMEs Accounting Standard.",
       "fetched_at": "2026-08-11T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-cadence-threshold-2027-1805000",
+      "claim": "From 1 January 2027 the VAT reporting-cadence reckoning amount is 1,805,000 NIS: up to it bi-monthly, above it monthly.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%93%D7%95%22%D7%97%D7%95%D7%AA_%D7%AA%D7%A7%D7%95%D7%A4%D7%AA%D7%99%D7%99%D7%9D_%D7%95%D7%AA%D7%A9%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "החל מיום 01.01.2027 יעמוד סכום מחזור העסקאות הקובע על סך של 1,805,000 ₪ כך שעוסק שמחזור עסקאותיו הוא עד 1,805,000 ₪ יגיש את הדו\"ח למע\"מ אחת לחודשיים",
+      "fetched_at": "2026-09-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "private-co-registrar-no-statements",
+      "claim": "A private company's annual report to the Registrar of Companies generally does not attach the financial statements; only a company whose articles fail certain conditions must attach the balance sheet.",
+      "source_url": "https://he.afiklaw.com/articles/a013",
+      "raw_snippet": "לדוחות הנמסרים לרשם החברות (היינו מפורסמים לציבור) כעקרון אין צורך לצרף את הדוחות הכספיים, אולם החוק קובע כי חברות שתקנונן אינו עומד במספר תנאים מחויבות לצרף לדיווח השנתי את המאזן הכלול בדוחות הכספיים.",
+      "fetched_at": "2026-09-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "private-co-statements-audited",
+      "claim": "A private company's financial statements must be audited by the company's CPA.",
+      "source_url": "https://he.afiklaw.com/articles/a013",
+      "raw_snippet": "בחברה פרטית הדוחות נדרשים להיות מבוקרים על ידי רואה החשבון של החברה",
+      "fetched_at": "2026-09-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-number-first-stage-25000",
+      "claim": "Allocation-number thresholds by invoice date: May 2024 25,000 NIS; January 2025 20,000 NIS; January 2026 10,000 NIS; June 2026 onward 5,000 NIS.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "תאריך גובה החשבונית עבורה נדרש מספר הקצאה מאי 2024 25,000 ₪ ינואר 2025 20,000 ₪ ינואר 2026 10,000 ש״ח יוני 2026 ואילך 5,000 ש״ח",
+      "fetched_at": "2026-09-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "companies-law-1999",
+      "claim": "Israeli companies are governed by the Companies Law 1999, which requires a private company to file an annual report with the Registrar.",
+      "source_url": "https://he.afiklaw.com/articles/a013",
+      "raw_snippet": "חוק החברות תשנ\"ט-1999 דורש מכל חברה פרטית",
+      "fetched_at": "2026-09-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "cashflow-tieout-arithmetic",
+      "claim": "Cash flow worked example ties to the Step 5 balance sheet: 174,185 operating, -15,000 investing, -98,804.50 financing, net 60,380.50 = (45,230.00+328,750.50)-(38,500.00+275,100.00); VAT payable +1,550, prepaid +2,000, intangibles 30,000 to 25,000, loan 144,335 to 145,530.50.",
+      "source_url": "https://github.com/skills-il/accounting/blob/master/israeli-financial-reports/SKILL.md",
+      "raw_snippet": "internal arithmetic of the skill's own worked example",
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-09-19T00:00:00Z",
+      "fetched_at": "2026-09-19T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"

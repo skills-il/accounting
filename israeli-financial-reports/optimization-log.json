@@ -30,6 +30,19 @@
         "Added the allocation-number as a Must-cover checklist item (rubric was lagging the body); fixed a HE doubled-word typo ('רווח הרווח').",
         "Deferred MINOR: notes-to-financial-statements template; show the balance-sheet retained-earnings roll-forward / dividend line so equity articulates; withholding-tax-at-source presentation; whole-shekel VAT-filing rounding note."
       ]
+    },
+    {
+      "version": "1.4.2",
+      "date": "2026-09-19",
+      "lessons": [
+        "Fixed: Registrar mis-claim (private company statements not attached to the Registrar annual report; audited by company CPA); osek zeir 30% replaces actual expenses; allocation thresholds 25k/20k/10k/5k by invoice date; 2027 cadence 1,805,000; cash flow now ties to balance sheet; input VAT = actual VAT with Takanot Maam restrictions; removed unsourced 1.67M s.67a claim and unverified RTL assets-right gotcha.",
+        "Deferred GAP-MAJOR: name the annual return the 6111 attaches to (1214 company / 1301 individual) and its deadlines; source on gov.il first.",
+        "Deferred GAP-MAJOR: bookkeeping directives (הוראות ניהול פנקסים, double vs single entry) not covered.",
+        "Deferred UNVERIFIED: reported 2% tax on undistributed profits unless 6% dividend (2026?), confirm primary source and scope before adding.",
+        "Deferred MINOR: osek zeir exclusions (employs workers, no admissible books, passive income) and 31.03 short-report deadline; depreciation rates (תקנות פחת) move from out-of-scope to should-cover.",
+        "Kol Zchut rewrote the VAT cadence page (old snippet failed --check-sources); re-anchor snippets each cycle.",
+        "Carried 1.2.0/1.3.0 lessons still open: Form 6111 field-code mapping reference file; notes-to-statements template."
+      ]
     }
   ]
 }
