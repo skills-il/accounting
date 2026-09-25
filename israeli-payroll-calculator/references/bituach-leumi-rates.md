@@ -1,6 +1,6 @@
 # Bituach Leumi (National Insurance) Rates (2026)
 
-Amendment 252 to the National Insurance Law (effective 1.1.2026) raised the reduced-tier employee rate from 0.4% to 1.04% and the reduced-tier employer rate from 3.55% to 4.51%, and it set the reduced-tier threshold at 7,703 NIS/month (the reduced-tier ceiling published by Bituach Leumi for 2026, a separately-set figure, not a plain 60% of any single average-wage number). Full-bracket rates also edged up via health-tax re-basing.
+The RATES below have applied since 2025, not since 2026. Amendment 252 to the National Insurance Law (passed on 13.1.2025 and published on 14.1.2025 in Sefer HaChukim 3347), together with Amendment 69 to the National Health Insurance Law, raised the reduced-tier employee rate from 0.4% to 1.04% and the reduced-tier employer rate from 3.55% to 4.51% from 1.1.2025, and lifted health tax from 3.1% to 3.23% (reduced) and from 5% to 5.17% (full). Bituach Leumi's own table dates the full-tier 5.17% from 01.02.2025, so January 2025 was still collected at 5%. The reduced-tier rates sit in a temporary provision (הוראת שעה) for contributions for 2025 and 2026; the Finance Minister may extend it by order to 2027 and 2028, one year at a time, so check a 2027 payslip against the order rather than assuming these rates. What changed on 1.1.2026 is only the two thresholds: the reduced-tier threshold (7,522 to 7,703 NIS/month, a separately published figure, not a plain 60% of any single average-wage number) and the maximum insurable salary (50,695 to 51,910).
 
 ## Employee Rates
 
@@ -21,21 +21,23 @@ Amendment 252 to the National Insurance Law (effective 1.1.2026) raised the redu
 Note: Health tax is an employee-only deduction in Israel. Employers do not contribute to health tax (mas briut).
 
 ### Maximum Insurable Salary (2026)
-- **51,910 NIS/month** (unchanged from 2025)
+- **51,910 NIS/month** from 01.01.2026 (50,695 in 2025)
 - Salary above this amount: no additional NI or health deductions.
 - The reduced-tier threshold (7,703) is published by Bituach Leumi and updates each January 1 by CPI through 2028, then by average-wage growth from 2029. Kol-Zchut describes it as 60% of the average wage, but do not derive it that way: 60% of the 2026 average wage (13,769) is 8,261, not 7,703.
 
-### What Changed vs. 2025
-| Parameter | 2025 | 2026 |
-|-----------|------|------|
-| Reduced-tier threshold | 7,522 | 7,703 |
-| Employee NI (reduced) | 0.40% | 1.04% |
-| Employer NI (reduced) | 3.55% | 4.51% |
-| Employee health (reduced) | 3.10% | 3.23% |
-| Employee health (full) | 5.00% | 5.17% |
-| Employee NI (full) | 7.00% | 7.00% (unchanged) |
-| Employer NI (full) | 7.60% | 7.60% (unchanged) |
-| Max insurable | 50,695 | 51,910 |
+### Which year's values to use (the temporal dimension)
+Pick the table by the MONTH BEING PAID, not by today's date. A 2025 payslip, a retroactive correction or an annual reconciliation for 2025 uses the 2025 thresholds with the SAME rates.
+
+| Parameter | 2024 | 2025 | 2026 |
+|-----------|------|------|------|
+| Reduced-tier threshold | 7,522 | 7,522 | 7,703 |
+| Employee NI (reduced) | 0.40% | 1.04% | 1.04% |
+| Employer NI (reduced) | 3.55% | 4.51% | 4.51% |
+| Employee health (reduced) | 3.10% | 3.23% | 3.23% |
+| Employee health (full) | 5.00% | 5.17% (5.00% in January) | 5.17% |
+| Employee NI (full) | 7.00% | 7.00% | 7.00% |
+| Employer NI (full) | 7.60% | 7.60% | 7.60% |
+| Max insurable | 49,030 | 50,695 | 51,910 |
 
 ### Worked Example (2026)
 Employee, monthly gross 12,000 NIS, no shovi rechev:
@@ -43,10 +45,10 @@ Employee, monthly gross 12,000 NIS, no shovi rechev:
 - Full portion: (12,000 - 7,703) x 12.17% = 4,297 x 12.17% = 523 NIS
 - Total employee NI + health: ~852 NIS/month
 
-(2025 equivalent: 7,522 x 3.5% + 4,478 x 12.0% = 263 + 537 = 800 NIS/month. The shift of 52 NIS/month roughly matches the Calcalist "576 NIS/year extra for employees" figure.)
+(2025 equivalent, same rates, lower threshold: 7,522 x 4.27% + 4,478 x 12.17% = 321 + 545 = 866 NIS/month. The 2024 rates, 3.5% / 12.0%, are the ones that predate Amendment 252.)
 
 ## Self-Employed Rates (2026)
-Self-employed pay the whole amount themselves (no employer share) in two brackets, split at the reduced-tier threshold (7,703 NIS/month in 2026, the same threshold as for employees) up to the maximum insurable income of 51,910 NIS/month. The reduced-tier rates rose under Amendment 252. The National Insurance rates below are self-employed NI only; health tax is a separate line. Re-verify against btl.gov.il before computing atzmai payroll.
+Self-employed pay the whole amount themselves (no employer share) in two brackets, split at the reduced-tier threshold (7,703 NIS/month in 2026, the same threshold as for employees) up to the maximum insurable income of 51,910 NIS/month. The reduced-tier rates rose under Amendment 252 from 1.1.2025. The National Insurance rates below are self-employed NI only; health tax is a separate line. Re-verify against btl.gov.il before computing atzmai payroll.
 
 ### Reduced Bracket (up to 7,703 NIS/month)
 - National Insurance: 4.47%
@@ -103,8 +105,10 @@ Notes:
   pays its 0.61% / 2.12%.
 - The last row is the only one with no health-tax component, which is why 1.04% / 7.00% there are
   the bare National Insurance rates. A foreign caregiver from a treaty country sits in this row.
-- New immigrants (oleh chadash) have a 12-month exemption from National Insurance; health tax still
-  applies. That is an exemption layered on top of the table, not a row of it.
+- The new-immigrant (oleh chadash) exemption of up to 12 months from arrival is NOT a payroll
+  exemption. Bituach Leumi lists it only for someone who "אין לו הכנסות מעבודה", so it covers an oleh
+  with no work income. A salaried oleh is deducted at the normal category rate from the first
+  payslip; do not zero their National Insurance.
 - A resident with no income still owes the minimum non-working payment (266 NIS/month in 2026), see
   the israeli-bituach-leumi skill for the full non-working / passive-income rules.
 - Source: btl.gov.il employee rate table (2026 figures effective 01.01.2026).

@@ -7,7 +7,8 @@ shovi rechev (company-car use value) as taxable imputed income.
 
 Usage:
     python scripts/calculate_payroll.py --gross 20000
-    python scripts/calculate_payroll.py --gross 20000 --credits 2.75 --pension
+    python scripts/calculate_payroll.py --gross 20000 --credits 2.75
+    python scripts/calculate_payroll.py --gross 20000 --no-pension
     python scripts/calculate_payroll.py --gross 22000 --shovi-rechev 3500
     python scripts/calculate_payroll.py --gross 15000 --employer-cost
     python scripts/calculate_payroll.py --example
@@ -20,7 +21,7 @@ from dataclasses import dataclass
 
 # 2026 Israeli Income Tax Brackets (monthly).
 # Updated per Amendment 288 (published 31.3.2026, retroactive to 1.1.2026).
-# Brackets 3-5 widened: 20% now up to 19,000; 31% now 19,001-25,100; 35% from 25,101.
+# Only the 20% and 31% brackets widened: 20% now up to 19,000; 31% 19,001-25,100; 35% from 25,101.
 TAX_BRACKETS = [
     (7010, 0.10),
     (10060, 0.14),
@@ -40,15 +41,16 @@ PENSION_CREDIT_SALARY_CEILING = 9700    # NIS/month insured-salary ceiling
 PENSION_CREDIT_CONTRIBUTION_RATE = 0.07  # up to 7% of insured salary qualifies
 
 # Bituach Leumi (National Insurance) rates for employees (2026)
-# Per Amendment 252 (effective 1.1.2026): reduced-tier rates raised,
-# reduced-tier threshold now 7,703 (a separately-set BTL figure for 2026, not a plain 60% of the average wage).
+# Rates: Amendment 252, in force since 1.1.2025 (unchanged in 2026).
+# Thresholds: 2026 values. The reduced-tier threshold 7,703 is a separately-set BTL
+# figure, not a plain 60% of the average wage. For a 2025 month use 7,522 / 50,695.
 NI_REDUCED_CEILING = 7703       # NIS/month (reduced tier threshold, 2026)
 NI_FULL_CEILING = 51910         # NIS/month (max insurable salary, 2026)
 
 # Health-tax rates. These are the same for every category that pays health tax
 # at all (the official rate table publishes them once, in its headline table).
-HEALTH_REDUCED_RATE = 0.0323    # 3.23% employee health (was 3.10% in 2025)
-HEALTH_FULL_RATE = 0.0517       # 5.17% employee health (was 5.00% in 2025)
+HEALTH_REDUCED_RATE = 0.0323    # 3.23% employee health (since 1.1.2025; 3.10% in 2024)
+HEALTH_FULL_RATE = 0.0517       # 5.17% employee health (since 1.2.2025; 5.00% before)
 
 # ---------------------------------------------------------------------------
 # Employee / employer rates BY INSURANCE CATEGORY (Bituach Leumi form-102 table)
@@ -185,6 +187,25 @@ PENSION_EMPLOYEE = 0.06         # 6% employee
 PENSION_EMPLOYER = 0.065        # 6.5% employer
 PENSION_SEVERANCE = 0.06        # 6% employer severance (pitzuim)
 
+# Employer deposits are exempt from income tax only up to a ceiling (2026).
+# The excess is imputed to the employee as taxable income (zkifat hachnasa):
+# - pension (tagmulim): up to 7.5% of a salary capped at 2.5x the average wage
+# - severance (pitzuim): up to 3,798/month (8.33% of 45,600, the severance deposit ceiling)
+# With the default 6.5% / 6% this only bites above roughly 39,700 NIS/month.
+EMPLOYER_TAGMULIM_EXEMPT_RATE = 0.075
+EMPLOYER_TAGMULIM_EXEMPT_SALARY = 34423     # NIS/month, 2026
+SEVERANCE_EXEMPT_RATE = 0.0833
+SEVERANCE_EXEMPT_SALARY = 45600             # 2026; 8.33% of it = 3,798.48/month exempt
+
+# Keren hishtalmut (study fund). Not statutory: only when the employee has one.
+# Employee 2.5% is a cash deduction; the employer's 7.5% is exempt only on a
+# salary up to 15,712 NIS/month (2026). Most employers deposit only up to that
+# salary, which is the default here. An employer that deposits on the full
+# salary (--keren-full-salary) creates taxable income on the employer excess.
+KEREN_EMPLOYEE = 0.025
+KEREN_EMPLOYER = 0.075
+KEREN_EXEMPT_SALARY = 15712                 # NIS/month, 2026
+
 
 @dataclass
 class PayrollResult:
@@ -198,6 +219,9 @@ class PayrollResult:
     health_tax: float
     pension_employee: float
     net_salary: float
+    imputed_employer_deposits: float = 0.0  # taxable excess over the exempt ceilings
+    keren_employee: float = 0.0
+    employer_keren: float = 0.0
     ni_category: str = DEFAULT_NI_CATEGORY
     # Employer costs
     employer_ni: float = 0.0
@@ -226,6 +250,26 @@ def calculate_pension_credit(
     max_qualifying = capped_salary * PENSION_CREDIT_CONTRIBUTION_RATE
     eligible = min(employee_contribution, max_qualifying)
     return round(eligible * PENSION_CREDIT_RATE, 2)
+
+
+def calculate_imputed_employer_deposits(
+    pension_salary: float,
+    employer_pension_rate: float = PENSION_EMPLOYER,
+    severance_rate: float = PENSION_SEVERANCE,
+) -> float:
+    """Employer pension and severance deposits above the exempt ceilings.
+
+    The excess is taxable income in the employee's hands (added to the income
+    tax base) and, per Bituach Leumi circular 1460 / employers 1479 (2019)
+    item 5, also to the National Insurance and health base.
+    """
+    tagmulim = pension_salary * employer_pension_rate
+    tagmulim_exempt = EMPLOYER_TAGMULIM_EXEMPT_RATE * min(
+        pension_salary, EMPLOYER_TAGMULIM_EXEMPT_SALARY)
+    severance = pension_salary * severance_rate
+    severance_exempt = SEVERANCE_EXEMPT_RATE * min(pension_salary, SEVERANCE_EXEMPT_SALARY)
+    excess = max(0.0, tagmulim - tagmulim_exempt) + max(0.0, severance - severance_exempt)
+    return round(excess, 2)
 
 
 def calculate_income_tax(
@@ -331,6 +375,9 @@ def calculate_payroll(
     calc_employer: bool = False,
     shovi_rechev: float = 0.0,
     ni_category: str = DEFAULT_NI_CATEGORY,
+    severance_rate: float = PENSION_SEVERANCE,
+    keren_hishtalmut: bool = False,
+    keren_full_salary: bool = False,
 ) -> PayrollResult:
     """Calculate complete payroll breakdown.
 
@@ -346,6 +393,11 @@ def calculate_payroll(
             Defaults to the standard employee aged 18 to retirement. Getting
             this wrong is a material error for minors, pensioners and
             owner-directors.
+        severance_rate: Employer severance deposit rate. 6% is the mandatory
+            minimum; 0.0833 for a full Section 14 arrangement. Matters above
+            the exempt ceiling, where the excess becomes taxable.
+        keren_hishtalmut: Whether the employee has a study fund (2.5% employee
+            / 7.5% employer on cash gross).
 
     Returns:
         PayrollResult with all deduction details.
@@ -362,13 +414,24 @@ def calculate_payroll(
         calculate_pension_credit(gross_salary, pension_employee) if has_pension else 0.0
     )
 
-    income_tax = calculate_income_tax(taxable_gross, credit_points, pension_credit)
-    ni, health = calculate_bituach_leumi(taxable_gross, cat)
+    imputed = (
+        calculate_imputed_employer_deposits(gross_salary, PENSION_EMPLOYER, severance_rate)
+        if has_pension else 0.0
+    )
+    keren_hishtalmut = keren_hishtalmut or keren_full_salary  # full-salary implies a keren
+    keren_base = gross_salary if keren_full_salary else min(gross_salary, KEREN_EXEMPT_SALARY)
+    keren_employee = round(keren_base * KEREN_EMPLOYEE, 2) if keren_hishtalmut else 0.0
+    employer_keren = round(keren_base * KEREN_EMPLOYER, 2) if keren_hishtalmut else 0.0
+    if keren_hishtalmut and keren_full_salary:
+        imputed = round(imputed + max(
+            0.0, employer_keren - KEREN_EMPLOYER * min(gross_salary, KEREN_EXEMPT_SALARY)), 2)
+    income_tax = calculate_income_tax(taxable_gross + imputed, credit_points, pension_credit)
+    ni, health = calculate_bituach_leumi(taxable_gross + imputed, cat)
 
     # Net cash = gross cash salary minus all deductions. The employee never
     # receives shovi_rechev as cash, so it doesn't appear as an addend here.
     net_salary = round(
-        gross_salary - income_tax - ni - health - pension_employee, 2
+        gross_salary - income_tax - ni - health - pension_employee - keren_employee, 2
     )
 
     result = PayrollResult(
@@ -381,19 +444,22 @@ def calculate_payroll(
         health_tax=health,
         pension_employee=pension_employee,
         net_salary=net_salary,
+        imputed_employer_deposits=imputed,
+        keren_employee=keren_employee,
+        employer_keren=employer_keren,
         ni_category=ni_category,
     )
 
     if calc_employer:
-        emp_ni = calculate_employer_ni(taxable_gross, cat)
+        emp_ni = calculate_employer_ni(taxable_gross + imputed, cat)
         emp_pension = round(gross_salary * PENSION_EMPLOYER, 2) if has_pension else 0.0
-        emp_severance = round(gross_salary * PENSION_SEVERANCE, 2) if has_pension else 0.0
+        emp_severance = round(gross_salary * severance_rate, 2) if has_pension else 0.0
 
         result.employer_ni = emp_ni
         result.employer_pension = emp_pension
         result.employer_severance = emp_severance
         result.total_employer_cost = round(
-            gross_salary + emp_ni + emp_pension + emp_severance, 2
+            gross_salary + emp_ni + emp_pension + emp_severance + employer_keren, 2
         )
 
     return result
@@ -416,6 +482,10 @@ def format_payslip(result: PayrollResult, show_employer: bool = False) -> str:
             f"  Taxable Gross:             {result.taxable_gross:>10,.2f} NIS",
         ])
 
+    if result.imputed_employer_deposits > 0:
+        lines.append(
+            f"  Imputed employer deposits: {result.imputed_employer_deposits:>10,.2f} NIS"
+            "  (above exempt ceiling, taxable, not cash)")
     lines.append(f"  Income Tax (Mas Hachnasa): -{result.income_tax:>10,.2f} NIS")
     if result.pension_credit > 0:
         lines.append(
@@ -426,7 +496,12 @@ def format_payslip(result: PayrollResult, show_employer: bool = False) -> str:
         f"   ({cat.ni_reduced:.2%} / {cat.ni_full:.2%})",
         f"  Health Tax (Mas Briut):    -{result.health_tax:>10,.2f} NIS"
         f"   ({cat.health_reduced:.2%} / {cat.health_full:.2%})",
-        f"  Pension (Employee 6%):     -{result.pension_employee:>10,.2f} NIS",
+        f"  Pension (Employee):        -{result.pension_employee:>10,.2f} NIS",
+    ])
+    if result.keren_employee > 0:
+        lines.append(
+            f"  Keren Hishtalmut:          -{result.keren_employee:>10,.2f} NIS")
+    lines.extend([
         f"  {'-' * 42}",
         f"  Net Salary (Neto):          {result.net_salary:>10,.2f} NIS",
     ])
@@ -439,7 +514,9 @@ def format_payslip(result: PayrollResult, show_employer: bool = False) -> str:
             f"  Employer NI:               +{result.employer_ni:>10,.2f} NIS"
             f"   ({cat.employer_reduced:.2%} / {cat.employer_full:.2%})",
             f"  Employer Pension (6.5%):   +{result.employer_pension:>10,.2f} NIS",
-            f"  Employer Severance (6%):   +{result.employer_severance:>10,.2f} NIS",
+            f"  Employer Severance:        +{result.employer_severance:>10,.2f} NIS",
+            *([f"  Employer Keren:            +{result.employer_keren:>10,.2f} NIS"]
+              if result.employer_keren > 0 else []),
             f"  {'-' * 42}",
             f"  Total Employer Cost:        {result.total_employer_cost:>10,.2f} NIS",
         ])
@@ -479,6 +556,22 @@ def main():
              "the full official table with its rates."
     )
     parser.add_argument(
+        "--severance-rate", type=float, default=PENSION_SEVERANCE,
+        help="Employer severance deposit rate (default 0.06, the mandatory "
+             "minimum; 0.0833 for a full Section 14 arrangement)"
+    )
+    parser.add_argument(
+        "--keren-hishtalmut", action="store_true",
+        help="Employee has a keren hishtalmut (2.5%% employee deduction, 7.5%% "
+             "employer deposit, both on salary up to the 15,712 NIS exempt ceiling)"
+    )
+    parser.add_argument(
+        "--keren-full-salary", action="store_true",
+        help="Employee has a keren hishtalmut deposited on the full salary, not "
+             "capped at 15,712 (implies --keren-hishtalmut); the employer excess "
+             "is taxable and enters NI"
+    )
+    parser.add_argument(
         "--list-ni-categories", action="store_true",
         help="Print the official Bituach Leumi employee rate table and exit"
     )
@@ -515,6 +608,15 @@ def main():
     if args.gross is None:
         parser.print_help()
         sys.exit(1)
+    if args.gross < 0 or args.shovi_rechev < 0:
+        parser.error("--gross and --shovi-rechev must not be negative")
+    if args.credits < 0:
+        parser.error("--credits must not be negative")
+    if not 0 <= args.severance_rate <= 1:
+        parser.error("--severance-rate must be a fraction between 0 and 1")
+    if args.severance_rate > 0.0833:
+        print("WARNING: --severance-rate above 0.0833 (8.33%) is unusual; the part of the "
+              "deposit above the exempt ceiling is treated as taxable.", file=sys.stderr)
 
     result = calculate_payroll(
         args.gross,
@@ -523,8 +625,14 @@ def main():
         args.employer_cost,
         shovi_rechev=args.shovi_rechev,
         ni_category=args.ni_category,
+        severance_rate=args.severance_rate,
+        keren_hishtalmut=args.keren_hishtalmut,
+        keren_full_salary=args.keren_full_salary,
     )
     print(format_payslip(result, show_employer=args.employer_cost))
+    if args.ni_category.startswith("under-18") and args.credits in (2.25, 2.75):
+        print("\nNOTE: an employee aged 16 or 17 gets one extra credit point (s.40B):"
+              " pass --credits 3.25 (3.75 for a girl).")
 
 
 if __name__ == "__main__":

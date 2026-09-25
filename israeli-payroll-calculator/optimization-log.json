@@ -1,37 +1,6 @@
 {
   "cycles": [
     {
-      "version": "1.3.4",
-      "date": "2026-07-21",
-      "trigger": "Review-round pass with the new --check-sources gate; resolved two carry items deferred from v1.3.3.",
-      "lessons": [
-        "CORRECTNESS: references/bituach-leumi-rates.md had the SELF-EMPLOYED National Insurance rates wrong, 5.97% reduced / 17.83% full. Verified against BTL: self-employed NI is 4.47% reduced / 12.83% full. The skill's own evidence claim already had 4.47% right, so the reference file had silently drifted from the evidence. The gate's --check-sources surfaced 17.83% as unjustified.",
-        "CARRY RESOLVED (was MAJOR): keren hishtalmut (2.5% employee) is now surfaced in the net flow (new paragraph + Step 5 line), not just a gotcha. It is the biggest real-payslip deduction the default net omits.",
-        "CARRY RESOLVED (was MINOR): 2026 minimum wage (6,443.85/month, 35.40/hour from 1.4.2026) added as a Step 0 sanity check.",
-        "TWO DEAD SOURCE URLs found and re-pointed: the kolzchut pages for the Section 45a pension credit and for child credit points both now 404. Live content is at חובת_ביטוח_פנסיוני_לעובדים and נקודות_זיכוי_ממס_הכנסה(_להורים_לילדים_בגיל_17-6). The figures themselves (35% on 7% up to 8,148/yr, credit point 242/month) verified correct against the live pages.",
-        "VERIFIER FIX (shared): optimization-log.json is now in SKIP_FILES. Its prose ('no 53% error anywhere') was being read as a live 53% claim and blocking the gate. False positive fixed for all skills.",
-        "kolzchut is JS-rendered: curl returns only nav/footer chrome (which alone exceeds the 1500-char JS-shell heuristic), so it reads as 'unreachable' rather than 'empty'. Use a browser to read kolzchut article text.",
-        "Deferred: the reference file's employee worked-example and the age/pension/disability rate table were CPA-verified in v1.3.0/v1.3.3 and not re-read this cycle."
-      ]
-    },
-    {
-      "version": "1.3.3",
-      "date": "2026-07-20",
-      "lessons": [
-        "CORRECTNESS: removed a false arithmetic derivation that framed the 7,703 BL reduced-tier threshold as '60% of the 2026 average wage of 13,769' (60% x 13,769 = 8,261, not 7,703). 7,703 is a separately-published BTL figure. Fixed the reference file, the script comment, and avoided picking between the §1 (13,566) and §2 (13,769) average-wage variants, which are both real BTL figures used for different purposes.",
-        "CONSISTENCY: SKILL body/script used 6% severance (mandatory minimum under the pension expansion order) while evidence.json cited 8.33%. Reconciled by stating both in the body + evidence: 6% is the mandatory minimum; 8.33% is the full Section 14 arrangement that discharges statutory severance liability. Calculator keeps 6% (correct default).",
-        "CONFIRMED CURRENT 2026 (CPA research): top marginal rate is 50% (47% + 3% surtax) with NO 53% error anywhere (a prior known bug, absent here); Amendment 288 brackets (20% to 19,000, 31% to 25,100, 35% from 25,101); credit point 242/mo; BL employee 4.27% reduced / 12.17% full with the FULL age/pension/disability rate table present; ceiling 51,910; Section 45a pension credit. Net-salary checker: no regeneration needed.",
-        "Deferred (MAJOR, over batch cap): surface keren hishtalmut (2.5% employee) as an optional net deduction in the calculator flow, not just a gotcha, it is the biggest real-payslip cash deduction the default net omits. Deferred (MINOR): add the 2026 minimum wage (6,443.85/mo, 35.40/hr from 1.4.2026); add a pension-contribution ceiling; niche BL rows (kibbutz, chalat imputed)."
-      ]
-    },
-    {
-      "version": "1.3.0",
-      "date": "2026-06-13",
-      "lessons": [
-        "Rate-completeness audit found the bituach-leumi-rates.md reference stated the age-based employee NI rates WRONG ('Under 18: Reduced rates', 'Over retirement: Reduced rates, no health tax') instead of the real 0% (under-18 + pensioner) / 3.93%-10.03% (67-70 deferring) / 3.23%-5.17% (disability). The net-salary tool inherited this and over-charged pensioners/minors. Replaced with the verified employee age/pension table (from the official btl.gov.il employee rate page) in the reference + a flag in SKILL.md Step 3. Legacy skill: backfilled evidence.json (119 facts) from scratch and stripped pre-existing em-dashes."
-      ]
-    },
-    {
       "version": "1.3.1",
       "date": "2026-06-13",
       "lessons": [
@@ -52,6 +21,30 @@
       }
     },
     {
+      "version": "1.3.3",
+      "date": "2026-07-20",
+      "lessons": [
+        "CORRECTNESS: removed a false arithmetic derivation that framed the 7,703 BL reduced-tier threshold as '60% of the 2026 average wage of 13,769' (60% x 13,769 = 8,261, not 7,703). 7,703 is a separately-published BTL figure. Fixed the reference file, the script comment, and avoided picking between the §1 (13,566) and §2 (13,769) average-wage variants, which are both real BTL figures used for different purposes.",
+        "CONSISTENCY: SKILL body/script used 6% severance (mandatory minimum under the pension expansion order) while evidence.json cited 8.33%. Reconciled by stating both in the body + evidence: 6% is the mandatory minimum; 8.33% is the full Section 14 arrangement that discharges statutory severance liability. Calculator keeps 6% (correct default).",
+        "CONFIRMED CURRENT 2026 (CPA research): top marginal rate is 50% (47% + 3% surtax) with NO 53% error anywhere (a prior known bug, absent here); Amendment 288 brackets (20% to 19,000, 31% to 25,100, 35% from 25,101); credit point 242/mo; BL employee 4.27% reduced / 12.17% full with the FULL age/pension/disability rate table present; ceiling 51,910; Section 45a pension credit. Net-salary checker: no regeneration needed.",
+        "Deferred (MAJOR, over batch cap): surface keren hishtalmut (2.5% employee) as an optional net deduction in the calculator flow, not just a gotcha, it is the biggest real-payslip cash deduction the default net omits. Deferred (MINOR): add the 2026 minimum wage (6,443.85/mo, 35.40/hr from 1.4.2026); add a pension-contribution ceiling; niche BL rows (kibbutz, chalat imputed)."
+      ]
+    },
+    {
+      "version": "1.3.4",
+      "date": "2026-07-21",
+      "trigger": "Review-round pass with the new --check-sources gate; resolved two carry items deferred from v1.3.3.",
+      "lessons": [
+        "CORRECTNESS: references/bituach-leumi-rates.md had the SELF-EMPLOYED National Insurance rates wrong, 5.97% reduced / 17.83% full. Verified against BTL: self-employed NI is 4.47% reduced / 12.83% full. The skill's own evidence claim already had 4.47% right, so the reference file had silently drifted from the evidence. The gate's --check-sources surfaced 17.83% as unjustified.",
+        "CARRY RESOLVED (was MAJOR): keren hishtalmut (2.5% employee) is now surfaced in the net flow (new paragraph + Step 5 line), not just a gotcha. It is the biggest real-payslip deduction the default net omits.",
+        "CARRY RESOLVED (was MINOR): 2026 minimum wage (6,443.85/month, 35.40/hour from 1.4.2026) added as a Step 0 sanity check.",
+        "TWO DEAD SOURCE URLs found and re-pointed: the kolzchut pages for the Section 45a pension credit and for child credit points both now 404. Live content is at חובת_ביטוח_פנסיוני_לעובדים and נקודות_זיכוי_ממס_הכנסה(_להורים_לילדים_בגיל_17-6). The figures themselves (35% on 7% up to 8,148/yr, credit point 242/month) verified correct against the live pages.",
+        "VERIFIER FIX (shared): optimization-log.json is now in SKIP_FILES. Its prose ('no 53% error anywhere') was being read as a live 53% claim and blocking the gate. False positive fixed for all skills.",
+        "kolzchut is JS-rendered: curl returns only nav/footer chrome (which alone exceeds the 1500-char JS-shell heuristic), so it reads as 'unreachable' rather than 'empty'. Use a browser to read kolzchut article text.",
+        "Deferred: the reference file's employee worked-example and the age/pension/disability rate table were CPA-verified in v1.3.0/v1.3.3 and not re-read this cycle."
+      ]
+    },
+    {
       "date": "2026-08-19",
       "version": "1.4.0",
       "trigger": "Remediation: the bundled script could not reach the skill's own rate table, and that table was itself incomplete against the official source.",
@@ -68,6 +61,31 @@
         ]
       },
       "notes": "The 53% top-marginal-rate question stayed closed and the 2026 brackets, credit point value, pension credit and ceilings were not touched."
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-09-25",
+      "trigger": "update-oldest-skills batch 2026-09-25 (authoring stage; panel pending)",
+      "lessons": [
+        "CORRECTNESS (temporal): the skill dated Amendment 252 to January 2026 and printed 3.5% / 12.0% as '2025 values'. BTL's own table dates the 1.04% / 4.51% / 3.23% rates from 01.01.2025 and 5.17% from 01.02.2025, and ICPAS's tax-year-2025 tables show the same rates with thresholds 7,522 / 50,695. Every prior cycle verified the 2026 numbers as correct, which they are; none asked which year they started in. The evidence snippet itself said 'החל ב- 01.01.2025' while the claim beside it said 2026.",
+        "COVERAGE (3g cross-check): kamaneto.com matched the script to the shekel at 8k-20k and for a minor, but diverged 5.4% at 70k because it imputes employer pension deposits above 7.5% x 34,423 and severance above 3,798/month as taxable income. The script now does this. A cross-check limited to 'typical' salaries would never have found it: always include a high earner above 2.5x the average wage.",
+        "CARRY RESOLVED: keren hishtalmut is now in the script (--keren-hishtalmut), deposited on salary up to the 15,712 exempt ceiling, which is what kamaneto models too.",
+        "CARRY RESOLVED BY CORRECTION: the oleh 12-month National Insurance exemption was never a payroll item. BTL lists it only for someone with no work income. Two cycles had carried 'make it selectable in the script' as an open task built on a false premise.",
+        "credit-points.md carried the pre-2022 oleh schedule, said a veteran returning resident gets oleh points (he does not), and labelled the discharged-soldier row 'combat soldier'. tax-brackets.md carried a second credit table still on the flat pre-v1.3.2 child points. Duplicate tables drift: the second copy is now a pointer.",
+        "Deferred discretionary: SKILL_HE.md numbered lines begin with a digit ('1. ...'), against the Hebrew RTL line-start rule. Pre-existing across the file; left for a structural pass.",
+        "Checker net-salary: its 70,000 golden case (37,257.94) omits the imputed employer deposits; the correct net under the default 6.5% / 6% is 36,073.04. Its caveat also calls the oleh NI exemption 'not modelled', which implies it would apply to a salaried oleh.",
+        "RESOLVED: child credit points for ages 1-2 re-verified at 4.5 on kolzchut (browser, URL-asserted). The danel-jobs worked example that gave 2.5 for a two-year-old is wrong; do not let a secondary guide override the kolzchut page.",
+        "CORRECTION (from the research agent, verified against kolzchut and kamaneto): Amendment 288 widened only the 20% and 31% brackets. The skill had said it 'unfroze' the brackets and widened 'brackets 3, 4, 5'; the 10% / 14% / 47% thresholds and the 242 credit point are unchanged from 2025.",
+        "ADDED: dmei havraa 451.5 NIS/day private sector (extension order 18.8.2026, retroactive to 1.7.2025, difference owed where 418 was paid) as a taxable-pay note; and the 2026 income-tax exemption for olim / veteran returning residents who arrived 05.11.2025-31.12.2026, which for 2026 is claimed by refund, not through payroll.",
+        "Deferred: travel-allowance daily cap (22.60, kolzchut, no effective date on the page) and the havraa days-by-seniority table. Pension base may be capped at the average wage (13,769): not added.",
+        "Research-agent protocol: both Opus research subagents went idle without delivering, and delivered only after a SendMessage nudge well after the author had moved on. Their pages were saved into the shared checkout (.playwright-mcp/); every quote used here was re-rendered by the author with a URL assertion rather than read from those files.",
+        "PANEL ROUND 1 (Expert, verified by author at BTL): imputed employer deposits above the exempt ceiling ARE liable to NI and health (BTL circular 1460 / employers 1479, item 5, 'הפרשות המעסיק מעבר לתקרה - חייבות בזקיפת שווי'). The first draft left them out and called the question 'unsettled' instead of looking. With the fix the script matches the Malam/Synerion NeoPay engine to the agora on all 30 of the Expert's cases (keren via the new --keren-full-salary, which is Malam's convention; kamaneto caps at 15,712).",
+        "CRITICAL, pre-existing since before v1.3: credit-points.md granted 2 points for 'Disabled' and 'Blind'. The Ordinance gives a s.9(5) EXEMPTION (blind, 100% or 90%+ weighted; 684,000 / 81,960 ceilings 2024-2027) and nothing to other disabled employees. Also wrong for years: the s.37 spouse point (only a 'יחיד מוטב'), vocational '0.5 tier' (s.40D has none), BA deferral (2014-2022 text only), settlement 'points' (s.11 is a percentage credit). Missing: s.40B working-youth point. Read the Ordinance (he.wikisource raw) for every credit row; secondary guides got four of these wrong.",
+        "Deferred (Expert minor): employer-paid disability insurance (אכ\"ע) inside the 7.5% tagmulim exemption is not an input, so imputation is understated for bituach menahalim employees. Hourly minimum 35.40 vs BTL's 34.64 on a 186-hour divisor: kolzchut's 35.40 kept.",
+        "Checker net-salary: in addition to the 70k case, every golden case between ~39,700 and 51,910 gross now differs (NI on the imputed excess), and its credit inputs lack the 16-17 youth point. Regenerate in Phase 9.2.",
+        "PANEL ROUND 2 (Expert iteration 2): the round-1 repair INTRODUCED two defects. (1) It gave every 100%/90% disabled employee the s.9(5)(א) 684,000 ceiling; the text limits (א) to monthly-benefit recipients under the Invalids Law or the Hostile Action Victims Law, and everyone else, including a blind person without such a benefit, falls under (א1): 445,200, with 90% requiring 40% from one impairment. Reading s.9(5) in full, not the sentence found by search, would have caught it. (2) --keren-full-salary was cited alone in the SKILL text but did nothing without --keren-hishtalmut; it now implies it. Judge the repair, not only the original.",
+        "PANEL ROUND 3 (Judge + Expert): the round-2 text applied the 100%/90%/40% tests to the blind too. In s.9(5) the percentage clause follows 'נכה' only; blindness qualifies by itself on either route. Kol-Zchut (blindness certificate, no medical committee) was unreachable (403/redirect) this cycle, so the fix rests on the statute text alone."
+      ]
     }
   ]
 }

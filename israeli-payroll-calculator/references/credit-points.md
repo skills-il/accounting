@@ -36,36 +36,67 @@ otherwise.
 | Who | Points | Notes |
 |-----|--------|-------|
 | Single parent | 1.0 | Additional |
-| Spouse with no income | 1.0 | Below threshold |
+| Spouse whose upkeep the taxpayer bears (s.37) | 1.0 | ONLY for a "יחיד מוטב": the taxpayer or the spouse has reached retirement age, or is blind or disabled within s.9(5). Not for every married employee with a non-earning spouse |
+| Working youth aged 16 or 17 (s.40B) | 1.0 | "יחיד שמלאו לו או לבן־זוגו 16 שנים אך לא 18 שנים": 3.25 in total for a boy, 3.75 for a girl |
 
-### Immigration
+### Immigration (oleh chadash, from 1.1.2022)
+| Period from arrival | Points per year | Months |
+|-----|--------|-------|
+| First 12 months | 1 | 1-12 |
+| Next 18 months | 3 | 13-30 |
+| Next 12 months | 2 | 31-42 |
+| Last 12 months | 1 | 43-54 |
+
+54 months in all, worth 8.5 points in total. Applied monthly as a fraction of a point
+(1/12, 1/4, 1/6, 1/12 per month). The older 42-month schedule (3, then 2, then 1) applied to
+olim who arrived before 2022 and has run out by 2026. A **veteran returning resident (toshav
+chozer vatik) gets no credit points for that status**; a returning minor (katin chozer) and an
+ezrach oleh are treated like an oleh.
+
+**Separate 2026 benefit, not a credit point:** an oleh or a veteran returning resident who
+became resident between 05.11.2025 and 31.12.2026 may be exempt from income tax on work income
+earned in Israel in 2026-2030, up to an annual cap (600,000 NIS for 2026, pro-rated to the part
+of 2026 they were resident: arriving on 01.07.2026 gives 300,000). Income from a relative is
+capped at 140,000 within that. For 2026 it cannot be
+applied through payroll: the payslip withholds normally and the employee claims a refund after
+the tax year ends. Tell such a user their payslip tax is not the final figure.
+
+### Military and National Service
 | Who | Points | Duration |
 |-----|--------|----------|
-| New immigrant | 3.0 | Months 1-18 |
-| New immigrant | 2.0 | Months 19-24 |
-| New immigrant | 1.0 | Months 25-42 |
-| Returning resident (10+ years) | Same as new immigrant | Same schedule |
-
-### Military Service
-| Who | Points | Duration |
-|-----|--------|----------|
-| Combat soldier (3 years) | 2.0 | 3 years after discharge |
-| Regular soldier (2 years) | 1.0 | 2 years after discharge |
-| National service | 1.0 | 2 years after completion |
+| Discharged soldier or national-service graduate, served 23+ months (men) / 22+ months (women) | 2.0 | 36 months from the month after discharge |
+| Same, shorter service (over a year) | 1.0 | 36 months from the month after discharge |
 
 ### Education
 | Who | Points | Duration |
 |-----|--------|----------|
-| Bachelor's degree | 1.0 | Year of completion + 1 year |
-| Master's degree | 0.5 | Year of completion + 1 year |
-| Vocational diploma | 1.0 | Year of completion + 1 year |
+| Bachelor's degree (completed 2023 onward) | 1.0 | As many years as the degree took, up to 3, starting the tax year after completion (s.40C(c)). No choice to defer, except in a profession requiring an internship, where the points may start after the internship (s.40C(c1)). The one-year deferral choice applies only to 2014-2022 graduates |
+| Master's degree | 0.5 | Up to 2 years, from the tax year after completion |
+| Vocational studies (at least 1,700 hours) with a government-recognised certificate (s.40D) | 1.0 | As many years as the studies took, up to 3, from the tax year after completion (one year only for 2018-2022 graduates). A person entitled under both s.40C and s.40D chooses one (s.40E) |
 
-### Special Circumstances
-| Who | Points |
-|-----|--------|
-| Disabled (medical certification) | 2.0 |
-| Blind | 2.0 |
-| Resident of qualifying community | 0.25-1.0 |
+### Special Circumstances (not credit points)
+- **Disability or blindness is not a credit point.** It is an income-tax EXEMPTION on work income
+  under s.9(5), with two routes and two ceilings (2024-2027 amounts):
+  - **Who qualifies.** A blind person qualifies on blindness itself: the percentage tests below
+    apply only to a disabled person (נכה), not to the blind. The two routes differ by whether the
+    person is entitled to a monthly benefit under the Invalids (Benefits and Rehabilitation) Law or
+    the Hostile Action Victims Law.
+  - **s.9(5)(א), entitled to such a benefit:** a blind person, or a disabled person with 100%
+    disability or at least 90% from several impairments where the special computation stands in
+    for 100%. Ceiling 684,000 NIS a year; for a disabled person whose disability was set for only
+    185 to 364 days, 81,960.
+  - **s.9(5)(א1), NOT entitled to such a benefit:** a blind person, or a disabled person with at
+    least 90% disability (several impairments allowed) provided at least 40% comes from a single
+    impairment. Ceiling 445,200 NIS a year; for a disabled person whose disability was set for only
+    185 to 364 days, 81,960.
+  - A part-year disability pro-rates the exempt amount (s.9(5)(ג)). The disability percentage is
+    the one set under the laws listed in s.9(5) (including the National Insurance Law chapters on
+    work injury and general disability) or, failing that, under the 1979 regulations.
+  Other disabled employees get no personal credit from this. The only disability-linked credit
+  points are for a parent of a disabled child (above) and the s.37 spouse point.
+- **Resident of a qualifying community (יישוב מוטב, s.11)** gets a percentage tax credit on work
+  income up to an income ceiling, set by the community's score. It is not a credit point; take the
+  rate and ceiling from the ITA's list for the year.
 
 ## Claiming Credit Points
 - File Form 101 (Hatzharat Oved) with employer at start of employment

@@ -1,6 +1,6 @@
 # Israeli Income Tax Brackets (2026)
 
-Amendment 288 to the Income Tax Ordinance (published 31.3.2026, retroactive to 1.1.2026) widened brackets 3, 4, and 5. Brackets 1, 2, 6, 7 are unchanged from 2025. The earlier "frozen 2025-2027" freeze was lifted by this amendment for 2026.
+Amendment 288 to the Income Tax Ordinance (published 31.3.2026, retroactive to 1.1.2026) widened only the 20% and 31% brackets, which moves the start of the 35% bracket to 25,101. Every other threshold is unchanged from 2025, as is the credit point value (242/month).
 
 
 ## Monthly Brackets (2026)
@@ -40,21 +40,12 @@ Income in the 16,151 - 19,000 band, which was taxed at 31% in 2025, is now taxed
 - This 3% surtax is exactly what makes bracket 7 a 50% rate (47% statutory + 3% surtax = 50%). The 50% in the table above already includes the surtax, so 50% is the full top marginal rate on salary. Do not add the 3% a second time.
 
 ## Tax Credit Points (Nekudot Zikui)
-Value per point (2026): **2,904 NIS/year** (~242 NIS/month)
+Value per point (2026): **2,904 NIS/year** (~242 NIS/month).
 
-| Circumstance | Points |
-|-------------|--------|
-| Israeli resident (base) | 2.25 |
-| Female (additional) | +0.5 |
-| New immigrant (year 1-1.5) | +3.0 |
-| New immigrant (year 1.5-2) | +2.0 |
-| New immigrant (year 2-3.5) | +1.0 |
-| Child under 18 | +1.0 |
-| Child under 5 (for women) | +1.5 |
-| Single parent | +1.0 |
-| Disabled | +2.0 |
-| Combat soldier (3 years) | +2.0 |
-| Academic degree | +1.0 (year of completion + 1 year) |
+The eligibility table (children by age band and parent, new immigrants, discharged soldiers,
+degrees, single parents) lives ONLY in `references/credit-points.md`. It is not repeated here,
+because an earlier copy in this file kept a flat "+1 per child" row after the child points had
+been corrected to the age-banded table, and the two files contradicted each other.
 
 ## Pension Tax Credit (Zikui Gemel, Section 45a)
 Separate from credit points. An employee who pays into a pension fund gets a tax credit of 35% of the eligible contribution:

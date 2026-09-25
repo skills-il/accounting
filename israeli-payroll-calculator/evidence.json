@@ -17,7 +17,7 @@
     },
     {
       "claim_id": "bl-rates",
-      "claim": "Bituach Leumi + health 2026 (Amendment 252): employee reduced 1.04% NI + 3.23% health = 4.27%, full 7.0% + 5.17% = 12.17%; employer 4.51% reduced / 7.60% full; self-employed 4.47%+3.23%=7.7% then 12.83%+5.17%=18.0%. By age/pension (employee): under-18 0%/0%; old-age-pension recipient 0%/0%; 67-70 not receiving 0.61%+3.23%=3.93% then 4.86%+5.17%=10.03%; woman ret-67 3.95%/10.24%; disability 3.23%/5.17%. 2025 prior: 0.4%/0.40% reduced NI, 3.55% employer, 3.1%/3.10% health reduced, 5.0%/5.00% health full, 2.87%/5.97% self-employed reduced.",
+      "claim": "Bituach Leumi + health, in force since 2025 (Amendment 252, 1.1.2025) and unchanged in 2026: employee reduced 1.04% NI + 3.23% health = 4.27%, full 7.0% + 5.17% = 12.17%; employer 4.51% reduced / 7.60% full; self-employed 4.47%+3.23%=7.7% then 12.83%+5.17%=18.0%. By age/pension (employee): under-18 0%/0%; old-age-pension recipient 0%/0%; 67-70 not receiving 0.61%+3.23%=3.93% then 4.86%+5.17%=10.03%; woman ret-67 3.95%/10.24%; disability 3.23%/5.17%. 2025 prior: 0.4%/0.40% reduced NI, 3.55% employer, 3.1%/3.10% health reduced, 5.0%/5.00% health full, 2.87%/5.97% self-employed reduced.",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
       "raw_snippet": "סך הכול 4.51% (החל ב- 01.01.2025) 4.27% (החל ב- 01.01.2025) 8.78% (החל ב- 01.01.2025) 7.6% (החל ב- 01.01.2019) 12.17% (החל ב- 01.02.2025) 19.77% (החל ב- 01.02.2025)",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -29,7 +29,7 @@
     },
     {
       "claim_id": "bl-thresholds",
-      "claim": "BL reduced-tier threshold 7,703 / 7,703 ש\"ח (60% of 13,769 / 13,769 ש\"ח average wage); ceiling 51,910 / 51,910 ש\"ח; 2025 threshold 7,522 / 7,522 ש\"ח; non-working minimum 266 / 266 ש\"ח.",
+      "claim": "BL reduced-tier threshold 7,703 / 7,703 ש\"ח (a separately published BTL figure, not 60% of the 13,769 / 13,769 ש\"ח average wage); ceiling 51,910 / 51,910 ש\"ח; 2025 threshold 7,522 / 7,522 ש\"ח; non-working minimum 266 / 266 ש\"ח.",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
       "raw_snippet": "מחלק השכר שמעל מדרגת גביה מופחתת ועד ההכנסה המרבית החייבת בדמי ביטוח (שיעור מלא) - 51,910 ש\"ח (החל ב- 01.01.2026)",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -122,7 +122,7 @@
     },
     {
       "claim_id": "worked-examples",
-      "claim": "Worked payroll examples derived from the 2026 brackets and rates above (gross-to-net, pension credit, shovi rechev): 12,000 NIS / 12,000 ש\"ח 13,500 NIS / 13,500 ש\"ח 14,000 NIS / 14,000 ש\"ח 14,530.69 NIS / 14,530.69 ש\"ח 15,000 NIS / 15,000 ש\"ח 168 NIS / 168 ש\"ח 18,500 NIS / 18,500 ש\"ח 19,000 NIS / 19,000 ש\"ח 20,000 NIS / 20,000 ש\"ח 22,000 NIS / 22,000 ש\"ח 25,000 NIS / 25,000 ש\"ח 25,500 NIS / 25,500 ש\"ח 329 NIS / 329 ש\"ח 3,500 NIS / 3,500 ש\"ח 480 NIS / 480 ש\"ח 523 NIS / 523 ש\"ח 52 NIS / 52 ש\"ח 576 NIS / 576 ש\"ח 8,000 NIS / 8,000 ש\"ח 800 NIS / 800 ש\"ח 852 NIS / 852 ש\"ח 900 NIS / 900 ש\"ח 238 NIS / 238 ש\"ח 485 NIS / 485 ש\"ח",
+      "claim": "Worked payroll examples derived from the 2026 brackets and rates above (gross-to-net, pension credit, shovi rechev): 12,000 NIS / 12,000 ש\"ח 13,500 NIS / 13,500 ש\"ח 14,000 NIS / 14,000 ש\"ח 14,530.69 NIS / 14,530.69 ש\"ח 15,000 NIS / 15,000 ש\"ח 168 NIS / 168 ש\"ח 18,500 NIS / 18,500 ש\"ח 19,000 NIS / 19,000 ש\"ח 20,000 NIS / 20,000 ש\"ח 22,000 NIS / 22,000 ש\"ח 25,000 NIS / 25,000 ש\"ח 25,500 NIS / 25,500 ש\"ח 329 NIS / 329 ש\"ח 3,500 NIS / 3,500 ש\"ח 480 NIS / 480 ש\"ח 523 NIS / 523 ש\"ח 8,000 NIS / 8,000 ש\"ח 866 NIS / 866 ש\"ח 13,783 NIS / 13,783 ש\"ח 39,700 NIS / 39,700 ש\"ח 852 NIS / 852 ש\"ח 900 NIS / 900 ש\"ח 238 NIS / 238 ש\"ח 485 NIS / 485 ש\"ח",
       "source_url": "https://github.com/skills-il/accounting/blob/master/israeli-payroll-calculator/references/bituach-leumi-rates.md",
       "raw_snippet": "Internal gross-to-net worked examples computed inside this skill from the 2026 brackets and rates above. Not an external regulatory claim.",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -431,6 +431,545 @@
         "SKILL_HE.md",
         "references/bituach-leumi-rates.md",
         "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-amendment-252-enacted-2025",
+      "claim": "Amendment 252 to the National Insurance Law (passed 13.1.2025, published 14.1.2025) set the 2025 contribution rates in force from 1.1.2025, not the 2026 ones; the blog snippet dates the enactment report.",
+      "source_url": "https://www.bshcpa.co.il/%D7%A9%D7%99%D7%A2%D7%95%D7%A8%D7%99-%D7%93%D7%9E%D7%99-%D7%91%D7%99%D7%98%D7%95%D7%97-%D7%9C%D7%90%D7%95%D7%9E%D7%99-2025/",
+      "raw_snippet": "ב-14 בינואר 2025 הכנסת חוקקה את תיקון 252 לחוק הביטוח הלאומי",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "health-tax-2025-increase",
+      "claim": "Amendment 69 to the National Health Insurance Law raised health tax from 5% to 5.17% (full) and from 3.1% to 3.23% (reduced) from 1.1.2025; BTL dates the full-tier 5.17% from 01.02.2025.",
+      "source_url": "https://www.bshcpa.co.il/%D7%A9%D7%99%D7%A2%D7%95%D7%A8%D7%99-%D7%93%D7%9E%D7%99-%D7%91%D7%99%D7%98%D7%95%D7%97-%D7%9C%D7%90%D7%95%D7%9E%D7%99-2025/",
+      "raw_snippet": "החל מ-1 בינואר 2025, שיעור דמי ביטוח הבריאות עולה מ- 5% ל-5.17%. עבור הכנסות עד 60% מהשכר הממוצע, שיעור דמי הביטוח גדל מ-3.1% ל-3.23%.",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-2024-column1-rates",
+      "claim": "Tax year 2024, form-102 column 1: employee 3.50% reduced / 12.00% full, employer 3.55% / 7.60% (the pre-Amendment-252 rates).",
+      "source_url": "https://sites.icpas.org.il/hs/wp-content/uploads/sites/2/2025/02/%D7%9C%D7%A9%D7%9B%D7%AA-%D7%A8%D7%95%D7%90%D7%99-%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%98%D7%91%D7%9C%D7%90%D7%95%D7%AA-%D7%94%D7%91%D7%99%D7%98%D7%95%D7%97-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99-%D7%A9%D7%A0%D7%AA-%D7%94%D7%9E%D7%A1-2024-%D7%9C%D7%9E%D7%91%D7%97%D7%A0%D7%99-%D7%A9%D7%A0%D7%AA-2025.pdf",
+      "raw_snippet": "7.05 3.50 3.55 19.60 12.00 7.60",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-2024-ni-only-row",
+      "claim": "Tax year 2024, NI-only row (soldier / organ donor): employee NI 0.40% reduced / 7.00% full, employer 3.55% / 7.60%, i.e. the 2024 employee National Insurance component was 0.40%.",
+      "source_url": "https://sites.icpas.org.il/hs/wp-content/uploads/sites/2/2025/02/%D7%9C%D7%A9%D7%9B%D7%AA-%D7%A8%D7%95%D7%90%D7%99-%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%98%D7%91%D7%9C%D7%90%D7%95%D7%AA-%D7%94%D7%91%D7%99%D7%98%D7%95%D7%97-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99-%D7%A9%D7%A0%D7%AA-%D7%94%D7%9E%D7%A1-2024-%D7%9C%D7%9E%D7%91%D7%97%D7%A0%D7%99-%D7%A9%D7%A0%D7%AA-2025.pdf",
+      "raw_snippet": "3.95 0.40 3.55 14.60 7.00 7.60",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-2024-ceiling",
+      "claim": "Tax year 2024 maximum insurable income was 49,030 NIS/month.",
+      "source_url": "https://sites.icpas.org.il/hs/wp-content/uploads/sites/2/2025/02/%D7%9C%D7%A9%D7%9B%D7%AA-%D7%A8%D7%95%D7%90%D7%99-%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%98%D7%91%D7%9C%D7%90%D7%95%D7%AA-%D7%94%D7%91%D7%99%D7%98%D7%95%D7%97-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99-%D7%A9%D7%A0%D7%AA-%D7%94%D7%9E%D7%A1-2024-%D7%9C%D7%9E%D7%91%D7%97%D7%A0%D7%99-%D7%A9%D7%A0%D7%AA-2025.pdf",
+      "raw_snippet": "ההכנסה המרבית לתשלום דמי ביטוח 49,030",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md"
+      ]
+    },
+    {
+      "claim_id": "bl-2025-ceiling",
+      "claim": "Tax year 2025 maximum insurable income was 50,695 NIS/month.",
+      "source_url": "https://sites.icpas.org.il/hs/wp-content/uploads/sites/2/2026/01/%D7%9C%D7%A9%D7%9B%D7%AA-%D7%A8%D7%95%D7%90%D7%99-%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%98%D7%91%D7%9C%D7%90%D7%95%D7%AA-%D7%94%D7%91%D7%99%D7%98%D7%95%D7%97-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99-%D7%A9%D7%A0%D7%AA-%D7%94%D7%9E%D7%A1-2025-%D7%9C%D7%9E%D7%91%D7%97%D7%A0%D7%99-%D7%A9%D7%A0%D7%AA-2026.pdf",
+      "raw_snippet": "ההכנסה המרבית לתשלום דמי ביטוח 50,695",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "bl-2025-reduced-threshold",
+      "claim": "Tax year 2025 reduced-tier threshold (60% of the average wage for this purpose) was 7,522 NIS/month.",
+      "source_url": "https://sites.icpas.org.il/hs/wp-content/uploads/sites/2/2026/01/%D7%9C%D7%A9%D7%9B%D7%AA-%D7%A8%D7%95%D7%90%D7%99-%D7%97%D7%A9%D7%91%D7%95%D7%9F-%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%98%D7%91%D7%9C%D7%90%D7%95%D7%AA-%D7%94%D7%91%D7%99%D7%98%D7%95%D7%97-%D7%94%D7%9C%D7%90%D7%95%D7%9E%D7%99-%D7%A9%D7%A0%D7%AA-%D7%94%D7%9E%D7%A1-2025-%D7%9C%D7%9E%D7%91%D7%97%D7%A0%D7%99-%D7%A9%D7%A0%D7%AA-2026.pdf",
+      "raw_snippet": "60% השכר הממוצע (לעניין דמי ביטוח בשיעור המופחת) 7,522",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "employer-tagmulim-exempt-ceiling-2026",
+      "claim": "2026: employer pension (tagmulim) deposits up to 7.5% of a salary capped at 34,423 NIS/month are not imputed to the employee; the excess is taxable.",
+      "source_url": "https://www.supermarker.themarker.com/Gemel/MaximumDepositsAndAmounts.aspx",
+      "raw_snippet": "תקרת שכר שהפקדת מעסיק (7.5%) מתוכו לא תחייב את העובד בתשלום מס 34,423",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "severance-exempt-ceiling-2026",
+      "claim": "2026: employer severance deposits are exempt at deposit on a salary up to 45,600 NIS/month, i.e. up to 3,798 NIS/month (8.33% of 45,600).",
+      "source_url": "https://www.supermarker.themarker.com/Gemel/MaximumDepositsAndAmounts.aspx",
+      "raw_snippet": "תקרת משכורת 45,600 ש\"ח תקרת ההפקדה היא 3,798 ש\"ח שהם 8.33% מ-45,600 ש\"ח",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "keren-hishtalmut-exempt-ceiling-2026",
+      "claim": "2026: employer keren hishtalmut deposits are exempt at deposit on a monthly salary up to 15,712 NIS.",
+      "source_url": "https://www.supermarker.themarker.com/Gemel/MaximumDepositsAndAmounts.aspx",
+      "raw_snippet": "תקרת משכורת שהפקדה מתוכה פטורה ממס בעת ההפקדה 15,712 ש\"ח",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "oleh-ni-exemption-no-work-income",
+      "claim": "The new-immigrant exemption of up to 12 months from arrival is listed only for people with no income from work (or other income under 5% of the average wage), so it does not apply to a salaried oleh.",
+      "source_url": "https://www.btl.gov.il/Insurance/National%20Insurance/Pages/%D7%9E%D7%99%20%D7%A4%D7%98%D7%95%D7%A8%20%D7%9E%D7%AA%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%9E%D7%99%20%D7%91%D7%99%D7%98%D7%95%D7%97%20%D7%9C%D7%90%D7%95%D7%9E%D7%99.aspx",
+      "raw_snippet": "מי שהוא אחד מאלה, ואין לו הכנסות מעבודה וממקורות אחרים",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "oleh-ni-exemption-12-months",
+      "claim": "An oleh chadash is entitled to an exemption of up to 12 months from the day of arrival (within the no-work-income list).",
+      "source_url": "https://www.btl.gov.il/Insurance/National%20Insurance/Pages/%D7%9E%D7%99%20%D7%A4%D7%98%D7%95%D7%A8%20%D7%9E%D7%AA%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%9E%D7%99%20%D7%91%D7%99%D7%98%D7%95%D7%97%20%D7%9C%D7%90%D7%95%D7%9E%D7%99.aspx",
+      "raw_snippet": "יהיה זכאי לפטור לתקופה של עד 12 חודשים מיום עלייתו לארץ",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "oleh-credit-54-months",
+      "claim": "Since 1.1.2022 new-immigrant credit points run 54 months, worth 8.5 points in total.",
+      "source_url": "https://www.bshcpa.co.il/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%96%D7%99%D7%9B%D7%95%D7%99-%D7%9C%D7%A2%D7%95%D7%9C%D7%94-%D7%97%D7%93%D7%A9-%D7%95%D7%A7%D7%98%D7%99%D7%9F-%D7%97%D7%95%D7%96%D7%A8/",
+      "raw_snippet": "החוק הרחיב את הטבת נקודות הזיכוי החל מ-1 בינואר 2022. כעת, הטבה זו ניתנת לתקופה כוללת של 54 חודשים",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "oleh-credit-schedule",
+      "claim": "Oleh schedule: first 12 months 1 point/yr, next 18 months 3, next 12 months 2, last 12 months 1.",
+      "source_url": "https://www.bshcpa.co.il/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%96%D7%99%D7%9B%D7%95%D7%99-%D7%9C%D7%A2%D7%95%D7%9C%D7%94-%D7%97%D7%93%D7%A9-%D7%95%D7%A7%D7%98%D7%99%D7%9F-%D7%97%D7%95%D7%96%D7%A8/",
+      "raw_snippet": "12 החודשים הראשונים 12 1/12 (1 נקודה שנתית) 2,904 18 החודשים הבאים 18 1/4 (3 נקודות שנתית) 13,068 12 החודשים הבאים 12 1/6 (2 נקודות שנתית) 5,808 12 החודשים האחרונים 12 1/12 (1 נקודה שנתית)",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "returning-resident-no-credit",
+      "claim": "A veteran returning resident gets no credit points for that status; the special points go to an oleh, an ezrach oleh and a returning minor.",
+      "source_url": "https://www.bshcpa.co.il/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%96%D7%99%D7%9B%D7%95%D7%99-%D7%9C%D7%A2%D7%95%D7%9C%D7%94-%D7%97%D7%93%D7%A9-%D7%95%D7%A7%D7%98%D7%99%D7%9F-%D7%97%D7%95%D7%96%D7%A8/",
+      "raw_snippet": "בפועל נקודות הזיכוי המיוחדות ניתנות לעולה חדש, לאזרח עולה ולקטין חוזר בלבד! תושב חוזר ותיק לא זכאי לנקודות זיכוי רק בגלל הסטטוס שלו.",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "discharged-soldier-credit",
+      "claim": "Discharged soldiers / national-service graduates: 36 months from the month after discharge; 2 points for 23+ months (men) / 22+ (women), 1 point for shorter service over a year.",
+      "source_url": "https://danel-jobs.co.il/info-center/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%96%D7%99%D7%9B%D7%95%D7%99/",
+      "raw_snippet": "הזכאות ניתנת למשך 36 חודשים מהחודש שלאחר השחרור. מי ששירת 23 חודשים ומעלה (גברים) / 22 חודשים ומעלה (נשים): זכאי ל-2 נקודות זיכוי נוספות.",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "ma-degree-credit",
+      "claim": "MA: half a credit point for up to two years.",
+      "source_url": "https://danel-jobs.co.il/info-center/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA-%D7%96%D7%99%D7%9B%D7%95%D7%99/",
+      "raw_snippet": "ההטבה: חצי נקודת זיכוי (שווי של 1,452 ש\"ח בשנה). משך הזכאות: שנתיים (או כמספר שנות הלימוד, עד שנתיים).",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "havraa-2026-private",
+      "claim": "Private-sector dmei havraa is 451.5 NIS/day for recuperation year 2026, updated 18.08.2026 for 1.7.2025 to 30.6.2026; employers who paid the old 418 owe the difference.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%93%D7%9E%D7%99_%D7%94%D7%91%D7%A8%D7%90%D7%94",
+      "raw_snippet": "מעסיקים שכבר שילמו דמי הבראה עבור תקופה זו לפי התעריף הישן (418 ש\"ח), יצטרכו לשלם הפרשים לסכום העדכני של 451.5 ש\"ח",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-25"
+    },
+    {
+      "claim_id": "havraa-2026-effective",
+      "claim": "The havraa rate was updated on 18.08.2026 for the period 1.7.2025 to 30.6.2026.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%93%D7%9E%D7%99_%D7%94%D7%91%D7%A8%D7%90%D7%94",
+      "raw_snippet": "תעריף דמי ההבראה התעדכן ביום 18.08.2026 לגבי התקופה שהחל מ-1.7.2025 ועד 30.6.2026",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-25"
+    },
+    {
+      "claim_id": "oleh-2026-exemption",
+      "claim": "Olim and veteran returning residents who became resident 05.11.2025 to 31.12.2026 may be exempt on work income 2026-2030.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%98%D7%95%D7%A8_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%9C%D7%A2%D7%95%D7%9C%D7%99%D7%9D_%D7%97%D7%93%D7%A9%D7%99%D7%9D_%D7%95%D7%9C%D7%AA%D7%95%D7%A9%D7%91%D7%99%D7%9D_%D7%97%D7%95%D7%96%D7%A8%D7%99%D7%9D_%D7%95%D7%AA%D7%99%D7%A7%D7%99%D7%9D",
+      "raw_snippet": "שחזרו לישראל בין 05.11.2025 ועד 31.12.2026 עשויים לקבל פטור ממס הכנסה על הכנסות מיגיעה אישית שהפיקו בישראל בין השנים 2026 ועד 2030",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-25"
+    },
+    {
+      "claim_id": "oleh-2026-exemption-cap-and-refund",
+      "claim": "The 2026 exempt-income cap is 600,000 NIS; for 2026 the exemption cannot be taken in advance and employees claim a refund after the tax year.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%98%D7%95%D7%A8_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%9C%D7%A2%D7%95%D7%9C%D7%99%D7%9D_%D7%97%D7%93%D7%A9%D7%99%D7%9D_%D7%95%D7%9C%D7%AA%D7%95%D7%A9%D7%91%D7%99%D7%9D_%D7%97%D7%95%D7%96%D7%A8%D7%99%D7%9D_%D7%95%D7%AA%D7%99%D7%A7%D7%99%D7%9D",
+      "raw_snippet": "עדיין לא ניתן לקבל את הפטור מראש, וכדי לקבל את הפטור יש להגיש בקשה להחזר מס הכנסה לאחר סיום שנת המס",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-25"
+    },
+    {
+      "claim_id": "ba-degree-credit-kolzchut",
+      "claim": "BA completed 2023 or later: one credit point a year for up to 3 tax years after completion.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%AA%D7%95%D7%90%D7%A8_%D7%A8%D7%90%D7%A9%D7%95%D7%9F",
+      "raw_snippet": "מי שסיימו לימודים לתואר ראשון בשנת 2023 או מאוחר יותר זכאים לנקודת זיכוי אחת לשנה למשך עד 3 שנות מס",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-25"
+    },
+    {
+      "claim_id": "ma-degree-credit-kolzchut",
+      "claim": "MA completed 2023 or later: half a credit point in the 2 tax years after completion.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%92%D7%99%D7%9F_%D7%AA%D7%95%D7%90%D7%A8_%D7%A9%D7%A0%D7%99",
+      "raw_snippet": "מי שסיימו לימודי תואר שני בשנת 2023 או מאוחר יותר זכאים לחצי נקודת זיכוי ב-2 שנות המס",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-25"
+    },
+    {
+      "claim_id": "child-credit-age-1-2",
+      "claim": "4.5 credit points in the tax years the child turns 1 and 2.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A0%D7%A7%D7%95%D7%93%D7%95%D7%AA_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%9C%D7%94%D7%95%D7%A8%D7%94_%D7%9C%D7%99%D7%9C%D7%93_%D7%A2%D7%93_%D7%92%D7%99%D7%9C_5",
+      "raw_snippet": "בשנת המס שבה תמלא לילד שנה אחת ובשנת המס שבה יימלאו לילד שנתיים, יינתנו 4.5 נקודות זיכוי בכל שנה",
+      "fetched_at": "2026-09-25T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-25"
+    },
+    {
+      "claim_id": "amendment-288-published-3511",
+      "claim": "Amendment 288 to the Income Tax Ordinance was enacted within the Economic Efficiency Law for budget year 2026, published in Sefer HaChukim 3511 on 31 March 2026.",
+      "source_url": "https://fs.knesset.gov.il/25/law/25_lsr_12235101.pdf",
+      "raw_snippet": "פקודת מס הכנסה - מס' 288",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/tax-brackets.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "ni-on-imputed-deposits",
+      "claim": "Employer deposits above the Income Tax Ordinance ceiling are liable to National Insurance (BTL circular ביטוח 1460 / מעסיקים 1479, item 5).",
+      "source_url": "https://www.btl.gov.il/Insurance/HozrimBituah/Hozrim/%D7%94%D7%9B%D7%A0%D7%A1%D7%95%D7%AA%20%D7%A2%D7%95%D7%91%D7%93%20%D7%A9%D7%9B%D7%99%D7%A8%20%D7%A4%D7%98%D7%95%D7%A8%D7%95%D7%AA%20%D7%9E%D7%AA%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%9E%D7%99%20%D7%91%D7%99%D7%98%D7%95%D7%97.pdf",
+      "raw_snippet": "הפרשות המעסיק מעבר לתקרה",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/calculate_payroll.py",
+        "references/domain-checklist.md",
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "claim_id": "amendment-252-passed-13-1-2025",
+      "claim": "Amendment 252 was passed by the Knesset on 13 January 2025 (published in Sefer HaChukim 3347 on 14.1.2025).",
+      "source_url": "https://fs.knesset.gov.il/25/law/25_lsr_5482787.pdf",
+      "raw_snippet": "התקבל בכנסת ביום י\"ג בטבת התשפ\"ה",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/bituach-leumi-rates.md",
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "claim_id": "amendment-252-temporary-provision",
+      "claim": "The Finance Minister may extend the temporary provision on NI contributions to 2027 and 2028 by order, one year at a time.",
+      "source_url": "https://fs.knesset.gov.il/25/law/25_lsr_5482787.pdf",
+      "raw_snippet": "רשאי להאריך, בצו, את תקופת הוראת השעה לעניין דמי ביטוח לאומי",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bituach-leumi-rates.md"
+      ]
+    },
+    {
+      "claim_id": "youth-credit-s40b",
+      "claim": "סעיף 40ב (s.40B): one credit point for an individual aged 16 but not yet 18.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "16 שנים אך לא 18 שנים תובא בחשבון נקודת זיכוי",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md",
+        "scripts/calculate_payroll.py"
+      ]
+    },
+    {
+      "claim_id": "spouse-point-s37",
+      "claim": "s.37: the spouse point applies only to a \"יחיד מוטב\" (taxpayer or spouse at retirement age, or blind/disabled within s.9(5)).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "יחיד שהוא או שבן זוגו הגיע לגיל פרישה, או שהוא או שבן זוגו, עיוור או נכה",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "disability-exemption-s9-5",
+      "claim": "סעיף 9(5) / סעיף 9 / סעיף 5 of the Ordinance (s.9(5)): exemption for work income of the blind or 100% / 90%+ weighted disabled.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "הכנסה מיגיעתם האישית של עיוור או של נכה",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "disability-exemption-ceilings",
+      "claim": "סעיף 9(5)(א) ceiling 2024-2027: 684,000 NIS / 684,000 ש\"ח (365+ days) for a blind or disabled person entitled to a monthly benefit under the Invalids Law or the Hostile Action Victims Law; 81,960 for 185-364 days.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "בשנת 2023, 661,200 ש״ח; בשנים 2024–2027, 684,000 ש״ח",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "degree-no-deferral-s40c",
+      "claim": "s.40C(c): for 2023+ graduates the BA point runs from the tax year after completion; the deferral choice survives only in the 2014-2022 text; s.40C(c1) internship exception.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "תובא בחשבון החל בשנת המס שלאחר שנת המס שבה הסתיימו לימודיו לתואר אקדמי ראשון",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "vocational-s40d",
+      "claim": "s.40D: one credit point for vocational studies, for as many tax years as the years of study, up to three.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "תובא בחשבון במספר שנות מס כמספר שנות לימודי המקצוע, ובלבד שתובא בחשבון בלא יותר משלוש שנות מס",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "vocational-1700-hours",
+      "claim": "s.40D(d): vocational studies means at least 1,700 study hours.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "1700 שעות לימוד הנהוגות במוסד להשכלה גבוהה",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "settlement-credit-percentage-s11",
+      "claim": "s.11: residents of a qualifying community get a percentage tax credit on work income up to an income ceiling, not credit points.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "זכאי באותה שנה לזיכוי ממס בשיעור של",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "oleh-2026-proration-and-relative-cap",
+      "claim": "2026 olim exemption is pro-rated to the months of residency (arrival 01.07.2026 gives 300,000); income from a relative is capped at 140,000.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%98%D7%95%D7%A8_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%9C%D7%A2%D7%95%D7%9C%D7%99%D7%9D_%D7%97%D7%93%D7%A9%D7%99%D7%9D_%D7%95%D7%9C%D7%AA%D7%95%D7%A9%D7%91%D7%99%D7%9D_%D7%97%D7%95%D7%96%D7%A8%D7%99%D7%9D_%D7%95%D7%AA%D7%99%D7%A7%D7%99%D7%9D",
+      "raw_snippet": "לדוגמה עולה שהגיע לישראל ב-01.07.2026, יקבל פטור על חצי שנה, 50%, כלומר עד תקרה של 300,000",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-26"
+    },
+    {
+      "claim_id": "oleh-2026-relative-cap",
+      "claim": "Income from a relative: exempt up to 140,000.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%A4%D7%98%D7%95%D7%A8_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%9C%D7%A2%D7%95%D7%9C%D7%99%D7%9D_%D7%97%D7%93%D7%A9%D7%99%D7%9D_%D7%95%D7%9C%D7%AA%D7%95%D7%A9%D7%91%D7%99%D7%9D_%D7%97%D7%95%D7%96%D7%A8%D7%99%D7%9D_%D7%95%D7%AA%D7%99%D7%A7%D7%99%D7%9D",
+      "raw_snippet": "עבור ההכנסה מקרוב, יקבל פטור ממס הכנסה עד לתקרה של 140,000",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-26"
+    },
+    {
+      "claim_id": "havraa-extension-order-18-8-2026",
+      "claim": "The havraa extension order was published on 18.8.2026, sets 451.50 per day for recuperation year 2026, and excludes public-service-agreement employees, those linked to them and sheltered workshops.",
+      "source_url": "https://www.malam-payroll.com/%d7%a4%d7%95%d7%a8%d7%a1%d7%9d-%d7%a6%d7%95-%d7%94%d7%a8%d7%97%d7%91%d7%94-%d7%91%d7%a0%d7%95%d7%a9%d7%90-%d7%93%d7%9e%d7%99-%d7%94%d7%91%d7%a8%d7%90%d7%94-%d7%9c%d7%a9%d7%a0%d7%aa-2026/",
+      "raw_snippet": "ביום 18.8.2026 פורסם ברשומות צו הרחבה בדבר השתתפות המעסיק בהוצאות הבראה ונופש",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "havraa-order-scope",
+      "claim": "The order applies to all employees and employers except those paid under public-service agreements or linked to them, and sheltered workshops.",
+      "source_url": "https://www.malam-payroll.com/%d7%a4%d7%95%d7%a8%d7%a1%d7%9d-%d7%a6%d7%95-%d7%94%d7%a8%d7%97%d7%91%d7%94-%d7%91%d7%a0%d7%95%d7%a9%d7%90-%d7%93%d7%9e%d7%99-%d7%94%d7%91%d7%a8%d7%90%d7%94-%d7%9c%d7%a9%d7%a0%d7%aa-2026/",
+      "raw_snippet": "הצו חל על כלל העובדים והמעסיקים במשק, למעט עובדים ששכרם משולם בהתאם להסכמים החלים בשירות הציבורי",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "disability-exemption-ceiling-short",
+      "claim": "s.9(5) ceiling for disability set for 185-364 days, 2024-2027: 81,960.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "בשנים 2024–2027, 81,960 ש״ח",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "disability-s9-5-a-route",
+      "claim": "s.9(5)(א) applies to a blind or disabled person entitled to a monthly benefit under the Invalids Law or the Hostile Action Victims Law.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "עיוור או של נכה שזכאי לתגמול חודשי לפי חוק הנכים",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "disability-s9-5-a1-route",
+      "claim": "s.9(5)(א1) applies to a blind or disabled person not entitled to such a monthly benefit, with at least 90% disability provided at least 40% from one impairment.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "ובלבד שנקבעה לו נכות בשיעור של 40% לפחות בשל ליקוי אחד",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "disability-s9-5-a1-ceiling",
+      "claim": "s.9(5)(א1) ceiling 2024-2027: 445,200 NIS / 445,200 ש\"ח for disability set for 365 days or more.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "בשנת 2023, 430,800 ש״ח; בשנים 2024–2027, 445,200 ש״ח",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "disability-s9-5-part-year",
+      "claim": "A part-year disability pro-rates the exempt amount (s.9(5)(ג)).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "הוא כיחס שבין מספר הימים בשנת המס שלגביהם נקבעה הנכות לבין 365",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "disability-s9-5-percentage-attaches-to-disabled",
+      "claim": "In s.9(5)(א) the 100% / 90% condition follows \"נכה\" (the disabled person); the blind qualify as blind. (א1) likewise covers \"עיוור או של נכה\" with the 90%/40% condition on the disabled.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "הכנסה מיגיעתם האישית של עיוור או של נכה שאינו זכאי לתגמול חודשי",
+      "fetched_at": "2026-09-26T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
       ]
     }
   ]
