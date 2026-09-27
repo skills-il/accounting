@@ -32,7 +32,7 @@ Collect from user:
 - **Tax credit points** (nekudot zikui): Default 2.25 for male resident, 2.75 for female; one more for an employee aged 16 or 17 (s.40B)
 - **Shovi rechev** (company-car use value, if any): Monthly NIS value. See Step 1.5.
 - **Other taxable allowances** (shovi telephone, meals above exemption, etc.). Dmei havraa is taxable pay too: 451.5 NIS/day for recuperation year 2026 under the extension order published on 18.8.2026, which covers private-sector employees but not those paid under public-service agreements or linked to them; where 418 was paid for 1.7.2025 to 30.6.2026, the difference is owed
-- **Pension arrangement:** Yes/No, contribution percentages
+- **Pension arrangement:** Yes/No, contribution percentages. Mandatory pension (צו הרחבה לביטוח פנסיוני מקיף) covers men from age 21 and women from age 20. A new employee who had no active pension fund when hired is owed deposits only after 6 months at that employer; one who was already insured is covered from the first day, with the deposits made retroactively after 3 months of work (or at the end of the tax year, if earlier). Below that age, or inside that 6-month window, there is usually no pension deduction and no pension tax credit: ask, and run the script with `--no-pension` if so. The script already does this for every under-18 category.
 - **Employment type:** Employee (sachir), Freelancer (atzmai)
 - **Bituach Leumi insurance category:** Age, whether an old-age pension is already
   being drawn, whether the employee is a controlling shareholder (בעל שליטה) in
@@ -138,11 +138,13 @@ controlling-shareholder sub-row that exists under every age and status row.
 
 ### Step 4: Calculate Pension Deductions
 
-Pension applies to the **cash gross only** (not to shovi rechev). Mandatory for most employees since 2017:
+Pension applies to the **cash gross only** (not to shovi rechev). Mandatory since 2008 (at the current rates since 2017) for employees aged 21 and over (men) or 20 and over (women), after a 6-month wait for a new employee with no active pension fund:
 - Employee: 6% of cash gross (up to pension ceiling)
 - Employer: 6.5% + 6% severance (6% is the mandatory minimum severance under the pension expansion order; an employer under a full Section 14 arrangement deposits 8.33% instead, which fully discharges the statutory severance liability)
 
 The employee's contribution also generates the 35% tax credit computed in Step 2.5.
+
+An employee below the pension age (every minor, a man under 21, a woman under 20), or a new employee inside the 6-month wait, usually has no pension line on the payslip: no 6% deduction, no Step 2.5 credit and no employer deposits to impute. Deducting 6% anyway understates net by about 6% of gross less the pension credit.
 
 **High earners: employer deposits above the exempt ceiling are taxable (2026).** The employer's
 pension deposit is exempt only up to 7.5% of a salary capped at 34,423 NIS/month, and the
@@ -261,7 +263,7 @@ Wrong answer to avoid: adding the 3,500 shovi rechev to net. The employee never 
 - **Amendment 288 (March 2026) widened two brackets.** Older references that print the 2025 brackets are out of date for 2026: the 20% bracket runs to 19,000 (was 16,150), 31% to 25,100 (was 22,440), 35% from 25,101. Values in training data that cite 16,150/22,440 as ceilings are wrong for 2026. Do not attribute the Bituach Leumi rates to 2026 either: Amendment 252 raised the reduced-tier rates (employee 0.4% → 1.04%, employer 3.55% → 4.51%) from 1.1.2025. Only the reduced threshold (7,522 → 7,703) and the ceiling (50,695 → 51,910) changed in 2026.
 - **Zikui gemel (pension tax credit, sec. 45a) is frequently forgotten.** A 35% credit on the employee pension contribution (up to 7% × min(salary, 9,700) = 679 NIS/month) is applied on the payslip. Most payroll software computes it automatically, but agents hand-calculating tax often omit it and overstate monthly tax by up to ~238 NIS.
 - **Keren Hishtalmut** (2.5% employee + 7.5% employer) is tax-exempt on salary up to 15,712 NIS/month in 2026. Not in the default flow because it is not statutory: pass `--keren-hishtalmut` when the employee has one.
-- **Mandatory pension since 2017:** 6% employee + 6.5% employer minimum. Agents may skip pension or use pre-2017 rates (5%+5%).
+- **Mandatory pension since 2017:** 6% employee + 6.5% employer minimum. Agents may skip pension or use pre-2017 rates (5%+5%). The reverse error is as common: the extension order does not cover a minor, a man under 21 or a woman under 20, and a new employee with no active fund waits 6 months, so deducting 6% for them understates net.
 - **The Bituach Leumi rate is not one number.** The official table has 11 employee categories plus a controlling-shareholder sub-row under each. An owner-director of a one-person Israeli company pays 4.25% / 11.96%, not 4.27% / 12.17%; a minor or a pensioner pays nothing; a soldier in regular service, an organ donor or a treaty-country foreign resident pays National Insurance only, with no health tax. Agents default to the standard row and silently over-charge everyone else. Pass `--ni-category` to the script.
 - **Bituach Leumi ceiling caps deductions.** Salary above 51,910 NIS/month (2026) is not subject to NI or health tax. Agents may apply the full rate to the entire salary instead of capping.
 - **Credit points (nekudot zikui):** Base 2.25 for a resident; women get +0.5. Children add a lot and are age-banded per child (year of birth 2.5; ages 1-2 4.5; age 3 3.5; ages 4-5 2.5; ages 6-17 2 for the mother and 1 for the father), and new immigrants, single parents and academic degrees add more. Disability is NOT a credit point: a blind employee, or one with 100% or qualifying 90%+ disability, has an income-tax exemption under s.9(5) instead, with a ceiling of 684,000 or 445,200 a year depending on the route (see `references/credit-points.md`). Agents may omit them entirely and overstate the tax burden. These are separate from and stack with the pension credit above. See `references/credit-points.md` for the full per-age, per-parent table.

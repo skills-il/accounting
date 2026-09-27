@@ -86,6 +86,21 @@
         "PANEL ROUND 2 (Expert iteration 2): the round-1 repair INTRODUCED two defects. (1) It gave every 100%/90% disabled employee the s.9(5)(א) 684,000 ceiling; the text limits (א) to monthly-benefit recipients under the Invalids Law or the Hostile Action Victims Law, and everyone else, including a blind person without such a benefit, falls under (א1): 445,200, with 90% requiring 40% from one impairment. Reading s.9(5) in full, not the sentence found by search, would have caught it. (2) --keren-full-salary was cited alone in the SKILL text but did nothing without --keren-hishtalmut; it now implies it. Judge the repair, not only the original.",
         "PANEL ROUND 3 (Judge + Expert): the round-2 text applied the 100%/90%/40% tests to the blind too. In s.9(5) the percentage clause follows 'נכה' only; blindness qualifies by itself on either route. Kol-Zchut (blindness certificate, no medical committee) was unreachable (403/redirect) this cycle, so the fix rests on the statute text alone."
       ]
+    },
+    {
+      "version": "1.5.1",
+      "date": "2026-09-27",
+      "trigger": "net-salary checker fresh-eyes audit (batch 2026-09-25), MAJOR finding traced back to the skill",
+      "lessons": [
+        "CORRECTNESS: the script applied the mandatory 6% pension (and the s.45a credit, and employer-deposit imputation) to the under-18 NI categories. The extension order starts at 21 for men and 20 for women (kolzchut 'חובת ביטוח פנסיוני לעובדים', verified in a browser 2026-09-27). The 1.4.0 cycle added --ni-category for minors and pensioners but only zeroed the NI rate; nobody asked which OTHER deductions depend on the same age.",
+        "SCOPE LIMIT: ages 18 to 20/21 and a new hire's first 6 months without an active fund cannot be read off the NI category, so the script cannot switch pension off for them by itself. It prints a note pointing to --no-pension instead.",
+        "AUDITOR CORRECTED: the checker audit asked for a 'spouse has no income' condition on the s.37 point. The Ordinance text says the spouse's upkeep was on the taxpayer, and s.38(א) extends the point to a יחיד מוטב whose working registered spouse is assessed jointly. A bare no-income rule would be wrong for that household; the reference now states the statutory test.",
+        "EVIDENCE: a relayed kolzchut quote had 'לפי המוקדם מביניהם' where the page says 'לפי המועד המוקדם מביניהם'. The snippet was corrected from the rendered page text. Check every new snippet as a substring of the page, not against a copy relayed by an earlier tool call.",
+        "DEFERRED: an explicit 'is pension deducted on your payslip?' input (or a --pension-age flag) to cover ages 18 to 20/21 and the 6-month wait computationally, both in the script (beyond --no-pension) and in the net-salary checker, which caveats it for now.",
+        "DEFERRED (carried): SKILL_HE.md numbered lines begin with a digit, against the Hebrew line-start rule. Pre-existing; left for a structural pass.",
+        "Expert 1.5.1 (optional): an already-insured new hire can also show no pension deduction for months 1-3, because those deposits are paid retroactively; mention it next to the --no-pension note.",
+        "Expert 1.5.1 (optional): under s.4א(6) of the pension extension order, a worker hired after retiring at 67 who draws a non-Bituach-Leumi pension is excluded from mandatory pension; add it to the exclusions."
+      ]
     }
   ]
 }

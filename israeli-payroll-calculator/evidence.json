@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-payroll-calculator",
-  "generated_at": "2026-08-19T02:39:17+00:00",
+  "generated_at": "2026-09-27T00:00:00Z",
   "claims": [
     {
       "claim_id": "tax-brackets",
@@ -970,6 +970,99 @@
       "fetched_at": "2026-09-26T00:00:00Z",
       "appears_in": [
         "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "mandatory-pension-age-21-men-20-women",
+      "claim": "Mandatory pension under the comprehensive-pension extension order covers men from age 21 and women from age 20; no minor is covered.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "עובדים שכירים (גברים) החל מגיל 21 ועובדות שכירות החל מגיל 20.",
+      "fetched_at": "2026-09-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md",
+        "scripts/calculate_payroll.py"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-27",
+      "note": "kolzchut returns 403 to curl (Cloudflare). Snippet confirmed as a substring of the rendered page text in Playwright on 2026-09-27."
+    },
+    {
+      "claim_id": "mandatory-pension-6-month-wait-uninsured",
+      "claim": "A new employee with no pension insurance before starting is owed pension deposits only after 6 months at that workplace.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "במקרה שהעובד לא היה מבוטח בביטוח פנסיוני לפני תחילת עבודתו, הוא יהיה זכאי לביטוח הפנסיוני רק לאחר שחלפו 6 חודשים מהיום שהתחיל את עבודתו באותו מקום עבודה",
+      "fetched_at": "2026-09-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md",
+        "scripts/calculate_payroll.py"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-27",
+      "note": "kolzchut returns 403 to curl (Cloudflare). Snippet confirmed as a substring of the rendered page text in Playwright on 2026-09-27."
+    },
+    {
+      "claim_id": "mandatory-pension-insured-from-day-one",
+      "claim": "An employee already insured when hired is covered from the first day of work.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "הוא יהיה זכאי להפרשות לביטוח פנסיוני כבר מיומו הראשון בעבודה",
+      "fetched_at": "2026-09-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-27",
+      "note": "kolzchut returns 403 to curl (Cloudflare). Snippet confirmed as a substring of the rendered page text in Playwright on 2026-09-27."
+    },
+    {
+      "claim_id": "mandatory-pension-retroactive-3-months",
+      "claim": "Deposits are made retroactively after 3 months of work at the employer or at the end of the tax year, whichever is earlier.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "לפי צו ההרחבה, ההפרשות יתבצעו רטרואקטיבית רק לאחר השלמת 3 חודשי עבודה אצל המעסיק, או בתום שנת המס, לפי המועד המוקדם מביניהם",
+      "fetched_at": "2026-09-27T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-09-27",
+      "note": "kolzchut returns 403 to curl (Cloudflare). Snippet confirmed as a substring of the rendered page text in Playwright on 2026-09-27."
+    },
+    {
+      "claim_id": "spouse-point-s37-upkeep-test",
+      "claim": "The s.37 spouse point is for a יחיד מוטב whose spouse's upkeep was on them in the tax year (the test is upkeep, not a bare no-income rule).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "שכלכלת בן זוגו היתה עליו, תובא בחשבון נקודת זיכוי אחת",
+      "fetched_at": "2026-09-27T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "spouse-point-s38-joint-assessment",
+      "claim": "Under s.38(א), a יחיד מוטב whose registered spouse has work income assessed jointly also gets the s.37 point.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "ולענין יחיד מוטב כהגדרתו בסעיף 37 תובא בחשבון גם נקודת זיכוי כאמור באותו סעיף",
+      "fetched_at": "2026-09-27T00:00:00Z",
+      "appears_in": [
+        "references/credit-points.md"
+      ]
+    },
+    {
+      "claim_id": "pension-mandatory-since-2008",
+      "claim": "Comprehensive pension insurance has been mandatory for employees since 2008, under the pension extension order.",
+      "source_url": "https://www.kolzchut.org.il/he/%D7%97%D7%95%D7%91%D7%AA_%D7%91%D7%99%D7%98%D7%95%D7%97_%D7%A4%D7%A0%D7%A1%D7%99%D7%95%D7%A0%D7%99_%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D",
+      "raw_snippet": "החל משנת 2008 יש לבטח כל עובד בביטוח פנסיוני",
+      "fetched_at": "2026-09-27T20:56:50+00:00",
+      "verified_via": "browser",
+      "verified_at": "2026-09-27T20:56:50+00:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
       ]
     }
   ]

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.1 (2026-09-27)
+
+- Mandatory pension has an age threshold and a waiting period, and the skill stated neither. The comprehensive-pension extension order covers men from 21 and women from 20, and a new employee with no active pension fund is owed deposits only after 6 months at that employer (from day one, deposited retroactively after 3 months, if already insured). The script deducted 6% pension, gave the s.45a credit and imputed employer deposits for every under-18 category, understating a minor's net by 312 NIS at an 8,000 gross and by 962.35 at 20,000. `calculate_payroll.py` now turns pension off for `under-18` and `under-18-shareholder`, and prints a note to re-run with `--no-pension` for a man under 21, a woman under 20 or a new hire inside the 6-month window. Adult results are unchanged. Found by the fresh-eyes audit of the net-salary calculator.
+- Spouse credit point (s.37): the test is that the spouse's upkeep was on the taxpayer, and under s.38(א) a יחיד מוטב whose registered spouse works and is assessed jointly also gets the point. `references/credit-points.md` now says so, so it is not read as a bare "spouse has no income" rule.
+
 ## 1.5.0 (2026-09-25)
 
 - Corrected the year of the Bituach Leumi rate rise. Amendment 252 was passed on 13.1.2025 and published on 14.1.2025 and its rates (employee 1.04% / employer 4.51% reduced, health 3.23% / 5.17%) have applied since 1.1.2025; Bituach Leumi's own table dates them so. The skill called them a 2026 change and printed 3.5% / 12.0% as "2025 values", which are the 2024 rates. Only the thresholds moved in 2026 (7,522 to 7,703, 50,695 to 51,910). The reference now has a year-by-year table so a 2025 payslip gets the 2025 thresholds.

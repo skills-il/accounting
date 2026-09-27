@@ -36,7 +36,7 @@ otherwise.
 | Who | Points | Notes |
 |-----|--------|-------|
 | Single parent | 1.0 | Additional |
-| Spouse whose upkeep the taxpayer bears (s.37) | 1.0 | ONLY for a "יחיד מוטב": the taxpayer or the spouse has reached retirement age, or is blind or disabled within s.9(5). Not for every married employee with a non-earning spouse |
+| Spouse whose upkeep the taxpayer bears (s.37) | 1.0 | ONLY for a "יחיד מוטב": the taxpayer or the spouse has reached retirement age, or is blind or disabled within s.9(5)(א) or (א1). The s.37 test is that the spouse's upkeep was on the taxpayer during the tax year ("שכלכלת בן זוגו היתה עליו"), not a bare "spouse has no income" rule: under s.38(א) a יחיד מוטב whose registered spouse has work income and is assessed jointly with them also gets this point. Not for every married employee with a non-earning spouse |
 | Working youth aged 16 or 17 (s.40B) | 1.0 | "יחיד שמלאו לו או לבן־זוגו 16 שנים אך לא 18 שנים": 3.25 in total for a boy, 3.75 for a girl |
 
 ### Immigration (oleh chadash, from 1.1.2022)

@@ -39,7 +39,8 @@ Persona anchor: Israeli CPA (רואה חשבון) with payroll and small-busines
   excess enters the income-tax AND the National Insurance and health base (BTL circular 1460). Must be computed by the script, not only described: at a 70,000
   gross it moves net by about 3%.
 - **Mandatory pension**: employee and employer minimum rates and the severance component, including
-  the Section 14 arrangement.
+  the Section 14 arrangement, the age threshold (21 for men, 20 for women; no pension for any
+  minor) and the 6-month wait for a new employee with no active pension fund.
 - **Shovi rechev as taxable imputed income**: in the income-tax and National Insurance base, out of
   the pension base, never added to net cash.
 - **Minimum-wage sanity check** on the gross before computing.

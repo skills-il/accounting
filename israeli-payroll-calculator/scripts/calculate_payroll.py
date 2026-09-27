@@ -384,7 +384,9 @@ def calculate_payroll(
     Args:
         gross_salary: Monthly gross salary in NIS (cash).
         credit_points: Tax credit points (default 2.25 for male resident).
-        has_pension: Whether pension deductions apply.
+        has_pension: Whether pension deductions apply. Forced to False for the
+            under-18 categories (mandatory pension starts at 21 for men and
+            20 for women).
         calc_employer: Whether to calculate employer cost.
         shovi_rechev: Company-car use value (monthly, NIS). Added to taxable
             gross for income tax and NI; NOT subject to pension. Employee does
@@ -404,6 +406,14 @@ def calculate_payroll(
     """
     cat = get_ni_category(ni_category)
     taxable_gross = gross_salary + shovi_rechev
+
+    # Mandatory pension (the comprehensive-pension extension order) covers men
+    # from 21 and women from 20, so no minor has a pension deduction, a pension
+    # credit or employer deposits to impute. Ages 18 to 20/21, and a new hire's
+    # first 6 months without an active fund, cannot be told from the NI
+    # category: the caller passes has_pension=False (--no-pension) for those.
+    if ni_category.startswith("under-18"):
+        has_pension = False
 
     # Pension contributions apply to the pension-insurable salary, which does
     # NOT include shovi_rechev. We use gross_salary as the base here.
@@ -633,6 +643,13 @@ def main():
     if args.ni_category.startswith("under-18") and args.credits in (2.25, 2.75):
         print("\nNOTE: an employee aged 16 or 17 gets one extra credit point (s.40B):"
               " pass --credits 3.25 (3.75 for a girl).")
+    if args.ni_category.startswith("under-18"):
+        print("\nNOTE: no pension is deducted for an employee under 18: mandatory pension"
+              " starts at 21 for men and 20 for women.")
+    elif not args.no_pension:
+        print("\nNOTE: 6% pension assumed. A man under 21, a woman under 20, or a new"
+              " employee in the first 6 months without an active pension fund usually"
+              " has no pension deduction: re-run with --no-pension.")
 
 
 if __name__ == "__main__":
