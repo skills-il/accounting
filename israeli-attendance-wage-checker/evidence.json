@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-attendance-wage-checker",
   "schemaVersion": "1.0",
-  "generated_at": "2026-08-25T00:00:00Z",
+  "generated_at": "2026-10-01T16:30:00Z",
   "method": "Statutory snippets sliced directly from the rendered he.wikisource pages (curl with a browser UA), so each is byte-contiguous on the cited page. The one PDF source is flagged for digit mangling and is trusted for a single figure only.",
   "claims": [
     {
@@ -275,6 +275,306 @@
       "confidence": "high",
       "fetched_at": "2026-08-25T00:00:00Z",
       "notes": "This is the re-derivation the payslip-only route in Step 1b relies on."
+    },
+    {
+      "claim_id": "minwage-2026-table",
+      "claim": "Adult minimum wage from 01.04.2026: daily 257.75 (6-day week), 297.4 (5-day week), hourly 34.64 on a 186-hour basis and 35.4 on a 182-hour basis, monthly 6,443.85.",
+      "claim_type": "amount",
+      "source_url": "https://www.btl.gov.il/Mediniyut/GeneralData/Pages/שכר%20מינימום.aspx",
+      "raw_snippet": "שכר יומי למועסק 6 ימים בשבוע: 257.75 ש\"ח (החל ב- 01.04.2026) שכר יומי למועסק 5 ימים בשבוע: 297.4 ש\"ח (החל ב- 01.04.2026) שכר לשעה בהיקף של 186 שעות בחודש: 34.64 ש\"ח (החל ב- 01.04.2026) שכר לשעה בהיקף של 182 שעות בחודש: 35.4 ש\"ח (החל ב- 01.04.2026) שכר חודשי: 6,443.85 ש\"ח (החל ב- 01.04.2026)",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "BTL minimum-wage page, text layer. Updated each 1 April."
+    },
+    {
+      "claim_id": "minwage-2025-row",
+      "claim": "Adult minimum wage from 01.04.2025: daily 288.35 (5-day), 249.90 (6-day), hourly 33.58 (186) and 34.32 (182), monthly 6,247.67.",
+      "claim_type": "amount",
+      "source_url": "https://www.btl.gov.il/Mediniyut/GeneralData/Pages/שכר%20מינימום.aspx",
+      "raw_snippet": "01.04.2025 288.35 249.90 33.58 34.32 6,247.67",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "BTL history table row; column order 5-day, 6-day, 186-hour, 182-hour, monthly. Cells separated by U+200B, which the verifier folds."
+    },
+    {
+      "claim_id": "minwage-s1-186",
+      "claim": "The statute defines the hourly minimum wage as the 186th part of the monthly minimum. [חוק שכר מינימום סעיף 1]",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שכר_מינימום",
+      "raw_snippet": "”שכר מינימום לשעה“ – החלק ה־186 של שכר המינימום.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Statutory text unchanged since the 2018 extension order; the 182 basis rests on the steering-committee decision, see divisor-182-ministry."
+    },
+    {
+      "claim_id": "divisor-182-ministry",
+      "claim": "Per the 24.04.2018 steering-committee decision and the Ministry of Labour position, the hourly minimum is the monthly minimum divided by 182, while the statute still says 186 and no criminal or administrative steps will be taken against employers paying on 186.",
+      "claim_type": "law",
+      "source_url": "https://web.archive.org/web/20260118140845/https://www.kolzchut.org.il/he/צו_הרחבה_בדבר_קיצור_שבוע_העבודה_במשק_ל-42_שעות_שבועיות",
+      "raw_snippet": "עם זאת, החוק עדיין קובע כי שכר המינימום לשעה הוא שכר המינימום החודשי חלקי 186",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Kol Zchut, read via a Wayback snapshot because the live site bot-blocks curl. The same paragraph pairs a 2025 monthly figure with 2018 hourly figures, so it is cited for the RULE only, never the figures. The text continues: ולא יינקטו צעדים פליליים/מנהליים נגד מעסיקים שימשיכו לשלם שכר בשיעור זה."
+    },
+    {
+      "claim_id": "divisor-182-ministry-b",
+      "claim": "The Ministry of Labour's position is that the hourly minimum computed on 182 is what employers must pay.",
+      "claim_type": "law",
+      "source_url": "https://web.archive.org/web/20260118140845/https://www.kolzchut.org.il/he/צו_הרחבה_בדבר_קיצור_שבוע_העבודה_במשק_ל-42_שעות_שבועיות",
+      "raw_snippet": "ב- 182 שעות בחודש במקום 186 שעות בחודש",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Same paragraph as divisor-182-ministry."
+    },
+    {
+      "claim_id": "extension-order-hourly-182",
+      "claim": "Under the 2018 extension order the hourly wage is computed on a basis of 182 hours for a full-time post instead of 186.",
+      "claim_type": "law",
+      "source_url": "https://web.archive.org/web/20260118140845/https://www.kolzchut.org.il/he/צו_הרחבה_בדבר_קיצור_שבוע_העבודה_במשק_ל-42_שעות_שבועיות",
+      "raw_snippet": "בהתאמה לקיצור שבוע העבודה, שכר השעה יחושב על בסיס של 182 שעות למשרה מלאה (במקום 186 שעות).",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Kol Zchut summary of the extension order."
+    },
+    {
+      "claim_id": "extension-order-scope",
+      "claim": "The shortening does not apply to those already employed full-time at 42 weekly hours or less, or to employees outside the Hours of Work and Rest Law.",
+      "claim_type": "law",
+      "source_url": "https://web.archive.org/web/20260118140845/https://www.kolzchut.org.il/he/צו_הרחבה_בדבר_קיצור_שבוע_העבודה_במשק_ל-42_שעות_שבועיות",
+      "raw_snippet": "קיצור שבוע העבודה אינו חל על מי שעובדים במשרה מלאה בהיקף של 42 שעות שבועיות או פחות ועל עובדים ש חוק שעות עבודה ומנוחה אינו חל עליהם",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Spacing inside 'ש חוק' is as rendered."
+    },
+    {
+      "claim_id": "minwage-s3a-ordinary-day",
+      "claim": "The wage counted for the minimum-wage test is the wage the employer pays for an ordinary working day. [חוק שכר מינימום סעיף 3(א)]",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שכר_מינימום",
+      "raw_snippet": "השכר שיובא בחשבון לענין סעיף 2 יהיה שכר העבודה שמשלם מעסיק לעובדו בעד יום עבודה רגיל כנהוג במקום עבודתו.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "minwage-s3b-exclusions",
+      "claim": "Family, seniority and shift supplements, premiums, the 13th salary, annual grants and expense refunds are not counted toward the minimum wage. [סעיף 3(ב)]",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שכר_מינימום",
+      "raw_snippet": "ואולם לא יובאו בחשבון תוספת משפחה, תוספת ותק, תוספת בשל עבודה במשמרות, פרמיה מדודה, מוסכמת, קבועה או קבוצתית, משכורת י״ג, מענקים על בסיס שנתי, והחזר הוצאות לרבות הוצאות כלכלה, אש״ל ונסיעות שמשלם המעסיק.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Contrast with hours-s18-base: the overtime base includes ALL supplements."
+    },
+    {
+      "claim_id": "minwage-s2b-parttime",
+      "claim": "A part-time employee is entitled to a minimum wage prorated to the position scope. [סעיף 2(ב)]",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שכר_מינימום",
+      "raw_snippet": "עובד המועסק במשרה חלקית זכאי לשכר מינימום חלקי שיחושב יחסית לחלקיות משרתו.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "minwage-s2c-absence",
+      "claim": "Where an employee was absent the minimum is reduced pro rata, unless the employee is entitled to payment for the absence under law or agreement, in which case that arrangement governs. [סעיף 2(ג)]",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שכר_מינימום",
+      "raw_snippet": "נעדר עובד מעבודתו, יקטן שכר המינימום שהוא זכאי לו לפי סעיף קטן (א), בשיעור יחסי לזמן היעדרו, ואולם אם הוא זכאי לקבל תשלום בעד זמן ההיעדרות לפי דין, חוזה עבודה, הסכם קיבוצי, צו הרחבה או הסדר קיבוצי אחר",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "minwage-s2a-adult",
+      "claim": "The statutory minimum in s.2(א) applies to an employee aged 18 or over; younger employees have separate rates.",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שכר_מינימום",
+      "raw_snippet": "עובד שמלאו לו 18 שנים (להלן – עובד) המועסק במשרה מלאה, כנהוג במקום עבודתו, זכאי לקבל ממעסיקו שכר עבודה שלא יפחת משכר המינימום",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "ot-caps-general-permit",
+      "claim": "Under the general permit of 14.03.2018 a working day including overtime may not exceed 12 hours, a week may not carry more than 16 overtime hours, and a night-shift worker may not work more than 58 hours a week including overtime.",
+      "claim_type": "threshold",
+      "source_url": "https://web.archive.org/web/20260608204910/https://www.kolzchut.org.il/he/מגבלות_על_העסקה_בשעות_נוספות",
+      "raw_snippet": "בהתאם ל היתר הכללי להעסקת עובדים בשעות נוספות מיום 14.03.2018: אורך יום העבודה, כולל השעות הנוספות, לא יעלה על 12 שעות. בשבוע עבודה לא ניתן להעסיק עובד יותר מ-16 שעות נוספות.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Kol Zchut via Wayback snapshot of 2026-06-08. The same page also says: אסור להעסיק עובד המועסק ב עבודת לילה יותר מ-58 שעות בשבוע, כולל שעות נוספות"
+    },
+    {
+      "claim_id": "ot-caps-night-58",
+      "claim": "A night-shift worker may not be employed more than 58 hours a week including overtime.",
+      "claim_type": "threshold",
+      "source_url": "https://web.archive.org/web/20260608204910/https://www.kolzchut.org.il/he/מגבלות_על_העסקה_בשעות_נוספות",
+      "raw_snippet": "אסור להעסיק עובד המועסק ב עבודת לילה יותר מ-58 שעות בשבוע, כולל שעות נוספות",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "ot-caps-wartime-iran",
+      "claim": "During the war with Iran some employers may employ workers for more overtime than the routine caps.",
+      "claim_type": "law",
+      "source_url": "https://web.archive.org/web/20260608204910/https://www.kolzchut.org.il/he/מגבלות_על_העסקה_בשעות_נוספות",
+      "raw_snippet": "בתקופת המלחמה מול איראן (מבצע \"שאגת הארי\" ומבצע \"עם כלביא\") מעסיקים מסוימים רשאים להעסיק עובדים במספר שעת נוספות גבוה יותר מאשר בימי שגרה.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Temporary permit text itself not located; the skill states only that caps may have been relaxed."
+    },
+    {
+      "claim_id": "payslip-reserve-line",
+      "claim": "The payslip Schedule requires reserve-duty payments (on account of the tagmul, and any balance) to be itemised among other payments.",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_הגנת_השכר",
+      "raw_snippet": "תשלומים אחרים, נוסף על השכר הרגיל, לרבות גמול שעות נוספות ומנוחה שבועית, פריון עבודה, דמי הבראה, דמי חופשה, דמי מחלה, תשלום על חשבון תגמול למשרת במילואים ויתרת תגמול כאמור",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "Schedule to חוק הגנת השכר, item 5(3)."
+    },
+    {
+      "claim_id": "reserve-btl-reimburse",
+      "claim": "Bituach Leumi reimburses employers the reserve-duty payments they paid their employees; for the employee the payment is treated as wage, with ordinary deductions.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/%d7%9e%d7%99%d7%93%d7%a2%20%d7%9c%d7%9e%d7%a2%d7%a1%d7%99%d7%a7.aspx",
+      "raw_snippet": "הביטוח הלאומי מחזיר למעסיקים את תגמולי המילואים ששילמו לעובדיהם כחוק.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "reserve-treated-as-wage",
+      "claim": "A reserve-duty payment paid through the employer is treated as wage, including ordinary deductions.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/%d7%9e%d7%99%d7%93%d7%a2%20%d7%9c%d7%9e%d7%a2%d7%a1%d7%99%d7%a7.aspx",
+      "raw_snippet": "עובד המשולם לו תגמול מילואים מהמעסיק, תגמול המילואים ייחשב לו כשכר עבודה.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "reserve-3-months-90",
+      "claim": "For an employee, the reserve payment is computed from the gross wage of the 3 months preceding the service, divided by 90.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/%d7%a9%d7%99%d7%a2%d7%95%d7%a8%d7%99%20%d7%94%d7%a7%d7%a6%d7%91%d7%94.aspx",
+      "raw_snippet": "עובד שכיר - הסכום מחושב לפי השכר ברוטו ב-3 החודשים שקדמו לשירות המילואים, מחולק ב-90.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "BTL also points to its reserve-pay calculator on the same page."
+    },
+    {
+      "claim_id": "hours-s25-digital",
+      "claim": "Where the ledger is not kept by mechanical, digital or electronic means it must be signed daily by the employee; the record must be ongoing and contain hours actually worked. [סעיף 25(א1)]",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שעות_עבודה_ומנוחה",
+      "raw_snippet": "לעניין שעות עבודה, שעות מנוחה שבועית ושעות נוספות ייערך הרישום בפנקס שעות העבודה באופן שוטף ויכלול רישום שעות עבודה בפועל;",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": "The (2) limb continues: לא בוצע הרישום בפנקס כאמור בפסקה (1) באמצעים מכניים, דיגיטליים או אלקטרוניים, ייחתם הרישום מדי יום בידי העובד"
+    },
+    {
+      "claim_id": "hours-s25-digital-b",
+      "claim": "A record not made by mechanical, digital or electronic means must be signed daily by the employee.",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שעות_עבודה_ומנוחה",
+      "raw_snippet": "לא בוצע הרישום בפנקס כאמור בפסקה (1) באמצעים מכניים, דיגיטליים או אלקטרוניים, ייחתם הרישום מדי יום בידי העובד",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T14:00:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "minwage-history-2024-2018",
+      "claim": "BTL history rows: from 01.04.2024 5,880.02 monthly (271.38 / 235.20 daily, 31.61 / 32.30 hourly); from 1.04.2023 5,571.75 (257.16 / 222.87, 29.95 / 30.61); from 1.04.2018 5,300.00 (244.62 / 212.00, 28.49 / 29.12); the 1.12.2017 row is 5,300.00 with an hourly figure on 186 only.",
+      "claim_type": "amount",
+      "source_url": "https://www.btl.gov.il/Mediniyut/GeneralData/Pages/שכר%20מינימום.aspx",
+      "raw_snippet": "01.04.2024 271.38 235.20 31.61 32.30 5,880.02 1.04.2023 257.16 222.87 29.95 30.61 5,571.75 1.04.2018 244.62 212.00 28.49 29.12 5,300.00 1.12.2017 244.62 212.00 28.49 5,300.00",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T15:30:00Z",
+      "notes": "Column order 5-day, 6-day, 186-hour, 182-hour, monthly. Pre-April-2018 rows have no 182 column."
+    },
+    {
+      "claim_id": "minwage-s3d",
+      "claim": "Where pay is not built from base or combined wage, the minimum-wage test uses the regular wage without supplements. [סעיף 3(ד)]",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שכר_מינימום",
+      "raw_snippet": "לא היה שכרו של עובד משתלם לפי הרכיבים המנויים בסעיף קטן (ב)(1) ו־(2), או לפי חלק מהם, יחושב השכר לענין סעיף קטן (א) לפי שכר העבודה הרגיל ללא תוספות.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T15:30:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "minwage-s3b-counts",
+      "claim": "The minimum-wage base counts base or combined wage, cost-of-living supplement if not included, and a fixed supplement paid because of the work. [סעיף 3(ב)]",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_שכר_מינימום",
+      "raw_snippet": "שכר יסוד או שכר משולב; (2) תוספת יוקר אם איננה כלולה בשכר המשולב; (3) תוספת קבועה המשתלמת לעובד עקב עבודתו",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T15:30:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "reserve-who-pays",
+      "claim": "In BTL's table a monthly worker, and a daily worker who worked at least 75 days in the 3 months before the service, are paid through the employer (3 months gross / 90 per day); a daily worker with fewer days and an hourly worker are listed against Bituach Leumi.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/TagmulZacay.aspx",
+      "raw_snippet": "עובד יומי שעבד 75 ימים לפחות ב-3 החודשים לפני שירות המילואים מעסיק הכנסה ברוטו ב-3 החודשים שקדמו לתחילת השירות מחולק ב-90",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T15:30:00Z",
+      "notes": "Table row text; next rows read: עובד יומי שעבד פחות מ-75 ימים לפני שירות המילואים עובד לפי שעות הביטוח הלאומי"
+    },
+    {
+      "claim_id": "reserve-who-pays-b",
+      "claim": "A daily worker with fewer than 75 days and an hourly worker are listed against Bituach Leumi as payer.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/TagmulZacay.aspx",
+      "raw_snippet": "עובד יומי שעבד פחות מ-75 ימים לפני שירות המילואים עובד לפי שעות הביטוח הלאומי",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T15:30:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "reserve-monthly-employer",
+      "claim": "For a monthly worker the payer column reads employer.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/TagmulZacay.aspx",
+      "raw_snippet": "עובד חודשי מעסיק הכנסה ברוטו ב-3 החודשים שקדמו לתחילת השירות מחולק ב-90",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T15:30:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "reserve-2025-change",
+      "claim": "From 1.5.2025 BTL changed the reserve-pay computation for employees called up again within 3 months of the previous service.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/HisovTAGMOLSatHIROM.aspx",
+      "raw_snippet": "קראו לך לשירות מילואים נוסף מ- 1.5.25 ואילך, ולא חלפו 3 חודשים מהשירות הקודם שלך",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T16:30:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "reserve-2025-previous-income",
+      "claim": "Under the change, where current income is 20% or more above the previous income, the payment is based on the previous income plus 20%.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/benefits/Reserve_Service/Pages/HisovTAGMOLSatHIROM.aspx",
+      "raw_snippet": "אם הכנסתך הנוכחית גבוהה ב- 20% ומעלה מההכנסה הקודמת - תקבל תגמול לפי הכנסתך הקודמת + תוספת אוטומטית של 20%.",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T16:30:00Z",
+      "notes": ""
+    },
+    {
+      "claim_id": "minwage-2017-row",
+      "claim": "BTL history row from 1.12.2017: monthly 5,300.00, hourly 28.49 on the 186 basis only.",
+      "claim_type": "law",
+      "source_url": "https://www.btl.gov.il/Mediniyut/GeneralData/Pages/שכר%20מינימום.aspx",
+      "raw_snippet": "1.12.2017 244.62 212.00 28.49 5,300.00",
+      "confidence": "high",
+      "fetched_at": "2026-10-01T16:30:00Z",
+      "notes": ""
     }
   ]
 }

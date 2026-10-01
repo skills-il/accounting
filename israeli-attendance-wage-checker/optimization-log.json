@@ -40,6 +40,21 @@
         "Not covered squarely: a hybrid supplement-only payslip booking שעות רגילות at ordinary hours (175) while the statutory 'hours actually worked' field states 195. Currently absorbed by 'reconcile the residual rather than expecting a match', which yields a question rather than a false finding. Acceptable, but revisit if users report it.",
         "CLAUDE.md states that /changelog renders bilingual entries from the skill_updates table. It does not: the page reads the curated frontend/src/data/changelog.ts merged with design_updates. skill_updates drives the notification fan-out and the weekly digest only. Correct the doc."
       ]
+    },
+    {
+      "version": "1.3.0",
+      "date": "2026-10-01",
+      "lessons": [
+        "Description unchanged this cycle, so the Phase 5.7 holdout was not re-run. The skill now handles minimum-wage and reserve-duty questions in the body, but the description names neither; consider adding them next cycle and running the holdout.",
+        "Three CARRY items closed: the 182/186 divisor (statute 186, ministry 182, no enforcement against 186; tested at 182, band disputed), the leave/havra'a/travel hand-off (israeli-workplace-rights-navigator), and the routine overtime caps (12/16/58).",
+        "NEW ARITHMETIC AGAIN BROKE ON FIRST DRAFT, as last cycle predicted. The 'premiums on at least the minimum hourly figure' rule understated (supplement double duty); its repair 'plus every supplement' overstated (counted supplements added back); the next repair 'plus everything s.3(b) excluded' overstated again (expense refunds, 13th salary, annual grants are not hourly supplements). Three successive wrong formulations of one sentence, each caught only by a reviewer. Same root cause as v1.2.0: stating a rule before enumerating what each input category IS. Enumerate the categories of supplement first next time.",
+        "The script's s.21 gap check had two pre-existing defects that only surfaced because this cycle told agents to OMIT absence days: it paired list neighbours regardless of weekday, and it used a modulo-24h difference. A new instruction can expose latent bugs in code it routes input into; re-test the script under the new instruction, not just the old cases.",
+        "Out-of-scope re-litigation reopened the minimum-wage figure: the skill had refused to carry it, which left agents without web access on a remembered number. A dated table with a re-verify instruction is strictly better than a refusal.",
+        "Removing rows to fit the word cap silently dropped a hand-off Gotcha and two Troubleshooting rows; the expert caught it. When trimming for the cap, move examples to references before deleting guardrails.",
+        "Open for next cycle: monthly-salaried rest-day work as a sixth day on top of a full week (domain-checklist open item 4); cumulative overtime inside the weekly rest in the script (open item 5, Kol Zchut cites 175/200 from ע\"ע 38313-03-18, not verified against the judgment); the 2026 wartime overtime permit text and expiry; youth minimum-wage rates (BTL page does not list them).",
+        "Discretionary edits deferred over the batch cap: the script --example flags Thursday 'short' (7h) for a Sun-Thu worker, which is not the eve of the weekly rest and conflicts with rates s.1 that the 2018 order did not change the daily maximum; check 2 could also verify the stated hourly value against s.18 more mechanically.",
+        "Checker 'overtime-pay': legal review flagged the headline 'on top of anything already paid' as asserting non-payment the tool never checked; reworded in this cycle's regeneration."
+      ]
     }
   ]
 }

@@ -134,3 +134,68 @@ refusal is itself informative.
 
 Where the only document is a payslip, the same list applies, and the `סעיף 26ב(ג)` presumption in
 section 4 above is what carries the case in the meantime.
+
+Two points about the records themselves, because a digital report is not automatically a record of
+hours actually worked:
+
+- We found no general statutory duty to attach the attendance report to the payslip in חוק הגנת השכר
+  or חוק שעות עבודה ומנוחה; treat that as a finding of absence, not a ruling. What the law does require
+  is that the payslip itself state the days and hours actually worked (section 4), and that the employer
+  keep the `סעיף 25` ledger, which a written request can ask to see. Some sector extension orders may go
+  further; check the applicable one rather than asserting a general duty either way.
+- `סעיף 25` excuses a mechanical, digital or electronic record from the daily signature. It does not
+  excuse it from recording hours **actually worked**. Ask about a fixed break deducted automatically
+  whether or not it was taken, clock times rounded against the worker, supervisor edits after the fact,
+  and planned shift hours printed in place of punched ones. Each is a reason the report understates
+  the hours, not a finding in itself.
+
+## 8. Months with an absence: reserve duty, sick days, leave, holidays
+
+A month with an absence breaks the payslip checks unless the absence is taken out first.
+
+- **Absence days are not hours worked.** Reserve-duty (מילואים), sick, leave and holiday days come out
+  of the hours fed into the daily and weekly split. Do not pass them to the script or to Step 6 as
+  ordinary days. Under the statute, overtime is hours actually worked beyond the bound, so the weekly
+  bound is applied to hours worked and is not reduced for an absence. A collective agreement, extension
+  order or workplace practice may be more generous, for example by counting a paid absence toward the
+  weekly norm or shortening the norm in a holiday week; ask, and where one does, apply it. A report that books an absence day as a standard shift inflates "hours worked";
+  an agent reading it at face value will find phantom overtime or call a correct payslip short.
+- **Reserve-duty pay is its own payslip line.** The Schedule to חוק הגנת השכר lists, among the payments
+  to be itemised, `תשלום על חשבון תגמול למשרת במילואים ויתרת תגמול כאמור`. Bituach Leumi reimburses
+  employers the reserve-duty payments they made to their employees, and the payment is treated as wage
+  for the employee, with the usual deductions.
+- **Do not check that line against this month's hours.** In the base case Bituach Leumi computes the
+  payment for an employee from the gross wage of the **three months before** the service, divided by 90,
+  and from 1.5.2025 an employee called up again within three months of the previous service can be
+  paid on the earlier income instead, so the window can reach further back still. So the
+  reserve line on a September payslip reflects earlier months, and the overtime being audited now
+  feeds a later reserve payment, not this one. Pricing the reserve payment is out of scope here; send
+  the user to Bituach Leumi's reserve-duty calculator or to `israeli-miluim-manager`, and send tax and
+  pension on the payment to `israeli-payroll-calculator`.
+- **Treat it as a residual.** An absence month typically shows a reduced base and a separate reserve or
+  sick line. Both are lawful, not a shortfall, in check 1 for an hourly payslip and in reading the base
+  line of a monthly one. Who pays depends on the worker: in Bituach Leumi's table a monthly worker, and a
+  daily worker with at least 75 working days in the three months before the service, are paid through
+  the employer, while a daily worker with fewer days and an hourly worker are listed against Bituach
+  Leumi itself. A payment made directly leaves no reserve line on the payslip at all, only fewer hours
+  or a reduced base.
+- **The minimum-wage test prorates for absence.** See `rates-and-tiers.md` section 8.
+- **Holiday months.** List every holiday and holiday eve in the period before splitting hours. On the
+  eve of a holiday the employee does not work, the daily bound is 7 hours, not 8. Holiday pay (דמי
+  חגים) for an hourly worker is often the line missing from such a payslip; it is a separate
+  entitlement with its own qualifying conditions. No general-workforce skill in this directory prices it
+  at present (`foreign-caregiver-payroll` covers live-in caregivers only), so name it as a possible gap and send the user to the applicable extension order or collective
+  agreement rather than folding a guess into the figure.
+- Employment protection for reservists (dismissal, change of terms) is not this skill's;
+  `israeli-miluim-manager` covers it. Valuing annual leave, sick pay and recuperation pay is
+  `israeli-workplace-rights-navigator`.
+
+## 9. Worked scenarios
+
+### Scenario: No attendance records at all
+
+The employee says he worked roughly ten overtime hours a week for a year and the employer produced nothing. Explain the burden shift, then immediately explain the cap and the requirement to give a minimal factual version, and produce the figure as a bounded range rather than as the full year at ten hours a week.
+
+### Scenario: A payslip with no hours line, and nothing else
+
+The user has three payslips and no timesheet. Each shows a monthly gross and a single "supplements" line, with no hours figure, no value of a regular hour, and no overtime units. Run Step 1b: the missing hours line and the unitemised premium are breaches in their own right, and because the disputed cause is unpaid overtime premium they trigger the `סעיף 26ב(ג)` presumption, so the paid wage is treated as regular wage exclusive of the premium unless the employer proves otherwise. Then ask the user for their own factual version of the hours, and produce a bounded range. Do not produce a single figure from three payslips and an estimate.

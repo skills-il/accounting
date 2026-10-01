@@ -30,7 +30,7 @@ The binding computation is the one your employer is obliged to make under the la
 
 ## Problem
 
-An Israeli payslip shows a number of hours and a number of shekels, and almost nobody can tell whether the second follows from the first. The arithmetic is not intuitive: the premium tiers reset every day rather than accumulating over the month, so a worker can be owed overtime in a week where he worked exactly the standard hours. The statutory week and the week actually used in the economy are different figures, and quoting the wrong one moves every downstream number. Meal breaks come out of the count but some breaks stay in. And the most valuable rule of all is procedural rather than arithmetic: an employer who did not keep the hours ledger the law requires carries the burden of proving the employee did not work the disputed hours, up to a capped number of them. This skill works from whichever document the user actually holds. Given a timesheet it reconciles the hours; given only a payslip it audits the payslip on its own terms, because the components the law requires it to carry are the same ones the reconciliation would read, and their absence is itself a computable finding.
+An Israeli payslip shows hours and shekels, and almost nobody can tell whether the second follows from the first. The premium tiers reset every day, so a worker can be owed overtime in a week of exactly the standard hours. The statutory week and the operative week differ. Meal breaks come out of the count but some breaks stay in. And the most valuable rule is procedural: an employer who kept no hours ledger carries the burden of proving the disputed hours were not worked, up to a cap. This skill works from whichever document the user holds: it reconciles a timesheet, or audits a payslip on its own terms, because the components the law requires it to carry are the ones the reconciliation reads.
 
 ## Problem boundary
 
@@ -67,9 +67,10 @@ Two things about that gate matter more than the list itself, and most write-ups 
 3. **The daily maximum did not change.** It is still **8 hours**, and **7 hours** on night work, on the day before the weekly rest, and on the day before a holiday the employee does not work. The 2018 order moved only the weekly basis.
 4. **Five or six day week**, and which day is the shortened one.
 5. **The period being reconciled**, and whether a payslip exists for it.
-6. **The hourly rate itself, where the wage is global.** A monthly wage does not state an hourly rate, and every premium in this skill is a multiple of one. Derive it from the wage and the agreed monthly hours basis, state the divisor you used, and say plainly that a different divisor changes every figure downstream. Do not silently assume a divisor.
-7. **Check the wage against the minimum-wage floor before anything else.** If the derived hourly rate is below the statutory minimum in force for that period, that shortfall is its own claim and it sits underneath the whole reconciliation. This skill does not carry the minimum-wage figure, because it is updated by order; look it up for the specific period rather than using a remembered number.
+6. **The hourly rate itself, where the wage is global.** A monthly wage does not state an hourly rate, and every premium in this skill is a multiple of one. For a full-time post under the 2018 extension order the divisor is **182**, not 186, whatever basis the payslip prints, unless the post was already 42 hours a week or less (`references/rates-and-tiers.md` section 8). State the divisor you used.
+7. **Check the wage against the minimum-wage floor before anything else.** From 01.04.2026 it is 6,443.85 a month or 35.4 an hour on the 182 basis; use the dated row for the audited period in `references/rates-and-tiers.md` section 8, never a remembered figure. Two traps: the test uses a **narrower base** than the premium base (`סעיף 3(ב)` of חוק שכר מינימום excludes shift, seniority and family supplements, any premium including a fixed one, the 13th salary, annual grants and expense refunds), and it prorates for part-time work, absence and a partial month. A shortfall is its own claim, and the premium base is then rebuilt as the lifted wage **plus** the excluded wage supplements (shift, seniority, family; not refunds or annual pay), never the larger of the minimum and the existing rate; the section has a worked example.
 8. **Tips.** In service sectors, whether tips form part of the wage, and on what basis they were recorded, changes the base every premium multiplies. Establish it rather than assuming the payslip's base line is the whole wage.
+9. **Absences and holidays in the period.** Reserve-duty (מילואים), sick, leave and holiday days are not hours worked: take them out before Step 4. The statute does not reduce the weekly bound for them, but an agreement or practice may be more generous, so ask. The reserve-duty payment is its own payslip line, computed by Bituach Leumi from the three months **before** the service, so never check it against this month's hours. List holiday eves too, where the daily bound drops to 7. `references/records-and-remedies.md` section 8 has the detail and the hand-offs.
 
 ### Step 1b, audit the payslip itself, and what to do when it is the only document
 
@@ -90,9 +91,9 @@ An express note is also required where the supervision exclusion applies to the 
 
 **Second, check the payslip against itself.** Three arithmetic checks need no timesheet at all. Before running any of them, establish **what the wage line already contains**, because two lawful conventions differ: either it covers ordinary hours only and the overtime line carries the full 125 or 150 percent, or it already carries the 100 percent element of every hour worked and the overtime line carries only the supplement, 25 or 50 percent. Nearly every false finding comes from assuming one convention on a payslip drawn on the other.
 
-1. **Gate this on the convention, the pay basis, and the position scope.** For an hourly or daily paid employee the test turns on which convention the payslip uses. On the **supplement-only** convention the wage line already values every hour worked at 100 percent, so all hours times the value of a regular hour **equals** the wage line lawfully; that equality is expected, not a defect, and the premium sits wholly in the line check 2 reads. On the **full-rate** convention the wage line covers ordinary hours alone, so where the hours figure is all hours worked the product must **exceed** it by the overtime hours times the hourly value, and an exact match is the defect. Either way reconcile the residual rather than expecting a match: רטרו, השלמה לשכר מינימום, shift differentials, הבראה, נסיעות, a 13th salary and paid leave or sick hours each move one side lawfully, and equivalent-unit booking makes the count unreadable. For a **monthly-salaried** employee the test does not apply at all: the base is fixed and does not move with the hours worked. Check instead that the value of a regular hour equals the **full-time** base divided by the nominal basis, never the paid base, since משרה חלקית, mid-month start or termination and unpaid absence all prorate the base while the hourly value stays contractual. Allow two agorot for rounding, and more where a mid-month raise makes the full-time base ambiguous.
-2. Divide the stated overtime amount by the stated units, then read the quotient against the convention you established. On the full-rate convention, separate 125 and 150 lines each compare against the hourly value, a **single combined line** blends the tiers and lands between them, and a quotient at or near 100 percent means the premium was never applied. On the **supplement-only** convention the lawful quotients are 25 and 50 percent, and a monthly-salaried weekly-rest line at 50 percent is exactly what Step 4 requires, so reading either as an unpaid premium inverts the finding. Where the units are equivalent units, or a שעות גלובליות line carries a nominal count, the quotient means nothing and Step 7b is the route.
-3. Do **not** read a monthly hours total above the nominal basis as overtime. The basis is an average divisor, not a monthly cap, and a month with more working days lawfully produces more ordinary hours. A high hours line with zero overtime units is a question, not a finding: the daily and weekly split has to be seen. Nor is a total **below** the basis a finding: part-time, mid-month start and unpaid absence each produce one lawfully. Ask for the daily breakdown; if the employer has none, that absence is the Step 7 point.
+1. **Gate this on the convention, the pay basis, and the position scope.** For an hourly or daily paid employee the test turns on which convention the payslip uses. On the **supplement-only** convention the wage line already values every hour worked at 100 percent, so all hours times the value of a regular hour **equals** the wage line lawfully; that equality is expected, not a defect, and the premium sits wholly in the line check 2 reads. On the **full-rate** convention the wage line covers ordinary hours alone, so where the hours figure is all hours worked the product must **exceed** it by the overtime hours times the hourly value, and an exact match is the defect. Either way reconcile the residual rather than expecting a match: רטרו, השלמה לשכר מינימום, shift differentials, הבראה, נסיעות, a 13th salary, paid leave or sick hours, and a reserve-duty line each move one side lawfully, and equivalent-unit booking makes the count unreadable. For a **monthly-salaried** employee the test does not apply at all: the base is fixed and does not move with the hours worked. Check instead that the value of a regular hour equals the **full-time** base, never the paid base, divided by 182 for a full-time post under the 2018 order even where the payslip prints 186 (exceptions in `references/rates-and-tiers.md` section 8). The paid base is wrong because משרה חלקית, mid-month start or termination and unpaid absence all prorate it while the hourly value stays contractual. A higher value because fixed supplements were folded in is not a defect. Allow two agorot for rounding, and more where a mid-month raise makes the full-time base ambiguous.
+2. Divide the stated overtime amount by the stated units, then read the quotient against the convention you established. On the full-rate convention, separate 125 and 150 lines each compare against the hourly value, a **single combined line** blends the tiers and lands between them, and a quotient at or near 100 percent means the premium was never applied. On the **supplement-only** convention the lawful quotients are 25 and 50 percent. Whatever the convention, a **monthly-salaried** weekly-rest line at 50 percent is what Step 4 requires; reading it as an unpaid premium inverts the finding. And a clean quotient proves nothing if the stated hourly value leaves out supplements paid on other lines: confirm the value carries them first. Where the units are equivalent units, or a שעות גלובליות line carries a nominal count, the quotient means nothing and Step 7b is the route.
+3. Do **not** read a monthly hours total above the nominal basis as overtime. The basis is an average divisor, not a monthly cap, and a month with more working days lawfully produces more ordinary hours. A high hours line with zero overtime units is a question, not a finding: the daily and weekly split has to be seen. Nor is a total **below** the basis a finding: part-time, mid-month start, unpaid absence and a paid absence such as reserve duty, sick days or leave each produce one lawfully. Ask for the daily breakdown; if the employer has none, that absence is the Step 7 point.
 
 A payslip failing any of these carries a finding before a single attendance record is produced.
 
@@ -102,13 +103,13 @@ Three things are easy to overstate. It is **rebuttable**, so report it as a pres
 
 Its practical effect is large: the base is re-derived from the paid wage as regular wage and the premiums computed on top, rather than treated as already included. That is the Step 7b re-characterisation reached by another route, so never apply both to the same sum.
 
-**When the payslip is genuinely all there is**, the honest output is: the component breaches, the internal-consistency findings, the presumption and what it shifts, an hours figure asked of the user as their own factual version (Step 7 requires one), and a bounded range rather than a confident number. Say plainly that a timesheet, badge log or shift app would convert that range into a figure.
+**When the payslip is genuinely all there is**, output the component breaches, the consistency findings, the presumption, the user's own factual version of the hours (Step 7 requires one), and a bounded range rather than a confident number. A timesheet or badge log would turn the range into a figure.
 
 ### Step 2, convert the raw spans into working hours
 
 Working hours are the time the employee stands at the employer's disposal, including short agreed rest breaks and toilet breaks, and **excluding** the statutory meal break.
 
-- A day of six hours or more carries a break of at least three quarters of an hour, including one continuous half hour. Deduct it unless Step 3 says otherwise.
+- A day of six hours or more carries a break of at least three quarters of an hour, including one continuous half hour. Deduct only a break actually given, unless Step 3 makes it paid. A fixed break the attendance system deducts automatically, rounding against the worker, or planned shift hours printed in place of punched ones are questions to ask, not hours to accept.
 - On the day before the weekly rest or a holiday the break is at least half an hour.
 - Night work is any work with at least two hours falling between 22:00 and 06:00.
 
@@ -125,7 +126,8 @@ A break of half an hour or more counts as **part of working hours** where the em
 | Ordinary, within the daily and weekly bounds | 100 percent |
 | First two overtime hours **of that day** | 125 percent |
 | Third overtime hour of that day onward | 150 percent |
-| Weekly rest (and holiday, where it applies) | 150 percent |
+| Weekly rest | 150 percent |
+| Work on a holiday | Set by extension order or agreement, not by `סעיף 17`. Check which applies |
 
 Three things that change the answer:
 
@@ -164,7 +166,7 @@ A wage set so as to include overtime or weekly-rest premium is treated by `סע�
 
 The remedy is **re-characterisation, not a top-up of the excess**. It is not "the global covers 40 hours, you worked 46, so 6 hours are owed". If the arrangement fails, the whole global sum is treated as regular wage, the hourly rate is re-derived from it, and **every** overtime hour in the period is then owed its premium on that re-derived rate. That is a materially larger figure, and an agent that computes only the excess understates the claim.
 
-The labour courts do recognise a valid global arrangement, on cumulative conditions: informed consent, a genuine supplement rather than a relabelling of existing pay, respect for the statutory caps, a payslip that separates the component, and periodic reconciliation so the global is not systematically below the real hours. State the conditions, apply them to the facts the user gives, and do not validate the arrangement as compliant on the user's say-so.
+The labour courts do recognise a valid global arrangement on cumulative conditions, listed in `references/rates-and-tiers.md` section 7. Apply them to the user's facts and never validate the arrangement on the user's say-so.
 
 ### Step 7c, evidence, and how long the claim lives
 
@@ -183,7 +185,7 @@ Flag these and stop, rather than fold a guess into the figure:
 
 A monthly wage is payable at the end of the month it is paid for. Delayed wage attracts compensation computed as the **higher of** two formulas, one week-based and one index-plus-percentage based, both set out in `references/records-and-remedies.md`.
 
-Warn about the clock, because it is short and it is not the same as the wage claim: the right to delayed-wage compensation lapses if no claim is filed within **one year** from when the wage is treated as delayed, or **60 days** from receiving the related wage, **whichever is earlier**, extendable by the court to 90 days. The underlying wage itself remains claimable far longer. A user told only the halana figure, with no clock, has been actively misled.
+Warn about the clock: the right to delayed-wage compensation lapses if no claim is filed within **one year** from when the wage is treated as delayed, or **60 days** from receiving the related wage, **whichever is earlier**, extendable by the court to 90 days. The wage itself stays claimable far longer. A halana figure given without the clock misleads.
 
 ## Examples
 
@@ -194,14 +196,6 @@ Tuesday runs 08:00 to 19:30 with a 45-minute break. Working hours 10.75, daily b
 ### Saturday work, two employees, same hours
 
 Both work six hours in the weekly rest. The monthly-salaried employee is already paid for the day, so the marginal entitlement is the premium element plus paid compensating rest. The hourly employee is entitled to 150 percent of his hourly rate for all six hours, with unpaid compensating rest. Same hours, different owed figure.
-
-### No attendance records at all
-
-The employee says he worked roughly ten overtime hours a week for a year and the employer produced nothing. Explain the burden shift, then immediately explain the cap and the requirement to give a minimal factual version, and produce the figure as a bounded range rather than as the full year at ten hours a week.
-
-### A payslip with no hours line, and nothing else
-
-The user has three payslips and no timesheet. Each shows a monthly gross and a single "supplements" line, with no hours figure, no value of a regular hour, and no overtime units. Run Step 1b: the missing hours line and the unitemised premium are breaches in their own right, and because the disputed cause is unpaid overtime premium they trigger the `סעיף 26ב(ג)` presumption, so the paid wage is treated as regular wage exclusive of the premium unless the employer proves otherwise. Then ask the user for their own factual version of the hours, and produce a bounded range. Do not produce a single figure from three payslips and an estimate.
 
 ### A payslip that looks complete but is not
 
@@ -219,8 +213,8 @@ The employee is hourly paid. The payslip states 195 hours worked, a value of a r
 
 | File | Use it for |
 |---|---|
-| `references/rates-and-tiers.md` | The full tier table, the monthly-versus-hourly rest-day split, worked examples |
-| `references/records-and-remedies.md` | Ledger duty, the burden shift and its cap, payslip fields, delayed-wage computation and its clock |
+| `references/rates-and-tiers.md` | The full tier table, the rest-day split, overtime caps, the minimum-wage table and base |
+| `references/records-and-remedies.md` | Ledger duty, the burden shift and its cap, payslip fields, delayed-wage clock, absence months, no-records and payslip-only scenarios |
 | `references/domain-checklist.md` | Coverage contract, and figures circulating in the wild that are wrong |
 | `scripts/reconcile_hours.py` | Daily-then-weekly split and tiering. Optional, see Step 6 |
 
@@ -247,5 +241,6 @@ The employee is hourly paid. The payslip states 195 hours worked, a value of a r
 | The employer says the salary already includes overtime | Inclusive wage | Such a wage is treated as regular wage only, so the entitlement survives; check whether an approved collective agreement applies |
 | The user has only a payslip and no timesheet | Treated as a dead end | Run Step 1b. Component breaches plus the `סעיף 26ב(ג)` presumption produce a finding without any attendance record |
 | The payslip shows overtime units but the premium looks like base rate | Premium never applied | Divide the overtime amount by the units and compare against 125 and 150 percent of the stated hourly value |
-| The user asks whether the tax or pension deduction is right | Out of scope | This skill audits the earnings side only. Hand off to `israeli-payroll-calculator` |
-| The worker is a manager | The applicability gate | Do not produce a premium figure as though it were owed. Explain the exclusion and that it turns on the actual role |
+| The user asks whether the tax or pension deduction is right | Out of scope | Hand off to `israeli-payroll-calculator` |
+| The worker is a manager | The applicability gate | Do not produce a premium figure as though it were owed |
+| A reserve-duty month shows a reduced base or phantom overtime | Absence days counted as hours worked | Take the absence days out, treat the reserve line as a lawful residual, and do not check it against this month's hours |

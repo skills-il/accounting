@@ -55,6 +55,14 @@ shift when the employer kept no ledger.
 - [ ] The halana clock, `סעיף 17א`: one year, or 60 days from receipt, WHICHEVER IS EARLIER,
       extendable to 90 days, and distinct from the wage claim itself.
 - [ ] Court discretion to reduce or cancel halana, so the figure is a claim ceiling not an award.
+- [ ] Minimum-wage floor (added v1.3.0): a dated BTL table in `rates-and-tiers.md` section 8, the
+      182 versus 186 divisor rule, the narrower `סעיף 3(ב)` base of חוק שכר מינימום (NOT the `סעיף 18`
+      premium base), and proration for part-time (`סעיף 2(ב)`) and absence (`סעיף 2(ג)`).
+- [ ] Absence months (added v1.3.0): reserve-duty, sick, leave and holiday days are not hours worked;
+      the reserve-duty payment is its own Schedule line, computed by BTL from the 3 prior months, and is
+      a lawful residual in check 1. `records-and-remedies.md` section 8.
+- [ ] Breaks deducted only when actually given; automatic deductions, rounding and planned-versus-
+      punched hours are questions about the record (added v1.3.0).
 
 ## Should cover (advanced / edge cases)
 
@@ -111,12 +119,33 @@ shift when the employer kept no ledger.
    primary source rather than from a summary. The skill currently states the components and the
    cumulative principle rather than a single combined figure, which is the honest position until
    this is closed.
-2. The current overtime caps from the general permit, with their publication reference and any live
-   temporary provisions.
-3. The 182 versus 186 hourly-divisor conflict between the extension order and חוק שכר מינימום. This
-   is now MORE pressing than when it was first logged: Step 1 item 6 derives an hourly rate from a
-   global wage, and Step 1b tells the reader that a nominal 182 or 186 in the hours field is a red
-   flag, so the skill both derives and comments on the divisor. Close this with a primary source.
+2. CLOSED 2026-10-01 for the routine caps (12 / 16 / 58, general permit of 14.03.2018, via Kol Zchut).
+   Still open: the text and expiry of any 2026 wartime temporary permit, which was not located.
+3. CLOSED 2026-10-01: the statute (`סעיף 1` of חוק שכר מינימום) still says 186; the 2018 steering
+   committee and the Ministry of Labour say 182, with no enforcement against an employer paying on 186;
+   BTL publishes both. The skill tests a full-time 42-hour hourly worker at 182, treats the band
+   between the two as disputed, and compares a monthly employee against the monthly figure.
+4. A monthly-salaried worker whose rest-day work was a sixth day ON TOP of a full week. Step 4, the
+   Step 1b check 2 reading and the script all price the rest-day line at the 50 percent premium element,
+   which assumes the salary already covers the day. Whether more is owed when it does not, and from what
+   source, is unresolved. Raised by the 2026-10-01 expert review; resolve next cycle.
+5. Overtime inside the weekly rest is cumulative (rates-and-tiers section 4) but the script prices a
+   long rest day flat; Kol Zchut cites ע"ע 38313-03-18 for 175 / 200 percent. Verify against the
+   judgment and either implement or flag it in the script output.
+
+## Out-of-scope re-litigation, 2026-10-01
+
+- Gross-to-net: users ask constantly, but `israeli-payroll-calculator` owns it. Stays out.
+- Severance, notice: different trigger and evidence. Stays out.
+- Annual leave, recuperation, travel valuation: users do ask. Hand-off now named
+  (`israeli-workplace-rights-navigator`), which closes the carry-forward item. Pricing stays out.
+- Holiday pay (דמי חגים): an hourly worker's September payslip commonly lacks it. Now flagged in
+  `records-and-remedies.md` section 8 as a possible gap; pricing stays out because it turns on
+  qualifying conditions this skill does not collect.
+- Reserve-duty pay: brought partly IN scope as absence handling. Pricing the payment stays out
+  (`israeli-miluim-manager`, BTL calculator).
+- Minimum wage figure: REOPENED and now carried (users ask it in the same breath as overtime).
+- Contract drafting, teacher and caregiver payroll, claims and representation: stay out.
 
 ## Authoritative sources
 

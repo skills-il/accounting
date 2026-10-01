@@ -20,6 +20,11 @@ Usage:
       --day "sat,09:00,15:00,0.5,rest"
   python3 reconcile_hours.py --example
 
+ABSENCE DAYS: pass only days actually worked. A reserve-duty, sick, leave or holiday day is not
+working time; omit it rather than passing it as a standard shift, or the script will count
+ordinary hours that were never worked. The statute does not lower the weekly bound for an
+absence; if an agreement or workplace practice does, pass the lower --weekly-bound yourself.
+
 SCOPE: ONE WEEK AT A TIME. The weekly limb is applied once, to whatever days you pass, so handing
 it a month silently treats the month as a single week and mis-tiers everything. It refuses input
 spanning more than 7 days for that reason; loop over weeks and sum the results yourself.
@@ -62,6 +67,14 @@ class Day:
     @property
     def bound(self) -> float:
         return DAILY_BOUND_SHORT if self.short_day else DAILY_BOUND_DEFAULT
+
+
+WEEKDAYS = ("sun", "mon", "tue", "wed", "thu", "fri", "sat")
+
+
+def _weekday(label: str):
+    key = label.strip().lower()[:3]
+    return WEEKDAYS.index(key) if key in WEEKDAYS else None
 
 
 def _mins(hhmm: str) -> int:
@@ -130,9 +143,23 @@ def reconcile(days: list[Day], weekly_bound: float, rate: float, pay_basis: str 
         buckets["ordinary"] = ordinary_pool
 
     # Compliance flags, reported separately from the money (SKILL.md Step 5).
+    # s.21 is about the gap between one working day and the NEXT. When the labels are weekday
+    # names, only pairs on adjacent calendar days are checked, because an omitted absence day
+    # (reserve duty, sick, leave) or a weekend between two entries is a gap of a day or more,
+    # not of a few hours. With other labels the entries are assumed to be consecutive days.
+    weekday_labels = all(_weekday(d.label) is not None for d in days)
+    if not weekday_labels and len(days) > 1:
+        notes.append("NOTE: day labels are not weekday names (sun..sat), so the s.21 gap check "
+                     "assumes the entries are consecutive calendar days.")
     for a, b in zip(days, days[1:]):
-        gap_minutes = (_mins(b.start) + 24 * 60 - _mins(a.end)) % (24 * 60)
-        gap = gap_minutes / 60.0
+        if weekday_labels and (_weekday(b.label) - _weekday(a.label)) % 7 != 1:
+            continue
+        # Absolute clock: a ends at its start plus its span (past midnight for an overnight shift),
+        # b starts on the next calendar day. A modulo-24h difference would report a morning shift
+        # followed by a next-day evening shift as a one-hour gap.
+        a_start = _mins(a.start)
+        a_span = (_mins(a.end) - a_start) % (24 * 60) or 24 * 60
+        gap = ((24 * 60 + _mins(b.start)) - (a_start + a_span)) / 60.0
         if 0 < gap < MIN_GAP_HOURS:
             notes.append(f"COMPLIANCE: only {gap:g}h between {a.label} and {b.label}; "
                          f"s.21 requires at least {MIN_GAP_HOURS:g}h. Still owed, but flag it.")

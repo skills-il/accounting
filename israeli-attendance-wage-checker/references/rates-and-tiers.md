@@ -91,8 +91,12 @@ Flag at least:
 - A working week exceeding the permitted overtime count.
 - Night-shift patterns beyond what the permits allow.
 
-The caps sit in a general permit rather than in the statute, and they have been varied by temporary
-provisions during wartime periods. If the reconciliation covers such a period, say that the caps may
+The caps sit in a general permit rather than in the statute. Under the general permit of 14.03.2018,
+as summarised by Kol Zchut, a working day including overtime may not exceed **12 hours**, a week may
+not carry more than **16 overtime hours**, and a night-shift worker may not work more than **58 hours**
+a week including overtime. Those caps have been varied by temporary permits during wartime periods,
+including the war with Iran, for some employers and for limited periods. Do not presume a relaxation:
+ask the period and the employer's sector, and if they fall inside a temporary permit, say the caps may
 have been relaxed rather than flagging a breach you cannot substantiate.
 
 ## 6. Worked example, five-day week, 42-hour basis
@@ -120,8 +124,110 @@ other day's ordinary hours) and tier anything above the weekly bound.
 - **Holidays** interact with the rest-day rules and with holiday pay, and the combined figure differs
   again for hourly workers compelled to work. Treat as adjacent and flag.
 - **Global overtime** (`גמול גלובלי`) is recognised by the labour courts on cumulative conditions,
-  including informed consent, a genuine supplement, respect for the statutory caps, and a payslip
-  that separates the component. Where actual overtime exceeds what the global covers, the excess is
+  including informed consent, a genuine supplement rather than a relabelling of existing pay, respect
+  for the statutory caps, a payslip that separates the component, and periodic reconciliation so the
+  global is not systematically below the real hours. Where actual overtime exceeds what the global covers, the excess is
   owed. Flag it; do not validate a global arrangement as compliant.
 - **Sector regimes** (guarding, hotels and restaurants, manpower contractors, foreign care workers)
   have their own extension orders. Say so and stop.
+
+## 8. The minimum-wage floor, and why it uses a different base
+
+The annual update takes effect on **1 April**, but increases have also come on other dates (the
+1.12.2017 row), and the figure has not risen every year: the monthly 5,300.00 did not change between
+December 2017 and April 2023. Use the dated row in force for the period being
+audited, never a remembered figure, and re-verify on the Bituach Leumi table after each 1 April:
+https://www.btl.gov.il/Mediniyut/GeneralData/Pages/שכר%20מינימום.aspx
+
+Adult (18 and over), as published by Bituach Leumi. Each row applies until the next one:
+
+| From | Monthly | Daily, 5-day week | Daily, 6-day week | Hourly, 182 basis | Hourly, 186 basis |
+|---|---|---|---|---|---|
+| 01.04.2026 | 6,443.85 | 297.4 | 257.75 | 35.4 | 34.64 |
+| 01.04.2025 | 6,247.67 | 288.35 | 249.90 | 34.32 | 33.58 |
+| 01.04.2024 | 5,880.02 | 271.38 | 235.20 | 32.30 | 31.61 |
+| 01.04.2023 | 5,571.75 | 257.16 | 222.87 | 30.61 | 29.95 |
+| 01.04.2018 | 5,300.00 | 244.62 | 212.00 | 29.12 | 28.49 |
+| 01.12.2017 | 5,300.00 | 244.62 | 212.00 | (none) | 28.49 |
+
+That covers the seven-year limitation window. For a period before 1.12.2017, take the row from the
+Bituach Leumi page; do not extrapolate. Rows before April 2018 carry an hourly figure on the
+186 basis only, because the 42-hour week did not yet exist; take them from the same page. Employees
+under 18 have separate, lower rates that this file does not carry and that the Bituach Leumi page
+above does not list. Say so, and ask the user for the rate from an official source rather than
+applying the adult row to a minor.
+
+### Which hourly divisor, 182 or 186
+
+The statute still defines the hourly minimum as `החלק ה־186 של שכר המינימום` (חוק שכר מינימום,
+`סעיף 1`). Since the 2018 extension order shortened the week to 42 hours, the steering committee's
+decision and the Ministry of Labour's position are that the hourly figure is the monthly figure divided
+by **182**, and that employers should pay that. The ministry has also said it will not take criminal or
+administrative steps against an employer that keeps paying on 186. So:
+
+- For a **monthly-salaried** employee, compare the monthly figure and avoid the divisor entirely.
+- For a full-time **hourly** employee on a 42-hour week, test against the 182 figure. A rate between the
+  two figures is a disputed point, not a settled shortfall. Say so.
+- For deriving the value of a regular hour from a monthly salary generally (Step 1 item 6), the same
+  extension order puts it at monthly salary divided by **182** for a full-time post, which is why 182 is
+  the default divisor. The order does not apply where the full-time post was already 42 hours a week or
+  less, or to an employee outside the Hours of Work and Rest Law.
+
+### The base is NOT the overtime base
+
+`סעיף 18` of the Hours law puts **every** supplement into the base for overtime and rest-day premium.
+The minimum-wage test runs the other way. `סעיף 3(א)` of חוק שכר מינימום counts only the wage paid
+for an ordinary working day, and `סעיף 3(ב)` lists what counts (base or combined wage, cost-of-living
+supplement, a fixed supplement paid because of the work) and then excludes, in its own words:
+
+> ואולם לא יובאו בחשבון תוספת משפחה, תוספת ותק, תוספת בשל עבודה במשמרות, פרמיה מדודה, מוסכמת,
+> קבועה או קבוצתית, משכורת י״ג, מענקים על בסיס שנתי, והחזר הוצאות לרבות הוצאות כלכלה, אש״ל ונסיעות
+> שמשלם המעסיק.
+
+Overtime and rest-day premium are not wage for an ordinary working day either. So a base below the
+minimum, topped up by a shift supplement, seniority pay, travel or premium pay, still fails the test.
+Reusing the inflated `סעיף 18` rate for the minimum-wage check is the commonest way that failure is
+missed. Two lines that DO count: a `השלמה לשכר מינימום` (minimum-wage completion) line, which exists
+precisely to lift the ordinary-day wage to the floor, and a fixed supplement paid because of the work.
+Where the pay is not built from a base or combined wage at all, `סעיף 3(ד)` uses the regular wage
+without supplements.
+
+### Proration
+
+- **Part-time:** `סעיף 2(ב)`, a part-time employee is entitled to a minimum prorated to the position
+  scope.
+- **Absence:** `סעיף 2(ג)`, where the employee was absent the minimum is reduced in proportion to the
+  absence, but where the employee is entitled to payment for the absence under law or an agreement,
+  that arrangement governs. In a month with reserve duty, sick days or leave, compare the ordinary-day
+  wage for the days actually worked against the prorated minimum; do not compare full gross, which may
+  include the reserve-duty payment, against the full monthly figure. Sick pay in particular follows its
+  own statute and is lawfully lower than full pay on the first days, so a reduced sick line is not a
+  minimum-wage shortfall.
+- **Partial month:** a month in which employment started or ended part-way is compared pro rata to the
+  working days of employment in that month, not against the full monthly figure. That is the same
+  proportional logic as `סעיף 2(ג)` rather than a separately quoted provision.
+- **Rounding:** allow a few agorot; the published daily and hourly figures are themselves rounded.
+
+### What follows from a shortfall
+
+If the ordinary-day wage was below the minimum, the ordinary-day wage owed is the minimum, and the
+supplements the employer pays are still owed **on top** of it, because they could not be counted
+toward the floor. So rebuild the `סעיף 18` premium base as the lifted ordinary-day wage PLUS the
+wage supplements that `סעיף 3(ב)` excluded from the test and that are paid for the work itself (shift,
+seniority and family supplements, and a premium paid per hour or day), and price the premiums on that.
+Whether a particular premium or a family supplement forms part of the regular wage is fact-specific;
+treat a disputed one as a question, not a settled add-back.
+Two kinds of item stay out of the add-back. A supplement that counted toward the floor (a fixed
+supplement paid because of the work, a cost-of-living supplement, a `השלמה לשכר מינימום` line) is
+already inside the lifted figure. And the rest of the `סעיף 3(ב)` list, expense refunds including
+meals, אש״ל and travel, the 13th salary and annual grants, is not an hourly wage supplement at all.
+Adding either back overstates the base. Never take the larger of the minimum and the payslip's
+existing `סעיף 18` rate: that keeps the supplement doing double duty.
+
+Example, 2026, full-time hourly worker: base 30.00 an hour plus a shift supplement of 6.00 an hour.
+The payslip's `סעיף 18` rate is 36.00, which is above 35.4, but the minimum-wage test ignores the shift
+supplement and the base of 30.00 fails it. The ordinary-day wage owed is 35.4, the premium base is
+35.4 + 6.00 = 41.4, and the first two overtime hours of a day are owed at 1.25 x 41.4 = 51.75, not
+1.25 x 36.00 = 45.00. Use the 182 figure for this and say the 186 figure is the disputed floor.
+
+This is reasoning from the two statutes together rather than a quoted provision; present it as such.
