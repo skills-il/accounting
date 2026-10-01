@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-amuta-compliance",
   "schemaVersion": "1.0",
-  "generated_at": "2026-09-09",
+  "generated_at": "2026-10-01",
   "claims": [
     {
       "id": "fee-reduced-176",
@@ -557,6 +557,346 @@
       "confidence": "high",
       "verified_via": "browser",
       "verified_at": "2026-09-09"
+    },
+    {
+      "id": "s19c-2014-amount",
+      "claim": "The last s.19(c) amount gazetted before 2026 was 1,172,933.01 NIS, from 2014 (Wikisource annotated text as of 30.12.2025, before the 2026 notice was added) (1,172,933 NIS rounded)",
+      "claim_type": "currency",
+      "source_url": "https://he.wikisource.org/w/index.php?title=%D7%97%D7%95%D7%A7_%D7%94%D7%A2%D7%9E%D7%95%D7%AA%D7%95%D7%AA&oldid=2971155",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "החל משנת 2014, 1,172,933.01",
+      "confidence": "high"
+    },
+    {
+      "id": "s19c-2026-notice-covers-2014-2025",
+      "claim": "The 2026 notice states that the updated amount takes account of the updates for the years 2014 to 2025, i.e. no separate amount was gazetted for 2015 to 2025",
+      "claim_type": "law",
+      "source_url": "https://olaw.org.il/yalkut/yalkut-14348.pdf",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "בחישוב הסכום המעודכן לפי הודעה זו נלקח בחשבון עדכון הסכומים שנעשו בשנים 2014 עד 2025",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-01"
+    },
+    {
+      "id": "second-schedule-machzor-last-year",
+      "claim": "The Second Schedule defines turnover (מחזור) as the receipts from every source received in the last year that passed, which is why the statute does not settle which year's amount a year's turnover is measured against",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "סכום התקבולים מכל מקור וסוג, שהתקבלו בשנה האחרונה שחלפה",
+      "confidence": "high"
+    },
+    {
+      "id": "forms-reg-7e2-500k",
+      "claim": "Forms Regulations reg. 7(e)(2): an amuta whose turnover does not exceed 500,000 NIS is exempt from filing the financial report under s.36(d) (תקנה 7(ה)(2))",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים)",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "עמותה שמחזורה אינו עולה על 500,000 שקלים חדשים פטורה",
+      "confidence": "high"
+    },
+    {
+      "id": "forms-reg-7a-register-20000",
+      "claim": "Forms Regulations reg. 7A(a): an amuta keeps a register of donors whose cumulative annual donation exceeds 20,000 NIS (תקנה 7א)",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים)",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "עמותה תנהל רישום של שמות התורמים לעמותה שתרומתם השנתית המצטברת עולה על 20,000 שקלים חדשים",
+      "confidence": "high"
+    },
+    {
+      "id": "forms-reg-7a-anon-100000",
+      "claim": "Forms Regulations reg. 7A(b): the maximum cumulative annual donation from a donor that may be left unnamed in the financial report is 100,000 NIS a year",
+      "claim_type": "currency",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים)",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "הוא 100,000 שקלים חדשים לשנה",
+      "confidence": "high"
+    },
+    {
+      "id": "forms-reg-7a-must-name-50000-20pct",
+      "claim": "Forms Regulations reg. 7A(c): a donor whose cumulative annual donation exceeds 50,000 NIS and is at least 20% of annual turnover must be named",
+      "claim_type": "threshold",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים)",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "עמותה תרשום בדוחה כספי את שמו ופרטיו של תורם שתרומתו השנתית המצטברת עולה על 50,000 שקלים חדשים אם היא מהווה 20% לפחות מהמחזור הכספי השנתי של העמותה באותה שנה",
+      "confidence": "high"
+    },
+    {
+      "id": "forms-reg-7b-confidentiality",
+      "claim": "Forms Regulations reg. 7B: an amuta may ask the Registrar to keep an individual donor's details confidential",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים)",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "עמותה שתורם שהוא יחיד ביקש ממנה לחסות את פרטיו",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-item-2d-verbal-report-test",
+      "claim": "Fee schedule item 2(d): the 176 NIS reduced tier applies in the first two years after incorporation or where the turnover reported in the verbal report for the last financial year whose report was due before the fee year did not exceed 300,000 NIS",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(אגרות)",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "עמותה בשנתיים הראשונות לאחר שנת התאגדותה או עמותה שמחזור ההכנסות השנתי שעליו דיווחה בדוח המילולי",
+      "confidence": "high"
+    },
+    {
+      "id": "fee-item-2c-late-year",
+      "claim": "Fee schedule item 2(c): a fee paid after the end of its year is charged at the post-March rate of the year of actual payment",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(אגרות)",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "אם שולמה האגרה לאחר סוף אותה שנה",
+      "confidence": "high"
+    },
+    {
+      "id": "s32-board-and-committee",
+      "claim": "s.32: no person may serve at the same time on the board and on the audit committee or auditing body (סעיף 32)",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "לא יכהן אדם בעת ובעונה אחת כחבר הועד וכחבר ועדת הבקורת או הגוף המבקר",
+      "confidence": "high"
+    },
+    {
+      "id": "s33a2-paid-provider",
+      "claim": "s.33(a)(2): a person who provides paid services to the amuta other than as a board or audit-committee member may not serve on the board or the audit committee (סעיף 33(א)(2))",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "מי שנותן שירותים לעמותה בשכר שלא כחבר הועד או כחבר ועדת הבקורת",
+      "confidence": "high"
+    },
+    {
+      "id": "s33b-paid-provider-auditing-body",
+      "claim": "s.33(b): a paid service provider may not act as the auditing body (סעיף 33(ב))",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "לא יכהן כגוף מבקר מי שנותן שירותים לעמותה בשכר שלא כגוף מבקר",
+      "confidence": "high"
+    },
+    {
+      "id": "s26a-board-pay",
+      "claim": "s.26A: only the general assembly may decide to pay board members, subject to provisions under s.34A (סעיף 26א, subject to סעיף 34א)",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "האסיפה הכללית רשאית להחליט על תשלום שכר לחברי הועד",
+      "confidence": "high"
+    },
+    {
+      "id": "s34c-no-distribution",
+      "claim": "s.34C: an amuta may not distribute profits to its members, directly or indirectly (סעיף 34ג)",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "עמותה אינה רשאית לבצע חלוקת רווחים לחבריה, במישרין או בעקיפין",
+      "confidence": "high"
+    },
+    {
+      "id": "s36a-two-weeks-committee",
+      "claim": "s.36(a): the financial report goes to the audit committee or auditing body at least two weeks before the general assembly",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "הדו״ח הכספי יוגש לועדת הבקורת או לגוף המבקר לא פחות משבועיים לפני יום האסיפה הכללית",
+      "confidence": "high"
+    },
+    {
+      "id": "s38-change-notices",
+      "claim": "s.38(a)(1): notices of a change of address, of the election or appointment or end of term of board, audit-committee or auditing-body members, and of the appointment of an accountant, are filed online signed by two board members (סעיף 38)",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "הודעה על שינוי מענה או מענה הדיגיטלי של העמותה",
+      "confidence": "high"
+    },
+    {
+      "id": "s38-lawsuit-notice",
+      "claim": "s.38(a)(4): notice of a lawsuit filed against the amuta or against a board member in that capacity",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "הודעה על הגשת תובענה כנגד העמותה או כנגד חבר הועד בתוקף תפקידו כחבר הועד",
+      "confidence": "high"
+    },
+    {
+      "id": "s38b1-two-weeks",
+      "claim": "s.38(b)(1): the documents in paragraphs (1) to (5) are filed within two weeks of the decision or event",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "יוגשו תוך שבועיים מיום קבלת ההחלטה או מיום האירוע",
+      "confidence": "high"
+    },
+    {
+      "id": "s38a3-accountant-opinion",
+      "claim": "s.38(a)(3): where an accountant was appointed, the accountant's opinion is attached to the general-assembly protocol approving the financial report",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "ואם נתמנה רואה חשבון תצורף חוות דעתו על הדו״ח הכספי",
+      "confidence": "high"
+    },
+    {
+      "id": "registrar-14-6-2026-relatives-10pct",
+      "claim": "Registrar notice of 14.6.2026 on targeted supervision of family ties: relatives may make up no more than 10% of employees or 10% of payroll",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/news/notice-14-06-26/he/notice-14-06-26.pdf",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "או תשלום שכר לקרובים בשיעור שאינו עולה על 10% ממספר העובדים בה או מסך השכר",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-01"
+    },
+    {
+      "id": "online-gate-four-years",
+      "claim": "Since the online-system upgrade a certificate request cannot be completed without filing unfiled annual reports for up to four earlier years, and the certificate request is a separate online submission",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/news/news-180523/he/news-nonprofit.pdf",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "יש להגיש את הדיווחים הקודמים לתקופה של עד ארבע שנים קודמות ורק לאחר מכן להגיש בקשת ניהול תקין",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-01"
+    },
+    {
+      "id": "s46-supplementary-id",
+      "claim": "An amuta may add an ID number as a supplementary report where a donation was given with a full name but no ID and the donor later asks",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/info_digital_donation_system/he/IncomeTax_anonymous-donation.pdf",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "לעמותה קיימת אפשרות להזין מספר תעודת זהות כדיווח משלים לדיווח על תרומה ועל ביטול תרומה",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-01"
+    },
+    {
+      "id": "disclosure-5a-majority-foreign",
+      "claim": "Disclosure Duty Law s.5A (2016): a body whose main funding in the last financial year for which a financial report was due came from foreign political entities must state this in an online report filed at the reporting date (סעיף 5א)",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_חובת_גילוי_לגבי_מי_שנתמך_על_ידי_ישות_מדינית_זרה",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "נתמך שעיקר מקורות המימון שלו, בשנת הכספים האחרונה שלגביה נדרש להגיש דוח כספי, היה מתרומות שהתקבלו מישויות מדיניות זרות",
+      "confidence": "high"
+    },
+    {
+      "id": "disclosure-5a-letters",
+      "claim": "Disclosure Duty Law s.5A(b)(2): the majority-funded body must also state it in letters, including e-mail, to public servants and elected officials",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_חובת_גילוי_לגבי_מי_שנתמך_על_ידי_ישות_מדינית_זרה",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "פנייה שלו לעובד הציבור או לנבחר ציבור במכתב, לרבות באמצעות דואר אלקטרוני",
+      "confidence": "high"
+    },
+    {
+      "id": "two-year-certificate-2024-2025",
+      "claim": "Two-year certificates exist: amutot holding a certificate for 2024-2025 had to file their 2023 reports by 31.10.2024 or the 2025 year would be cancelled without further warning",
+      "claim_type": "law",
+      "source_url": "https://www.gov.il/BlobFolder/servicequestionnaire/association_annual_reporting_obligations/he/explanation-30-05-2022.pdf",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "עמותות שקיבלו זה מכבר אישור ניהול תקין לשנתיים",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-01"
+    },
+    {
+      "id": "registrar-14-6-2026-date",
+      "claim": "The Registrar's targeted-supervision notice on family ties and conflicts of interest is dated 14 June 2026 (כ\"ט בסיוון תשפ\"ו)",
+      "claim_type": "date",
+      "source_url": "https://www.gov.il/BlobFolder/news/notice-14-06-26/he/notice-14-06-26.pdf",
+      "source_fetched_at": "2026-10-01T12:00:00Z",
+      "raw_snippet": "הודעה בדבר פיקוח ייעודי לבחינת קרבה משפחתית וניגודי עניינים",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-01"
+    },
+    {
+      "id": "s33a1-non-member",
+      "claim": "s.33(a)(1): a non-member of the amuta may not serve on the board or the audit committee (סעיף 33(א))",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "מי שאינו חבר העמותה",
+      "confidence": "high"
+    },
+    {
+      "id": "s33a3-minor-incompetent-bankrupt",
+      "claim": "s.33(a)(3): a minor, a person declared legally incompetent, or a bankrupt may not serve on the board or the audit committee",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "קטין או מי שהוכרז פסול־דין או פושט רגל",
+      "confidence": "high"
+    },
+    {
+      "id": "s33a5-corporation",
+      "claim": "s.33(a)(5): a corporation may not serve, but a representative of a member corporation may serve on the board",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "תאגיד, אולם יכול לכהן כחבר הועד נציג של תאגיד החבר בעמותה",
+      "confidence": "high"
+    },
+    {
+      "id": "forms-reg-7c-annex1",
+      "claim": "Forms Regulations reg. 7(c): the s.36(b) statement is filed on Annex 1 of Form 7A where the amuta employs paid employees",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים)",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "אם מועסקים בעמותה עובדים בשכר",
+      "confidence": "high"
+    },
+    {
+      "id": "forms-reg-7d-annex2",
+      "claim": "Forms Regulations reg. 7(d): the s.36A(b) statement is filed on Annex 2 of Form 7A (טופס 7א) (Form 7א / Form 7a, the online verbal report)",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים)",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "נספח 2 לדוח המילולי והכספי",
+      "confidence": "high"
+    },
+    {
+      "id": "forms-reg-7a-d-one-donor",
+      "claim": "Forms Regulations reg. 7A(d): an individual and household members they support, and a corporation with its controlling holder and commonly controlled corporations, count as one donor",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים)",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "יחיד ובני ביתו הסמוכים על שולחנו",
+      "confidence": "high"
+    },
+    {
+      "id": "registrar-main-funding-50pct",
+      "claim": "The Registrar's letter of 19.5.2025 reads the s.5A 'main source of funding' as more than 50% from foreign entities",
+      "claim_type": "threshold",
+      "source_url": "https://www.gov.il/BlobFolder/news/news-180523/he/news-nonprofit.pdf",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "עמותה שעיקר מקורות המימון שלה (מעל 50%) היה מתרומות שהתקבלו מישויות זרות",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-01"
+    },
+    {
+      "id": "s19c-2026-notice-date",
+      "claim": "The 2026 s.19(c) notice is dated 12 February 2026 (כ\"ה בשבט התשפ\"ו) and was published in Yalkut HaPirsumim 14348 on 11.3.2026, page 4638",
+      "claim_type": "date",
+      "source_url": "https://olaw.org.il/yalkut/yalkut-14348.pdf",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "כ\"ה בשבט התשפ\"ו (12 בפברואר 2026)",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-01"
+    },
+    {
+      "id": "second-schedule-bookkeeping-tax-year",
+      "claim": "Second Schedule: an amuta whose turnover does not exceed 750,000 NIS keeps, for each tax year, at least a receipts-and-payments record",
+      "claim_type": "law",
+      "source_url": "https://he.wikisource.org/wiki/חוק_העמותות",
+      "source_fetched_at": "2026-10-01T15:00:00Z",
+      "raw_snippet": "עמותה שמחזורה אינו עולה על 750,000 שקלים חדשים, חייבת לנהל, לכל שנת מס",
+      "confidence": "high"
     }
   ]
 }

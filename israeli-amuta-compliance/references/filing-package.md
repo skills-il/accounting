@@ -57,13 +57,16 @@ Record that the general assembly approved the financial report.
 | Band | Threshold | Consequence | Source |
 |---|---|---|---|
 | Organs | any turnover | general assembly, board, audit committee | s.19(א) |
-| Bookkeeping | above 750,000 NIS, not index-linked | double-entry books | Second Schedule item א |
+| Filing exemption | at or below 500,000 NIS | financial report not filed under s.36(ד), but still prepared, reviewed by the audit committee and approved by the assembly; verbal report and its Form 7א annexes still filed | Forms Regulations reg. 7(ה)(2) |
+| Bookkeeping | above 750,000 NIS, not index-linked, measured on the previous year's receipts | double-entry books | Second Schedule item א |
 | Audit | above 1,380,630 NIS for 2026, index-linked | appoint a רו"ח; report audited to the assembly | s.19(ג)(1), s.37(א) |
 | Internal audit | above 10,000,000 NIS | appoint a מבקר פנימי, with the audit committee's agreement | s.30א |
 | Foreign political donations | above 300,000 NIS | statement in the financial report | s.36א |
 
-The audit threshold is re-gazetted each February under s.19(ג)(2). The 2026 amount, 1,380,630 NIS,
-was published in ילקוט הפרסומים 14348.
+s.19(ג)(2) requires the audit amount to be published each February, but no notice appeared for 2015
+to 2025. The 2014 notice gave 1,172,933 NIS; the 2026 amount, 1,380,630 NIS, was published in ילקוט
+הפרסומים 14348 and states that it accounts for the 2014 to 2025 updates. For the 2024 and 2025 reports,
+turnover between those two figures is an unsettled zone: see SKILL.md step 3.
 
 s.37(ב): the Registrar may order an audit even below the threshold, on the audit committee's
 request, on the request of a tenth of the members, or on the Registrar's own initiative.
@@ -73,10 +76,12 @@ request, on the request of a tenth of the members, or on the Registrar's own ini
 The certificate is issued for a named calendar year. A specimen reads
 "אישור זה תקף מיום 01/01/2024 ועד ליום 31/12/2024".
 
-Do not describe the certificate as being valid for two years by default. A two-year arrangement is
-sometimes referred to, but the mechanism could NOT be confirmed from a primary source when this was
-written, so the skill does not state one. Treat the certificate as annual and confirm any longer
-grant with the Registrar.
+Do not describe the certificate as being valid for two years by default. Two-year certificates do
+exist: the Registrar's letter of 28.5.2024 addressed amutot holding a certificate for 2024-2025 and
+required them to file their 2023 reports by 31.10.2024, failing which the 2025 year of the
+certificate would be cancelled without further warning. So a two-year holder still files every
+year. The conditions for granting a two-year certificate in later cycles were not found in a
+primary source; confirm with the Registrar.
 
 The certificate for year X is granted against the annual reports for year X minus 2.
 

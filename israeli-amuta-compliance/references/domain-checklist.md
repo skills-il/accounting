@@ -5,7 +5,8 @@ missing from SKILL.md. The full research checklist, with every source URL and th
 and statute quotations, is a build-time QA artifact held outside the published skill folder; the
 citations for everything below live in `evidence.json`.
 
-Checklist version: 2. Generated 2026-09-09, revised the same day after expert review.
+Checklist version: 3. Generated 2026-09-09, revised the same day after expert review, and again on
+2026-10-01 in the first full update audit (v1.1.0).
 
 ## Must cover (core)
 
@@ -45,8 +46,11 @@ Checklist version: 2. Generated 2026-09-09, revised the same day after expert re
       step in the workflow.
 - [ ] The defect-correction plan as a named status, including that signing REVOKES a certificate the
       amuta currently holds. Why core: signing is not a neutral remedial step and nobody tells them.
-- [ ] The lesser status confirming documents were filed, obtained through its own service and
-      accepted by many funders as an interim. Why core: a refused amuta is usually not told it exists.
+- [ ] The lesser אישור על קבלת מסמכים, stated precisely: its documented population is a NEW amuta
+      or one without two years of continuous activity, and it is NOT a substitute for the
+      certificate, since state support is conditioned on the certificate itself. Never promise it
+      to a refused established amuta as an interim; ask the Registrar. Why core: retracted in
+      v1.0.1 after an unsourced "accepted by funders as an interim" claim shipped; do not reinstate.
 - [ ] That a refusal is an administrative decision, answerable, with a right to be heard and a
       judicial-review route, and that this is where a lawyer takes over. Why core: without it the
       skill dead-ends the user on a decision that can be answered.
@@ -58,9 +62,25 @@ Checklist version: 2. Generated 2026-09-09, revised the same day after expert re
       is banded. Why core: a small amuta that concludes it need not prepare accounts has misread it.
 - [ ] The bookkeeping band at 750,000 NIS, which is NOT index-linked: above it, double-entry books;
       at or below it, a receipts-and-payments book. Why core: it is a different duty from the audit.
-- [ ] The audit band, 1,380,630 NIS for 2026, which IS index-linked and re-gazetted each February.
-      Above it an accountant must be appointed and the report reaches the general assembly audited.
-      Why core: this decides whether the amuta must pay for an auditor at all.
+- [ ] The audit band, 1,380,630 NIS for 2026, which IS index-linked. Above it an accountant must be
+      appointed and the report reaches the general assembly audited. Why core: this decides whether
+      the amuta must pay for an auditor at all.
+- [ ] That no amount was gazetted for 2015 to 2025 (the 2014 notice gave 1,172,933 NIS; the 2026
+      notice says it accounts for the 2014 to 2025 updates), and that the statute does not settle
+      which year's amount a year's turnover is measured against. For the 2024 and 2025 reports: above
+      1,380,630 audit on every reading, at or below 1,172,933 no reading requires one, in between
+      unsettled and the conservative course is to appoint. Why core: v1.0.x told the agent to "take
+      that year's gazetted amount", which does not exist, and the script dead-ended on every live
+      cycle.
+- [ ] The filing exemption: at or below 500,000 NIS turnover the financial report is not FILED with
+      the Registrar (Forms Regulations reg. 7(ה)(2)), though s.36(א) still requires it to be
+      prepared, reviewed by the audit committee and approved by the assembly, and the verbal report
+      is still filed. Why core: otherwise the skill tells small amutot to file a document they are
+      exempt from filing, or, stated flatly, lets them think the report is optional.
+- [ ] The route for the s.36(ב) and s.36א disclosures: Form 7א Annex 1 (paid employees, reg. 7(ג))
+      and Annex 2 (reg. 7(ד)), filed with the verbal report whether or not the financial report is.
+- [ ] That the bookkeeping band (and the internal-audit band) are measured on the receipts of the
+      last year that passed, so the books kept during a year follow the previous year's turnover.
 - [ ] That the bookkeeping and audit thresholds share a 1996 base but are different numbers today,
       and must never be substituted for one another. Why core: quoting the base figure as the audit
       threshold tells a mid-sized amuta it needs an auditor when it does not.
@@ -78,6 +98,22 @@ Checklist version: 2. Generated 2026-09-09, revised the same day after expert re
 - [ ] That the organs must be validly COMPOSED, not merely exist: no family majority on the board or
       among signatories, and no salary recipients who are relatives of an audit committee member.
       Why core: this is the substantive refusal ground and a small amuta is most likely to fail it.
+- [ ] The statutory disqualifications: nobody on both the board and the audit committee or auditing
+      body (s.32); under s.33(א) no non-member, paid service provider, minor, person declared
+      incompetent or bankrupt, person convicted of the listed offences, or corporation (a member
+      corporation's representative may sit on the board) on either; no paid service provider as
+      the auditing body (s.33(ב)).
+      Why core: a salaried director on the board is the classic defect at mid size.
+- [ ] Board pay only under a general-assembly resolution within the s.34א limits (s.26א), and the
+      ban on any distribution of profits to members (s.34ג).
+- [ ] The Registrar's 14.6.2026 supervision drive on family ties: relatives at most 10% of employees
+      or of payroll, a broad definition of a relative, and a self-correction window.
+- [ ] The s.38 change notices within two weeks: address, organ members, accountant, takanon, name or
+      objects, authorised signatories, and lawsuits against the amuta or a board member.
+- [ ] The online gate: a certificate request cannot be completed until up to four earlier years of
+      unfiled reports are filed, and the request is a separate submission from the reports.
+- [ ] Working back from the accountant's quota date: report to the audit committee at least two
+      weeks before the assembly (s.36(א)), then assembly approval, then upload.
 - [ ] The certificate application set beyond the four annual documents: the internal-auditor
       appointment protocol above the internal-audit band, the named five-highest-earners online form
       as a distinct form, the fee paid INCLUDING arrears from earlier years, and the foreign-donation
@@ -91,11 +127,12 @@ Checklist version: 2. Generated 2026-09-09, revised the same day after expert re
       1,338 NIS early amount and the 1,777 NIS standard amount, with the date the amount changes.
       Why core: the correct fee tier is a stated deliverable.
 - [ ] That the reduced tier reaches an amuta in its first two years after the year of incorporation,
-      and an amuta that has FILED online reports, so the operative lever is filing rather than
-      turnover alone. Why core: the tier is widely mis-described as a simple size test.
-- [ ] That the official fee page is internally inconsistent about which year's turnover governs, so
-      no turnover-year test should be encoded. Why core: prevents a future update from hardcoding
-      the wrong year.
+      and an amuta whose turnover in the verbal report for the last financial year whose report fell
+      due before the fee year did not exceed 300,000 NIS (fee schedule item 2(ד); for the 2026 fee,
+      the 2024 report). Why core: the tier is widely mis-described as a simple size test, and the
+      gov.il page also names 2023 in one sentence; the regulation governs.
+- [ ] That a fee paid after the end of its year is charged at the post-March rate of the year of
+      actual payment (item 2(ג)).
 - [ ] That paying the full fee before filing the online reports forfeits any refund of the excess.
       Why core: irreversible and costly.
 - [ ] That the fee exemption was abolished from 2020, and that the official page still displays the
@@ -111,6 +148,12 @@ Checklist version: 2. Generated 2026-09-09, revised the same day after expert re
       end of the quarter in which the donation was received. Why core: a small amuta below the
       turnover line still owes it, and the skill must never answer "under the threshold, nothing
       to do".
+- [ ] The majority-foreign-funding duty (Disclosure Duty Law s.5א, 2016): a separate online report
+      on the annual reporting date and prominent disclosure in publications and in letters to public
+      servants and elected officials until the next reporting date.
+- [ ] Donor naming: the 100,000 NIS anonymity ceiling (reg. 7א(ב)), the donor register above
+      20,000 NIS (reg. 7א(א)), the 50,000 NIS and 20% must-name rule (reg. 7א(ג)), and the Registrar's
+      confidentiality route (reg. 7ב).
 
 ### Section 46 donation reporting
 - [ ] The duty, in force from 1 January 2026, to report donations and cancellations through the
@@ -129,6 +172,8 @@ Checklist version: 2. Generated 2026-09-09, revised the same day after expert re
       receipt exemption is the most natural reason to assume the duty does not apply.
 - [ ] That an anonymous donation does not entitle anyone to a tax benefit. Why core: affects what
       the amuta should tell its donors.
+- [ ] That a donation recorded with a full name but no ID can be attributed later through a
+      supplementary report in the amuta portal, at the donor's request.
 - [ ] That there is no April compliance deadline, only the January one. Why core: a circulating
       error that conflates this with the fee calendar.
 
@@ -137,8 +182,8 @@ Checklist version: 2. Generated 2026-09-09, revised the same day after expert re
 - [ ] Payment-means rules: a separate receipt per payment type and per card, foreign currency
       handling, and post-dated cheques split by tax year according to the due date.
 - [ ] In-kind donations, which are reportable but do not receive the credit automatically.
-- [ ] Cancellations and corrections, citing the original reporting number, including the paper-book
-      case that needs no system report.
+- [ ] Cancellations and corrections, citing the original reporting number and repeating the
+      original receipt's details, including for a receipt issued from a paper book.
 - [ ] Donations through interfaced digital platforms, reported by the platform.
 - [ ] The employer route for granting the credit through the payslip.
 - [ ] The foreign political-entity donation statement required above 300,000 NIS turnover.

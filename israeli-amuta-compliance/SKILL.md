@@ -42,14 +42,14 @@ and its donors cannot claim their tax credit.
 
 ## Instructions
 
-Work through the steps in order. Steps 1 to 3 establish which rules apply to this amuta; steps 4 to
-7 produce the deliverables. Do not skip step 2: getting the reporting year wrong is the single most
-common way a user prepares an entire package that cannot be filed.
+Work through the steps in order. Steps 1 to 3 establish which rules apply; steps 4 to 7 produce the
+deliverables. Do not skip step 2: the wrong reporting year is the commonest way to build a package
+that cannot be filed.
 
 ### Step 1: Identify the entity and read its registry position
 
 Ask for the amuta's registration number (מספר עמותה, 9 digits starting 58) or its exact name. A
-חל"צ has a company number starting 51 and follows a different track, see step 8.
+חל"צ has a company number starting 51 and follows a different track, see step 10.
 
 If the `israel-amutot` MCP is available, read the entity's current position rather than asking the
 user to recall it:
@@ -110,29 +110,53 @@ Ask which accountant files for the amuta and whether that accountant joined the 
 read the Registrar's news page for the arrangement governing the cycle in front of you: these dates
 are re-issued annually and the ones above are specific to the 2027 cycle.
 
+**Work back from the quota date.** Nothing can be uploaded until the general assembly has approved
+the financial report, and s.36(א) requires the report to reach the audit committee or auditing body
+at least two weeks before that assembly. The order is: the accountant's sign-off where there is an
+audit, the report to the committee at least two weeks ahead, the assembly, then the upload. Ask
+which quota date the accountant has assigned this amuta's report to and count back from it.
+
 ### Step 3: Band the amuta by turnover
 
-Four independent bands key off turnover. They are cumulative, and they are not the same number, so
-work through all four rather than assuming one threshold governs everything.
+Five independent bands key off turnover. They are cumulative, and they are not the same number, so
+work through all five rather than assuming one threshold governs everything.
 
 | Band | Threshold | Consequence | Source |
 |---|---|---|---|
 | Organs | any turnover, including none | general assembly, board, and audit committee | s.19(א) |
-| Bookkeeping | above 750,000 NIS | double-entry books instead of a receipts-and-payments book | Second Schedule |
-| Audit | above **1,380,630 NIS for 2026** | must appoint a רו"ח, and the financial report must reach the general assembly audited | s.19(ג)(1), s.37(א) |
+| Filing exemption | at or below 500,000 NIS | need not FILE the financial report with the Registrar, though it is still prepared; the verbal report is still filed | Forms Regulations, reg. 7(ה)(2) |
+| Bookkeeping | above 750,000 NIS, measured on the previous year's receipts | double-entry books instead of a receipts-and-payments book | Second Schedule |
+| Audit | above **1,380,630 NIS** (the 2026 amount), see point 2 for the 2024 and 2025 reports | must appoint a רו"ח, and the financial report must reach the general assembly audited | s.19(ג)(1), s.37(א) |
 | Internal audit | above 10,000,000 NIS | must additionally appoint a מבקר פנימי | s.30א |
 
 Four things to get right here:
 
 1. **The audit threshold is index-linked; the bookkeeping threshold is not.** Both descend from a
    750,000 NIS figure, but only s.19(ג) carries the indexation clause in s.19(ג)(2). Never reuse the
-   audit figure as the bookkeeping figure.
-2. **The audit figure is re-gazetted every year.** s.19(ג)(2) requires publication in רשומות at the
-   start of February. If the user is filing for a year other than 2026, tell them to take that
-   year's gazetted amount rather than reusing 1,380,630.
+   audit figure as the bookkeeping figure. "מחזור" in the Second Schedule is the receipts of the
+   last year that passed, so the books kept during a year follow the previous year's turnover. If
+   the two years fall on opposite sides of 750,000 NIS, flag it and confirm with the accountant.
+2. **The audit figure is not settled for the 2024 and 2025 reports.** s.19(ג)(2) requires the amount to be
+   published every February, but after the 2014 notice (1,172,933 NIS) the next one is the 2026
+   notice (1,380,630 NIS), which says it takes account of the updates for 2014 to 2025. No amount
+   was gazetted for 2015 to 2025. Nor does the statute say plainly whether a year's turnover is
+   measured against that year's amount or against the amount for the year in which it is tested,
+   since "מחזור" means the receipts of the last year that passed. So, for the 2024 and 2025
+   reports: above 1,380,630 NIS an audit is required on every reading, and at or below 1,172,933
+   NIS (the 2014 figure, taken from Wikisource's annotated text of the law) no reading requires
+   one. In between, say that the point is unsettled, state that the conservative course is to
+   appoint an accountant, and have the amuta confirm with its accountant or the Registrar. Never
+   tell an amuta in that zone flatly that it needs no auditor. For the 2026 reports, above
+   1,380,630 NIS the audit is required unless a 2027 notice turns out to govern and exceeds the
+   turnover; for other years, check for a newer notice before reusing either figure.
 3. **Every amuta prepares a מאזן.** s.36(א) requires a balance sheet and a statement of income and
    expenditure from every amuta regardless of size. It is the **audit** that is banded, not the
    balance sheet. A small amuta that concludes it need not prepare accounts has misread this.
+   Preparing is not filing, though: at or below 500,000 NIS turnover the amuta is exempt from
+   FILING the financial report under s.36(ד) (Forms Regulations, reg. 7(ה)(2)). The report still
+   goes to the audit committee and the general assembly, the verbal report is still filed, and
+   s.38(א)(3) still refers to the report alongside the assembly protocol. Have the amuta confirm
+   with the Registrar whether this cycle's certificate request asks for it, and expect funders to.
 4. **A גוף מבקר is not a turnover band.** Under s.19(ב) the general assembly may resolve to appoint
    an accountant or a Registrar-approved body *instead of* the audit committee. That is an election,
    available at any size, not something a threshold forces.
@@ -150,6 +174,20 @@ defect, not a committee. Report it as a gap even though the organ formally exist
 substantive refusal ground, as distinct from the paperwork grounds, and it is the one an agent will
 miss if it only checks that the three organs are named.
 
+The Act adds hard disqualifications. Nobody may sit on the board and on the audit committee or
+auditing body at the same time (s.32). Under s.33(א) neither organ may include a non-member of the
+amuta, a person who provides it with paid services other than as a board or committee member
+(typically a salaried director or coordinator), a minor, a person declared incompetent or
+bankrupt, a person convicted of the listed offences or of another offence the Registrar deems
+disqualifying, or a corporation (though a member
+corporation's representative may sit on the board). A paid service provider may not act as the
+auditing body (s.33(ב)).
+Board members may be paid only under a general-assembly resolution, within the limits set under
+s.34א (s.26א), and any direct or indirect distribution of profits to members is prohibited
+(s.34ג). On 14 June 2026 the Registrar announced targeted supervision of family ties, citing the
+guideline that relatives may make up no more than 10% of employees or 10% of payroll, defining a
+relative broadly (step-relations included), and inviting amutot to correct before it begins.
+
 ### Step 4: Build the filing checklist
 
 The annual package is four documents. Produce them as a checklist with a status per document, not
@@ -157,10 +195,14 @@ as prose.
 
 | # | Document | Notes |
 |---|---|---|
-| 1 | דוח כספי (financial report) | balance sheet plus income and expenditure, per the Second Schedule list. Signed by two board members. Audited if step 3 put the amuta over the audit threshold |
+| 1 | דוח כספי (financial report) | balance sheet plus income and expenditure, per the Second Schedule list. Signed by two board members. Audited if step 3 put the amuta over the audit threshold. At or below 500,000 NIS not filed under s.36(ד) (reg. 7(ה)(2)), though still prepared and approved; see step 3 |
 | 2 | דוח מילולי (verbal report) | narrative account of activity for the year |
 | 3 | פרוטוקול ועדת ביקורת | the audit committee's or auditing body's recommendations on approving the financial report |
-| 4 | דיווח אסיפה כללית | record that the general assembly approved the financial report |
+| 4 | דיווח אסיפה כללית | record that the general assembly approved the financial report, with the accountant's opinion attached where one was appointed (s.38(א)(3)) |
+
+Two disclosures travel with the online verbal report (Form 7א) whether or not the financial report
+is filed: Annex 1 for the s.36(ב) statement where the amuta has paid employees (reg. 7(ג)), and
+Annex 2 for the s.36א foreign-donation statement (reg. 7(ד)).
 
 One attachment is missed more often than any of the four: under s.36(ב) the board must attach a
 statement giving a full and precise account of **all payments made or undertaken to each of the five
@@ -173,7 +215,9 @@ includes a board protocol appointing an internal auditor where turnover exceeds 
 named list of the five highest earners submitted on the Registrar's online form (a distinct form,
 not merely the s.36(ב) attachment), confirmation that the annual fee is paid **including arrears
 from earlier years**, and the s.36א foreign-donation statement. Unsettled arrears are a standalone
-reason a certificate is refused.
+reason a certificate is refused. The online system also gates the request: it cannot be completed
+until reports for up to four earlier years that were never filed have been filed, and filing the
+annual reports does not by itself request a certificate. The request is a separate submission.
 
 Signature detail defeats applications on its own: the signatories' **names must be stated beside
 the original signature**, and the audit committee's form must expressly say whether it recommends
@@ -186,9 +230,18 @@ role-holders are out of date rather than a problem with the documents themselves
 Filing the annual reports is mandatory in its own right. It does not depend on whether the amuta
 wants a certificate this year.
 
+**Change notices are a separate standing duty.** Under s.38, signed by two board members and filed
+online **within two weeks** of the decision or event: a change of address or digital address, the election,
+appointment or end of term of a board member, audit-committee member or auditing body, the
+appointment of an accountant, a general-assembly resolution changing the takanon, name or objects,
+a resolution on authorised signatories, and notice of a lawsuit filed against the amuta or against
+a board member in that capacity. Stale role-holders usually mean a missed s.38 notice.
+
 ### Step 5: Fix the fee tier and the deadline
 
-The fee is annual, per calendar year, under the Associations (Fees) Regulations.
+The fee is annual, per calendar year, under the Associations (Fees) Regulations. The certificate
+request requires the fee for the year before the certificate year, so the 2026 fee for a 2027
+certificate.
 
 | Situation | 2026 amount | Timing |
 |---|---|---|
@@ -196,12 +249,14 @@ The fee is annual, per calendar year, under the Associations (Fees) Regulations.
 | Turnover above 300,000 NIS, paid up to 31.03 | 1,338 NIS | until 31.03 |
 | Turnover above 300,000 NIS, paid from 01.04 | 1,777 NIS | from 01.04 |
 
-The reduced tier is not simply "a small amuta". It reaches an amuta in the **first two years after
-the year of incorporation**, and an amuta that has **reported online** that its turnover did not
-exceed 300,000 NIS. The gov.il page is internally inconsistent about which year's turnover governs,
-naming 2023 in one sentence while twice naming the **2024 online reports** as the operative trigger
-for the 2026 rate. Do not encode a 2023 turnover test. Tell the user the operative lever is filing
-the online annual reports, and have them confirm the tier with the Registrar before paying.
+The reduced tier is not simply "a small amuta". Under item 2(ד) of the fee schedule it reaches an
+amuta in its **first two years after the year of incorporation**, and an amuta whose turnover, as
+stated in the **verbal report for the last financial year whose report fell due before the fee
+year began**, did not exceed 300,000 NIS. For the 2026 fee that is the 2024 report, due 30 June
+2025. The gov.il page also names 2023 in one sentence; the regulation governs. Because the test
+reads a filed report, the operative lever is filing it, so have the user confirm the tier before
+paying. A fee paid after the end of its year is charged at the post-March rate of the year in
+which it is actually paid (item 2(ג)).
 
 Two consequences worth stating up front:
 
@@ -236,8 +291,9 @@ Four rules that catch people out:
 
 - Reporting runs **from the first shekel**. There is no minimum donation.
 - The duty applies **even where the amuta is exempt from issuing a receipt**.
-- A **תרומה בעילום שם does not entitle anyone to a tax benefit**, and a donation with a full name but
-  no ID number is not attributed to the donor.
+- A **תרומה בעילום שם does not entitle anyone to a tax benefit**. A donation recorded with a full
+  name but no ID number is not attributed to the donor unless the amuta later files a supplementary
+  report adding the ID, which it can do in its portal when the donor asks.
 - Cancellations are reportable too, citing the original מספר דיווח.
 
 There is no April 2026 compliance deadline. The date is 1 January 2026. If a user has been told
@@ -251,24 +307,15 @@ Two separate duties, with different triggers. Conflating them is the usual error
 **Annual disclosure, turnover-gated.** s.36א(ב)(1) requires an amuta with turnover above 300,000
 NIS to state in its financial report whether it received donations from foreign political entities
 whose cumulative value exceeds 20,000 NIS, and if so to give the donor's identity, the amount, the
-purpose, and any conditions or undertakings attached. s.36א(ג) requires the amuta to publish that
+purpose, and any conditions or undertakings attached, on Annex 2 of the online verbal report. s.36א(ג) requires the amuta to publish that
 information **on its own website**, and where it has told the Registrar it has no website, the
 Registrar publishes it on the Ministry of Justice site.
 
-**Naming donors generally.** Separately from foreign political entities, the Second Schedule lets
-an amuta omit a donor's name from the financial report only where the receipt carries
-"תרומה בעילום שם" in the donor-name field AND either the donation does not exceed the maximum the
-Minister set, or the Registrar granted a **special approval** not to name the donor. The
-Registrar's questionnaire screens for donors above that cumulative annual figure, so an amuta with
-a large single donor and no special approval should expect to name them. Do not confuse this
-threshold with the foreign political-entity one; they are different rules that happen to share a
-number.
-
-**Receipt-book mechanics that bind the two workstreams together.** Donation receipts go in a
-SEPARATE receipt book, the word "תרומה" must be printed conspicuously on every receipt in it, and
-an amuta holding a Section 46 approval must additionally print on the receipt that it holds an
-Income Tax approval for donations under Section 46. This is a concrete, checkable defect an
-inspector will find, and it is where the Registrar workstream and the Section 46 workstream meet.
+**Donor naming and receipt books** follow their own rules: a 100,000 NIS a year ceiling on leaving a
+donor unnamed, a register of donors above 20,000 NIS, a must-name rule above 50,000 NIS where the
+donor is at least 20% of turnover, and a separate donation receipt book. Read
+`references/donor-rules.md` before answering a donor-naming question, and do not confuse the
+20,000 register figure with the foreign political-entity threshold.
 
 **Quarterly reporting, NOT turnover-gated.** Section 2 of the Disclosure Duty Law 2011 requires a
 body that received a donation from a foreign political entity to file an online report with the
@@ -279,6 +326,13 @@ on this duty.
 The practical consequence: a small amuta below the 300,000 NIS turnover line that takes a single
 foreign political donation still owes a quarterly report within a week of quarter end, even though
 it owes no annual disclosure. Never answer "your turnover is under the threshold, nothing to do".
+
+**Majority foreign funding is a third duty.** Under s.5א of the Disclosure Duty Law (2016
+amendment), an amuta whose main source of funding, in the last financial year for which a
+financial report was due, was donations from foreign political entities must say so in a separate
+online report filed on the annual reporting date (the Registrar reads "main" as more than 50%). Until the next reporting date it must also state
+it prominently in its public advertising, on its home page, in its public reports, and in letters
+and e-mails to public servants and elected officials.
 
 ### Step 8: Produce the gap report
 
@@ -294,58 +348,22 @@ Say explicitly which items you could not verify and which the user must confirm 
 
 ### Step 9: When the certificate is refused or not granted
 
-A refusal letter is not the end of the process, and this is the situation most users arrive in.
-Work through it in this order.
-
-**First, identify what the letter actually is.** They are routinely confused, and they lead to
-different places:
-
-| The letter is | What it means | What it asks for |
-|---|---|---|
-| דרישה להשלמת מסמכים | the application is alive, something is missing | supply the named items within the stated window |
-| הודעה על כוונה לסרב | a decision has not been taken yet | respond within the stated window, before the decision |
-| סירוב | a decision has been taken | see the response and challenge routes below |
-| דרישה לחתום על תכנית לתיקון ליקויים | substantive defects were found | see the warning below before signing |
-
-**Read the response window off the letter itself and diarise it.** It is the single most
-time-critical thing in the whole workflow.
-
-**Then ask whether the defect is curable in this cycle.** Apply the one-year bar from step 2. If
-the documents are already more than a year late, the cycle is closed and the work belongs to the
-next cycle, not this one. Saying so plainly is more useful than a remediation plan for a cycle that
-cannot be reopened.
-
-**A defect-correction plan is not a neutral remedial step.** An amuta offered a תכנית לתיקון
-ליקויים should understand two things before signing: the certificate is granted only once the
-Registrar is satisfied the material defects were fixed, informed by the accompanying body's report,
-and an amuta that **currently holds** a valid certificate has it revoked as of signature. Flag this
-and route the decision to the amuta's own professional advisers.
-
-**There is a separate, lesser confirmation, but be precise about it.** The Registrar's service
-page refers to an **אישור על קבלת מסמכים**, alongside the proper management certificate. Two
-cautions before raising it with a refused amuta. Its documented population is a NEW amuta, or one
-that has not carried on continuous activity for two years, rather than an established amuta whose
-certificate was refused. And state support decisions condition support on the proper management
-certificate itself, so do not present the lesser confirmation as a substitute for it. Ask the
-Registrar whether it is available in the amuta's specific situation instead of assuming it is.
-
-**On challenging the decision itself.** A Registrar refusal is an administrative decision. Israeli
-administrative law attaches a right to be heard before an adverse decision, and such decisions are
-challengeable in the בית המשפט לעניינים מנהליים. This skill does not advise on that and must not:
-say clearly that the decision is answerable, that there are deadlines attached, and that this is
-the point where the amuta should take a lawyer. Do not leave the user believing a refusal is final.
+A refusal letter is not the end of the process. Read `references/refusal-path.md` and work through
+it in order: identify which of the four letters this is (a demand for documents, a notice of intent
+to refuse, a refusal, or a demand to sign a defect-correction plan), read the response window off
+the letter and diarise it, and apply the one-year bar from step 2 before planning any cure. Two
+points to state every time: signing a תכנית לתיקון ליקויים **revokes** a certificate the amuta
+currently holds, and the אישור על קבלת מסמכים is documented for a new amuta or one without two
+years of continuous activity, not as an interim
+substitute for a refused one. A refusal is an administrative decision that can be answered; this
+skill does not advise on challenging it, and that is the point to take a lawyer.
 
 ### Step 10: Public benefit companies (chalatz)
 
-A חל"צ is a company, not an amuta, and diverges in ways that matter:
-
-- It is registered with רשם החברות and supervised by רשם ההקדשות; its certificate is issued against
-  the Companies Law rather than the Associations Law.
-- It files an additional annual return, טופס 5, under s.141 of the Companies Law.
-- It pays its annual fee at the **companies** unit, not the amutot unit, on a separate fee table.
-
-Do not quote the amuta fee table to a חל"צ. Route the user to the companies unit for the current
-company fee amounts.
+A חל"צ is a company, not an amuta. It registers with רשם החברות, is supervised by רשם ההקדשות, gets
+its certificate under the Companies Law, files an additional annual return (טופס 5, s.141 of the
+Companies Law), and pays its fee at the **companies** unit on a separate table. Never quote the
+amuta fee table to a חל"צ; route it to the companies unit.
 
 ## Recommended MCP Servers
 
@@ -364,29 +382,35 @@ company fee amounts.
   an agent that stops reading early will confidently offer a dead exemption. Several published
   guides make exactly this error.
 - **Reusing 750,000 NIS as the audit threshold.** It is the 1996 base and the current bookkeeping
-  threshold, but the audit threshold for 2026 is 1,380,630 NIS. Quoting the base figure tells an
-  amuta whose turnover sits between the two thresholds that it needs a paid auditor when it does
-  not.
+  threshold. The audit amount is 1,380,630 NIS for 2026, the last earlier notice gave 1,172,933 NIS
+  (2014), and for the 2024 and 2025 reports turnover between those two is unsettled, see step 3. Quoting the
+  base figure tells a mid-sized amuta it needs a paid auditor when it does not.
 - **Treating an expired extension as available.** The שאגת הארי extension moved 2025 reports to
   31 July 2026 and covered only the 2027 certificate; both that date and the 30 June 2026 window for
   the 2026 certificate are in the past. Check the Registrar's news page for a current extension
   rather than repeating an old one or asserting that none exists.
 - **Telling a small amuta it need not prepare accounts.** s.36(א) binds every amuta. Only the audit
-  is banded.
+  is banded. At or below 500,000 NIS it need not FILE the financial report, which is different.
 - **Answering "under the threshold, nothing to do" on a foreign political donation.** The quarterly
   report under the Disclosure Duty Law has no turnover gate and is due within a week of quarter end.
   Only the annual disclosure is turnover-gated.
-- **Checking that the organs exist without checking who sits on them.** A board or audit committee
-  that is a family majority is a substantive refusal ground. Existence is not compliance.
-- **Treating a refusal as final.** It is an administrative decision with a response window, and a
-  lesser status exists to ask for in the meantime. Never close on "the certificate was refused".
+- **Checking that the organs exist without checking who sits on them.** A family majority, a
+  salaried employee on the board, or one person on both the board and the audit committee is a
+  defect. Existence is not compliance.
+- **Treating a refusal as final.** It is an administrative decision with a response window. Do not
+  promise an interim status; ask the Registrar whether any applies. Never close on "the certificate
+  was refused".
 
 ## Bundled Resources
 
-- `references/domain-checklist.md`: the full coverage checklist with every band, the verbatim rate
-  tables, and a known-bad-figures section.
+- `references/domain-checklist.md`: the coverage contract, with every band and duty the skill
+  must cover and what is explicitly out of scope.
 - `references/filing-package.md`: the four documents, the s.36(ב) attachment, and the certificate
   application set.
+- `references/donor-rules.md`: when a donor may stay unnamed, the donor register, and the
+  donation receipt book.
+- `references/refusal-path.md`: the four refusal letters, the defect-correction plan, the lesser
+  confirmation, and challenging a refusal.
 - `scripts/band_check.py`: given turnover, certificate year and Section 46 status, prints the bands,
   the fee tier, the report year and the deadline. Pure computation, no network access required.
 
@@ -398,7 +422,8 @@ company fee amounts.
 | Registrar, annual fee | https://www.gov.il/he/service/association-annual-fee | the operative fee tiers for the year |
 | Registrar, reporting duties | https://www.gov.il/he/service/association_annual_reporting_obligations | duties for amuta and chalatz, forms |
 | Registrar news | https://www.gov.il/he/pages/news-rejection | whether an extension is currently in force |
-| Associations Law | https://he.wikisource.org/wiki/חוק_העמותות | ss.19, 30א, 36, 36א, 37 and the Second Schedule |
+| Associations Law | https://he.wikisource.org/wiki/חוק_העמותות | ss.19, 26א, 30א, 32, 33, 34ג, 36, 36א, 37, 38 and the Second Schedule |
+| Associations (Forms) Regulations | https://he.wikisource.org/wiki/תקנות_העמותות_(טפסים) | reg. 7(ה) filing exemption, reg. 7א donor figures |
 | Execution instruction 11/2025 | https://www.gov.il/BlobFolder/policy/inst-11-2025/he/IncomeTax_inst-11-2025.pdf | Section 46 donation reporting rules |
 
 ## Troubleshooting
@@ -409,4 +434,4 @@ company fee amounts.
 | Certificate refused despite documents filed | reports filed for the wrong year, or an organ the turnover band requires was never appointed | re-run steps 2 and 3 |
 | Donation report returns no מספר דיווח | the report was not accepted | retransmit until a valid number is returned; instruction 11/2025 requires this rather than treating a silent failure as success |
 | Amuta paid 1,777 and believes it qualified for 176 | full fee paid before the online reports were filed | no refund is available; file the reports so the following year is correct |
-| Turnover sits near a threshold | the deciding figure is the reported year's turnover, and the audit figure changes annually | take the gazetted amount for the filing year, not this skill's 2026 value |
+| Turnover sits near a threshold | the deciding figure is the reported year's turnover, and which audit amount applies to it is not settled | apply the step 3 zone rule; between the last two gazetted amounts, recommend the conservative course and have the amuta confirm |
