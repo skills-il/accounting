@@ -78,6 +78,12 @@ Because the exact combined figures depend on the pay basis and on whether an ext
 state the components rather than asserting a single combined percentage, and show the arithmetic so
 the user can check it against their own payslip.
 
+For orientation only: Kol Zchut reports that in ע"ע (ארצי) 38313-03-18 the national labour court put
+the first two overtime hours on the weekly rest at 175 percent (50 + 125) and later hours at 200
+percent (50 + 150). This skill has NOT verified that against the judgment itself, and neither the
+script nor the calculator prices it. Treat it as a pointer, say the computed rest-day figure is a
+floor, and do not present 175 or 200 percent as settled.
+
 ## 5. What to flag as unlawful, separately from the money
 
 Hours worked beyond the permitted caps are **still owed their premium**. The illegality is a separate

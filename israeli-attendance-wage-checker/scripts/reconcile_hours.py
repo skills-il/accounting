@@ -112,6 +112,16 @@ def reconcile(days: list[Day], weekly_bound: float, rate: float, pay_basis: str 
     for d in days:
         if d.rest_day:
             buckets["rest150"] += d.worked
+            rest_over = max(0.0, d.worked - d.bound)
+            if rest_over > 0:
+                # NOT PRICED. Overtime inside the weekly rest is cumulative (rest-day premium PLUS
+                # the overtime premium), but the exact combined rates rest on labour-court case law
+                # this skill has not verified against the judgment, so the script does not price
+                # them and says so instead of passing an underpaid long rest day silently.
+                notes.append(f"NOT CHECKED: {rest_over:g} hour(s) on {d.label} fall beyond the daily "
+                             f"bound inside the weekly rest. They are valued here at the rest-day rate "
+                             f"only. The overtime premium is owed on top (cumulatively), so the true "
+                             f"figure is HIGHER than shown; this script does not compute that extra.")
             # Rest-day hours belong ONLY in the rest bucket. Echoing them into the ordinary column
             # too reads as double payment and inflates what the user thinks the row is worth.
             rows.append((d.label, 0.0, 0.0, 0.0, d.worked))
@@ -160,7 +170,11 @@ def reconcile(days: list[Day], weekly_bound: float, rate: float, pay_basis: str 
         a_start = _mins(a.start)
         a_span = (_mins(a.end) - a_start) % (24 * 60) or 24 * 60
         gap = ((24 * 60 + _mins(b.start)) - (a_start + a_span)) / 60.0
-        if 0 < gap < MIN_GAP_HOURS:
+        if gap <= 0:
+            notes.append(f"INVALID INPUT: {b.label} starts {abs(gap):g}h before {a.label} ends "
+                         f"(overlapping or zero-gap shifts). Check the times; the figures above "
+                         f"may be wrong.")
+        elif gap < MIN_GAP_HOURS:
             notes.append(f"COMPLIANCE: only {gap:g}h between {a.label} and {b.label}; "
                          f"s.21 requires at least {MIN_GAP_HOURS:g}h. Still owed, but flag it.")
 

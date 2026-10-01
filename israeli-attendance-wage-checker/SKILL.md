@@ -30,7 +30,7 @@ The binding computation is the one your employer is obliged to make under the la
 
 ## Problem
 
-An Israeli payslip shows hours and shekels, and almost nobody can tell whether the second follows from the first. The premium tiers reset every day, so a worker can be owed overtime in a week of exactly the standard hours. The statutory week and the operative week differ. Meal breaks come out of the count but some breaks stay in. And the most valuable rule is procedural: an employer who kept no hours ledger carries the burden of proving the disputed hours were not worked, up to a cap. This skill works from whichever document the user holds: it reconciles a timesheet, or audits a payslip on its own terms, because the components the law requires it to carry are the ones the reconciliation reads.
+An Israeli payslip shows hours and shekels, and almost nobody can tell whether the second follows from the first. The premium tiers reset every day, so a worker can be owed overtime in a week of exactly the standard hours. The statutory week and the operative week differ. Some breaks stay in the count. And the most valuable rule is procedural: an employer who kept no hours ledger carries the burden of proving the disputed hours were not worked, up to a cap. This skill reconciles a timesheet, or audits a payslip on its own terms.
 
 ## Problem boundary
 
@@ -145,6 +145,8 @@ Hours beyond the permitted caps are still owed their premium, but the illegality
 
 Show owed against paid, per period, with the gap itemised by cause. If you can run scripts, `scripts/reconcile_hours.py` does the daily-then-weekly split and the tiering. If you cannot, do it inline: for each day, hours worked minus break, compare to the daily bound, tier the excess 2 then rest; then sum the ordinary hours across the week and tier anything above the weekly bound; then value each bucket against the regular wage **including supplements**.
 
+**Overtime inside the weekly rest is not checked.** Hours past the daily bound on the rest day are owed the overtime premium on top of the rest-day premium, cumulatively (`references/rates-and-tiers.md` section 4). Neither the script nor this skill prices it; call the figure a floor.
+
 Never present the output as a figure the employer owes as a matter of decided law. It is what the statutory rates produce on the hours supplied.
 
 ### Step 7, when there is no hours record
@@ -172,7 +174,7 @@ The labour courts do recognise a valid global arrangement on cumulative conditio
 
 **Evidence first.** Where the employer has no ledger, the user's own material carries the claim. Tell them to collect and preserve it first; `references/records-and-remedies.md` section 7 lists what counts, and why asking the employer in writing for the ledger is worth doing alone.
 
-**The limitation clock on the wage.** A wage claim is an ordinary civil claim and prescribes in **seven years** (`סעיף 5(1)` of the Limitation Law, "בשאינו מקרקעין, שבע שנים"), running from when the cause of action arose, which for wages means each payment separately. Say this whenever a user asks about an old period, and keep it distinct from the far shorter delayed-wage clock in Step 8. Confusing the two is how a live wage claim gets abandoned over the 60-day figure.
+**The limitation clock on the wage.** A wage claim is an ordinary civil claim and prescribes in **seven years** (`סעיף 5(1)` of the Limitation Law, "בשאינו מקרקעין, שבע שנים"), running from when the cause of action arose, which for wages means each payment separately. Say this whenever a user asks about an old period, and keep it distinct from the far shorter delayed-wage clock in Step 8.
 
 ### Step 7d, what this skill does not price
 

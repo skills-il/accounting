@@ -575,6 +575,16 @@
       "confidence": "high",
       "fetched_at": "2026-10-01T16:30:00Z",
       "notes": ""
+    },
+    {
+      "claim_id": "restday-ot-kolzchut-175-200",
+      "claim": "Kol Zchut reports that in ע\"ע 38313-03-18 the national labour court reaffirmed the cumulative method: first two overtime hours on Shabbat at 175% (50%+125%), later ones at 200% (50%+150%). Secondary source; judgment not opened.",
+      "claim_type": "law",
+      "source_url": "https://web.archive.org/web/20260608204727/https://www.kolzchut.org.il/he/גמול_עבור_שעות_נוספות",
+      "raw_snippet": "בהתאם לכך ערך 2 השעות הנוספות הראשונות בשבת הנו 175% = 50% + 125% וערך השעות הנוספות, שמעבר לשעתיים הנוספות הראשונות, הנו 200% = 50% + 150%.",
+      "confidence": "medium",
+      "fetched_at": "2026-10-01T18:00:00Z",
+      "notes": "Cited as a pointer only; the skill does not price it."
     }
   ]
 }

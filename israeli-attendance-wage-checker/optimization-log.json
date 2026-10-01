@@ -42,7 +42,7 @@
       ]
     },
     {
-      "version": "1.3.0",
+      "version": "1.3.1",
       "date": "2026-10-01",
       "lessons": [
         "Description unchanged this cycle, so the Phase 5.7 holdout was not re-run. The skill now handles minimum-wage and reserve-duty questions in the body, but the description names neither; consider adding them next cycle and running the holdout.",
@@ -53,7 +53,8 @@
         "Removing rows to fit the word cap silently dropped a hand-off Gotcha and two Troubleshooting rows; the expert caught it. When trimming for the cap, move examples to references before deleting guardrails.",
         "Open for next cycle: monthly-salaried rest-day work as a sixth day on top of a full week (domain-checklist open item 4); cumulative overtime inside the weekly rest in the script (open item 5, Kol Zchut cites 175/200 from ע\"ע 38313-03-18, not verified against the judgment); the 2026 wartime overtime permit text and expiry; youth minimum-wage rates (BTL page does not list them).",
         "Discretionary edits deferred over the batch cap: the script --example flags Thursday 'short' (7h) for a Sun-Thu worker, which is not the eve of the weekly rest and conflicts with rates s.1 that the 2018 order did not change the daily maximum; check 2 could also verify the stated hourly value against s.18 more mechanically.",
-        "Checker 'overtime-pay': legal review flagged the headline 'on top of anything already paid' as asserting non-payment the tool never checked; reworded in this cycle's regeneration."
+        "Checker 'overtime-pay': legal review flagged the headline 'on top of anything already paid' as asserting non-payment the tool never checked; reworded in this cycle's regeneration.",
+        "v1.3.1 patch, same day: the team lead overruled the reviewer's 'non-blocking' label on unpriced rest-day overtime. A wage CHECKER that silently understates is a false negative, not a polish item. Patched to flag it explicitly; pricing it still needs the judgment opened."
       ]
     }
   ]

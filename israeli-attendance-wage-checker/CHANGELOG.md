@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1 (2026-10-01)
+
+- Overtime inside the weekly rest is now flagged as not checked, in the skill (Step 6) and in the script output. Hours past the daily bound on the rest day are owed the overtime premium on top of the rest-day premium, and neither the script nor the skill prices that extra, so a long rest-day shift would otherwise have looked fully paid. `references/rates-and-tiers.md` section 4 cites Kol Zchut's report of 175 and 200 percent as a pointer, explicitly not verified against the judgment.
+- `scripts/reconcile_hours.py` reports overlapping or zero-gap shifts as invalid input instead of passing over them.
+
 ## 1.3.0 (2026-10-01)
 
 - The minimum-wage check now carries the figure. Step 1 item 7 states the rate in force from 01.04.2026 (6,443.85 a month, 35.4 an hour on the 182 basis) and `references/rates-and-tiers.md` section 8 holds the dated Bituach Leumi table for 2025 and 2026. The skill previously declined to carry any figure, which left agents without web access to fall back on a remembered, and by April out of date, number.

@@ -129,8 +129,8 @@ shift when the employer kept no ledger.
    Step 1b check 2 reading and the script all price the rest-day line at the 50 percent premium element,
    which assumes the salary already covers the day. Whether more is owed when it does not, and from what
    source, is unresolved. Raised by the 2026-10-01 expert review; resolve next cycle.
-5. Overtime inside the weekly rest is cumulative (rates-and-tiers section 4) but the script prices a
-   long rest day flat; Kol Zchut cites ע"ע 38313-03-18 for 175 / 200 percent. Verify against the
+5. Overtime inside the weekly rest is cumulative (rates-and-tiers section 4). Since v1.3.1 the script and
+   Step 6 FLAG it as not checked rather than pricing it; Kol Zchut cites ע"ע 38313-03-18 for 175 / 200 percent. Verify against the
    judgment and either implement or flag it in the script output.
 
 ## Out-of-scope re-litigation, 2026-10-01
