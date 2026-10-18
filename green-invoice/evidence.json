@@ -1,14 +1,14 @@
 {
   "schemaVersion": "1.0",
   "skill": "green-invoice",
-  "generated_at": "2026-08-27T16:28:58.092647+00:00",
+  "generated_at": "2026-10-18T06:00:00Z",
   "claims": [
     {
       "claim_id": "vat-18-2026",
-      "claim": "Government Decision 1270 of 14.01.2024 records the Finance Minister's intention to raise VAT on transactions and on imports of goods by one percentage point, to 18% instead of 17%, effective 1 January 2025",
+      "claim": "Israel's VAT rate is 18% in 2026; it rose from 17% to 18% on 1 January 2025.",
       "source_url": "https://cpahadera.co.il/%D7%9E%D7%A2%D7%9E/",
       "raw_snippet": "מע\"מ 2026 הוא 18%",
-      "fetched_at": "2026-08-27T16:13:38.605197+00:00",
+      "fetched_at": "2026-10-18T04:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -39,10 +39,10 @@
     },
     {
       "claim_id": "section-46-donation",
-      "claim": "Amutot (non-profits) issue donation receipts under Section 46 of the Income Tax Ordinance; individual donors get a 35% tax credit on the donation amount (subject to floor/ceiling limits) Hebrew: זיכוי ממס הכנסה בשל תרומה לפי סעיף 46 לפקודת מס הכנסה.",
-      "source_url": "https://www.kolzchut.org.il/he/%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%9E%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94_%D7%91%D7%A9%D7%9C_%D7%AA%D7%A8%D7%95%D7%9E%D7%94_(%D7%A1%D7%A2%D7%99%D7%A3_46)",
-      "raw_snippet": "יחידים ועסקים שלא מאוגדים כחברה בע\"מ זכאים לזיכוי בגובה 35% מסכום התרומה",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "claim": "Income Tax Ordinance s.46(a): a donation to a public institution under s.9(2) earns a CREDIT against tax at 35% of the donation for an individual and at the s.126(a) rate for a body of persons, with a floor, a ceiling (30% of taxable income or a fixed amount, the lower) and a three-year carry-forward of the excess. Re-sourced from Kol Zchut (Cloudflare-blocked) to the statute text. Hebrew: זיכוי לפי סעיף 46 לפקודת מס הכנסה.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "יזוכה מהמס שהוא חייב בו באותה שנה בשיעור של 35% מסכום התרומה",
+      "fetched_at": "2026-10-18T02:00:00Z",
       "appears_in": [
         "references/document-workflows.md"
       ]
@@ -85,7 +85,7 @@
     },
     {
       "claim_id": "export-zero-rated",
-      "claim": "Export of services by an osek murshe is zero-rated (0% VAT) under Section 30 of the Israeli VAT Law, legally distinct from exempt (patur, Sec 31). In the Morning API a 0% line is set via the income-row vatRate field (decimal 0), not a vatType value. The DOCUMENT-level enum DocumentVatType is 0=Default, 1=Exempt, 2=Mixed; the INCOME-ROW enum is a different one, ItemVatType, where 0=Default, 1=Included (VAT included in price), 2=Exempt. Hebrew: יצוא שירותים חייב במע\"מ בשיעור אפס לפי סעיף 30 לחוק מס ערך מוסף, להבדיל מעסקה פטורה לפי סעיף 31.",
+      "claim": "A service to a foreign resident is zero-rated (0% VAT) under Section 30(a)(5), subject to its exclusions, of the Israeli VAT Law, legally distinct from exempt (patur, Sec 31). In the Morning API a 0% line is set via the income-row vatRate field (decimal 0), not a vatType value. The DOCUMENT-level enum DocumentVatType is 0=Default, 1=Exempt, 2=Mixed; the INCOME-ROW enum is a different one, ItemVatType, where 0=Default, 1=Included (VAT included in price), 2=Exempt. Hebrew: יצוא שירותים חייב במע\"מ בשיעור אפס לפי סעיף 30 לחוק מס ערך מוסף, להבדיל מעסקה פטורה לפי סעיף 31.",
       "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
       "raw_snippet": "Item VAT type calculation.\\n\\n| Value | Meaning |\\n|-------|---------|\\n| 0 | Default (VAT added based on business type) |\\n| 1 | Included (VAT included in price) |\\n| 2 | Exempt (VAT-free) |",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -97,29 +97,29 @@
     },
     {
       "claim_id": "reference-urls",
-      "claim": "Official Green Invoice / Tax Authority / Bank of Israel reference URLs cited by the skill (all live; gov.il is bot-blocked to curl but renders for humans). Covers these references: https://developers.morning.co https://www.greeninvoice.co.il/api-docs/ https://app.greeninvoice.co.il/ https://app.greeninvoice.co.il/api https://greeninvoice.docs.apiary.io/ https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/ https://www.greeninvoice.co.il/help-center/generating-api-key/ https://www.greeninvoice.co.il/magazine/webhooks/ https://www.greeninvoice.co.il/magazine/israel-invoice/ https://www.greeninvoice.co.il/api/v1/documents/download?d= https://pages.greeninvoice.co.il/en/payments/bills/ https://www.gov.il/he/service/invoice-allocation-number https://www.gov.il/he/departments/israel_tax_authority https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/",
+      "claim": "Official reference URLs cited by the skill; developers.morning.co is where www.greeninvoice.co.il/api-docs/ redirects, and its Redoc shell declares its real routes. Covers: https://developers.morning.co https://www.greeninvoice.co.il/api-docs/ https://app.greeninvoice.co.il/api https://greeninvoice.docs.apiary.io/ (retired) https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/ https://www.greeninvoice.co.il/help-center/generating-api-key/ https://www.greeninvoice.co.il/help-center/creating-webhook/ https://www.greeninvoice.co.il/magazine/israel-invoice/ https://www.gov.il/he/departments/israel_tax_authority https://www.gov.il/he/service/request-assignment-number-for-tax-invoice https://www.boi.org.il/en/economic-roles/financial-markets/exchange-rates/ (gov.il and boi.org.il block automated fetches). Example-payload URL patterns (placeholders, not fetchable): https://www.greeninvoice.co.il/api/v1/documents/download?d= https://pages.greeninvoice.co.il/en/payments/bills/",
       "source_url": "https://www.greeninvoice.co.il/api-docs/",
-      "raw_snippet": "Only \"/\" and \"/api\" are real routes (the docs); every other path is treated as not-found.",
-      "fetched_at": "2026-08-18",
+      "raw_snippet": "Only \"/\" (the home page), \"/api\" (the API reference) and \"/mcp\" (the MCP Server page) are real routes",
+      "fetched_at": "2026-10-18T04:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/api-reference.md"
       ],
       "verified_via": "reference-coverage entry; snippet is a contiguous sentence from its source page",
-      "verified_at": "2026-08-18"
+      "verified_at": "2026-10-18T04:00:00Z"
     },
     {
       "claim_id": "internal-example-values",
-      "claim": "Illustrative calculation example values internal to the skill, NOT external regulatory claims: a NIS 10,000 net service totals NIS 11,800 with 18% VAT; in the withholding example the client withholds NIS 2,000 and remits NIS 9,800 in cash, and the two payment lines (9,800 + 2,000) sum to the 11,800 document total.",
+      "claim": "Illustrative calculation example values internal to the skill, NOT external regulatory claims: a NIS 10,000 net service totals NIS 11,800 with 18% VAT; in the withholding example the client withholds NIS 2,000 and pays NIS 9,800 by bank transfer (payment type 4), and the two payment lines (9,800 + 2,000) sum to the 11,800 document total.",
       "source_url": "https://github.com/skills-il/accounting/blob/master/green-invoice/references/document-workflows.md",
-      "raw_snippet": "Internal arithmetic example; 10000 * 1.18 = 11800, and 9800 + 2000 = 11800. Not an external claim.",
-      "fetched_at": "2026-08-09T00:00:00Z",
+      "raw_snippet": "Internal arithmetic example, re-checked 2026-10-18: 10000 * 1.18 = 11800, and 9800 + 2000 = 11800. Not an external claim.",
+      "fetched_at": "2026-10-18T07:00:00Z",
       "appears_in": [
         "references/document-workflows.md"
       ],
       "verified_via": "internal-arithmetic",
-      "verified_at": "2026-07-27T00:00:00Z"
+      "verified_at": "2026-10-18T07:00:00Z"
     },
     {
       "claim_id": "osek-zair-income-tax-status-amendment-265",
@@ -160,15 +160,17 @@
     },
     {
       "claim_id": "legacy-account-token-still-live-2026-07",
-      "claim": "The legacy API-key flow POST /api/v1/account/token on api.greeninvoice.co.il is still functional as of 2026-07-27 (returns a Green Invoice 401 error object for bad credentials rather than 404), so existing integrations are not broken.",
+      "claim": "The legacy API-key flow POST /api/v1/account/token on api.greeninvoice.co.il (production) still answers as of 2026-10-18: 401 Green Invoice error object for bad credentials, 405 Method Not Allowed for GET, versus 404 for a never-defined path on the same host. It is production-only now.",
       "source_url": "https://api.greeninvoice.co.il/api/v1/account/token",
-      "raw_snippet": "{\"errorCode\":401,\"errorMessage\":\"גישה נדחתה, נא להתחבר מחדש\"} (live probe with invalid credentials, 2026-07-27)",
+      "raw_snippet": "{\"errorCode\":401,\"errorMessage\":\"גישה נדחתה, נא להתחבר מחדש\"} (live probe with invalid credentials, 2026-10-18)",
       "verified_via": "live-probe",
-      "verified_at": "2026-07-27T00:00:00Z",
-      "fetched_at": "2026-07-27T00:00:00Z",
+      "verified_at": "2026-10-18T02:00:00Z",
+      "fetched_at": "2026-10-18T02:00:00Z",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
       ]
     },
     {
@@ -386,12 +388,12 @@
     },
     {
       "claim_id": "ref-allocation-number-service",
-      "claim": "בקשה למספר הקצאה לחשבונית מס בשירות המקוון של רשות המסים. הכתובת הקודמת שנכללה כאן, invoice-allocation-number, מחזירה כעת 404.",
-      "source_url": "https://www.gov.il/he/service/request-assignment-number-for-tax-invoice",
+      "claim": "The Tax Authority online service page https://www.gov.il/he/service/request-assignment-number-for-tax-invoice is titled 'בקשה למספר הקצאה לחשבונית מס | רשות המסים בישראל'. gov.il blocks automated fetches (Cloudflare 403) from this machine on 2026-10-18, so the title was confirmed from the Wayback Machine capture of 2026-08-01 (HTTP 200).",
+      "source_url": "http://web.archive.org/web/20260801171719/https://www.gov.il/he/service/request-assignment-number-for-tax-invoice",
       "raw_snippet": "בקשה למספר הקצאה לחשבונית מס",
-      "fetched_at": "2026-08-16",
-      "verified_via": "gov.il content API (page title); the superseded slug was confirmed dead via the same API and by navigation",
-      "verified_at": "2026-08-16",
+      "fetched_at": "2026-10-18T07:00:00Z",
+      "verified_via": "wayback snapshot 20260801171719 (gzip body, <title> read)",
+      "verified_at": "2026-10-18T07:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -435,10 +437,10 @@
     },
     {
       "claim_id": "allocation-four-conditions",
-      "claim": "An allocation number is required only when all four conditions hold: the amount exceeds the threshold in force; the invoice includes a VAT component (zero-rated invoices and invoices covering only exempt transactions are excluded); the recipient is an osek murshe; and the recipient requested one.",
+      "claim": "The SELLER's duty to obtain an allocation number arises, among other things, when these conditions hold: the amount exceeds the threshold in force; the invoice includes a VAT component (zero-rated invoices and invoices covering only exempt transactions are excluded); the recipient is an osek murshe; and the recipient requested one. The BUYER's deduction bar (s.38(a1)) has no buyer-request condition.",
       "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
-      "raw_snippet": "חשבוניות בשיעור אפס",
-      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "raw_snippet": "דרישה זו חלה, בין היתר, כאשר מתקיימים התנאים הבאים: סכום החשבונית עולה על הסף הקבוע",
+      "fetched_at": "2026-10-18T04:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -471,18 +473,18 @@
     },
     {
       "claim_id": "legacy-sandbox-base-host",
-      "claim": "The legacy API-key track's sandbox base is https://sandbox.d.greeninvoice.co.il/api/v1; POSTing to /account/token there returns errorCode 2014 for bad key data, the same shape production returns, confirming the host is live and serves the legacy auth endpoint.",
+      "claim": "The legacy API-key route POST /account/token is REMOVED on sandbox: as of 2026-10-18 https://sandbox.d.greeninvoice.co.il/api/v1/account/token returns {\"errorCode\":404,\"errorMessage\":\"\"}, the identical body the same host returns for a never-defined path (/api/v1/nonexistent-xyz), on three repeated probes with a key-shaped body. It returned errorCode 2014 on 2026-08-27. The sandbox API base itself is still live (GET /documents/info returns 401). Sandbox therefore requires the OAuth 2.0 flow.",
       "source_url": "https://sandbox.d.greeninvoice.co.il/api/v1/account/token",
-      "raw_snippet": "{\"errorCode\":2014,\"errorMessage\":\"נתוני מפתח לא נכונים\"}",
-      "fetched_at": "2026-08-27T15:57:03.149186+00:00",
+      "raw_snippet": "{\"errorCode\":404,\"errorMessage\":\"\"} (live probe of sandbox POST /account/token, 2026-10-18)",
+      "fetched_at": "2026-10-18T02:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/api-reference.md",
         "scripts/green-invoice-client.py"
       ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-27T15:57:03.149186+00:00"
+      "verified_via": "live-probe",
+      "verified_at": "2026-10-18T02:00:00Z"
     },
     {
       "claim_id": "allocation-number-api-field",
@@ -717,15 +719,830 @@
     },
     {
       "claim_id": "businesses-path-undocumented",
-      "claim": "/v1/businesses and /v1/businesses/search are absent from the Morning OpenAPI. Probed live 2026-08-27: GET returns 401 (route exists, auth required), POST returns 405 Method Not Allowed, and an invented sibling on the same host returns 404, so the routes are real but undocumented upstream and GET is the method.",
+      "claim": "/v1/businesses and /v1/businesses/search are absent from the Morning OpenAPI. Probed 2026-10-18 without a token: GET /businesses 401 against 404 for the invented sibling /businessesx, so /businesses is a real undocumented route; /businesses/search behaves exactly like an invented path under the same prefix (GET 401, POST 405), so its existence is not established. Both are treated as unsupported.",
       "source_url": "https://api.greeninvoice.co.il/api/v1/businesses",
-      "raw_snippet": "{\"errorCode\":401,\"errorMessage\":\"גישה נדחתה, נא להתחבר מחדש\"}",
-      "fetched_at": "2026-08-27T16:28:58.092647+00:00",
+      "raw_snippet": "{\"errorCode\":401,\"errorMessage\":\"גישה נדחתה, נא להתחבר מחדש\"} (live probe GET /api/v1/businesses, 2026-10-18)",
+      "fetched_at": "2026-10-18T04:00:00Z",
       "appears_in": [
         "references/api-reference.md"
       ],
-      "verified_via": "browser",
-      "verified_at": "2026-08-27T16:28:58.092647+00:00"
+      "verified_via": "live-probe",
+      "verified_at": "2026-10-18T07:00:00Z"
+    },
+    {
+      "claim_id": "oauth-token-json-body",
+      "claim": "The OAuth token request is documented as a JSON body (Content-Type application/json, the only content type the spec lists) with required grant_type (client_credentials), client_id and client_secret.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"required\": [ \"grant_type\", \"client_id\", \"client_secret\" ]",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "oauth-token-response-fields",
+      "claim": "The OAuth token response requires accessToken, tokenType and expiresAt; expiresAt is a Unix timestamp in seconds.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Unix timestamp in seconds when this token expires and becomes invalid",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "oauth-script-endpoints",
+      "claim": "The bundled script authenticates via OAuth 2.0 against https://api.morning.co/idp/v1/oauth/token (production) and https://api.sandbox.morning.dev/idp/v1/oauth/token (sandbox), the two servers declared on the token operation.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"url\": \"https://api.sandbox.morning.dev\", \"description\": \"Sandbox\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "search-response-fields",
+      "claim": "Documents search results carry total, page, pageSize, from, to, pages and items, and each document uses documentDate and amount (not date/total). The script reads these fields and walks pages up to pages.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"documentDate\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "expense-request-required",
+      "claim": "ExpenseRequest requires documentType, number, date, reportingDate, supplier and accountingClassification.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"required\": [ \"documentType\", \"number\", \"date\", \"reportingDate\", \"supplier\", \"accountingClassification\" ]",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "expense-reporting-date",
+      "claim": "reportingDate is the VAT reporting date and must be the first day of the month, formatted YYYY-MM-01.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "VAT reporting date. Must be the first day of the month, formatted YYYY-MM-01.",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "expense-date-rule",
+      "claim": "Expense date must be 2010-01-01 or later and not in the future.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Must be 2010-01-01 or later and not in the future.",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "expense-document-types",
+      "claim": "Expense documentType codes are 20, 305, 320, 330, 400 and 405.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 405 | קבלה על תרומה |",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "expense-amount-incl-vat",
+      "claim": "Expense amount is the total including VAT; vat is the VAT portion and may not exceed amount.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "VAT portion of the amount. May not exceed `amount`.",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "expense-classification-inline",
+      "claim": "accountingClassification takes an existing classification id or inline details (irsCode, title, income, vat).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "or the details (`irsCode`, `title`, `income`, `vat`) to classify inline",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "supplier-taxid",
+      "claim": "SupplierRequest requires only name but accepts taxId.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "The supplier tax ID.",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "pcn874-classification",
+      "claim": "ExpensePcnClassifications for the PCN874 report: T regular input, R import entry, K petty-cash supplier, P Palestinian Authority supplier, C self-invoice input, H other document.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "PCN874 input classification (for the Israeli Tax Authority PCN874 report).",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "webhook-ten-topics",
+      "claim": "The spec documents ten webhook event payloads: document/created, client/created, supplier/created, payment/received, sale-pages/page-contacted, sale-pages/order-paid, expense-draft/parsed, expense-draft/declined, expense/file-updated, file/infected; the topic arrives in x-webhook-topic and empty fields are omitted, never null.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Payload delivered to your webhook URL when an uploaded file is found to be infected and quarantined (`file/infected`).",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "openapi-45-paths",
+      "claim": "The Morning OpenAPI bundle (version 2.0.0) defines 45 paths as of 2026-10-18 and has no expense-draft approval endpoint; drafts can be searched via POST /expenses/drafts/search.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Search Expense Drafts\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "file-upload-two-step",
+      "claim": "Expense file upload is two steps: GET https://api.morning.co/file-upload/v1/url for an upload URL, then POST the file.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Upload Expense File · Step 1: Get Upload URL\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "items-delete",
+      "claim": "DELETE /items/{id} is a documented operation.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Delete Item\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "no-2027-allocation-step",
+      "claim": "The allocation schedule published by Morning ends with June 2026 onward at 5,000; no further step had been officially announced as of 2026-10-18 (web search found only one unofficial, unsourced report of a possible lower figure).",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "יוני 2026 ואילך 5,000 ש״ח",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-delete-partners-users-connection",
+      "claim": "`DELETE /partners/users/connection` is a documented operation in the Morning OpenAPI (summary \"Disconnect Partner User\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Disconnect Partner User\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-businesses-v1-occupations",
+      "claim": "`GET /businesses/v1/occupations` is a documented operation in the Morning OpenAPI (summary \"Get Supported Business Categories\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Supported Business Categories\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-currency-exchange-v1-latest",
+      "claim": "`GET /currency-exchange/v1/latest` is a documented operation in the Morning OpenAPI (summary \"Get Supported Currencies\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Supported Currencies\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-documents-statuses",
+      "claim": "`GET /documents/statuses` is a documented operation in the Morning OpenAPI (summary \"Get Document Statuses\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Document Statuses\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-documents-templates",
+      "claim": "`GET /documents/templates` is a documented operation in the Morning OpenAPI (summary \"Get Document Templates\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Document Templates\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-documents-types",
+      "claim": "`GET /documents/types` is a documented operation in the Morning OpenAPI (summary \"Get Document Types\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Document Types\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-documents-id-linked",
+      "claim": "`GET /documents/{id}/linked` is a documented operation in the Morning OpenAPI (summary \"Get Linked Documents\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Linked Documents\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-expenses-statuses",
+      "claim": "`GET /expenses/statuses` is a documented operation in the Morning OpenAPI (summary \"Get Allowed Expenses Statuses\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Allowed Expenses Statuses\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-geo-location-v1-cities",
+      "claim": "`GET /geo-location/v1/cities` is a documented operation in the Morning OpenAPI (summary \"Get Supported Cities\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Supported Cities\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-geo-location-v1-countries",
+      "claim": "`GET /geo-location/v1/countries` is a documented operation in the Morning OpenAPI (summary \"Get Supported Countries\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Supported Countries\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-get-partners-users",
+      "claim": "`GET /partners/users` is a documented operation in the Morning OpenAPI (summary \"Get Connected Users\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Connected Users\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-clients-id-balance",
+      "claim": "`POST /clients/{id}/balance` is a documented operation in the Morning OpenAPI (summary \"Update Client Balance\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Update Client Balance\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-clients-id-merge",
+      "claim": "`POST /clients/{id}/merge` is a documented operation in the Morning OpenAPI (summary \"Merge Clients\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Merge Clients\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-documents-payments-search",
+      "claim": "`POST /documents/payments/search` is a documented operation in the Morning OpenAPI (summary \"Search Payments in Documents\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Search Payments in Documents\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-documents-preview",
+      "claim": "`POST /documents/preview` is a documented operation in the Morning OpenAPI (summary \"Get a Preview Document\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get a Preview Document\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-documents-id-open",
+      "claim": "`POST /documents/{id}/open` is a documented operation in the Morning OpenAPI (summary \"Open Document\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Open Document\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-expenses-drafts-search",
+      "claim": "`POST /expenses/drafts/search` is a documented operation in the Morning OpenAPI (summary \"Search Expense Drafts\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Search Expense Drafts\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-expenses-search",
+      "claim": "`POST /expenses/search` is a documented operation in the Morning OpenAPI (summary \"Search Expenses\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Search Expenses\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-expenses-id-close",
+      "claim": "`POST /expenses/{id}/close` is a documented operation in the Morning OpenAPI (summary \"Close Expense\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Close Expense\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-expenses-id-open",
+      "claim": "`POST /expenses/{id}/open` is a documented operation in the Morning OpenAPI (summary \"Open Expense\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Open Expense\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-partners-users-connection",
+      "claim": "`POST /partners/users/connection` is a documented operation in the Morning OpenAPI (summary \"Request User Approval\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Request User Approval\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-payments-form",
+      "claim": "`POST /payments/form` is a documented operation in the Morning OpenAPI (summary \"Get Payment Form\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get Payment Form\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-payments-tokens-search",
+      "claim": "`POST /payments/tokens/search` is a documented operation in the Morning OpenAPI (summary \"Search Credit Card Tokens\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Search Credit Card Tokens\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-payments-tokens-id-charge",
+      "claim": "`POST /payments/tokens/{id}/charge` is a documented operation in the Morning OpenAPI (summary \"Charge Credit Card Token\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Charge Credit Card Token\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-suppliers-search",
+      "claim": "`POST /suppliers/search` is a documented operation in the Morning OpenAPI (summary \"Search Suppliers\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Search Suppliers\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "endpoint-post-suppliers-id-merge",
+      "claim": "`POST /suppliers/{id}/merge` is a documented operation in the Morning OpenAPI (summary \"Merge Suppliers\").",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Merge Suppliers\"",
+      "fetched_at": "2026-10-18T02:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s30a5-foreign-resident",
+      "claim": "VAT Law s.30(a)(5): a service to a foreign resident is zero-rated, except services the Finance Minister excluded, and a service is not treated as given to a foreign resident when it is in practice also given to an Israeli resident in Israel.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "מתן שירות לתושב חוץ, למעט שירות ששר האוצר קבע לענין זה",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/document-workflows.md"
+      ]
+    },
+    {
+      "claim_id": "create-document-required",
+      "claim": "CreateDocumentRequest requires type, lang, currency, vatType and income; client is optional (no client sub-field is required).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"required\": [ \"type\", \"lang\", \"currency\", \"vatType\", \"income\" ]",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md",
+        "references/document-workflows.md"
+      ]
+    },
+    {
+      "claim_id": "income-row-required",
+      "claim": "IncomeRowRequest requires description, quantity, price, currency and vatType.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"required\": [ \"description\", \"quantity\", \"price\", \"currency\", \"vatType\" ]",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md",
+        "references/document-workflows.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "payment-row-required",
+      "claim": "PaymentRowRequest requires date, type, price and currency.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"required\": [ \"date\", \"type\", \"price\", \"currency\" ]",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md",
+        "references/document-workflows.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "tax-confirmation-response-fields",
+      "claim": "The 201 response to POST /documents carries taxAuthorityConfirmationInitiated (whether Tax Authority confirmation was initiated) and taxAuthorityConfirmationLastError (0 no error; a non-zero value such as 400 or 406 indicates a failure).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Error code from the most recent tax authority confirmation attempt. `0` indicates no error; a non-zero value (for example `400` or `406`) indicates a failure.",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "create-response-vatrate",
+      "claim": "The create-document response includes vatRate (the VAT rate applied) and no total field.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "VAT rate applied to the document",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "item-vatrate-decimal",
+      "claim": "The income-row vatRate is a decimal VAT rate, for example 0.18.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "VAT rate of the item. For example: 0.18.",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "search-sort-values",
+      "claim": "SearchDocumentsRequest.sort accepts documentDate, dueDate and client.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| `client` | Client name |",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "client-request-required",
+      "claim": "ClientRequest requires only name.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "The client name. For example:",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "occupations-cache-host",
+      "claim": "Business categories come from GET https://cache.greeninvoice.co.il/businesses/v1/occupations with a required locale query parameter (en_US or he_IL), no auth; geo-location and currency-exchange lookups share that host. Example call: https://cache.greeninvoice.co.il/businesses/v1/occupations?locale=he_IL",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"url\": \"https://cache.greeninvoice.co.il\", \"description\": \"Cache API\"",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "file-upload-sandbox-host",
+      "claim": "The expense file-upload URL endpoint is served from https://api.morning.co in production and https://api.sandbox.d.greeninvoice.co.il in sandbox.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"url\": \"https://api.sandbox.d.greeninvoice.co.il\"",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "plan-best-api",
+      "claim": "API access is available to Best plan subscribers and above.",
+      "source_url": "https://www.greeninvoice.co.il/help-center/generating-api-key/",
+      "raw_snippet": "זמין למנויי Best ומעלה",
+      "fetched_at": "2026-10-18T04:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "plan-webhooks-best",
+      "claim": "Webhooks are available on the Best plan and above per Morning's current help-centre guide (הגדרת Webhooks), menu אזור אישי > כלים למפתחים > Webhooks. A 2023 magazine article (https://www.greeninvoice.co.il/magazine/webhooks/) had said Extra.",
+      "source_url": "https://www.greeninvoice.co.il/help-center/creating-webhook/",
+      "raw_snippet": "כדאי לדעת: זמין במסלול Best ומעלה",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s38a-tax-invoice-6-months",
+      "claim": "VAT Law s.38(a): input VAT is deductible only from a tax invoice issued lawfully, an import declaration or another document the Director approved, and the deduction must be made within six months of issue.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "ושהניכוי ייעשה בתוך ששה חדשים מיום הוצאת החשבונית",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s47a-buyer-may-demand",
+      "claim": "VAT Law s.47(a): an osek murshe may issue a tax invoice instead of a transaction invoice for a taxable transaction, and must do so at the buyer's demand.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "עוסק מורשה רשאי להוציא לגבי עסקה חייבת במס חשבונית מס במקום חשבונית עסקה, וחייב הוא לעשות כן לפי דרישת הקונה",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/document-workflows.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s47a2-4-late-request",
+      "claim": "VAT Law s.47(a2)(4): an osek murshe may request an allocation number even after the invoice was issued.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "עוסק מורשה רשאי לבקש מהמנהל להקצות מספר לחשבונית מס גם לאחר הוצאת החשבונית",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s47a2-3-refusal-hearing",
+      "claim": "VAT Law s.47(a2)(3): on a preliminary refusal the applicant may be heard within two business days and may choose that the buyer assume the tax or that the invoice issue without a number.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "אשר יהיה בתוך שני ימי עסקים מיום שליחת ההודעה המקוונת",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "currency-rate-default-1",
+      "claim": "IncomeRowRequest.currencyRate and PaymentRowRequest.currencyRate are relative to ILS and default to 1.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Currency rate relative to ILS. Defaults to 1.",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/document-workflows.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "download-links-en-conditional",
+      "claim": "The English download link exists only if applicable (an English copy was generated).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Copy link in English (if applicable)",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/document-workflows.md"
+      ]
+    },
+    {
+      "claim_id": "attachment-default-false",
+      "claim": "CreateDocumentRequest.attachment attaches the document in the email sent to the recipient and defaults to false.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Attach the document in the email sent to the recipient. Defaults to `false`.",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "client-emails-up-to-5",
+      "claim": "Client emails accept up to 5 addresses.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "The client email addresses (up to 5).",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "error-1009-emails",
+      "claim": "API error 1009 is יש לבחור כתובות מייל.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 1009 | יש לבחור כתובות מייל. |",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "error-2422-mismatch",
+      "claim": "API error 2422 is a mismatch between receipts and payments.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 2422 | קיים חוסר התאמה בין סכום התקבולים לסכום התשלומים. |",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "references/document-workflows.md",
+        "scripts/green-invoice-client.py"
+      ]
+    },
+    {
+      "claim_id": "error-2428-withholding",
+      "claim": "API error 2428 requires at least one receipt row besides withholding.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "| 2428 | נא למלא שורת תקבולים אחת לפחות בנוסף לניכוי במקור. |",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "references/document-workflows.md"
+      ]
+    },
+    {
+      "claim_id": "documents-preview",
+      "claim": "POST /documents/preview returns a preview document without issuing it.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Get a Preview Document\"",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "create-document-201",
+      "claim": "POST /documents answers 201 on success.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"201\": {",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/document-workflows.md"
+      ]
+    },
+    {
+      "claim_id": "classification-vat-mixed",
+      "claim": "AccountingClassification carries vat (recoverable VAT percentage) and mixed (business-use percentage).",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Recoverable VAT percentage for this classification.",
+      "fetched_at": "2026-10-18T06:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-doc-types-morning",
+      "claim": "Morning states that allocation numbers are issued only for חשבונית מס and חשבונית מס-קבלה (types 305 and 320); other document types receive none.",
+      "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
+      "raw_snippet": "סוג המסמך הוא חשבונית מס או חשבונית מס-קבלה – עבור מסמכים מסוגים אחרים לא יתקבל מספר הקצאה",
+      "fetched_at": "2026-10-18T07:00:00Z",
+      "appears_in": [
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "webhook-delivery-headers",
+      "claim": "Every webhook delivery carries x-webhook-topic, x-webhook-id, x-webhook-delivery-id, x-webhook-timestamp, x-correlation-id and user-agent (morning webhooks plus version), and x-webhook-signature only when a secret is configured.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "Identifier of the webhook configuration that produced the delivery.",
+      "fetched_at": "2026-10-18T07:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s40b-system-outage",
+      "claim": "VAT Law s.40B (סעיף 40ב): where exceptional circumstances in the Tax Authority computer systems prevented allocating a number, the Director may allow the input-VAT deduction on a tax invoice without an allocation number.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "שבעטיין מסיבות טכנולוגיות לא התאפשרה הקצאת מספר על ידי המנהל",
+      "fetched_at": "2026-10-18T07:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s38a2-cash-law",
+      "claim": "VAT Law s.38(a2): input VAT is not deductible where the consideration was a payment decided to breach the Cash Law 2018 and a financial sanction was imposed under its s.9, unless the Director is satisfied tax was paid lawfully.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "מהווה הפרה לפי חוק לצמצום השימוש במזומן",
+      "fetched_at": "2026-10-18T07:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s47a2-3-buyer-no-deduct",
+      "claim": "Under s.47(a2)(3)(c)(2), if the seller issues the invoice without a number, s.38(a1) applies, so the buyer cannot deduct the input VAT.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "המבקש יוציא לקונה חשבונית מס בלי שהוקצה לה מספר, והוראות סעיף 38(א1) יחולו לעניין זה",
+      "fetched_at": "2026-10-18T07:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "items-create-search",
+      "claim": "`POST /v1/items` (Add Item) and `POST /v1/items/search` (Search Items) are documented operations; the spec paths are /items and /items/search on the api/v1 base.",
+      "source_url": "https://developers.morning.co/docs/openapi.bundled.json",
+      "raw_snippet": "\"summary\": \"Search Items\"",
+      "fetched_at": "2026-10-18T07:30:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/api-reference.md"
+      ]
     }
   ]
 }

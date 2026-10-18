@@ -11,8 +11,9 @@ Complete reference for all Green Invoice (Morning) API endpoints, request/respon
 
 ## Authentication
 
-Two flows are live (both verified 2026-07-27). OAuth 2.0 is the documented path for new
-work; the API-key flow below still functions and is what existing integrations use.
+Two flows exist (re-probed 2026-10-18). OAuth 2.0 is the documented path for new work and
+the ONLY one on sandbox. The API-key flow below still answers on production, which is what
+existing integrations use, but its sandbox route now returns 404.
 
 ### OAuth 2.0 (documented, use for new work)
 
@@ -23,10 +24,12 @@ work; the API-key flow below still functions and is what existing integrations u
 | Production | `https://api.morning.co/idp/v1/oauth/token` |
 | Sandbox | `https://api.sandbox.morning.dev/idp/v1/oauth/token` |
 
-**Request:** form-encoded, `grant_type=client_credentials`, plus `client_id` and
-`client_secret` (your API key ID and secret).
+**Request:** a JSON body (`Content-Type: application/json`, the only content type the spec
+documents) with `grant_type: "client_credentials"`, `client_id` and `client_secret` (your
+API key ID and secret).
 
-**Response:** `accessToken`, a signed JWT valid for **1 hour**. Use it as
+**Response:** `accessToken`, a signed JWT valid for **1 hour**, plus `tokenType` (`Bearer`)
+and `expiresAt` (Unix timestamp in seconds). Schedule the refresh from `expiresAt`. Use it as
 `Authorization: Bearer <accessToken>`. After an hour, protected endpoints return 401 and a
 new token must be requested, so any long-running job needs a refresh path.
 
@@ -40,7 +43,11 @@ new token must be requested, so any long-running job needs a refresh path.
 | 400 | `unauthorized_client` | No active subscription, or subscription lacks API access |
 | 401 | `invalid_client` | Missing or incorrect client credentials |
 
-### POST /v1/account/token (legacy, still functional)
+### POST /v1/account/token (legacy, production only)
+
+On sandbox (`sandbox.d.greeninvoice.co.il`) this route returns `{"errorCode":404}`, the
+same body as a path that was never defined (probed 2026-10-18; it answered on 2026-08-27).
+On production it still answers (401 for bad credentials, 405 for GET).
 
 **Request:**
 ```json
@@ -51,11 +58,11 @@ new token must be requested, so any long-running job needs a refresh path.
 ```
 
 **Response:**
-Returns JWT token in `X-Authorization-Bearer` header and in response body `token` field.
+Returns a JWT, read from the response body `token` field by existing clients. This route is not in the current OpenAPI, so its response shape is not documented anywhere live: confirm it against a real response before relying on any other field.
 
 Use in all subsequent requests: `Authorization: Bearer <token>`
 
-**Plan tier:** API access requires the Best plan or higher. The token endpoint exists and accepts the call on lower-tier accounts, but issued tokens will fail authorization on most endpoints. Verify the plan in the Morning dashboard before debugging 401/403 cascades.
+**Plan tier:** API access requires the Best plan or higher. On the OAuth endpoint a subscription without API access gets `unauthorized_client` and no token is issued; check the plan in the Morning dashboard before debugging 401/403 cascades.
 
 ---
 
@@ -98,7 +105,12 @@ Reference: https://www.greeninvoice.co.il/magazine/israel-invoice/ and https://w
 
 ### POST /v1/documents (Create Document)
 
-**Full Request Schema:**
+**Request schema** (field names from the Morning OpenAPI `CreateDocumentRequest`).
+Required at the top level: `type`, `lang`, `currency`, `vatType`, `income`. Each income row
+requires `description`, `quantity`, `price`, `currency`, `vatType`; each payment row requires
+`date`, `type`, `price`, `currency`. `client` is optional (but needed to email the PDF).
+Values below are examples, not defaults.
+
 ```json
 {
   "description": "string",
@@ -118,23 +130,18 @@ Reference: https://www.greeninvoice.co.il/magazine/israel-invoice/ and https://w
   "rounding": true,
   "signed": true,
   "attachment": true,
-  "maxPayments": 1,
   "client": {
     "id": "string (optional, use for existing client)",
     "name": "string (required for new)",
     "emails": ["string"],
     "taxId": "string",
-    "department": "string",
     "address": "string",
     "city": "string",
     "zip": "string",
     "country": "IL",
     "phone": "string",
+    "fax": "string",
     "mobile": "string",
-    "contactPerson": "string",
-    "accountingKey": "string",
-    "paymentTerms": -1,
-    "labels": ["string"],
     "add": true,
     "self": false
   },
@@ -154,12 +161,10 @@ Reference: https://www.greeninvoice.co.il/magazine/israel-invoice/ and https://w
   "payment": [
     {
       "type": 3,
-      "subType": 0,
       "date": "YYYY-MM-DD",
       "price": 100.00,
       "currency": "ILS",
       "currencyRate": 1.0,
-      "quantity": 1,
       "bankName": "string",
       "bankBranch": "string",
       "bankAccount": "string",
@@ -168,8 +173,7 @@ Reference: https://www.greeninvoice.co.il/magazine/israel-invoice/ and https://w
       "cardNum": "string",
       "dealType": 1,
       "numPayments": 1,
-      "firstPayment": 100.00,
-      "appType": 0
+      "firstPayment": 100.00
     }
   ],
   "linkedDocumentIds": ["string"],
@@ -209,7 +213,7 @@ Returns full document object.
   "clientName": "string",
   "description": "string",
   "download": false,
-  "sort": "documentDate|creationDate"
+  "sort": "documentDate|dueDate|client"
 }
 ```
 
@@ -237,7 +241,7 @@ Closes an open document.
 ```json
 {
   "name": "string (required)",
-  "emails": ["string (required)"],
+  "emails": ["string"],
   "active": true,
   "department": "string",
   "taxId": "string",
@@ -250,8 +254,8 @@ Closes an open document.
   "city": "string",
   "zip": "string",
   "country": "IL",
-  "category": 0,
-  "subCategory": 0,
+  "category": 22,
+  "subCategory": 2201,
   "phone": "string",
   "fax": "string",
   "mobile": "string",
@@ -276,7 +280,6 @@ Closes an open document.
   "email": "string",
   "contactPerson": "string",
   "labels": ["string"],
-  "taxId": "string",
   "page": 1,
   "pageSize": 25
 }
@@ -293,6 +296,7 @@ Associates documents to a client.
 ### POST /v1/items (Create)
 ### GET /v1/items/{id}
 ### PUT /v1/items/{id}
+### DELETE /v1/items/{id}
 ### POST /v1/items/search
 
 ---
@@ -302,7 +306,7 @@ Associates documents to a client.
 ### GET /v1/businesses
 ### GET /v1/businesses/search
 
-Note: this path and `/v1/businesses` are absent from the Morning OpenAPI. Probed live 2026-08-27: GET returns 401 (route exists, auth required) while POST returns 405 Method Not Allowed, and an invented sibling on the same host returns 404, so GET is the method and these are undocumented-upstream routes. Treat them as unsupported.
+Note: both paths are absent from the Morning OpenAPI. `/v1/businesses` answers 401 without a token against 404 for an invented sibling path (probed 2026-10-18); `/v1/businesses/search` could not be told apart from an invented path under the same prefix. Neither has a documented contract, so treat both as unsupported.
 
 ---
 
@@ -481,29 +485,10 @@ ILS, USD, EUR, GBP, JPY, CHF, CNY, AUD, CAD, RUB, BRL, HKD, SGD, THB, MXN, TRY, 
 
 ### Business Categories
 
-| Code | Category |
-|------|----------|
-| 0 | Other |
-| 1 | Internet and Computers |
-| 2 | Accounting |
-| 3 | Engineering |
-| 4 | Marketing |
-| 5 | Leisure and Sports |
-| 6 | Health and Mind |
-| 7 | Agriculture |
-| 8 | Art |
-| 9 | Education |
-| 10 | Communication and Journalism |
-| 11 | Religion |
-| 12 | Law |
-| 13 | Architecture and Design |
-| 14 | Finance |
-| 15 | Television and Stage |
-| 16 | Coaching and Consulting |
-| 17 | Hosting and Catering |
-| 18 | Delivery |
-| 19 | Real Estate |
-| 21 | Administration and Logistics |
+Do not hard-code a category table. `ClientRequest.category` / `subCategory` take ids from the
+live lookup `GET https://cache.greeninvoice.co.il/businesses/v1/occupations?locale=he_IL`
+(or `en_US`; `locale` is required, no auth). It returns categories with nested
+sub-categories, and the set changes over time.
 
 ---
 
@@ -523,8 +508,8 @@ Full webhook payload structure on document creation:
   "date": "2026-03-05",
   "createdAt": 1748284806000,
   "subtotal": 1000,
-  "taxableTotal": 0,
-  "vatTaxableTotal": 0,
+  "taxableTotal": 1000,
+  "vatTaxableTotal": 1000,
   "revenueTaxableTotal": 1000,
   "exemptTotal": 0,
   "rounding": false,
@@ -585,9 +570,30 @@ Full webhook payload structure on document creation:
 - In-app API Explorer (requires sign-in, authoritative for current field names): https://app.greeninvoice.co.il/api
 - Tax Authority connection guide (required for SHAAM allocation numbers): https://www.greeninvoice.co.il/help-center/developers/tax-auth-connect/
 - API key generation + plan-tier requirements: https://www.greeninvoice.co.il/help-center/generating-api-key/
-- Webhooks overview (Extra plan required): https://www.greeninvoice.co.il/magazine/webhooks/
+- Webhooks setup (Best plan and up, per the current help centre): https://www.greeninvoice.co.il/help-center/creating-webhook/
 
 Note: the `greeninvoice.docs.apiary.io` Apiary interactive reference has been RETIRED. As of 2026-07-27 it returns HTTP 404 ("Apiary - Page not found"), verified in a browser; it was still live on 2026-06-28. The canonical reference is now `https://developers.morning.co` ("morning API Documentation (2.0.0)"), which is also where the current OAuth 2.0 authentication flow is documented.
+
+## Other Documented Endpoints
+
+The endpoints above are the ones most integrations need. The Morning OpenAPI
+(`developers.morning.co/docs/openapi.bundled.json`, 45 paths) also documents these, all on
+the `api/v1` base unless a host is given:
+
+| Area | Endpoints |
+|------|-----------|
+| Documents | `POST /documents/preview`, `POST /documents/payments/search`, `GET /documents/templates`, `GET /documents/types`, `GET /documents/statuses`, `GET /documents/{id}/linked`, `POST /documents/{id}/open` |
+| Clients | `POST /clients/{id}/balance`, `POST /clients/{id}/merge` |
+| Payments | `POST /payments/form` (payment page), `POST /payments/tokens/search`, `POST /payments/tokens/{id}/charge` (charge a saved card token) |
+| Suppliers | `GET/PUT/DELETE /suppliers/{id}`, `POST /suppliers/search`, `POST /suppliers/{id}/merge` |
+| Expenses | `GET/PUT/DELETE /expenses/{id}`, `POST /expenses/search`, `GET /expenses/statuses`, `POST /expenses/{id}/close`, `POST /expenses/{id}/open`, `POST /expenses/drafts/search` |
+| Expense files | two steps: `GET https://api.morning.co/file-upload/v1/url` (sandbox host `api.sandbox.d.greeninvoice.co.il`) for an upload URL, then `POST` the file to the S3 URL it returns |
+| Lookups (host `https://cache.greeninvoice.co.il`) | `GET /businesses/v1/occupations` (business categories), `GET /geo-location/v1/countries`, `GET /geo-location/v1/cities`, `GET /currency-exchange/v1/latest` |
+| Partners | `GET /partners/users`, `POST /partners/users/connection`, `DELETE /partners/users/connection` |
+
+There is no draft-approval endpoint in the spec: approving an uploaded expense draft is
+done in the Morning app. `POST /expenses/drafts/search` lets you find the drafts still
+waiting, which is how to catch the under-reporting trap described below.
 
 ## Suppliers and Expenses (purchase side)
 
@@ -614,3 +620,66 @@ importers that upload scanned supplier invoices and never approve the drafts wil
 expenses and under-claim input VAT.
 
 Headers for both: `Content-Type: application/json`, `Authorization: Bearer <accessToken>`.
+
+**`ExpenseRequest` required fields** (from the spec): `documentType`, `number`, `date`,
+`reportingDate`, `supplier`, `accountingClassification`.
+
+| Field | Rule |
+|-------|------|
+| `documentType` | Supplier document type: 20, 305, 320, 330, 400 or 405 |
+| `number` | The supplier's document number |
+| `date` | `YYYY-MM-DD`, 2010-01-01 or later, not in the future |
+| `reportingDate` | VAT reporting date, must be the FIRST day of a month (`YYYY-MM-01`). It decides which VAT period the input tax lands in, so set it deliberately |
+| `supplier` | The supplier (an existing one, or its details) |
+| `accountingClassification` | An existing classification `id`, or inline details (`irsCode`, `title`, `income`, `vat`) |
+| `amount` / `vat` | `amount` is the total INCLUDING VAT; `vat` is its VAT portion and may not exceed `amount` |
+| `allocationNumber` | The supplier's allocation number, when the invoice needs one (Step 2 of SKILL.md) |
+
+`SupplierRequest` requires only `name`, but also accepts `taxId`. Record the supplier's tax
+ID: an input-VAT claim rests on a tax invoice from an identified osek murshe.
+
+**`pcnClassification`** (`ExpensePcnClassifications`) classifies the input for the PCN874
+report:
+
+| Value | Meaning |
+|-------|---------|
+| T | תשומה רגילה |
+| R | רשומון יבוא |
+| K | ספק קופה קטנה |
+| P | ספק רשות פלסטינית |
+| C | תשומה חשבונית עצמית |
+| H | מסמך אחר |
+
+## Webhook Events
+
+The document payload above is one of ten event schemas. Every delivery carries these
+headers (from the spec):
+
+| Header | Meaning |
+|--------|---------|
+| `x-webhook-topic` | The event type, e.g. `document/created` |
+| `x-webhook-id` | The webhook configuration that produced the delivery |
+| `x-webhook-delivery-id` | Unique id of this delivery |
+| `x-webhook-timestamp` | When the event was emitted (ISO 8601) |
+| `x-correlation-id` | Correlation id for support and debugging |
+| `user-agent` | `morning webhooks` plus the version |
+| `x-webhook-signature` | Only when a secret is set: HMAC-SHA256 of the raw body, hex |
+
+The topics:
+
+| Topic | Fires when |
+|-------|-----------|
+| `document/created` | A document is created |
+| `client/created` | A client is created |
+| `supplier/created` | A supplier is created |
+| `payment/received` | A payment is received |
+| `sale-pages/page-contacted` | A visitor submits details on a sale page |
+| `sale-pages/order-paid` | An order is paid on a sale page |
+| `expense-draft/parsed` | An uploaded expense draft finished parsing |
+| `expense-draft/declined` | An accountant declined an uploaded expense draft |
+| `expense/file-updated` | The file of an already-approved expense is updated |
+| `file/infected` | An uploaded file was found infected and quarantined |
+
+Fields with no value are omitted from every payload, never sent as `null`, so code
+defensively. `expense-draft/parsed` and `expense-draft/declined` are the signals for the
+draft trap described above, and `file/infected` is a security signal worth alerting on.

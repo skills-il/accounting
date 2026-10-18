@@ -63,6 +63,36 @@
         "WORD CAP: SKILL.md was at 5,055 at HEAD and the allocation additions pushed it to 5,197, so several lookup tables were compressed and the statutory text moved to references/. Both files now sit just under 5,000 and there is no room left; the next substantive addition must displace something.",
         "DESCRIPTION CHANGED ONLY BY A NUMERAL (13 -> 15 document types) in both files and metadata.json. The Phase 5.7 holdout eval was not run: the edit cannot plausibly move trigger behaviour, and no trigger phrase or boundary clause was touched."
       ]
+    },
+    {
+      "version": "1.6.0",
+      "date": "2026-10-18",
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "add a new client in Green Invoice via the API with company id and email (Hebrew)",
+          "pull last month's expenses from greeninvoice as JSON",
+          "Cardcom Low Profile page with tokenization (routes to cardcom-payment-gateway)",
+          "unpaid Morning invoices older than 60 days via the API"
+        ]
+      },
+      "lessons": [
+        "API DRIFT FOUND BY LIVE PROBE: the legacy POST /account/token route is GONE on sandbox (404, identical to a never-defined path; it answered with errorCode 2014 on 2026-08-27). Production still answers it. Sandbox now needs OAuth. The bundled script was legacy-only, so GREEN_INVOICE_ENV=sandbox auth was broken; the script now defaults to OAuth (--legacy for production).",
+        "PLAN TIER CHANGED: webhooks are Best and up per the current help-centre page (help-center/creating-webhook). The skill's 'Extra' rested on a 2023 magazine article. Re-check the help-centre page, not the magazine, each cycle.",
+        "currencyRate DEFAULTS TO 1 per the OpenAPI, not to the Bank of Israel rate as the skill claimed. Script now refuses a non-ILS document without --currency-rate.",
+        "The create-document 201 response carries taxAuthorityConfirmationInitiated and taxAuthorityConfirmationLastError; the skill had said the API exposes no allocation-status signal.",
+        "STATUTE-READ FIXES: 300 then 400 left an osek murshe's business buyer with no tax invoice (s.38(a), s.47(a)); now 300 then 320. 'Re-issue' for a missing allocation number would duplicate output VAT; now late request under s.47(a2)(4), refusal path s.47(a2)(3), outage s.40B. Purchase side gained s.38(a) six-month / tax-invoice-only rule and s.38(a2) Cash Law (narrow: breach decision AND sanction, with the tax-was-paid exception).",
+        "Several long-standing invented or unsourced items removed: 'Client email required' error (sending is driven by client.emails; attachment only attaches the PDF), business-categories table (use the live occupations lookup on cache.greeninvoice.co.il), creationDate sort, request-schema fields not in the spec, 'download links always both languages', HTTP 200 for create (it is 201).",
+        "LEGAL: fresh legal-review returned WARN with Tier B remedy; added the nine-component tax notice after the H1 in both files and the description prefix 'Not tax advice.' (matching sibling accounting skills). verify_legal now 0 warnings.",
+        "Moved Step 10's non-profit and osek zair paragraphs to references/document-workflows.md (Business-Type Notes) to fit the notice under the 5,000-word cap. Both files sit at about 4,995 words; the next addition must displace something.",
+        "DEFERRED (MINOR): script warns only on non-zero taxAuthorityConfirmationLastError, not on initiated=false above threshold; script assumes 18% and needs a manual --osek-patur flag (could read GET /documents/info); withholding base wording 'often computed on the net base' unverified; '305 brings VAT forward' rule is not in the VAT Law text (regulations?), left out until sourced.",
+        "DEFERRED (MINOR): credit-note (330) income-row sign convention is undocumented in the spec; the skill now hedges and says to confirm in sandbox. Description still says 'Do NOT use for SHAAM allocation numbers' although Step 2 covers the Morning side; narrowing it would need a holdout run.",
+        "gov.il blocks automated fetches from the batch machine (Cloudflare 403, also via r.jina.ai). The allocation-service link was confirmed through the Wayback capture of 2026-08-01."
+      ]
     }
   ]
 }
