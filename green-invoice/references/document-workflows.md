@@ -139,7 +139,7 @@ Billing international clients in foreign currencies.
 - Set document `lang: "en"` for English
 - Set `currency` to the client's currency (USD, EUR, GBP, etc.)
 - The spec says `currencyRate` defaults to 1, so pass the rate explicitly (for example the Bank of Israel representative rate); the 3.7 above is illustrative only
-- A service to a foreign resident is zero-rated (0%) under VAT Law s.30(a)(5) when its conditions hold, NOT exempt. The section excludes, among others, a service also given in practice to an Israeli resident in Israel, so whether a sale qualifies is a classification for whoever prepares the VAT return, not something to infer from the client's country alone. Keep rows at `vatType: 0` and set `vatRate: 0` per income row. Do NOT set the document `vatType` to 1 or the row `vatType` to 2 (both mean exempt): exemption (פטור) is legally distinct from zero-rating and blocks input-VAT recovery, and they are reported in different boxes of the VAT return.
+- A service to a foreign resident is generally zero-rated (0%) under VAT Law s.30(a)(5) when its conditions are met, NOT exempt. The section excludes, among others, a service also given in practice to an Israeli resident in Israel, so whether a sale qualifies is a classification for whoever prepares the VAT return, not something to infer from the client's country alone. Keep rows at `vatType: 0` and set `vatRate: 0` per income row. Do NOT set the document `vatType` to 1 or the row `vatType` to 2 (both mean exempt): exemption (פטור) is legally distinct from zero-rating and blocks input-VAT recovery, and they are reported in different boxes of the VAT return.
 
 ---
 

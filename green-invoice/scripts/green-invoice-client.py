@@ -149,6 +149,38 @@ def cmd_auth(args):
     print(f"\nUse with: --token {token[:20]}...")
 
 
+# Allocation-number thresholds (NET, before VAT; the statute says "exceeds") by the
+# DOCUMENT's own date. The regime began in May 2024; the whole month is treated as in
+# scope, since over-warning is harmless and under-warning loses the buyer's deduction.
+ALLOCATION_THRESHOLDS = [  # (first date in force, threshold)
+    ("2024-05-01", Decimal("25000")),
+    ("2025-01-01", Decimal("20000")),
+    ("2026-01-01", Decimal("10000")),
+    ("2026-06-01", Decimal("5000")),
+]
+TAX_INVOICE_TYPES = {305, 320}
+
+
+def allocation_threshold(doc_date):
+    """Threshold in force on doc_date (YYYY-MM-DD), or None before the regime."""
+    current = None
+    for start, amount in ALLOCATION_THRESHOLDS:
+        if doc_date >= start:
+            current = amount
+    return current
+
+
+def needs_allocation(doc_type, net, doc_date, b2b_buyer, zero_rated):
+    """True when a number is needed: a tax invoice to an osek murshe / company buyer,
+    carrying VAT, above the threshold in force on the document date. The buyer's VAT
+    status decides it, not whether a taxId is filled (a private ID number is not an
+    osek number, and an osek patur buyer cannot deduct anyway)."""
+    if doc_type not in TAX_INVOICE_TYPES or not b2b_buyer or zero_rated:
+        return False
+    threshold = allocation_threshold(doc_date)
+    return threshold is not None and net > threshold
+
+
 def _today() -> str:
     """Payment rows require a date; default to today in ISO form."""
     return datetime.date.today().isoformat()
@@ -263,6 +295,22 @@ def cmd_create_document(args):
         if args.currency_rate is not None:
             payload["payment"][0]["currencyRate"] = args.currency_rate
 
+    # The threshold is a NET amount in shekels: strip VAT from a VAT-inclusive row and
+    # convert a foreign-currency document at its rate before comparing.
+    net_total = Decimal(str(args.amount)) * Decimal(str(args.quantity))
+    if args.row_vat_type == 1:
+        net_total = net_total / (Decimal("1") + Decimal(str(vat_rate)) / Decimal("100"))
+    if args.currency.upper() != "ILS" and args.currency_rate is not None:
+        net_total = net_total * Decimal(str(args.currency_rate))
+    doc_date = args.date or _today()
+    zero_rated = args.vat_type == 1 or args.row_vat_type == 2 or vat_rate == 0 or args.osek_patur
+    allocation_needed = needs_allocation(doc_type, net_total, doc_date, args.b2b, zero_rated)
+    if allocation_needed and not args.tax_id:
+        print("WARNING: this tax invoice needs an allocation number, but the business buyer has\n"
+              "         no --tax-id. Morning cannot request a number without the buyer's VAT\n"
+              "         number, and without one the buyer cannot deduct the input VAT.",
+              file=sys.stderr)
+
     result = api_request("POST", "/documents", token=args.token, data=payload)
     print(f"Document created successfully!")
     print(f"  Type: {DOCUMENT_TYPES.get(doc_type, doc_type)}")
@@ -277,6 +325,13 @@ def cmd_create_document(args):
     err = result.get("taxAuthorityConfirmationLastError")
     if err:
         print(f"  WARNING: Tax Authority confirmation error {err}", file=sys.stderr)
+    elif allocation_needed and not result.get("taxAuthorityConfirmationInitiated"):
+        # No request was made although one was needed: the usual sign of a lapsed or
+        # never-granted Tax Authority authorization in the Morning account.
+        print("  WARNING: no Tax Authority confirmation was initiated for a document that\n"
+              "           needs an allocation number. Check the Morning Tax Authority\n"
+              "           authorization, then request a number for THIS document.",
+              file=sys.stderr)
 
 
 def cmd_search_documents(args):
@@ -410,6 +465,8 @@ def main():
     doc_parser.add_argument("--due-date", help="Due date (YYYY-MM-DD)")
     doc_parser.add_argument("--tax-id", help="Client tax ID")
     doc_parser.add_argument("--payment-type", type=int, help="Payment type code")
+    doc_parser.add_argument("--b2b", action="store_true",
+        help="The buyer is an osek murshe or a company (enables allocation-number checks)")
 
     # search-documents
     search_doc_parser = subparsers.add_parser("search-documents", help="Search documents")

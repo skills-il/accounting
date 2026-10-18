@@ -24,7 +24,8 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
-        "references/api-reference.md"
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
       ]
     },
     {
@@ -92,7 +93,8 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
-        "references/document-workflows.md"
+        "references/document-workflows.md",
+        "scripts/green-invoice-client.py"
       ]
     },
     {
@@ -432,7 +434,8 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
-        "references/api-reference.md"
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
       ]
     },
     {
@@ -609,7 +612,8 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
-        "references/api-reference.md"
+        "references/api-reference.md",
+        "scripts/green-invoice-client.py"
       ]
     },
     {
@@ -1177,7 +1181,8 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
-        "references/document-workflows.md"
+        "references/document-workflows.md",
+        "scripts/green-invoice-client.py"
       ]
     },
     {

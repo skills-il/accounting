@@ -109,7 +109,7 @@ Reference: https://www.greeninvoice.co.il/magazine/israel-invoice/ and https://w
 Required at the top level: `type`, `lang`, `currency`, `vatType`, `income`. Each income row
 requires `description`, `quantity`, `price`, `currency`, `vatType`; each payment row requires
 `date`, `type`, `price`, `currency`. `client` is optional (but needed to email the PDF).
-Values below are examples, not defaults.
+Values below are field-shape placeholders, not defaults, and do not form a balanced document: in a real request the payment rows must sum to the gross document total (see the worked examples in `document-workflows.md`).
 
 ```json
 {
