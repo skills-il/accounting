@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-annual-reports",
-  "generated_at": "2026-08-27T02:38:14.906849+00:00",
+  "generated_at": "2026-10-18T06:00:00+03:00",
   "claims": [
     {
       "claim_id": "annual-3-months",
@@ -264,7 +264,7 @@
     },
     {
       "claim_id": "small-corp-relief-bundle-a",
-      "claim": "Under Reg. 5c(a)(1)(a) of the Securities Regulations (Periodic and Immediate Reports) 5730-1970, a corporation whose shares or participation units are held by the public is a small corporation if the market value of those shares or units on the exchange was below NIS 300 million (measured as the 60-day average preceding the determining date).",
+      "claim": "Under Reg. 5c(a)(1)(a) of the Securities Regulations (Periodic and Immediate Reports) 5730-1970, a corporation whose shares or participation units are held by the public is a small corporation if the market value of those shares or units on the exchange was below NIS 300 million (measured as the 60-day average preceding the determining date). The NIS 300M figure was CPI-indexed to NIS 335,519,486 by ISA notice from 1 January 2024 (see small-corp-threshold-indexed-2024).",
       "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
       "raw_snippet": "תאגיד ייחשב תאגיד קטן אם התקיימו בו במועד הקובע תנאים אלה: (1) לעניין תאגיד שמניותיו או יחידות ההשתתפות שלו מוחזקות בידי הציבור, התקיימו שני אלה: (א) שווי המניות או יחידות ההשתתפות בבורסה היה נמוך משלוש מאות מיליון שקלים חדשים",
       "fetched_at": "2026-08-09T00:00:00Z",
@@ -303,16 +303,16 @@
     },
     {
       "claim_id": "ixbrl-voluntary",
-      "claim": "ISA runs a structured iXBRL reporting program; as of current ISA guidance iXBRL filing is voluntary, with the Authority opening additional voluntary phases ahead of a future legislative amendment that would make it mandatory.",
+      "claim": "ISA runs a voluntary iXBRL reporting stage and invites more reporting corporations to join it ahead of a mandatory stage.",
       "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-63c5442fc580d/IXBRL042023.pdf",
-      "raw_snippet": "תאגידים בישראל עוברים לדיווח iXBRL. הדיווח בפורמט זה יהפוך לחובה רק לאחר תיקון החקיקה הרלוונטי, והרשות מעודדת את התאגידים המדווחים להצטרף לפורמט באופן וולונטרי במועד מוקדם יותר.",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "הרשות מזמינה תאגידים נוספים להצטרף לשלב הוולונטרי ולהשפיע על גיבוש התהליך והמעבר לדיווח בפורמט iXBRL",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
       "verified_via": "pdf-text-extraction",
-      "verified_at": "2026-08-09T00:00:00Z"
+      "verified_at": "2026-10-18"
     },
     {
       "claim_id": "ixbrl-magna-50-datapoints",
@@ -326,16 +326,19 @@
       ]
     },
     {
-      "claim_id": "shelf-prospectus-3-years",
-      "claim": "A shelf prospectus (tashkif madaf) under Section 23a of the Securities Law is valid for a base period of 24 months and may be extended by 12 months (a third year), so up to about 3 years total.",
-      "source_url": "https://www.grantthornton.co.il/insights1/professional-insights/2024/Extension_of_shelf_prospectus_period_by_six_months/",
-      "raw_snippet": "אישורים להארכת תשקיף מדף ב-12 חודשים נוספים (היינו, שנה שלישית) על פי סעיף 23א",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "claim_id": "shelf-prospectus-24-plus-12",
+      "claim": "Under Securities Law Sec. 23A(b), a public offering under a shelf prospectus is made within 24 months of its publication; the ISA extends the period by 12 more months on the corporation's request where the prescribed conditions are met.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_001.htm",
+      "raw_snippet": "הצעה לציבור של ניירות ערך על פי תשקיף מדף תיעשה במהלך 24 חודשים מיום פרסומו, ואולם אם נוכחו הרשות או עובד הרשות שהיא הסמיכה לכך, על פי בקשת תאגיד, כי התקיימו לגביו התנאים שנקבעו לפי סעיף קטן (ד) להארכת התקופה",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
-        "references/hebrew-financial-terms.md"
-      ]
+        "references/hebrew-financial-terms.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18"
     },
     {
       "claim_id": "immediate-report-timing",
@@ -365,17 +368,17 @@
     },
     {
       "claim_id": "boi-public-reporting-directives",
-      "claim": "Israeli banks report under the Bank of Israel Supervisor of Banks 'Public Reporting Directives' (Hora'ot ha-Divuach la-Tzibur), an Israel-specific adaptation that draws on US bank-reporting rules (FASB/US bank supervisors/SEC) and incorporates IFRS for certain topics, rather than plain IFRS.",
+      "claim": "Israeli banks report under the Bank of Israel Supervisor of Banks Public Reporting Directives, which adopt mainly the reporting rules applying to leading US banks (FASB standards, US bank supervisors, SEC).",
       "source_url": "https://www.boi.org.il/roles/supervisionregulation/public-reports/",
-      "raw_snippet": "תאגידים בנקאיים נדרשים לפרסם דוחות שנתיים ורבעוניים לציבור לפי הוראות הדיווח לציבור של המפקח על הבנקים, המאמצות את כללי הדיווח החלים על בנקים מובילים בארה\"ב (FASB, הוראות המפקחים על הבנקים בארה\"ב ו-SEC), עם שילוב תקני IFRS לנושאים מסוימים.",
-      "fetched_at": "2026-06-04T00:00:00Z",
+      "raw_snippet": "הוראות אלה מאמצות בעיקרן את כללי הדיווח החלים על בנקים מובילים בארצות הברית. אלו כוללים את תקני הדיווח של המוסד לתקינה בארה\"ב (ה-FASB), הוראות הדיווח של המפקחים על בנקים בארה\"ב והוראות הדיווח של רשות ני\"ע בארה\"ב (ה-SEC)",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
         "references/hebrew-financial-terms.md"
       ],
       "verified_via": "browser",
-      "verified_at": "2026-08-27T02:15:37.140572+00:00"
+      "verified_at": "2026-10-18"
     },
     {
       "claim_id": "securities-regs-structure",
@@ -465,10 +468,10 @@
     },
     {
       "claim_id": "companies-law-267a-remuneration-policy",
-      "claim": "Companies Law 5759-1999 Section 267A(a): the board of a public company, or of a private bond company, must set a remuneration policy for officers after considering the remuneration committee's recommendations.",
+      "claim": "Companies Law 5759-1999 Section 267A(a): the board of a public company, or of a private bond company, must set a remuneration policy for officers after considering the remuneration committee's recommendations. A policy set for more than three years must be re-approved once every three years (Sec. 267A(d)), with the remuneration committee recommending on its continued validity.",
       "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
       "raw_snippet": "להמליץ לדירקטוריון על מדיניות התגמול לנושאי משרה, כמשמעותה בסעיף 267א(א), וכן להמליץ לו, אחת לשלוש שנים, בעניין אישור המשך תוקפה של מדיניות תגמול שנקבעה לתקופה העולה על שלוש שנים, כאמור בסעיף 267א(ד)",
-      "fetched_at": "2026-08-27T02:13:09.684737+00:00",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
@@ -497,15 +500,17 @@
       ]
     },
     {
-      "claim_id": "small-corp-reliefs-are-opt-in",
-      "claim": "Reg. 5d(a): the small-corporation reliefs are opt-in. The board decides the corporation will report under the regulation in whole or in part, and the decision takes effect only after an immediate report under Reg. 5e(a)(2).",
+      "claim_id": "small-corp-reliefs-default-opt-out",
+      "claim": "Reg. 5d(a) as amended in 2017: a small corporation reports under the regulation in whole or in part at its choice (the reliefs apply by default; the pre-2017 board-election wording is struck).",
       "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
-      "raw_snippet": "דירקטוריון תאגיד קטן רשאי להחליט כי התאגיד ידווח לפי הוראות תקנה זו או חלקן",
-      "fetched_at": "2026-08-27T02:27:36.954347+00:00",
+      "raw_snippet": "(א) תאגיד קטן ידווח לפי תקנה זו כולה או חלקה לפי בחירתו.",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18"
     },
     {
       "claim_id": "icpas-570-sec-18-emphasis",
@@ -547,19 +552,21 @@
     },
     {
       "claim_id": "companies-law-302-distribution-tests",
-      "claim": "Companies Law Sec. 302(a): a company may make a distribution out of its profits (the profit test) provided there is no reasonable concern the distribution will prevent it meeting its existing and expected liabilities when due (the solvency test).",
+      "claim": "Companies Law Sec. 302(a): a company may make a distribution out of its profits (the profit test) provided there is no reasonable concern the distribution will prevent it meeting its existing and expected liabilities when due (the solvency test). (סעיף 302(א) לחוק החברות)",
       "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
-      "raw_snippet": "עליה להפוך להון מניות חלק מרווחיה, כמשמעותם בסעיף 302(ב)",
-      "fetched_at": "2026-08-27T02:38:14.906849+00:00",
+      "raw_snippet": "חברה רשאית לבצע חלוקה מתוך רווחיה (להלן – מבחן הרווח), ובלבד שלא קיים חשש סביר שהחלוקה תמנע מן החברה את היכולת לעמוד בחבויותיה הקיימות והצפויות, בהגיע מועד קיומן (להלן – מבחן יכולת הפרעון)",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "raw_snippet_secondary": "חלוקה מותרת 302. (א) חברה רשאית לבצע חלוקה מתוך רווחיה (להלן – מבחן הרווח), ובלבד שלא קיים חשש סביר שהחלוקה תמנע מן החברה את היכולת לעמוד בחבויותיה הקיימות והצפויות, בהגיע מועד קיומן (להלן – מבחן יכולת הפרעון)"
+      "raw_snippet_secondary": "חלוקה מותרת 302. (א) חברה רשאית לבצע חלוקה מתוך רווחיה (להלן – מבחן הרווח), ובלבד שלא קיים חשש סביר שהחלוקה תמנע מן החברה את היכולת לעמוד בחבויותיה הקיימות והצפויות, בהגיע מועד קיומן (להלן – מבחן יכולת הפרעון)",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18"
     },
     {
       "claim_id": "companies-law-303-court-distribution",
-      "claim": "Companies Law Sec. 303(a): the court may, on a company's application, approve a distribution that does not meet the profit test, provided it is satisfied the solvency test is met.",
+      "claim": "Companies Law Sec. 303(a): the court may, on a company's application, approve a distribution that does not meet the profit test, provided it is satisfied the solvency test is met. (סעיף 303 לחוק החברות)",
       "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
       "raw_snippet": "חלוקה באישור בית משפט 303. (א) בית המשפט רשאי, לבקשת חברה, לאשר לה לבצע חלוקה שלא מקיימת את מבחן הרווח, ובלבד ששוכנע שמתקיים מבחן יכולת הפירעון",
       "fetched_at": "2026-08-27T02:38:14.906849+00:00",
@@ -570,15 +577,528 @@
     },
     {
       "claim_id": "immediate-report-reg30-clock",
-      "claim": "Reg. 30(b): an event first learned after 09:30 and before 17:00 on a trading day is reported no later than 09:30 the following trading day.",
+      "claim": "Reg. 30(b)(1): an event first learned after 09:30 and before 17:00 on a trading day is reported no later than 09:30 the following trading day. (תקנה 30(ב)(1))",
       "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
-      "raw_snippet": "החלפת תקנה 30 הנוסח הקודם: 30. (א) התאגיד יגיש לרשות ולרשם דו\"חות מיידיים על האירועים המפורטים בפרק זה",
-      "fetched_at": "2026-08-27T02:38:14.906849+00:00",
+      "raw_snippet": "משנודע לתאגיד לראשונה על אירוע לאחר השעה 9.30 ולפני השעה 17.00 ביום מסחר כלשהו – לא יאוחר משעה 9.30 ביום המסחר שלאחריו",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "raw_snippet_secondary": "משנודע לתאגיד לראשונה על אירוע לאחר השעה 9.30 ולפני השעה 17.00 ביום מסחר כלשהו – לא יאוחר משעה 9.30 ביום המסחר שלאחריו"
+      "raw_snippet_secondary": "משנודע לתאגיד לראשונה על אירוע לאחר השעה 9.30 ולפני השעה 17.00 ביום מסחר כלשהו – לא יאוחר משעה 9.30 ביום המסחר שלאחריו",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18"
+    },
+    {
+      "claim_id": "shelf-12-more-months",
+      "claim": "The ISA extends the shelf period by 12 more months on request where the Sec. 23A(d) conditions are met (Sec. 23A(b)).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_001.htm",
+      "raw_snippet": "יאריכו את התקופה האמורה בסעיף קטן זה ב-12 חודשים נוספים",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "shelf-commercial-paper-12-months",
+      "claim": "A shelf prospectus limited to commercial paper: the offering is made within 12 months of publication (Sec. 23A(c)).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_001.htm",
+      "raw_snippet": "רק את הפרטים שיש לכלול בתשקיף להצעת ניירות ערך מסחריים, תיעשה במהלך 12 חודשים מיום פרסומו של תשקיף המדף",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "shelf-offering-report-23a-f",
+      "claim": "An offering under a shelf prospectus is generally made by a shelf offering report (Sec. 23A(f)); see shelf-offering-report-exception-23a-f for the exception.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_001.htm",
+      "raw_snippet": "ביקש המציע להציע ניירות ערך על פי תשקיף מדף, יגיש לרשות דוח על ההצעה (בחוק זה – דוח הצעת מדף)",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "periodic-report-reg7b-signature",
+      "claim": "Reg. 7(b): the signature date of the periodic report may not precede the date it is filed with the ISA by more than 3 days.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "(ב) תאריך החתימה על הדו\"ח התקופתי לא יקדם ביותר משלושה ימים מהתאריך שבו יוגש לרשות.",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "quarterly-reg39b-signature",
+      "claim": "Reg. 39(b): the signature date of the quarterly report may not precede filing by more than 3 days.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "(ב) תאריך החתימה על הדוח הרבעוני לא יקדם ביותר משלושה ימים מהתאריך שבו יוגש לרשות ולבורסה.",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-bonds-200m",
+      "claim": "Reg. 5c(a)(3): for a corporation whose bonds are held by the public, the par value of bonds in circulation must be below NIS 200M.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "לעניין תאגיד שתעודות התחייבות שהנפיק מוחזקות בידי הציבור – הערך הנקוב של תעודות ההתחייבות שבמחזור נמוך ממאתיים מיליון שקלים חדשים",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-cpi-indexation-clause",
+      "claim": "Reg. 5c indexes the amounts when the CPI rises by more than 10%, and the ISA chair publishes the updated text.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "יעודכנו הסכומים הקבועים בתקנת משנה זו; סכום מעודכן כאמור, יעוגל לשקל החדש השלם הקרוב",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-threshold-indexed-2024",
+      "claim": "From 1 January 2024 the Reg. 5c(a)(1)(a) small-corporation threshold of NIS 300,000,000 became NIS 335,519,486 by ISA notice of 31 December 2023.",
+      "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6253f4f00241c/file311223.pdf",
+      "raw_snippet": "במקום הסכום 300,000,000 שקלים חדשים יבוא 335,519,486 שקלים חדשים",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "disclosure-reform-final-report-2026-06-16",
+      "claim": "The committee on periodic and immediate disclosure published its final report on 16 June 2026; as of the memo these were recommendations only and no legislation had been amended.",
+      "source_url": "https://www.shibolet.com/?p=26254",
+      "raw_snippet": "לדוח הסופי של הוועדה לבחינת דרישות הגילוי בדוחות עיתיים ומיידיים, שפורסם ביום 16 ביוני 2026",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "disclosure-reform-management-report",
+      "claim": "The reform replaces the board report with a management report (doch hanhala).",
+      "source_url": "https://www.shibolet.com/?p=26254",
+      "raw_snippet": "דוח הנהלה (במקום דוח דירקטוריון)",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "disclosure-reform-revised-drafts-2026-10-06",
+      "claim": "On 6 October 2026 the ISA published revised draft regulations after public comments, and the Ministry of Finance posted them on the government legislation site for further comment.",
+      "source_url": "https://www.funder.co.il/article/211159",
+      "raw_snippet": "לאחר בחינת הערות הציבור שהתקבלו מפרסמת הרשות באתרה את טיוטות התקנות המתוקנת ואת התייחסותה להערות הציבור העיקריות ובנוסף, משרד האוצר פרסם את טיוטות התקנות באתר החקיקה הממשלתי לקבלת הערות ציבור נוספות",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
+    },
+    {
+      "claim_id": "disclosure-reform-effective-next-fiscal-year",
+      "claim": "Once enacted by the Finance Minister with Finance Committee approval, the regulations take effect in the fiscal year after publication in Reshumot.",
+      "source_url": "https://www.bizportal.co.il/capitalmarket/news/article/20044153",
+      "raw_snippet": "התקנות ייכנסו לתוקף בשנת הכספים שאחרי הפרסום ברשומות",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "tax-form-1214-companies",
+      "claim": "Form 1214 is the annual income-tax return for companies.",
+      "source_url": "https://www.gov.il/he/service/reporting-and-payment-annual-tax-report-2025-companies",
+      "raw_snippet": "טופס 1214 - דין וחשבון על הכנסת החברה בארץ ובחו\"ל בשנת המס 2025",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "browser",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json"
+      ]
+    },
+    {
+      "claim_id": "tax-form-6111-appendix",
+      "claim": "Form 6111 is the appendix to the annual return of an individual and of a body of persons.",
+      "source_url": "https://www.gov.il/he/service/reporting-and-payment-annual-tax-report-2025-companies",
+      "raw_snippet": "טופס 6111 - נספח לטופס הדו\"ח השנתי ליחיד ולחבר בני אדם לשנת המס 2025",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "browser",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json"
+      ]
+    },
+    {
+      "claim_id": "tax-form-1301-individuals",
+      "claim": "Form 1301 is the annual income-tax return for individuals and business owners that are not companies.",
+      "source_url": "https://www.gov.il/he/service/reporting-and-payment-2025-annual-tax-report-for-individuals",
+      "raw_snippet": "דוח מס שנתי 2025 ליחידים ובעלי עסקים שאינם חברה (טופס 1301)",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "browser",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "metadata.json"
+      ]
+    },
+    {
+      "claim_id": "shelf-extension-section-23a",
+      "claim": "The 12-month shelf extension is granted under Section 23A of the Securities Law.",
+      "source_url": "https://www.grantthornton.co.il/insights1/professional-insights/2024/Extension_of_shelf_prospectus_period_by_six_months/",
+      "raw_snippet": "אישורים להארכת תשקיף מדף ב-12 חודשים נוספים (היינו, שנה שלישית) על פי סעיף 23א",
+      "fetched_at": "2026-06-04T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ixbrl-mandatory-amendment-on-2026-plan",
+      "claim": "The ISA 2026 regulatory plan lists the amendment of the electronic signature and reporting regulations to allow iXBRL reporting and of the Magna rules setting the scope and timetable, i.e. mandatory iXBRL is planned, not yet enacted.",
+      "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-628ce07f9490d/ASDA2026.pdf",
+      "raw_snippet": "תיקון תקנות חתימה ודיווח אלקטרוני, כך שיתאפשר דיווח בפורמט",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-opt-out-disclosure-5e-b",
+      "claim": "Reg. 5e(b): a small corporation that chose not to report under Reg. 5d in whole or in part discloses which provisions it chose not to apply, prominently on the first page of every periodic and interim report.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "בחר תאגיד קטן שלא לדווח לפי תקנה 5ד כולה או חלקה, ייתן על כך גילוי תוך פירוט אילו מהוראות התקנה האמורה בחר שלא ליישם",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-stop-immediate-report-5e-a2",
+      "claim": "Reg. 5e(a)(2): an immediate report is filed on the decision to stop reporting under Reg. 5d.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "החלטת התאגיד בדבר הפסקת דיווח לפי תקנה 5ד, תוך פירוט אילו מהוראות התקנה האמורה בחר להפסיק ליישם",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-no-reentry-same-year-5e-a1",
+      "claim": "Reg. 5e(a1): a corporation that decided not to report under Reg. 5d may not report under it in that same reporting year.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "והוא לא יהיה רשאי לדווח לפי התקנה האמורה, כולה או חלקה לפי העניין, באותה שנת דיווח",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-exit-30-september-5e-c",
+      "claim": "Reg. 5e(c): a corporation that ceased to be small may keep reporting under Reg. 5d up to and including the quarterly report for the quarter ending 30 September of that year.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "עד וכולל הדוח הרבעוני לרבעון שמסתיים ביום 30 בספטמבר בשנת הדיווח שבה חדל להיחשב תאגיד קטן",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-9c-exemption-5d-b6",
+      "claim": "Reg. 5d(b)(6), added 2022: a small corporation whose bonds are not held by the public is exempt from Reg. 9c and from the value detail under Reg. 11(1).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "(6) תאגיד שהציבור לא מחזיק תעודות התחייבות שהנפיק, פטור מתקנה 9ג וכן מפירוט ערכם של המניות או ניירות הערך ההמירים לפי תקנה 11(1)",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-market-risk-head-deleted",
+      "claim": "Reg. 5d(b)(3) (the market-risk relief) is deleted.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "(3) (נמחקה); \n(4) לעניין דיווח בדבר אפקטיביות הבקרה הפנימית",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-determining-date-1-january",
+      "claim": "The determining date is 1 January of each reporting year.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "\"המועד הקובע\" – 1 בינואר בכל שנת דיווח",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-60-day-average",
+      "claim": "Market value is the average over the 60 days before the determining date.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "בתקופה של 60 ימים שקדמה למועד הקובע",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-band-indexed-279m",
+      "claim": "Indexed from 1.1.2024: Reg. 5c(b)(1) NIS 250M became NIS 279,599,572.",
+      "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6253f4f00241c/file311223.pdf",
+      "raw_snippet": "במקום הסכום 250,000,000 שקלים חדשים יבוא 279,599,572 שקלים חדשים",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-band-indexed-391m",
+      "claim": "Indexed from 1.1.2024: Reg. 5c(b)(2) NIS 350M became NIS 391,439,401.",
+      "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_lobby/al_lobby-6253f4f00241c/file311223.pdf",
+      "raw_snippet": "במקום הסכום 350,000,000 שקלים חדשים יבוא 391,439,401 שקלים חדשים",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "pdf-text-extraction",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-band-5c-b",
+      "claim": "Reg. 5c(b): a corporation that was not small at the previous determining date does not become small on value alone if its value is above the lower band; one that was small stays small below the upper band.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "לא ייחשב תאגיד לתאגיד קטן בשל התקיימות האמור בתקנת המשנה האמורה בלבד, אם במועד הקובע האחרון שקדם למועד הקובע",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "immediate-report-reg30-same-day",
+      "claim": "Reg. 30(b)(2)(b): an event learned up to 09:30 on a trading day is reported by 13:00 the same trading day.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "עד השעה 9.30 ביום מסחר כלשהו – לא יאוחר מהשעה 13.00 באותו יום מסחר",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "immediate-report-reg30-after-17",
+      "claim": "Reg. 30(b)(2)(a): an event learned after 17:00 on a trading day is reported by 13:00 the next trading day.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "לאחר השעה 17.00 ביום מסחר כלשהו – לא יאוחר משעה 13.00 ביום המסחר שלאחריו",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "immediate-report-reg30-non-trading-day",
+      "claim": "Reg. 30(b)(2)(c): an event learned on a non-trading day is reported by 13:00 on the next trading day.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "ביום שאינו יום מסחר – לא יאוחר משעה 13.00 ביום המסחר הקרוב",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "periodic-report-five-chapters-reg8b",
+      "claim": "Reg. 8(b): the periodic report is divided into five chapters, the fifth being the report on the effectiveness of internal control over financial reporting and disclosure. (תקנה 8(ב))",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "הדוח התקופתי יחולק לחמישה פרקים לפי הסדר שלהלן: תיאור עסקי התאגיד; דוח הדירקטוריון על מצב עניני התאגיד; דוחות כספיים; פרטים נוספים על התאגיד; דוח בדבר אפקטיביות הבקרה הפנימית על הדיווח הכספי ועל הגילוי",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "ceo-cfo-certifications-reg9b-d",
+      "claim": "Reg. 9b(d): the CEO and CFO certifications (Ninth Schedule) are attached to the annual internal-control report.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "לדוח השנתי על הבקרה הפנימית יצורפו הצהרות כמפורט להלן",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-certs-attached-to-periodic",
+      "claim": "Reg. 5d(b)(4)(a)(2): for a small corporation, the certifications are attached to the periodic report itself.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "במקום \"לדוח השנתי על הבקרה הפנימית יצורפו\" יקראו \"תאגיד יצרף לדוח התקופתי\"",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "companies-law-171c-board-approval",
+      "claim": "Companies Law Sec. 171(c): the financial statements are approved by the board, signed in its name, and presented to the annual meeting.",
+      "source_url": "https://www.nevo.co.il/law_html/law00/71858.htm",
+      "raw_snippet": "הדוחות הכספיים יאושרו בידי הדירקטוריון, ייחתמו בשמו, ויובאו לפני האסיפה השנתית",
+      "fetched_at": "2026-10-18T06:00:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "reg9c-b-banks-insurers",
+      "claim": "Reg. 9c(b): Reg. 9c does not apply to a banking corporation, a credit-card company or an insurer.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "(ב) תקנה זו לא תחול על – \n(1) תאגיד בנקאי וחברת כרטיסי אשראי; \n(2) מבטח.",
+      "fetched_at": "2026-10-18T06:40:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "reg9c-c-immaterial",
+      "claim": "Reg. 9c(c): a corporation may omit the separate information in whole or in part where it adds no material information beyond the annual financial statements.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "תאגיד רשאי שלא לצרף מידע נפרד, כולו או חלקו, אם אין בו תוספת מידע מהותי על המידע הכלול בדוחות הכספיים השנתיים של התאגיד",
+      "fetched_at": "2026-10-18T06:40:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "small-corp-bond-issue-12-month-tail-5e-c1",
+      "claim": "Reg. 5e(c1): a small corporation that relied on Reg. 5d(b)(5) or (6) and then issues bonds to the public keeps those reliefs for reporting periods ending within 12 months of the issuance.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_014.htm",
+      "raw_snippet": "הנפיק תאגיד שפעל לפי הוראות תקנה 5ד(ב)(5) או (6) תעודות התחייבות לציבור, ימשיכו לחול עליו הפסקאות האמורות בתקופות הדיווח שיסתיימו בתוך שנים עשר חודשים",
+      "fetched_at": "2026-10-18T06:40:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page, CURRENT text only (struck-through historical versions hidden with display:none were excluded); read 2026-10-18",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "shelf-offering-report-exception-23a-f",
+      "claim": "Sec. 23A(f) exception: no shelf offering report is required where all the offering terms, including the order period, were fixed in the shelf prospectus at publication.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/308_001.htm",
+      "raw_snippet": "לא תחול על הצעת ניירות ערך על פי תשקיף מדף אשר כל פרטיה, לרבות התקופה להגשת הזמנות על פיה, נקבעו בתשקיף המדף במועד פרסומו",
+      "fetched_at": "2026-10-18T05:10:00+03:00",
+      "verified_via": "archive.org snapshot of the cited Nevo page (nevo.co.il returned 403 IP-block on 2026-10-18; Wayback copy 20260520 read and the passage copied verbatim)",
+      "verified_at": "2026-10-18",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ]
     }
   ]
 }

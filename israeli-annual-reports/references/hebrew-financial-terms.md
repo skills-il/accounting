@@ -27,11 +27,11 @@
 ## MAYA Filing Types
 | Hebrew | English | When |
 |--------|---------|------|
-| דוח מיידי | Immediate Report | Within hours of event |
+| דוח מיידי | Immediate Report | By 09:30 or 13:00 of the same or next trading day, per Reg. 30(b) |
 | דוח רבעוני | Quarterly Report | Two months from the report date, and within 3 days of the auditor's signature on the interim review report (Reg. 39(a)) |
 | דוח חצי-שנתי | Half-Yearly Report | Two months from the end of Q2 (Regs. 39-49 apply, "report date" = last day of Q2); filed by small corporations without publicly-held debt in place of Q1/Q3 reports |
 | דוח תקופתי | Annual Report | Within 3 months |
-| תשקיף מדף | Shelf Prospectus | Valid up to 3 years |
+| תשקיף מדף | Shelf Prospectus | Offers within 24 months, extendable by 12 (Sec. 23A) |
 
 ## Auditor's Report Terms (ICPAS standards)
 | Hebrew | English | Note |
@@ -40,12 +40,12 @@
 | חוות דעת מסויגת | Qualified opinion | Modified; ICPAS 705 |
 | חוות דעת שלילית | Adverse opinion | Modified; ICPAS 705 |
 | הימנעות מחוות דעת | Disclaimer of opinion | Modified; ICPAS 705 |
-| הערת עסק חי | Going-concern emphasis | Emphasis-of-matter (ICPAS 570); does NOT modify the opinion grade |
+| הערת עסק חי | Going-concern paragraph | ICPAS 570: does not modify the opinion where disclosure is adequate; inadequate disclosure means a qualified or adverse opinion |
 | ענייני מפתח בביקורת | Key Audit Matters (KAM) | ICPAS 701; in larger issuers' reports |
 
 ## Israeli Accounting Standards
 - IFRS adopted in 2008 for public companies
-- Banks: Bank of Israel Supervisor of Banks "Public Reporting Directives" (Hora'ot ha-Divuach la-Tzibur), drawing on US bank-reporting rules with IFRS for some topics
+- Banks: Bank of Israel Supervisor of Banks "Public Reporting Directives" (Hora'ot ha-Divuach la-Tzibur), adopting mainly US bank-reporting rules (FASB, US bank supervisors, SEC)
 - Insurance: IFRS 17 first-time implementation in Israel postponed to 2025 (global effective date was 2023)
 - Small private companies may use Israeli GAAP
-- Small corporation (taagid katan, defined in Reg. 5ג, reliefs in Reg. 5ד): reliefs bundle, half-yearly reporting (no Q1/Q3), no ISOX internal-control report, 20% valuation materiality (vs 10%), market-risk disclosure relief
+- Small corporation (taagid katan, defined in Reg. 5ג, reliefs in Reg. 5ד, applying by default with an opt-out): half-yearly reporting (no Q1/Q3) and no Reg. 9ג solo data if no public bonds, no ISOX internal-control report, 20% valuation materiality (vs 10%), 40% associated-company threshold (vs 20%). The market-risk relief was deleted in 2017.

@@ -1,6 +1,36 @@
 {
   "cycles": [
     {
+      "version": "1.6.0",
+      "date": "2026-10-18",
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "h1 annual periodic report deadline",
+          "h2 Form 1301 deadline (no-trigger)",
+          "h3 small corp Q1/Q3 exemption",
+          "h4 Form 1214 + 6111 (no-trigger)"
+        ]
+      },
+      "lessons": [
+        "THE EVIDENCE GATE VERIFIED REPEALED LAW. Nevo pages embed struck-through historical versions of every provision inside hidden elements (style display:none, <s>). --check-sources does a raw-text match, so a snippet copied from the struck pre-2017 Reg. 5ד(א) ('דירקטוריון תאגיד קטן רשאי להחליט') passed as 'verified against source' and propped up a REVERSED rule (reliefs called opt-in; since 2017 they apply by default with an opt-out disclosed on the first page). Read only the current visible text when sourcing from Nevo; the gate cannot tell you.",
+        "1.5.0 had REVERSED Reg. 7(a): it called the 3-days-from-auditor-signature limb 'not a deadline' and the 'whichever is earlier' reading 'backwards', while its own evidence snippet ended 'לפי המוקדם'. Self-consistency passed because the numbers matched; nobody read the snippet against the prose. Reg. 7(b) is about the periodic report's own signature date.",
+        "Expert caught three more real defects the drift brief never mentioned: Reg. 30(b) clock gave a full extra day for events learned before 09:30 on a trading day (same-day 13:00) and lacked the non-trading-day limb; the periodic report has FIVE chapters (Reg. 8(b)) with CEO/CFO certifications attached to the Part E ISOX report (Reg. 9ב(ד)); small-corp relief head (3) market-risk was deleted in 2017 and head (6) (9ג/11(1) exemption, 2022) was missing. Round 2 then found 9ג(ב)/(ג) carve-outs (banks, insurers, immaterial) missing, which made the skill's own bank example a false positive.",
+        "Small-corp threshold NIS 300M was stale since 1.1.2024 (ISA notice 31.12.2023: 335,519,486; band 279,599,572 / 391,439,401). Nevo prints the unindexed regulation text, so a Nevo-only check can never see it. Next indexation fires when CPI exceeds 10% over Dec 2023; re-check the ISA notices page each cycle.",
+        "Shelf prospectus 'valid up to 3 years' replaced with Sec. 23A(b)-(c): 24 months, ISA SHALL extend 12 on conditions, commercial paper 12 months; shelf offering report not needed where all terms were fixed in the prospectus (23A(f)).",
+        "Judge round 1 also caught: bank directives 'incorporate IFRS for some topics' was unsourced (BOI page says only 'adopt mainly US bank rules'); Sec. 267A(d) inverted ('up to three years' -> a policy over three years needs re-approval every three years); two evidence snippets quoted the wrong provision (superseded Reg. 30, Sec. 304 for Sec. 302).",
+        "VALUE-ADD: first run scored with=0.25 because the skill never FIRED on Hebrew deadline prompts (turns=1, no Skill call) in 3 of 4 cases; the content was never exercised. Adding Hebrew trigger terms (דוח תקופתי, דוח רבעוני, דיווח מיידי, תאגיד קטן) and 'filing deadlines' to the description took it to with=0.88 vs without=0.08 (+0.79). The simulated 5.7 router eval could not see this; only the real plugin eval did.",
+        "Resolved CARRY items: Registrar persistent_fail (description now has a Do NOT use clause), shelf term + shelf offering report, ISA disclosure reform (final report 16.6.2026, revised drafts 6.10.2026, not in force), Reg. 5ג determining date (1 January) and 60-day measurement.",
+        "Re-scoped to out-of-scope explicit (2026-10-18, rationale in domain-checklist): Companies Law governance mechanics (Secs. 117/121/154-167/219/239/240/320-327) and Magna filer-side mechanics.",
+        "DEFERRED (advisory, judge r2): Reg. 5ג(א)(4) 'ניירות הערך שלו אינם נסחרים בבורסה' rendering is ambiguous on Nevo, check on next update; HE file is shallower than EN on Sec. 115 composition, Sec. 275 and the IAS 21 functional-vs-presentation nuance (parity, not contradiction); Sec. 267A(c) override excludes a public granddaughter company; retire the immediate-report-timing ISA PDF claim in favour of the three Reg. 30 entries; non-calendar fiscal year note on Sec. 172.",
+        "Enriched FAQ in the DB carried 1.x errors (banks 'IFRS with BOI adaptations', audit committee 'Sec. 267-269', 'Sec. 172 board approval', 'Sec. 173 auditor appointment'); corrected in this cycle's Phase 9."
+      ]
+    },
+    {
       "version": "1.5.0",
       "date": "2026-08-27",
       "holdout_before": 0.75,
