@@ -448,7 +448,7 @@
       "claim_id": "isa-104-18-pdf-url",
       "claim": "ISA staff legal position 104-18 (small exempt corporation reporting format, the half-yearly substitute) is published at this new.isa.gov.il PDF.",
       "source_url": "https://www.new.isa.gov.il/images/Fittings/isa/asset_library_pic/al_corporations_asset_library/corporations_pdf_pages-62eb9004f19c3/240417.pdf",
-      "raw_snippet": "‫עמדה משפטית מספר ‪ :104-18‬מתכונת הדיווח של תאגיד קטן פטור‬",
+      "raw_snippet": "עמדה משפטית מספר  :104-18מתכונת הדיווח של תאגיד קטן פטור",
       "fetched_at": "2026-06-04T00:00:00Z",
       "appears_in": [
         "references/domain-checklist.md"
