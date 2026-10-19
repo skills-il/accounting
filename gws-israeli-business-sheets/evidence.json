@@ -522,7 +522,7 @@
       "claim_id": "bl-self-employed-bands-2026",
       "claim": "Bituach Leumi for the self-employed from 1.1.2026: reduced band on monthly income up to NIS 7,703, full band from 7,703 to the maximum of NIS 51,910 per month.",
       "source_url": "https://www.btl.gov.il/Insurance/National%20Insurance/type_list/Self_Employed/Pages/rates.aspx",
-      "raw_snippet": "על הכנסה חודשית 7,703 ש\"ח - (שיעור מופחת) ​על הכנסה חודשית מעל 7,703 ש\"ח ועד ההכנסה המרבית החייבת בדמי ביטוח בסך 51,910 ש\"ח לחודש - (שיעור רגיל)",
+      "raw_snippet": "על הכנסה חודשית 7,703 ש\"ח - (שיעור מופחת) על הכנסה חודשית מעל 7,703 ש\"ח ועד ההכנסה המרבית החייבת בדמי ביטוח בסך 51,910 ש\"ח לחודש - (שיעור רגיל)",
       "fetched_at": "2026-10-18T02:06:16Z",
       "appears_in": [
         "references/israeli-tax-categories.md"
@@ -532,7 +532,7 @@
       "claim_id": "bl-self-employed-rates-2026",
       "claim": "Self-employed aged 18 to retirement age: national insurance 4.47% reduced / 12.83% full; health insurance 3.23% / 5.17%; total 7.7% / 18%.",
       "source_url": "https://www.btl.gov.il/Insurance/National%20Insurance/type_list/Self_Employed/Pages/rates.aspx",
-      "raw_snippet": "דמי ביטוח לאומי 4.47% ​ 12.83% דמי ביטוח בריאות 3.23% 5.17% סך הכול 7.7% 18%",
+      "raw_snippet": "דמי ביטוח לאומי 4.47%  12.83% דמי ביטוח בריאות 3.23% 5.17% סך הכול 7.7% 18%",
       "fetched_at": "2026-10-18T02:06:16Z",
       "appears_in": [
         "references/israeli-tax-categories.md"

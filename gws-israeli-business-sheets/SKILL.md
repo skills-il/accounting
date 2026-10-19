@@ -325,7 +325,7 @@ Actions:
 4. Export the summary tab with `gws sheets spreadsheets values get --format csv`
 5. Display the summary: total income, total expenses, VAT collected, input VAT, net VAT liability
 
-Result: A clean VAT period summary both in the Google Sheet and as a local CSV file ready to send to the accountant.
+Result: A clean VAT period summary both in the Google Sheet and as a local CSV file ready for the accountant.
 
 ### Example 3: Auto-Log Bank Transfers into Expense Sheet
 

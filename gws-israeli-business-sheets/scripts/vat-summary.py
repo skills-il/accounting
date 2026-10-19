@@ -146,11 +146,11 @@ def parse_amount(amount_str) -> float:
     raw = str(amount_str).strip()
     if not raw:
         return 0.0
-    cleaned = re.sub(r"[‎‏‪-‮⁦-⁩]", "", raw)
+    cleaned = re.sub(r"[\u200e\u200f\u202a-\u202e\u2066-\u2069]", "", raw)
     cleaned = cleaned.replace("−", "-")
     for token in ("₪", "ILS", "NIS", "ש\"ח", "שקל"):
         cleaned = cleaned.replace(token, "")
-    cleaned = cleaned.replace(" ", " ").replace(" ", "")
+    cleaned = cleaned.replace("\u00a0", " ").replace(" ", "")
     trailing_minus = cleaned.endswith("-") and len(cleaned) > 1
     if trailing_minus:
         cleaned = cleaned[:-1]  # "1,234.00-" accounting style
