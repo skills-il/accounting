@@ -78,6 +78,18 @@ hour; and a shiluv or para-medical teaching worker runs 26 frontal + 3 private +
 stay in elementary, or 23 + 2 + 11 in a junior-high, with travel between schools
 counted as stay time.
 
+## Salary unification (ichud maskorot) for a split appointment
+
+Per the Ministry's salary-consolidation page: kviut at the employer that unifies
+(the Ministry or the baalut), plus at least a third position in the junior-high to
+unify through the Ministry, or at least a half position in the high school to unify
+through the baalut, in a six-year school sharing one institution code. Kviut at
+both employers in the same year means unification where the position is larger;
+kviut at the baalut first blocks unification at the Ministry. A high-school
+principal, a junior-high principal and a first deputy in a junior-high are not
+covered. When the two parts together exceed 100% of a position, unification can
+lose benefits capped at 100%, such as havraa, bigud and meonot.
+
 ## Havraa days by teaching seniority
 
 Teachers are paid the PUBLIC-sector havraa day rate, not the private one. Days
@@ -91,6 +103,41 @@ for a full position, proportional for part-time:
 | 16 to 19 years | 11 |
 | 20 to 24 years | 12 |
 | 25 years and over | 13 |
+
+The day rate: per the Commissioner on Wages circular of 8.6.2026 the public-sector
+day is 511.60 NIS from 1.6.2026, up from 471.40 NIS. The 451.50 NIS agreed for the
+private sector on 22.6.2026 does not bind teachers; using it understates every day.
+
+## Pension layers on a teacher slip
+
+The Ministry pension page (stated as of 1.6.2018) lists four rows: pensia vatika
+(employer 7.5% + 6% severance, employee 7%); pensia tzoveret (employer 7.5% +
+6.224% severance, employee 6% or 7%, her choice); expense reimbursements such as
+travel and phone (employer 5%, employee 5% to 7%); and work above 100% (employer
+7.5% + 8.33% severance, employee 5% to 7%). So a slip can carry two or three
+pension lines, including one on the travel allowance. A teacher who gave birth
+during the school year has retroactive pension, provident and keren deductions
+taken from her July salary.
+
+## July and August
+
+July and August are paid as holiday pay in proportion to the months actually
+worked in the year, and no pay component changes in those months (a gmul cannot
+take effect in July or August).
+
+## Bigud and the context baselines
+
+The annual clothing allowance (bigud) is 2,527 NIS for a full position at
+seniority level 4 in 2026. The 91 NIS cut and the de-indexation that produced
+2,314 NIS in 2025 (from 2,405 NIS in 2024) were a one-time measure for that year
+only, so do not carry them forward.
+
+Minimum wage is 6,443.85 NIS a month from 1.4.2026 (6,247.67 NIS from 1.4.2025);
+the hourly rate is 35.40 NIS. The average wage is 13,769 NIS
+(Bituach Leumi section 2, January 2026). All of these are revised each year
+(minimum wage each April, the average wage and the BL steps each January); the
+2027 figures are not published yet. Teacher base pay comes from the agreement
+table, not from these figures.
 
 **Position ceiling.** Maximum employment across all institutions together is
 100%. A mother-teacher (morah em) may go to 100% actual work plus a 7% mother

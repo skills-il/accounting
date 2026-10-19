@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-teacher-payroll",
   "schemaVersion": "2",
-  "generated_at": "2026-08-27T00:00:00Z",
+  "generated_at": "2026-10-19T00:00:00Z",
   "claims": [
     {
       "claim": "אופק חדש היא רפורמת החינוך היסודי וחטיבות הביניים, שהוצגה לראשונה ב-24 במרץ 2008.",
@@ -367,7 +367,7 @@
       "claim": "Salary unification removes the need for annual tax coordination (teum mas). Without unification, two employers issue two separate payslips and the teacher must file teum mas or be over-withheld at the second employer. Reported by a teacher-finance publication, not an official ministry or union page; the skill instructs the user to confirm with the payroll unit before electing.",
       "claim_type": "feature",
       "source_url": "https://kesefmorim.com/teacher-blog/%D7%90%D7%99%D7%97%D7%95%D7%93-%D7%9E%D7%A9%D7%9B%D7%95%D7%A8%D7%95%D7%AA-%D7%99%D7%AA%D7%A8%D7%95%D7%A0%D7%95%D7%AA-%D7%95%D7%97%D7%A1%D7%A8%D7%95%D7%A0%D7%95%D7%AA/",
-      "raw_snippet": "איחוד משכורות פוטר אותנו מהצורך בתיאום-מס, מסיבה פשוטה.",
+      "raw_snippet": "איחוד-משכורות פוטר אותנו מהצורך בתיאום-מס, מסיבה פשוטה.",
       "confidence": "medium",
       "claim_id": "ichud-maskorot-tax-coord",
       "fetched_at": "2026-07-16T00:00:00Z",
@@ -375,7 +375,7 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_at": "2026-08-27T00:00:00Z",
+      "verified_at": "2026-10-19",
       "verified_via": "curl"
     },
     {
@@ -420,8 +420,9 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "curl",
-      "verified_at": "2026-08-27T00:00:00Z"
+      "verified_via": "browser",
+      "verified_at": "2026-10-19",
+      "note": "Kol Zchut blocks curl; rendered with Playwright, location.href asserted, snippet found in innerText."
     },
     {
       "claim": "The average wage in the economy per Bituach Leumi section 2 as of January 2026 is 13,769 ש\"ח (13,769 NIS). Section 1 average wage is 13,566.",
@@ -435,14 +436,15 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_at": "2026-08-27T00:00:00Z",
-      "verified_via": "curl"
+      "verified_at": "2026-10-19",
+      "verified_via": "browser",
+      "note": "Kol Zchut blocks curl; rendered with Playwright, location.href asserted, snippet found in innerText."
     },
     {
-      "claim": "Employee national-insurance rate: reduced rate rose from 0.40% to 1.04% from January 2025; the full rate stays at 7.00%. The previously cited https://www.btl.gov.il/Insurance/Rates/Pages/for-employees.aspx now returns 404.",
+      "claim": "Employee Bituach Leumi rates 2026: 1.04% on the part up to the reduced step and 7% above it.",
       "claim_type": "percentage",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
-      "raw_snippet": "לעובדים שכירים - שיעורי וסכומי דמי ביטוח | ביטוח לאומי ייתכן שאתה מנסה לגשת לאתר זה מדפדפן מאובטח בשרת.",
+      "raw_snippet": "דמי ביטוח לאומי 4.51% (החל ב- 01.01.2025) 1.04% (החל ב- 01.01.2025) 5.55% (החל ב- 01.01.2025) 7.6% (החל ב- 01.01.2019) 7% (החל ב- 01.01.2006)",
       "confidence": "high",
       "claim_id": "bituach-leumi-employee-rates",
       "fetched_at": "2026-08-19",
@@ -450,20 +452,20 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "dead link replaced with a live page from the same publisher, checked with a browser user agent",
-      "verified_at": "2026-08-19"
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
     },
     {
       "id": "health-tax-rates",
-      "claim": "דמי ביטוח בריאות לעובד שכיר: 3.23% על חלק השכר שעד מדרגת הגביה המופחתת, שעומדת על 7,703 ש\"ח מ-01.01.2026, ו-5.17% מעליה ועד ההכנסה המרבית 51,910 ש\"ח. הכתובת הקודמת, health-insurance-rates.aspx, מחזירה 404.",
+      "claim": "Health insurance employee rates: 3.23% up to the reduced step of 7,703 NIS and 5.17% above it, up to the maximum insured income of 51,910 NIS.",
       "claim_type": "percentage",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
       "source_fetched_at": "2026-07-06T00:00:00Z",
-      "raw_snippet": "מחלק השכר שעד מדרגת גביה מופחתת (שיעור מופחת) - 7,703 ש\"ח (החל ב- 01.01.2026)",
+      "raw_snippet": "דרגת גביה מופחתת (שיעור מופחת) - 7,703 ש\"ח (החל ב- 01.01.2026) ​ ​ מחלק השכר שמעל מדרגת גביה מופחתת ועד ההכנסה המרבית החייבת בדמי ביטוח (שיעור מלא) - 51,910 ש\"ח (החל ב- 01.01.2026) ​ ​ ​ מעסיק עובד סך הכול מעסיק עובד סך הכול דמי ביטוח לאומי 4.51% (החל ב- 01.01.2025) 1.04% (החל ב- 01.01.2025) 5.55% (החל ב- 01.01.2025) 7.6% (החל ב- 01.01.2019) 7% (החל ב- 01.01.2006) 14.6% (החל ב- 01.02.2025) דמי ביטוח בריאות - 3.23% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) - 5.17% (החל ב- 01.02.2025)",
       "confidence": "high",
       "claim_id": "btl-health-insurance-rates-2026",
-      "verified_via": "Bituach Leumi employee-rates page fetched with a browser user agent; figures read off the live rate table",
-      "verified_at": "2026-08-16",
+      "verified_via": "curl",
+      "verified_at": "2026-10-19",
       "fetched_at": "2026-08-16",
       "appears_in": [
         "SKILL.md",
@@ -501,10 +503,10 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "אתר ארגון המורים, שמייצג את עובדי ההוראה בחטיבות העליונות ומפרסם את הסכמי עוז לתמורה ואת טבלאות השכר שלהם. igm.org.il מפנה לעמוד הבית שכתובתו site/pg/igm_home.",
+      "claim": "Irgun HaMorim (ארגון המורים) site, the union of upper-secondary teachers; igm.org.il redirects to site/pg/igm_home.",
       "claim_type": "url",
       "source_url": "https://www.igm.org.il/site/pg/igm_home",
-      "raw_snippet": "רן ארז, יו\"ר ארגון המורים איגרת אישית לציבור המורים והמורות - משרד החינוך נגד ארגון המורים",
+      "raw_snippet": "ארגון המורים עמותה פדגוגית תנאי עבודה ופנסיה",
       "confidence": "high",
       "claim_id": "ref-url-igm",
       "fetched_at": "2026-08-19",
@@ -512,8 +514,8 @@
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_via": "Irgun HaMorim site read in a browser; the root URL redirects to its home page",
-      "verified_at": "2026-08-19"
+      "verified_via": "browser",
+      "verified_at": "2026-10-19"
     },
     {
       "claim": "אתר הסתדרות המורים הוא מקור ההסכמים והטבלאות של אופק חדש.",
@@ -837,19 +839,20 @@
       "verified_at": "2026-08-17"
     },
     {
-      "claim": "The minimum hourly wage is 35.40 NIS from 1.4.2026, the 6,443.85 NIS monthly figure on the 182-hour basis.",
+      "claim": "The minimum hourly wage is 35.40 NIS from 1.4.2026.",
       "claim_type": "figure",
       "source_url": "https://www.kolzchut.org.il/he/%D7%A9%D7%9B%D7%A8_%D7%9E%D7%99%D7%A0%D7%99%D7%9E%D7%95%D7%9D",
       "raw_snippet": "החל מיום 01.04.2026 שכר המינימום הוא 6,443.85 ₪ לחודש למשרה מלאה ו-35.40 ₪ לשעה",
       "confidence": "high",
-      "verified_via": "curl",
+      "verified_via": "browser",
       "claim_id": "min-wage-hourly-2025",
       "fetched_at": "2026-08-27T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
       ],
-      "verified_at": "2026-08-27T00:00:00Z"
+      "verified_at": "2026-10-19",
+      "note": "Kol Zchut blocks curl; rendered with Playwright, location.href asserted, snippet found in innerText."
     },
     {
       "claim": "שכר המינימום החודשי הוא 6,443.85 ש\"ח החל מ-1.4.2026, לאחר שעמד על 6,247.67 ש\"ח מ-1.4.2025. העמוד עצמו עדיין מנוסח סביב הסכום הקודם ומציין את החדש בסוגריים.",
@@ -1369,7 +1372,7 @@
     },
     {
       "claim_id": "teacher-retention-grant-10000",
-      "claim": "A one-off 10,000 NIS retention grant is paid in the September 2026 salary to a teacher whose employment began 1.9.2023.",
+      "claim": "Per the union page, the first cohort (teachers whose employment began 1.9.2023) is paid the 10,000 NIS retention grant in the September 2026 salary. Eligibility covers every new teacher from 1.9.2023 onward (retention-grant-onward).",
       "claim_type": "amount",
       "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
       "raw_snippet": "מענק שימור לעובד הוראה שהעסקתו החלה ביום 1.9.23 שתינתן במשכורת ספטמבר 2026 – 10,000 ₪",
@@ -1502,6 +1505,763 @@
       ],
       "verified_via": "curl",
       "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "claim_id": "oz-shekel-supplement-2026",
+      "claim": "From 1.9.2026 the Oz LaTmura tosefet shiklit for a full position is 1,790.50 NIS, up from 1,518 NIS.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/עדכוני-שכר-החל-מ-1-9-2026-לפי-הסכם-עוז-לתמורה-מ/",
+      "raw_snippet": "יש לעדכן סכום תוספת שקלית עוז 2023 מסך של 1,518.00 ₪ לסך של 1,790.50 ₪",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md",
+        "scripts/teacher_gross.py"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-shekel-supplement-prorated",
+      "claim": "Section 7(ג) of the 23.9.2024 agreement: the Oz tosefet shiklit is computed in proportion to the position fraction, including a position above 100%.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מיום-23-9-2024-עובדי-הוראה-בחטיבו/",
+      "raw_snippet": "בהתאם לסעיף 7(ג) להסכם הקיבוצי גם את סכום \"תוספת שקלית עוז 2023\" לעובד הוראה ברפורמה במשרה מלאה יש לחשב באופן יחסי לחלקיות המשרה לרבות היקף משרה העולה על 100%.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md",
+        "scripts/teacher_gross.py"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "keren-hishtalmut-teacher-rates",
+      "claim": "A dedicated teacher study fund takes employer 8.4% and employee 4.2% and carries the sabbatical right; a non-dedicated fund is 7.5% employer and 2.5% employee.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/training-gemel/education-fund/",
+      "raw_snippet": "ייעודית לעובדי הוראה שיעורי ההפרשות שונים משיעורי ההפרשות בקרנות הרגילות: מעסיק 8.4% עובד 4.2% וקרנות אלו מזכות ביציאה לשנת שבתון.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "keren-hishtalmut-nondedicated",
+      "claim": "A non-dedicated study fund takes 7.5% from the employer and 2.5% from the employee.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/training-gemel/education-fund/",
+      "raw_snippet": "שיעור ההפקדות בקרן השתלמות שאינה ייעודית שיעור ההפקדות בקרן השתלמות שאינה ייעודית הוא 7.5% מצד המעסיק ו-2.5% מצד העובד",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "teacher-pension-rates",
+      "claim": "Funded pension (pensia tzoveret) deposits for teachers: employer 7.5% pension plus 6.224% severance, employee 6% to 7%.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/training-gemel/pension/",
+      "raw_snippet": "פנסיה צוברת 7.5% 6.224% 6%–7%",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "teacher-pension-employee-choice",
+      "claim": "On the pension salary layer the teacher chooses to deposit 6% or 7%.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/training-gemel/pension/",
+      "raw_snippet": "העובד יכול לבחור אם להפקיד 6% או 7% לפי בחירתו",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "teacher-budgetary-pension-cutoff",
+      "claim": "State-employed teachers with kviut who joined before 1.9.2002 are on budgetary pension (pensia taktzivit).",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/training-gemel/pension/",
+      "raw_snippet": "עובדי הוראה בעלי קביעות שנקלטו לשירות המדינה לפני תאריך 1.9.02, וחל עליהם חוק שירות המדינה (גמלאות) [נוסח משולב]",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "ichud-maskorot-official",
+      "claim": "Ministry page: to unify salaries the teacher must hold kviut at the unifying employer, at least 1/3 position in the junior-high to unify at the Ministry, at least 1/2 in the high school to unify at the baalut.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/salary-consolidation/",
+      "raw_snippet": "עובד הוראה המאחד את משכורותו במשרד החינוך, חייב לעבוד בהיקף של 1/3 משרה לפחות בחטיבת ביניים. עובד הוראה המאחד את משכורתו בבעלות, חייב לעבוד לפחות 1/2 משרה בחטיבה העליונה.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-merit-points-1-67",
+      "claim": "Oz merit points: 10 points earn a promotion grade of 1.67% of the combined salary, at most 4 grades (6.69% cumulative), at least 3 years between grades.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/credit-points-oz/",
+      "raw_snippet": "צבירת 10 נקודות תזכה את עובד ההוראה בדרגת קידום בשיעור של 1.67% מהשכר המשולב. עובד הוראה יהיה זכאי ל-4 דרגות קידום לכל היותר במהלך תקופת העסקתו בשיעור מצטבר של 6.69%. פרק הזמן המינימלי בין דרגה לדרגה הוא 3 שנים.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-gmul-beit-sifri",
+      "claim": "Oz gmul tafkid beit-sifri from tashpaz: each unit is 200 NIS a month; paid at full shekel value from a third of a position; above 100% the full-position amount; 2 to 5 units.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/גמול-בית-ספרי-עוז-לתמורה-בשנת-הלימודים/",
+      "raw_snippet": "כל יחידת גמול תהיה שווה לסכום של 200 ₪ לחודש. כך למשל, תפקיד שנקבעו לו ארבע יחידות גמול מזכה את המורה אשר ימלא אותו בגמול תפקיד בית ספרי בסכום של 800 ₪ לחודש. מורה המועסק במשרה חלקית אשר ימלא תפקיד בית ספרי יהיה זכאי לגמול תפקיד בית ספרי בערכו השקלי המלא ובלבד שהועסק אצל המעסיק בחלקיות של שליש משרה (33.33%) ומעלה. מורה המועסק בחלקיות משרה העולה על משרה מלאה (100%) יהיה זכאי לגמול תפקיד בית ספרי בסכום לו זכאי מורה במשרה מלאה. מספר יחידות הגמול יהיה בין שתי יחידות גמול לחמש יחידות גמול",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md",
+        "scripts/teacher_gross.py"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-gmul-beit-sifri-cap",
+      "claim": "The Oz school-role gmul counts within the role-gmul quota; principals and deputy principals are not eligible; no keren hishtalmut deposits are made on it.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/גמול-בית-ספרי-עוז-לתמורה-בשנת-הלימודים/",
+      "raw_snippet": "גמול תפקיד בית ספרי יימנה במסגרת מכסת גמולי התפקיד אשר רשאי מורה לקבלם. לגמול תפקיד בית ספרי יהיה זכאי מורה אשר ימלא את התפקיד הבית ספרי במהלך שנת הלימודים לפי קביעת המנהל וכל עוד המורה ממלא את התפקיד האמור במהלך שנת הלימודים האמורה. למען הסר ספק מובהר כי הן התפקיד הבית ספרי והן גמול התפקיד הבית ספרי נקבעים על ידי המנהל מדי שנת לימודים מחדש, בהתאם להנחיות כאמור, ואין למורה אשר מילא תפקיד מסוים בשנת לימודים מסוימת זכאות להמשיך במילוי התפקיד עם תום שנת הלימודים. המינוי לתפקיד בית ספרי הוא לשנת לימודים מלאה. מורה לא ימונה ליותר מתפקיד בית ספרי אחד ולא יבצע יותר מתפקיד בית ספרי אחד, בשנת לימודים מסוימת. מנהלים וסגני מנהלים לא יהיו זכאים לגמול תפקיד בית ספרי.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md",
+        "scripts/teacher_gross.py"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-gmul-beit-sifri-keren",
+      "claim": "No keren hishtalmut deposits are made on the Oz school-role gmul.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/גמול-בית-ספרי-עוז-לתמורה-בשנת-הלימודים/",
+      "raw_snippet": "גמול התפקיד הבית ספרי לא יבוצעו הפרשות לקרן השתלמות",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md",
+        "scripts/teacher_gross.py"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-agreement-310826-physics",
+      "claim": "Irgun HaMorim agreement of 31.8.2026, in force to 31.8.2029: from 1.9.2026 the 5-unit physics bagrut preparation gmul rises from 2% to 4%.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-עם-ארגון-המורים-העל-יסודיי/",
+      "raw_snippet": "כנה לבחינת בגרות בפיזיקה בהיקף של 5 יחידות לימוד, משיעור של 2% לשיעור של 4%.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-agreement-310826-term",
+      "claim": "The 31.8.2026 Irgun HaMorim agreement is in force until 31.8.2029.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-עם-ארגון-המורים-העל-יסודיי/",
+      "raw_snippet": "תוקף ההסכם הינו עד יום 31.8.2029",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-substitution-hours",
+      "claim": "Up to four substitution hours in school year tashpaz for a full-position Oz teacher, with no extra pay; pro rata for part time.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-עם-ארגון-המורים-העל-יסודיי/",
+      "raw_snippet": "מספר שעות מילוי המקום שיוטלו מכוח סעיף זה לא יעלה על ארבע שעות לעובד במשרה מלאה במהלך שנת הלימודים. לגבי עובד במשרה חלקית",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-strike-day-260608",
+      "claim": "No pay is deducted for the 8.6.2026 education-system strike day.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-עם-ארגון-המורים-העל-יסודיי/",
+      "raw_snippet": "ביטול הפחתת שכר בגין יום 8.6.2026 אין להפחית משכרם של עובדי ההוראה",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "references/reform-hour-structure.md",
+        "references/wage-reduction.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "retention-grant-conditions",
+      "claim": "Retention grant: requires kviut with a 70% or higher position; 10,000 NIS for a full position, paid in the May after kviut; below full, by the weighted position over 36 months.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-לעניין-תנאי-העסקה-של-עובדי-הור/",
+      "raw_snippet": "בתנאי שיתמיד בעבודתו עד לקבלת קביעות ובמועד מתן הקביעות חלקיות משרתו תהיה 70% ומעלה. ב. עובד הוראה חדש במשרה מלאה, יהיה זכאי למענק חד פעמי בסכום של 10,000 ₪. סכום זה ישולם בחודש מאי הסמוך לאחר מועד כניסתו למעמד עובד קבוע. ג. עובד שמשרתו פחות ממשרה מלאה (בהתאם לכללים) יקבל מענק על פי חלקיות משרתו המשוקלל",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-rakaz-6pct-base-oz-supplement",
+      "claim": "Under Oz the rakaz miyumanuyot 6% gmul is computed on the combined salary plus the Oz LaTmura supplement (the section 17(א) roles carry the same base, see oz-rakaz-17a-roles-6pct).",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary-agreements/oz-letmura/oz-litmura-reform/",
+      "raw_snippet": "שיזכה בגמול תפקיד אחוזי בשיעור של 6% המחושב על בסיס השכר המשולב ותוספת עוז לתמורה",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "yeutz-preform-prorated",
+      "claim": "Pre-reform terms: the counsellor gmul is proportional to counselling employment; 12 weekly hours is the base for a full gmul; under 4 weekly hours earns no gmul.",
+      "claim_type": "fact",
+      "source_url": "https://terms-service.education.gov.il/terms/general-1a/1-12-roles-and-rewards/",
+      "raw_snippet": "הגמול יהיה יחסי לשיעור ההעסקה בייעוץ. עבודה בשיעור של 12 ש\"ש בייעוץ משמשת בסיס לתשלום גמול מלא (בהתאם לשנות הוותק בייעוץ). עבודה שהיא בשיעור פחות מ - 4 ש\"ש בייעוץ אינה מקנה גמול.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "ofek-rakaz-shichva-conflict",
+      "claim": "The payroll provider summary of the 19.10.2022 agreement gives rakaz shichva 7% or 1,100 NIS (up to 4 classes) and 6% or 1,100 NIS (above 4 classes), conflicting with the ITU page (1,000 NIS).",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-לעניין-תנאי-העסקה-של-עובדי-הור/",
+      "raw_snippet": "ריכוז שכבה עד 4 כיתות בשכבה 7% 7% או 1,100 ₪ – הגבוה מבין השניים",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-shekel-supplement-2027-scheduled",
+      "claim": "The signed 23.9.2024 agreement table schedules the Oz tosefet shiklit at 2,066.75 NIS from 1.9.2027 (1,254.00 + 309.00 + 253.75 + 250.00).",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/wp-content/uploads/2026/08/ozletmura230924.pdf",
+      "raw_snippet": "2,066.75 | 250.00 | 253.75 | 309.00 | 1,254.00 | 01/09/2027",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "image",
+      "verified_at": "2026-10-19",
+      "note": "Scanned PDF with no text layer; page 3 section 7(ב) table rendered with pdftoppm and read visually."
+    },
+    {
+      "claim_id": "oz-gmul-shiluv-tashpav",
+      "claim": "One-off annual gmul shiluv for an Oz homeroom teacher for tashpav: 600 NIS for one integrated pupil, 2,000 NIS for more than one, with no pension deposits, paid in the September 2026 salary and no later than October 2026.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/wp-content/uploads/2026/10/morimbitzua140926.pdf",
+      "raw_snippet": "תלמיד משולב אחד ₪600 ללא הפרשות יותר מתלמיד משולב אחד ₪2,000 ללא הפרשות הגמול בגין תשפ״ו ישולם במשכורת ספטמבר 2026ולא יאוחר ממשכורת חודש אוקטובר 2026",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-19",
+      "note": "Read with pdftotext; RTL marks stripped and whitespace collapsed before quoting."
+    },
+    {
+      "claim_id": "education-grade-both-reforms",
+      "claim": "The education grade (salary grade) is set by the teacher's academic education or pedagogical training, and is computed under the pre-reform terms, the Ofek Chadash agreements and the Oz LaTmura agreement.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/transaction-details/education-rewards-licenses/education-levels/",
+      "raw_snippet": "דרגת השכלה או דרגת שכר היא דרגה שנקבעת בהתאם להשכלה האקדמית או להכשרה הפדגוגית, שבגינן העביר עובד ההוראה את התעודות והאישורים הנדרשים.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md",
+        "scripts/teacher_gross.py"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "education-grade-levels",
+      "claim": "Education grades: musmach, musmach bachir, BA, MA, doctorate.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/transaction-details/education-rewards-licenses/education-levels/",
+      "raw_snippet": "דרגת השכלה מוסמך תעודות תעודת הוראה ללא תואר אקדמי דרגת השכלה מוסמך בכיר תעודות תעודת מוסמך בכיר ללא תואר אקדמי דרגת השכלה דרגת שכר BA תעודות BEd /BA דרגת השכלה דרגת שכר MA תעודות MEd/MTeach/MA דרגת השכלה דרגת שכר ד\"ר",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "hishtalmut-prorated-by-position",
+      "claim": "Gmul hishtalmut applies to the whole employment, even above a full position, and a teacher with several employers gets it from each in proportion to her position there.",
+      "claim_type": "fact",
+      "source_url": "https://terms-service.education.gov.il/terms/general-1b/training-of-teaching-staff/",
+      "raw_snippet": "גמול השתלמות חל על כל היקף ההעסקה, אף למעלה ממשרה. ה. עובד הוראה המועסק על-ידי בעלויות אחדות זכאי לגמול השתלמות מכל בעלות בנפרד, יחסית להיקף משרתו אצל כל מעסיק.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md",
+        "scripts/teacher_gross.py"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "july-august-proportional",
+      "claim": "In July and August a teacher receives holiday pay in proportion to the months actually worked, and no pay components change.",
+      "claim_type": "fact",
+      "source_url": "https://terms-service.education.gov.il/terms/general-1b/training-of-teaching-staff/",
+      "raw_snippet": "בחודשים אלה עובד ההוראה מקבל פדיון חופשה יחסית לחודשי עבודתו בפועל, ואין שינויים במרכיבי השכר.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/reform-hour-structure.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "tosefet-ofek-2022",
+      "claim": "Tosefet Ofek 2022 as updated from 1.9.2023: by rank step and education grade, 1,585.54 NIS at rank 1 for a BA and 1,664.87 NIS for an MA, falling to 17.77 / 18.69 NIS at the top step.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-לעניין-תנאי-העסקה-של-עובדי-הור/",
+      "raw_snippet": "תוספת אופק 2022 לעובדי הוראה המועסקים בתנאי אופק חדש בתוקף מ-1.9.2023 בוצע עדכון סכומי התוספת כדלקמן: דרגה 1 1.5 2 2.5 3 3.5 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 מורים בעלי תואר BA 1,585.54 1.460.54 1,335.54 1,210.54 1,085.54 960.54 835.54 710.54 585.54 460.54 335.54 260.54 185.54 110.54 35.54 17.77 מורים בעלי תואר MA 1,664.87",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "tosefet-ofek-2022-top",
+      "claim": "The tosefet Ofek 2022 falls to 17.77 NIS (BA) and 18.69 NIS (MA) at the top step.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-לעניין-תנאי-העסקה-של-עובדי-הור/",
+      "raw_snippet": "35.54 17.77 מורים בעלי תואר MA 1,664.87 1,533.62 1,402.37 1,271.12 1,139.87 1,008.62 877.37 746.12 614.87 483.62 352.37 273.62 194.87 116.12 37.37 18.69",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "retention-grant-onward",
+      "claim": "The retention grant applies to every new teacher who starts work from 1.9.2023 onward.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-לעניין-תנאי-העסקה-של-עובדי-הור/",
+      "raw_snippet": "החל מ-1.9.2023 עובד הוראה חדש שיחל את עבודתו במועד זה ואילך, יהיה זכאי למענק חד פעמי",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-rakaz-17a-roles-6pct",
+      "claim": "Section 17(א) of the Oz agreement added six roles at a 6% role gmul computed on the combined salary plus the Oz LaTmura supplement: tiyulim, pedagogi, hishtalvut, tikshuv, bagrut, mishmaat ve-aklim; from 1.9.2025 two more roles (rakaz maarechet, rakaz yeutz) at 6%.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מיום-23-9-24-לעובדי-הוראה-בחטיבו/",
+      "raw_snippet": "נוספו 6 התפקידים הבאים, המזכים בגמול תפקיד בשיעור של 6% המחושב על בסיס השכר המשולב ותוספת עוז לתמורה: א. רכז טיולים; ב. רכז פדגוגי; ג. רכז השתלבות ואוכלוסיות מיוחדות; ד. רכז תקשוב; ה. רכז בגרות; ו. רכז משמעת ואקלים חינוכי. החל מיום 1.9.2025 יתוספו ל-6 התפקידים הנ\"ל, אשר מזכים בגמול תפקיד בשיעור של 6% כאמור לעיל, עוד 2 תפ",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-rakaz-maarechet-yeutz",
+      "claim": "From 1.9.2025 rakaz maarechet and rakaz yeutz are added to the roles carrying a 6% role gmul.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-מיום-23-9-24-לעובדי-הוראה-בחטיבו/",
+      "raw_snippet": "אשר מזכים בגמול תפקיד בשיעור של 6% כאמור לעיל, עוד 2 תפקידים הבאים: א. רכז מערכת; ב. רכז ייעוץ.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "teacher-pension-layers",
+      "claim": "The teachers' pension arrangement has three layers: a pension fund, pension saving on additional work above 100%, and pension saving on expense reimbursements such as travel and phone.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/training-gemel/pension/",
+      "raw_snippet": "הוא הסדר מיטיב המורכב משלושה רבדים: קרן פנסיה חיסכון פנסיוני על עבודה נוספת (מעל 100%) חיסכון פנסיוני על החזר הוצאות (לדוגמה, החזר נסיעות, טלפון ועוד)",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/reform-hour-structure.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "teacher-pension-other-rows",
+      "claim": "Ministry pension table: pensia vatika 7.5% / 6% / 7%; expense reimbursement 5% / 5%-7%; work above 100% 7.5% / 8.33% / 5%-7%.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/training-gemel/pension/",
+      "raw_snippet": "פנסיה ותיקה 7.5% 6% 7% פנסיה צוברת 7.5% 6.224% 6%–7% החזר הוצאות 5% 5%–7% עבודה נוספת מעל 100% משרה 7.5% 8.33%",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "july-maternity-deductions",
+      "claim": "A teacher who gave birth during the school year has retroactive pension, provident and keren hishtalmut deductions taken from her July salary.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/salary-sheet/deduction/",
+      "raw_snippet": "עובדת הוראה שילדה במהלך שנת הלימודים – במשכורת חודש יולי ינוכו משכרה הפרשות רטרואקטיביות עבור פנסיה, גמל וקרן השתלמות בגין התקופה שבה שהתה בחופשת הלידה וההורות, כדי לשמור על רצף זכויותיה.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/reform-hour-structure.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "vetek-freeze-2025",
+      "claim": "The payment for a seniority step was frozen for four months (September to December 2025), paid from January 2026, with no harm to seniority-dependent rights.",
+      "claim_type": "fact",
+      "source_url": "https://www.itu.org.il/news/סוכם-מתווה-הפיצוי-לעוה/",
+      "raw_snippet": "יוקפא התשלום בגין קידום בוותק לתקופה של 4 חודשים בלבד (מספטמבר 2025–דצמבר 2025). החל מינואר 2026, ישולם התשלום בגין קידום זה. בכל מקרה, לא תפגענה זכויות התלויות בוותק בשל הקפאה זו.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "references/wage-reduction.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-gmul-beit-sifri-pension",
+      "claim": "The Oz school-role gmul counts for hourly value, absence deductions, severance and pension deposits under section 46.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/גמול-בית-ספרי-עוז-לתמורה-בשנת-הלימודים/",
+      "raw_snippet": "גמול תפקיד בית ספרי יובא בחשבון לעניין חישוב ערך שעה לצורך חישוב התמורה עבור ביצוע \"שעות מילוי מקום\" (בין אם במקום שעה תומכת הוראה ובין אם לאו), לעניין הפחתת שכר בשל היעדרות, לעניין היעדרות שעבורה משולם שכר, לעניין פיצויי פיטורים כמשמעותם בחוק פיצויי פיטורים, התשכ\"ג- 1963 ולעניין הפרשות לקופת גמל לקצבה",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "oz-substitution-tashpaz",
+      "claim": "The four unpaid substitution hours apply in school year tashpaz.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-קיבוצי-עם-ארגון-המורים-העל-יסודיי/",
+      "raw_snippet": "שעות מילוי מקום בשנת הלימודים תשפ\"ז במהלך שנת הלימודים תשפ\"ז יהיה רשאי מנהל בית ספר להטיל על עובד הוראה ביצוע שעות הוראה לצורך מילוי מקום. מספר שעות מילוי המקום שיוטלו מכוח סעיף זה לא יעלה על ארבע שעות לעובד במשרה מלאה במהלך שנת הלימודים. לגבי עובד במשרה חלקית, תחושב המכסה באופן יחסי להיקף משרתו. השעות יבוצעו בתיאום עם עובד ההוראה ובהתאם לצורכי המוסד החינוכי. בגין שעות אלה לא ישולם תגמול נוסף מעבר לשכר הרגיל.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "gmul-nihul-gan-two-columns",
+      "claim": "Gmul nihul gan: an existing gananet is banded by management years (up to 5, 6-10, above 10) and a new gananet by Ofek rank (1-2, 3-4, 5-9), at 17% / 20% / 21% or a 1,500 NIS minimum, higher of.",
+      "claim_type": "fact",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%A0%D7%A0%D7%95%D7%AA-%D7%91%D7%90%D7%95%D7%A4%D7%A7-%D7%97%D7%93%D7%A9/",
+      "raw_snippet": "גננת קיימת גננת חדשה שיעור הגמול בעלת ותק בניהול של עד 5 שנים (כולל) בדרגה 1 עד 2 17% או מינימום 1500 ₪ הגבוה מבין השניים בעלת ותק בניהול של 6 עד 10 שנים (כולל) בדרגה 3 עד 4 20% או מינימום 1500 ₪ הגבוה מבין השניים בעלת ותק בניהול מעל 10 שנים בדרגה 5 עד 9 21% או מינימום 1500 ₪ הגבוה מבין השניים",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "bigud-paid-july",
+      "claim": "Bigud is paid to all teaching staff in the July salary.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/salary-sheet/salary-extra/",
+      "raw_snippet": "קצובת ביגוד משולמת לכל עובדי ההוראה במשכורת חודש יולי",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "yom-chinuch-aroch-may-june",
+      "claim": "The yom chinuch aroch grant is paid in the May and June salaries.",
+      "claim_type": "fact",
+      "source_url": "https://poh.education.gov.il/administrative/salary/salary-sheet/salary-extra/",
+      "raw_snippet": "במשכורת החודשים מאי ויוני משולם מענק יום חינוך ארוך (יוח\"א)",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "probation-three-years",
+      "claim": "From 1.9.2023 new teachers have a probation period extended by a year, with kviut after three years.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-לעניין-תנאי-העסקה-של-עובדי-הור/",
+      "raw_snippet": "החל מ-1.9.2023 למורים שיחלו את עבודתם במועד זה, תקופת הניסיון לצורך מתן קביעות תוארך בשנה ומתן הקביעות יהיה לאחר שלוש שנות ניסיון.",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "sgan-menahel-floor-malam",
+      "claim": "The payroll provider summary of the 2022 agreement gives sgan menahel sheni and menahel chativa tzeira 20% or 1,100 NIS, higher of.",
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/הסכם-שכר-לעניין-תנאי-העסקה-של-עובדי-הור/",
+      "raw_snippet": "סגן מנהל שני ומעלה 13% 20% או 1,100 ₪ – הגבוה מבין השניים",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_id": "ofek-gmul-shiluv-pitzul",
+      "claim": "The union gmulei-tafkid page lists a gmul shiluv yeladim im tzrachim meyuchadim (for homeroom teachers and gan managers) and a gmul pitzul, both from September 2024.",
+      "claim_type": "fact",
+      "source_url": "https://www.itu.org.il/%D7%9C%D7%95%D7%91%D7%99-%D7%AA%D7%A0%D7%90%D7%99-%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%92%D7%9E%D7%95%D7%9C%D7%99-%D7%AA%D7%A4%D7%A7%D7%99%D7%93/",
+      "raw_snippet": "[25] גמול שילוב ילדים עם צרכים מיוחדים (למחנכים בבתי ספר ומנהלות גן] (מספטמבר 2024) [26] גמול פיצול למורים (מספטמבר 2024)",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [],
+      "verified_via": "curl",
+      "verified_at": "2026-10-19"
+    },
+    {
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/wp-content/uploads/2026/08/ozletmura230924.pdf",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "image",
+      "verified_at": "2026-10-19",
+      "note": "Scanned PDF, page 4, rendered with pdftoppm and read visually.",
+      "claim_id": "oz-shekel-7d-salary",
+      "claim": "Section 7(ד): the Oz tosefet shiklit is salary for all purposes.",
+      "raw_snippet": "(ד) תוספת שקלית עוז 2023 תהווה שכר לכל דבר ועניין"
+    },
+    {
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/wp-content/uploads/2026/08/ozletmura230924.pdf",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "image",
+      "verified_at": "2026-10-19",
+      "note": "Scanned PDF, page 4, rendered with pdftoppm and read visually.",
+      "claim_id": "oz-shekel-7d-deposits",
+      "claim": "Section 7(ד): it counts for pension deposits under section 46 and for keren hishtalmut deposits.",
+      "raw_snippet": "לעניין הפרשות לקופת גמל לקצבה כאמור בסעיף 46 להסכם רפורמת עוז לתמורה ולעניין הפרשות לקרן השתלמות"
+    },
+    {
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/wp-content/uploads/2026/08/ozletmura230924.pdf",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "image",
+      "verified_at": "2026-10-19",
+      "note": "Scanned PDF, page 4, rendered with pdftoppm and read visually.",
+      "claim_id": "oz-shekel-7h-minwage",
+      "claim": "Section 7(ה): it does not count toward the minimum-wage top-up.",
+      "raw_snippet": "(ה) מוסכם כי תוספת שקלית עוז 2023 לא תובא בחשבון לעניין חישוב השלמת השכר עד לשכר המינימום"
+    },
+    {
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/wp-content/uploads/2026/08/ozletmura230924.pdf",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "image",
+      "verified_at": "2026-10-19",
+      "note": "Scanned PDF, page 4, rendered with pdftoppm and read visually.",
+      "claim_id": "oz-shekel-7v-nobase",
+      "claim": "Section 7(ו): it is not a base for any other supplement, shekel or percentage.",
+      "raw_snippet": "(ו) מוסכם כי תוספת שקלית עוז 2023 לא תיכלל בבסיס לחישוב כל תוספת שכר וכל תוספת לשכר (שקליות או אחוזיות)."
+    },
+    {
+      "claim_type": "fact",
+      "source_url": "https://www.malam-payroll.com/wp-content/uploads/2026/08/ozletmura230924.pdf",
+      "confidence": "high",
+      "fetched_at": "2026-10-19T00:00:00Z",
+      "appears_in": [
+        "references/gmul-components.md",
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "image",
+      "verified_at": "2026-10-19",
+      "note": "Scanned PDF, page 4, rendered with pdftoppm and read visually.",
+      "claim_id": "oz-shekel-7z-yovel",
+      "claim": "Section 7(ז): it does count for menak yovel.",
+      "raw_snippet": "(ז) על אף האמור בסעיף קטן (ו) לעיל, תוספת שקלית עוז 2023 תובא בחשבון לעניין חישוב מענק יובל."
     }
   ]
 }

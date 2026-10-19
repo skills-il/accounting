@@ -11,18 +11,17 @@ The rate differs by reform, so do NOT carry one rate across both.
 
 | Period | Ofek Chadash | Oz LaTmura |
 |--------|--------------|------------|
-| December 2024 to March 2025 | 2.290% | 2.290% |
+| December 2024 to March 2025 | 2.290% general public-sector agreement rate; not confirmed for teaching staff | same |
 | April 2025 | 3.307% (superseded below) | 3.307% |
 | 1.5.2025 to 31.12.2025 | 0.95% | see note |
 | 1.1.2026 to 31.12.2026 | 1.2% | 1.2% |
 
 The 0.95% mitigation comes from the collective agreement of 29.6.2025 and is
 scoped explicitly to teachers employed under Ofek Chadash. A positive search for
-an Irgun HaMorim equivalent found the opposite: contemporaneous payroll briefings
-state that Oz LaTmura and "olam yashan" teaching staff are cut per the legislation
-at 3.307% to the end of 2025 and 1.2% through 2026. So for an Oz teacher in the
-May-to-December 2025 window do not assume 0.95%. That agreement also excludes
-teacher-college staff and state-service supervisory and HQ teaching staff.
+an Irgun HaMorim equivalent found none, so for an Oz teacher in the
+May-to-December 2025 window do not assume 0.95%. The basis: Histadrut HaMorim
+states that Irgun HaMorim members are subject to the temporary-order law in full,
+and the law rate from April 2025 is 3.307%.
 
 The table stops at 31.12.2026 because that is where the temporary order stops.
 What applies from 1.1.2027, in the middle of school year tashpaz, is not settled
@@ -73,3 +72,9 @@ The December 2025 deduction was 0.95% PLUS the school-hours amount otherwise
 payable that month, and that extra was refunded through the reduction component in
 the January 2026 salary. An unexplained one-month spike followed by a reversal is
 this, not a payroll error.
+
+## The 8.6.2026 strike day (Oz LaTmura)
+
+Under the Irgun HaMorim agreement of 31.8.2026 no pay is deducted for the 8.6.2026
+education-system strike day; where it was deducted, the payroll is to correct it
+and refund the amount. A refund line on an autumn 2026 Oz slip is this.

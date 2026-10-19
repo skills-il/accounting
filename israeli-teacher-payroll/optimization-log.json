@@ -1,6 +1,26 @@
 {
   "cycles": [
     {
+      "version": "1.5.0",
+      "date": "2026-10-19",
+      "trigger": "Batch update-oldest-skills 2026-10-19, drift type A, start of school year tashpaz.",
+      "value_add": "PASS, with 1.00 vs without 0.00 (delta +1.00) on 4 cases (havraa 511.60, keren 4.2/8.4, Oz promotion grade 1.67%/6.69%, Oz tosefet shiklit 1,790.50 prorated).",
+      "lessons": [
+        "RESOLVED CARRY: the 1.9.2026 Oz tosefet shiklit is 1,790.50 NIS (signed table, Malam execution notice 4.10.2026); the 2027 step 2,066.75 is in the signed table but has no execution circular yet. Re-check next cycle.",
+        "RESOLVED CARRY: Oz merit points are 1.67% per 10 points, max 4 grades (6.69%), 3 years apart (poh credit-points page). The removed 2%/8% was wrong.",
+        "RESOLVED CARRY: ichud maskorot conditions now on the official poh salary-consolidation page.",
+        "RESOLVED CARRY: retention grant proration (weighted position over 36 months, kviut at 70%+) and eligibility (every new teacher from 1.9.2023 onward). Tax and pension treatment still UNPUBLISHED.",
+        "STILL OPEN (3rd cycle): whether a shekel gmul floor prorates at part time. No source reached. If it survives one more cycle, move it to domain-checklist Out of scope with the rationale 'not published'.",
+        "STILL OPEN (2nd cycle): what replaces the temporary wage reduction from 1.1.2027. Nothing published as of 2026-10-19.",
+        "NEW DEBT: Oz promotion grades' part-time treatment, the Ofek gmul yozma part-time rule, the tosefet Ofek 2022 part-time rule and current amounts (Malam table is as of 1.9.2023), and whether the Oz role-gmul full-position rule matches Ofek. All stated as unpublished assumptions.",
+        "NEW DEBT: source conflicts to settle from an execution circular: Ofek rakaz shichva floor (ITU 1,000 vs Malam 1,100 on both bands) and sgan menahel / menahel chativa tzeira floor (Malam 1,100, ITU none).",
+        "NEW DEBT: per-rank NIS cells stay out of scope: ITU PDF tables still dated September 2022 and no tashpaz table is published; the Ministry calculator is interactive. Re-litigate next cycle.",
+        "METHOD LESSON: the expert found that the skill had invented a 9-rank Oz table and omitted the education-grade dimension of every cell. Both survived several cycles because every gate checked the numbers that WERE written. Ask 'what are the axes of the table the user reads?' before checking any cell rule.",
+        "METHOD LESSON: --check-sources reported 99/99 'declared verified' and fetched nothing, because every entry carried verified_via (including 'curl'). An independent re-fetch of every snippet is needed; tools/recheck.py in the batch workdir did it in one pass.",
+        "METHOD LESSON: the script review found that the shekel floor was tested against the SUM of gmulim and that the special-education gmul was scaled by position instead of the frontal-hour share. Loosening input parsing in round 3 nearly re-opened the 10,1000 -> 10.1% bug; keep the 1-2 digit decimal-comma rule for rates and amounts."
+      ]
+    },
+    {
       "version": "1.4.0",
       "date": "2026-08-27",
       "trigger": "Scheduled staleness pass five days before school year תשפ\"ז; the two payroll skills were flagged DRIFT TYPE A.",

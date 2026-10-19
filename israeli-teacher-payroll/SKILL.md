@@ -17,12 +17,11 @@ Any form or text this tool produces is an automatic draft for your personal prep
 
 Israeli teachers are not paid like private-sector employees. Their pay is set by
 two collective-agreement reforms, Ofek Chadash and Oz LaTmura, each with its own
-work-week structure, its own 9-rank salary table, and its own rules for
-increments (gmulim). A generic gross-to-net calculator gets this wrong: it does
-not know that a "full position" is a fixed weekly split of front-of-class hours,
-private (small-group) hours, and stay/support hours; it does not know that rank
-and seniority feed a collective-agreement table rather than an hourly rate; and
-it forgets the gmulim, which stack into a double-digit uplift on the base. This skill encodes the
+work-week structure, its own salary table, and its own rules for
+increments (gmulim). A generic gross-to-net calculator misses that a "full
+position" is a fixed weekly split of front-of-class, private and stay hours, that
+rank and seniority feed an agreement table rather than an hourly rate, and that
+gmulim stack into a double-digit uplift. This skill encodes the
 Israel-specific structure so an agent can explain a teacher's payslip, estimate a
 gross salary from the right table, and route the deduction step correctly.
 
@@ -34,10 +33,14 @@ Work in four steps. Steps 1 to 3 build the GROSS; step 4 turns gross into net.
 
 The reform decides everything downstream, so pin it first.
 
-| Reform | Who | Ranks |
+| Reform | Who | The salary cell is read by |
 |--------|-----|-------|
-| Ofek Chadash | Kindergarten (gan), elementary (yesodi), and junior-high (chativat beynayim) teachers | 9 (1-9) |
-| Oz LaTmura | Upper-secondary (chativa elyona / high school) teachers | 9 |
+| Ofek Chadash | Kindergarten (gan), elementary (yesodi), and junior-high (chativat beynayim) teachers | Education grade x rank (1-9) x seniority |
+| Oz LaTmura | Upper-secondary (chativa elyona / high school) teachers | Education grade x seniority, plus up to 4 promotion grades of 1.67% each. The 9 ranks are an Ofek structure; do not apply them to Oz |
+
+The education grade (darga hashkala: musmach, musmach bachir, BA, MA, doctorate)
+is set by the teacher's approved degree under both reforms, so a BA cell for an MA
+teacher is wrong, and an approved degree moves the cell. Ask for it.
 
 Kindergarten teachers (gananot) are under Ofek Chadash, not Oz: the Ofek reform
 runs in kindergartens, elementary and middle schools, and Oz covers
@@ -66,12 +69,10 @@ the wording here is in the feminine. Do NOT pick one reform. Run the gross build
   THAT reform's own full position (Ofek 36 hours, Oz 38 or 40), so combine them
   as fractions of a position, not as raw weekly hours.
 - Each part uses its OWN reform: its own hour structure, its own combined
-  (rank x seniority) cell, and its own gmulim, then scaled by that division's
-  fraction. Read the recognized rank per reform from the official table; the two
-  ranks follow each reform's own advancement rules and the ministry's
-  cross-reform recognition, so do not assume they are identical and do not invent
-  a conversion. Seniority is her own recognized teaching seniority, read into each
-  reform's table.
+  cell, and its own gmulim, then scaled by that division's
+  fraction. The Ofek part is read by her degree, Ofek rank and seniority; the
+  Oz part by her degree and seniority, plus any promotion grades. Do not invent a
+  rank conversion between them.
 - The two-gmul cap is per TEACHER, not per division: count role gmulim (gmulei
   tafkid) across the whole appointment, so a homeroom gmul in the junior-high plus a
   coordinator gmul in the high school is already the two-gmul maximum, not two per
@@ -91,14 +92,11 @@ Only when there are two payers: by default she gets two payslips, so she must fi
 a tax coordination (teum mas) every year or the second employer withholds at the
 top rate, and each payer deposits her pension separately. Salary unification
 (ichud maskorot) puts both parts on ONE payslip, removing the teum mas and
-consolidating the deposits. The reported conditions are permanence (kviut) at the
-paying employer plus at least a third position in the junior-high to unify through
-the Ministry, or at least a half position in the high school to unify through the
-baalut; these come from a teacher-finance publication rather than an official
-page, so confirm with the payroll unit before electing, since the election is not
-casually reversible. One caveat: when the two parts together exceed 100% of a
-position, unification can lose benefits capped at 100%, such as havraa, bigud and
-meonot.
+consolidating the deposits. Per the Ministry's salary-consolidation page it needs
+kviut at the unifying employer plus at least a third position in the junior-high
+(Ministry route) or a half in the high school (baalut route); the full conditions
+and exclusions are in `references/reform-hour-structure.md`. Above 100% in total,
+unification can lose benefits capped at 100% (havraa, bigud, meonot).
 
 ### Step 2: Read the reform's work-week structure
 
@@ -134,24 +132,18 @@ position, scale by the position fraction.
 
 ### Step 3: Build the gross
 
-1. Read the combined salary directly from the official table. The union salary
-   tables and the ministry salary-simulation calculator are two-dimensional
-   grids of rank (daraga) by seniority (vetek). The cell you read for a given
-   (rank, seniority) pair IS the "combined salary" (sachar meshulav): it ALREADY
-   includes seniority. Do NOT add a seniority percentage on top of it, or you
+1. Read the combined salary directly from the official table or the ministry
+   salary-simulation calculator, for her education grade, (Ofek) rank, and
+   seniority (vetek). That cell IS the "combined salary" (sachar meshulav): it
+   ALREADY includes seniority. Do NOT add a seniority percentage on top of it, or you
    double-count. The 2% per year up to year 6 (inclusive) and 1% per year from year 7 to
    year 36 is the rule the table already applied to produce that cell; it is not
    something you re-add.
-2. Rank and seniority advancement take effect with the school year, on 1
-   September, and are read into the table from that date. Rank 1 is a new
-   teacher. Ofek Chadash promotion turns on three criteria together: paznun (the
-   required months in rank), shapam (professional-development hours), and an
-   evaluation. Ranks 2 and 3 need 30 months and 120 hours; ranks 4, 5 and 6 need
-   36 months and 180 hours; ranks 7, 8 and 9 need 48 months and 210 hours.
-   **Promotion quotas for ranks 7 to 9 were abolished in the 2016 agreement**, so
-   do not tell a teacher a quota is blocking them. This is Ofek-specific: Oz
-   LaTmura advances on merit points, so do not apply the Ofek rule to an Oz
-   teacher.
+2. Rank and seniority advancement take effect on 1 September. Ofek promotion
+   needs paznun (months in rank), shapam (development hours) and an evaluation
+   together, at 30/120, 36/180 and 48/210 for ranks 2-3, 4-6 and 7-9, and **the
+   rank 7-9 quotas were abolished in 2016**, so no quota blocks her. Oz advances
+   by promotion grades instead (below).
 3. Apply gmulim as a percentage of the combined salary you read in step 1.
    **The two reforms publish separate role-gmul tables with genuinely different
    rates**, and the table below mixes both, so check the reform label on the row
@@ -163,20 +155,38 @@ position, scale by the position fraction.
 
 | Gmul | Rate |
 |------|------|
-| Gmul hishtalmut (Oz; Ofek banks dev hours instead) | 1.2% per 112-hour unit; per-unit rate rose to 1.3% from 1.9.2025. The Oz quota is 19 units (raised from 18 in tashaf), at most one banked per year |
+| Gmul hishtalmut (Oz; Ofek banks dev hours instead) | 1.2% per 112-hour unit; per-unit rate rose to 1.3% from 1.9.2025. The Oz quota is 19 units (raised from 18 in tashaf), at most one banked per year. A study gmul, not a role gmul: prorated by position |
 | Gmul chinuch (homeroom) | Both reforms: 10% OR 1,000 NIS, whichever is higher; 11.5% (same floor) for a grade-1 homeroom or a chativa-tzeira kindergarten teacher |
 | Gmul rikuz miktzoa (subject coordinator) | Oz: 8%, or 9% for mathematics and English, from 1.9.2025. Ofek: 6% elementary, 8% junior-high |
-| Gmul pituach miktzoi (professional-development role) | 6% |
-| Gmul nihul gan (Ofek, kindergarten management) | 17% up to 5 years of management seniority, 20% for 6 to 10, 21% above 10, and in every band a floor of 1,500 NIS, whichever is higher |
+| Gmul nihul gan (Ofek, kindergarten management) | 17%, 20% or 21%, each with a 1,500 NIS floor, higher of. An existing gananet is banded by management years (up to 5, 6 to 10, above 10); a new gananet by Ofek rank (1-2, 3-4, 5-9) |
 | Gmul yeutz (educational counsellor) | Both reforms: 12% on a temporary licence, 18% on a permanent one. Keyed to the licence, not to counselling seniority |
 | Gmul chinuch meyuchad (special education) | Oz 10 / 15 / 17 percent; Ofek 8.5 / 15 / 17. The top band is autism or severe-psychiatric settings |
 
-**Oz LaTmura shekel supplement (tosefet shiklit).** The Irgun HaMorim agreement
-of 23.9.2024, whose execution directive took effect 1.9.2025, raised the Oz
-shekel supplement from 1,200 NIS to 1,518 NIS. Later steps may have been agreed
-for subsequent school years, so read the current amount from the execution
-circular rather than assuming 1,518 NIS still holds. This is an Oz LaTmura
-line: do not apply it to an Ofek Chadash teacher.
+**Oz LaTmura shekel supplement (tosefet shiklit Oz 2023).** Under the Irgun
+HaMorim agreement of 23.9.2024 it is 1,790.50 NIS for a full position from
+1.9.2026 (it was 1,518 NIS from 1.9.2025 and 1,200 NIS before that). The signed
+table schedules 2,066.75 NIS from 1.9.2027; check the execution circular before
+using that figure. It is **prorated by the position fraction, including above
+100%**, so pass it with `--fixed-prorated`, never `--fixed`. It counts for pension
+and keren hishtalmut deposits but is not a base for any other supplement. An Oz
+slip may also carry a separate, older "tosefet shiklit 2016" line; do not confuse
+the two. This is an Oz LaTmura line: do not apply it to an Ofek Chadash teacher.
+
+**Ofek Chadash shekel supplement (tosefet Ofek 2022).** Nearly every Ofek slip
+carries it (the published table runs to rank step 8.5). It depends on the education grade and the rank step and falls as rank rises:
+as updated from 1.9.2023 it was 1,585.54 NIS at rank 1 for a BA and 1,664.87 NIS
+for an MA, shrinking to under 20 NIS at the top. For a new teacher it is the
+largest line after the base, so leaving it out makes a junior slip look about
+1,500 NIS too high. Read the current amount from the slip; how it treats part
+time is not published, so check whether it scales.
+
+**New Oz LaTmura gmul from tashpaz: gmul tafkid beit-sifri.** For a school role
+the principal assigns, 2 to 5 units of 200 NIS a month (400 to 1,000 NIS). It is
+paid at its FULL shekel value from a third of a position upward, and stays at the
+full-position amount above 100%, so it goes in `--fixed`. The circular does not
+say what a teacher below a third of a position gets, so do not assert it. It counts inside the two-role-gmul cap, principals and deputies cannot
+draw it, it is not part of the combined salary, and no keren hishtalmut deposit is
+made on it (it does count for pension deposits and severance).
 
 The same agreement also changed the Oz coordinator (rakaz) gmulim: tikshuv and
 pedagogi rose to 8%, chinuch chevrati to 10%, rakaz shichva became 6% or 1,100
@@ -188,26 +198,23 @@ rakaz miktzoa is 6% in an Ofek elementary school against 8% in a junior-high and
 and ministry pages, are in `references/gmul-components.md`. Read the right
 reform's table.
 
-**A 10,000 NIS retention grant (manak shimur) is paid in the September 2026
-salary** to an Ofek teacher whose employment began on 1.9.2023. It is a one-off,
-not a salary component, so do not fold it into a monthly gross. Whether it is
-pensionable, whether it prorates by position, and whether it can be spread for
-tax (perisa) are not stated in the union announcement, so do not assert any of
-the three: a large one-month spike taxed at the marginal rate is the expected
-appearance, and the payroll unit is the place to confirm the rest.
+**A 10,000 NIS retention grant (manak shimur)** goes to every new Ofek teacher
+who started work on or after 1.9.2023, not only that one cohort. The same
+agreement lengthened their probation to three years, which is why the first
+grants fall due only now. The 2022 agreement conditions it on reaching kviut
+with a position of 70% or more, and a teacher below a full position gets it in
+proportion to her weighted position over the preceding 36 months. The union page
+gives the September 2026 salary for the first cohort, the agreement says the May
+after kviut, so confirm the month with the payroll unit. It is a one-off, not a monthly gross component.
+Its pension and tax treatment (including perisa) are not published, so do not
+assert them; a one-month spike taxed at the marginal rate is the expected look.
 
-**A new Ofek Chadash gmul starts with school year tashpaz.** Gmul yozma chinuchit
-beit-sifrit takes effect 1.9.2026 for Ofek teachers and for deputy principals the
-principal appoints. Each approved initiative carries 2 to 5 units at the
-principal's discretion, each unit 200 NIS a month, so the gmul runs 400 to 1,000
-NIS a month. It is a fixed-shekel line, NOT a percentage of the combined salary,
-so never feed it to the script as a gmul percentage. It is re-decided each year.
-This is the gmul the 2022 agreement scheduled for 1.9.2025 and then deferred, so
-the union's standing terms page still dates it September 2025 while its actual
-entry into force, announced 16.8.2026, is 1.9.2026. It is correctly absent from a
-2025 slip. Treat 1.9.2026 as the operative date and the 2-unit minimum as
-binding: a single 200 NIS unit is not payable. The shiluv/pitzul cost-frame
-stays frozen and un-freezes 1.1.2027.
+**A new Ofek Chadash gmul from tashpaz: gmul yozma chinuchit beit-sifrit**, in
+force 1.9.2026 for Ofek teachers and appointed deputy principals. Each approved
+initiative carries 2 to 5 units at the principal's discretion, 200 NIS a unit, so
+400 to 1,000 NIS a month, re-decided each year. It is a fixed-shekel line, never
+a gmul percentage, and is correctly absent from a 2025 slip. Its part-time rule is
+not published, so `--fixed` (full value) is an assumption to check on the slip.
 
 More gmulim exist beyond this list, including a deputy-principal gmul and roles
 scoped to a single school level. English, mathematics and physics have their own
@@ -218,27 +225,42 @@ the current rate from `references/gmul-components.md`, do not invent one.
 Reform difference: Ofek Chadash teachers do NOT bank hishtalmut or merit gmulim
 (dev hours push the rank instead) BUT role gmulim (for example gmul chinuch for a
 homeroom, or gmul nihul gan) still apply to them. Oz teachers bank at most one
-gmul a year (sabbatical and unpaid leave excepted), and rank advances on merit
-points (nekudot zechut) accrued from roles, at rates we could not confirm on a
-live official page: read the ministry's nekudot zechut page, do not assume a
-fixed points-to-percent conversion. See `references/gmul-components.md`.
+gmul a year (sabbatical and unpaid leave excepted), and advance by promotion
+grades earned with merit points (nekudot zechut) from roles: per the ministry's Oz page, every 10
+points is a promotion grade of 1.67% of the combined salary, at most 4 grades
+(6.69% cumulative), at least 3 years apart, and points accrue for one role only.
+Pass the grades she holds as one percentage (2 grades: 3.34). Whether they scale
+at part time is not published; they ride on the combined salary, so
+`--gmul-scaled` is the assumption to check on the slip.
+See `references/gmul-components.md`.
 
 Use `scripts/teacher_gross.py` to apply gmulim to the combined-salary cell once
-you have read it. It takes the combined cell as its base and does not re-add
-seniority. Three rules it now enforces, each of which is easy to get wrong:
+you have read it. It takes the full-position combined cell as its base and does
+not re-add seniority. The rules it enforces, each easy to get wrong:
 
 - **Role gmulim are computed on a FULL position and are not prorated by the
-  position fraction.** Only the combined salary is scaled. The two exceptions are
-  the special-education and inclusion gmulim, computed on the share of frontal
-  hours taught in that setting: pass `--scale-gmulim` for those and only those.
-- **A shekel floor is a higher-of test, not an add-on.** Pass it with
-  `--gmul-floor 1000` for gmul chinuch or `--gmul-floor 1100` for Oz rakaz
-  shichva. Whether the floor itself prorates at part-time, and whether the
-  higher-of test runs before or after the fraction, is not stated by any source
-  we could reach; the script tests on the full position and says so. Reconcile
-  against the slip.
-- **Flat shekel lines go in `--fixed`, never in `--gmul`.** That covers the Oz
-  tosefet shiklit and the gmul yozma chinuchit.
+  position fraction** (`--gmul`). The Histadrut HaMorim page states this for Ofek;
+  no Oz text we reached states it either way, so check an Oz slip. The exceptions
+  are the special-education and inclusion gmulim, computed on the share of her
+  frontal hours taught in that setting: `--gmul-share 15@13/26`.
+- **Study gmulim scale with the position.** The terms of service pay gmul
+  hishtalmut in proportion to the position at each employer, above 100% too, so it
+  goes in `--gmul-scaled`. It is not a role gmul and does not count toward the
+  two-role cap.
+- **A shekel floor is a higher-of test on ONE gmul**, never on a sum: `--gmul
+  10:1000` gmul chinuch, `--gmul 6:1100` Oz rakaz shichva, `--gmul 17:1500` gmul
+  nihul gan. Whether a floor itself prorates at part time is not stated anywhere
+  we reached; the script tests it on the full position.
+- **Flat shekel lines split two ways.** The Oz tosefet shiklit is prorated by
+  position (`--fixed-prorated`); the Oz gmul tafkid beit-sifri is paid in full
+  (`--fixed`).
+- Under Oz, the 6% rakaz gmulim (miyumanuyot and the roles added under section
+  17(א)) are computed on the combined salary PLUS the Oz reform supplement
+  (tosefet Oz LaTmura). The script has one base, so compute that gmul by hand as
+  6% of the sum and pass the result with `--fixed`.
+
+The script rejects empty values, placeholders, ambiguous separators (12.000,
+10,1000), NaN, and repeated `--base`; run it once per division.
 
 This gross model is an approximation, not a full payslip. It cannot express lines
 that do not derive from the combined cell: travel reimbursement, menak yovel,
@@ -252,8 +274,7 @@ Teacher net follows the standard statutory deductions. For the full mechanics
 skill; do not restate income-tax brackets here. The pieces:
 
 - Income tax (mas hachnasa): progressive brackets, less credit points.
-- National insurance (bituach leumi), employee share: reduced rate 1.04% (raised
-  from 0.40%), full rate 7.00% above the reduced step of 7,703 NIS.
+- National insurance (bituach leumi), employee share: reduced rate 1.04%, full rate 7% above the reduced step of 7,703 NIS.
 - Health tax (mas briut): 3.23% up to that same 7,703 NIS step, 5.17% above, so
   the employee pays 4.27% and then 12.17% in total. Deductions stop at the
   maximum insured income of 51,910 NIS.
@@ -269,14 +290,17 @@ skill; do not restate income-tax brackets here. The pieces:
   mashkoret koveat / first-tier pensionable pay), NOT on gross, and the teacher
   arrangements are their own, so read the rate and the base off the slip rather
   than applying the private-sector 6% extension order. Check the pension TYPE
-  too, because it changes the employee deduction and the net. Veteran teachers (typically hired before 2000-2004) may be on pensia
-  taktzivit (budgetary pension), where the state pays the future pension and the
-  employee deduction differs. Newer teachers are on pensia tzoveret (funded /
-  accumulating pension) into a pension fund. Ask which one applies before
-  estimating net.
-- Keren Hishtalmut: teachers contribute to a study fund via the employer; the
-  teacher study funds and their exact split are teacher-specific, so read the
-  slip rather than assume a private-sector rate.
+  too, because it changes the employee deduction and the net. State-employed
+  teachers with kviut hired before 1.9.2002 are on pensia taktzivit (budgetary
+  pension); its employee deduction is not published on the Ministry page, so read
+  it off the slip. Others are on pensia tzoveret (funded), where the Ministry page
+  (stated as of 1.6.2018) lists employer 7.5% plus 6.224% severance and employee 6% or 7% (her choice) on
+  the pensionable salary. Separate layers also take deposits on expense
+  reimbursements such as travel and on work above 100%, so a slip shows more than
+  one pension line; see `references/reform-hour-structure.md`. A baalut may differ.
+- Keren Hishtalmut: in a dedicated teacher study fund the teacher pays 4.2% and
+  the employer 8.4%, and these funds carry the sabbatical right; in a
+  non-dedicated fund it is 2.5% and 7.5%. Not the private-sector default.
 - Union dues: essentially every teacher slip carries a union deduction, demei
   chaver (member dues) or demei tipul (handling dues), to Histadrut HaMorim
   (Ofek / kindergartens and elementary and middle school) or to Irgun HaMorim
@@ -284,49 +308,33 @@ skill; do not restate income-tax brackets here. The pieces:
   do not invent a rate.
 
 **The temporary wage reduction (2025 and 2026).** Teachers ARE covered by the
-war-cost participation deduction, and a slip read without it overstates net pay.
-Union representation is not an exemption. The rate differs by reform and by
-period: 2.290% December 2024 to March 2025, 3.307% in April 2025, then 0.95% from
-1.5.2025 to 31.12.2025 for Ofek Chadash ONLY (Oz stays on the law rate of 3.307%,
-no mitigating agreement exists), and 1.2% for all of 2026 under both reforms.
-What applies from 1.1.2027, mid-tashpaz, is unsettled: read the circular. On a
-teacher slip the line is NOT called "tikun pensioni" but sits under the symbol
-`חוק הת. כלכלית אופק`, it is scaled by an absence coefficient, and it does not
-reduce pension, the mashkoret koveat, gmulim or grants. A separate
-seniority-advancement reduction ran September to December 2025 only, banded by
-seniority, and does not apply to teaching staff employed by local authorities.
-Full tables, bands, and the December 2025 anomaly are in
-`references/wage-reduction.md`.
+war-cost participation deduction; a slip read without it overstates net pay. In
+2026 it is 1.2% under both reforms. In 2025 the rates differed by reform (Ofek
+0.95% from 1.5.2025, Oz the law rate of 3.307%). What applies from 1.1.2027 is
+not published: read the circular. On a teacher slip the line is NOT "tikun
+pensioni" but `חוק הת. כלכלית אופק`; it does not reduce pension, the mashkoret
+koveat, gmulim or grants. Every period, band and the September to December 2025
+seniority reduction are in `references/wage-reduction.md`.
 
 **The 2023 public-sector framework agreement does NOT apply to teachers.** Its
 shekel supplement and its 2% / 3.5% / 5% / 6% tranches are scoped to dirugim
-represented by the general Histadrut, and teacher dirugim are represented by
-Histadrut HaMorim and Irgun HaMorim instead. Teachers reading press coverage of
-the April 2026 5% tranche will expect it and should be told plainly that their
-raises come from their own agreements. The framework's own "teaching employees"
-clause exists only to stop double-counting for non-teachers whose pay is pegged
-to the teacher scale.
+represented by the general Histadrut; teacher dirugim are represented by
+Histadrut HaMorim and Irgun HaMorim. A teacher expecting the April 2026 5% tranche
+should be told plainly that teacher raises come from teacher agreements. The
+newest is the Irgun HaMorim agreement of 31.8.2026 (in force to 31.8.2029); its
+pay items are in `references/gmul-components.md`.
 
-Additions on the gross side (not deductions): teacher pay is spread across all
-twelve months, so July and August are paid even though school is on summer break.
+July and August are paid as holiday pay in proportion to the months actually
+worked that year, and no pay component changes in those two months, so a
+mid-year hire sees a smaller summer slip.
 
-**Havraa (recreation pay): teachers are on the PUBLIC-sector rate, not the
-private one.** Per the Commissioner on Wages circular of 8.6.2026, the public day
-rate is 511.60 NIS from 1.6.2026, up from 471.40 NIS. The 451.50 NIS agreed for
-the private sector on 22.6.2026 does not bind teachers, and using it understates
-every havraa day. Days are set by teaching seniority for a full position (7
-days in the first 3 years rising in steps to 13 from 25 years; the full table is
-in `references/reform-hour-structure.md`), proportional for part-time.
-
-The annual clothing allowance (bigud) is 2,527 NIS for a full position at
-seniority level 4 in 2026. The 91 NIS cut and the de-indexation that produced
-2,314 NIS in 2025 (from 2,405 NIS in 2024) were a one-time measure for that year
-only, so do not carry them forward.
-
-Context: minimum wage is 6,443.85 NIS/month since 1.4.2026 (it was 6,247.67 NIS
-from 1.4.2025); the hourly rate on the 182-hour basis is 35.40 NIS. The average
-wage is 13,769 NIS (Jan 2026). Teacher base pay comes from
-the agreement table, not from these figures.
+**Havraa, bigud and the baselines.** Teachers get the PUBLIC-sector havraa day
+rate, 511.60 NIS from 1.6.2026, not the private 451.50 NIS; days follow teaching
+seniority, proportional for part-time. Bigud is 2,527 NIS for a full position in
+2026. Minimum wage is 6,443.85 NIS a month from 1.4.2026; average wage 13,769 NIS
+(Jan 2026). Teacher base pay comes from the agreement table, not these figures.
+The day table and the one-time 2025 bigud cut are in
+`references/reform-hour-structure.md`.
 
 ## Examples
 
@@ -339,75 +347,57 @@ rank 4 at 5 years seniority straight from the official grid, that cell already
 includes the seniority, so do NOT re-add it. Then apply only the 10% gmul chinuch
 on top, subject to its 1,000 NIS floor. This teacher is under Ofek, and Ofek
 teachers do not bank hishtalmut gmulim, but the homeroom role gmul still applies.
-Run: `python3 scripts/teacher_gross.py --base <rank4_year5_cell> --gmul 10
---gmul-floor 1000 --position 1.0`. Then apply Step 4 for net.
+Run: `python3 scripts/teacher_gross.py --base RANK4_YEAR5_CELL --gmul 10:1000
+--position 1.0`, replacing the placeholder with her real cell for her degree. Then apply Step 4 for net.
 
-### Example 2: Oz LaTmura upper-secondary teacher with development gmul
+### Example 2: Oz LaTmura upper-secondary teacher, three-quarter position
 
-Teacher in a high school, rank 6, 12 years seniority, subject coordinator (not
-English or math), holds 8 units of gmul hishtalmut, full position. Reform is Oz
-LaTmura, position 38 hours from tashpe (25 frontal + 3 private + 10 support).
-Gross: read the rank-6 at 12-years-seniority cell (it already includes the
-seniority), then apply gmulim = 8% coordinator + (8 units x 1.3% =) 10.4%
-development. Coordinator plus development is within the two-role cap. This teacher
-advances rank on merit points, not on Ofek dev-hour quotas. The Oz tosefet shiklit
-is a shekel line, so it goes in `--fixed`, never in `--gmul`. Run:
-`python3 scripts/teacher_gross.py --base <rank6_year12_cell> --gmul 8 --gmul 10.4
---fixed 1518 --position 1.0`.
+High-school teacher with an MA, 12 years of seniority, one promotion grade,
+subject coordinator (not English or maths), 8 units of gmul hishtalmut, 0.75 of a
+position. Reform is Oz LaTmura (38 hours from tashpe: 25 frontal + 3 private + 10
+support). Read the Oz cell for an MA at 12 years (it already includes seniority);
+no Ofek rank applies. Role gmul: 8% coordinator, kept whole under the
+full-position rule (check an Oz slip). Scaled: 10.4% hishtalmut (8 x 1.3%) plus
+1.67% for the grade (assumed to scale). Shekel: the tosefet shiklit, prorated. Run:
+`python3 scripts/teacher_gross.py --base OZ_MA_YEAR12_CELL --gmul 8 --gmul-scaled
+12.07 --fixed-prorated 1790.50 --position 0.75`.
 
 ### Example 3: Kindergarten manager under Ofek Chadash, half position
 
-Kindergarten manager (gananet menahelet) under Ofek Chadash (kindergartens are an
-Ofek reform, not Oz), rank 3, 3 years of management seniority, gmul nihul gan
-(17% for up to 5 years of management seniority, or its 1,500 NIS floor if that is
-higher), half position. Gross: read the rank-3 combined-salary cell (already
-includes seniority), scale THAT by 0.5, and add the 17% gmul computed on the
-FULL-position cell WITHOUT scaling it, because
-role gmulim are not prorated by chelkiyut misra. Run:
-`python3 scripts/teacher_gross.py --base <rank3_cell> --gmul 17 --gmul-floor 1500
---position 0.5`.
-So it is half the cell PLUS the whole gmul, not half of both, which is a
-materially larger figure on any part-time slip. The management
-gmul is one role gmul, leaving room for at most one more. The two exceptions,
-special-education and inclusion gmulim, DO scale and need `--scale-gmulim`.
-Reconcile against the actual slip.
+Kindergarten manager (gananet menahelet) under Ofek Chadash, an existing gananet
+(banded by management years), BA, rank 3, 3 years of management, half position.
+Read her rank-3 BA cell, scale it by 0.5, and add the 17% gmul nihul gan (floor
+1,500 NIS; a NEW gananet at rank 3 would draw 20%) computed on the FULL-position
+cell without scaling, because role gmulim are not prorated. Run:
+`python3 scripts/teacher_gross.py --base RANK3_BA_CELL --gmul 17:1500
+--position 0.5`. Half the cell PLUS the whole gmul, not half of both. Add her
+tosefet Ofek 2022 line from the slip. The management gmul leaves room for at most
+one more role gmul.
 
 ### Example 4: Teacher split across both reforms in a six-year school
 
-A teacher in a six-year school teaches a third position (1/3) in the junior-high
-grades (Ofek Chadash, paid by the Ministry) and two-thirds (2/3) in the
-upper-secondary grades (Oz LaTmura, paid by an ORT baalut). She is under both
-reforms at once, so build gross TWICE and sum. Ofek part: read her Ofek combined
-cell for her rank and seniority, apply her Ofek role gmulim (say 10% gmul chinuch
-for a junior-high homeroom), scale by 1/3. Oz part: read her Oz combined cell for
-her Oz rank and the same recognized seniority, apply her Oz gmulim, scale by 2/3.
-Total gross = Ofek part + Oz part. Run the script once per division and add:
-`python3 scripts/teacher_gross.py --base <ofek_cell> --gmul 10 --gmul-floor 1000
---position 0.333` then `python3 scripts/teacher_gross.py --base <oz_cell> --gmul 8
---position 0.667`. Each division's role gmul is computed on that reform's
-full-position cell and is not prorated.
-Her two role gmulim (homeroom in the junior-high, coordinator in the high school)
-are already the two-gmul maximum, counted across the whole appointment. If a single
-baalut runs the six-year school and pays both divisions, this is one payslip with
-no tax coordination; if the Ministry pays the junior-high and a baalut pays the
-high school, she files a yearly teum mas or requests ichud maskorot. Had her two
-fractions summed to more than a full position, the 100% benefit cap above would
-apply.
+A teacher in a six-year school teaches 1/3 in the junior-high (Ofek Chadash, paid
+by the Ministry) and 2/3 in the upper-secondary grades (Oz LaTmura, paid by an ORT
+baalut). Build gross TWICE and sum. Ofek part: her Ofek cell (degree, rank,
+seniority) with a 10% homeroom gmul. Oz part: her Oz cell (degree, seniority) with
+an 8% coordinator gmul and the prorated tosefet shiklit. Run once per division:
+`python3 scripts/teacher_gross.py --base OFEK_CELL --gmul 10:1000 --position 1/3`
+then `python3 scripts/teacher_gross.py --base OZ_CELL --gmul 8 --fixed-prorated
+1790.50 --position 2/3`, and add. Her two role gmulim are already the two-gmul
+maximum across the whole appointment. One baalut paying both divisions means one
+payslip and no teum mas; the Ministry plus a baalut means a yearly teum mas or
+ichud maskorot. Above 100% in total, the 100% benefit cap applies.
 
 ## Gotchas
 
-- **Re-adding seniority that is already in the cell.** The official (rank x
-  seniority) cell IS the combined salary; it already includes vetek. Adding a
+- **Re-adding seniority that is already in the cell.** The official cell IS
+  the combined salary; it already includes vetek. Adding a
   seniority percentage on top double-counts it. Read the cell, then apply only
   gmulim.
 - **Putting kindergartens under the wrong reform.** Kindergarten teachers
   (gananot) are under Ofek Chadash, together with elementary and junior-high.
   Oz LaTmura is upper-secondary only. A "kindergarten teacher under Oz" does not
   exist.
-- **Ignoring who signs the slip.** Upper-secondary teachers are often employed by
-  a baalut (ORT, Amal, AMIT, Branco Weiss) or a municipality, not by the ministry
-  directly, which changes who issues the payslip and can change the pension
-  arrangement.
 - **Applying private-sector hourly logic.** A teacher's pay is a table cell (rank
   x seniority), not hours x hourly rate. Do not multiply frontal hours by a
   minimum-wage-style rate.
@@ -424,15 +414,10 @@ apply.
 - **Paying a teacher the private-sector havraa rate.** Teachers are public
   sector. Reaching for the private day rate, or for a private-sector payroll
   skill's figure, understates every havraa payment.
-- **Assuming both reforms share a structure.** Ofek rewards through rank
-  (dev hours, no classic gmulim); Oz banks one gmul a year with merit-point
-  promotions. Different tables, different hour splits, different increment logic.
 - **Forcing one reform on a teacher who teaches in both divisions.** A teacher in
-  both a junior-high and a high school is under both reforms at once. Build the
-  gross twice (one part per division, each by its own position fraction and its own
-  reform's table and gmulim) and sum; do not blend them into one table. Reform is
-  not employer: two separate payers (not the two reforms) are what create a yearly
-  teum mas, which ichud maskorot removes. See Step 1b.
+  both a junior-high and a high school is under both reforms at once: build the
+  gross once per division and sum. Two payers, not two reforms, create a yearly
+  teum mas. See Step 1b.
 
 ## Reference Links
 
@@ -456,9 +441,11 @@ apply.
   seniority-advancement reduction, with every band.
 - `references/domain-checklist.md` - the coverage contract for this skill.
 - `scripts/teacher_gross.py` - applies gmulim to a combined-salary cell you
-  supply. Flags: `--base`, `--gmul` (repeatable), `--gmul-floor` (shekel
-  higher-of test), `--fixed` (flat shekel lines, repeatable), `--position`,
-  `--scale-gmulim` (special-education and inclusion gmulim only),
+  supply. Flags: `--base`, `--gmul PCT[:FLOOR]` (repeatable, role gmul, not
+  prorated), `--gmul-share PCT@SHARE` (special-education and inclusion, by
+  frontal-hour share), `--gmul-scaled` (hishtalmut and promotion grades),
+  `--fixed` (flat shekel line in full), `--fixed-prorated` (flat shekel line by
+  position), `--position`, legacy `--gmul-floor` and `--scale-gmulim`,
   `--illustrative-seniority`, `--example`. It never ships a NIS rank table and
   never re-adds seniority.
 - `evidence.json` - every figure with its source and verbatim snippet.
@@ -466,15 +453,18 @@ apply.
 ## Troubleshooting
 
 - **"I do not know the base rate."** The skill does not carry NIS rank cells on
-  purpose (they change per agreement). Use the ministry salary-simulation
-  calculator or the union table, then feed the rate into `teacher_gross.py`.
+  purpose. Use the ministry salary-simulation calculator; the union PDF tables
+  were last dated September 2022. Feed the cell into `teacher_gross.py`.
 - **"The numbers do not match my payslip."** Check the year (Oz hour base changed
   in tashpe), the exact rank and recognized seniority (read the combined cell, do
   not re-add seniority), and whether every gmul is included and within the
   two-role cap. Remember the slip also carries fixed-shekel tosafot and havraa the
   script does not model, and deductions like union dues and the pension type
-  (budgetary vs funded) shift the net. If gross still differs, the base cell may
-  be from a newer agreement than the table you used.
+  (budgetary vs funded) shift the net. One-month spikes are usually retroactive
+  differences (hefreshim), for example a gmul recognised retroactively, or, for a teacher
+  who gave birth that year, retroactive pension, provident and keren deductions
+  taken in July. Bigud is paid in the July salary and the yom chinuch aroch grant
+  in May and June.
 - **"Is this net or gross?"** This skill computes GROSS. Net needs Step 4 and the
   `israeli-payroll-calculator` skill for the deduction mechanics.
 - **The user actually needs bookkeeping or Bagrut help.** Route to
