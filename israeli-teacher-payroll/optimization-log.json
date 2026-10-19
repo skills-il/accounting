@@ -1,7 +1,7 @@
 {
   "cycles": [
     {
-      "version": "1.5.0",
+      "version": "1.5.1",
       "date": "2026-10-19",
       "trigger": "Batch update-oldest-skills 2026-10-19, drift type A, start of school year tashpaz.",
       "value_add": "PASS, with 1.00 vs without 0.00 (delta +1.00) on 4 cases (havraa 511.60, keren 4.2/8.4, Oz promotion grade 1.67%/6.69%, Oz tosefet shiklit 1,790.50 prorated).",
@@ -17,7 +17,8 @@
         "NEW DEBT: per-rank NIS cells stay out of scope: ITU PDF tables still dated September 2022 and no tashpaz table is published; the Ministry calculator is interactive. Re-litigate next cycle.",
         "METHOD LESSON: the expert found that the skill had invented a 9-rank Oz table and omitted the education-grade dimension of every cell. Both survived several cycles because every gate checked the numbers that WERE written. Ask 'what are the axes of the table the user reads?' before checking any cell rule.",
         "METHOD LESSON: --check-sources reported 99/99 'declared verified' and fetched nothing, because every entry carried verified_via (including 'curl'). An independent re-fetch of every snippet is needed; tools/recheck.py in the batch workdir did it in one pass.",
-        "METHOD LESSON: the script review found that the shekel floor was tested against the SUM of gmulim and that the special-education gmul was scaled by position instead of the frontal-hour share. Loosening input parsing in round 3 nearly re-opened the 10,1000 -> 10.1% bug; keep the 1-2 digit decimal-comma rule for rates and amounts."
+        "METHOD LESSON: the script review found that the shekel floor was tested against the SUM of gmulim and that the special-education gmul was scaled by position instead of the frontal-hour share. Loosening input parsing in round 3 nearly re-opened the 10,1000 -> 10.1% bug; keep the 1-2 digit decimal-comma rule for rates and amounts.",
+        "METHOD LESSON: Tank failed 1.5.0 on literal U+202A-C characters inside a Python string in the input cleaner, and on U+200B inside a copied evidence snippet. Write invisible characters as escapes, and strip zero-width characters from snippets before committing. Fixed in 1.5.1 the same day."
       ]
     },
     {

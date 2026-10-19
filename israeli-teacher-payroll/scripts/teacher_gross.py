@@ -140,7 +140,7 @@ def parse_number(raw, what, money=True, fraction=False):
                          f"real figure from the Ministry calculator or the union "
                          f"table first")
     s = _SHEKEL_WORDS.sub("", s)
-    for ch in ("‏", "‎", "‪", "‫", "‬", " ", " ", "'"):
+    for ch in ("\u200f", "\u200e", "\u202a", "\u202b", "\u202c", " ", "\u00a0", "'"):
         s = s.replace(ch, "")
     if not s:
         raise InputError(f"{what}: '{raw}' has no digits")

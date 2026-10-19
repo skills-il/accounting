@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.1 - 2026-10-19
+
+- The script's input cleaner listed invisible direction-control characters
+  (U+202A to U+202C, RLM, LRM, NBSP) as literal characters in the source, which
+  the Tank scanner rightly flags as a bidirectional-override risk. They are now
+  written as escape sequences; behaviour is unchanged.
+- One evidence snippet carried zero-width spaces copied from the Bituach Leumi
+  page; re-quoted from a contiguous part of the page without them.
+
 ## 1.5.0 - 2026-10-19
 
 School year תשפ"ז pay changes, the teacher pension and study-fund rates, and a

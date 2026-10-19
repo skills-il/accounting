@@ -457,11 +457,11 @@
     },
     {
       "id": "health-tax-rates",
-      "claim": "Health insurance employee rates: 3.23% up to the reduced step of 7,703 NIS and 5.17% above it, up to the maximum insured income of 51,910 NIS.",
+      "claim": "Health insurance employee rates: 3.23% on the part up to the reduced step and 5.17% above it.",
       "claim_type": "percentage",
       "source_url": "https://www.btl.gov.il/Insurance/Rates/Pages/%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%D7%9D%20%D7%A9%D7%9B%D7%99%D7%A8%D7%99%D7%9D.aspx",
       "source_fetched_at": "2026-07-06T00:00:00Z",
-      "raw_snippet": "דרגת גביה מופחתת (שיעור מופחת) - 7,703 ש\"ח (החל ב- 01.01.2026) ​ ​ מחלק השכר שמעל מדרגת גביה מופחתת ועד ההכנסה המרבית החייבת בדמי ביטוח (שיעור מלא) - 51,910 ש\"ח (החל ב- 01.01.2026) ​ ​ ​ מעסיק עובד סך הכול מעסיק עובד סך הכול דמי ביטוח לאומי 4.51% (החל ב- 01.01.2025) 1.04% (החל ב- 01.01.2025) 5.55% (החל ב- 01.01.2025) 7.6% (החל ב- 01.01.2019) 7% (החל ב- 01.01.2006) 14.6% (החל ב- 01.02.2025) דמי ביטוח בריאות - 3.23% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) - 5.17% (החל ב- 01.02.2025)",
+      "raw_snippet": "דמי ביטוח בריאות - 3.23% (החל ב- 01.01.2025) 3.23% (החל ב- 01.01.2025) - 5.17% (החל ב- 01.02.2025) 5.17% (החל ב- 01.02.2025)",
       "confidence": "high",
       "claim_id": "btl-health-insurance-rates-2026",
       "verified_via": "curl",
