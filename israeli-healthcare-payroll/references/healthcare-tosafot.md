@@ -11,18 +11,18 @@ and re-check the year on the slip.
 
 | Addition | How it is paid |
 |----------|----------------|
-| Gmul hishtalmut (professional development) | A pensionable percentage of the combined salary credited in recognized-study-hour units (committee-approved). One of the largest levers on a veteran nurse's base pay. Read the current per-unit rate and unit cap from the nursing committee. |
+| Gmul hishtalmut (professional development) | A salary supplement whose value is a function of the recognized study hours approved by the nursing studies committee. One of the largest levers on a veteran nurse's base pay. Read the current rate and cap from the committee or the slip. |
 | Tosefet achayot 2024 | Named supplement for state-employed nurses: 250 NIS per full-time position from 1.10.2024, updated to 500 NIS per full-time position from 1.4.2025. Scale for part-time. |
-| Shift-responsibility supplement (tosefet achrayut mishmarot) | A per-entitled-shift amount paid to the nurse taking responsibility for a shift (a ward nurse, not only a manager). The agreement increases it over time. Changes month to month with shifts worked. |
-| Rotating-shift supplement | Paid to two-shift and three-shift workers, distinct from the per-shift responsibility line and from statutory night pay. Read the current amount. |
-| Charge-nurse / role and academic-degree lines | A charge-nurse-of-the-shift (achot achrait mishmeret) role line, an academic-degree supplement (tosefet toar), and an employer-specific management supplement (tosefet minhal / nihul) for management roles. |
+| Shift-responsibility supplement (tosefet achrayut mishmarot) | 80 NIS per entitled shift from 1.12.2023 (agreement of 11.12.2023). Expressly NOT salary for the hourly rate, overtime, severance or pension. Changes month to month with shifts worked. |
+| Tosefet nihul (management) | 7.2% from 1.12.2023, for nurses at ranks 14 to 21 ONLY, on the hourly-rate base (the current cell plus the supplements in force on 31.12.2022 that count for erech shaa), not the combined salary alone (agreement of 11.12.2023). |
+| Other role and shift lines | A rotating-shift line, a charge-nurse role line and an academic-degree supplement (tosefet toar) can also appear. Their amounts and eligibility rules are not sourced here; read them from the slip. |
 | Legacy fold-in shekel supplements | Named monthly shekel supplements from past agreements that fold into the base; veteran slips still show them. |
 
 ## Allied health (occupational therapy, physiotherapy, para-medical)
 
 | Addition | How it is paid |
 |----------|----------------|
-| Tosefet hachsharot (in place of gmul hishtalmut), from 1.4.2025 | A percentage of the combined salary ONLY, banded by professional seniority with exclusive upper bounds: 3.50% for 0 to 7 years, 9.00% for 7 to 17 years, 9.50% from 17 years. Replaces gmul hishtalmut rather than adding to it; the worker receives the higher of the two, never both. Render the band that matches the worker's professional seniority (counted from licence date, excluding army and national service). |
+| Tosefet hachsharot (in place of gmul hishtalmut), from 1.4.2025. Scope: the 22.4.2025 agreement (government and municipal hospitals); its implementation circular applies to staff in Ministry of Health hospitals. Not shown to cover Clalit or Hadassah. | A percentage of the combined salary ONLY, banded by professional seniority with exclusive upper bounds: 3.50% for 0 to 7 years, 9.00% for 7 to 17 years, 9.50% from 17 years. Replaces gmul hishtalmut rather than adding to it; the worker receives the higher of the two, never both. Render the band that matches the worker's professional seniority (all work in the profession after the licence was issued, including at other employers; army and national service excluded). For a worker who moved from gmul hishtalmut to tosefet hachsharot after 31.12.2022, whether the old gmul still sits in the tosefet nihul or tosefet achuzit base is not stated in the sources: read those lines off the payslip. |
 | Monthly incentive (tamritz) | A capped monthly performance line. The ceiling rose from 4,125 NIS to 5,400 NIS per full-time position per month from 1.4.2025. Variable, not part of the fixed base. |
 | Retention and recruitment grant | Up to 10,000 NIS per full-time position for eligible workers in specified settings (for example psychiatric hospitals and child-development units). Conditional and setting-specific. |
 
@@ -59,25 +59,24 @@ Kononut (on-call standby, IMA section 49):
 Compute a duty or on-call amount as its workday-equivalent count times the
 doctor's day-value (erech yom), not a plain daily rate. As a department-level
 magnitude check (not an individual's line), a rota runs about 20 to 30 on-call
-slots a month, about 60 in psychiatric hospitals. Residents also carry a
-presence/stay supplement (tosefet shehiya) among their standing lines.
+slots a month, about 60 in psychiatric hospitals. A doctor's slip also carries a
+presence supplement (tosefet shehiya) among its standing lines.
 
-Because these lines are not base salary, they do not raise the pension and
-severance base. Three more doctor lines sit outside the base: shortage-specialty
+The IMA agreement says planned duty and on-call are not part of the salary, so
+treat them as outside a doctor's deposit base unless the slip shows deposits (see
+`pension-and-annual-lines.md`). Two more doctor lines sit outside the base: shortage-specialty
 premium (miktzo'ot bemtzuka) at about 12.5% of salary for neonatology,
 anesthesia, cardiology, and general/pediatric/cardiac intensive care; a one-time
 periphery recruitment grant (ma'anak periferia) of 300,000 NIS (500,000 NIS for
 residents and shortage-specialty specialists) plus an ongoing periphery premium
-that ramped from 10% (2011) to 25% (from 2013) of salary; and global additional
-hours (sha'ot nosafot globaliyot) for senior doctors. Read the current ongoing
-rate for the periphery premium and the global-hours amount.
+that ramped from 10% (from 1.8.2011) to 17.5% (2012) to 25% (from 1.8.2013) of
+salary. Read the current ongoing rate for the periphery premium.
 
 ## Shared, non-healthcare-specific lines
 
-- Havraa (recreation pay): paid like other employees.
-- Clothing allowance (ktzuvat bigud): an annual public-sector payment, usually
-  once a year around July, set by grade level. It appears on one slip a year, not
-  evenly each month.
+- Havraa, the clothing allowance, mena'ak yovel, the nurses' setting grants and
+  their pension and severance treatment: see `pension-and-annual-lines.md` (and
+  `havraa-days.md` for the days tables).
 - Statutory night and overtime pay: standard labor law (a night shift and the
   overtime tiers above it) rather than a collective-agreement healthcare line.
   Keep it separate from the shift-responsibility supplement, and defer the
@@ -85,9 +84,8 @@ rate for the periphery premium and the global-hours amount.
 
 
 The toranut table gives day-type only, with no clock window per band, while the
-kononut table anchors each band to a clock window. That asymmetry is a property
-of the source agreements (the 2011 base agreement and the 2.10.2023 agreement),
-not an omission here: no authoritative source publishes toranut clock windows.
+kononut table anchors each band to a clock window. No source this skill could
+read publishes toranut clock windows, so none are given.
 
 
 ## Doctors: career stage, the agreement stack, and tosefet mesima leumit
@@ -100,11 +98,12 @@ shlav alef), works a 45-hour week; darga bet, after it, works 42 hours. Each sta
 carries its own lines and a different on-call profile. Do not model "a doctor" as
 one base cell.
 
-Doctors have their own agreement (signed 30.9.2024, covering the state, Clalit,
-Hadassah and municipal hospitals) on top of the general framework, replacing the
-previous agreement of 25.8.2011. It raises the combined-salary table in three
+Doctors have their own agreement, signed 30.9.2024 between the Government,
+Clalit and Hadassah and the IMA, separate from the general framework agreement
+(which covers Histadrut-represented dirugim), replacing the previous agreement of
+25.8.2011. It raises the combined-salary table in three
 legs, each stated cumulatively against the pre-agreement table: 4.88% from
-1.1.2025, 1.62% more from 1.7.2025 for 6.5% cumulative, and 1% more from 1.1.2026
+1.1.2025, 1.62 points more from 1.7.2025 for 6.5% cumulative, and 1 point more from 1.1.2026
 for 7.5% cumulative. That agreement has been amended several times since
 (among them 23.1.2025 and 31.3.2025, plus a monitoring-committee decision of
 30.6.2025), so "the doctors' agreement" is a stack, not one document; name the
@@ -122,17 +121,17 @@ koveat.
 specialty and role in a table inside the agreement, so the headline base is NOT
 what an individual doctor receives. Read the worker's own coefficient from the
 Wage Commissioner circular; we could not source the coefficient range, so do not
-state one. Do not confuse this supplement with tosefet mar'ag, which is a
-separate shekel supplement with its own eligibility test.
+state one.
 
 
 
 ## רופאים: שלב הקריירה, ערימת ההסכמים ותוספת משימה לאומית (עברית)
 
-**רופאים.** לרופאים יש הסכם משלהם שנחתם ב-30.9.2024 וחל על המדינה, כללית, הדסה
-ובתי חולים עירוניים, מעל הסכם המסגרת הכללי, והוא מחליף את ההסכם הקודם מ-25.8.2011.
+**רופאים.** לרופאים יש הסכם משלהם שנחתם ב-30.9.2024 בין ממשלת ישראל, כללית והדסה
+לבין הר"י, נפרד מהסכם המסגרת הכללי (שחל על דירוגים המיוצגים בהסתדרות), והוא מחליף
+את ההסכם הקודם מ-25.8.2011.
 ההסכם מעלה את טבלת השכר המשולב בשלוש פעימות, כל אחת מצטברת מול הטבלה שקדמה
-להסכם: 4.88% מ-1.1.2025, עוד 1.62% מ-1.7.2025 ובסך הכול 6.5%, ועוד 1% מ-1.1.2026
+להסכם: 4.88% מ-1.1.2025, עוד 1.62 נקודות אחוז מ-1.7.2025 ובסך הכול 6.5%, ועוד נקודת אחוז אחת מ-1.1.2026
 ובסך הכול 7.5%. ההסכם תוקן כמה פעמים מאז (בהם 23.1.2025 ו-31.3.2025, והחלטת ועדת
 מעקב מ-30.6.2025), כך ש"הסכם הרופאים" הוא ערימה ולא מסמך אחד; כדאי לנקוב בתיקון
 שמסתמכים עליו.
@@ -148,8 +147,6 @@ separate shekel supplement with its own eligibility test.
 **הסכום הוא סכום בסיס מוכפל במקדם** שנקבע לפי מקצוע ותפקיד בטבלה שבתוך ההסכם,
 ולכן סכום הכותרת אינו מה שרופא בודד מקבל. קראו את המקדם הספציפי של העובד מחוזר
 הביצוע של הממונה על השכר. לא הצלחנו לאמת את טווח המקדמים, ולכן אין לנקוב בטווח.
-אין לבלבל בין התוספת הזו לבין תוספת מר"ג, שהיא תוספת שקלית נפרדת עם מבחן זכאות
-משלה.
 
 התוספת אינה נכללת במשכורת הקובעת לגמלאות והיא מוגבלת בזמן ואינה קבועה.
 

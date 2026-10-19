@@ -1,7 +1,12 @@
 # The 2020-2027 public-sector framework agreement (heskem misgeret)
 
-Signed 17.7.2023. It sits ABOVE every dirug and moves EVERY wage-grade table, so
-a base read without it is stale by construction. This file carries the detail;
+Signed 17.7.2023. It applies to the dirugim represented by the Histadrut (the
+nurses' and allied-health dirugim among them) at employers that signed or joined
+it, and adds two lines on top of the combined cell (the shekel supplement and
+tosefet achuzit 2024); it does not change the combined-salary table. Its scope
+clause covers Histadrut-represented dirugim; doctors are represented by the IMA
+under their own agreement stack, so do not add these lines to a doctor's slip
+unless they appear on it. This file carries the detail;
 SKILL.md carries the summary.
 
 ## The shekel supplement (tosefet shiklit)
@@ -10,30 +15,37 @@ It pays a flat shekel supplement (tosefet shiklit) of 400 NIS from 1.7.2023,
 raised to 500 NIS from 1.10.2024. **The raise to 500 does NOT reach everyone, and
 nurses are on the excluded list**: nurses (including public-health nurses), social
 workers, medical imaging technicians (radiographers), medical technologists, and
-administrative-and-maintenance staff all stay at 400 NIS. So do not put 500 NIS on
-a nurse's slip. Vets, and lawyers whose pay is pegged to judicial pay, are outside
+administrative-and-maintenance staff all stay at 400 NIS. So do not put the 500
+NIS framework supplement on a nurse's slip (the 500 NIS tosefet achayot is a
+separate line). Vets, and lawyers whose pay is pegged to judicial pay, are outside
 the framework agreement altogether. On top of the shekel supplement sit cumulative
 percentage raises:
 
-| Effective from salary of | Cumulative percentage raise |
+| Effective from salary of | Rate of tosefet achuzit 2024 |
 |--------------------------|-----------------------------|
 | December 2024 | 2% |
 | April 2025 | 3.5% |
 | April 2026 | 5% |
 | April 2027 | 6% |
 
-**Order of operations (read this once and apply it consistently).** The tranches
-are folded INTO the published wage table: a table issued as "in force from
-1.4.2026" already contains the 5%. So the rule is: read a DATED cell, check the
-date, and do NOT apply a tranche on top of a cell that already postdates it.
-Apply a tranche yourself only when you are deliberately rolling a cell forward
-from an earlier in-force date to a later one, and say so explicitly when you do.
-Never apply a tranche to a cell of unknown date.
+**The percentage raise is a separate slip line, NOT folded into the wage table.**
+The Wage Commissioner's implementation circular of 11.12.2024 calls it tosefet
+achuzit 2024, a NEW percentage salary supplement paid at a uniform rate in every
+qualifying dirug and grade, rising to 5.0% from 1.4.2026 with the last step in
+April 2027. Its base is the hourly-rate base: the CURRENT combined salary and
+seniority supplement, plus every percentage and shekel supplement that existed on
+31.12.2022 and counts for erech shaa, excluding non-periodic payments. The date
+limits which supplements count, not the salary amount. Supplements added after
+it (tosefet achayot, tosefet hachsharot, the shekel supplement) are not in the
+base; for a dirug whose cell already contains vetek, do not add seniority again. It is
+salary for all purposes (hourly rate, overtime and on-call, severance, pensions,
+provident and keren hishtalmut deposits) and is in the mashkoret koveat. Social
+workers are among the dirugim that do NOT receive it. Never multiply the combined
+cell by the rate; compute it on its own base and treat it as a pro-rated shekel
+line, or read it off the slip. (Earlier versions of this skill said the tranches
+were folded into the table; the circular shows they are not.)
 
-Separately, do not assume a tosefet yoker (general cost-of-living allowance) line
-is live. It is activated only by a separate extension order and is not paid
-routinely, so check whether one is in force for the month being read before
-putting it on a slip. The framework also shortened the public-sector working week from 42 hours to 40
+The framework also shortened the public-sector working week from 42 hours to 40
 in two steps, 182 monthly hours to 177.667 and then to 173.333. That matters
 beyond leave: the hourly rate (erech shaa) is the monthly salary divided by the
 monthly hours norm, so a shorter week RAISES erech shaa and every line derived

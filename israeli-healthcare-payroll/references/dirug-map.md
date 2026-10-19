@@ -36,6 +36,6 @@ which grade, so the reader picks the right table before reading any number.
 The same grade is paid by different employers: the Ministry of Health
 (government hospitals), Clalit (which owns hospitals and community clinics),
 Hadassah, or a municipal hospital. The employer issues the payslip, can run a
-different pension arrangement, and can add employer-specific supplements (for
-example a management supplement at Clalit), even though the underlying grade
+different pension arrangement, and can add employer-specific supplements, even
+though the underlying grade
 table is the same. Establish the employer before reading a slip.

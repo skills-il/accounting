@@ -1,7 +1,7 @@
 {
   "skill_slug": "israeli-healthcare-payroll",
   "schemaVersion": "1.0",
-  "generated_at": "2026-08-09T00:00:00Z",
+  "generated_at": "2026-10-19T23:55:00Z",
   "claims": [
     {
       "id": "nurses-dirug-applies",
@@ -654,6 +654,558 @@
       "fetched_at": "2026-08-27T00:00:00Z",
       "verified_via": "curl",
       "verified_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "id": "havraa-days-govt-hospitals",
+      "claim": "Takshir 28.241(b): state employees in government hospitals in the nurses, physiotherapists, pharmacists, academic (mach'ar), speech clinicians, para-medical and occupational-therapy dirugim (among others) get havraa days by recognized seniority: 9 in the first year, 11 for years 2 to 4, 12 for 5 to 10, 13 for 11 to 15, 14 for 16 to 20, 15 from year 21.",
+      "claim_type": "rate-table",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "(ב) שיעור קצובת ההבראה והנופש לעובדים המועסקים בבתי חולים הממשלתיים בדירוגים: מינהלי, מח\"ר, מהנדסים, הנדסאים וטכנאים, עיתונאים, פסיכולוגים, פיזיוטרפיסטים, משפטנים, ביוכימאים ומקרוביולוגים, רוקחים, סטודנטים לרפואה וסיעוד, אחים, עובדי הוראה, עובדים סוציאליים, קלינאי תקשורת, פארה-רפואיים, מרפאים בעיסוק הוא בשיעור שווה למחיר בעד יום הבראה, כפול במספר הימים המפורטים להלן, לפי שנות ותק מוכרות: שנות ותק מוכרות מספר ימי הבראה השנה הראשונה 9 מהשנה ה-2 עד ה-4 11 מהשנה ה-5 עד ה-10 12 מהשנה ה-11 עד ה-15 13 מהשנה ה-16 עד ה-20 14 מהשנה ה-21 15",
+      "verified_via": "browser",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high",
+      "verified_at": "2026-10-19T21:30:00Z"
+    },
+    {
+      "id": "havraa-days-allied-outside",
+      "claim": "Takshir 28.241(c): occupational therapists, para-medical staff, physiotherapists and radiographers not employed in government hospitals get 6, 8, 9, 10, 11 havraa days (first 3 years, 4-10, 11-15, 16-19, from 20).",
+      "claim_type": "rate-table",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "(ג) שיעור קצובת ההבראה והנופש לעובדים בדירוגים הבאים אשר אינם מועסקים בבתי החולים הממשלתיים: מרפאים בעיסוק, פארה-רפואיים, פזיוטרפיסטים ורנטגנאים הוא בשיעור שווה למחיר בעד יום הבראה כפול במספר הימים המפורטים להלן, לפי מספר שנות שירות של העובד (בהתאם להוראות פסקה 28.231); מספר שנות שירות מספר ימי הבראה 3 השנים הראשונות 6 מהשנה ה-4 עד ה-10 8 מהשנה ה-11 עד ה-15 9 מהשנה ה-16 עד ה-19 10 מהשנה ה-20 11",
+      "verified_via": "browser",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high",
+      "verified_at": "2026-10-19T21:30:00Z"
+    },
+    {
+      "id": "havraa-days-doctors-2026",
+      "claim": "Takshir 28.241(d): the doctors' dirug havraa days are 6, 8, 10, 11, 12, 13 (first 3 years, 4-6, 7-10, 11-15, 16-19, from 20), in force from 1.1.2026.",
+      "claim_type": "rate-table",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "(ד) שיעור קצובת ההבראה והנופש לעובדים בדירוג הרופאים הוא בשיעור שווה למחיר בעד יום הבראה כפול במספר הימים המפורטים להלן, לפי מספר שנות שירות של העובד (בהתאם להוראות פסקה 28.231); מספר שנות שירות מספר ימי הבראה 3 השנים הראשונות 6 מהשנה ה-4 עד ה-6 8 מהשנה ה-7 עד ה-10 10 מהשנה ה-11 עד ה-15 11 מהשנה ה-16 עד ה-19 12 מהשנה ה-20 13 (תחולה: מיום י\"ב בטבת תשפ\"ו, (1.1.2026))",
+      "verified_via": "browser",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high",
+      "verified_at": "2026-10-19T21:30:00Z"
+    },
+    {
+      "id": "havraa-days-general",
+      "claim": "Takshir 28.241(a): the general state-employee havraa table is 7, 9, 10, 11, 12, 13 days (first 3 years, 4-10, 11-15, 16-19, 20-24, from 25).",
+      "claim_type": "rate-table",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "3 השנים הראשונות 7 מהשנה ה-4 עד ה-10 9 מהשנה ה-11 עד ה-15 10 מהשנה ה-16 עד ה-19 11 מהשנה ה-20 עד ה-24 12 **מהשנה ה- 25 13",
+      "verified_via": "browser",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high",
+      "verified_at": "2026-10-19T21:30:00Z"
+    },
+    {
+      "id": "havraa-days-rules",
+      "claim": "Takshir: radiographers get 5 extra days; under-18 employees get 8 days; a year with more than six months unpaid leave does not count; part-timers are pro-rated (28.241(f),(g), 28.244, 28.247).",
+      "claim_type": "rule",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "(ו) למרות האמור לעיל, עובד שגילו למטה מ-18 זכאי לקצובת הבראה ונופש בעד 8 ימים לשנה החל מהשנה הראשונה לעבודתו; (ז) למרות האמור לעיל, רנטגנאי זכאי לקצובת הבראה ונופש של 5 ימים נוספים על מספר ימי ההבראה המגיעים לו לפי הטבלאות בנסמנים (ב) ו-(ג) לעיל; נמשכה החופשה ללא משכורת של העובד שישה חודשים בלבד, תיחשב אותה שנה כשנת העבודה לצורכי פסקה 28.241. נמשכה החופשה ללא משכורת יותר משישה חודשים, לא תובא אותה שנה בחשבון כשנת עבודה; עובד במשרה חלקית זכאי לקצובת הבראה ונופש בשיעור שיחסו לשיעור הקבוע בפסקה 28.241, כיחס חלקיות משרתו אל משרה שלמה.",
+      "verified_via": "browser",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high",
+      "verified_at": "2026-10-19T21:30:00Z"
+    },
+    {
+      "id": "havraa-severance-twelfth",
+      "claim": "Takshir 28.246: one twelfth of the havraa, at the quota due on the day service ends, is included in the salary on which severance is computed for a state employee.",
+      "claim_type": "rule",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "החלק ה-12 של קצובת הבראה ונופש, בשיעור המכסה המגיעה לעובד ביום סיום שירותו, ייכלל במשכורת הקובעת על פיה יחושבו פיצויי הפיטורים המגיעים לעובד הזכאי לפיצויים כאלה.",
+      "verified_via": "browser",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high",
+      "verified_at": "2026-10-19T21:30:00Z"
+    },
+    {
+      "id": "yovel-2026-eligibility",
+      "claim": "Mena'ak yovel: nurses are paid in the November salary; the required seniority is 30 years in the doctors' dirug and 25 in other dirugim; accelerated seniority (second or third degree, certificate studies) does not count; most dirugim are paid in September.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%aa%d7%a9%d7%9c%d7%95%d7%9d-%d7%9e%d7%a2%d7%a0%d7%a7-%d7%99%d7%95%d7%91%d7%9c-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8%d7%99-%d7%9c%d7%a9%d7%a0%d7%aa-2026/",
+      "raw_snippet": "במשכורת חודש ספטמבר משולם מענק יובל למרבית הדירוגים במגזר הציבורי, למעט לעובדים בדירוג חוזה אישי. העובדים המדורגים בדירוג אחים ואחיות זכאים לתשלום מענק יובל במשכורת חודש נובמבר, ואילו לעובדי ההוראה שולם המענק במשכורת חודש יוני. בדירוגי רופאים ומשפטנים, הוותק הנדרש לקבלת מענק יובל הינו 30 שנה. בשאר הדירוגים הוותק המינימאלי הנדרש הינו 25 שנה. הוותק לצורך תשלום מענק יובל אינו כולל שנות ותק מואץ כגון: לימודי תואר שני/ שלישי, לימודי תעודה וכדומה.",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "yovel-2026-amount",
+      "claim": "Mena'ak yovel is 60% of the salary forming the hourly-rate base, pro-rated by position and working days in the entitlement year.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%aa%d7%a9%d7%9c%d7%95%d7%9d-%d7%9e%d7%a2%d7%a0%d7%a7-%d7%99%d7%95%d7%91%d7%9c-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8%d7%99-%d7%9c%d7%a9%d7%a0%d7%aa-2026/",
+      "raw_snippet": "סכום מענק היובל מחושב לפי 60% מהשכר המהווה בסיס לערך שעה, ובהתאם לחלקיות המשרה וימי העבודה בשנת הזכאות.",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "yovel-2026-pension",
+      "claim": "For a state employee on budgetary pension mena'ak yovel is not determining salary and carries no provident-fund or keren hishtalmut deposits; on a funded pension only, it enters the second-tier (additional work) pension deposits.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%aa%d7%a9%d7%9c%d7%95%d7%9d-%d7%9e%d7%a2%d7%a0%d7%a7-%d7%99%d7%95%d7%91%d7%9c-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8%d7%99-%d7%9c%d7%a9%d7%a0%d7%aa-2026/",
+      "raw_snippet": "לגבי עובדי המדינה, המבוטחים בהסדר פנסיה תקציבית, מענק היובל אינו שכר קובע לכל דבר ועניין, ולא מהווה בסיס להפרשות סוציאליות כגון: קופת גמל וקרן השתלמות. לגבי עובדי המדינה, המבוטחים בהסדר של פנסיה צוברת בלבד, סכום מענק היובל נכלל בבסיס לביצוע הפרשות פנסיוניות ברובד השני (עבודה נוספת).",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "yovel-2026-reduction",
+      "claim": "In 2026 a 1.2% wage reduction is taken from mena'ak yovel on a separate slip line titled tikun pensioni begin rechiv shnati.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%aa%d7%a9%d7%9c%d7%95%d7%9d-%d7%9e%d7%a2%d7%a0%d7%a7-%d7%99%d7%95%d7%91%d7%9c-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8%d7%99-%d7%9c%d7%a9%d7%a0%d7%aa-2026/",
+      "raw_snippet": "לפי הוראות ההסכם, בשנת 2026 על תשלום מענק יובל במגזר הציבורי, תבוצע הפחתת שכר בשיעור של 1.2%. הפחתה זו תופיע בתלושי המשכורת בשורה נפרדת תחת הכותרת",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "wage-reduction-carve-outs",
+      "claim": "Under the agreement, the one-off end-of-employment payment, bridging payments or an employer-funded annuity top-up, the pension-fund payment, the mashkoret koveat for budgetary pension and budgetary pension payments are computed as if the reduction had not been made.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a9%d7%aa%d7%aa%d7%a4%d7%95%d7%aa-%d7%94%d7%a2%d7%95%d7%91%d7%93%d7%99%d7%9d-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8%d7%99-%d7%91%d7%94%d7%95%d7%a6%d7%90%d7%95/",
+      "raw_snippet": "יהיו בסכומים שהיו מחושבים אלמלא הפחתת השכר כאמור לעיל, דהיינו כאילו שולמו במועדם וללא ההפחתה: תשלום חד פעמי המשולם לעובד או לשאיריו, לפי דין או הסכם, עקב סיום עבודה, לפי העניין. תשלומי גישור, או סכום תוספת לקצבה הנרכש מקופת גמל לקצבה או ממבטח בעד העובד במימון מלא של המעסיק הציבורי; לעניין זה, \"תשלומי גישור\" – תשלומים המשולמים מדי חודש, באופן רציף, לפי הסכם, מקופת המעסיק, מקופת גמל לקצבה או ממבטח, למי שפרש מעבודתו, בעד התקופה שממועד פרישתו מעבודה עד המועד שבו הוא זכאי לתשלומי קצבה מקופת גמל לקצבה. הסכום המשולם לקופת גמל לקצבה בעד עובד. המשכורת הקובעת לחישוב תשלומי עובדים בפנסיה תקציבית לפי סעיף 89 לחוק התכנית להבראת כלכלת ישראל (תיקוני חקיקה להשגת יעדי התקציב והמדיניות הכלכלית לשנות הכספים 2003 ו- 2004), התשס\"ג- 2003. תשלומי פנסיה תקציבית, המשולמת על פי דין או הסכם.",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "wage-reduction-law-s8",
+      "claim": "Section 8 of the 2025 participation law lists the payments computed without the reduction, including the pension-fund amount, the budgetary-pension determining salary, the tax computations under sections 3(e3), 9(7a), 45a and 47 of the Income Tax Ordinance (not for tax year 2024), budgetary pension payments, one-off end-of-employment payments, disability-insurance premiums, bridging payments and NI benefits under signs E and H of chapter E.",
+      "claim_type": "statute",
+      "source_url": "https://www.nevo.co.il/law_html/law00/234283.htm",
+      "raw_snippet": "סייג לעניין תשלומים שונים 8. לעניין חישוב של כל אחד מהמפורטים להלן לא תובא בחשבון הפחתת המשכורת של עובד או ההפחתה של התשלום המשולם לבעל תפקיד מקופת המעסיק, לפי סעיפים 2 עד 4, 6 ו-7, בתקופה הקובעת הראשונה או בעדה ובתקופה הקובעת השנייה או בעדה, ולעניין עובד שחל עליו הסכם קיבוצי מאושר – לא תובא בחשבון הפחתת משכורת כאמור גם בתקופה המקדימה, אם נקבעה כזו בהסכם הקיבוצי המאושר: (1) הסכום המשולם לקופת גמל לקצבה, בעד העובד או בעל התפקיד; (2) המשכורת הקובעת לחישוב תשלומי עובדים בפנסיה תקציבית לפי סעיף 89 לחוק התוכנית להבראת כלכלת ישראל (תיקוני חקיקה להשגת יעדי התקציב והמדיניות הכלכלית לשנות הכספים 2003 ו-2004), התשס\"ג-2003; (3) ההכנסה לצורך חישוב תשלומים ששולמו לקופת גמל לקצבה, או החיוב במס או הפטור ממנו בשל תשלומים כאמור, לפי העניין, לפי הוראות סעיפים 3(ה3), 9(7א), 45א ו-47 לפקודת מס הכנסה, אולם הוראות פסקה זו לא יחולו לעניין תשלומים ששולמו בשל שנת המס 2024; (4) תשלומי פנסיה תקציבית; (5) תשלום חד-פעמי המשולם לעובד, לבעל התפקיד או לשאיריהם, לפי דין או הסכם, עקב סיום עבודה או תפקיד, לפי העניין; (6) דמי ביטוח המשולמים לפי חוזה ביטוח נכות כאמור בפרק ג' לחוק חוזה הביטוח, התשמ\"א-1981; (7) לעניין עובד – תשלומי גישור, או סכום תוספת לקצבה הנרכש מקופת גמל לקצבה או ממבטח בעד העובד במימון מלא של המעסיק; לעניין זה, \" תשלומי גישור \" – תשלומים המשולמים מדי חודש, באופן רציף, לפי הסכם, מקופת המעסיק, מקופת גמל לקצבה או ממבטח, למי שפרש מעבודתו, בעד התקופה שממועד פרישתו מעבודה עד המועד שבו הוא זכאי לתשלומי קצבה מקופת גמל לקצבה; (8) גמלה המשתלמת למבוטח או לתלוי בו, לפי סימנים ה' ו-ח' בפרק ה' לחוק הביטוח הלאומי [נוסח משולב], התשנ\"ה-1995.",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "wage-reduction-second-period-end",
+      "claim": "The law's second determining period runs from 1.1.2026 to 31.12.2026.",
+      "claim_type": "statute",
+      "source_url": "https://www.nevo.co.il/law_html/law00/234283.htm",
+      "raw_snippet": "התקופה הקובעת השנייה \" – התקופה שמיום י\"ב בטבת התשפ\"ו (1 בינואר 2026) עד יום כ\"א בטבת התשפ\"ז (31 בדצמבר 2026)",
+      "source_fetched_at": "2026-10-19T21:30:00Z",
+      "fetched_at": "2026-10-19T21:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "wage-reduction-form-106-pending",
+      "claim": "The Accountant General page says the Tax Authority will publish separate instructions on reporting the salary amount in Form 106.",
+      "claim_type": "rule",
+      "source_url": "https://www.gov.il/he/pages/salary-reduction-2025-2026",
+      "raw_snippet": "הנחיות באשר לדיווח סכום השכר בטופס 106 יפורסמו על ידי רשות המיסים הניכויים.",
+      "verified_via": "browser",
+      "verified_at": "2026-10-19T21:40:00Z",
+      "source_fetched_at": "2026-10-19T21:40:00Z",
+      "fetched_at": "2026-10-19T21:40:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "ag-1372-scope",
+      "claim": "Accountant General instruction 13.7.2 applies to state employees not covered by the State Service (Pensions) Law, who are entitled to provident-fund deposits under the transfer agreement from budgetary to funded pension of 3.3.1999.",
+      "claim_type": "rule",
+      "source_url": "https://acadmachar-gemel.co.il/wp-content/uploads/2025/01/חוזר-החשב-הכללי-הגדלת-הפרשות-בקופג.pdf",
+      "raw_snippet": "עובדי מדינה אשר חוק שירות המדינה (גמלאות) [נוסח משולב],התש\"ל( 1970 -להלן :חוק הגימלאות) ,אינו חל עליהם ,זכאים מתוקף הסכם המעבר של עובדי המדינה מפנסיה תקציבית לפנסיה צוברת מיום 3במארס 1999להפקדות לקופת גמל לקצבה.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-19T23:30:00Z"
+    },
+    {
+      "id": "ag-1372-in-force",
+      "claim": "Instruction 13.7.2 is in force from 22.12.2011.",
+      "claim_type": "rule",
+      "source_url": "https://acadmachar-gemel.co.il/wp-content/uploads/2025/01/חוזר-החשב-הכללי-הגדלת-הפרשות-בקופג.pdf",
+      "raw_snippet": "בתוקף מיום22.12.2011",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-19T23:30:00Z"
+    },
+    {
+      "id": "ag-1372-tier1",
+      "claim": "Tier 1 is the budgetary determining salary of a permanent employee excluding clothing and including mena'ak yovel and havraa, plus every other monthly salary component that is not an expense reimbursement, tax gross-up or benefit imputation, except clothing.",
+      "claim_type": "rule",
+      "source_url": "https://acadmachar-gemel.co.il/wp-content/uploads/2025/01/חוזר-החשב-הכללי-הגדלת-הפרשות-בקופג.pdf",
+      "raw_snippet": "המשכורת החודשית הקובעת לפנסיה תקציבית לגבי עובד קבוע ,למעט תשלום בגין .3.3.1 ביגוד ולרבות תשלום בגין מענק יובל והבראה. כל רכיבי המשכורת החודשית אשר אינם נכללים בבסיס השכר הפנסיוני ,כאמור .3.3.2 בסעיף 3.3.1ואשר אינם בגדר החזר הוצאות ,גילום מס וזקיפת הטבה למס ,למעט תשלום בגין ביגוד.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-19T23:30:00Z"
+    },
+    {
+      "id": "ag-1372-tier2",
+      "claim": "Tier 2 is the pay component for additional work.",
+      "claim_type": "rule",
+      "source_url": "https://acadmachar-gemel.co.il/wp-content/uploads/2025/01/חוזר-החשב-הכללי-הגדלת-הפרשות-בקופג.pdf",
+      "raw_snippet": "רכיב עבודה נוספת (רובד שני) – רכיב השכר המשולם עבור ביצוע עבודה נוספת.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-19T23:30:00Z"
+    },
+    {
+      "id": "ag-1372-severance-deposit",
+      "claim": "The deposit tables in instruction 13.7.2 carry a 6% employer severance deposit on tier 1 and tier 2.",
+      "claim_type": "rate-table",
+      "source_url": "https://acadmachar-gemel.co.il/wp-content/uploads/2025/01/חוזר-החשב-הכללי-הגדלת-הפרשות-בקופג.pdf",
+      "raw_snippet": "המעביד הפקדת 6% 6% לפיצויים",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-19T23:30:00Z"
+    },
+    {
+      "id": "allied-agreement-scope",
+      "claim": "The allied-health agreement of 22.4.2025 was signed between the Government of Israel and the municipal hospitals and the Histadrut; its implementation instructions apply to occupational-therapy, physiotherapy and para-medical staff employed in Ministry of Health hospitals.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%a7%d7%99%d7%91%d7%95%d7%a6%d7%99-%d7%9c%d7%a2%d7%95%d7%91%d7%93%d7%99-%d7%9e%d7%a7%d7%a6%d7%95%d7%a2%d7%95%d7%aa-%d7%94%d7%91%d7%a8%d7%99%d7%90%d7%95/",
+      "raw_snippet": "ביום 22.4.2025 נחתם בין ממשלת ישראל ובתי החולים העירוניים, לבין הסתדרות העובדים הכללית החדשה, הסכם קיבוצי לעובדי מקצועות הבריאות (להלן: ההסכם ). בהמשך לכך, ביום 18.6.2025 פרסם אגף השכר והסכמי עבודה חוזר עם הוראות ביצוע להסכם, כדלקמן: תחולה ההוראות שלהלן יחולו על העובדים, אשר משכורתם מחושבת לפי ההסכמים הקיבוציים החלים על דירוג ריפוי בעיסוק, דירוג הפיזיותרפיסטים ועובדים בתפקיד דיאטנים וקלינאי תקשורת בדירוג הפארה רפואיים, המועסקים בבתי החולים במשרד הבריאות",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "allied-seniority-definition",
+      "claim": "Professional seniority for tosefet hachsharot is all work in the profession after the licence was issued, excluding army or national service.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%a7%d7%99%d7%91%d7%95%d7%a6%d7%99-%d7%9c%d7%a2%d7%95%d7%91%d7%93%d7%99-%d7%9e%d7%a7%d7%a6%d7%95%d7%a2%d7%95%d7%aa-%d7%94%d7%91%d7%a8%d7%99%d7%90%d7%95/",
+      "raw_snippet": "הוותק לעניין תוספת הכשרות הינו וותקו המקצועי בלבד, כולל כל תקופת עבודה במקצוע לאחר קבלת הרישיון באותו המקצוע. כלומר ותק אשר אינו כולל ותק שירות (צה\"ל או שירות לאומי)",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "framework-scope-histadrut",
+      "claim": "The framework agreement provisions apply to employees whose salary is set by collective agreements for the dirugim represented by the Histadrut.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%9e%d7%a1%d7%92%d7%a8%d7%aa-2023-%d7%a7%d7%99%d7%a6%d7%95%d7%a8-%d7%a9%d7%91%d7%95%d7%a2-%d7%a2%d7%91%d7%95%d7%93%d7%94-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94/",
+      "raw_snippet": "עובדים, אשר משכורתם מחושבת לפי הסכמים קיבוציים החלים על דירוגים המיוצגים על-ידי ההסתדרות",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-2024-parties",
+      "claim": "The doctors' agreement of 30.9.2024 was signed between the Government of Israel, Clalit and Hadassah and the Israel Medical Association.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%a8%d7%95%d7%a4%d7%90%d7%99%d7%9d-%d7%9e-31-3-2025-%d7%95%d7%94%d7%97%d7%9c%d7%98%d7%aa-%d7%95%d7%95%d7%a2%d7%93%d7%aa/",
+      "raw_snippet": "ביום 30.9.2024 נחתם בין ממשלת ישראל, שירותי בריאות כללית, ההסתדרות המדיצינית הדסה לבין ההסתדרות הרפואית בישראל הסכם קיבוצי לעדכון תנאי העסקה של רופאים במדינה",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "doctors-freeze-23-1-2025",
+      "claim": "The doctors' agreement of 23.1.2025 froze the seniority supplement and index linkage for 2025 for the doctors' dirug.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%a8%d7%95%d7%a4%d7%90%d7%99%d7%9d-%d7%9e-31-3-2025-%d7%95%d7%94%d7%97%d7%9c%d7%98%d7%aa-%d7%95%d7%95%d7%a2%d7%93%d7%aa/",
+      "raw_snippet": "ביום 23.1.2025 נחתם בין ממשלת ישראל, שלוש הערים הגדולות, המוסד לביטוח לאומי, שירותי בריאות כללית, הסתדרות מדיצינית הדסה, המרכז הרפואי שערי צדק ולאומית שירותי בריאות לבין ההסתדרות הרפואית בישראל, הסכם קיבוצי בדבר הקפאת תוספת ותק והצמדה למדד בתוקף לשנת 2025 עבור העובדים בדירוג רופאים",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-nihul-salary-status",
+      "claim": "Tosefet nihul is salary for all purposes, including the hourly rate, overtime and on-call, severance and pensions.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "תוספת ניהול תהווה שכר לכל דבר ועניין, ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות וקריאות פתע, לעניין פיצויי פיטורים כמשמעותם בחוק פיצויי פיטורים, התשכ\"ג- 1963, לעניין גמלאות",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-nihul-mashkoret",
+      "claim": "Tosefet nihul is included in the determining salary under section 8 of the State Service (Pensions) Law.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "תוספת ניהול תובא בחישוב המשכורת הקובעת, כהגדרתה בסעיף 8 לחוק שירות המדינה (גמלאות) [נוסח משולב], התש\"ל-1970.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-setting-grants",
+      "claim": "Nurses in named geriatric hospitals get a 5,000 NIS full-time grant, pro-rated for part time, paid every year in the January salary.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "מענק אחיות גריאטריה יהיה בסכום של 5,000 ₪ למשרה מלאה לאחות זכאית – גריאטריה, ולאחות במשרה חלקית בהתאם לחלקיות משרתה. § מענק אחיות גריאטריה ישולם במשכורת חודש ינואר המשולמת בחודש פברואר בכל שנה.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-grant-geri-12-months",
+      "claim": "The geriatric grant requires 12 continuous months in the preceding calendar year in a qualifying hospital.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "לעובדות דירוג אחיות העובדות בבתי החולים הגריאטריים (להלן: אחות זכאית – גריאטריה ), אשר הועסקה אצל המעסיקים 12 חודשים רצופים במהלך השנה הקלנדרית שקדמה לחודש התשלום בבית חולים מזכה",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-grant-psych",
+      "claim": "Nurses in named psychiatric hospitals got a 5,000 NIS full-time grant, paid once in the February 2024 salary, pro-rated for part time.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "מענק אחיות פסיכיאטריה ישולם חד פעמית במשכורת פברואר 2024 המשולמת במרץ 2024. § מענק אחיות פסיכיאטריה יהיה בסכום של 5,000 ₪ למשרה מלאה לאחות זכאית – פסיכיאטריה, ולאחות במשרה חלקית בהתאם לחלקיות משרתה.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-grant-retiring",
+      "claim": "A nurse retiring for age in those hospitals gets 5,000 NIS divided by the months worked in the qualifying period, paid in the final settlement.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "סכום המענק לאחות שהועסקה במשרה מלאה טרם הפרישה יהיה 5,000 ₪ חלקי מספר חודשי העבודה של אחות פורשת בתקופה שבין 1 בינואר ועד 31 בדצמבר בתקופה הקובעת. § מענק לאחות פורשת ישולם במסגרת גמר חשבון.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-grant-new",
+      "claim": "A new nurse in those hospitals gets 5,000 NIS divided by the months worked in the qualifying period.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "סכום המענק לאחות במשרה מלאה יהיה 5,000 ₪ חלקי מספר חודשי העבודה של אחות נקלטת בתקופה שבין 1 בינואר ועד 31 בדצמבר בתקופה הקובעת.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-grants-not-salary",
+      "claim": "The nurses' setting grants are not salary for any purpose: not counted for the hourly rate, overtime, on-call, shifts, percentage supplements or severance.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "המענקים אינם מהווים שכר לכל דבר ועניין, לא יובאו בחשבון לעניין חישוב ערך שעה, תגמול עבור עבודה נוספת לרבות גמול בעד שעות נוספות, כוננויות, קריאות פתע, משמרות, או שכר עידוד (ככל שהעובדת זכאית להם), תוספות אחוזיות, פיצויי פיטורים",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-achayot-counts-yovel",
+      "claim": "Tosefet achayot 2024 counts toward the nurses' incentive and mena'ak yovel.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "תוספת אחיות 2024 תובא בחשבון לעניין חישוב תמריץ אחיות ומענק יובל.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "havraa-summer-timing",
+      "claim": "Havraa is usually paid in one of the summer months (June to September) unless another date is set or customary at the workplace.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%a2%d7%93%d7%9b%d7%95%d7%9f-%d7%aa%d7%a2%d7%a8%d7%99%d7%a4%d7%99-%d7%93%d7%9e%d7%99-%d7%94%d7%91%d7%a8%d7%90%d7%94-%d7%9c%d7%a9%d7%a0%d7%aa-2026/",
+      "raw_snippet": "קצובת ההבראה משולמת בדרך כלל באחד מחודשי הקיץ (יוני–ספטמבר), אלא אם נקבע או נהוג מועד אחר במקום העבודה.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "havraa-partial-year",
+      "claim": "Takshir 28.243: years are counted from 1 January; a mid-year starter gets partial havraa by days actually worked / 365.",
+      "claim_type": "rule",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "חישוב שנות העבודה בשירות, ייעשה מ-1 בינואר בכל שנה; עובד שהחל את עבודתו אחרי ה-1 בינואר באותה שנה, יקבל קצובת הבראה חלקית שתחושב על בסיס שנתי ותשולם בהתאם למספר ימי העבודה בפועל של העובד בשנה חלקי 365 ימים;",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-10-19T23:30:00Z"
+    },
+    {
+      "id": "havraa-days-negev",
+      "claim": "Takshir 28.242: a Negev-based employee gets 9, 10, 11, 12, 13 days (up to 3 years, 4-7, 8-11, 12-24, from 25) if better for them.",
+      "claim_type": "rate-table",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "28.242 עובד אשר מקום עבודתו הקבוע ובסיסו הם בנגב (כמוגדר בפסקה 25.411) ואשר השלים מספר שנות עבודה רצופות בנגב כמפורט להלן, זכאי לקצובת הבראה לפי השיעורים הבאים, במקום השיעורים הנקובים לעיל, אם הדבר לטובתו: מספר שנות שירות מספר ימי הבראה עד 3 שנים 9 מהשנה ה-4 עד השנה ה-7 10 מהשנה ה-8 עד השנה ה-11 11 מהשנה ה-12 עד השנה ה-24 12 * מהשנה ה-25 13",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-10-19T23:30:00Z"
+    },
+    {
+      "id": "havraa-severance-cpi",
+      "claim": "Takshir 28.245: for severance, the twelfth of havraa is CPI-linked to the month severance is paid.",
+      "claim_type": "rule",
+      "source_url": "https://www.gov.il/apps/nasham/takshir/takshir-tree?openItemId=5215",
+      "raw_snippet": "פרש עובד מהעבודה בנסיבות המזכות אותו בפיצויי פיטורים, ייכלל החלק ה-12 של קצובת ההבראה במשכורת הקובעת. לצורך חישוב פיצויי פיטורים יחושב החלק ה-12 לפי מדד יוקר המחיה בחודש תשלום הפיצויים כאשר הבסיס לחישוב היה קצובת ההבראה כפי ששולמה לעובד והמדד בחודש בו שולמה.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high",
+      "verified_via": "browser",
+      "verified_at": "2026-10-19T23:30:00Z"
+    },
+    {
+      "id": "wage-reduction-base-exclusions",
+      "claim": "The reduction base excludes non-periodic payments, havraa and clothing, expense reimbursements and tax gross-up; mena'ak yovel is part of the base.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a9%d7%aa%d7%aa%d7%a4%d7%95%d7%aa-%d7%94%d7%a2%d7%95%d7%91%d7%93%d7%99%d7%9d-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8%d7%99-%d7%91%d7%94%d7%95%d7%a6%d7%90%d7%95/",
+      "raw_snippet": "מענקי מצוינות (יובהר כי מענק יובל הינו חלק מהבסיס הקובע). דמי הבראה וקצובת ביגוד או תשלומים אחרים הדומים להם במהותם אף אם כינוים שונה. החזר הוצאות. גילום חלק מהמס החל על העובד אשר משולם בידי המעסיק.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "wage-reduction-keren-and-arrears",
+      "claim": "The keren hishtalmut base is reduced at the same rates, and the reduction does not apply to arrears for a period before the first period.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a9%d7%aa%d7%aa%d7%a4%d7%95%d7%aa-%d7%94%d7%a2%d7%95%d7%91%d7%93%d7%99%d7%9d-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8%d7%99-%d7%91%d7%94%d7%95%d7%a6%d7%90%d7%95/",
+      "raw_snippet": "יש להפחית את הבסיס לחישוב הסכומים המשולמים בעד העובד לקרן השתלמות בשיעורים כאמור לעיל, לפי העניין, ככל והעובד זכאי לתשלום האמור. למען הסר ספק, מובהר כי ההפחתה כאמור לעיל לא תחול לגבי סכומים (הפרשי שכר) שישולמו בתקופה הקובעת הראשונה או בתקופה הקובעת השנייה, בעד תקופה שקדמה לתקופה הקובעת הראשונה.",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "wage-reduction-slip-lines",
+      "claim": "On the slip the reduction is shown as tikun pensioni components, including one for the annual component.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a9%d7%aa%d7%aa%d7%a4%d7%95%d7%aa-%d7%94%d7%a2%d7%95%d7%91%d7%93%d7%99%d7%9d-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8%d7%99-%d7%91%d7%94%d7%95%d7%a6%d7%90%d7%95/",
+      "raw_snippet": "הפחתת השכר תבוצע בתלוש השכר באמצעות רכיב שכר, אשר יקרא \"תיקון פנסיוני\" . בתלושי שכר של עובדי המגזר הציבורי הפחתת השכר תוצג בשלושה רכיבים: \"תיקון פנסיוני בגין ברוטו פנסיה\", \"תיקון פנסיוני בגין עבודה נוספת\", תיקון פנסיוני בגין רכיב שנתי",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "wage-reduction-law-salary-def",
+      "claim": "The law defines salary as employment income under section 2(2) of the Income Tax Ordinance paid in money.",
+      "claim_type": "statute",
+      "source_url": "https://www.nevo.co.il/law_html/law00/234283.htm",
+      "raw_snippet": "\" משכורת \" – הכנסת עבודה כמשמעותה בסעיף 2(2) לפקודת מס הכנסה, שניתנת בכסף;",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "wage-reduction-law-s2",
+      "claim": "Section 2 of the law reduces the employee's salary under an approved collective agreement.",
+      "claim_type": "statute",
+      "source_url": "https://www.nevo.co.il/law_html/law00/234283.htm",
+      "raw_snippet": "תופחת משכורתו של עובד, בהתאם להוראות שנקבעו בהסכם הקיבוצי החל על העובד",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "bigud-levels-grades",
+      "claim": "Clothing level 3 covers grades up to administrative 16 or unified 7 (and parallel professional grades); level 4 covers administrative 17 or unified 8 and above, under Takshir 28.425.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%a2%d7%93%d7%9b%d7%95%d7%9f-%d7%aa%d7%a2%d7%a8%d7%99%d7%a4%d7%99-%d7%a7%d7%a6%d7%95%d7%91%d7%aa-%d7%91%d7%99%d7%92%d7%95%d7%93-%d7%91%d7%9e%d7%92%d7%96%d7%a8-%d7%94%d7%a6%d7%99%d7%91%d7%95%d7%a8/",
+      "raw_snippet": "בהתאם לסעיף 28.425 בתקשי\"ר והנחיות מרכז השלטון המקומי בישראל, רמות הביגוד הן: רמה 3 – לעובדים בדרגות עד הדרגה 16 (כולל) בדירוג המנהלי או עד הדרגה 7 בדרוג האחיד (כולל) ודרגות מקבילות בדירוגים המקצועיים; עובדים בדרוג עו\"ס בשלטון המקומי בעלי ותק עד 23 שנים, עובדים בדרוג חינוך, נוער חברה וקהילה בעלי ותק עד 15 שנים. רמה 4 – לעובדים בדרגות מדרגה 17 ומעלה בדירוג המנהלי או מדרגה 8",
+      "source_fetched_at": "2026-10-19T23:30:00Z",
+      "fetched_at": "2026-10-19T23:30:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "achuzit-2024-new-supplement",
+      "claim": "Tosefet achuzit 2024 is a NEW percentage salary supplement from 1.12.2024, 2% at first, paid at a uniform rate to every employee in every qualifying dirug and grade.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a7%d7%99%d7%91%d7%95%d7%a6%d7%99-%d7%9e%d7%a1%d7%92%d7%a8%d7%aa-%d7%9c%d7%a9%d7%a0%d7%99%d7%9d-2020-2027-%d7%94%d7%95%d7%a8%d7%90%d7%95%d7%aa-%d7%91%d7%99%d7%a6%d7%95/",
+      "raw_snippet": "החל מיום 1.12.2024, יהיו העובדים בדירוגים המזכים, זכאים לתוספת אחוזית 2024 בשיעור של 2%. התוספת תשולם בשיעור אחיד לכל עובד בכל דירוג ובכל דרגה בדירוגים המזכים.",
+      "source_fetched_at": "2026-10-19T23:55:00Z",
+      "fetched_at": "2026-10-19T23:55:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "achuzit-2024-base",
+      "claim": "The base for tosefet achuzit 2024 is the combined salary, seniority supplement and every percentage and shekel supplement, including cost-of-living increments, that existed on 31.12.2022 and counts for the hourly rate.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a7%d7%99%d7%91%d7%95%d7%a6%d7%99-%d7%9e%d7%a1%d7%92%d7%a8%d7%aa-%d7%9c%d7%a9%d7%a0%d7%99%d7%9d-2020-2027-%d7%94%d7%95%d7%a8%d7%90%d7%95%d7%aa-%d7%91%d7%99%d7%a6%d7%95/",
+      "raw_snippet": "בסיס השכר לחישוב תוספת אחוזית 2024 הוא: שכר משולב, תוספת ותק וכל תוספות שכר ותוספות לשכר (אחוזיות ושקליות), לרבות תוספות יוקר, שהיו קיימות ביום 31.12.2022 והמובאות בחשבון לעניין חישוב ערך שעה",
+      "source_fetched_at": "2026-10-19T23:55:00Z",
+      "fetched_at": "2026-10-19T23:55:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "achuzit-2024-salary-status",
+      "claim": "Tosefet achuzit 2024 is salary for all purposes, including the hourly rate, overtime and on-call, severance, pensions and provident and keren hishtalmut deposits.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a7%d7%99%d7%91%d7%95%d7%a6%d7%99-%d7%9e%d7%a1%d7%92%d7%a8%d7%aa-%d7%9c%d7%a9%d7%a0%d7%99%d7%9d-2020-2027-%d7%94%d7%95%d7%a8%d7%90%d7%95%d7%aa-%d7%91%d7%99%d7%a6%d7%95/",
+      "raw_snippet": "תוספת אחוזית 2024 תהווה שכר לכל דבר ועניין ותובא בחשבון לעניין חישוב ערך שעה, לצורך תשלום גמול לעבודה נוספת, לרבות כוננויות, תורנויות, משמרות, קריאות פתע ושכר עידוד, לעניין פיצויי פיטורים כמשמעותם בחוק פיצויי פיטורים, התשכ\"ג-1963, לעניין גמלאות, הפרשות לקופת גמל לקצבה, הפרשות לקרן השתלמות",
+      "source_fetched_at": "2026-10-19T23:55:00Z",
+      "fetched_at": "2026-10-19T23:55:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "achuzit-2024-mashkoret",
+      "claim": "Tosefet achuzit 2024 is included in the determining salary under section 8 of the State Service (Pensions) Law.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a7%d7%99%d7%91%d7%95%d7%a6%d7%99-%d7%9e%d7%a1%d7%92%d7%a8%d7%aa-%d7%9c%d7%a9%d7%a0%d7%99%d7%9d-2020-2027-%d7%94%d7%95%d7%a8%d7%90%d7%95%d7%aa-%d7%91%d7%99%d7%a6%d7%95/",
+      "raw_snippet": "בהתאם להוראות סעיף 8 לחוק שירות המדינה (גמלאות) [נוסח משולב], התש\"ל-1970, תוספת אחוזית 2024 תובא בחישוב המשכורת הקובעת",
+      "source_fetched_at": "2026-10-19T23:55:00Z",
+      "fetched_at": "2026-10-19T23:55:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "achuzit-2024-social-workers-excluded",
+      "claim": "The social workers' dirug is among the dirugim that do not qualify for tosefet achuzit 2024.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a7%d7%99%d7%91%d7%95%d7%a6%d7%99-%d7%9e%d7%a1%d7%92%d7%a8%d7%aa-%d7%9c%d7%a9%d7%a0%d7%99%d7%9d-2020-2027-%d7%94%d7%95%d7%a8%d7%90%d7%95%d7%aa-%d7%91%d7%99%d7%a6%d7%95/",
+      "raw_snippet": "אשר אינם מזכים בתוספת אחוזית 2024: – עובדים, אשר שכרם אינו נקבע לפי הסכמים קיבוציים, לרבות עובדים בחוזים אישיים – דירוג מעברי הגבול בשירות המדינה – דירוג קלדניות שופטים בשירות המדינה – דירוג יהלום בשירות המדינה – דירוג רשות מקרקעי ישראל בשירות המדינה – דירוג פיצוח בשירות המדינה – דירוג עוזרים משפטיים בשירות המדינה – דירוג העובדים הסוציאליים",
+      "source_fetched_at": "2026-10-19T23:55:00Z",
+      "fetched_at": "2026-10-19T23:55:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "achuzit-2024-5pct-2026",
+      "claim": "From 1.4.2026 tosefet achuzit 2024 rose by 1.5 points to 5.0%; the next and last step is in April 2027.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%a2%d7%93%d7%9b%d7%95%d7%9f-%d7%aa%d7%95%d7%a1%d7%a4%d7%aa-%d7%90%d7%97%d7%95%d7%96%d7%99%d7%aa-2024-%d7%9c%d7%a4%d7%99-%d7%94%d7%a1%d7%9b%d7%9d-%d7%9e%d7%a1%d7%92%d7%a8%d7%aa-2023-2/",
+      "raw_snippet": "החל מיום 1.4.2026 גדל שיעור תוספת אחוזית 2024 בשיעור של 1.5% ובתוקף מ-1.4.2026 עומד על 5.0%. פעימת עדכון הבאה והאחרונה לפי ההסכם, תחול באפריל 2027.",
+      "source_fetched_at": "2026-10-19T23:55:00Z",
+      "fetched_at": "2026-10-19T23:55:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "achuzit-2024-circular-date",
+      "claim": "The Wage Commissioner published the implementation circular for tosefet achuzit 2024 on 11.12.2024.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a7%d7%99%d7%91%d7%95%d7%a6%d7%99-%d7%9e%d7%a1%d7%92%d7%a8%d7%aa-%d7%9c%d7%a9%d7%a0%d7%99%d7%9d-2020-2027-%d7%94%d7%95%d7%a8%d7%90%d7%95%d7%aa-%d7%91%d7%99%d7%a6%d7%95/",
+      "raw_snippet": "ביום 11.12.2024 פרסם הממונה על השכר והסכמי עבודה חוזר עם הוראות ביצוע לתשלום תוספת אחוזית 2024",
+      "source_fetched_at": "2026-10-19T23:55:00Z",
+      "fetched_at": "2026-10-19T23:55:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "ag-1372-entitlement-by-agreement",
+      "claim": "Instruction 13.7.2 para 4.1: entitlement to provident-fund deposits is set by the collective agreements.",
+      "claim_type": "rule",
+      "source_url": "https://acadmachar-gemel.co.il/wp-content/uploads/2025/01/חוזר-החשב-הכללי-הגדלת-הפרשות-בקופג.pdf",
+      "raw_snippet": "הזכאות להפקדות בקופות הגמל השונות תיקבע בהתאם להסכמים הקיבוציים",
+      "verified_via": "pdf",
+      "verified_at": "2026-10-20T00:20:00Z",
+      "source_fetched_at": "2026-10-20T00:20:00Z",
+      "fetched_at": "2026-10-20T00:20:00Z",
+      "confidence": "high"
+    },
+    {
+      "id": "nurses-shift-responsibility-no-pension",
+      "claim": "The 80 NIS shift-responsibility supplement is not salary for any purpose and carries no pension-fund or keren hishtalmut deposits.",
+      "claim_type": "rule",
+      "source_url": "https://www.malam-payroll.com/%d7%94%d7%a1%d7%9b%d7%9d-%d7%a9%d7%9b%d7%a8-%d7%91%d7%93%d7%a8%d7%95%d7%92-%d7%90%d7%97%d7%99%d7%95%d7%aa-%d7%9e%d7%99%d7%95%d7%9d-11-12-2023/",
+      "raw_snippet": "תוספת אחריות משמרת אינה מהווה שכר לכל דבר ועניין, לא תובא בחשבון לעניין חישוב ערך שעה, תגמול עבור עבודה נוספת לרבות גמול בעד שעות נוספות, כוננויות, קריאות פתע, משמרות, או שכר עידוד (ככל שהאחות זכאית להם), תוספות אחוזיות, פיצויי פיטורים כמשמעותם בחוק פיצויי פיטורים, התשכ\"ג-1963 פיצוי בגין אי ניצול ימי מחלה, פדיון חופשה, ולא יבוצעו בגינה הפרשות לקופת גמל לקצבה או לקרן השתלמות.",
+      "source_fetched_at": "2026-10-20T00:20:00Z",
+      "fetched_at": "2026-10-20T00:20:00Z",
+      "confidence": "high"
     }
   ]
 }

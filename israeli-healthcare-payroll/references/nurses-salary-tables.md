@@ -8,7 +8,8 @@
 > moved by the 2020-2027 framework agreement and by nurses' agreements that are
 > layered on as separate supplements rather than as a republished grid. Never quote
 > a cell from this file as a current base. Use it to locate the worker on the ladder,
-> then read the live cell from the union or the Wage Commissioner.
+> then read the live cell from the payslip or the employer (or the union or the
+> Wage Commissioner on request).
 
 Source: Ministry of Finance, Wage and Labour Agreements Division
 (`משרד האוצר - האגף לשכר והסכמי עבודה`), `משכורת משולבת בש"ח לחודש לדירוג אחיות`,

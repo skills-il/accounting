@@ -1,5 +1,44 @@
 # Changelog
 
+## 1.5.0 - 2026-10-19
+
+- **The framework percentage raise is a separate slip line, not part of the
+  table.** The Wage Commissioner's circular of 11.12.2024 makes tosefet achuzit
+  2024 a new supplement (2.0%, 3.5%, 5.0% from 1.4.2026, 6.0% from April 2027) on
+  the 31.12.2022 hourly-rate base, salary for all purposes. Earlier versions said
+  the tranches were folded into the table, which told agents to skip the line.
+- **Pension and severance base split by pension type and employer.** For state
+  employees on a funded pension, Accountant General instruction 13.7.2 puts havraa,
+  yovel and every other monthly component except clothing in the tier-1 deposit
+  base, and additional work in tier 2, with 6% severance deposits on both. The
+  skill said shifts, on-call and havraa are not pensionable for everyone. Severance
+  the state pays directly includes one twelfth of the havraa (Takshir 28.246).
+- **Allied-health agreement scoped to Ministry of Health hospitals.** The
+  22.4.2025 agreement's implementation circular applies there; Clalit and Hadassah
+  are not named, so for their staff the skill now routes to the slip instead of
+  asserting the 3.50 / 9.00 / 9.50% bands.
+- **The framework agreement covers Histadrut-represented dirugim, not doctors.**
+  The skill said it moves "every" table, which invited adding it to a doctor.
+- **Havraa days, timing and partial years** (new `references/havraa-days.md`):
+  Takshir 28.241 to 28.247 for state employees, including the doctors' table in
+  force from 1.1.2026 and the Negev table; paid in the summer; pro-rated for a
+  mid-year start. Closes an item left unresolved for two cycles.
+- **Mena'ak yovel, the nurses' psychiatric and geriatric 5,000 NIS grants, and a
+  "why is this month lower?" checklist** (new `references/pension-and-annual-lines.md`).
+- **Temporary wage reduction:** carve-out list completed and sourced (agreement and
+  section 8 of the law), statute-based reading on income tax added, end date
+  31.12.2026 rechecked (no extension into 2027).
+- **Removed unsourced claims:** global additional hours for senior doctors, the
+  tosefet yoker "extension order" rule, "two allied-health table sets", gmul
+  hishtalmut as "pensionable", the doctors' agreement covering municipal hospitals.
+- **Hebrew mirror drift fixed** (the doctors' havraa cut, the tamritz claim, the
+  pharmacists' caveat, the hand-arithmetic formula, Example 1).
+- **Script input parsing rebuilt per flag type:** one number per flag, units only
+  where they belong (a shekel marker on --tosefet or a % on a shekel flag is an
+  error), Hebrew shekel abbreviations accepted, position accepts 50%, dot-thousands
+  and implausibly small bases rejected, repeated flags rejected.
+- SKILL.md kept under the 5,000-word cap by moving detail to the references.
+
 ## 1.4.0 - 2026-08-27
 
 - **The 500 NIS framework shekel supplement does not reach nurses.** Nurses,

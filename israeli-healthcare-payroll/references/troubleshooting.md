@@ -2,8 +2,9 @@
 
 - **"I do not know the base rate."** The skill does not carry NIS grade cells on
   purpose (they change per agreement). Read the combined cell for the exact
-  grade, seniority, and dirug from the union table or the Wage Commissioner, then
-  feed it into `healthcare_gross.py`.
+  grade, seniority, and dirug from the worker's own payslip first, then the
+  employer's HR or payroll department, then the union or the Wage Commissioner on
+  request, and feed it into `healthcare_gross.py`.
 - **"The numbers do not match my payslip."** Check the dirug (allied health is
   three separate tracks), the recognized seniority (read the combined cell, do
   not re-add seniority), whether every tosefet is included, and, for a doctor,

@@ -1,6 +1,31 @@
 {
   "cycles": [
     {
+      "version": "1.5.0",
+      "date": "2026-10-19",
+      "trigger": "Batch 2026-10-19 staleness pass (drift type A); description unchanged, so no holdout eval.",
+      "value_add": {
+        "with": 1.0,
+        "without": 0.0,
+        "delta": 1.0,
+        "cases": 4
+      },
+      "lessons": [
+        "RESOLVED NEW DEBT (1.4.0): wage reduction vs income tax. No Tax Authority instruction states it; the statute's structure (s.1 salary definition, s.2 reduces the salary, s.8(3) carve-out only for pension-contribution tax) is now stated as a reading, with reconcile-against-slip.",
+        "RESOLVED NEW DEBT (1.4.0): pharmacists/academic dirug moved to Out of scope (explicit), re-litigated: no readable primary source lists the supplements.",
+        "RESOLVED (2 cycles UNRESOLVED): state-employee havraa DAYS tables (Takshir 28.241-28.247), including the new doctors' table from 1.1.2026 and the Negev table.",
+        "METHOD LESSON (biggest of the cycle): for two cycles the skill said the framework percentage tranches were 'folded into the published table'. The Wage Commissioner circular (malam ?p=21113) makes tosefet achuzit 2024 a separate line on the hourly-rate base. Nobody had opened the implementation circular; every gate passed because the claim was 'structural'. Structural rules about where a figure lives are factual claims and need a source.",
+        "METHOD LESSON: blanket pensionability rules ('shifts, on-call, havraa are not pensionable') were wrong for state funded-pension staff (AG instruction 13.7.2). Classify by pension type and employer, and per line by the collective agreement (para 4.1).",
+        "METHOD LESSON: scope clauses matter. The allied-health 22.4.2025 circular applies to Ministry of Health hospitals; the framework applies to Histadrut dirugim. Always read the תחולה paragraph before asserting a rate to a Clalit/Hadassah worker or a doctor.",
+        "METHOD LESSON: my own first parser rewrite introduced two silent false accepts (internal spaces deleted, units stripped anywhere). The arithmetic reviewer caught both. Never delete characters inside a number; validate shape first.",
+        "METHOD LESSON: the date in 'supplements in force on 31.12.2022' limits which supplements count, not the salary amount. Easy to misread as a frozen base.",
+        "DEFERRED (arith N8): no ceiling on amounts; '--add 1,00' reads as 1.00 silently; zero-width space, BOM and '500,-' rejected.",
+        "DEFERRED (arith N11): for an allied-health worker who moved from gmul hishtalmut to tosefet hachsharot after 31.12.2022, whether the old gmul sits in the achuzit/nihul base is unstated; read the line off the slip.",
+        "STILL OPEN: Clalit/Hadassah equivalents of the allied-health agreement and of the Takshir havraa days; search for parallel agreements next cycle.",
+        "STILL OPEN: AG instruction 13.7.2 is edition 03 of 22.12.2011 hosted on a third-party site; find the current edition on takam.mof.gov.il."
+      ]
+    },
+    {
       "version": "1.4.0",
       "date": "2026-08-27",
       "trigger": "Scheduled staleness pass; flagged DRIFT TYPE A alongside the other payroll skills.",
