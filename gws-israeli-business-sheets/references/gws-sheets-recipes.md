@@ -32,23 +32,23 @@ gws sheets spreadsheets create --json '{"properties":{"title":"My Spreadsheet"}}
 ### Read Data
 
 ```bash
-# Helper: read a range (returns the raw values array)
+# Helper: read a range (prints the ValueRange JSON; the helpers ignore --format)
 gws sheets +read --spreadsheet SHEET_ID --range "Sheet1!A1:D10"
 
 # Helper: read an entire sheet tab
 gws sheets +read --spreadsheet SHEET_ID --range "Sheet1"
 
 # Raw API: read a range (response is a ValueRange with a "values" array)
-gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:J"}'
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:L"}'
 
 # Read as CSV (use the --format flag, not a fabricated --output flag)
-gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:J"}' --format csv
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:L"}' --format csv
 ```
 
 ### Append Data
 
 ```bash
-# Helper: append a single simple row
+# Helper: append a single simple row (always to the FIRST tab, it sends range A1)
 gws sheets +append --spreadsheet SHEET_ID --values 'value1,value2,value3,value4'
 
 # Helper: append multiple rows
@@ -87,6 +87,11 @@ gws sheets spreadsheets batchUpdate \
 ### Recipe: Backup All Tabs as CSV
 
 ```bash
+# List every tab title (needs jq)
+gws sheets spreadsheets get \
+  --params '{"spreadsheetId":"SHEET_ID","fields":"sheets.properties.title"}' \
+  | jq -r '.sheets[].properties.title'
+
 # Export each named tab to its own CSV file
 for tab in "Sheet1" "Sheet2" "Summary"; do
   gws sheets spreadsheets values get \
@@ -99,11 +104,11 @@ done
 ```bash
 # Read headers from the current month (the response has a "values" array)
 HEADERS=$(gws sheets spreadsheets values get \
-  --params '{"spreadsheetId":"SHEET_ID","range":"Jan-2026!A1:J1"}' | jq -c '.values')
+  --params '{"spreadsheetId":"SHEET_ID","range":"Jan-2026!A1:L1"}' | jq -c '.values')
 
 # Write those headers into the new month tab
 gws sheets spreadsheets values update \
-  --params '{"spreadsheetId":"SHEET_ID","range":"Feb-2026!A1:J1","valueInputOption":"RAW"}' \
+  --params '{"spreadsheetId":"SHEET_ID","range":"Feb-2026!A1:L1","valueInputOption":"RAW"}' \
   --json "{\"values\":$HEADERS}"
 ```
 
@@ -111,8 +116,8 @@ gws sheets spreadsheets values update \
 
 ```bash
 # Export both tabs as CSV and diff
-gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:J"}' --format csv > tab1.csv
-gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet2!A:J"}' --format csv > tab2.csv
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:L"}' --format csv > tab1.csv
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet2!A:L"}' --format csv > tab2.csv
 diff tab1.csv tab2.csv
 ```
 
@@ -122,7 +127,7 @@ The `values get` response is a ValueRange: `{"range":"...","majorDimension":"ROW
 
 ```bash
 # Read all data, then keep only rows where the Category column equals "Professional Services"
-gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:J"}' \
+gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range":"Sheet1!A:L"}' \
   | jq -c '.values[] | select(.[2] == "Professional Services")'
 ```
 
@@ -140,8 +145,8 @@ gws sheets spreadsheets values get --params '{"spreadsheetId":"SHEET_ID","range"
 
 | Range | Meaning |
 |-------|---------|
-| `Sheet1!A1:J1` | First row, columns A through J |
-| `Sheet1!A:J` | All rows, columns A through J |
+| `Sheet1!A1:L1` | First row, columns A through L |
+| `Sheet1!A:L` | All rows, columns A through L |
 | `Sheet1!A2:J` | All rows starting from row 2 (skip headers) |
 | `Sheet1` | Entire sheet |
 | `'VAT Period 1'!A:D` | Sheet with spaces in name (use quotes) |

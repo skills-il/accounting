@@ -11,7 +11,7 @@ Source: Israel Tax Authority (Rashut HaMisim) guidelines for self-employed indiv
 | Professional Services | שירותים מקצועיים | Accountant fees, legal counsel, consulting |
 | Software & Subscriptions | תוכנה ומנויים | SaaS tools, cloud hosting, domain names |
 | Marketing | שיווק | Advertising, website, business cards, trade shows |
-| Insurance | ביטוח | Professional liability, business property insurance |
+| Insurance | ביטוח | Business policies only: professional liability, business property insurance |
 | Travel (Business) | נסיעות עסקיות | Flights, hotels, transport for business purposes |
 | Training & Education | הכשרות והשתלמויות | Professional courses, conferences, certifications |
 | Office Supplies | חומרי משרד | Paper, ink, stationery, cleaning supplies |
@@ -34,8 +34,8 @@ Equipment such as computers, monitors, and office furniture is a **depreciable a
 |-------------|-------------|----------------|-------|
 | Light refreshments on the premises | כיבוד קל בבית העסק | 80% | Coffee, cold drinks, light refreshments consumed AT the place of business |
 | Hosting / entertainment | אירוח | Generally 0% | Taking a client to a restaurant is generally not deductible. |
-| Car Expenses | הוצאות רכב | Higher of 45% or upkeep minus שווי שימוש | Fuel, maintenance, insurance, parking. The test is the HIGHER of the two, in the taxpayer's favour. There is no per-kilometre deduction regime for the self-employed in Israel |
-| Home Office | משרד ביתי | Proportional | Based on room area / total apartment area |
+| Car Expenses | הוצאות רכב | Higher of 45% or upkeep minus שווי שימוש | Fuel, maintenance, insurance, parking. The test is the HIGHER of the two, in the taxpayer's favour (Income Tax (Deduction of Vehicle Expenses) Regulations, as amended from 1.1.2008) |
+| Home Office | משרד ביתי | Proportional | Business share of the home; agree the apportionment method with the accountant |
 | Phone | טלפון | Proportional | Business-use portion only. If separate business line, 100% |
 | Internet | אינטרנט | Proportional | Business-use portion. If business-only connection, 100% |
 
@@ -53,11 +53,45 @@ Equipment such as computers, monitors, and office furniture is a **depreciable a
 - Standard VAT rate: **18%** (since January 2025; the previous rate was 17%)
 - Osek patur ceiling: annual turnover up to **NIS 120,000** (2025) / **NIS 122,833** (2026), updated annually
 - Below the ceiling: "Osek Patur" (exempt dealer) - does not charge VAT on income and cannot reclaim input VAT on expenses. Issues a receipt or "cheshbonit iska" with no VAT line. Still tracks income and expenses for the annual income-tax return.
-- Above the ceiling: "Osek Murshe" (authorized dealer) - must charge VAT, may reclaim input VAT, and files periodic VAT returns. Some professions (lawyers, doctors, architects, consultants and similar) must register as osek murshe regardless of turnover.
+- Above the ceiling: "Osek Murshe" (authorized dealer) - must charge VAT, may reclaim input VAT, and files periodic VAT returns. Some occupations, such as liberal professions like lawyers and accountants, must register as osek murshe regardless of turnover.
 - An osek patur who crosses the ceiling must convert to osek murshe.
+- An osek patur files no periodic VAT returns but must file an annual turnover declaration (הצהרת עוסק פטור) by 31 January for the previous year.
+- For a service, the VAT liability arises when payment is received, so the payment date decides the reporting period.
 - Reporting frequency: Bi-monthly (every 2 months) for businesses with turnover at or below NIS 1,775,000 (as of 1 January 2026), measured over the determining year (12 consecutive months ending 31 August of the preceding tax year)
-- Larger businesses (turnover over NIS 1,775,000): Monthly VAT reporting.
-- **Detailed reporting (דיווח מפורט, PCN874) is a SEPARATE obligation with a much LOWER threshold. Do not conflate the two.** From 1 January 2026 a self-employed individual with annual turnover above NIS 500,000 (before VAT) must file it; companies and partnerships with a corporate partner came in from September 2025. It itemises every invoice rather than reporting totals, and must reconcile exactly with the periodic VAT return. Double-entry bookkeeping can trigger it independently of turnover. Confirm the current figure on the Tax Authority site before relying on it.
+- Larger businesses (turnover over NIS 1,775,000): Monthly VAT reporting. The threshold is re-indexed each January.
+- Due dates: the 15th of the month after the period; an osek not required to file the detailed report who transmits online may report and pay to the 19th; detailed-report filers are due on the 23rd.
+- Export of services: a service to a foreign resident is zero-rated under VAT Law s.30(a)(5), except services the Finance Minister excludes. Record it with VAT 0 and mark it as an export.
+- **Detailed reporting (דיווח מפורט, PCN874) is a SEPARATE obligation with a much LOWER threshold. Do not conflate the two.** From 1 January 2026 a self-employed individual with annual turnover above NIS 500,000 (before VAT) must file it (the date was deferred from 1 September 2025). It itemises every invoice rather than reporting totals, and must reconcile exactly with the periodic VAT return. Confirm the current figure on the Tax Authority site before relying on it.
+
+## Small Business Track (Esek Zair, עסק זעיר)
+
+An income-tax status (not a VAT status) in force since tax year 2024, under s.87A of the Income Tax Ordinance. An osek patur qualifies, and the assessing officer can register others on request.
+
+- Turnover ceiling: NIS 122,833 for 2026.
+- The holder deducts 30% of turnover without presenting receipts or invoices.
+- A short annual report replaces the full one, and the assessing officer may exempt the holder from income-tax advances.
+- The deduction is denied to anyone who employs workers or lacks acceptable books, and in several other cases (income not from personal effort, controlling shareholders). Confirm eligibility with the accountant.
+
+## Income-Tax Advances and Withholding
+
+- Income-tax advances (מקדמות) are reported and paid on the 15th of the month, the same day as the periodic VAT return.
+- Tax withheld at source by a client is credited against the annual tax and can be offset against the advances. Record it in column L.
+- Without a valid אישור ניכוי מס במקור, the default withholding on services or assets is 30% (20% where the supplier shows a bookkeeping approval). Some fee types carry 47%.
+
+## Bituach Leumi for the Self-Employed (2026)
+
+Contributions are banded on monthly income. Rates for an insured person aged 18 to retirement age, from 1 January 2026:
+
+| Component | Up to NIS 7,703 / month (reduced) | NIS 7,703 to 51,910 / month (full) |
+|---|---|---|
+| National insurance (דמי ביטוח לאומי) | 4.47% | 12.83% |
+| Health insurance (דמי ביטוח בריאות) | 3.23% | 5.17% |
+| Total | 7.7% | 18% |
+
+- NIS 51,910 / month is the maximum income on which contributions are charged. Income below NIS 3,442 / month pays on a minimum income.
+- The band boundary and the maximum are revised each January.
+- Other rows exist: under 18 or receiving an old-age pension pays 0.26% / 0.78% (national insurance only); at retirement age without an old-age pension, 6.92% / 15.79%.
+- For income tax, 52% of the national-insurance component is deductible; the health component is not.
 
 ## Tax Invoice and Allocation Number (Mispar Haktzaa)
 
@@ -72,7 +106,7 @@ Israel's continuous-transaction-control model requires an allocation number (mis
 | January 2026 | NIS 10,000 |
 | June 2026 | NIS 5,000 |
 
-Invoices dated before May 2024 predate the regime and never needed a number. Apply the threshold in force on the invoice's own date, not today's. The number is 9 digits and is required only when the amount is above that date's threshold AND the invoice carries a VAT component (zero-rated and exempt-only invoices are excluded) AND the recipient is an osek murshe AND the recipient asked for one. A missing allocation number blocks the recipient's input-VAT deduction; it does not by itself make the invoice void. The supplier obtains the number through their invoicing software and records it on the invoice.
+Invoices dated before May 2024 predate the regime and never needed a number. Apply the threshold in force on the invoice's own date, not today's. The full number runs up to 30 characters in the Tax Authority's API spec (its examples are 26 digits); its rightmost 9 digits are the "short allocation number" reported in PCN874. Two rules apply and must not be merged. The SELLER's duty to obtain one (s.47(a2)(1)) arises when the amount exceeds that date's threshold, the invoice is not zero-rated or exempt-only, the recipient is an osek murshe, and the recipient asked. The BUYER's loss of the deduction (s.38(a1)) has no request condition: an invoice whose pre-VAT amount exceeds the threshold and carries no allocation number gives no input-VAT deduction. So when reviewing a ledger, flag every VAT-bearing row above that date's threshold with an empty allocation column, whether or not the buyer asked. A row exactly at the threshold is outside the rule ("exceeds"). A missing allocation number blocks the recipient's input-VAT deduction; it does not by itself make the invoice void. The supplier obtains the number through their invoicing software and records it on the invoice.
 
 ## Common Invoicing Services in Israel
 
@@ -88,8 +122,9 @@ Invoices dated before May 2024 predate the regime and never needed a number. App
 | Date | Event HE | Event EN |
 |------|----------|----------|
 | Jan 15 | דיווח מע"מ נוב-דצ | VAT report Nov-Dec |
+| Jan 31 | הצהרת עוסק פטור | Osek patur annual turnover declaration (previous year) |
 | Mar 15 | דיווח מע"מ ינו-פבר | VAT report Jan-Feb |
-| Mar 31 | דו"ח 126 שנתי (רק למעסיקים) | Annual Form 126 (only if you employ people) |
+| Apr 30 | דו"ח 126 שנתי (רק למעסיקים) | Annual Form 126 (only if you employ people; representatives can get an extension) |
 | (varies) | דו"ח שנתי למס הכנסה | Annual income tax return. The date moves: it differs for online filers and is routinely extended, including under the representatives' scheme. Confirm the year's date on the Tax Authority site rather than assuming 30 April. |
 | Apr 30 | ריכוז שנתי 856 (ניכויים) | Form 856 annual withholding summary |
 | May 15 | דיווח מע"מ מרץ-אפר | VAT report Mar-Apr |
@@ -101,7 +136,7 @@ Note on Form 126: Form 126 is the annual employer-withholding reconciliation for
 
 ## Document Retention
 
-Israeli bookkeeping rules require a business to keep its books and all supporting documents (invoices, receipts, bank statements) for at least **7 years** from the end of the tax year, or **6 years** from the date the annual return was filed, whichever is later. After 7 years from issuance the documents generally lose their legal validity. CSV backups are convenience copies, not a substitute for retaining the original source documents. Archive backups in dated folders and keep originals for the full retention period.
+Israeli bookkeeping rules require a business to keep its books and all supporting documents (invoices, receipts, bank statements) for at least **seven years**; after seven years from issuance the documents generally lose their legal validity. CSV backups are convenience copies, not a substitute for retaining the original source documents. Archive backups in dated folders and keep originals for the full retention period.
 
 ## Input VAT deductibility is a SEPARATE question from income-tax deductibility
 
@@ -112,8 +147,8 @@ it will over-reclaim. Flag these three cases before the user files:
 
 | Expense | Input VAT treatment |
 |---|---|
-| Purchase, import or lease of a private vehicle (and, since 1.1.2008, a commercial vehicle up to 3,500 kg such as a tender, van or light commercial) | **Not deductible at all** under Regulation 14(a). Regulation 14(b) carries a closed exception list: driving schools, car-rental businesses, passenger transport in the course of the business, and organised tours and field trips. Running costs are separately limited; take the exact fraction from the accountant rather than assuming one. |
-| Hospitality, entertainment, refreshments and gifts | Generally **not deductible**,. This is why a client lunch is not simply an "80% expense". |
+| Purchase, import or lease of a private vehicle (and, since 1.1.2008, a commercial vehicle up to 3,500 kg such as a tender, van or light commercial) | **Not deductible at all** under Regulation 14(a). Regulation 14(b) carries narrow exceptions, such as a dealer whose business is selling cars and vehicles used solely for specified purposes such as leasing; a typical freelancer is not one of them. Input VAT on running costs (fuel, repairs) is limited under Regulation 18(b): **2/3** where the car is mainly used for the business, **1/4** otherwise. |
+| Hospitality and entertainment (אירוח) | **Not deductible** under Regulation 16, except for hosting a person from abroad. This is why a client lunch is not simply an "80% expense". For light refreshments and gifts, confirm the input-VAT treatment with the accountant. |
 | Mixed business/private inputs where the split cannot be factually separated (home office, phone, internet) | **2/3** of the input VAT where use is mainly for the business, **1/4** where mainly private, under Regulation 18. |
 
 `scripts/vat-summary.py` sums the VAT column as recorded and flags rows that look
@@ -123,11 +158,9 @@ understates the VAT owed, which is the direction that attracts an assessment.
 
 ## A Google Sheet is not a legal book of account
 
-Israeli bookkeeping rules require a computerised book to be a fixed file
-(kovetz kavua): records cannot be deleted, entries must be sequentially and
-automatically numbered with the sequence preserved, corrections must be additive
-so both the original and corrected data survive, and backups must be taken
-periodically. A freely editable Google Sheet satisfies none of those.
+Computerised bookkeeping is governed by the Tax Authority's bookkeeping
+instructions (הוראות ניהול ספרים). A freely editable Google Sheet is not a
+bookkeeping system under those instructions, and it does not issue invoices.
 
 The sheet this skill builds is therefore a management and reporting tool, not the
 user's book of account and not their invoicing system. Tell the user plainly that

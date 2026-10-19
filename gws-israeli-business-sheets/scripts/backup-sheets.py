@@ -7,6 +7,7 @@ specified output directory. Useful for creating accountant-ready backups.
 Usage:
   python3 scripts/backup-sheets.py --spreadsheet-id SHEET_ID --output-dir ./backups
   python3 scripts/backup-sheets.py --spreadsheet-id SHEET_ID --output-dir ./backups --tabs "Sheet1,VAT-Period-1"
+  python3 scripts/backup-sheets.py --spreadsheet-id SHEET_ID --output-dir ./backups --all-tabs
   python3 scripts/backup-sheets.py --help
 
 Requires: gws CLI (npm install -g @googleworkspace/cli) with valid authentication.
@@ -53,14 +54,41 @@ def run_gws(args: list[str]) -> str:
         raise GwsError("gws command timed out after 60 seconds.")
 
 
-def export_tab(spreadsheet_id: str, tab_name: str, output_dir: Path) -> str:
+def list_tabs(spreadsheet_id: str) -> list[str]:
+    """Return every tab title, read from spreadsheets.get with a fields mask."""
+    params = json.dumps({"spreadsheetId": spreadsheet_id, "fields": "sheets.properties.title"})
+    raw = run_gws(["sheets", "spreadsheets", "get", "--params", params])
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError:
+        raise GwsError(f"could not parse the tab list returned by gws: {raw[:200]!r}")
+    titles = [s.get("properties", {}).get("title") for s in data.get("sheets", [])]
+    titles = [t for t in titles if t]
+    if not titles:
+        raise GwsError("gws returned no tabs for this spreadsheet.")
+    return titles
+
+
+def a1_sheet(tab_name: str) -> str:
+    """Quote a tab name for A1 notation: 'VAT Period 1', with ' doubled."""
+    return "'" + tab_name.replace("'", "''") + "'"
+
+
+def export_tab(spreadsheet_id: str, tab_name: str, output_dir: Path, used: set) -> str:
     """Export a single sheet tab as CSV."""
-    safe_name = tab_name.replace(" ", "_").replace("/", "-")
+    safe_name = "".join(c if c.isalnum() or c in "-_." else "_" for c in tab_name)
     timestamp = datetime.now().strftime("%Y%m%d")
     filename = f"{safe_name}_{timestamp}.csv"
+    n = 2
+    # Two tab names can sanitise to the same file name ("VAT Period 1" and
+    # "VAT_Period_1"); never let one silently overwrite the other.
+    while filename in used:
+        filename = f"{safe_name}_{n}_{timestamp}.csv"
+        n += 1
+    used.add(filename)
     output_path = output_dir / filename
 
-    params = json.dumps({"spreadsheetId": spreadsheet_id, "range": tab_name})
+    params = json.dumps({"spreadsheetId": spreadsheet_id, "range": a1_sheet(tab_name)})
     csv_data = run_gws([
         "sheets", "spreadsheets", "values", "get",
         "--params", params,
@@ -77,7 +105,7 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Examples:\n"
-            "  %(prog)s --spreadsheet-id abc123 --output-dir ./backups\n"
+            "  %(prog)s --spreadsheet-id abc123 --output-dir ./backups --all-tabs\n"
             "  %(prog)s --spreadsheet-id abc123 --output-dir ./backups --tabs 'Sheet1,Summary'\n"
         ),
     )
@@ -91,11 +119,15 @@ def main():
         required=True,
         help="Directory to save CSV files",
     )
-    parser.add_argument(
+    which = parser.add_mutually_exclusive_group()
+    which.add_argument(
         "--tabs",
-        help="Comma-separated list of tab names to export. REQUIRED: there is no "
-             "reliable 'all tabs' default, and silently backing up one tab against a "
-             "7-year retention obligation is worse than refusing.",
+        help="Comma-separated list of tab names to export.",
+    )
+    which.add_argument(
+        "--all-tabs",
+        action="store_true",
+        help="Read the tab list from the spreadsheet itself and export every tab.",
     )
 
     args = parser.parse_args()
@@ -104,22 +136,28 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if args.tabs:
-        tab_names = [t.strip() for t in args.tabs.split(",")]
+        tab_names = [t.strip() for t in args.tabs.split(",") if t.strip()]
+    elif args.all_tabs:
+        try:
+            tab_names = list_tabs(args.spreadsheet_id)
+        except GwsError as e:
+            print(f"Error: could not list the tabs: {e}", file=sys.stderr)
+            sys.exit(1)
     else:
-        print("Error: --tabs is required.", file=sys.stderr)
-        print("  This script does not enumerate tabs for you, and defaulting to a single", file=sys.stderr)
-        print("  tab would silently under-back-up records you must retain for 7 years.", file=sys.stderr)
-        print("  List the tabs explicitly, e.g. --tabs 'Sheet1,VAT-Period-1,Summary'", file=sys.stderr)
+        print("Error: pass --tabs 'Sheet1,VAT-Period-1' or --all-tabs.", file=sys.stderr)
+        print("  Defaulting to a single tab would silently under-back-up records you", file=sys.stderr)
+        print("  must retain for 7 years, so the script refuses to guess.", file=sys.stderr)
         print("  You can see the tab names with:", file=sys.stderr)
-        print("    gws sheets spreadsheets get --params spreadsheetId=<ID>", file=sys.stderr)
+        print("    gws sheets spreadsheets get --params '{\"spreadsheetId\":\"<ID>\",\"fields\":\"sheets.properties.title\"}'", file=sys.stderr)
         sys.exit(1)
 
     print(f"Backing up {len(tab_names)} tab(s) to: {output_dir}/")
     exported = []
+    used: set = set()
 
     for tab in tab_names:
         try:
-            path = export_tab(args.spreadsheet_id, tab, output_dir)
+            path = export_tab(args.spreadsheet_id, tab, output_dir, used)
             exported.append(path)
             print(f"  Exported: {tab} -> {path}")
         except Exception as e:

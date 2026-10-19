@@ -47,15 +47,15 @@ Two things to tell the user up front, because they affect whether this workflow 
 Before building any sheet, ask whether the user is an **osek murshe** (authorized dealer, charges and reclaims VAT) or an **osek patur** (exempt dealer, does not charge or reclaim VAT). This changes the sheet structure:
 
 - **Osek murshe**: include the full VAT columns (net, VAT, total) and compute VAT liability.
-- **Osek patur**: an osek patur does not charge VAT on income and cannot reclaim input VAT on expenses. Drop the VAT column entirely (or leave it at 0), record gross amounts only, and skip the VAT-liability calculation. The osek patur still tracks income and expenses for the annual income-tax return.
+- **Osek patur**: an osek patur does not charge VAT on income and cannot reclaim input VAT on expenses. Drop the VAT column entirely (or leave it at 0), record gross amounts only, and skip the VAT-liability calculation. The osek patur still tracks income and expenses for the annual income-tax return, and files one VAT filing a year: the annual turnover declaration (הצהרת עוסק פטור), due by 31 January for the previous year, which is exactly the sheet's annual gross total.
 
 An osek patur whose annual turnover crosses the ceiling (NIS 120,000 for 2025, NIS 122,833 for 2026) must convert to osek murshe. If a user is near the ceiling, flag it.
 
-**Osek zair (micro-dealer) 2026 reform.** A separate income-tax track for low-turnover self-employed (turnover ceiling CPI-linked, about NIS 122,833 for 2026) grants an automatic 30% expense deduction off turnover with no need to itemize receipts, plus a simplified annual report and no advance payments. If the user is a low-turnover freelancer, mention that this track may suit them and tell them to confirm eligibility with their accountant or the Tax Authority before opting in.
+**Esek zair (עסק זעיר, small-business track).** An income-tax status in force since tax year 2024 (s.87A of the Income Tax Ordinance), separate from the VAT question: an osek patur qualifies, and the assessing officer can register others on request. Turnover may not exceed NIS 122,833 for 2026; the holder deducts 30% of turnover without presenting receipts, files a short annual report instead of the full one, and the assessing officer may exempt them from income-tax advances. The deduction is denied to anyone who employs workers or lacks acceptable books, among other exclusions. If the user is a low-turnover freelancer, mention the track and tell them to confirm eligibility with their accountant or the Tax Authority.
 
-**Before anything else, set expectations about what this sheet is.** It is a management and reporting tool, not a legal book of account. Israeli bookkeeping rules require a computerised book to be a fixed file with non-deletable, automatically numbered records and additive corrections, and a freely editable Google Sheet meets none of that. The user still needs a compliant invoicing and bookkeeping system alongside this, and their allocation numbers come from that system. Say this once, early, rather than letting them discover it at an audit.
+**Before anything else, set expectations about what this sheet is.** It is a management and reporting tool, not a legal book of account: a freely editable Google Sheet is not a bookkeeping system under the Tax Authority's bookkeeping instructions (הוראות ניהול ספרים), and it does not issue invoices. The user still needs a compliant invoicing and bookkeeping system alongside this, and their allocation numbers come from that system. Say this once, early, rather than letting them discover it at an audit.
 
-Input-VAT deductibility also follows its own rules, separate from the income-tax percentages in this skill: VAT on a private vehicle is not reclaimable at all, VAT on hospitality and refreshments is generally not reclaimable, and mixed business/private inputs are limited to 2/3 or 1/4. See `references/israeli-tax-categories.md`. The VAT column records what was charged; that is not automatically what can be reclaimed.
+Input-VAT deductibility also follows its own rules, separate from the income-tax percentages in this skill: VAT on buying or leasing a private vehicle is not reclaimable at all, VAT on hospitality (אירוח) is not reclaimable except for hosting a guest from abroad, and mixed business/private inputs are limited to 2/3 or 1/4. See `references/israeli-tax-categories.md`. The VAT column records what was charged; that is not automatically what can be reclaimed.
 
 ### Step 3: Create a New Financial Tracking Spreadsheet
 
@@ -65,7 +65,7 @@ When the user wants to set up a new income/expense tracking sheet, create it wit
 
 | Column | Header (EN) | Header (HE) | Format | Purpose |
 |--------|------------|-------------|--------|---------|
-| A | Date | תאריך | DD/MM/YYYY | Transaction date |
+| A | Date | תאריך | DD/MM/YYYY | Transaction date (for income from services, the payment date: see below) |
 | B | Description | תיאור | Text | What the transaction is |
 | C | Category | קטגוריה | Text | Tax-deductible category |
 | D | Amount (excl. VAT) | סכום (ללא מע"מ) | ILS currency | Net amount |
@@ -75,12 +75,14 @@ When the user wants to set up a new income/expense tracking sheet, create it wit
 | H | Invoice # | מספר חשבונית | Text | Invoice reference |
 | I | Payment Method | אמצעי תשלום | Text | Bank/PayPal/Cash |
 | J | Notes | הערות | Text | Additional details |
-| K | Allocation # | מספר הקצאה | Text | Israel Invoice allocation number for invoices at/above the threshold |
+| K | Allocation # | מספר הקצאה | Text | Israel Invoice allocation number for invoices above the threshold |
 | L | Withholding | ניכוי במקור | ILS currency | Tax withheld at source by the payer, if any |
 
-Column K records the **allocation number (מספר הקצאה)** the seller obtains from the Tax Authority's Israel Invoice platform. **The threshold in force is NIS 5,000 (before VAT) from June 2026**, but the threshold is date-dependent and the sheet holds history: NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, NIS 5,000 from June 2026, and nothing at all before May 2024. Test each row against the threshold in force on that row's own date, and see Step 10 for the four conditions that must all hold. Without an allocation number the buyer cannot deduct input VAT on the invoice, so capture it whenever it applies, and re-check the threshold before quoting it since it has been lowered repeatedly.
+Column A drives which VAT period a row lands in. For a service, the VAT liability arises when payment is received, so log income on the date the money arrived, not on the date of a payment demand (חשבונית עסקה) or of the work. If you issue the tax invoice before payment, confirm the period with the accountant. Set the spreadsheet locale to Israel (File > Settings) so dates are DD/MM/YYYY. Log purchases one row per supplier invoice, at the full invoice amount and on the invoice date, even when you pay in installments (note the installments in column J): the allocation-number threshold applies to the invoice, so splitting it into payment rows hides it.
 
-Column L records **withholding tax at source (ניכוי במקור)**. Some clients are required to withhold income tax and pay the business net of that amount, so log the withheld sum here. The business needs its own אישור ניכוי מס במקור (withholding rate certificate) and this column feeds the annual Form 856 the payer files.
+Column K records the **allocation number (מספר הקצאה)** the seller obtains from the Tax Authority's Israel Invoice platform. **The threshold in force is NIS 5,000 (before VAT) from June 2026**, but the threshold is date-dependent and the sheet holds history: NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, NIS 5,000 from June 2026, and nothing at all before May 2024. Test each row against the threshold in force on that row's own date, and see Step 10 for which rows to flag. The threshold applies per tax invoice, so log **one row per supplier invoice, at the invoice's full amount, on the invoice date**: an invoice paid in installments split across several rows will look like several small invoices and slip under the threshold. Without an allocation number the buyer cannot deduct input VAT on the invoice, so capture it whenever it applies, and re-check the threshold before quoting it since it has been lowered repeatedly.
+
+Column L records **withholding tax at source (ניכוי במקור)**. Some clients are required to withhold income tax and pay the business net of that amount, so log the withheld sum here. The business needs its own אישור ניכוי מס במקור (withholding rate certificate): without a valid one the payer withholds at up to 30% on services (20% with a bookkeeping approval). This column feeds the annual Form 856 the payer files, and the withheld sums are credited against the business's income-tax advances (מקדמות, due on the 15th) and its annual tax. Bituach Leumi contributions, the other large recurring outflow, are banded and listed in `references/israeli-tax-categories.md`.
 
 For an **osek patur**, drop columns D and E and rename column F to `Amount` / `סכום` (gross only), since no VAT applies. Keep column L (withholding), which can still apply. Drop column K: an osek patur is outside the allocation-number regime in both directions, because it issues receipts rather than tax invoices and cannot deduct input VAT.
 
@@ -98,7 +100,7 @@ For an **osek patur**, drop columns D and E and rename column F to `Amount` / `�
 | Travel | נסיעות | 100% |
 | Software & Subscriptions | תוכנה ומנויים | 100% |
 | Marketing | שיווק | 100% |
-| Insurance | ביטוח | 100% |
+| Insurance (business policies) | ביטוח (פוליסות עסקיות) | 100% |
 
 To create the spreadsheet and write the header row:
 
@@ -124,15 +126,19 @@ When the user wants to log a transaction, calculate the VAT automatically (osek 
 # VAT = Amount * 0.18 = 900 ILS
 gws sheets spreadsheets values append \
   --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
-  --json '{"values":[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer","","HK-2026-0001","0"]]}'
+  --json '{"values":[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer","","","0"]]}'
 ```
 
-The `+append` helper is a shorter equivalent for a single simple row:
+The `+append` helper is a shorter equivalent, but it always appends to the FIRST tab (it sends range `A1`), so use the raw `values append` for any other tab:
 
 ```bash
 gws sheets +append --spreadsheet SPREADSHEET_ID \
-  --json-values '[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer","","HK-2026-0001","0"]]'
+  --json-values '[["15/01/2026","Web Development Project","Professional Services","5000","900","5900","Income","INV-2026-001","Bank Transfer","","","0"]]'
 ```
+
+Column K stays empty in these examples because neither invoice exceeds the threshold in force on its date (NIS 10,000 in January to May 2026). When one does, record the allocation number there as text: the full number the invoice shows (the Tax Authority's examples are 26 digits) or its short form, the rightmost 9 digits.
+
+**Export of services (zero-rated).** A service to a foreign resident is zero-rated under VAT Law s.30(a)(5) (with exceptions), but not where the service is in fact given to an Israeli resident in Israel as well. Record VAT `0` and the category `Export (zero-rated)` / `יצוא (מע"מ 0%)`, so the summary script counts it as zero-rated instead of warning about a forgotten VAT cell.
 
 **For expense entries:**
 
@@ -166,12 +172,12 @@ gws sheets spreadsheets values get --params '{"spreadsheetId":"SPREADSHEET_ID","
 Both forms return JSON with a `values` field: an array of rows, each row an array of cell strings. The first row is the header. After reading the data, calculate and present:
 - Total income for the period
 - Total expenses for the period
-- Net profit (income minus expenses)
+- Income minus expenses (as recorded; not taxable profit, since equipment is depreciated and some expenses are only partly deductible)
 - Total VAT collected (on income) - osek murshe only
 - Total VAT paid (on expenses, input VAT) - osek murshe only
 - VAT liability (collected minus paid, amount to report to tax authority) - osek murshe only
 
-For an osek patur, present income, expenses, and net profit only.
+For an osek patur, present income, expenses, and income minus expenses only.
 
 **Bi-monthly VAT reporting periods (Israel):**
 
@@ -184,7 +190,7 @@ For an osek patur, present income, expenses, and net profit only.
 | 5 | September-October | November 15 |
 | 6 | November-December | January 15 |
 
-Limitation: businesses above the monthly-VAT turnover threshold (turnover over NIS 1,775,000 as of 1 January 2026) file VAT **monthly**, not bi-monthly; at or below it they file bi-monthly. Turnover is measured over the determining year, the 12 consecutive months ending 31 August of the preceding tax year, not the calendar year. This threshold is re-indexed each January, so confirm the current figure. Do not confuse it with the separate detailed-reporting (דיווח מפורט) obligation, whose threshold is much LOWER: from 1 January 2026 a self-employed individual with turnover above NIS 500,000 must file the itemised PCN874 report, which lists every invoice rather than totals and must reconcile exactly with the periodic return. Above that turnover a plain spreadsheet stops being sufficient on its own. `scripts/vat-summary.py` and Steps 5-6 assume the 6 bi-monthly periods only. For a monthly filer, run the summary per calendar month instead of per bi-monthly period and confirm the reporting cadence with the accountant.
+Limitation: businesses above the monthly-VAT turnover threshold (turnover over NIS 1,775,000 as of 1 January 2026) file VAT **monthly**, not bi-monthly; at or below it they file bi-monthly. Turnover is measured over the determining year, the 12 consecutive months ending 31 August of the preceding tax year, not the calendar year. This threshold is re-indexed each January, so confirm the current figure. Do not confuse it with the separate detailed-reporting (דיווח מפורט) obligation, whose threshold is much LOWER: from 1 January 2026 a self-employed individual with turnover above NIS 500,000 must file the itemised PCN874 report, which lists every invoice rather than totals and must reconcile exactly with the periodic return. Above that turnover a plain spreadsheet stops being sufficient on its own. Detailed-report filers are due on the 23rd, not the 15th or 19th. For a monthly filer, run `scripts/vat-summary.py` with `--month N` instead of `--period N` and confirm the reporting cadence with the accountant.
 
 ### Step 6: Generate Tax-Period Summary Reports
 
@@ -195,11 +201,13 @@ When the user needs to prepare data for their accountant or for VAT reporting, c
 gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"
 ```
 
-After reading, use Python (via `scripts/vat-summary.py`) to:
-1. Filter transactions by the bi-monthly period
-2. Group by income vs. expenses
-3. Calculate total VAT collected and input VAT (osek murshe only)
-4. Generate a summary suitable for the accountant
+Save the read to a file and pass it straight to the script, which accepts the ValueRange JSON that `gws` prints (or a CSV export): `gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L" > data.json`, then `python3 scripts/vat-summary.py --input data.json --period 1 --year 2026 --output summary.csv`. The script:
+1. Filters transactions by the bi-monthly period (or one month with `--month`)
+2. Groups by income vs. expenses
+3. Calculates total VAT collected and input VAT (osek murshe only), lists expense rows above that date's allocation threshold with no allocation number (if a row is one tax invoice, its input VAT is not deductible; each row is tested on its own, and rows are never merged by invoice number), lists under "VERIFY THE ALLOCATION NUMBER" any VAT-bearing row above that date's threshold whose column K holds something other than a 9-digit short or 26-digit full number (check those against the invoice; they are not counted as at risk), and flags car, hospitality and mixed-use input VAT for adjustment
+4. Writes a summary suitable for the accountant, with every flag in the CSV
+
+For an osek patur sheet (no VAT column) add `--osek-patur`; with `--full-year` it gives the year's turnover for the annual declaration.
 
 Then write the summary into a new tab. First add the tab with a `batchUpdate`, then write the rows:
 
@@ -216,7 +224,7 @@ gws sheets spreadsheets values update \
 
 gws sheets spreadsheets values append \
   --params '{"spreadsheetId":"SPREADSHEET_ID","range":"VAT-Period-1!A:D","valueInputOption":"USER_ENTERED"}' \
-  --json '{"values":[["Total Income","50000","9000","15"],["Total Expenses","20000","3600","25"],["VAT Liability","","5400",""],["Net Profit","30000","",""]]}'
+  --json '{"values":[["Total Income","50000","9000","15"],["Total Expenses","20000","3600","25"],["VAT Liability","","5400",""],["Income minus expenses","30000","",""]]}'
 ```
 
 ### Step 7: Backup Sheets as CSV
@@ -233,13 +241,13 @@ gws sheets spreadsheets values get \
   --params '{"spreadsheetId":"SPREADSHEET_ID","range":"VAT-Period-1!A:D"}' --format csv > vat-period-1-2026.csv
 ```
 
-Use the `scripts/backup-sheets.py` script for automated multi-tab backup (both bundled scripts need Python 3.10 or newer, and `--tabs` is required because the script does not enumerate tabs for you):
+Use the `scripts/backup-sheets.py` script for automated multi-tab backup (both bundled scripts need Python 3.10 or newer). Pass `--all-tabs` to read the tab list from the spreadsheet itself, or `--tabs` to name them; it exits non-zero if any tab failed:
 
 ```bash
-python3 scripts/backup-sheets.py --spreadsheet-id SPREADSHEET_ID --output-dir ./backups/2026-01 --tabs "Sheet1,VAT-Period-1"
+python3 scripts/backup-sheets.py --spreadsheet-id SPREADSHEET_ID --output-dir ./backups/2026-01 --all-tabs
 ```
 
-**Document retention.** Israeli bookkeeping rules require the business to keep its books and all supporting documents (invoices, receipts, bank records) for at least 7 years from the end of the tax year (or 6 years from the date the annual return was filed, whichever is later). A CSV backup is a convenience copy, not a substitute for retaining the original documents. Tell the user to archive backups in dated folders and keep the source invoices/receipts for the full retention period.
+**Document retention.** Israeli bookkeeping rules require the business to keep its books and all supporting documents (invoices, receipts, bank records) for at least seven years. A CSV backup is a convenience copy, not a substitute for retaining the original documents. Tell the user to archive backups in dated folders and keep the source invoices/receipts for the full retention period.
 
 ### Step 8: Auto-Log Payments from Structured Input
 
@@ -250,9 +258,9 @@ When the user provides transaction data in bulk (from a bank statement or invoic
 gws sheets spreadsheets values append \
   --params '{"spreadsheetId":"SPREADSHEET_ID","range":"Sheet1!A:L","valueInputOption":"USER_ENTERED"}' \
   --json '{"values":[
-    ["01/02/2026","Client A - Monthly Retainer","Professional Services","10000","1800","11800","Income","INV-2026-010","Bank Transfer","","HK-2026-0010","0"],
+    ["01/02/2026","Client A - Monthly Retainer","Professional Services","10000","1800","11800","Income","INV-2026-010","Bank Transfer","","","0"],
     ["03/02/2026","AWS Hosting","Software & Subscriptions","450","81","531","Expense","","Credit Card","","",""],
-    ["05/02/2026","Office refreshments","כיבוד קל","300","54","354","Expense","","Credit Card","80% for income tax; input VAT on refreshments generally NOT deductible","",""]
+    ["05/02/2026","Office refreshments","כיבוד קל","300","54","354","Expense","","Credit Card","80% for income tax; confirm the input VAT with the accountant","",""]
   ]}'
 ```
 
@@ -274,7 +282,7 @@ When the user needs to issue a tax invoice (חשבונית מס) to a customer, 
 
 - The header "חשבונית מס" and a running invoice number
 - The seller's business name and VAT/business ID (osek murshe number, or business ID for an osek patur issuing a "חשבונית עסקה" / receipt)
-- The customer's name (and ID for invoices above the threshold)
+- The customer's name
 - Invoice date
 - Description, quantity, and unit price of goods or services
 - Amount before VAT, the VAT amount, and the total including VAT (osek murshe). An osek patur issues a receipt or "חשבונית עסקה" with no VAT line.
@@ -290,7 +298,7 @@ When the user needs to issue a tax invoice (חשבונית מס) to a customer, 
 
 Invoices dated before May 2024 predate the regime entirely and never needed an allocation number. Scope the check to each invoice's OWN date against the threshold in force on that date: do not apply today's NIS 5,000 figure to a 2025 invoice that only needed a number above NIS 20,000, or to a 2024 invoice whose threshold was NIS 25,000, and do not flag a pre-May-2024 row as missing one. Backfilling old invoices into a new sheet is exactly where this goes wrong.
 
-Two different rules sit here and conflating them is the classic error. The SELLER'S duty to obtain a number is s.47(a2)(1), which arises at the buyer's demand and does not apply to a zero-rated invoice, so it turns on: amount above that date's threshold, invoice not zero-rated or exempt-only, recipient an osek murshe, and the buyer asked. The BUYER'S loss of the deduction is s.38(a1) and has NO buyer-request condition: `לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים ... ושאינה כוללת מספר שהקצה לה המנהל`. So when checking the sheet, do NOT treat "the buyer never asked" as a pass: flag any row above that date's threshold that carries VAT and has an empty column K, because the recipient loses the deduction either way. Note the statute says `עולה על` (EXCEEDS), so a row exactly at the threshold is outside it. Zero-rated and export rows stay out. The number is 9 digits, and a missing one blocks the recipient's input-VAT deduction without voiding the invoice.
+Two different rules sit here and conflating them is the classic error. The SELLER'S duty to obtain a number is s.47(a2)(1), which arises at the buyer's demand and does not apply to a zero-rated invoice, so it turns on: amount above that date's threshold, invoice not zero-rated or exempt-only, recipient an osek murshe, and the buyer asked. The BUYER'S loss of the deduction is s.38(a1) and has NO buyer-request condition: `לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים ... ושאינה כוללת מספר שהקצה לה המנהל`. So when checking the sheet, do NOT treat "the buyer never asked" as a pass: flag any row above that date's threshold that carries VAT and has an empty column K, because the recipient loses the deduction either way. Note the statute says `עולה על` (EXCEEDS), so a row exactly at the threshold is outside it. Zero-rated and export rows stay out. The full number runs up to 30 characters in the Tax Authority's API spec, and its rightmost 9 digits are the "short allocation number" reported in the detailed VAT report (PCN874). A missing one blocks the recipient's input-VAT deduction without voiding the invoice.
 
 ## Examples
 
@@ -311,8 +319,8 @@ Result: A new Google Sheet with the correct Israeli structure for the user's VAT
 User says: "Create a VAT summary for January-February 2026 and export it as CSV"
 
 Actions:
-1. Run `gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L"` to pull all entries
-2. Run `python3 scripts/vat-summary.py` to filter Jan-Feb transactions and compute totals
+1. Run `gws sheets +read --spreadsheet SPREADSHEET_ID --range "Sheet1!A:L" > data.json` to pull all entries
+2. Run `python3 scripts/vat-summary.py --input data.json --period 1 --year 2026` to filter Jan-Feb transactions and compute totals
 3. Add a "VAT-Period-1-2026" tab with `gws sheets spreadsheets batchUpdate` and write the summary with `gws sheets spreadsheets values update`
 4. Export the summary tab with `gws sheets spreadsheets values get --format csv`
 5. Display the summary: total income, total expenses, VAT collected, input VAT, net VAT liability
@@ -347,7 +355,7 @@ Result: Three new rows appended to the tracking sheet with proper categorization
 - Israeli date format is DD/MM/YYYY, not MM/DD/YYYY. Agents may use the American format, which causes confusion and errors when dates like 03/04/2026 could mean either March 4 or April 3.
 - An osek patur does not charge VAT on income and cannot reclaim input VAT on expenses. Agents may add VAT columns and compute a VAT liability for an osek patur, which is wrong. Always confirm the user's VAT status first.
 - The 80% rate applies ONLY to light refreshments (כיבוד קל) consumed at the place of business. Hosting and entertainment (אירוח), including taking a client to a restaurant, are generally not deductible at all. Treating a client lunch as an 80% item overstates the deduction, and treating it as 100% overstates it further.
-- Car expenses: for income tax the deductible amount is the HIGHER of 45% of the vehicle upkeep or the upkeep minus the שווי שימוש (use value), not the lower of the two, and there is no per-kilometre deduction regime for the Israeli self-employed. For VAT the rule is stricter still: input VAT on the purchase or import of a private vehicle is not deductible at all, even at 100% business use, and running costs are limited. Applying a 100% deduction is wrong on both taxes.
+- Car expenses: for income tax the deductible amount is the HIGHER of 45% of the vehicle upkeep or the upkeep minus the שווי שימוש (use value), not the lower of the two. For VAT the rule is stricter still: input VAT on the purchase, import or lease of a private vehicle is not deductible at all (Reg. 14(a)), and input VAT on running costs such as fuel and repairs is limited to 2/3 if the car is mainly used for business, 1/4 otherwise (Reg. 18(b)). Applying a 100% deduction is wrong on both taxes.
 - Equipment (computers, monitors, furniture) is a depreciable asset (פחת), not a 100%-in-year-one expense. Agents may book the full purchase price as a one-time expense, which overstates the first-year deduction. Capitalize the asset and spread the deduction over its useful life (for example, computers are commonly depreciated at 33.33% a year over 3 years). Only low-value or consumable office items are expensed in full in the year of purchase. The input VAT on the purchase is still fully reclaimable in the first period (osek murshe). Confirm the depreciation rate and any low-value threshold with the accountant.
 - Israeli VAT is 18% (since January 2025). Agents trained on older data may use 17%, which was the previous rate, leading to incorrect calculations throughout the spreadsheet. The rate is also date-dependent, so a sheet that carries 2024 rows crosses the change: derive VAT on each row from the rate in force at that row's date rather than applying the column header's 18% to everything.
 - The `gws` command surface is generated from Google's Discovery API. There is no `gws sheets create` or `gws sheets read` top-level command. Use `gws sheets spreadsheets <method>` with `--params`/`--json`, or the `+read` / `+append` helpers. When unsure, run `gws sheets --help`.
@@ -383,4 +391,4 @@ Solution: Verify the spreadsheet ID from the Google Sheets URL (the string betwe
 
 ### Error: "VAT calculation mismatch"
 Cause: Rounding differences between manual calculation and sheet formulas.
-Solution: Always round VAT to 2 decimal places. In Python use `round(amount * 0.18, 2)`; in the sheet itself use `=ROUND(D2*0.18, 2)`. (`Math.round` is JavaScript and runs on neither surface this skill uses.) Israeli tax authority accepts rounding to the nearest agora.
+Solution: Always round VAT to 2 decimal places. In Python use `round(amount * 0.18, 2)`; in the sheet itself use `=ROUND(D2*0.18, 2)`. (`Math.round` is JavaScript and runs on neither surface this skill uses.)
