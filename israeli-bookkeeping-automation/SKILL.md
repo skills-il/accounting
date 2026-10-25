@@ -225,7 +225,7 @@ User says: "Record a sales invoice for consulting services, 10,000 ILS plus VAT"
 ```
 Date: 15/01/2026
 Reference: INV-2026-0042
-Allocation no. (mispar haktsa'a): 4471-8823-0091
+Allocation no. (mispar haktsa'a): 482915063
 Description: Consulting services invoice - Client Name
 
 Debit (hova):
@@ -300,7 +300,7 @@ Result: Output VAT liability cleared against input VAT credit. Net VAT payable o
 
 ## SHAAM allocation number on B2B sales-invoice journal entries
 
-When you record a B2B sales-invoice pkudat yoman, the source invoice must carry a SHAAM allocation number (mispar haktza'a, 9 digits) once it crosses the threshold in force on the invoice issue date. **You need the WHOLE table, because bookkeeping routinely touches earlier years through migrations, catch-up posting and audit periods.** Thresholds are VAT-exclusive:
+When you record a B2B sales-invoice pkudat yoman, the source invoice must carry a SHAAM allocation number (mispar haktza'a; the full number is up to 30 characters and invoices highlight its rightmost 9 digits, so accept either length) once it crosses the threshold in force on the invoice issue date. **You need the WHOLE table, because bookkeeping routinely touches earlier years through migrations, catch-up posting and audit periods.** Thresholds are VAT-exclusive:
 
 | Invoice issue date | Allocation number required above |
 |---|---|

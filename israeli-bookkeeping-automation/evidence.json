@@ -124,7 +124,7 @@
     },
     {
       "claim_id": "shaam-allocation-thresholds",
-      "claim": "The SHAAM allocation-number (heshbonit Israel) regime began in May 2024 and the number is 9 digits. Thresholds, VAT-exclusive, on the invoice issue date: NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, NIS 5,000 from June 2026. Invoices dated before May 2024 never required one. A number is required only where all four conditions hold: above the threshold in force on that date; the invoice carries a VAT component; the recipient is an osek murshe; and the recipient asked for one. A missing number blocks the RECIPIENT's input-VAT deduction and does not void the invoice.",
+      "claim": "The SHAAM allocation-number (heshbonit Israel) regime began in May 2024. Thresholds, VAT-exclusive, on the invoice issue date: NIS 25,000 from May 2024, NIS 20,000 from January 2025, NIS 10,000 from January 2026, NIS 5,000 from June 2026. Invoices dated before May 2024 never required one. A number is required only where all three conditions hold: above the threshold in force on that date; the invoice carries a VAT component; the recipient is an osek murshe. A missing number blocks the RECIPIENT's input-VAT deduction and does not void the invoice.",
       "source_url": "https://www.greeninvoice.co.il/magazine/israel-invoice/",
       "raw_snippet": "מאי 2024 | 25,000 ₪ | ינואר 2025 | 20,000 ₪ | ינואר 2026 | 10,000 ש״ח | יוני 2026 ואילך | 5,000 ש״ח",
       "fetched_at": "2026-08-27T17:00:00Z",
@@ -381,6 +381,32 @@
       "appears_in": [
         "SKILL_HE.md"
       ]
+    },
+    {
+      "claim_id": "allocation-9-rightmost-digits",
+      "claim": "The Tax Authority spec recommends printing only the 9 rightmost digits of the allocation number on the invoice; that short form is what is commonly called the 9-digit number.",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "recommended to print only the 9 digits on the right",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "allocation-field-a30",
+      "claim": "The spec defines Confirmation_Number (invoice allocation number) as an A30 field, so the full number is up to 30 characters; its published example values are 26 digits.",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "Confirmation_Number   Invoice allocation    A30",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
     }
   ]
 }
