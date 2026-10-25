@@ -110,3 +110,50 @@ Import validation rules:
 - Batch numbers must be sequential within a fiscal year
 - Currency codes must match Hashavshevet's internal currency table. These internal numeric codes vary by installation, so confirm them against your installation's currency table rather than assuming a fixed mapping or reusing ISO 4217 codes.
 
+
+
+### Step 7 helpers: coarse validation
+
+Caveat (repeated from SKILL.md Step 7): in the paired debit+credit-per-row PKUDOT format `validate_trial_balance` sums the same `amount` into both totals, so it is balanced by construction. Treat it as a smoke test only; never present its result to an auditor as assurance. Amounts use `Decimal`, not float.
+
+```python
+from decimal import Decimal, InvalidOperation
+
+def validate_trial_balance(records: list[dict]) -> dict:
+    """Validate that debits equal credits in journal entries."""
+    total_debit = Decimal('0')
+    total_credit = Decimal('0')
+    errors = []
+
+    for i, record in enumerate(records):
+        try:
+            amount = Decimal(str(record.get('amount', 0)))
+            if record.get('account_debit'):
+                total_debit += amount
+            if record.get('account_credit'):
+                total_credit += amount
+        except InvalidOperation:
+            errors.append(f"Row {i+1}: Invalid amount '{record.get('amount')}'")
+
+    balanced = abs(total_debit - total_credit) < Decimal('0.01')
+    return {
+        'balanced': balanced,
+        'total_debit': total_debit,
+        'total_credit': total_credit,
+        'difference': total_debit - total_credit,
+        'errors': errors,
+    }
+
+def validate_account_references(entries: list[dict], accounts: list[dict]) -> list[str]:
+    """Verify all referenced accounts exist in the chart of accounts."""
+    valid_accounts = {a['account_number'] for a in accounts}
+    errors = []
+    for i, entry in enumerate(entries):
+        debit_acc = entry.get('account_debit', '').strip()
+        credit_acc = entry.get('account_credit', '').strip()
+        if debit_acc and debit_acc not in valid_accounts:
+            errors.append(f"Row {i+1}: Debit account '{debit_acc}' not found in chart of accounts")
+        if credit_acc and credit_acc not in valid_accounts:
+            errors.append(f"Row {i+1}: Credit account '{credit_acc}' not found in chart of accounts")
+    return errors
+```

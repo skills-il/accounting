@@ -2,6 +2,48 @@
   "skill": "hashavshevet-data-tools",
   "cycles": [
     {
+      "date": "2026-10-25",
+      "from_version": "1.4.2",
+      "to_version": "1.5.0",
+      "type": "minor",
+      "summary": "Reference-skill refresh. No threshold or rate drift (5,000 since 1.6.2026 still current, no 2027 step announced; VAT 18%; BKMV spec 1.31; H-ERP 2026a; WizCloud API 2.0.0), but the shipped skill was wrong on the allocation-number FORMAT (said 9 digits; the ITA API spec has a full A30 number with 26-digit examples and a short rightmost-9 form) and silent on several data-loss traps. Expert r1 returned 7 CRITICALs (all verified against primary ITA PDFs before encoding), including one introduced this cycle (PCN874 amount rendered as gross; it is excluding VAT). Judge 3 rounds, expert 3 rounds, legal gate PASS conditional on adding a tax notice, which was added.",
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "holdout 4",
+          "holdout 7",
+          "holdout 9"
+        ]
+      },
+      "changes": [
+        "Allocation number: full A30 (26-digit examples) vs short rightmost 9; accept both, match on rightmost 9, store as text.",
+        "BKMV 1.31 has no allocation-number field: migrations via BKMV drop allocation numbers; extract separately.",
+        "BKMV charset from A000 field 1029 (ISO-8859-8-i vs CP-862), dates YYYYMMDD, ISO 4217, Appendix 1 document-type codes, integrity keys (primary-ID triple, record lengths, '!' padding, folder path), C100/B100 date fields (scope on 1230, never 1205), B110 1417 6111 code, A000 1016, A000 1002 = Z900 1155.",
+        "PCN874: amount EXCLUDING VAT, whole shekels, separate sign, mandatory short-allocation field, full entry-type table and per-code conventions, petty-cash cap, mixed invoices, correction procedure, storno omission (resolves carried M1 and M4).",
+        "Threshold provenance: 2025 row now sourced to the ITA's own service page; regime start sharpened to 5 May 2024; numbers issued since 1.1.2024.",
+        "Hashavshevet 2026a 'minimum amount for allocation' field is a VAT amount (900 at 5,000 and 18%); 2026a transmits PCN874 directly.",
+        "Migration: per-supplier withholding rate/validity + same withholding file number; ITA token re-established before first post-cutover filing; BKMV export purpose ITA vs CPA cut, one year per file, batch 9998.",
+        "VAT 17% through 31.12.2024, 18% from 1.1.2025; flag rather than recompute supplies straddling the boundary.",
+        "New references/ita-filings.md (PCN874, rejection path, provenance, BKMV migration facts) and references/domain-checklist.md; Step 7 helpers moved to legacy-fixed-width.md and switched to Decimal.",
+        "Legal notice (Tier B tax) after H1 in both files; descriptions prefixed 'Not tax advice and not a filed return.'; description no longer presents Gold/2000+ as current (resolves N1).",
+        "SKILL_HE.md: removed stale metadata block from frontmatter; Step 2/4 code replaced by prose mirroring EN."
+      ],
+      "lessons": [
+        "Deferred MAJOR (M2, carried since 1.4.0): Form 6111 mechanics (three parts, who must file, tie-out to the return) still thin.",
+        "Deferred MAJOR (M5, carried since 1.4.0): no 9-digit osek/ח.פ. check-digit validator.",
+        "Deferred MAJOR (M6, carried since 1.4.0): bank-import example lacks a duplicate guard on a stable bank reference and a reconciliation step.",
+        "Deferred MAJOR: tax-point rule for supplies straddling 31.12.2024 only has a flag-don't-recompute guard; source the VAT Law timing rule and encode it.",
+        "Deferred: PCN874 fill rule for lines with no allocation number (2010 circular shows zeros; 2024 spec silent). Confirm with ITA.",
+        "Deferred: Z-register neutralisation in PCN874, 4MB simulator cap + split rule (each split its own production / primary ID), s.25 retention citation, visual ISO-8859-8 reversal check, step renumbering (no Step 5 in SKILL.md).",
+        "Watch: ITA 'addendum 1' (3.2026) to the 1.31 instructions will require software to transmit BKMV via API; sandbox only as of 2026-10-25.",
+        "Word cap: SKILL.md ~4,990 / SKILL_HE.md ~4,920. Next additions must move content to references first."
+      ]
+    },
+    {
       "date": "2026-08-27",
       "from_version": "1.3.0",
       "to_version": "1.4.0",

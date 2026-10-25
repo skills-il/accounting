@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "category": "accounting",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Hashavshevet Data Tools"
   },
   "display_description": {
-    "he": "ייבוא וייצוא נתונים בין תוכנת חשבשבת לפורמטים מודרניים כמו JSON, CSV ו-Excel. מתאים לחילוץ פקודות יומן, מתכונת חשבונות, מאזן בוחן ורשימות לקוחות וספקים מחשבשבת, לייבוא תנועות בנק וחשבוניות לפורמט חשבשבת, ולהעברת נתונים למערכות ענן כמו iCount, רווחית ו-Invoice4U. כולל המרת קידוד עברית (Windows-1255 ל-UTF-8) ואימות שלמות נתונים. לא מיועד לאינטגרציות API בזמן אמת, שינויים ישירים בבסיס הנתונים, או הנהלת חשבונות שוטפת בתוך חשבשבת.",
-    "en": "Import and export data between Hashavshevet accounting software and modern formats (JSON, CSV, Excel). Use when you need to extract journal entries, chart of accounts, trial balances, or customer/supplier lists from Hashavshevet, import bank transactions and invoices into Hashavshevet format, migrate data from Hashavshevet to cloud-based solutions (iCount, Rivhit, Invoice4U), or handle Hebrew encoding conversions (Windows-1255 to UTF-8). Supports Hashavshevet Gold, Hashavshevet 2000+, and newer versions. Validates data integrity during import/export operations. Do NOT use for real-time Hashavshevet API integrations, direct database modifications, or live bookkeeping within Hashavshevet."
+    "he": "אינו ייעוץ מס ואינו דוח שהוגש. ייבוא וייצוא נתונים בין תוכנת חשבשבת לפורמטים מודרניים כמו JSON, CSV ו-Excel. מתאים לחילוץ פקודות יומן, מתכונת חשבונות, מאזן בוחן ורשימות לקוחות וספקים מחשבשבת, לייבוא תנועות בנק וחשבוניות לפורמט חשבשבת, ולהעברת נתונים למערכות ענן כמו iCount, רווחית ו-Invoice4U. כולל המרת קידוד עברית (Windows-1255 ל-UTF-8), אימות שלמות נתונים, הפקה ובדיקה של קובץ במבנה אחיד (BKMV) ו-PCN874 מנתוני חשבשבת, ובדיקת מספרי הקצאה לפי תאריך בחשבוניות שהועברו. לא מיועד לאינטגרציות API בזמן אמת, שינויים ישירים בבסיס הנתונים, או הנהלת חשבונות שוטפת בתוך חשבשבת.",
+    "en": "Not tax advice and not a filed return. Import and export data between Hashavshevet accounting software and modern formats (JSON, CSV, Excel). Use when you need to extract journal entries, chart of accounts, trial balances, or customer/supplier lists from Hashavshevet, import bank transactions and invoices into Hashavshevet format, migrate data from Hashavshevet to cloud-based solutions (iCount, Rivhit, Invoice4U), handle Hebrew encoding conversions (Windows-1255 to UTF-8), or produce and validate the Tax Authority uniform-structure file (BKMV, kovetz ahid) and PCN874 from Hashavshevet data, with date-scoped allocation-number checks. Supports legacy Hashavshevet Windows installations (Gold, 2000+), H-ERP and H-WEB (Hashavshevet in the cloud). Validates data integrity during import/export operations. Do NOT use for real-time Hashavshevet API integrations, direct database modifications, or live bookkeeping within Hashavshevet."
   },
   "supported_agents": [
     "claude-code",
