@@ -62,6 +62,33 @@
         "CARRY (deferred): the allocation threshold is per-INVOICE before VAT, but the unmatched-debit list is sorted by BANK-LINE amount, and one debit can settle several sub-threshold invoices. Applying the threshold to bank-line magnitudes creates false findings on the grouped and card-settlement cases the skill built matchers for.",
         "CARRY (deferred, minor): Step 2a says there is no generic OTP option; the library does declare triggerTwoFactorAuth and getLongTermTwoFactorToken on the generic Scraper interface, just unimplemented for most providers. futureMonthsToScrape and enableTransactionsFilterByDate are unmentioned and both change which rows appear."
       ]
+    },
+    {
+      "version": "1.5.0",
+      "date": "2026-10-25",
+      "holdout_before": 1.0,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "see panel eval-r1.json (4 holdout queries)"
+        ]
+      },
+      "lessons": [
+        "FALSE GOTCHA REMOVED: 'Israeli banks work Sunday to Thursday, Friday/Saturday processed Sunday' was wrong (and was wrong before 2026). Banks and ZAHAV run Sunday to Friday, Friday a short day ending 14:00; only the TASE moved to Monday-Friday on 5.1.2026. Domain checklist carried the same error.",
+        "OPEN BANKING DATES WRONG: 'business accounts since December 2023' replaced by BOI circular 2778: small corporations (turnover up to NIS 5M) from end of January 2023, all other corporations from 14 April 2024; ISA is the licensor per the statute.",
+        "LIBRARY: 18 CompanyTypes (the reference said 19); four providers missing from the SKILL.md list added; identifier is string|number; Node >= 22.22.2 on 6.12.2; only OneZero implements 2FA; scraper history window (one year, Yahav six months) broke Example 3's full-year scrape.",
+        "ALLOCATION: per INVOICE on the NET amount, not per bank line; 9-rightmost-digit short form (the '26-digit / A30 document' brief was half wrong: A30 is the field type, examples are 26 digits); s.32(18) income-tax disallowance from 1.8.2025, s.47(a2)(4) late request, s.38(a) six-month window, s.38(a2)/32(16a) Cash Law. No threshold step after June 2026 found.",
+        "EXPERT CRITICALS (r1): missing s.32(18) consequence; withholding-at-source receipts read as missing invoices; unmatched credits as unreported output VAT; six-month input-VAT window. All fixed.",
+        "REPAIR REINTRODUCED A DEFECT (r2): rewriting הוראת קבע as direct debit left it in the 'no invoice, just post it' bucket, which would lose input VAT on utility bills. Then the fix listed insurance as a VAT-invoice payee (r3), wrong since insurers charge no VAT. Two repair rounds each introduced a new false statement.",
+        "ARITHMETIC: card matcher summed magnitudes (refund doubled), keyed on a purchase window, and never separated cards; matchGroup combined across directions; Step 5 put reference matching last; flat 5 ILS FX tolerance; Example 2 split installment purchases; period filter dropped the 1st of each month (UTC). All fixed.",
+        "DEFERRED (MAJOR): cash-basis tax point for the VAT rate on a December-invoiced, January-paid service (arith item 9).",
+        "DEFERRED (minor): reverse 1-to-N group match (one invoice, several bank lines) is prose only; no default FX percentage band; card matcher should try the exact day first and exclude already-matched lines for immediate-debit cards; bounced-cheque un-match not wired into code.",
+        "SCOPE: bank-fee tariff audit and a general FX tax-translation rule and payer-side withholding (s.32A) recorded as Out of scope (explicit) with dated rationale.",
+        "PROCESS: the shared value-add runner lacked baseline WebSearch; gate run on vag-current runner."
+      ]
     }
   ]
 }

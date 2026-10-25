@@ -18,11 +18,13 @@ performing התאמת בנק would consider its absence a correctness defect.
    separators, Windows-1255/UTF-8 + BOM, semicolon CSV delimiters.
    *Cite:* Income Tax (Bookkeeping) Directives 1973, computerized-records amendment (Circular 24/2004) requires legible, reconstructible computerized records, https://www.gov.il/he/departments/israel_tax_authority
 
-3. **Matching strategies**, exact (reference + amount), fuzzy (date window +
-   amount tolerance + payee similarity), recurring-pattern, AND standing-order
-   detection (הוראת קבע / הו"ק): stable amount on the same day each month from the
-   same payee.
-   *Cite:* Bank of Israel Proper Conduct of Banking Business / payment standards, https://www.boi.org.il/en/economic-roles/supervision-and-regulation/ (standing orders are a regulated, named debit instrument)
+3. **Matching strategies**, reference first, then exact (date + amount), fuzzy
+   (date window + amount tolerance + payee similarity), grouped, and
+   recurring-debit detection by PAYEE (a line labelled הוראת קבע / הו"ק may be a
+   debit under an authorisation or a standing transfer; confirm the type before
+   applying Directive 439 rights).
+   *Cite:* BOI Proper Conduct Directive 439 (debits under an authorisation),
+   https://boi.org.il/media/opue4bvf/439.pdf ; see `matching-rules.md`
 
 4. **Three-bucket categorization**, matched / unmatched-bank / unmatched-books,
    with the unmatched-bank bucket split into "missing invoice" (investigate vs.
@@ -77,25 +79,31 @@ performing התאמת בנק would consider its absence a correctness defect.
 
 12. **Reconciliation cadence**, reconcile at least monthly (period close), and at
     year-end before the annual tax return; tie the cadence to closing/VAT-period
-    boundaries.
-    *Cite:* Israel Tax Authority bookkeeping + VAT reporting periodicity ,
-    https://www.gov.il/he/departments/israel_tax_authority
+    boundaries: bi-monthly for an osek murshe with turnover up to NIS 1,775,000,
+   monthly above it, annual declaration for an osek patur.
+   *Cite:* VAT Law s.67(a2)(1) and the VAT (Registration) Regulations reg.15,
+   https://he.wikisource.org/wiki/חוק_מס_ערך_מוסף ; see `vat-and-fx-rules.md`
 
 ---
 
 ## Should cover
 
 1. **Suspicious-item flagging**, duplicate amounts same date, oversized
-   transactions, weekend/holiday postings (Sun,Thu business week, Israeli
-   calendar).
-   *Cite:* Israeli banking business week is Sunday,Thursday, https://www.boi.org.il/en/economic-roles/supervision-and-regulation/
+   transactions, Saturday/holiday postings. Banks and ZAHAV work Sunday to
+   Friday, with Friday a short day ending 14:00; only the TASE moved to
+   Monday to Friday (5 January 2026).
+   *Cite:* Banking (Customer Service) rules on cheque credit and debit timing
+   (definition of a banking business day), https://he.wikisource.org/wiki/הוראות_הבנקאות_(שירות_ללקוח)_(מועד_זיכוי_וחיוב_בשיקים) ;
+   see `period-close.md`
 
-2. **Check float / clearing period**, 1,3 business-day clearing creates timing
-   mismatches between bank date and recorded date.
-   *Cite:* Israeli check-clearing practice, https://www.boi.org.il/en/economic-roles/supervision-and-regulation/
+2. **Cheque clearing and reversal**, credit on the clearing day is provisional
+   for three further banking business days; a returned cheque re-opens a prior
+   match. The rules do not key the credit day on deposit channel; a bank may set
+   an earlier cut-off for a branch or deposit type on notice.
+   *Cite:* same rules, s.2(a) and s.3(a); see `period-close.md`
 
 3. **VAT reconciliation tie-out (מע"מ)**, bank amounts are VAT-inclusive while the
-   ledger may split net + VAT; current VAT rate is 18% (since 1 Jan 2025). A
+   ledger may split net + VAT; VAT rate is 18% since 1 Jan 2025 and was 17% before. A
    systematic ~18%/15.25% gap signals a VAT split mismatch, not an error.
    *Cite:* Israel Tax Authority VAT rate 18% from 2025-01-01, https://www.gov.il/he/departments/israel_tax_authority
 
@@ -112,6 +120,28 @@ performing התאמת בנק would consider its absence a correctness defect.
    available, fall back to the scraper script.
    *Cite:* skill architecture choice (no external authority needed)
 
+7. **Direct debit (חיוב על פי הרשאה) vs standing order**, variable amount,
+   cancellable by the customer within 3 business days after the debit.
+   *Cite:* BOI Proper Conduct Directive 439, https://boi.org.il/media/opue4bvf/439.pdf
+
+8. **Allocation number per invoice, dated threshold table, short form of the 9 rightmost digits (full number up to 30 characters).**
+   *Cite:* VAT Law s.38(a1), s.47(a2)(1); see `vat-and-fx-rules.md`
+
+9. **Scraper history window and sign-off, ageing and materiality.**
+   *Cite:* israeli-bank-scrapers README; see `period-close.md`
+
+10. **Consequences of a missing allocation number and of a late invoice**: the
+    income-tax disallowance of the expense (Ordinance s.32(18), from 1.8.2025),
+    the late-request route (VAT Law s.47(a2)(4)), and the six-month input-VAT
+    window (s.38(a)); only a tax invoice issued to the dealer supports the
+    deduction.
+    *Cite:* https://he.wikisource.org/wiki/חוק_מס_ערך_מוסף ; https://he.wikisource.org/wiki/פקודת_מס_הכנסה
+
+11. **Receipts side**: an unmatched credit may be unreported output VAT; payments
+    net of income tax withheld at source; card-acquirer settlements net of the
+    clearing fee and in installment tranches.
+    *Cite:* structural; see `matching-rules.md`
+
 ---
 
 ## Out of scope
@@ -123,6 +153,22 @@ performing התאמת בנק would consider its absence a correctness defect.
   records it).
 - Payroll-specific reconciliation (separate domain).
 - Tax-return preparation itself (the skill feeds it; does not file).
+- Auditing bank fees against the regulated tariff, including the reduced
+  small-business schedule (reviewed 2026-10-25: a user may ask "was this fee
+  right?", but the reconciliation's job is to post the fee the bank actually
+  took; challenging a fee is a consumer-dispute workflow, handled by
+  `israeli-consumer-fee-fighter`).
+- A general income-tax rule for translating foreign-currency entries for an
+  ordinary business (reviewed 2026-10-25: no primary text could be verified;
+  the skill names only the elective 1986 dollar regulations and routes the
+  question to the accountant).
+- Payer-side withholding compliance (whether the user withheld and remitted tax
+  on payments to suppliers): a withholding workflow, not a bank reconciliation
+  (reviewed 2026-10-25; the receipts side, payments received net of
+  withholding, IS covered).
+- Re-litigated 2026-10-25, all rows above stay out of scope: none is a question
+  a reconciliation user ordinarily asks of this tool, and none became
+  capturable.
 
 ---
 

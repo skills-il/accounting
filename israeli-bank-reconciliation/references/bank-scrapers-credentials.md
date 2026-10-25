@@ -5,7 +5,7 @@ Authoritative source: the `SCRAPERS` map in the library's
 Read that file, not the README prose: the two disagree for `amex`, where the
 README says `username` and the code declares `id`.
 
-## Full provider table (19 CompanyTypes members)
+## Full provider table (18 CompanyTypes members, library version 6.12.2)
 
 | Provider | Credential fields |
 |---|---|
@@ -30,8 +30,8 @@ the skill warns about. Throw instead.
 ```javascript
 const { CompanyTypes } = require('israeli-bank-scrapers');
 
-// Field list per provider. Copy from the library README for your provider before
-// running; these can change between major versions.
+// Field list per provider, from the SCRAPERS map in src/definitions.ts (not the
+// README prose). Re-check it after upgrading the library.
 const CREDENTIAL_FIELDS = {
   [CompanyTypes.hapoalim]:   ['userCode', 'password'],
   [CompanyTypes.discount]:   ['id', 'password', 'num'],

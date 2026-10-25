@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-bank-reconciliation",
-  "generated_at": "2026-08-27T16:58:37.922482+00:00",
+  "generated_at": "2026-10-25T12:31:02Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -40,7 +40,7 @@
     },
     {
       "claim_id": "standing-orders-deferred-checks",
-      "claim": "Standing orders (הוראות קבע) are the most common recurring Israeli bank debit, and post-dated/deferred checks (שיקים דחויים) clear only on their future date and so stay reconciling items separate from ordinary outstanding checks. Both concepts derive from standard Israeli bookkeeping and receipt-recording practice.",
+      "claim": "The bookkeeping rules require a cheque receipt to record identifying details of the cheque (cheque number and drawee bank), which is what the reference matcher keys on.",
       "source_url": "https://www.kolzchut.org.il/he/ניהול_ספרי_החשבונות_של_העסק",
       "raw_snippet": "אם כללו התקבולים שיקים, יש לציין פרטים לזיהוי השיקים, כגון מספר השיק ושם הבנק שעליו נמשך.",
       "fetched_at": "2026-06-25T00:00:00Z",
@@ -110,28 +110,6 @@
       ]
     },
     {
-      "claim_id": "pandas-io-ref",
-      "claim": "pandas Input/Output API reference, cited for CSV/Excel import of bank statements, date parsing and encoding. Returns HTTP 200.",
-      "source_url": "https://pandas.pydata.org/docs/reference/io.html",
-      "raw_snippet": "pandas.read_table pandas.read_csv pandas.DataFrame.to_csv pandas.read_fwf pandas.read_clipboard pandas.DataFrame.to_clipboard pandas.read_excel pandas.DataFrame.to_excel",
-      "fetched_at": "2026-08-09T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
-      "claim_id": "openpyxl-ref",
-      "claim": "openpyxl documentation, cited for writing reconciliation reports in styled XLSX. Returns HTTP 200.",
-      "source_url": "https://openpyxl.readthedocs.io/en/stable/",
-      "raw_snippet": "openpyxl is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.",
-      "fetched_at": "2026-06-25T00:00:00Z",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "illustrative-example-figures",
       "claim": "The following amounts and match-rate percentages are illustrative, hypothetical scenario outputs used only to demonstrate report shape in the Examples section, not externally sourced facts: a suspicious duplicate charge of 2,450 ILS / 2,450 ש\"ח; a 98% match rate with a fuzzy tolerance of 1 ILS / 1 ש\"ח and 1.00 ILS / 1.00 ש\"ח; a foreign-currency rounding difference of 127.50 ILS / 127.50 ש\"ח with a wider 5.00 ILS / 5.00 ש\"ח tolerance; a multi-bank case showing 97% and 91% match rates; and 34 missing-invoice transactions totaling 18,200 ILS / 18,200 ש\"ח broken into 3,400 ILS / 3,400 ש\"ח of office supplies, 5,100 ILS / 5,100 ש\"ח of USD software subscriptions, and 9,700 ILS / 9,700 ש\"ח of parking and toll charges. These are values the skill itself defines for its worked examples, so the skill file is the source; no external publication states them. Also covers 3 ₪.",
       "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-bank-reconciliation/SKILL.md",
@@ -180,18 +158,6 @@
       ]
     },
     {
-      "claim_id": "open-banking-financial-info-law",
-      "claim": "Israel's Financial Information Service Law, 2021 established a licensed open-banking regime supervised by the Israel Securities Authority, under which a licensed provider accesses account data through open interfaces without the customer exposing their banking credentials. Business accounts have been within scope since December 2023.",
-      "source_url": "https://www.nevo.co.il/law_html/law00/204508.htm",
-      "raw_snippet": "חוק שירות מידע פיננסי, התשפ\"ב-2021",
-      "fetched_at": "2026-07-27T00:48:37Z",
-      "note": "nevo returns 403 to plain fetchers; cited as the statutory reference for the licensed alternative to credential scraping.",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ]
-    },
-    {
       "claim_id": "boi-rate-business-days-only",
       "claim": "Bank of Israel representative exchange rates are calculated once a day on foreign-currency business days only, so no rate is published on Saturdays, Sundays, Israeli holidays and certain other days. The rate is published after the afternoon sampling window closes, and the Bank of Israel states the rates have no official or legal standing in themselves.",
       "source_url": "https://www.boi.org.il/en/economic-roles/financial-markets/explanatory-notes-to-the-representative-exchange-rates/",
@@ -217,7 +183,7 @@
     },
     {
       "claim_id": "allocation-number-5000-june-2026",
-      "claim": "Since 1 June 2026 a tax invoice of NIS 5,000 (5,000 ש\"ח) or more before VAT requires an allocation number (mispar haktzaa) from the Tax Authority platform, and without one the buyer cannot offset the VAT on that expense. The threshold was NIS 10,000 from 1 January 2026.",
+      "claim": "Since 1 June 2026 a tax invoice EXCEEDING NIS 5,000 before VAT requires an allocation number (mispar haktzaa) from the Tax Authority platform, and without one the buyer cannot offset the VAT on that expense. The threshold was NIS 10,000 from 1 January 2026.",
       "source_url": "https://www.grantthornton.co.il/insights1/tax-insignths/2026/From_June_the_allocation_number/",
       "raw_snippet": "החל מיום 1.6.2026 תורחב החובה לקבל מספר הקצאה לחשבונית מס, כך שתחול על עסקאות שסכומן עולה על 5,000 ש\"ח",
       "fetched_at": "2026-08-27T16:38:49.206053+00:00",
@@ -397,6 +363,582 @@
       ],
       "verified_via": "internal-arithmetic",
       "verified_at": "2026-08-27T16:58:52.549376+00:00"
+    },
+    {
+      "claim_id": "open-banking-law-in-force-2022",
+      "claim": "The Financial Information Service Law, 2021 came into force on 14 June 2022; the banks' access duty applied first to individual customers.",
+      "source_url": "https://www.boi.org.il/media/k1dl4le3/2778.pdf",
+      "raw_snippet": "ביום 14 ביוני 2022 נכנס לתוקף חוק שירות מידע פיננסי",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "open-banking-small-corporations-jan-2023",
+      "claim": "From the end of January 2023 the access duty also covers accounts of corporations whose turnover does not exceed NIS 5 million a year.",
+      "source_url": "https://www.boi.org.il/media/k1dl4le3/2778.pdf",
+      "raw_snippet": "החל מסוף חודש ינואר 2023 חלה חובת מתן הגישה למידע פיננסי גם ביחס לחשבונות של תאגידים, שמחזור העסקים שלהם אינו עולה על חמישה מיליון שקלים חדשים בשנה",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "open-banking-other-corporations-apr-2024",
+      "claim": "For a corporate customer that is not a small corporation the start date is 14 April 2024.",
+      "source_url": "https://www.boi.org.il/media/k1dl4le3/2778.pdf",
+      "raw_snippet": "לעניין לקוח מסוג תאגיד שאינו תאגיד קטן, מועד התחילה נקבע ליום 14 באפריל 2024",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "open-banking-isa-licensor",
+      "claim": "Under the Financial Information Service Law the licensing authority ('the Authority') is the Israel Securities Authority.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%A9%D7%99%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%A4%D7%99%D7%A0%D7%A0%D7%A1%D7%99",
+      "raw_snippet": "רשות ניירות ערך",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "payment-initiation-law-2023",
+      "claim": "Payment initiation is regulated by a separate 2023 law, the Regulation of Engagement in Payment Services and Payment Initiation Law.",
+      "source_url": "https://www.boi.org.il/media/sdbas4ub/202509.pdf",
+      "raw_snippet": "חוק הסדרת העיסוק בשירותי תשלום וייזום תשלום, התשפ\"ג-2023",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "library-18-companytypes",
+      "claim": "The israeli-bank-scrapers CompanyTypes enum has 18 members: hapoalim, beinleumi, union, amex, isracard, visaCal, max, otsarHahayal, discount, mercantile, mizrahi, leumi, massad, yahav, behatsdaa, beyahadBishvilha, oneZero, pagi.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/src/definitions.ts",
+      "raw_snippet": "pagi = 'pagi',",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bank-scrapers-credentials.md"
+      ]
+    },
+    {
+      "claim_id": "library-version-node-engines",
+      "claim": "israeli-bank-scrapers 6.12.2 (latest on npm, released 2026-09-29) declares engines node >= 22.22.2 and its main entry is CommonJS lib/index.js.",
+      "source_url": "https://registry.npmjs.org/israeli-bank-scrapers/6.12.2",
+      "raw_snippet": "\"node\":\">= 22.22.2\"",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bank-scrapers-credentials.md"
+      ]
+    },
+    {
+      "claim_id": "library-pagi-not-in-readme",
+      "claim": "The README's supported list names OneZero as experimental and does not list Pagi.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/README.md",
+      "raw_snippet": "- OneZero (Experimental)",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "library-2fa-onezero-only",
+      "claim": "The base scraper throws for triggerTwoFactorAuth/getLongTermTwoFactorToken; only the OneZero scraper implements two-factor support.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/src/scrapers/base-scraper.ts",
+      "raw_snippet": "triggerTwoFactorAuth() is not created in",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "library-identifier-type",
+      "claim": "Transaction.identifier is typed string | number and optional.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/src/transactions.ts",
+      "raw_snippet": "identifier?: string | number;",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/bank-scrapers-credentials.md"
+      ]
+    },
+    {
+      "claim_id": "library-error-types",
+      "claim": "ScraperErrorTypes include INVALID_PASSWORD, CHANGE_PASSWORD and ACCOUNT_BLOCKED.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/src/scrapers/errors.ts",
+      "raw_snippet": "AccountBlocked = 'ACCOUNT_BLOCKED',",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "library-history-window-year",
+      "claim": "Most scrapers fetch up to one year (e.g. Hapoalim, Leumi); Discount and Mercantile up to one year minus 1 day.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/README.md",
+      "raw_snippet": "This scraper supports fetching transaction from up to one year (minus 1 day).",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/period-close.md"
+      ]
+    },
+    {
+      "claim_id": "library-history-window-yahav",
+      "claim": "The Yahav scraper fetches up to six months.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/README.md",
+      "raw_snippet": "This scraper supports fetching transaction from up to six months.",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/period-close.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-s38a1-recipient",
+      "claim": "s.38(a1): no input-VAT deduction on a tax invoice whose amount before tax exceeds NIS 5,000 (10,000 from January to May 2026) and which carries no number allocated by the Director; no buyer-request condition.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "לא יותר ניכוי מס התשומות הכלול בחשבונית מס שסכומה, בלא המס, עולה על 5,000 שקלים חדשים",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-s47a2-issuer",
+      "claim": "s.47(a2)(1): an osek murshe issuing a tax invoice must request an allocation number at the buyer's demand where the amount before tax exceeds the s.38(a1) amount; not for a zero-rate transaction.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "חייב הוא לעשות כן לפי דרישת הקונה",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-govil-2026-steps",
+      "claim": "Tax Authority service page: threshold NIS 20,000 for 2025, 10,000 from 1 January 2026 and NIS 5,000 from 1 June 2026.",
+      "source_url": "https://www.gov.il/he/service/request-assignment-number-for-tax-invoice",
+      "raw_snippet": "10,000 החל מה-1 בינואר 2026 ו-5,000 ₪ החל מה-1 ביוני 2026",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "allocation-start-5-may-2024",
+      "claim": "The allocation-number deduction condition began on 5 May 2024 for invoices above NIS 25,000 (after two postponements announced by the ITA on 26 February 2024).",
+      "source_url": "https://www.shibolet.com/?p=17694",
+      "raw_snippet": "והחל מיום 5 במאי 2024 עוסק מורשה המבקש לנכות מס תשומות יחויב בקבלת מספר הקצאה מרשות המיסים בעבור חשבוניות בסכום של מעל 25,000",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "allocation-9-rightmost-digits",
+      "claim": "The Tax Authority API spec recommends printing only the 9 rightmost digits of the allocation number and reporting the 9 rightmost digits.",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "recommended to print only the 9 digits on the right",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "allocation-field-a30",
+      "claim": "The spec defines Confirmation_Number (invoice allocation number) as an A30 field; its example value is 26 digits.",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "\"Confirmation_Number\": \"20240704061109183186068226\"",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "allocation-spec-conditions",
+      "claim": "The spec issues allocation numbers for an invoice with a non-zero VAT component to a licensed-dealer customer.",
+      "source_url": "https://www.gov.il/BlobFolder/generalpage/israel-invoice-160723/he/vat_software-houses-180724-en.pdf",
+      "raw_snippet": "The invoice includes a non-zero VAT component.",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "vat-period-bimonthly-1775000",
+      "claim": "s.67(a2)(1): the reporting period is two months for a dealer whose turnover does not exceed NIS 1,500,000, CPI-adjusted to NIS 1,775,000 from September 2025.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "החל מספטמבר 2025, 1,775,000 ש״ח",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "vat-period-detailed-monthly",
+      "claim": "A dealer that becomes liable for detailed VAT reporting moves to monthly reporting and payment under s.67A(a); companies above NIS 500,000 from the September 2025 period, individuals above NIS 500,000 from 1.1.2026.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "עוסקים שהנם חברות אשר מחזורן עולה על 500 אלפי ש\"ח חייבים בדיווח מפורט כבר החל מהתקופה ספטמבר 2025",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "vat-period-detailed-individuals-2026",
+      "claim": "Individual dealers with turnover above NIS 500,000: detailed reporting from 1 January 2026 instead of 1 September 2025.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "אשר מחזור עסקאותיו עולה על 500,000 ש\"ח תחול החל מיום 1.1.2026",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "vat-period-detailed-deferral-2027",
+      "claim": "Individual dealers meeting a 90% small-invoice test may apply to defer detailed reporting to 1 January 2027.",
+      "source_url": "https://www.amir-cpa.net/post/%D7%93%D7%99%D7%95%D7%95%D7%97-%D7%9E%D7%A4%D7%95%D7%A8%D7%98-%D7%9C%D7%9E%D7%A2-%D7%9E-%D7%9C%D7%A2%D7%A6%D7%9E%D7%90%D7%99-%D7%9E-2026-%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%95%D7%94%D7%A7%D7%9C%D7%95%D7%AA",
+      "raw_snippet": "להחיל עליו חובת דיווח מפורט רק החל משנת 2027",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "osek-patur-31-january",
+      "claim": "An osek patur declares its turnover for the past year by 31 January each year.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%AA%D7%A7%D7%A0%D7%95%D7%AA_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3_(%D7%A8%D7%99%D7%A9%D7%95%D7%9D)",
+      "raw_snippet": "יצהיר עד ה־31 בינואר בכל שנה על מחזור עסקאותיו בשנה שחלפה",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "boi-rate-window-times",
+      "claim": "Representative rate sampling between 13:15 and 15:15, published soon after 15:15; on Fridays and holiday eves between 10:15 and 12:15, published soon after 12:15.",
+      "source_url": "https://www.boi.org.il/en/economic-roles/financial-markets/explanatory-notes-to-the-representative-exchange-rates/",
+      "raw_snippet": "or soon after 12:15 on Fridays, holiday eves and some other Jewish holidays",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "boi-rate-no-legal-standing",
+      "claim": "The representative rates have no official or legal standing and bind a transaction only if stipulated in advance by the parties.",
+      "source_url": "https://www.boi.org.il/en/economic-roles/financial-markets/explanatory-notes-to-the-representative-exchange-rates/",
+      "raw_snippet": "The rates have no official or legal standing",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "boi-2026-no-rate-list",
+      "claim": "The BOI's 2026 list of days without representative rates (besides Saturdays and Sundays) includes holiday eves, foreign holidays and the Knesset election day 27/10/2026.",
+      "source_url": "https://boi.org.il/media/35bnlqzb/list-of-holidays-affecting-bank-of-israel-services-in-2026.pdf",
+      "raw_snippet": "Elections for the Knesset",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md",
+        "references/period-close.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "dollar-regs-rate-definition",
+      "claim": "1986 dollar regulations: 'dollar rate' for a date is the BOI representative rate set on that date, or the last one set before it; translation at the rate on the day of the operation; taxable income at the last day of the tax year.",
+      "source_url": "https://www.efraty.com/?p=1217",
+      "raw_snippet": "השער היציג של הדולר שקבע בנק ישראל באותו מועד, ואם לא קבע באותו מועד, השער היציג שקבע כאמור לאחרונה",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "banking-business-day-definition",
+      "claim": "A banking business day is every day except Saturday, holidays and listed days; it ends at 18:30, and at 14:00 on Fridays and holiday eves; a bank may set an earlier cut-off for a branch or deposit type with notice.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%94%D7%95%D7%A8%D7%90%D7%95%D7%AA_%D7%94%D7%91%D7%A0%D7%A7%D7%90%D7%95%D7%AA_(%D7%A9%D7%99%D7%A8%D7%95%D7%AA_%D7%9C%D7%9C%D7%A7%D7%95%D7%97)_(%D7%9E%D7%95%D7%A2%D7%93_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%95%D7%97%D7%99%D7%95%D7%91_%D7%91%D7%A9%D7%99%D7%A7%D7%99%D7%9D)",
+      "raw_snippet": "בנק רשאי לקבוע שעה מוקדמת יותר לסיום יום העסקים הבנקאי לגבי סניף מסויים או הפקדות מסוג מסויים",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/period-close.md"
+      ]
+    },
+    {
+      "claim_id": "banking-friday-14-00",
+      "claim": "Fridays and holiday eves the banking business day ends at 14:00.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%94%D7%95%D7%A8%D7%90%D7%95%D7%AA_%D7%94%D7%91%D7%A0%D7%A7%D7%90%D7%95%D7%AA_(%D7%A9%D7%99%D7%A8%D7%95%D7%AA_%D7%9C%D7%9C%D7%A7%D7%95%D7%97)_(%D7%9E%D7%95%D7%A2%D7%93_%D7%96%D7%99%D7%9B%D7%95%D7%99_%D7%95%D7%97%D7%99%D7%95%D7%91_%D7%91%D7%A9%D7%99%D7%A7%D7%99%D7%9D)",
+      "raw_snippet": "ובימי שישי וערב יום המוחרג",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/period-close.md"
+      ]
+    },
+    {
+      "claim_id": "zahav-sunday-through-friday",
+      "claim": "The ZAHAV RTGS system operates Sunday through Friday; on short business days (Friday, holiday eves) the banking day ends at 14:00.",
+      "source_url": "https://boi.org.il/media/4swjvqd2/business-days-zahav-rtgs-system-2026_150726.pdf",
+      "raw_snippet": "As a rule, the operating days of the RTGS system are Sunday through Friday.",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/period-close.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "tase-monday-friday-2026",
+      "claim": "The Tel Aviv Stock Exchange switched its trading week to Monday to Friday from 5 January 2026.",
+      "source_url": "https://en.globes.co.il/en/article-1001531000",
+      "raw_snippet": "switches to Monday to Friday",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/period-close.md"
+      ]
+    },
+    {
+      "claim_id": "direct-debit-cancel-3-days",
+      "claim": "Directive 439 s.7(a): the customer may cancel a specific debit by notice no later than 3 business days after the debit date; if after the debit date, the credit is at the value date of the notice.",
+      "source_url": "https://boi.org.il/media/opue4bvf/439.pdf",
+      "raw_snippet": "לבנק לא יאוחר מ 3-ימי עסקים לאחר מועד החיוב",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/period-close.md",
+        "references/matching-rules.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "direct-debit-cancel-authorisation",
+      "claim": "Directive 439 s.8: the customer may cancel the authorisation at any time; effective one business day after notice; debits after cancellation refunded at debit value date; an authorisation unused for 24 months lapses.",
+      "source_url": "https://boi.org.il/media/opue4bvf/439.pdf",
+      "raw_snippet": "הרשאה שלא נעשה בה שימוש במשך תקופה של 24חודשים ממועד החיוב האחרון, בטלה",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/period-close.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:10:34Z"
+    },
+    {
+      "claim_id": "illustrative-per-invoice-figures",
+      "claim": "The NIS 12,000 / 4,000 / 30,000 figures in references/vat-and-fx-rules.md are a hypothetical illustration of why the allocation threshold is tested per invoice rather than per bank line (3 x 4,000 = 12,000; 4,000 is a part payment of 30,000). They are not rates or thresholds.",
+      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-bank-reconciliation/references/vat-and-fx-rules.md",
+      "raw_snippet": "One debit of NIS 12,000 can settle three invoices of NIS 4,000",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "illustrative-per-invoice-figures-part-payment",
+      "claim": "The NIS 12,000 / 4,000 / 30,000 figures in references/vat-and-fx-rules.md are a hypothetical illustration of why the allocation threshold is tested per invoice rather than per bank line (3 x 4,000 = 12,000; 4,000 is a part payment of 30,000). They are not rates or thresholds.",
+      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-bank-reconciliation/references/vat-and-fx-rules.md",
+      "raw_snippet": "of a NIS 30,000 invoice, which does",
+      "fetched_at": "2026-10-25T12:10:34Z",
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-10-25T12:10:34Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "ordinance-s32-18-expense-disallowed",
+      "claim": "Income Tax Ordinance s.32(18): no deduction for an expense of a dealer for a transaction whose input VAT was disallowed under VAT Law s.38(a1).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "הוצאה שהוציא עוסק בעד עסקה שמס התשומות ששולם בגינה לא הותר בניכוי לפי",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "ordinance-s32-18-from-1-8-2025",
+      "claim": "s.32(18) was added by Amendment 280 to the Ordinance with effect from 1.8.2025 (Circular 3/2026).",
+      "source_url": "https://alliott.co.il/wp-content/uploads/2026/03/%D7%97%D7%95%D7%96%D7%A8-3-2026-%D7%AA%D7%99%D7%A7%D7%95%D7%A0%D7%99-%D7%97%D7%A7%D7%99%D7%A7%D7%94-%D7%9C%D7%A6%D7%9E%D7%A6%D7%95%D7%9D-%D7%AA%D7%95%D7%A4%D7%A2%D7%AA-%D7%94%D7%94%D7%95%D7%9F-%D7%94%D7%A9%D7%97%D7%95%D7%A8.pdf",
+      "raw_snippet": "בתחולה מיום 1.8.2025",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "pdf",
+      "verified_at": "2026-10-25T12:31:02Z"
+    },
+    {
+      "claim_id": "vat-s47a2-4-late-request",
+      "claim": "VAT Law s.47(a2)(4): an osek murshe may ask for an allocation number even after issuing the invoice, but this does not change the deadline in s.38(a).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "עוסק מורשה רשאי לבקש מהמנהל להקצות מספר לחשבונית מס גם לאחר הוצאת החשבונית, אולם אין בכך כדי לשנות מהמועד הקבוע",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s38a-six-months",
+      "claim": "VAT Law s.38(a): input VAT is deductible on a tax invoice lawfully issued to the dealer, and the deduction must be made within six months of the date the invoice was issued.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "ושהניכוי ייעשה בתוך ששה חדשים מיום הוצאת החשבונית",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s38a-tax-invoice-issued-to-him",
+      "claim": "VAT Law s.38(a): the deduction is on input VAT included in a tax invoice issued to the dealer lawfully.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "את מס התשומות הכלול בחשבונית מס שהוצאה לו כדין",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "illustrative-net-derivation",
+      "claim": "Worked illustration: NIS 5,800 gross at 18% is 5,800 x 100/118 = 4,915.25 net, below the NIS 5,000 threshold; 100/117 is the pre-2025 divisor at 17%.",
+      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-bank-reconciliation/references/vat-and-fx-rules.md",
+      "raw_snippet": "a NIS 5,800 gross invoice in July 2026 is about NIS 4,915",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ],
+      "verified_via": "internal-arithmetic",
+      "verified_at": "2026-10-25T12:31:02Z"
+    },
+    {
+      "claim_id": "ordinance-s32-nondeductible-list",
+      "claim": "Section 32 of the Income Tax Ordinance is the list of expenses not allowed as deductions (its paragraphs are cited as סעיף 32(N)).",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "שהפרמיות בעדה לא הותרו כהוצאה על פי סעיף 32(10)",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "library-timezone-jerusalem",
+      "claim": "The scrapers run in the Asia/Jerusalem timezone and emit ISO date strings, so an Israeli midnight appears as the previous day at 21:00 or 22:00 UTC.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/README.md",
+      "raw_snippet": "The scrapers are set to use timezone `Asia/Jerusalem`",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ]
+    },
+    {
+      "claim_id": "library-timezone-setdefault",
+      "claim": "base-scraper.ts sets moment's default timezone to Asia/Jerusalem.",
+      "source_url": "https://raw.githubusercontent.com/eshaham/israeli-bank-scrapers/5170a65ffaf8df2d22f32b0fa1656350a8337590/src/scrapers/base-scraper.ts",
+      "raw_snippet": "Asia/Jerusalem",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "claim_id": "vat-s38a2-cash-law",
+      "claim": "VAT Law s.38(a2): no input-VAT deduction where the consideration was a payment found to breach the Law for Reducing the Use of Cash and a monetary sanction was imposed.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%97%D7%95%D7%A7_%D7%9E%D7%A1_%D7%A2%D7%A8%D7%9A_%D7%9E%D7%95%D7%A1%D7%A3",
+      "raw_snippet": "אם התמורה שבשלה ניתנה חשבונית המס היא תשלום שהוחלט שנתינתו מהווה הפרה לפי",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
+    },
+    {
+      "claim_id": "ordinance-s32-16a-cash-law",
+      "claim": "Income Tax Ordinance s.32(16a): no deduction for payments found to breach the Law for Reducing the Use of Cash where a monetary sanction was imposed under s.9 of that law.",
+      "source_url": "https://he.wikisource.org/wiki/%D7%A4%D7%A7%D7%95%D7%93%D7%AA_%D7%9E%D7%A1_%D7%94%D7%9B%D7%A0%D7%A1%D7%94",
+      "raw_snippet": "תשלומים שהוחלט שנתינתם מהווה הפרה לפי",
+      "fetched_at": "2026-10-25T12:31:02Z",
+      "appears_in": [
+        "references/vat-and-fx-rules.md"
+      ]
     }
   ]
 }

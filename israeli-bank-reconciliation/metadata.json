@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "category": "accounting",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Israeli Bank Reconciliation"
   },
   "display_description": {
-    "he": "אוטומציה של התאמת בנק לבנקים ישראליים, כולל זיהוי פערים והפקת דוחות התאמה",
-    "en": "Automates bank reconciliation for Israeli banks (Leumi, Hapoalim, Discount, Mizrahi Tefahot) using the israeli-bank-scrapers library. Matches scraped or imported transactions to invoices and receipts, detects discrepancies, and generates reconciliation reports with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you need to reconcile bank statements against your accounting records, identify missing invoices, or prepare monthly closing reports for Israeli business accounts. Do NOT use for international bank accounts, cryptocurrency wallets, or investment portfolio reconciliation."
+    "he": "אינו ייעוץ חשבונאי או ייעוץ מס. אוטומציה של התאמת בנק לבנקים ולחברות כרטיסי אשראי בישראל (לאומי, הפועלים, דיסקונט, מזרחי טפחות, הבינלאומי, אוצר החייל, מרכנתיל, מסד, יהב, וואן זירו, וחברות האשראי ישראכרט, מקס, ויזה כאל ואמקס) באמצעות ספריית israeli-bank-scrapers. מתאים תנועות שנסרקו או יובאו לחשבוניות ולקבלות, מזהה פערים ומפיק דוחות התאמה עם פריטים מותאמים, לא מותאמים וחשודים, וגשר מיתרת הספרים ליתרת הבנק. מטפל בסכומים בשקלים, בשמות ספקים בעברית ובתאריכים בפורמט ישראלי. השתמשו כשצריך להתאים דפי בנק מול הנהלת החשבונות, לאתר חשבוניות חסרות או חשבוניות בלי מספר הקצאה, או להכין סגירה חודשית לחשבון עסקי בישראל. לא לשימוש בחשבונות בנק בחו\"ל, בארנקי מטבעות קריפטו, בהתאמת תיקי השקעות או בניתוח הוצאות אישי ומעקב תקציב (לשם כך השתמשו ב-israeli-bank-connector).",
+    "en": "Not accounting or tax advice. Automates bank reconciliation for Israeli banks and credit-card issuers (Leumi, Hapoalim, Discount, Mizrahi Tefahot, Beinleumi/FIBI, Otsar Hahayal, Mercantile, Massad, Yahav, OneZero, and the card issuers Isracard, Max, Visa Cal, Amex) using the israeli-bank-scrapers library. Matches scraped or imported transactions to invoices and receipts, detects discrepancies, and generates reconciliation reports with matched, unmatched, and suspicious entries. Handles shekel amounts, Hebrew merchant names, and Israeli date formats. Use when you need to reconcile bank statements against your accounting records, identify missing invoices, or prepare monthly closing reports for Israeli business accounts. Do NOT use for international bank accounts, cryptocurrency wallets, investment portfolio reconciliation, or personal spending analysis and budget tracking (use israeli-bank-connector)."
   },
   "supported_agents": [
     "claude-code",
