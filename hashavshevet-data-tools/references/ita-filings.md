@@ -165,6 +165,14 @@ From the ITA spec "הוראות להפקת קבצים במבנה אחיד", vers
   spaces or with `!`, so a parser must strip both. The files sit under
   `<drive>:\OPENFRMT\<first 8 digits of the osek number>.<2-digit PRODUCTION year>\<MMDDhhmm of production>`
   (the spec's example: `F:\ OPENFRMT \00223344.08\09111025`).
+- **Record-count check, worked.** A000 field 1002 (records in BKMVDATA.TXT) must equal Z900
+  field 1155, which counts ALL records including the A100 opening and the Z900 closing record.
+  INI.TXT carries a summary record (field 1050 record code, 1051 count) only for each OTHER record
+  type actually present, so: sum of summary counts + 2 = Z900 1155 = A000 1002. Illustrative file:
+  summaries C100 120, D110 340, D120 45, B100 900, B110 210 sum to 1615; add 2 for A100 and Z900
+  and 1155 must read 1617, and 1002 must read 1617. A validator that compares the summary sum
+  directly with 1155 fails every valid file by exactly 2. Also check that the running record
+  number (the second field of every BKMVDATA record) runs without gaps.
 - **Which date.** C100 carries three dates: 1205 production date (set by the system, not
   editable), 1216 value date, and 1230 document date (the date printed on the document). B100
   carries 1362 date, 1363 value date and 1375 entry date (set by the system). Scope allocation

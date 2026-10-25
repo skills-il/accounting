@@ -4,7 +4,7 @@
     {
       "date": "2026-10-25",
       "from_version": "1.4.2",
-      "to_version": "1.5.0",
+      "to_version": "1.5.1",
       "type": "minor",
       "summary": "Reference-skill refresh. No threshold or rate drift (5,000 since 1.6.2026 still current, no 2027 step announced; VAT 18%; BKMV spec 1.31; H-ERP 2026a; WizCloud API 2.0.0), but the shipped skill was wrong on the allocation-number FORMAT (said 9 digits; the ITA API spec has a full A30 number with 26-digit examples and a short rightmost-9 form) and silent on several data-loss traps. Expert r1 returned 7 CRITICALs (all verified against primary ITA PDFs before encoding), including one introduced this cycle (PCN874 amount rendered as gross; it is excluding VAT). Judge 3 rounds, expert 3 rounds, legal gate PASS conditional on adding a tax notice, which was added.",
       "holdout_before": 1.0,
@@ -30,7 +30,8 @@
         "VAT 17% through 31.12.2024, 18% from 1.1.2025; flag rather than recompute supplies straddling the boundary.",
         "New references/ita-filings.md (PCN874, rejection path, provenance, BKMV migration facts) and references/domain-checklist.md; Step 7 helpers moved to legacy-fixed-width.md and switched to Decimal.",
         "Legal notice (Tier B tax) after H1 in both files; descriptions prefixed 'Not tax advice and not a filed return.'; description no longer presents Gold/2000+ as current (resolves N1).",
-        "SKILL_HE.md: removed stale metadata block from frontmatter; Step 2/4 code replaced by prose mirroring EN."
+        "SKILL_HE.md: removed stale metadata block from frontmatter; Step 2/4 code replaced by prose mirroring EN.",
+        "1.5.1 (same day, lead request): worked record-count check in references/ita-filings.md (sum of INI summary counts + 2 = Z900 1155 = A000 1002, plus running record-number continuity); expert verify-only PASS."
       ],
       "lessons": [
         "Deferred MAJOR (M2, carried since 1.4.0): Form 6111 mechanics (three parts, who must file, tie-out to the return) still thin.",

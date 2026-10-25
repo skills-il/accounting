@@ -1175,6 +1175,30 @@
       ],
       "verified_via": "pdf (pdftotext -layout)",
       "verified_at": "2026-10-25T13:40:00+00:00"
+    },
+    {
+      "claim_id": "bkmv-ini-summary-1050-1051",
+      "claim": "INI.TXT summary records carry field 1050 (record code) and 1051 (count of records produced of that code).",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "ח סיכום הרשומות שהופקו בסוג קוד זה",
+      "fetched_at": "2026-10-25T15:00:00+00:00",
+      "appears_in": [
+        "references/ita-filings.md"
+      ],
+      "verified_via": "pdf (pdftotext -layout)",
+      "verified_at": "2026-10-25T15:00:00+00:00"
+    },
+    {
+      "claim_id": "bkmv-running-record-number",
+      "claim": "Every BKMVDATA.TXT record has a 'record number in file' field as its second field, holding a running number.",
+      "source_url": "https://www.gov.il/BlobFolder/service/registration-software-designed-managing-computerized-accounting-system/he/Service_Pages_Income_tax_horaot-131.pdf",
+      "raw_snippet": "ממוקם כשדה השני ברשומה ,והוא צריך להכיל את מספר הרשומה בקובץ",
+      "fetched_at": "2026-10-25T15:00:00+00:00",
+      "appears_in": [
+        "references/ita-filings.md"
+      ],
+      "verified_via": "pdf (pdftotext -layout)",
+      "verified_at": "2026-10-25T15:00:00+00:00"
     }
   ]
 }
