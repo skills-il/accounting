@@ -1,6 +1,47 @@
 {
   "cycles": [
     {
+      "version": "1.6.0",
+      "date": "2026-10-29",
+      "trigger": "Batch 2026-10-29 staleness pass (drift type A: scheduled allocation bands). Coverage audit run against a shoebox user query rather than a single receipt.",
+      "lessons": [
+        "ANSWERED: no allocation band after June 2026; section 38(א1) reads 5,000 in the consolidation of 13-07-2026; secondary sources quoting 15,000 (2026) / 10,000 (2027) reflect the superseded 2024 schedule. The regime starts on 5 May 2024, not 1 May.",
+        "BRIEF CLAIM NOT ENCODED: '26 characters, prefix A30, rightmost-9 short form' for the allocation number. The Tax Authority FAQ says 9 digits, random, no check digit. Only vendor documentation describes a longer string, so the skill keeps any longer string verbatim and routes to review.",
+        "RESOLVED CARRY (4 cycles): the 'pending scripts' note is gone; the skill ships no scripts and says so. If a script is ever written, the Expert's candidate is a deterministic validator (Luhn for ID-number osek numbers, date-aware rate and band, deduction_deadline with month-end clamp, de-dup key, totals).",
+        "RESOLVED NEW DEBT (2 cycles): claimant block (status, own number, business type, exempt supplies, filed-through date), vehicle class and document kind, business-use basis, 0-1 fraction.",
+        "METHOD LESSON: a single-receipt review missed what a batch user asks. Running the coverage audit on a shoebox query surfaced retention/destruction, de-dup, credit notes and the claimant's status, none of which a per-receipt review reaches.",
+        "METHOD LESSON: a brief-supplied figure and a reviewer-supplied figure were both wrong in this cycle (A30/26 format; 25(ג1) card retention binds the SELLER, not the buyer). Read the provision before encoding either.",
+        "DEFERRED (MINOR): VAT union of dealers (section 56), where a member's invoice carries a number other than the representative's. Needs a claimant field for member numbers.",
+        "OVERLAP WARN (pre-existing, description unchanged): il-invoice-organizer 0.784, hebrew-ocr-forms 0.772. The SIMILAR band asks for a 'Do NOT use for' clause naming them; do it in the next description-changing cycle with the 5.7 holdout gate.",
+        "Round-1 CRITICALs fixed: an amuta / financial institution passed the claimant test though section 1 excludes them from 'עוסק'; credit notes (headed 'חשבונית מס') were unhandled and could be read as positive inputs.",
+        "METHOD LESSON: a repair to one rule (the six-month test) left the canonical list still stating the old test, so the two contradicted; the second repair (credit-note netting) netted at full VAT regardless of the original's treatment. Re-dispatching the same reviewers on each repair caught both.",
+        "DEFERRED (expert MINOR, final round): show a credit-note reduction as a negative line in the month the credit was RECEIVED (regulation 24(ב)), not as an edit to the original's month; say 'the ORIGINAL invoice's deductible_fraction' explicitly in Step 8.3; count extension-zone (denied) records separately from the Step 8.5 sort; let a clearly business-stock 'private-looking' category reach deductible rather than stopping at review.",
+        "DEFERRED (arithmetic): Luhn is applied only to ID-number osek numbers because no source read states a check-digit rule for ח.פ. numbers. If one is sourced, apply it to all 9-digit registration numbers to strengthen de-dup.",
+        "DESCRIPTION CHANGED (value-add forced it): the first two value-add runs showed the skill never loaded for the retention question and loaded unreliably for a batch-deductibility task (turns = 1), because the v1.5 description only said 'OCR and parse'. New description names input-VAT deductibility, bands, the six-month window, batch duplicates and the paper question. Routing eval: holdout 0.33 -> 1.0, train 0.86 -> 1.0, no regression; EN display_description synced with the 'Not tax advice.' opener.",
+        "VALUE-ADD: run 1 with=0.50 without=0.50 (skill not loaded on 2 of 4 cases; fuel-card mixed-use routed to review instead of 2/3 deductible, fixed). Run 2 with=0.72 without=0.58 (+0.14). Run 3 (after the description change): with=1.00 without=0.42 delta=+0.58, PASS."
+      ],
+      "review_rounds": {
+        "judge": "FAIL, FAIL, PASS",
+        "expert": "FAIL (2 critical), PASS, PASS on final text",
+        "arithmetic": "FAIL, FAIL, PASS",
+        "legal": "PASS"
+      },
+      "holdout_before": 0.33,
+      "holdout_after": 1.0,
+      "buckets": {
+        "improved": [
+          "P3: may I throw the originals away after phone-scanning",
+          "P4: which of 6 supplier invoices go into this month's VAT return (dates, allocation numbers)"
+        ],
+        "regressed": [],
+        "persistent_fail": [],
+        "stable_success": [
+          "E2: Tabu OCR routes to hebrew-ocr-forms"
+        ]
+      },
+      "value_add": "with=1.00 without=0.42 delta=+0.58 PASS (run 3, 2026-10-29)"
+    },
+    {
       "version": "1.5.0",
       "date": "2026-08-27",
       "trigger": "Scheduled staleness pass; brief asked specifically to verify the allocation-number rule and to treat any future threshold row as unsourced.",

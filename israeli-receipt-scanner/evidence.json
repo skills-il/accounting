@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "skill": "israeli-receipt-scanner",
-  "generated_at": "2026-08-27T17:39:29.932284+00:00",
+  "generated_at": "2026-10-29T00:00:00Z",
   "claims": [
     {
       "claim_id": "vat-rate-18",
@@ -61,19 +61,6 @@
       ]
     },
     {
-      "claim_id": "easyocr-no-hebrew",
-      "claim": "EasyOCR has no Hebrew model; Hebrew is not in its supported-language list, so it is not usable for Hebrew receipts.",
-      "source_url": "https://www.jaided.ai/easyocr/",
-      "raw_snippet": "EasyOCR - jDai EasyOCR About GitHub Contact EasyOCR Overview Installation Tutorial Model Hub API Documentation GitHub ↗ EasyOCR EasyOCR is a Python module for extracting text from images. It is a general OCR that can read both natural scene text and dense text in document. We are currently supporting 80+ languages and expanding. Quick Start pip install easyocr import easyocr reader = easyocr.Reader(['ch_sim','en']) result = reader.readtext('image.",
-      "fetched_at": "2026-08-18",
-      "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
-      ],
-      "verified_via": "cited page fetched; 33 of 38 of the claim's distinctive terms occur on it, and the snippet is the page's own wording around \"model\"",
-      "verified_at": "2026-08-18"
-    },
-    {
       "claim_id": "tesseract-heb-exists",
       "claim": "Tesseract ships a Hebrew model (heb.traineddata) in the tesseract-ocr/tessdata repo.",
       "source_url": "https://github.com/tesseract-ocr/tessdata",
@@ -88,7 +75,7 @@
     },
     {
       "claim_id": "reference-links",
-      "claim": "URL inventory: the reference links this skill cites in its tables, for OCR tooling (EasyOCR, Tesseract), image preprocessing (Pillow), and for Israeli tax-invoice, osek-murshe and VAT guidance (Israel Tax Authority and Kol Zchut). Registered here as an inventory of the links themselves; no single one of these pages evidences the others. Covers these references: https://github.com/JaidedAI/EasyOCR https://github.com/tesseract-ocr/tesseract https://pillow.readthedocs.io/en/stable/ https://www.gov.il/he/departments/israel_tax_authority https://www.kolzchut.org.il/he",
+      "claim": "URL inventory: the reference links this skill cites in its Reference Links tables: the consolidated VAT Law, VAT Regulations and Income Tax Bookkeeping Directives on Nevo, the Tax Authority Israel Invoices FAQ and amounts page, and Tesseract OCR. Registered here as an inventory of the links themselves; each statutory link is separately evidenced by the claims quoting it. Covers these references: https://www.nevo.co.il/law_html/law01/271_001.htm https://www.nevo.co.il/law_html/law01/271_005.htm https://www.nevo.co.il/law_html/law01/255_179.htm https://www.gov.il/he/pages/faq_israel_invoice https://www.gov.il/he/pages/vat-rate-amount-new https://github.com/tesseract-ocr/tesseract",
       "source_url": "https://www.gov.il/he/departments/israel_tax_authority",
       "raw_snippet": "רשות המסים בישראל מאחדת את אגפי המס השונים: מס הכנסה, מיסוי מקרקעין, מס ערך מוסף, מס קנייה, מכס ומס בולים.",
       "fetched_at": "2026-08-18",
@@ -101,20 +88,21 @@
     },
     {
       "claim_id": "illustrative-example-values",
-      "claim": "Skill-defined heuristics and illustrative example values, not external facts: a VAT rounding tolerance of 0.05 NIS (0.05 ש\"ח) per receipt and up to 0.10 NIS (0.10 ש\"ח) for many-line receipts; worked-example receipt amounts in Example 2 (fuel at NIS 7.45/L, 262.24 NIS / 262.24 ש\"ח, a water bottle at 8.90 NIS / 8.90 ש\"ח); and an illustrative 12% restaurant service charge in Example 3. These are authored teaching values, not claims about Israeli law or external data. These are values the skill itself defines for its worked examples, so the skill file is the source; no external publication states them.",
-      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/master/israeli-receipt-scanner/SKILL.md",
+      "claim": "Skill-defined heuristics and illustrative example values, not external facts: a VAT rounding tolerance of 0.05 NIS (0.05 ש\"ח) per receipt and up to 0.10 NIS (0.10 ש\"ח) for many-line receipts; worked-example receipt amounts in Example 2 (fuel at NIS 7.45/L, 262.24 NIS / 262.24 ש\"ח, a water bottle at 8.90 NIS / 8.90 ש\"ח); and an illustrative 12% restaurant service charge in Example 3. These are authored teaching values, not claims about Israeli law or external data. These are values the skill itself defines for its worked examples, so the skill file is the source; no external publication states them. Also authored for the 1.6.0 examples: an illustrative supplier VAT number 123456782 (chosen to pass the Luhn check), an illustrative invoice date 2026-09-08 with its six-month deadline 2027-03-08, and illustrative business-use shares of 90% (a phone) and 40% (a home-office electricity bill) used only to show the regulation 18(a) actual-ratio limb. The source is pinned to the v1.5.1 commit, where the original example values were authored; the 1.6.0 values are authored in the same way in the current SKILL.md.",
+      "source_url": "https://raw.githubusercontent.com/skills-il/accounting/98874b5/israeli-receipt-scanner/SKILL.md",
       "raw_snippet": "ading (sometimes) - Car wash or convenience store items as separate line items **Restaurants and Cafes**: - Service charge (שירות) as a percentage, usually 10-12% - Tip line (טיפ) may be blank or filled - Table number and server name - Split bill indicators **Online Purchases (invoices from Israeli e-commerce)**: - Digital format, often PDF - Shipping char",
       "fetched_at": "2026-08-19",
       "appears_in": [
         "SKILL.md",
-        "SKILL_HE.md"
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
       ],
       "verified_via": "the skill's own SKILL.md in its category repository",
       "verified_at": "2026-08-19"
     },
     {
       "claim_id": "osek-hp-9-digits",
-      "claim": "Israeli company / VAT numbers (H.P. / osek murshe) are 9 numeric digits; Israeli ID-type numbers use Luhn mod-10 check-digit validation.",
+      "claim": "Israeli company registration (H.P.) numbers are 9 numeric digits. (The check-digit rule is sourced separately, for ID numbers only, in israeli-id-luhn-check-digit.)",
       "source_url": "https://lookuptax.com/docs/tax-identification-number/israel-tax-id-guide",
       "raw_snippet": "Mispar Zehut (Teudat Zehut) H.P. Company Number (TIN for Legal Entities) ​ Israeli companies registered with the Israeli Corporations Authority (Rashut HaTaagidim) receive a 9-digit company registration number — commonly referred to as the H.P. number (from the Hebrew Hevra Pratit , private company). This number serves as the corporate TIN. Format: 9 numeric digits with no internal separators or embedded meaning.",
       "fetched_at": "2026-08-18",
@@ -158,7 +146,9 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
     },
     {
       "claim_id": "vehicle-fuel-input-vat-restricted",
@@ -169,7 +159,9 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
     },
     {
       "claim_id": "six-month-deduction-window",
@@ -180,7 +172,9 @@
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md"
-      ]
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
     },
     {
       "claim_id": "domain-checklist-sources",
@@ -209,15 +203,14 @@
     },
     {
       "claim_id": "ita-small-sum-thresholds-2026",
-      "claim": "The ITA amounts page lists the small-sum thresholds that govern OTHER rules: the section 47a duty of a taxable person to demand a tax invoice from the seller, and regulation 9a on a cash-register slip. Both were updated on 1.7.2026; the section 47a figure is now 362 NIS (it was 358 from 1.1.2026) and regulation 9a is 309 NIS.",
+      "claim": "The Tax Authority amounts page lists the section 47a figure (a taxable person's duty to demand a tax invoice) as NIS 362 effective 1.7.2026, and the regulation 9a cash-register figure as NIS 309 effective 1.1.2026.",
       "source_url": "https://www.gov.il/he/pages/vat-rate-amount-new",
       "raw_snippet": "סעיף 47א לחוק חובתו של חייב במס לדרוש חשבונית מהמוכר החל מסכום של 1.7.2026 1.7.2026 362",
       "fetched_at": "2026-08-09T00:00:00Z",
       "verified_via": "browser",
-      "verified_at": "2026-08-09T00:00:00Z",
+      "verified_at": "2026-10-29T00:00:00Z",
       "appears_in": [
-        "SKILL.md",
-        "SKILL_HE.md"
+        "references/domain-checklist.md"
       ]
     },
     {
@@ -250,12 +243,12 @@
     },
     {
       "claim_id": "ref-chamber-invoice",
-      "claim": "דף לשכת המסחר בנושא החשבוניות; מפנה הלאה (HTTP 307) ולכן נבדק כמצביע ניווטי בלבד.",
+      "claim": "Tel Aviv Chamber of Commerce notice (28/05/2026): from 1 June 2026 the allocation-number requirement for input-VAT deduction applies to transactions above NIS 5,000.",
       "source_url": "https://www.chamber.org.il/serviceslobby/finance/1429/162557/",
-      "raw_snippet": "chamber.org.il serviceslobby finance",
+      "raw_snippet": "החל מ־1 ביוני 2026: חובת מספר הקצאה בניכוי מס תשומות תחול מעסקאות מעל 5,000 ₪",
       "fetched_at": "2026-08-15",
-      "verified_via": "curl with a browser user agent; responds 307 redirect",
-      "verified_at": "2026-08-15",
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z",
       "appears_in": [
         "SKILL.md",
         "SKILL_HE.md",
@@ -383,7 +376,7 @@
     },
     {
       "claim_id": "vat-reg-18b-mixed-use-default",
-      "claim": "תקנה 18(ב) לתקנות מע\"מ היא ברירת המחדל הכללית לשימוש מעורב בכל תשומה, ולא כלל שמיוחד לרכב: קביעת המנהל נחשבת שומה, ובהיעדרה מנוכים שני שלישים כשעיקר השימוש לעסק ורבע כשעיקר השימוש אינו לעסק. Regulation 18 sets the general mixed-use default.",
+      "claim": "Regulation 18(b) of the VAT Regulations, applicable where the non-business use is indeterminate: if the Director fixed the non-business proportion that governs as an assessment; otherwise two-thirds where use is mainly for the business and one-quarter where mainly not.",
       "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
       "raw_snippet": "(1) קבע המנהל את החלק היחסי לשימוש שלא לצרכי עסק, יראו את קביעתו כשומה וינהגו על פיה, כל עוד לא נקבע אחרת; (2) לא קבע המנהל את החלק היחסי, ועיקר השימוש בנכס או בשירות הוא לצרכי עסק, רשאי העוסק לנכות שני שלישים ממס התשומות; (3) לא קבע המנהל את החלק היחסי ועיקר השימוש בנכס או בשירות הוא שלא לצרכי עסק, רשאי העוסק לנכות רבע ממס התשומות.",
       "fetched_at": "2026-08-27T00:00:00Z",
@@ -508,6 +501,452 @@
         "SKILL_HE.md",
         "references/domain-checklist.md"
       ]
+    },
+    {
+      "claim_id": "vat-116a-extension-five-years",
+      "claim": "Section 116(a) of the VAT Law lets the Director extend any time limit, but never the section 38(a) input-VAT deduction period beyond five years; so an invoice past the six-month window needs an extension request. (סעיף 116(א) לחוק מע\"מ)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "116. (א) המנהל רשאי להאריך כל מועד שנקבע בחוק זה או בתקנות על פיו לעשיית דבר, למעט מועד להגשת ערעור או ערר, ורשאי הוא לקבוע שהחוב ישולם לשיעורין, ובלבד שלא יאריך את המועד לניכוי מס תשומות לפי סעיף 38(א) לתקופה העולה על חמש שנים;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-75-retention-seven-years",
+      "claim": "Section 75 of the VAT Law: books, the documents they rest on and purchase invoices are kept seven years from the last entry or from the purchase invoice date, whichever is later. (סעיף 75 לחוק מע\"מ)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "פנקסי חשבונות של חייב במס שיש לנהלם על פי חוק זה, המסמכים שעליהם הם מבוססים וחשבוניות הקניה שלו, יישמרו אצלו שבע שנים, או תקופה קצרה מזו שנקבעה דרך כלל או לסוגים, מיום הרישום האחרון בפנקס או מיום שהוצאה חשבונית הקניה, לפי המאוחר.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "bkd-25c-retention",
+      "claim": "Section 25(c) of the Income Tax Bookkeeping Directives: the accounting system is kept seven years from the end of the tax year, or six years from filing that year return, whichever is later. (סעיף 25(ג) להוראות ניהול פנקסים)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "(ג) מערכת החשבונות תישמר במשך שבע שנים מתום שנת המס שאליה היא מתייחסת, או במשך שש שנים מיום הגשת הדו\"ח על ההכנסה לאותה שנת המס, הכל לפי המאוחר.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "bkd-25c2-signed-e-document",
+      "claim": "Section 25(c2) of the Directives: a computerised document sent or received signed with an electronic signature is kept in electronic storage as part of the accounting system.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "מסמך ממוחשב ששלח או קיבל הנישום, חתום בחתימה אלקטרונית, יישמר באמצעי אחסון ממוחשבים, כחלק בלתי נפרד ממערכת החשבונות של הנישום. (ד) מסמכים סטטיסטיים, הזמנות, רישומים פני",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "bkd-25h2-scan-accepted-if-annex-f-g",
+      "claim": "Section 25(h)(2) of the Directives accepts external documentation produced by computerised scanning only if the scan followed annex F of section 36 and the file is kept in an annex G digital archive.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "(2) תיעוד חוץ שהוא מסמך, כתוצר של סריקה ממוחשבת, אם התקיימו כל אלה: (א) סריקת המסמכים המקוריים נעשתה בהתאם לכללים שנקבעו בנספח ו' שבסעיף 36; (ב) קובץ המחשב שהוא תוצר הסריקה, נשמר כחלק בלתי נפרד ממערכת החשבונות של הנישום, בארכיב דיגיטלי בהתאם לכללים שנקבעו בנספח ז' שבסעיף 36; לעניין זה, \"מסמך\", \"סריקה ממוחשבת\" ו\"קובץ מחשב\" – כ",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "bkd-annex-f-scan-definition",
+      "claim": "Annex F of section 36 defines computerised scanning as a technological process copying a source document to a file from which a readable output identical to the source can be retrieved.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "\"סריקה ממוחשבת\" – הליך טכנולוגי המעתיק מסמך מקור לקובץ באופן שניתן לאחזר ממנו תוצר קריא הזהה למקור;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "bkd-annex-f-scanned-document-label",
+      "claim": "Annex F: a scanned document must carry the words \"מסמך סרוק\" prominently in the file.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "(3) בקובץ המחשב הוספו בצורה בולטת לעין המילים \"מסמך סרוק\";",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "bkd-annex-f-approved-signature",
+      "claim": "Annex F: the file is signed with an approved electronic signature of the taxpayer or someone on their behalf, confirming the original was scanned in full.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "(4) קובץ המחשב נחתם בחתימה אלקטרונית מאושרת של הנישום או מי מטעמו, כאישור לכך שמסמך המקור נסרק בשלמותו;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "bkd-annex-f-second-person",
+      "claim": "Annex F: a second person checked that the original is identical to the scanned file and signed with their own approved electronic signature.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "(5) אדם נוסף בדק שמסמך המקור זהה לקובץ המחשב שנסרק וחתם בחתימתו האלקטרונית המאושרת כאישור לכך;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "bkd-annex-f-destruction-conditions",
+      "claim": "Annex F section 2: a scanned document for a tax year may be destroyed only if it is kept in an annex G archive, the section 131 return for that year was filed, the form 0856 withholding report was filed where relevant, there was no tax-offence conviction in the four prior years, and the books were not found inadmissible.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/255_179.htm",
+      "raw_snippet": "נישום רשאי לבער מסמך סרוק לשנת מס פלונית בתנאים אלה: (1) קובץ המחשב נשמר כחלק בלתי נפרד ממערכת החשבונות של הנישום, בארכיב דיגיטלי בהתאם לכללים שנקבעו בנספח ז' שבסעיף 36; (2) הוגש דוח, בהתאם לסעיף 131 לפקודה – לאותה שנת מס; (3) לעניין מנכה כאמור בסעיף 166 לפקודה – הוגש הדוח לגבי תשלום הכנסה חבת ניכוי (טופס 0856), במועד ובדרך הקבועים בסעיף האמור; (4) הנישום לא הורשע בעבירה על חוק מסים כהגדרתו בחוק לתיקון דיני מסים (חילופי ידיעות בין רשויות המס), התשכ\"ז-1967, או בעבירה לפי סימן ו' או ז' שבפרק י\"א לחוק העונשין, התשל\"ז-1977, בארבע השנים שלפני תחילתה של אותה שנת מס",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/retention-and-scanning.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-18a-actual-ratio",
+      "claim": "Regulation 18(a) of the VAT Regulations: input tax on an asset or service used for the business and otherwise is deductible in the proportion of business use to total use. (תקנה 18(א) לתקנות מע\"מ)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "יהא ניתן לניכוי בשיעור יחסי שהוא כיחס השימוש לצרכי העסק לכלל השימוש. (ב",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-18b-indeterminate-use",
+      "claim": "Regulation 18(b) (two-thirds or one-quarter) applies only where the non-business use is indeterminate.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "(ב) היה בשימוש שלא לצרכי עסק, שימוש בלתי מסויים ינהגו לפי הכללים כדלהל",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-15a-owner-is-employee",
+      "claim": "Regulation 15a defines an employee to include a person with a share in ownership of the business or one of its managers, so an owner own benefit falls under the bar.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "\"עובד\" - לרבות אדם שיש לו חלק בבעלות בעסק או אחד ממנהליו. (",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-47b1-buyer-number-default",
+      "claim": "Section 47(b)(1) of the VAT Law: a tax invoice shows the tax separately and the buyer registration number, unless the Director permits otherwise for classes of dealers or transactions.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "(ב) (1) חשבונית מס תכלול פרטים שקבע המנהל, ובלבד שיפורטו בה המס בנפרד וכן מספר הרישום של הקונה;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vatbr-9a-c1-cash-register-309",
+      "claim": "Regulation 9a(c)(1) of the VAT Bookkeeping Regulations: a cash-register sales slip from a dealer under section 4 of schedule 11 is treated as a tax invoice for a service up to NIS 309 including VAT. (תקנה 9א(ג)(1) לתקנות מע\"מ (ניהול פנקסי חשבונות))",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_019.htm",
+      "raw_snippet": "(ג) (1) תלוש מכירה של קופה רושמת שהוציא עוסק שסעיף 4 לתוספת י\"א להוראות חל עליו, ייחשב כחשבונית מס לענין שירות שמחירו אינו עולה על 309 שקלים חדשים כולל מס ערך מוסף;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-30a13-produce-zero-rated",
+      "claim": "Section 30(a)(13) of the VAT Law zero-rates the sale of unprocessed fruit and vegetables of kinds set by the Finance Minister. (סעיף 30(א)(13) לחוק מע\"מ)",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "(13) מכירת פירות וירקות מסוגים שקבע שר האוצר, שלא נעשה בהם כל עיבוד;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-40b-systems-failure",
+      "claim": "Section 40b of the VAT Law: where Tax Authority computer systems failed so no number could be allocated, the Director may allow the deduction anyway.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "40ב. נוכח המנהל כי התקיימו נסיבות חריגות בקשר למערכות המחשוב של רשות המסים, שבעטיין מסיבות טכנולוגיות לא התאפשרה הקצאת מספר על ידי המנהל, רשאי הוא להורות, על אף",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-126a-patur-indexed-annually",
+      "claim": "Section 126(a) of the VAT Law indexes the osek patur amount every 1 January to the CPI of 15 December.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "126. (א) הסכומים שנקבעו בסעיף 1, בהגדרה \"עוסק פטור\" ובסעיף 35 או לפיהם יותאמו ב-1 בינואר של כל שנה לעליית מדד המחירים לצרכן שנתפרסם מטעם הלשכה המרכזית לסטטיסטיקה (להלן בסעיף זה – המדד), ליום ה-15 בדצמבר שקדם לו;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "ita-osek-patur-2026",
+      "claim": "The Tax Authority amounts table lists the osek patur ceiling as NIS 122,833 effective 1.1.2026.",
+      "source_url": "https://www.gov.il/he/pages/vat-rate-amount-new",
+      "raw_snippet": "סעיף 1 לחוק \"עוסק פטור\" - עוסק שמחזור עסקאותיו אינו עולה על 1.1.2026 1.1.2026 122,833",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "allocation-number-9-digits-no-check-digit",
+      "claim": "Tax Authority FAQ: the allocation number is 9 digits, printed on the invoice preferably under the document number, and is random with no check digit; it also appears in the customer personal area.",
+      "source_url": "https://www.gov.il/he/pages/faq_israel_invoice",
+      "raw_snippet": "מספר ההקצאה (9 ספרות) יופיע ע\"ג החשבונית, רצוי מתחת למספר האסמכתא, לבחירת העוסק: בעמוד הראשון או בכל העמודים.מספר ההקצאה הינו רנדומלי (ללא ספרת ביקורת) ומייד עם קבלתו אצל הספק, יופיע גם באזור האישי של הלקוח.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "allocation-request-up-to-one-year",
+      "claim": "Tax Authority FAQ: a number may be requested up to a year after the invoice date; an invoice older than six months can then be claimed only after an extension request.",
+      "source_url": "https://www.gov.il/he/pages/faq_israel_invoice",
+      "raw_snippet": "ניתן להגיש בקשה למספר הקצאה עד שנה לאחר תאריך החשבונית, אולם עד קבלת מספר זה - הלקוח לא יוכל להזדכות על המע\"מ. יודגש כי ככל שהחשבונית נושאת תאריך מוקדם מ 6 חודשים, ניתן לדרוש אותה כתשומה אך ורק לאחר בקשה להארכת מועד",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "cash-law-business-10pct-or-6000",
+      "claim": "Tax Authority Cash Law guide: above the threshold, businesses may pay or receive cash only up to the lower of 10% of the transaction and NIS 6,000.",
+      "source_url": "https://www.gov.il/he/pages/law-guide-to-reducing-cash-use",
+      "raw_snippet": "בעסקה או הלוואה או תרומה מעל סכום זה, העוסקים יכולים לשלם או לקבל במזומן - רק עד 10% ממחיר העסקה או 6,000 ₪, (הסכום התעדכן בחודש אוגוסט 2022, עד אז הסכום היה 11,000 ₪) לפי הנמוך בהם.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "cash-law-private-10pct-or-15000-vehicle-50000",
+      "claim": "Tax Authority Cash Law guide: between private persons, above NIS 15,000 cash is limited to the lower of 10% and NIS 15,000, and NIS 50,000 for a car purchase.",
+      "source_url": "https://www.gov.il/he/pages/law-guide-to-reducing-cash-use",
+      "raw_snippet": "בעסקה מעל סכום זה, הם יכולים לשלם או לקבל תשלום באמצעות מזומן, רק עד 10% ממחיר העסקה או 15,000 ₪, (הסכום התעדכן בחודש אוגוסט 2022, עד אז הסכום היה 50,000 ₪) למעט בעסקת רכישת רכב ששם הסכום הוא 50,000 ₪, לפי הנמוך בהם.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-1-osek-excludes-mlkr-financial",
+      "claim": "Section 1 of the VAT Law (סעיף 1): an \"עוסק\" is one who sells or supplies in the course of business, provided it is not a מלכ\"ר or a מוסד כספי; so a non-profit or financial institution cannot deduct input VAT under section 38(א).",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "שירות במהלך עסקיו, ובלבד שאינו מלכ\"ר או מוסד כספי, ו",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-41-exempt-inputs",
+      "claim": "Section 41 of the VAT Law (סעיף 41): input tax is deductible only on inputs used for a taxable transaction.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "41. אין לנכות מס על תשומות אלא אם הן לשימוש בעסקה החייבת במס.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-15-residential-apartment",
+      "claim": "Regulation 15 of the VAT Regulations (תקנה 15): no input-VAT deduction on buying or building the dealer's residential apartment, or on services for that, if it also serves as the place of business.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "15. עוסק לא יהא רשאי לנכות מס תשומות על רכישת דירת מגוריו או על בנייתה, כולה או מקצתה, ולא את מס התשומות על השירותים שקיבל לצורך רכישתה או בנייתה אם הדירה משמשת או תשמש גם כמקום עסקו.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-24b-credit-note",
+      "claim": "Regulation 24(b) of the VAT Regulations (תקנה 24(ב)): a dealer receiving a credit note must correct its input tax in the periodic return of the period in which the note was received.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "(ב) עוסק המקבל הודעת זיכוי במס חייב לתקן לפיה את סכום מס התשומות בדו\"ח התקופתי של התקופה שבה נתקבלה ההודעה.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-43-cancellation-reduces-input",
+      "claim": "Section 43 of the VAT Law (סעיף 43): where a transaction is cancelled or changed reducing the tax after the buyer deducted it, the buyer reduces its input tax by the difference.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_001.htm",
+      "raw_snippet": "43. בוטלה עסקה או שונו תנאיה באופן המקטין את המס לאחר שהקונה ניכה את המס עליה כמס תשומות, יפחית הקונה בסכום ההפרש את מס התשומות שבדו\"ח התקופתי שלאחר מ",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vat-reg-6d-foreign-resident-buyer-liable",
+      "claim": "Regulation 6d of the VAT Regulations (תקנה 6ד): where a transaction is made in Israel and the seller or service provider is a foreign resident, the duty to pay the tax falls on the buyer unless the buyer holds an invoice for it.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_005.htm",
+      "raw_snippet": "6ד. נעשתה עסקה בישראל, והמוכר או נותן השירות הוא תושב חוץ, תחול חובת תשלום המס על הקונה, זולת אם ברשותו של הקונה חשבונית בשל העסקה;",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "vatbr-9a-a1-dealer-id-number",
+      "claim": "Regulation 9a(a)(1) of the VAT Bookkeeping Regulations (תקנה 9א): a tax invoice carries the dealer's ID number or corporate registration number, or failing those the VAT registration number.",
+      "source_url": "https://www.nevo.co.il/law_html/law01/271_019.htm",
+      "raw_snippet": "(1) שם העוסק המורשה, מענו, המלים \"עוסק מורשה\", מספר תעודת הזהות או מספר הרישום של התאגיד אצל רשם החברות או רשם האגודות השיתופיות, ומי שאין לו מספר כאמור – מספר הרישום במשרד מס ערך מוסף",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "israeli-id-luhn-check-digit",
+      "claim": "Hebrew Wikipedia, ספרת ביקורת: the Luhn algorithm is used, among other things, to compute the check digit of the Israeli ID number; the 9-digit ID number has the check digit rightmost, with weights 1, 2, 1, 2 for the eight digits to its left.",
+      "source_url": "https://he.wikipedia.org/wiki/%D7%A1%D7%A4%D7%A8%D7%AA_%D7%91%D7%99%D7%A7%D7%95%D7%A8%D7%AA",
+      "raw_snippet": "ומשמש, בין היתר, לחישוב ספרת הביקורת במספר הזהות בישראל",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md"
+      ],
+      "verified_via": "curl",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "allocation-regime-start-5-may-2024",
+      "claim": "Tax Authority FAQ: an invoice dated after 4.5.2024 must include an allocation number (above the band); invoices up to that date are outside the regime.",
+      "source_url": "https://www.gov.il/he/pages/faq_israel_invoice",
+      "raw_snippet": "את תאריך מאוחר מיום 4.5.2024 חייבת לכלול מספר הקצאה.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md",
+        "references/domain-checklist.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
+    },
+    {
+      "claim_id": "cash-law-business-no-limit-up-to-6000",
+      "claim": "Tax Authority Cash Law guide: businesses making a transaction, loan or donation up to NIS 6,000 are not limited in paying or receiving cash.",
+      "source_url": "https://www.gov.il/he/pages/law-guide-to-reducing-cash-use",
+      "raw_snippet": "עד לסכום של 6,000 ₪ (הסכום התעדכן בחודש אוגוסט 2022, עד אז הסכום היה 11,000 ₪) אינם מוגבלים לגבי קבלה או תשלום באמצעות מזומן.",
+      "fetched_at": "2026-10-29T00:00:00Z",
+      "appears_in": [
+        "SKILL.md",
+        "SKILL_HE.md",
+        "references/vat-deduction-rules.md"
+      ],
+      "verified_via": "browser",
+      "verified_at": "2026-10-29T00:00:00Z"
     }
   ]
 }

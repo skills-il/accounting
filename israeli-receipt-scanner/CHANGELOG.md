@@ -1,5 +1,41 @@
 # Changelog
 
+## 1.6.0 - 2026-10-29
+
+A shoebox review. Read as a whole batch rather than one receipt at a time, the skill could
+not answer the three things a user with a box of paper actually asks.
+
+- **"Can I throw the paper away?" is now answered, and the answer is no by default.**
+  Retention under section 75 of the VAT Law and section 25(ג) of the Bookkeeping
+  Directives, and the annex F / G conditions under which a scan may replace the paper:
+  an approved electronic signature by the taxpayer and by a second checker, a "מסמך סרוק"
+  mark, a compliant digital archive, and a filed return for that year. The skill's own
+  photos and JSON are working copies.
+- **The claimant is asked once per batch.** VAT status, own VAT number, business type and
+  the last filed period. An osek patur deducts nothing; the buyer test needs the claimant's
+  number; business type overrides the "inherently private" defaults.
+- **A batch pass.** De-duplication, linking card vouchers and pump slips to their tax
+  invoice, a flag for periods already filed, six-month deadline triage, and a three-bucket
+  summary.
+- **Regulation 18 corrected.** 18(א) (the actual business ratio) comes first; 18(ב)'s
+  two-thirds and one-quarter apply only where the non-business use is indeterminate. The
+  fraction field now takes any value from 0 to 1.
+- **The six-month window is not absolute.** Section 116(א) lets the Director extend it, up
+  to five years.
+- **One canonical deductibility list.** Step 6 and Step 7 had two lists that disagreed (the
+  first omitted the six-month window). There is now one.
+- **Credit notes, non-profits, the dealer's home.** A credit note (headed "חשבונית מס") is never a positive input and is netted against its original. An amuta or a financial institution is not an "עוסק" and deducts nothing. Regulation 15 bars input VAT on buying or building the dealer's home. A three-state `decision` (deductible / review / denied) drives the summary.
+- **Smaller fixes.** The VAT rate is date-aware (17% before 2025). The allocation number is
+  9 digits with no check digit, so it is never checksummed. The worked example's VAT number
+  failed the Luhn check the skill mandates; replaced with an illustrative valid one. The
+  Cash Law's "lower of 10% and the cap" rule now covers the private and vehicle caps too.
+  Pre-printed invoice books with handwritten amounts are in scope. Fresh produce is
+  zero-rated, not exempt. A note that VAT and income tax are different questions.
+- **Description.** Now says what the skill decides (input-VAT deductibility, allocation band and six-month window by the invoice's date, batch duplicates) and that it answers the paper question, so the skill loads for those requests.
+- **Removed the "pending scripts" note** carried since 1.2.0. The skill ships no scripts;
+  the statutory detail moved to `references/vat-deduction-rules.md` and
+  `references/retention-and-scanning.md`.
+
 ## 1.5.0 - 2026-08-27
 
 Grounded the VAT rules in the primary statute and closed three gaps that let the

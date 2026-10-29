@@ -1,6 +1,6 @@
 {
   "author": "skills-il",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "category": "accounting",
   "tags": {
     "he": [
@@ -25,8 +25,8 @@
     "en": "Israeli Receipt Scanner"
   },
   "display_description": {
-    "he": "אינו ייעוץ מס. סריקה וניתוח קבלות וחשבוניות ישראליות עם חילוץ טקסט בעברית ואנגלית",
-    "en": "Not tax advice. OCR and parse Israeli receipts and invoices with Hebrew and English text extraction. Extracts merchant name, date, total amount in NIS, VAT amount, receipt or invoice number, payment method, and VAT registration number (osek murshe). Handles common Israeli retail formats including supermarkets, gas stations, restaurants, and online purchases. Auto-categorizes expenses into standard Israeli accounting categories and outputs structured JSON or CSV ready for import into accounting software. Use when you need to digitize, extract data from, or categorize Israeli receipts and tax invoices. Do NOT use for non-Israeli receipt formats, handwritten notes without printed text, or bank statement reconciliation."
+    "he": "אינו ייעוץ מס. סריקה וניתוח של קבלות וחשבוניות ישראליות עם חילוץ טקסט בעברית ובאנגלית. מחלץ שם בית עסק, תאריך, סכום בשקלים, מע\"מ, מספר מסמך, מספר הקצאה, אמצעי תשלום ומספר עוסק מורשה, ובודק אם מס התשומות ניתן לניכוי. מטפל ברשתות מזון, תחנות דלק, מסעדות ורכישות מקוונות, מסווג הוצאות לקטגוריות חשבונאיות ישראליות ומייצא JSON או CSV לתוכנת הנהלת חשבונות. מתאים גם לקופסת נעליים של קבלות: מסיר כפילויות, מסמן חשבוניות שעברו את חלון ששת החודשים ומסביר אם מותר לזרוק את הנייר. לא לשימוש בקבלות לא ישראליות, בפתקים בכתב יד ללא טקסט מודפס, או בהתאמת דפי בנק.",
+    "en": "Not tax advice. OCR and parse Israeli receipts and invoices with Hebrew and English text extraction. Extracts merchant, date, NIS total, VAT amount, document and allocation numbers, payment method, and VAT registration number (osek murshe). Handles supermarket, gas station, restaurant and online-purchase formats, categorizes expenses, and outputs JSON or CSV for accounting software. Classifies each document's input VAT as deductible, needs review, or not deductible, applying the allocation-number band and six-month window by the invoice's own date, and catches duplicates, card vouchers and credit notes in a batch. Explains how long paper originals must be kept and when a scan may replace them. Use when you need to digitize, extract data from, categorize, or check the VAT deductibility of Israeli receipts and tax invoices, including a box of accumulated paper. Do NOT use for non-Israeli receipt formats, handwritten notes without printed text, or bank statement reconciliation."
   },
   "supported_agents": [
     "claude-code",
