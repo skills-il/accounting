@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.6.1 - 2026-10-29
+
+Wording and one safety rule, applied after the 1.6.0 reviews; no rule changed.
+
+- Check 7's reporting-period test is labelled as a conservative reading of section 38(א),
+  and a missing last-filed period now sends the record to review.
+- A credit-note reduction is booked in the month the credit note was received, at the
+  ORIGINAL invoice's fraction.
+- Deadline triage counts extension-zone (denied) records separately.
+- Vehicle running costs moved out of the soft-rules list: a known class follows the
+  mixed-use rule, only an unknown class is review. Example 2 and the candidate_fraction
+  definition now match that rule.
+- Descriptions trimmed under 950 characters.
+
 ## 1.6.0 - 2026-10-29
 
 A shoebox review. Read as a whole batch rather than one receipt at a time, the skill could
